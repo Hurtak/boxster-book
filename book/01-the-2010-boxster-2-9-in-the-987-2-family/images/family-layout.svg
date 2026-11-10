@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="865" viewBox="0 0 600 865" role="img" aria-labelledby="title desc">
+<title id="title">Boxster mid-engine packaging and rear-wheel drive</title>
+<desc id="desc">Schematic side view of an open two-seat roadster facing left. Front luggage is ahead of the cabin; the engine is behind the seats and ahead of the rear axle. The transaxle is behind the engine, below the rear luggage area. Dashed lines locate the front and rear axles. A separate functional diagram shows engine torque passing through the transaxle, which combines the gearbox, final drive and differential, then through two driveshafts to the rear wheels. Component shapes, positions and routes are illustrative, not to scale.</desc>
+<defs>
+  <marker id="family-layout-torque" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
+</defs>
+<rect width="600" height="865" rx="10" fill="#f4f7f3"/>
+<g font-family="sans-serif" fill="#263d34">
+  <text x="28" y="43" font-size="30" font-weight="bold">Mid-engine, rear-wheel drive</text>
+  <text x="28" y="80" font-size="25">Side view · front ←</text>
+
+  <g font-size="27">
+    <text x="29" y="130">Front<tspan x="29" dy="31">luggage</tspan></text>
+    <text x="204" y="130">Two seats</text>
+    <text x="431" y="130">Rear<tspan x="431" dy="31">luggage</tspan></text>
+  </g>
+  <g fill="none" stroke="#647d6a" stroke-width="2">
+    <path d="M105 171V259"/>
+    <path d="M264 141V225"/>
+    <path d="M519 171V249"/>
+  </g>
+
+  <!-- Low bonnet, raked screen, open cockpit and rear deck: no roof over the seats. -->
+  <path d="M26 315 31 282Q39 259 79 251L180 240 205 231 285 231Q313 239 333 240L500 242Q549 247 571 279L576 315Z" fill="#d4dfd5" stroke="#3c5e4d" stroke-width="3"/>
+  <path d="M181 240 222 178 232 178" fill="none" stroke="#3c5e4d" stroke-width="5" stroke-linecap="round"/>
+  <path d="M233 235 242 252M244 241 252 233" fill="none" stroke="#536c5d" stroke-width="5" stroke-linecap="round"/>
+  <path d="M274 215 280 263 255 263" fill="none" stroke="#536c5d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M293 235V216Q293 203 305 203T317 216V237" fill="none" stroke="#536c5d" stroke-width="5"/>
+  <path d="M203 281H288L298 244" fill="none" stroke="#a4b6a8" stroke-width="2"/>
+  <g>
+    <circle cx="112" cy="320" r="37" fill="#263d34"/><circle cx="112" cy="320" r="21" fill="#a4b6a8"/>
+    <circle cx="470" cy="320" r="37" fill="#263d34"/><circle cx="470" cy="320" r="21" fill="#a4b6a8"/>
+  </g>
+  <rect x="61" y="264" width="109" height="29" rx="5" fill="#91b6a3" stroke="#647d6a" stroke-width="2"/>
+  <rect x="319" y="269" width="100" height="44" rx="6" fill="#176b53"/>
+  <text x="369" y="299" text-anchor="middle" font-size="27" fill="#fff">Engine</text>
+  <rect x="419" y="278" width="95" height="31" rx="5" fill="#dce8de" stroke="#536c5d" stroke-width="2"/>
+  <rect x="486" y="251" width="62" height="19" rx="4" fill="#91b6a3" stroke="#647d6a" stroke-width="2"/>
+  <text x="447" y="211" text-anchor="middle" font-size="27">Transaxle</text>
+  <path d="M447 221V277" fill="none" stroke="#647d6a" stroke-width="2"/>
+
+  <g fill="none" stroke="#829888" stroke-width="2" stroke-dasharray="6 5">
+    <path d="M112 358V411M470 358V411"/>
+  </g>
+  <g font-size="27" text-anchor="middle">
+    <text x="112" y="441">Front axle</text>
+    <text x="470" y="441">Rear axle</text>
+  </g>
+  <path d="M112 457V469H470V457" fill="none" stroke="#647d6a" stroke-width="2"/>
+  <text x="291" y="506" text-anchor="middle" font-size="27">Engine between the axles</text>
+
+  <path d="M28 534H572" stroke="#c4d2c5" stroke-width="2"/>
+  <text x="28" y="576" font-size="28" font-weight="bold">Torque path · connections only</text>
+  <rect x="28" y="602" width="158" height="63" rx="7" fill="#176b53"/>
+  <text x="107" y="643" text-anchor="middle" font-size="28" fill="#fff">Engine</text>
+  <path d="M189 634H222" fill="none" stroke="#176b53" stroke-width="4" marker-end="url(#family-layout-torque)"/>
+  <rect x="233" y="602" width="339" height="119" rx="7" fill="#dce8de" stroke="#536c5d" stroke-width="2"/>
+  <text x="402" y="637" text-anchor="middle" font-size="28" font-weight="bold">Transaxle</text>
+  <text x="402" y="672" text-anchor="middle" font-size="26">Gearbox, final drive</text>
+  <text x="402" y="703" text-anchor="middle" font-size="26">and differential</text>
+  <g fill="none" stroke="#176b53" stroke-width="4" marker-end="url(#family-layout-torque)">
+    <path d="M402 722V744H120V786"/>
+    <path d="M402 744H480V786"/>
+  </g>
+  <text x="297" y="778" text-anchor="middle" font-size="26">Driveshafts</text>
+  <g font-size="27" text-anchor="middle">
+    <text x="120" y="820">Rear wheel</text>
+    <text x="480" y="820">Rear wheel</text>
+  </g>
+  <text x="28" y="850" font-size="22" fill="#536c5d">Schematic · shapes and spacing not to scale</text>
+</g>
+</svg>

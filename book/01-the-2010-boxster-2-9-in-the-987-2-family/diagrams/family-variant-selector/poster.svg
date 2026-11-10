@@ -1,14 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="410" viewBox="0 0 600 410" role="img" aria-labelledby="title desc">
-<title id="title">The reference ordinary Boxster 2.9</title><desc id="desc">The initial selection is the ordinary Boxster 2.9. Both power bars show 255 PS on the same 320 PS scale. The engine produces 188 kW, uses multipoint injection and the car has a powered fabric roof.</desc>
-<rect width="600" height="410" rx="10" fill="#f4f7f3"/>
-<g font-family="sans-serif" fill="#263d34">
-<text x="30" y="44" font-size="28" font-weight="bold">Boxster 2.9</text>
-<text x="30" y="88" font-size="23">Reference 2.9 · 255 PS</text>
-<rect x="30" y="102" width="540" height="23" rx="4" fill="#e0e7e0"/><rect x="30" y="102" width="430.3" height="23" rx="4" fill="#8a9d91"/>
-<text x="30" y="166" font-size="23">Selected · 255 PS</text>
-<rect x="30" y="180" width="540" height="23" rx="4" fill="#e0e7e0"/><rect x="30" y="180" width="430.3" height="23" rx="4" fill="#176b53"/>
-<text x="30" y="259" font-size="27">188 kW · 2.9 litres</text>
-<text x="30" y="300" font-size="24">Multipoint injection</text>
-<text x="30" y="341" font-size="24">Powered fabric roof</text>
-<text x="30" y="385" font-size="20">Both bars use a 320 PS scale.</text>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="740" viewBox="0 0 600 740" role="img" aria-labelledby="title desc">
+<title id="title">Boxster S compared with the reference 2010 Boxster 2.9</title>
+<desc id="desc">Example selection: the ordinary 2010 Boxster S. The reference produces 188 kW / 255 PS; the S produces 228 kW / 310 PS. Both bars use the same zero to 320 PS scale. The 2.9-litre reference injects fuel into the inlet ports; the 3.4-litre S uses direct injection into the cylinders. Both have a powered fabric roof.</desc>
+<rect width="600" height="740" rx="10" fill="#f4f7f3"/>
+<g font-family="'Source Sans 3', sans-serif" fill="#263d34">
+<text x="28" y="48" font-size="32" font-weight="bold">Boxster S vs the 2.9</text>
+<text x="28" y="98" font-size="28">Reference · 188 kW / 255 PS</text>
+<rect x="28" y="112" width="544" height="24" rx="4" fill="#e0e7e0"/>
+<rect x="28" y="112" width="433.5" height="24" rx="4" fill="#8a9d91"/>
+<text x="28" y="181" font-size="28">Selected · 228 kW / 310 PS</text>
+<rect x="28" y="195" width="544" height="24" rx="4" fill="#e0e7e0"/>
+<rect x="28" y="195" width="527" height="24" rx="4" fill="#176b53"/>
+<text x="28" y="260" font-size="28">0</text>
+<text x="572" y="260" font-size="28" text-anchor="end">320 PS</text>
+<g font-size="28">
+<text x="28" y="330" font-weight="600">Feature</text>
+<text x="198" y="330"><tspan font-weight="600">Reference</tspan><tspan x="198" dy="35">2010 2.9</tspan></text>
+<text x="398" y="330"><tspan font-weight="600">Selected</tspan><tspan x="398" dy="35">Boxster S</tspan></text>
+<path d="M28 386H572 M28 462H572 M28 568H572 M28 674H572" stroke="#c7d2ca"/>
+<text x="28" y="430" font-weight="600">Capacity</text>
+<text x="198" y="430">2.9 litres</text>
+<text x="398" y="430">3.4 litres</text>
+<text x="28" y="506" font-weight="600"><tspan x="28">Fuel</tspan><tspan x="28" dy="35">injection</tspan></text>
+<text x="198" y="506"><tspan x="198">Multipoint</tspan><tspan x="198" dy="35">injection</tspan></text>
+<text x="398" y="506"><tspan x="398">Direct fuel</tspan><tspan x="398" dy="35">injection</tspan></text>
+<text x="28" y="612" font-weight="600">Roof</text>
+<text x="198" y="612"><tspan x="198">Powered</tspan><tspan x="198" dy="35">fabric roof</tspan></text>
+<text x="398" y="612"><tspan x="398">Powered</tspan><tspan x="398" dy="35">fabric roof</tspan></text>
+</g>
+<text x="28" y="715" font-size="26">Example selection: Boxster S.</text>
+</g>
+</svg>

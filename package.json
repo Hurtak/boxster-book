@@ -8,6 +8,7 @@
     "build:web": "python3 scripts/build_book.py --format web --output dist/web/book.html",
     "build:pages": "python3 scripts/build_book.py --format web --output dist/site/index.html",
     "models": "node scripts/generate-models.mjs",
+    "posters": "node scripts/render-component-posters.mjs",
     "preview:model": "npm run models && node scripts/preview-model.mjs",
     "serve": "python3 -m http.server 8000 --directory dist",
     "test": "npm run build && npm run build:web && npm run build:pages && node --test tests/*.test.js"

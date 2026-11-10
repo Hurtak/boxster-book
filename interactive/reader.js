@@ -19,6 +19,7 @@ export function mountReader() {
     words: element.textContent.trim().split(/\s+/).length,
   }));
   if (!chapters.length) return;
+  const minutes = (chapter) => Math.max(1, Math.ceil(chapter.words / 220));
   const start = document.querySelector('[data-start-reading]');
   const written = chapters.filter((chapter) => !chapter.planned);
   // Start with the first drafted chapter while the manuscript is growing.
@@ -28,13 +29,18 @@ export function mountReader() {
   const available = document.querySelector('[data-written-chapters]');
   available.hidden = !written.length;
   available.querySelector('h2').textContent = written.length === chapters.length ? 'Contents' : 'Available chapters';
-  const list = available.querySelector('ul');
+  const list = available.querySelector('ol');
   for (const chapter of written) {
     const item = document.createElement('li');
+    item.value = chapter.index + 1;
+    item.style.setProperty('--chapter-number', `"${chapter.index + 1}"`);
     const link = document.createElement('a');
     link.href = `#${chapter.element.id}`;
     link.textContent = chapter.title;
-    item.append(link);
+    const time = document.createElement('span');
+    time.className = 'toc-time';
+    time.textContent = `${minutes(chapter)} min`;
+    item.append(link, time);
     list.append(item);
   }
   document.querySelector('[data-draft-status]').textContent = written.length === chapters.length
@@ -45,8 +51,9 @@ export function mountReader() {
   // original note ID and backlink. This also makes note deep links routable.
   const endnotes = book.querySelector('.footnotes');
   const noteLists = new Map();
+  const references = new Map([...book.querySelectorAll('a.footnote-ref')].map((link) => [link.hash, link]));
   for (const note of [...(endnotes?.querySelectorAll('ol > li') ?? [])]) {
-    const reference = [...book.querySelectorAll('a.footnote-ref')].find((link) => link.hash === `#${note.id}`);
+    const reference = references.get(`#${note.id}`);
     const owner = reference?.closest('section.level2');
     if (!owner) continue;
     if (!noteLists.has(owner)) {
@@ -56,15 +63,20 @@ export function mountReader() {
       const summary = document.createElement('summary');
       const heading = document.createElement('h2');
       heading.textContent = 'Notes and sources';
+      const count = document.createElement('span');
+      count.className = 'notes-count';
       const list = document.createElement('ol');
-      summary.append(heading);
+      summary.append(heading, count);
       section.append(summary, list);
       owner.append(section);
       noteLists.set(owner, list);
     }
-    // Preserve Pandoc's document-wide note numbering across chapter lists.
-    note.value = Number(note.id.replace(/^fn/, ''));
-    noteLists.get(owner).append(note);
+    // Number notes within their chapter, as a printed book does.
+    const list = noteLists.get(owner);
+    note.value = list.children.length + 1;
+    reference.querySelector('sup')?.replaceChildren(String(note.value));
+    list.append(note);
+    list.previousElementSibling.querySelector('.notes-count').textContent = `${note.value} ${note.value === 1 ? 'note' : 'notes'}`;
   }
   if (endnotes && !endnotes.querySelector('li')) endnotes.remove();
 
@@ -94,7 +106,7 @@ export function mountReader() {
     }
     const meta = document.createElement('p');
     meta.className = 'chapter-meta';
-    meta.textContent = `Chapter ${chapter.index + 1} of ${chapters.length} · ${chapter.planned ? 'Planned' : `${Math.max(1, Math.ceil(chapter.words / 220))} min read`}`;
+    meta.textContent = `Chapter ${chapter.index + 1} of ${chapters.length} · ${chapter.planned ? 'Planned' : `${minutes(chapter)} min read`}`;
     chapter.element.firstElementChild.after(meta);
     if (chapter.planned) {
       chapter.element.classList.add('planned-chapter');
@@ -130,26 +142,62 @@ export function mountReader() {
 
   let active = null;
   let outlineItems = [];
-  const adjacentLink = (chapter, label) => {
+  let chapterSections = null;
+  const sectionTitle = (section) => (section.matches('details') ? section.querySelector('summary h2') : section.firstElementChild).textContent;
+  const adjacentLink = (chapter, direction) => {
     const link = document.createElement('a');
     link.href = chapter ? `#${chapter.element.id}` : '#title';
-    const direction = document.createElement('span');
-    direction.textContent = label;
-    link.append(direction, chapter?.title ?? 'Book cover');
+    link.className = direction;
+    const label = document.createElement('span');
+    const name = chapter ? `Chapter ${chapter.index + 1}` : 'Cover';
+    label.textContent = direction === 'previous' ? `← ${name}` : `${name} →`;
+    link.append(label, chapter?.title ?? 'Porsche Boxster 2.9');
     return link;
   };
+
+  // The last section passed is kept so the cover can offer a way back in.
+  const placeKey = 'boxster-reading-place';
+  let place;
+  try { place = localStorage.getItem(placeKey); } catch { /* file or private mode */ }
+  const remember = (id) => {
+    if (id === place) return;
+    place = id;
+    try { localStorage.setItem(placeKey, id); } catch { /* optional preference */ }
+  };
+  const continueLink = document.querySelector('[data-continue-reading]');
+  const offerContinue = () => {
+    const target = place && document.getElementById(place);
+    const chapter = target && chapters.find((item) => item.element === target.closest('section.level2'));
+    continueLink.hidden = !chapter || (chapter === sample && target === chapter.element);
+    if (continueLink.hidden) return;
+    continueLink.href = `#${place}`;
+    const label = document.createElement('span');
+    label.textContent = 'Continue reading';
+    continueLink.replaceChildren(label, `Chapter ${chapter.index + 1}: ${chapter.title}`);
+  };
+
+  const bar = document.querySelector('.reading-bar span');
   const updateProgress = () => {
     if (!active) return;
     const box = active.element.getBoundingClientRect();
     const distance = Math.max(1, box.height - innerHeight + 96);
-    const percent = Math.round(Math.max(0, Math.min(1, (96 - box.top) / distance)) * 100);
-    outline.querySelector('.reading-progress').textContent = `${percent}% of chapter`;
+    const fraction = Math.max(0, Math.min(1, (96 - box.top) / distance));
+    outline.querySelector('.reading-progress').textContent = `${Math.round(fraction * 100)}% of chapter`;
+    bar.style.transform = `scaleX(${fraction})`;
     let current = outlineItems[0];
-    for (const item of outlineItems) if (item.section.getBoundingClientRect().top < 160) current = item;
+    let passed = null;
     for (const item of outlineItems) {
-      if (item === current) item.link.setAttribute('aria-current', 'location');
-      else item.link.removeAttribute('aria-current');
+      if (item.section.getBoundingClientRect().top >= 160) continue;
+      current = item;
+      if (!item.notes) passed = item;
     }
+    for (const item of outlineItems) {
+      for (const link of item.links) {
+        if (item === current) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      }
+    }
+    remember((passed?.section ?? active.element).id);
   };
   for (const section of notes) section.addEventListener('toggle', updateProgress);
   const showLocation = ({ initial = false } = {}) => {
@@ -163,7 +211,9 @@ export function mountReader() {
     const next = id === 'book' ? active : chapters.find((chapter) => chapter.element === owner) ?? null;
     const changed = active !== next;
     active = next;
+    document.documentElement.dataset.view = active ? 'chapter' : 'cover';
     cover.hidden = !!active;
+    if (!active) offerContinue();
     retag(cover.firstElementChild, active ? 'h2' : 'h1');
     for (const chapter of chapters) {
       chapter.element.hidden = chapter !== active;
@@ -175,28 +225,48 @@ export function mountReader() {
     }
     if (changed || initial) {
       const currentLink = chapterLinks.find((link) => link.getAttribute('aria-current') === 'page');
-      if (currentLink && sidebar.clientHeight) {
-        const bounds = sidebar.getBoundingClientRect();
-        const linkBounds = currentLink.getBoundingClientRect();
-        if (linkBounds.top < bounds.top + 48 || linkBounds.bottom > bounds.bottom) {
-          sidebar.scrollTop += linkBounds.top - bounds.top - 64;
-        }
-      }
       document.title = active ? `${active.title} — Porsche Boxster 2.9` : 'Porsche Boxster 2.9';
       const nav = outline.querySelector('nav');
       nav.replaceChildren();
       const sections = active ? [...active.element.querySelectorAll(':scope > .level3, :scope > .chapter-notes')] : [];
+      // Narrower layouts have no outline rail, so the current chapter's
+      // sections also nest under it in the contents (sidebar or drawer).
+      chapterSections?.remove();
+      chapterSections = currentLink && sections.length ? document.createElement('ul') : null;
+      if (chapterSections) {
+        chapterSections.className = 'chapter-sections';
+        currentLink.parentElement.append(chapterSections);
+      }
       outlineItems = sections.map((section) => {
-        const link = document.createElement('a');
-        link.href = `#${section.id}`;
-        link.textContent = section.firstElementChild.textContent;
-        nav.append(link);
-        return { section, link };
+        const links = [nav, chapterSections].filter(Boolean).map((list) => {
+          const link = document.createElement('a');
+          link.href = `#${section.id}`;
+          link.textContent = sectionTitle(section);
+          if (list === nav) {
+            list.append(link);
+          } else {
+            const item = document.createElement('li');
+            item.append(link);
+            list.append(item);
+          }
+          return link;
+        });
+        return { section, links, notes: section.matches('details') };
       });
+      if (currentLink && sidebar.clientHeight) {
+        // Keep the current chapter in view, with whole rows above it.
+        const bounds = sidebar.getBoundingClientRect();
+        const heading = sidebar.querySelector('h2').offsetHeight;
+        const linkBounds = currentLink.getBoundingClientRect();
+        if (linkBounds.top < bounds.top + heading || linkBounds.bottom > bounds.bottom) {
+          const row = currentLink.parentElement;
+          sidebar.scrollTop += (row.previousElementSibling ?? row).getBoundingClientRect().top - bounds.top - heading;
+        }
+      }
       outline.hidden = !outlineItems.length;
       pagination.hidden = !active;
       pagination.replaceChildren();
-      if (active) pagination.append(adjacentLink(chapters[active.index - 1], '← Previous'), adjacentLink(chapters[active.index + 1], 'Next →'));
+      if (active) pagination.append(adjacentLink(chapters[active.index - 1], 'previous'), adjacentLink(chapters[active.index + 1], 'next'));
     }
     // Fragment scrolling happens after the formerly hidden chapter is laid out.
     requestAnimationFrame(() => {

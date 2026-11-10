@@ -4,6 +4,12 @@ A Boxster works as a whole because its parts share loads, information and respon
 
 The 2010 European/UK 2.9 has an open passenger compartment, yet its protection does not depend on the fabric hood becoming a structural roof. It combines a reinforced windscreen frame and permanent rear rollover bars with three-point belts, pretensioners, force limiters and six airbags. The detail matters: its side head airbags are in the **doors**, while its thorax airbags are in the **seats**.[^uk-restraints]
 
+Start with their positions around the two seats. The 3D view separates the fixed supports, belt routes and folded airbag modules; the control-system examples later in the chapter explain how decisions differ from physical structure.
+
+::: {.book-diagram data-diagram="protection-explorer"}
+![The passenger cell supports the seats, reinforced windscreen frame and two fixed rear bars. Three-point belts attach to the body and rear bars; six folded airbag modules occupy the steering wheel, passenger dashboard, outer seat bolsters and doors.](diagrams/protection-explorer/poster.svg)
+:::
+
 ## Space for the occupants, time to slow them
 
 The [body chapter](../04-body-structure-and-packaging/index.md#stiffness-and-occupant-protection-have-different-aims) explains the shell’s load paths and deformation zones. Preserving the passenger compartment provides space; the restraints must also manage the occupants’ continued motion.[^uk-restraints]
@@ -14,11 +20,11 @@ A person initially continues moving when the surrounding car slows. The restrain
 
 ## Three belt functions
 
-The ordinary three-point belt allows slow movement through an inertia-reel retractor and locks against rapid deceleration or rapid belt movement. The shoulder section crosses the upper body and the lap section bears low across the pelvis. The reel's normal locking action is one function; crash pretensioning and force limiting add two more.[^belt-handbook]
+The ordinary three-point belt allows slow movement through an inertia-reel retractor and locks against rapid deceleration. The shoulder section crosses the upper body and the lap section bears low across the pelvis. The reel's normal locking action is one function; crash pretensioning and force limiting add two more.[^belt-handbook]
 
 A **pretensioner** removes slack when triggered, bringing the belt into useful engagement earlier in the event. A **force limiter**, also called a load limiter, manages belt tension as loading rises. These functions work together: the first reduces free movement before restraint begins; the second controls the force transmitted through the belt as it restrains the occupant.[^belt-principles]
 
-![A schematic occupant with diagonal and lap belt paths connected to the passenger cell. Three boxes distinguish normal reel locking, removal of slack by the pretensioner and control of belt force by the limiter.](belt-functions.svg)
+![A schematic occupant with diagonal and lap belt paths connected to the passenger cell. Three boxes distinguish normal reel locking, removal of slack by the pretensioner and control of belt force by the limiter.](images/belt-functions.svg)
 
 *Three complementary functions, rather than three user-selected settings. Arrows show the relationship between occupant restraint and anchorage; their lengths do not represent measured forces or belt travel.*
 
@@ -32,7 +38,7 @@ The ordinary Boxster and S have two front airbags, one in the steering-wheel cen
 
 An airbag is folded inside its module until the restraint controller commands its inflator. Gas fills the bag quickly enough to place that additional surface between the occupant and the relevant interior area. Its role supplements the belt. Occupant position matters because inflation itself happens rapidly and needs clear space.[^airbag-principles]
 
-Deployment is selected according to the event. Porsche's handbook distinguishes a sufficiently severe frontal collision from a corresponding side impact, when the side bag on the impact side is triggered. The assessment concerns impact direction and severity; it cannot be reduced to one road-speed threshold. The crash-sensing system also has diagnostic functions, separate from the PSM system's ordinary observation of vehicle motion.[^airbag-handbook]
+Deployment is selected according to the event. Porsche's handbook relates front-airbag triggering to a sufficiently severe frontal collision, and side-airbag triggering to a corresponding impact on that side. The assessment concerns impact direction and severity; it cannot be reduced to one road-speed threshold. The crash-sensing system also has diagnostic functions, separate from the PSM system's ordinary observation of vehicle motion.[^airbag-handbook]
 
 The 2010 UK brochure describes child-seat preparation through Porsche Tequipment: an ISOFIX fixing bracket and a key switch for deactivating the passenger airbag, with sports bucket seats excluded. That is the relevant catalogue evidence for this book. The North American handbook additionally describes passenger-seat weight sensing under US regulations; that market-specific logic is not assigned to the UK reference car.[^child]
 
@@ -40,7 +46,7 @@ The 2010 UK brochure describes child-seat preparation through Porsche Tequipment
 
 At the front of the cockpit, a steel reinforcement is integrated into the windscreen frame. Behind the seats stand high-strength steel rollover bars. The upper belt anchorages attach to these bars. These are permanent structural members: the 987.2 arrangement illustrated here has no sensor-triggered extension or deployable rear hoops.[^uk-restraints]
 
-![An original schematic showing a reinforced windscreen frame at the front and two fixed steel rollover bars behind the seats, with upper belt anchorage points on the rear bars.](fixed-rollover-structure.svg)
+![An original schematic showing a reinforced windscreen frame at the front and two fixed steel rollover bars behind the seats, with upper belt anchorage points on the rear bars.](images/fixed-rollover-structure.svg)
 
 *The front frame and rear bars are present before an event begins. This is a location diagram, with the hood omitted; it does not calculate clearance, roof strength or the result of an overturn.*
 
@@ -72,13 +78,15 @@ PSM and the ordinary restraints are standard. The options add control requests w
 
 The same mode button can therefore produce different physical responses in differently equipped cars. A control request needs the appropriate hardware: damper valves, throttle and injectors, transmission clutches or wheel brakes.
 
+The driving scenarios above assume normal modes with PSM switched on. The handbook says PSM OFF deactivates the additional braking functions, with emergency reactivation linked to PSM intervention. Porsche's training also specifies that SPORT with the optional Sport Chrono Package Plus disables the additional hydraulic brake assist. These conditions do not remove ABS or the ordinary vacuum brake booster.[^psm-control]
+
 ## Changes in other 2.9 model years
 
 The 2009 launch and January 2010 UK brochures document the restraint layout described here. No later UK redesign has been established; annual sensor, component and software revisions remain incompletely documented.[^years]
 
 ## The S, Spyder and Black Edition
 
-The ordinary S shares the UK brochure's restraint description with the 2.9. The Spyder's lighter specification retains door side-impact protection, rollover bars and an airbag system; its standard sports bucket seats change seating construction and adjustment. Its brochure also describes PSM and optional Sport Chrono.[^variants]
+The ordinary S shares the UK brochure's restraint description with the 2.9. The Spyder's lighter specification retains door side-impact protection, rollover bars and an airbag system; its standard sports bucket seats contribute to the weight reduction. Its brochure also describes PSM and optional Sport Chrono.[^variants]
 
 The Black Edition's UK specification retains front airbags, POSIP, belt pretensioners and force limiters. Its black-finished rollover bars are a visual treatment of the familiar arrangement. PDK, PASM and Sport Chrono Plus remain options.[^black]
 
@@ -92,7 +100,7 @@ The same distinction applies throughout this book. A part name identifies a desi
 
 [^belt-handbook]: Porsche, *Boxster, Boxster S Owner's Manual*, MY2010 North American edition, WKD 987 021 10, 5/09, printed pp. 42–43, [original manual, PDF p. 44](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=44). Used for general belt function and single-use pretensioner/fault information; US reminder timings and passenger recognition are not adopted as UK equipment.
 
-[^belt-principles]: NHTSA, *Occupant Protection Issues Among Older Drivers and Passengers, Volume II: Appendices*, DOT HS 810 939, April 2008, printed p. 40, [PDF p. 48](https://www.nhtsa.gov/sites/nhtsa.dot.gov/files/810939.pdf#page=48), “Belt Force Limiters” and “Belt Pretensioners”. Generic functional explanation, not Porsche calibration.
+[^belt-principles]: NHTSA, *Occupant Protection Issues Among Older Drivers and Passengers, Volume II: Appendices*, DOT HS 810 939, April 2008, printed p. 40, [PDF p. 48](https://www.nhtsa.gov/sites/nhtsa.dot.gov/files/810939.pdf#page=48), “Belt Force Limiters” and “Belt Pretensioners”. Controlled yielding: NHTSA, *Effectiveness of Pretensioners and Load Limiters for Enhancing Fatality Reduction by Seat Belts*, DOT HS 811 835, November 2013, printed pp. 1–2, [archived original, PDF pp. 7–8](https://www.automotivesafetycouncil.org/wp-content/uploads/2017/01/Seat-Belt-Load-Limiter-Report.pdf#page=7). Generic functions, not Porsche internal design or calibration.
 
 [^airbag-principles]: NHTSA, [“Air Bags”, “Protection” and “Air Bag Deployment”](https://www.nhtsa.gov/vehicle-safety/air-bags). General module/inflator and supplementary-restraint principles; current vehicle equipment is not transferred to the 987.2.
 
@@ -100,11 +108,11 @@ The same distinction applies throughout this book. A part name identifies a desi
 
 [^child]: Porsche, *The Boxster*, January 2010 UK edition, printed p. 67, [PDF p. 31](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=31). North American distinction: *MY2010 Owner's Manual*, printed pp. 44–49.
 
-[^pedal]: Bosch Mobility, [“Accelerator-pedal module”, operating principle](https://www.bosch-mobility.com/en/solutions/air-management/accelerator-pedal-module/), generic demand-to-torque explanation. Porsche, *2009 Technik Introduction — All Boxster Cayman Models*, printed Fuel and ignition system p. 58, [viewer p. 64](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=64), identifies the 2.9's ME 7.8.2 controller and PDK communication.
+[^pedal]: Bosch Mobility, [“Accelerator-pedal module”, operating principle](https://www.bosch-mobility.com/en/solutions/air-management/accelerator-pedal-module/), generic demand-to-torque explanation. Porsche, *2009 Technik Introduction — All Boxster/Cayman Models*, PNA 987 021 09, 2/09, printed p. 58, [archived original text](https://www.scribd.com/document/972719474/Boxster-2009) ([alternative viewer p. 64](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=64)), identifies the 2.9's ME 7.8.2 controller and PDK communication. This is the Porsche Cars North America training edition, with market qualifications.
 
-[^pdk-control]: Porsche, *2009 Technik Introduction*, printed Transmission pp. 72–74 and 102, [viewer p. 80](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=80) and [p. 108](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=108); *The Boxster*, January 2010 UK edition, printed pp. 42–45, [PDF p. 20](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=20).
+[^pdk-control]: Porsche, *2009 Technik Introduction*, printed pp. 72–74 and 102, [archived original text](https://www.scribd.com/document/972719474/Boxster-2009) ([alternative viewer pp. 78–80](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=78) and [p. 108](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=108)); *The Boxster*, January 2010 UK edition, printed pp. 42–45, [PDF pp. 19–20](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=19).
 
-[^psm-control]: Porsche, *MY2010 Owner's Manual*, printed pp. 63–65, [PDF p. 65](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=65); *2009 Technik Introduction*, printed Chassis pp. 120–121, [viewer p. 126](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=126), including prefill and brake assist.
+[^psm-control]: Porsche, *MY2010 North American Owner's Manual*, printed pp. 63–65, [PDF pp. 65–67](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=65), including PSM OFF conditions and emergency reactivation; *2009 Technik Introduction*, printed pp. 120–121, [archived original text](https://www.scribd.com/document/972719474/Boxster-2009) ([alternative viewer pp. 126–127](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=126)), distinguishes hydraulic brake assist from vacuum boosting and specifically names SPORT with Sport Chrono Package Plus for assist deactivation. No wider claim about code 639 calibration is made.
 
 [^modes]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 54–57, 107 and 126–127, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf). Codes 475, 639 and 640 are in the UK option table. The interaction shows standard modes; it does not model these calibrations.
 
@@ -112,4 +120,4 @@ The same distinction applies throughout this book. A part name identifies a desi
 
 [^variants]: Porsche, *The Boxster Spyder*, January 2010 UK edition, printed pp. 18–19, 28–31 and 34–35, [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf). No assertion that every restraint part or calibration is identical to the ordinary car.
 
-[^black]: Porsche, *Boxster S Black Edition Price List*, edition 03/2011, printed pp. 12–13 and 16–17, [original UK price list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0). The scanned safety list on p. 12 explicitly specifies black-painted rollover bars and the POSIP locations.
+[^black]: Porsche, *Boxster S Black Edition Price List*, edition 03/2011, printed pp. 12–13 and 16–17, [original UK price list, scan pp. 7 and 9](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0). The scanned safety list on p. 12 explicitly specifies black-painted rollover bars and the POSIP locations.

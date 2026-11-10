@@ -10,24 +10,24 @@ const evidence = {
     explanation: 'Porsche announced the revised Boxster range on 19 November 2008. The launch brochure is marked 08/08, but that publication date does not make the revised car a 2008 model. A contemporary Porsche SE report confirms availability since February 2009.',
   },
   2009: {
-    calendar: [['February', 'Revised Boxster available'], ['6 November', 'Spyder announced']],
+    calendar: [['February · Porsche SE', 'Range reported available'], ['6 November · Netherlands', 'Spyder announced']],
     labels: [['2009 · launch range', '2.9, S and optional PDK'], ['08/08 · early catalogue', 'Some option dates qualified']],
-    explanation: 'February 2009 is the confirmed market-arrival month of the revised ordinary range. The early UK catalogue gives April for sports exhaust and May for the manual locking differential as earliest planned availability, rather than verified delivery dates. The Spyder announcement follows in November.',
+    explanation: 'Porsche SE’s April 2009 report states that the revised ordinary range has been available since February. This does not date an individual delivery. The early UK catalogue gives April for sports exhaust and May for the manual locking differential as earliest planned availability, rather than verified delivery dates. The Dutch Spyder announcement follows in November.',
   },
   2010: {
-    calendar: [['January', 'UK reference brochure'], ['February', 'Spyder market arrival']],
+    calendar: [['January', 'UK reference brochure'], ['February · Netherlands', 'Planned Spyder introduction']],
     labels: [['01/10 · publication', 'UK ordinary / Spyder books'], ['2011 · later heading', 'Porsche Classic: Spyder']],
-    explanation: 'The January 2010 UK ordinary-model brochure documents the book’s reference 2.9. Porsche’s November 2009 Spyder release specifies February 2010 market introduction. The later Porsche Classic “2011” heading is a different label and does not move the contemporary introduction into 2011.',
+    explanation: 'The January 2010 UK ordinary-model brochure documents the book’s reference 2.9. Porsche’s November 2009 Dutch Spyder release plans February 2010 market introduction; it is not a record of first delivery. The later Porsche Classic “2011” heading is a different label and does not change that planned calendar date. Neither publication date establishes a European numerical model year.',
   },
   2011: {
-    calendar: [['2 February', 'Black Edition announced'], ['March', 'European availability']],
+    calendar: [['2 February', 'Black Edition announced'], ['March · Netherlands', 'Announced availability']],
     labels: [['03/2011 · UK list', 'Model year starts 1 March'], ['2012 · US model label', 'PCNA Black Edition release']],
-    explanation: 'The Black Edition was announced in February 2011 for European availability in March. The UK price list says its model year begins on 1 March 2011 without supplying a numerical year there. PCNA expressly calls the car a 2012 model. These statements can coexist.',
+    explanation: 'Porsche’s Dutch release announced the Black Edition on 2 February 2011 for planned availability from March in that market. The UK price list says its model year begins on 1 March 2011 without supplying a numerical year there. PCNA expressly calls the car a 2012 model. These statements can coexist.',
   },
   2012: {
-    calendar: [['January', 'New 981 announced'], ['14 April · Netherlands', '981 dealer introduction']],
-    labels: [['2012 · US data sheet', 'Outgoing 987 range'], ['2012 · new generation', '981: a separate specification']],
-    explanation: 'A 2012 US technical sheet still describes the outgoing 987 range. The January 2012 announcement describes the new 981, with a Dutch dealer introduction on 14 April. A brochure date or first registration in 2012 cannot establish the generation by itself.',
+    calendar: [['12 January · Netherlands', 'New 981 announced'], ['14 April · Netherlands', 'Announced 981 dealer date']],
+    labels: [['2012 · US model year', '987 · outgoing specification'], ['January 2012 · release', '981 · new generation']],
+    explanation: 'The US technical sheet headed “2012 Porsche Boxster” describes the outgoing 987 range. Porsche’s Dutch release of 12 January 2012 describes the new 981 and plans a dealer introduction on 14 April in that market. This is a prospective date, not a record of first customer delivery. A brochure date or first registration in 2012 cannot establish the generation by itself.',
   },
 };
 
@@ -59,9 +59,13 @@ export function mount(host, { state, signal }) {
   let modeButtons;
   const redraw = svgDiagram(stage, 'Boxster calendar events and evidence labels from 2008 to 2012', (svg, { width }) => {
     svg.selectAll('*').remove();
+    const selectedTitle = `${state.year} · ${state.mode === 'calendar' ? 'Calendar events' : 'Evidence labels'}`;
+    svg.attr('aria-label', selectedTitle);
+    svg.append('title').text(selectedTitle);
+    svg.append('desc').text(evidence[state.year].explanation);
     const point = scalePoint().domain(years).range([28, width - 28]);
     svg.append('text').attr('x', 8).attr('y', 30).attr('font-size', 23).attr('font-weight', 700).attr('fill', '#233e33')
-      .text(`${state.year} · ${state.mode === 'calendar' ? 'Calendar events' : 'Evidence labels'}`);
+      .text(selectedTitle);
     svg.append('line').attr('x1', point(2008)).attr('x2', point(2012)).attr('y1', 77).attr('y2', 77).attr('stroke', '#9ba99f').attr('stroke-width', 3);
     svg.selectAll('circle').data(years).join('circle').attr('cx', point).attr('cy', 77).attr('r', d => d === state.year ? 10 : 5)
       .attr('fill', d => d === state.year ? '#233e33' : '#637e6d');

@@ -1,226 +1,134 @@
 import * as THREE from 'three';
 import { group, mesh } from '../geometry.js';
-import {
-  rounded,
-  ellipsoid,
-  line3,
-  smooth2,
-  mappedShape,
-  patch,
-} from './surfaces.js';
-import {
-  front,
-  rear,
-  deckHeight,
-  cap,
-  frontZ,
-  rearZ,
-  capBoundary,
-} from './shape.js';
+import { rounded, line3 } from './surfaces.js';
 
-export function frontBumper(parent, p) {
-  const outline = [];
-  for (const { x, z } of capBoundary()) {
-    outline.push(new THREE.Vector2(x, deckHeight(x, z)));
-  }
-  for (let i = 0; i <= 120; i++) {
-    const x = 0.84 - (1.68 * i) / 120;
-    outline.push(new THREE.Vector2(x, 0.19 + 0.015 * (x / 0.84) ** 2));
-  }
-  const hole = (side) =>
-    smooth2(
-      [
-        [side * 0.37, 0.47],
-        [side * 0.7, 0.49],
-        [side * 0.795, 0.42],
-        [side * 0.75, 0.255],
-        [side * 0.4, 0.245],
-        [side * 0.345, 0.32],
-      ],
-      90
-    );
-  const left = hole(-1),
-    right = hole(1);
-  const centre = smooth2(
-    [
-      [-0.28, 0.39],
-      [0.28, 0.39],
-      [0.29, 0.235],
-      [-0.29, 0.235],
-    ],
-    64
-  );
-  mappedShape(
-    parent,
-    'front-bumper',
-    outline,
-    [left, right, centre],
-    (x, y) => [cap(x, y).x, y, frontZ(x, y)],
-    p.paint
-  );
-  for (const [i, opening] of [left, right, centre].entries()) {
-    mappedShape(
-      parent,
-      `front-intake-depth-${i}`,
-      opening,
-      [],
-      (x, y) => [cap(x, y).x, y, frontZ(x, y) - 0.05],
-      p.black
-    );
-    patch(
-      parent,
-      `front-intake-wall-${i}`,
-      (u, v) => {
-        const index = u * opening.length,
-          a = opening[Math.floor(index) % opening.length],
-          b = opening[(Math.floor(index) + 1) % opening.length],
-          t = index % 1;
-        const x = THREE.MathUtils.lerp(a.x, b.x, t),
-          y = THREE.MathUtils.lerp(a.y, b.y, t);
-        return [cap(x, y).x, y, frontZ(x, y) - v * 0.052];
-      },
-      opening.length,
-      3,
-      p.black
-    );
-  }
-  for (const side of [-1, 1]) {
-    for (let row = 0; row < 3; row++) {
-      const y = 0.285 + row * 0.056;
-      line3(
-        parent,
-        [
-          [cap(side * 0.39, y).x, y, frontZ(side * 0.39, y) - 0.005],
-          [cap(side * 0.58, y).x, y - 0.003, frontZ(side * 0.58, y) - 0.005],
-          [cap(side * 0.755, y).x, y + 0.004, frontZ(side * 0.755, y) - 0.005],
-        ],
-        0.006,
-        p.black
-      );
-    }
-    const strip = [];
-    for (let i = 0; i <= 25; i++) {
-      const x = side * (0.39 + (0.355 * i) / 25),
-        y = 0.475 + 0.018 * Math.sin((i * Math.PI) / 25);
-      strip.push([x, y, frontZ(x, y) + 0.013]);
-    }
-    line3(parent, strip, 0.025, p.chrome);
-    line3(
-      parent,
-      strip.map(([x, y, z]) => [x, y + 0.004, z + 0.009]),
-      0.019,
-      p.lens
-    );
-    for (let i = 0; i < 6; i++) {
-      const x = side * (0.415 + i * 0.058),
-        y = 0.483;
-      ellipsoid(parent, [0.014, 0.018, 0.008], p.chrome, [
-        x,
-        y,
-        frontZ(x, y) + 0.023,
-      ]);
-    }
-  }
-  for (let i = 0; i < 5; i++) {
-    const y = 0.25 + i * 0.024;
-    line3(
-      parent,
-      [
-        [-0.275, y, frontZ(-0.275, y) - 0.015],
-        [0, y, frontZ(0, y) - 0.015],
-        [0.275, y, frontZ(0.275, y) - 0.015],
-      ],
-      0.003,
-      p.black
-    );
-  }
-  const lip = [];
-  for (let i = 0; i <= 100; i++) {
-    const x = -0.83 + (1.66 * i) / 100,
-      y = 0.2 + 0.015 * (x / 0.84) ** 2;
-    lip.push([x, y, frontZ(x, y) + 0.012]);
-  }
-  line3(parent, lip, 0.014, p.paint);
-  plate(parent, p, [0, 0.472, 2.232], false);
+const ahead = [0, 0, -1],
+  behind = [0, 0, 1];
+
+// Registration plate standing off the bumper along the local surface normal.
+function mount(parent, name, hit, offset = 0) {
+  const root = group(name, parent, hit.point.clone().addScaledVector(hit.normal, offset).toArray());
+  root.lookAt(root.position.clone().add(new THREE.Vector3(hit.normal.x * 0.15, 0, hit.normal.z).normalize()));
+  return root;
 }
 
-export function rearBumper(parent, p) {
-  const outline = [];
-  for (const { x, z } of capBoundary(true)) {
-    outline.push(new THREE.Vector2(x, deckHeight(x, z)));
+// Front openings of the 987.2 bumper in front view [x, y], traced from two
+// calibrated photographs. Each outer intake is a D: a straight top edge carrying
+// the LED lamp, a rounded outboard side, and an inboard edge stepping in below
+// the lamp's pointed tip. The centre intake is a wide slot below the plate.
+const intake = [
+  [0.712, 0.437],
+  [0.6, 0.438],
+  [0.51, 0.428],
+  [0.462, 0.405],
+  [0.425, 0.36],
+  [0.385, 0.325],
+  [0.39, 0.28],
+  [0.425, 0.245],
+  [0.5, 0.228],
+  [0.6, 0.226],
+  [0.665, 0.23],
+  [0.718, 0.255],
+  [0.755, 0.305],
+  [0.766, 0.37],
+  [0.757, 0.425],
+];
+// Slightly proud of the intake's top edge, so no sliver of opening shows above it.
+const lamp = [
+  [0.712, 0.441],
+  [0.6, 0.442],
+  [0.51, 0.432],
+  [0.46, 0.408],
+  [0.421, 0.358],
+  [0.5, 0.366],
+  [0.6, 0.377],
+  [0.7, 0.381],
+  [0.752, 0.386],
+  [0.77, 0.405],
+  [0.761, 0.428],
+];
+const centre = [
+  [-0.25, 0.293],
+  [0, 0.298],
+  [0.25, 0.293],
+  [0.325, 0.247],
+  [0.285, 0.224],
+  [0.14, 0.217],
+  [0, 0.215],
+  [-0.14, 0.217],
+  [-0.285, 0.224],
+  [-0.325, 0.247],
+];
+const placed = (points, side = 1) => points.map(([x, y]) => [side * x, y, 0]);
+export const frontIntakeOutline = (side) => placed(intake, side);
+export const frontLampOutline = (side) => placed(lamp, side);
+export const centreIntakeOutline = () => placed(centre);
+
+// Horizontal span of a closed outline at height y, inset from its edges.
+function span(points, y, inset) {
+  const ring = new THREE.CatmullRomCurve3(points.map((point) => new THREE.Vector3(...point)), true, 'centripetal').getPoints(160);
+  const xs = [];
+  ring.forEach((a, i) => {
+    const b = ring[(i + 1) % ring.length];
+    if (a.y > y !== b.y > y) xs.push(a.x + ((y - a.y) / (b.y - a.y)) * (b.x - a.x));
+  });
+  return [Math.min(...xs) + inset, Math.max(...xs) - inset];
+}
+
+function slats(parent, p, surface, outline, heights) {
+  for (const y of heights) {
+    const [x0, x1] = span(outline, y, 0.012);
+    const points = [];
+    for (let i = 0; i <= 12; i++) points.push(surface.on([x0 + ((x1 - x0) * i) / 12, y, 3], ahead, -0.02));
+    line3(parent, points, 0.0055, p.black);
+    line3(parent, points.map(([x, py, z]) => [x, py + 0.005, z + 0.002]), 0.0012, p.silver);
   }
-  for (let i = 0; i <= 120; i++) {
-    const x = 0.86 - (1.72 * i) / 120;
-    outline.push(new THREE.Vector2(x, 0.21));
+}
+
+export function frontDetails(parent, p, surface) {
+  plate(parent, p, mount(parent, 'front-registration', surface.hit([0, 0.4, 3], ahead), 0.008));
+  const led = new THREE.MeshStandardMaterial({ color: '#f4f8ff', emissive: '#9aa6b8', roughness: 0.3 });
+  for (const side of [-1, 1]) {
+    slats(parent, p, surface, frontIntakeOutline(side), [0.343, 0.303, 0.263]);
+    // Daytime-running LED strip in the outer lamp section, then the indicator divider.
+    const strip = [];
+    for (let i = 0; i <= 12; i++) strip.push(surface.on([side * (0.54 + (0.2 * i) / 12), 0.408 - 0.004 * (i / 12), 3], ahead, -0.014));
+    line3(parent, strip, 0.0045, led);
+    line3(parent, [[0.52, 0.43], [0.52, 0.372]].map(([x, y]) => surface.on([side * x, y, 3], ahead, -0.006)), 0.0018, p.chrome);
   }
-  mappedShape(
-    parent,
-    'rear-bumper',
-    outline,
-    [],
-    (x, y) => [cap(x, y, true).x, y, rearZ(x, y)],
-    p.paint
-  );
-  rounded(parent, [0.64, 0.165, 0.025], p.black, [0, 0.446, -2.194], 0.045);
-  plate(parent, p, [0, 0.446, -2.217], true);
-  const diffuser = [];
-  for (let i = 0; i <= 80; i++) {
-    const x = -0.78 + (i * 1.56) / 80,
-      y = 0.23 + 0.025 * Math.cos(x * 3);
-    diffuser.push([x, y, rearZ(x, y) - 0.012]);
+  slats(parent, p, surface, centreIntakeOutline(), [0.27, 0.244]);
+  // Lip along the bottom of the bumper face, with its shadow line beneath.
+  const lip = [];
+  for (let i = 0; i <= 40; i++) {
+    const x = -0.7 + (1.4 * i) / 40;
+    lip.push(surface.on([x, 0.186 + 0.012 * (x / 0.7) ** 4, 3], ahead, 0.002));
   }
-  line3(parent, diffuser, 0.027, p.black);
-  for (const x of [-0.083, 0.083]) {
-    const pipe = group('exhaust-tip', parent, [x, 0.235, -2.215]);
-    mesh(
-      pipe,
-      new THREE.CylinderGeometry(0.071, 0.067, 0.13, 64, 1, true),
-      p.chrome,
-      [0, 0, 0],
-      [Math.PI / 2, 0, 0]
-    );
-    mesh(
-      pipe,
-      new THREE.CylinderGeometry(0.059, 0.059, 0.12, 64),
-      p.black,
-      [0, 0, 0.009],
-      [Math.PI / 2, 0, 0]
-    );
-    mesh(
-      pipe,
-      new THREE.TorusGeometry(0.065, 0.006, 8, 64),
-      p.chrome,
-      [0, 0, -0.067]
-    );
+  line3(parent, lip, 0.006, p.paint);
+  line3(parent, lip.map(([x, y, z]) => [x, y - 0.008, z - 0.004]), 0.0022, p.black);
+}
+
+export function rearDetails(parent, p, surface) {
+  plate(parent, p, mount(parent, 'rear-registration', surface.hit([0, 0.49, -3], behind), -0.022));
+  const centre = surface.hit([0, 0.29, -3], behind).point;
+  for (const x of [-0.058, 0.058]) {
+    const pipe = group('exhaust-tip', parent, [x, 0.288, centre.z + 0.005]);
+    mesh(pipe, new THREE.CylinderGeometry(0.047, 0.044, 0.14, 48, 1, true), p.chrome, [0, 0, 0.04], [Math.PI / 2, 0, 0]);
+    mesh(pipe, new THREE.CylinderGeometry(0.04, 0.04, 0.12, 48, 1, true), p.black, [0, 0, 0.05], [Math.PI / 2, 0, 0]);
+    mesh(pipe, new THREE.TorusGeometry(0.0435, 0.0045, 8, 48), p.chrome, [0, 0, -0.03]);
+    mesh(pipe, new THREE.CircleGeometry(0.04, 32), p.rubber, [0, 0, 0.05], [0, Math.PI, 0]);
   }
-  for (const x of [-0.69, -0.43, 0.43, 0.69]) {
-    const y = 0.5,
-      z = rearZ(x, y) - 0.006;
-    mesh(
-      parent,
-      new THREE.CircleGeometry(0.012, 32),
-      p.paint,
-      [x, y, z],
-      [0, Math.PI, 0]
-    );
-    mesh(
-      parent,
-      new THREE.TorusGeometry(0.012, 0.0013, 4, 32),
-      p.black,
-      [x, y, z - 0.001],
-      [0, Math.PI, 0]
-    );
+  // Parking sensors in the painted bumper.
+  for (const x of [-0.66, -0.4, 0.4, 0.66]) {
+    const hit = surface.hit([x, 0.39, -3], behind);
+    const sensor = group('parking-sensor', parent, hit.point.toArray());
+    sensor.lookAt(hit.point.clone().add(hit.normal));
+    mesh(sensor, new THREE.CircleGeometry(0.012, 24), p.paint, [0, 0, 0.0015]);
+    mesh(sensor, new THREE.TorusGeometry(0.012, 0.0014, 4, 24), p.black, [0, 0, 0.001]);
   }
 }
 
 // The photographed registration is modelled as geometry; no photograph/background is baked in.
-function plate(parent, p, position, rear) {
-  const root = group(
-    rear ? 'rear-registration' : 'front-registration',
-    parent,
-    position
-  );
-  if (rear) root.rotation.y = Math.PI;
+function plate(parent, p, root) {
   rounded(root, [0.538, 0.12, 0.009], p.black, [0, 0, 0], 0.009);
   rounded(root, [0.516, 0.108, 0.006], p.white, [0, 0, 0.006], 0.006);
   const blue = new THREE.MeshStandardMaterial({

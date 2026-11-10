@@ -74,7 +74,7 @@ The luggage figures describe two separate compartments, both available with the 
 
 Weight needs the same attention to definitions. The table gives 1,335 kg DIN and 1,410 kg EC for the manual. The EC footnote includes **68 kg for a driver and 7 kg for luggage**, accounting for the 75 kg difference. PDK is 30 kg heavier on either quoted unladen basis. These are catalogue comparisons; neither is a weighbridge measurement of a loaded, optioned car.[^technical]
 
-![Manual weight references: 1,335 kg DIN; add the EC allowance of 68 kg driver and 7 kg luggage to obtain 1,410 kg EC. The separately quoted permissible gross weight is 1,635 kg.](specification-weight-bases.svg)
+![Manual weight references: 1,335 kg DIN; add the EC allowance of 68 kg driver and 7 kg luggage to obtain 1,410 kg EC. The separately quoted permissible gross weight is 1,635 kg.](images/specification-weight-bases.svg)
 
 *Three reference points for the manual car. The EC allowance is a convention within its quoted unladen figure; the gross limit describes the permissible loaded vehicle. Diagram: author, using Porsche's technical table.*
 
@@ -93,7 +93,7 @@ The baseline is already a complete roadster. The brochure describes standard 17-
 | Seating and trim | [Comfort seats](../15-cabin-seating-and-climate/index.md) **P15**; sports seats **P77**; adaptive sports seats **P01**; buckets **P03**; heating **342** | Seat construction, adjustment and heating are separate questions |
 | Audio and communication | [PCM/navigation](../17-audio-navigation-and-communication/index.md) **P23**; Sound Package Plus **490**; BOSE **680**; audio interface **870** | Head unit, speakers and source connections form different layers |
 
-These are selected January 2010 identifiers; the brochure directs buyers to a separate price list for the full order specification. **PCCB was unavailable on the ordinary 2.9** in this catalogue, although offered on the S.[^options]
+These are selected January 2010 identifiers; the brochure directs buyers to a separate price list for the full order specification. Its list uses an open circle for an extra-cost option, a solid dot for standard equipment, **W** for a no-cost choice and a dash for unavailable equipment. **PCCB was unavailable on the ordinary 2.9** in this catalogue, although offered on the S.[^options]
 
 ![An optioned cabin with Macassar trim and a manual gear lever. Photo: Porsche AG, *The Boxster* (UK, 01/10), pp. 98–99. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).](images/boxster-personalised-cabin.jpg){alt="Porsche photograph looking down into a tan Boxster cabin with both doors open, showing personalised interior trim and a manual gear lever."}
 
@@ -101,7 +101,7 @@ These are selected January 2010 identifiers; the brochure directs buyers to a se
 
 Options are not independent boxes. **Sport Chrono Plus requires PCM**, adding its display and personalisation functions to the basic Sport Chrono concept. PDK unlocks Sport Chrono's Launch Control and special shift strategy; PCM and PDK are different prerequisites serving different functions. PASM remains a separate suspension choice. A dashboard stopwatch alone does not prove the presence of PDK, PCM or adaptive dampers.[^chrono]
 
-The mechanical differential's January 2010 entry requires **18- or 19-inch wheels**. That means the standard 17-inch baseline cannot simply have this option added without another equipment change. The wording differs from the launch catalogue; [the differential chapter](../10-differential-driveshafts-and-mounts/index.md#changes-in-other-2.9-model-years) compares the two editions.[^differential]
+The mechanical differential's January 2010 entry requires **18- or 19-inch wheels**. That means the standard 17-inch baseline cannot simply have this option added without another equipment change. The August 2008 launch catalogue planned availability from **May 2009 at the earliest, with manual transmission**. January 2010 omits that date and transmission qualifier; the omission alone does not establish PDK eligibility or the date of any change. [The differential chapter](../10-differential-driveshafts-and-mounts/index.md#changes-in-other-2.9-model-years) compares the two editions.[^differential]
 
 ::: {.book-diagram data-diagram="specification-option-links"}
 ![PDK plus Sport Chrono supplies Launch Control and the Sport Plus shift strategy. Sport Chrono Plus needs PCM; the locking differential needs 18- or 19-inch wheels. These are distinct option relationships.](diagrams/specification-option-links/poster.svg)
@@ -141,9 +141,9 @@ Use the [family introduction](../01-the-2010-boxster-2-9-in-the-987-2-family/ind
 
 [^baseline]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 20–21, 63, 74, 76 and 82, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
-[^options]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 106–118, [scan pp. 49–54](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=49). Selected codes and availability marks were checked against the original table, not text extraction alone.
+[^options]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 106–118, [scan pp. 49–55](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=49). Selected codes and availability marks were checked against the original table, not text extraction alone.
 
-[^differential]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 54 and 107; compare *The new Boxster*, UK edition 08/08, printed p. 107, [launch brochure](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf). The later catalogue omits the prelaunch manual-only qualifier; this is not an exhaustive build-date applicability list.
+[^differential]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 54 and 107 (PDF pages 25 and 49); compare *The new Boxster*, UK edition 08/08, printed p. 107 (PDF page 50), [launch brochure](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf). The later catalogue omits the prelaunch manual-only qualifier; this is not an exhaustive build-date applicability list.
 
 [^comfort]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 74–76, 111 and 117–118, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=35).
 
@@ -151,4 +151,4 @@ Use the [family introduction](../01-the-2010-boxster-2-9-in-the-987-2-family/ind
 
 [^years]: Porsche, *The new Boxster*, UK edition 08/08, printed pp. 126–127, [original brochure](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf); January 2010 table; Porsche Cars North America, [2012 technical specifications](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf).
 
-[^variants]: Porsche, January 2010 ordinary UK brochure, printed pp. 126–127; *The Boxster Spyder*, UK edition 01/10, printed pp. 10–13 and 42–43, [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf); Porsche Netherlands, [S Black Edition release, 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/). Dutch source used for engine/model identity, not UK package contents.
+[^variants]: Porsche, January 2010 ordinary UK brochure, printed pp. 126–127; *The Boxster Spyder*, UK edition 01/10, printed pp. 10–13 and 41–43 (PDF pages 4–5 and 19–20), [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf); Porsche Netherlands, [S Black Edition release, 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/). Dutch source used for engine/model identity, not UK package contents.

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-labelledby="timeline-dates-title timeline-dates-desc">
+  <title id="timeline-dates-title">Different dates describe different events</title>
+  <desc id="timeline-dates-desc">Announcement and market arrival concern a model range. Model year is a manufacturer's specification label, separate from the calendar dates. Build and first registration concern an individual car and may fall in different years. The two event sequences are separate: their positions do not place a particular car's build after the range's market arrival.</desc>
+  <rect width="600" height="800" fill="#f5f3eb"/>
+  <g font-family="sans-serif" fill="#233e33">
+    <text x="28" y="48" font-size="32" font-weight="700">Which date do you mean?</text>
+
+    <text x="28" y="100" font-size="26" font-weight="700" fill="#637e6d">The model range</text>
+    <path d="M50 140V237" stroke="#637e6d" stroke-width="4"/>
+    <circle cx="50" cy="140" r="9" fill="#233e33"/>
+    <circle cx="50" cy="237" r="9" fill="#233e33"/>
+    <text x="78" y="148" font-size="28" font-weight="600">Announcement</text>
+    <text x="78" y="182" font-size="26">Porsche makes the range public.</text>
+    <text x="78" y="245" font-size="28" font-weight="600">Market arrival</text>
+    <text x="78" y="279" font-size="26">Availability in a named market.</text>
+
+    <rect x="28" y="315" width="544" height="134" rx="3" fill="#e1e8df"/>
+    <text x="46" y="352" font-size="28" font-weight="600">Model year</text>
+    <text x="46" y="387" font-size="26">Manufacturer's specification label.</text>
+    <text x="46" y="422" font-size="26">May differ from the calendar year.</text>
+
+    <text x="28" y="499" font-size="26" font-weight="700" fill="#a86b42">One car's history</text>
+    <path d="M50 542V647" stroke="#a86b42" stroke-width="4"/>
+    <circle cx="50" cy="542" r="9" fill="#a86b42"/>
+    <circle cx="50" cy="647" r="9" fill="#a86b42"/>
+    <text x="78" y="550" font-size="28" font-weight="600">Build date</text>
+    <text x="78" y="584" font-size="26">This particular car is assembled.</text>
+    <text x="78" y="655" font-size="28" font-weight="600">First registration</text>
+    <text x="78" y="689" font-size="26">It first enters a registration system.</text>
+    <text x="28" y="745" font-size="24">Build and registration may fall</text>
+    <text x="28" y="775" font-size="24">in different calendar years.</text>
+  </g>
+</svg>

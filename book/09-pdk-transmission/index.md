@@ -4,6 +4,12 @@ The reference 2010 Boxster 2.9 has a six-speed manual as standard. Its optional 
 
 PDK's distinctive feature is preparation. While one ratio carries drive, another can be ready on the other input shaft. The shift then transfers the engine's connection between the two paths. Understanding that separation between **selecting a gear** and **closing a clutch** explains much more than the number of gears alone.
 
+Begin with its position behind the engine, then inspect the nested clutch packs and the components that control and cool them. The electronic controller belongs to the rear luggage-compartment area, separate from the transmission's hydraulic block.
+
+::: {.book-diagram data-diagram="pdk-explorer"}
+![Optional PDK behind the engine connects its flywheel, nested K1 and K2 packs, concentric shafts and sample gearing to the rear final drive. Separate hydraulic, electronic and cooling components complete the system.](diagrams/pdk-explorer/poster.svg)
+:::
+
 ![Seven-speed PDK, with clutch packs, gear train and final drive. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 43. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=19).](images/pdk-factory-cutaway.jpg){alt="Porsche factory cutaway of the seven-speed PDK, showing the gear train, clutch end and final-drive assembly in one housing."}
 
 ## Two clutches and two inputs
@@ -14,7 +20,7 @@ The two input shafts share a centreline. Shaft 1 runs inside hollow shaft 2, rat
 
 The clutch packs themselves are also nested radially. An easy identification trap is that the **outer clutch pack, K1, drives the inner input shaft**. The inner pack, K2, drives the hollow outer shaft. “Inner” therefore needs an identified component: it can describe either a clutch pack or an input shaft.
 
-![End view of concentric input shafts: inner shaft 1 serves odd gears and reverse; hollow shaft 2 serves even gears. Outer clutch K1 connects to inner shaft 1, while inner clutch K2 connects to hollow shaft 2.](pdk-concentric-inputs.svg)
+![End view of concentric input shafts: inner shaft 1 serves odd gears and reverse; hollow shaft 2 serves even gears. Outer clutch K1 connects to inner shaft 1, while inner clutch K2 connects to hollow shaft 2.](images/pdk-concentric-inputs.svg)
 
 *Original schematic of the shaft relationship. The clutch packs are identified in the labels, not drawn in this end view; dimensions and bearing details are omitted.*
 
@@ -52,7 +58,7 @@ The original PDK sports steering wheel has two push/pull switches. Either hand c
 
 ![The optional paddle wheel and PDK selector. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 46. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=21).](images/pdk-paddle-wheel.jpg){alt="Period Porsche cabin photograph with the optional three-spoke paddle steering wheel and PDK selector."}
 
-A steering-wheel request can temporarily override D. In M, the controller still checks whether the requested gear suits vehicle and engine speed; it refuses changes outside the permitted range. The period owner's manual also describes low-speed downshifts and kickdown behaviour. Manual mode gives gear choice within this control system, while clutch actuation remains automatic.[^operation]
+A steering-wheel request can temporarily override D. In M, the controller still checks whether the requested gear suits vehicle and engine speed; it refuses changes outside the permitted range. Automatic downshifts prevent excessively low engine speed, and kickdown remains active. Manual mode gives gear choice within this control system, while clutch actuation remains automatic.[^operation]
 
 ## Hydraulics, feedback and heat
 
@@ -60,7 +66,7 @@ The **mechatronic control system** combines electronic decisions with hydraulic 
 
 Feedback closes the loop. Input-speed sensing tells the system how the two clutch paths are turning; selector-position sensing establishes where the gear-selection mechanism has moved. Pressure and temperature information help it manage clutch operation and protection. The electronic PDK controller is a separate unit in the rear-right luggage-compartment area, connected to other controllers through CAN. It receives driver demand and vehicle-state information, including accelerator and brake signals. “Mechatronic” describes the cooperation of these parts, rather than requiring the electronic controller to sit inside the hydraulic block.[^control]
 
-![PDK control and oil functions: an electronic controller commands hydraulic clutch and selector operation; clutch heat reaches an oil-to-coolant exchanger, while separate gear oil lubricates the gears and final drive and loses heat through the housing.](pdk-oil-control.svg)
+![PDK control and oil functions: an electronic controller commands hydraulic clutch and selector operation; clutch heat reaches an oil-to-coolant exchanger, while separate gear oil lubricates the gears and final drive and loses heat through the housing.](images/pdk-oil-control.svg)
 
 *Original functional diagram. Arrows distinguish commands, feedback and heat movement; they do not reproduce hose routing or a complete hydraulic circuit.*
 
@@ -84,7 +90,7 @@ The optional paddle wheel is **840**. PASM and the mechanical differential are s
 
 ## Changes in other 2.9 model years
 
-PDK replaced Tiptronic S at the 2009 facelift. Paddle-wheel availability is documented by January 2010, and 2012 technical data retain the forward ratios. Exact UK paddle-wheel introduction, annual software revisions and detailed component changes remain unverified.[^years]
+PDK replaced Tiptronic S at the 2009 facelift. Paddle-wheel availability is documented by January 2010, and North American 2012 technical data retain the forward ratios. Exact UK paddle-wheel introduction, annual software revisions and detailed component changes remain unverified.[^years]
 
 ## The S, Spyder and Black Edition
 
@@ -112,7 +118,7 @@ The central relationship remains straightforward: the selected gear establishes 
 
 [^overlap]: Porsche AG, *The Boxster*, UK 01/10, printed pp. 44–45, [overlap-shift explanation](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=20); *2009 Technik Introduction*, printed pp. 72–74 and 91–92, [full training text](https://www.scribd.com/document/972719474/Boxster-2009). The four interactive stages and next-gear examples are original teaching choices, without measured timing, pressure or torque shares.
 
-[^operation]: Porsche AG, *Boxster, Boxster S Owner's Manual*, WKD 987 021 10, 5/09, printed pp. 174–180, [original North American manual](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=176). Used for control operation, not UK equipment availability. Parking-lock mechanism: *2009 Technik Introduction*, printed p. 88, [full training text](https://www.scribd.com/document/972719474/Boxster-2009).
+[^operation]: Porsche AG, *Boxster, Boxster S Owner's Manual*, WKD 987 021 10, 5/09, printed pp. 174–180, PDF pp. 176–182, [original North American manual](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=176). Used for control operation, not UK equipment availability. Automatic low-engine-speed downshifts in M: *2009 Technik Introduction*, printed pp. 72–74; parking-lock mechanism: printed p. 88, [full training text](https://www.scribd.com/document/972719474/Boxster-2009).
 
 [^wheel]: Porsche AG, *The Boxster*, UK 01/10, printed pp. 46–47 and 113, [control descriptions](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=21). Paddle wheel code 840 at printed p. 113.
 
@@ -126,12 +132,12 @@ The central relationship remains straightforward: the selected gear establishes 
 
 [^ratios]: Porsche, *2009 Technik Introduction*, printed p. 65, [training text](https://www.scribd.com/document/972719474/Boxster-2009); Porsche Cars North America, [2012 Boxster technical specifications, p. 1](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf#page=1). Calculation uses rounded 0.88 and 0.62 ratios; it requires no disputed final-drive figure.
 
-[^chrono]: Porsche AG, *The Boxster*, UK 01/10, printed pp. 56–57 and 107, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=25); *Owner's Manual*, printed p. 177, [SPORT PLUS](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=179).
+[^chrono]: Porsche AG, *The Boxster*, UK 01/10, printed pp. 56–57 / PDF p. 26 and printed p. 107 / PDF p. 49, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=26); *Owner's Manual*, printed p. 177, [SPORT PLUS](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=179).
 
 [^performance]: Porsche AG, *The Boxster*, UK 01/10, printed pp. 126–127 and footnote 2, [technical table](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=59). Launch Control context and component-life warning: *Owner's Manual*, printed p. 177, [original manual](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=179).
 
 [^years]: Porsche Netherlands, [facelift announcement, 19 November 2008](https://nieuws.porsche.nl/de-nieuwe-porsche-boxster-en-cayman-krachtiger-en-zuiniger/); Porsche AG, *The Boxster*, UK 01/10, printed p. 46; Porsche Cars North America, [2012 technical specifications, p. 1](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf#page=1).
 
-[^spyder]: Porsche AG, *The Boxster Spyder*, UK 01/10, printed pp. 30–31 and 42–43, including performance footnote, [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=21).
+[^spyder]: Porsche AG, *The Boxster Spyder*, UK 01/10, printed pp. 30–31 (PDF p. 14) for PDK and Chrono; printed p. 41 (PDF p. 19) for acceleration and its SPORT PLUS qualification, [original brochure technical table](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=19).
 
 [^black]: Porsche AG, *Boxster S Black Edition Price List*, UK edition 03/2011, printed p. 13 and pp. 16–17, [original scanned price list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0). Standard SportDesign wheel with PDK-dependent paddles; PDK 250 and Chrono Plus 640 shown as options.

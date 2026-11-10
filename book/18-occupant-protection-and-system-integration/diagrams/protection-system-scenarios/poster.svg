@@ -1,9 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" role="img" aria-labelledby="title desc" font-family="sans-serif">
-<title id="title">Accelerating in the standard manual Boxster</title><desc id="desc">Pedal and engine inputs inform DME. It requests engine torque through throttle, injection and ignition. The manual driver controls clutch and gear. The cell, screen frame and rear bars are always present. The crash system assesses its own inputs; this map predicts no deployment or outcome.</desc>
-<rect width="600" height="520" fill="#fff"/>
-<text x="300" y="27" text-anchor="middle" fill="#173f32" font-weight="bold" font-size="25">Accelerating · manual</text>
-<g stroke="#a8baad"><rect x="12" y="46" width="576" height="108" rx="10" fill="#e8eef4"/><rect x="12" y="182" width="576" height="108" rx="10" fill="#e3ede4"/><rect x="12" y="318" width="576" height="108" rx="10" fill="#f1e8dc"/><rect x="12" y="458" width="576" height="55" rx="8" fill="#f5f7f2"/></g>
-<g font-size="18" font-weight="bold" fill="#173f32"><text x="27" y="70">OBSERVE</text><text x="27" y="206">DECIDE / REQUEST</text><text x="27" y="342">PHYSICAL ACTION</text><text x="27" y="479">Always present:</text></g>
-<g font-size="23" fill="#173f32"><text x="27" y="104">Pedal + engine state</text><text x="27" y="133">Driver asks for torque</text><text x="27" y="240">DME</text><text x="27" y="269">Engine torque request</text><text x="27" y="376">Air, fuel and ignition</text><text x="27" y="405">Driver clutch + gear</text><text x="27" y="502">Cell, screen frame, bars</text></g>
-<path d="M300 159v16m-7-7 7 7 7-7 M300 295v16m-7-7 7 7 7-7" stroke="#6a8b78" stroke-width="3" fill="none"/>
+<?xml version="1.0" ?>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="'Source Sans 3', sans-serif" role="img" aria-label="Inputs, decisions and physical actions for the chosen situation, with permanent passive structure shown separately" viewBox="0 0 342 721" width="342" height="721">
+  <title>Accelerating · standard manual</title>
+  <desc>Pedal position expresses the driver’s demand; DME combines it with engine inputs and operating limits to control engine torque. DME controls the engine actuators; the transmission carries the resulting torque. Permanent passive structure: passenger cell, reinforced windscreen frame and fixed rear rollover bars.</desc>
+  <text x="171" y="26" font-size="23" font-weight="bold" text-anchor="middle" fill="#173f32">Accelerating</text>
+  <text x="171" y="53" font-size="18" font-weight="normal" text-anchor="middle" fill="#173f32">Standard six-speed manual</text>
+  <rect x="8" y="72" width="326" height="101" rx="10" fill="#e8eef4" stroke="#a8baad"/>
+  <text x="22" y="97" font-size="16" font-weight="bold" text-anchor="start" fill="#173f32">1  INPUTS / OBSERVATION</text>
+  <text x="22" y="130" font-size="20" font-weight="normal" text-anchor="start" fill="#173f32">Pedal-position signal</text>
+  <text x="22" y="158" font-size="20" font-weight="normal" text-anchor="start" fill="#173f32">Engine speed + load inputs</text>
+  <path d="M171 179v19m-7-7 7 7 7-7" stroke="#6a8b78" stroke-width="2.5" fill="none"/>
+  <rect x="8" y="207" width="326" height="101" rx="10" fill="#e3ede4" stroke="#a8baad"/>
+  <text x="22" y="232" font-size="16" font-weight="bold" text-anchor="start" fill="#173f32">2  DECIDE / REQUEST</text>
+  <text x="22" y="265" font-size="20" font-weight="normal" text-anchor="start" fill="#173f32">DME engine controller</text>
+  <text x="22" y="293" font-size="20" font-weight="normal" text-anchor="start" fill="#173f32">Sets torque within limits</text>
+  <path d="M171 314v19m-7-7 7 7 7-7" stroke="#6a8b78" stroke-width="2.5" fill="none"/>
+  <rect x="8" y="342" width="326" height="101" rx="10" fill="#f1e8dc" stroke="#a8baad"/>
+  <text x="22" y="367" font-size="16" font-weight="bold" text-anchor="start" fill="#173f32">3  PHYSICAL ACTION</text>
+  <text x="22" y="400" font-size="20" font-weight="normal" text-anchor="start" fill="#173f32">Throttle, injectors, ignition</text>
+  <text x="22" y="428" font-size="20" font-weight="normal" text-anchor="start" fill="#173f32">change combustion torque</text>
+  <text x="22" y="484" font-size="16" font-weight="bold" text-anchor="start" fill="#173f32">TRANSMISSION · TORQUE ROUTE</text>
+  <text x="22" y="517" font-size="20" font-weight="normal" text-anchor="start" fill="#173f32">Driver controls clutch + gear</text>
+  <text x="22" y="545" font-size="20" font-weight="normal" text-anchor="start" fill="#173f32">Drive passes to the rear wheels</text>
+  <rect x="8" y="584" width="326" height="129" rx="8" fill="#f5f7f2" stroke="#b4c1b8"/>
+  <text x="22" y="609" font-size="16" font-weight="bold" text-anchor="start" fill="#173f32">ALWAYS PRESENT · STRUCTURE</text>
+  <text x="22" y="642" font-size="20" font-weight="normal" text-anchor="start" fill="#173f32">Passenger cell</text>
+  <text x="22" y="670" font-size="20" font-weight="normal" text-anchor="start" fill="#173f32">Reinforced windscreen frame</text>
+  <text x="22" y="698" font-size="20" font-weight="normal" text-anchor="start" fill="#173f32">Fixed rear rollover bars</text>
 </svg>

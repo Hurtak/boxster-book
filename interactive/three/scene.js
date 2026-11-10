@@ -71,7 +71,7 @@ export async function loadModel(source, signal, base = location.href) {
   return gltf.scene;
 }
 
-export function scene3D(host, { signal, onRender = () => {} }) {
+export function scene3D(host, { signal, onRender = () => {}, onResize = () => {} }) {
   host.classList.add('diagram-stage-3d');
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('#f2f4f7');
@@ -136,6 +136,7 @@ export function scene3D(host, { signal, onRender = () => {} }) {
     camera.fov = THREE.MathUtils.radToDeg(2 * Math.atan(Math.tan(THREE.MathUtils.degToRad(18)) * Math.max(1, 1.35 / camera.aspect)));
     camera.updateProjectionMatrix();
     renderer.setSize(width, height, false);
+    onResize({ camera, renderer });
     render();
   });
   resize.observe(host);
@@ -153,7 +154,7 @@ export function scene3D(host, { signal, onRender = () => {} }) {
     renderer.domElement.remove();
   };
   signal.addEventListener('abort', dispose, { once: true });
-  return { scene, camera, controls, render, dispose };
+  return { scene, camera, controls, renderer, render, dispose };
 }
 
 export function opacity(root, amount) {

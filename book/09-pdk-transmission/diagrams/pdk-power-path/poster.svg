@@ -1,10 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" role="img" aria-labelledby="title desc" font-family="sans-serif">
-  <title id="title">First gear driving, second gear preselected</title>
-  <desc id="desc">Engine drive passes through closed clutch K1 and first gear to the final drive. Second gear is selected on the other input shaft, but its clutch K2 is open.</desc>
-  <rect width="600" height="460" fill="#fff"/>
-  <g fill="none" stroke-width="7"><path d="M300 58V86H150V360H300V376" stroke="#176b53"/><path d="M300 58V86H450V360H300V376" stroke="#84938b" stroke-width="3" stroke-dasharray="7 6"/></g>
-  <g fill="#edf3ee" stroke="#526c5d" stroke-width="2"><rect x="230" y="12" width="140" height="46" rx="5"/><rect x="215" y="376" width="170" height="44" rx="5"/></g>
-  <g fill="#fff" stroke-width="2"><rect x="79" y="115" width="142" height="76" rx="5" stroke="#176b53"/><rect x="379" y="115" width="142" height="76" rx="5" stroke="#84938b"/><rect x="79" y="245" width="142" height="74" rx="5" stroke="#176b53"/><rect x="379" y="245" width="142" height="74" rx="5" stroke="#84938b"/></g>
-  <g text-anchor="middle" fill="#243c32" font-size="23"><text x="300" y="42">Engine</text><text x="150" y="143">K1 · odd</text><text x="450" y="143">K2 · even</text><text x="150" y="274">Gear 1</text><text x="450" y="274">Gear 2</text><text x="300" y="405">Final drive</text></g>
-  <g text-anchor="middle" font-size="21"><g fill="#176b53"><text x="150" y="174">closed</text><text x="150" y="304">driving</text></g><g fill="#6b7d73"><text x="450" y="174">open</text><text x="450" y="304">waiting</text></g><g fill="#243c32"><text x="150" y="222" stroke="#fff" stroke-width="5" paint-order="stroke">Inner shaft</text><text x="450" y="222" stroke="#fff" stroke-width="5" paint-order="stroke">Hollow shaft</text><text x="300" y="451">Then differential → wheels</text></g></g>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" role="img" viewBox="0 0 440 700" aria-labelledby="title desc">
+  <title id="title">PDK 1 to 2: Ready</title>
+  <desc id="desc">First gear carries engine drive through closed K1; second is selected behind open K2. Its shaft can be turned by the common output. The input shafts are unfolded here but are physically concentric. Green arrows show engine drive; grey arrows show the open path turned from the output. Clutch symbols are functional, not actual disc geometry. Both gear paths connect to the final drive, differential and rear wheels; only K1 carries engine drive in this state.</desc>
+  <rect width="440" height="700" fill="#fff"/>
+  <rect x="152" y="12" width="136" height="42" rx="5" fill="#edf3ee" stroke="#526c5d" stroke-width="2"/>
+  <text x="220" y="40" text-anchor="middle" font-size="23" fill="#243c32">Engine</text>
+  <line x1="220" y1="54" x2="220" y2="78" stroke="#243c32" stroke-width="4"/>
+  <line x1="110" y1="78" x2="330" y2="78" stroke="#243c32" stroke-width="4"/>
+  <line x1="110" y1="78" x2="110" y2="150" stroke="#243c32" stroke-width="4"/>
+  <text x="110" y="114" text-anchor="middle" font-size="21" fill="#243c32" stroke="#fff" stroke-width="7" paint-order="stroke">Clutch K1</text>
+  <line x1="80" y1="150" x2="140" y2="150" stroke="#243c32" stroke-width="6"/>
+  <line x1="80" y1="156" x2="140" y2="156" stroke="#176b53" stroke-width="6"/>
+  <line x1="110" y1="156" x2="110" y2="314" stroke="#176b53" stroke-width="6"/>
+  <text x="110" y="212" text-anchor="middle" font-size="20" fill="#176b53" stroke="#fff" stroke-width="7" paint-order="stroke">closed</text>
+  <text x="110" y="255" text-anchor="middle" font-size="21" fill="#243c32" stroke="#fff" stroke-width="7" paint-order="stroke">Shaft 1</text>
+  <text x="110" y="282" text-anchor="middle" font-size="18" fill="#243c32" stroke="#fff" stroke-width="7" paint-order="stroke">inner · odd + R</text>
+  <rect x="32" y="314" width="156" height="70" rx="5" fill="#fff" stroke="#176b53" stroke-width="2"/>
+  <text x="110" y="342" text-anchor="middle" font-size="23" fill="#243c32">Gear 1</text>
+  <text x="110" y="369" text-anchor="middle" font-size="18" fill="#176b53">engine drive</text>
+  <line x1="110" y1="384" x2="110" y2="432" stroke="#176b53" stroke-width="6"/>
+  <path d="M103,410 L110,419 L117,410" fill="none" stroke="#176b53" stroke-width="3"/>
+  <line x1="330" y1="78" x2="330" y2="150" stroke="#243c32" stroke-width="4"/>
+  <text x="330" y="114" text-anchor="middle" font-size="21" fill="#243c32" stroke="#fff" stroke-width="7" paint-order="stroke">Clutch K2</text>
+  <line x1="300" y1="150" x2="360" y2="150" stroke="#243c32" stroke-width="6"/>
+  <line x1="300" y1="178" x2="360" y2="178" stroke="#697c71" stroke-width="6"/>
+  <line x1="330" y1="178" x2="330" y2="314" stroke="#697c71" stroke-width="3"/>
+  <text x="330" y="212" text-anchor="middle" font-size="20" fill="#697c71" stroke="#fff" stroke-width="7" paint-order="stroke">open</text>
+  <text x="330" y="255" text-anchor="middle" font-size="21" fill="#243c32" stroke="#fff" stroke-width="7" paint-order="stroke">Shaft 2</text>
+  <text x="330" y="282" text-anchor="middle" font-size="18" fill="#243c32" stroke="#fff" stroke-width="7" paint-order="stroke">hollow · even</text>
+  <rect x="252" y="314" width="156" height="70" rx="5" fill="#fff" stroke="#697c71" stroke-width="2"/>
+  <text x="330" y="342" text-anchor="middle" font-size="23" fill="#243c32">Gear 2</text>
+  <text x="330" y="369" text-anchor="middle" font-size="18" fill="#697c71">output-driven</text>
+  <line x1="330" y1="384" x2="330" y2="432" stroke="#697c71" stroke-width="3"/>
+  <path d="M323,407 L330,398 L337,407" fill="none" stroke="#697c71" stroke-width="3"/>
+  <line x1="110" y1="432" x2="330" y2="432" stroke="#243c32" stroke-width="5"/>
+  <line x1="220" y1="432" x2="220" y2="487" stroke="#243c32" stroke-width="5"/>
+  <text x="220" y="465" text-anchor="middle" font-size="21" fill="#243c32" stroke="#fff" stroke-width="7" paint-order="stroke">Common output</text>
+  <rect x="114" y="487" width="212" height="68" rx="5" fill="#edf3ee" stroke="#526c5d" stroke-width="2"/>
+  <text x="220" y="513" text-anchor="middle" font-size="22" fill="#243c32">Final drive</text>
+  <text x="220" y="544" text-anchor="middle" font-size="20" fill="#243c32">then differential</text>
+  <line x1="220" y1="555" x2="220" y2="571" stroke="#243c32" stroke-width="4"/>
+  <path d="M213,562 L220,571 L227,562" fill="none" stroke="#243c32" stroke-width="3"/>
+  <text x="220" y="604" text-anchor="middle" font-size="21" fill="#243c32">Rear wheels</text>
+  <text x="220" y="650" text-anchor="middle" font-size="19" fill="#526159">Grey arrow: output turns shaft 2.</text>
+  <text x="220" y="678" text-anchor="middle" font-size="19" fill="#526159">Paths unfolded; shafts are concentric.</text>
 </svg>

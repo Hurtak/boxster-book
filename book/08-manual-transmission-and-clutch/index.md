@@ -4,6 +4,12 @@ The manual drivetrain gives the driver two separate controls. The clutch pedal c
 
 The engine sits ahead of the gearbox in the rear power unit. Turning force passes from the crankshaft through the flywheel and clutch to the gearbox input shaft, through the selected gear pair and then through the final drive to the differential and rear driveshafts. The gearbox and final drive share the transaxle assembly, but perform different tasks. This chapter follows selection and interruption of the drive; [Differential, driveshafts and mounts](../10-differential-driveshafts-and-mounts/index.md) follows its distribution to the rear wheels.
 
+Start with their positions in the car, then separate the clutch stack and inspect the links between the cabin lever, release mechanism, gearbox and rear wheels.
+
+::: {.book-diagram data-diagram="manual-explorer"}
+![The manual transaxle sits behind the engine. The flywheel and dry clutch connect its longitudinal input, cables connect the cabin lever to selection, and the final drive connects sideways to the rear half-shafts.](diagrams/manual-explorer/poster.svg)
+:::
+
 ## The flywheel and clutch make a controllable connection
 
 An engine can run while the car is stationary because the clutch can separate its rotating crankshaft from the transmission. The reference manual uses a **single-plate dry clutch and a dual-mass flywheel**. Porsche's technical introduction gives a 240 mm pressure-plate diameter.[^clutch]
@@ -12,7 +18,7 @@ The flywheel is attached to the crankshaft. Its rotating mass stores energy betw
 
 The clutch's driven plate has friction linings on its two faces and a central hub splined to the gearbox input shaft. A pressure plate squeezes those linings between itself and the flywheel's friction face. With sufficient clamping force and no slip, the driven plate turns at the flywheel's speed and carries torque into the input shaft. The spring supplies the clamping force when the pedal is released; the driver does not have to press a pedal to maintain drive.[^clutch-principle]
 
-![Two clutch sections compare the pedal-up state, with the friction plate clamped, against the pedal-down state, with pressure relieved. A separate path shows pedal force reaching the release mechanism through the master cylinder, fluid and slave cylinder.](clutch-actuation.svg)
+![Two clutch sections compare the pedal-up state, with the friction plate clamped, against the pedal-down state, with pressure relieved. A separate path shows pedal force reaching the release mechanism through the master cylinder, fluid and slave cylinder.](images/clutch-actuation.svg)
 
 Depressing the pedal operates the release mechanism. The release bearing acts on the diaphragm spring, allowing the pressure plate to lift away enough to relieve the grip on the driven plate. The flywheel can then continue turning while the input shaft slows or turns at another speed. The bearing allows an axial release force to act on a rotating clutch assembly.
 
@@ -40,7 +46,7 @@ In a constant-mesh gearbox, the principal forward gear pairs remain meshed. Some
 
 **Neutral** leaves no forward or reverse ratio engaged between the input and final-drive path. With the clutch up, parts on the input side can still rotate. **Clutch down with a gear selected** is a different condition: the gear relationship exists inside the gearbox, but the clutch has interrupted its connection to the engine. These two ways of interrupting drive explain why pedal position and lever position must be considered separately.
 
-![A simplified two-ratio constant-mesh gearbox shows both gear pairs meshed, with one free-running wheel locked to the output shaft by a sliding sleeve. A three-stage strip explains cone friction, matching speeds and tooth engagement.](constant-mesh-and-synchroniser.svg)
+![A simplified two-ratio constant-mesh gearbox shows both gear pairs meshed, with one free-running wheel locked to the output shaft by a sliding sleeve. A three-stage strip explains cone friction, matching speeds and tooth engagement.](images/constant-mesh-and-synchroniser.svg)
 
 A **synchroniser** helps make this engagement quiet and manageable. As the selector starts to move a sleeve, a friction cone brings the selected wheel and the shaft-linked hub towards the same speed. A blocking action delays tooth engagement while their speeds differ. Once they match, the sleeve can engage the wheel's dog teeth and establish the positive torque connection. Friction first changes the speed; teeth then carry the sustained drive.[^synchroniser]
 
@@ -98,7 +104,7 @@ The Spyder and Boxster S Black Edition retain a standard six-speed manual and op
 
 Use the installed G87 transmission identification to distinguish the gearbox from later changes to the lever or knob.
 
-Age can affect several different links in the chain. Friction-lining wear, contamination or loss of clamp load can allow slip. Release-travel problems can cause drag. Wear or damage in cables and their joints can affect selection before the fork or synchroniser is reached. A dual-mass flywheel can deteriorate in its damping mechanism while the driven plate still has usable lining. Describing the symptom precisely—slip under load, incomplete release, lost lever movement, or resistance in one selection—helps distinguish those possibilities. Wear depends on condition and use as well as mileage.
+Age can affect several different links in the chain. Friction-lining wear, contamination or loss of clamp load can allow slip. Release-travel problems can cause drag. Wear or damage in cables and their joints can affect selection before the fork or synchroniser is reached. A dual-mass flywheel can deteriorate in its damping mechanism while the driven plate still has usable lining. Describing the symptom precisely—slip under load, incomplete release, lost lever movement, or resistance in one selection—helps distinguish those possibilities. Wear depends on condition and use as well as mileage.[^ageing]
 
 [^manual-id]: Porsche Cars North America, *2009 Technik Introduction — All Boxster/Cayman Models*, PNA 987 021 09, edition 2/09, printed Transmission pp. **103–104**, [publicly reproduced primary document](https://www.scribd.com/document/972719474/Boxster-2009); also [ManualsLib viewer p. 110](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=110). The introduction contains change descriptions, not a complete manual ratio table.
 
@@ -108,15 +114,15 @@ Age can affect several different links in the chain. Friction-lining wear, conta
 
 [^clutch-principle]: ZF/SACHS, [*Clutches for Passenger Cars and Light Commercial Vehicles*](https://aftermarket.zf.com/en/aftermarket-portal/our-portfolio/passenger-cars/products/clutches/), diaphragm-spring clutch and actuation explanations. Generic principles; Boxster component fitment comes from Porsche.
 
-[^release]: Porsche, *PET, Boxster 2009–2012, type 987*, catalogue update **19 July 2018**, illustrations **301-000, 301-005 and 702-008**, [PDF pp. 110–112 and 232–233](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=110). Later replacement-parts evidence for separate lever, bearing, master and slave; not proof of one original part number for every build.
+[^release]: Porsche, *PET, Boxster 2009–2012, type 987*, catalogue update **19 July 2018**, illustrations **301-000, 301-005 and 702-008**, [PDF pp. 109–112 and 231–232](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=110). Later replacement-parts evidence for separate lever, bearing, master and slave; not proof of one original part number for every build.
 
-[^hydraulics]: Porsche workshop information, **WM 300107, Bleeding the clutch system**, reproduced under [2009 Boxster 2.9](https://charm.li/Porsche/2009/Boxster%20%28987%29%20F6-2.9L/Repair%20and%20Diagnosis/Transmission%20and%20Drivetrain/Clutch/Clutch%20Hydraulic%20System/Service%20and%20Repair/). Used to establish reservoir supply and slave-cylinder circuit, without reproducing the servicing sequence.
+[^hydraulics]: Porsche workshop information, **WM 300107, Bleeding the clutch system**, reproduced under [2009 Boxster 2.9](https://charm.li/Porsche/2009/Boxster%20%28987%29%20F6-2.9L/Repair%20and%20Diagnosis/Transmission%20and%20Drivetrain/Clutch/Service%20and%20Repair/Procedures/). Used to establish reservoir supply and slave-cylinder circuit, without reproducing the servicing sequence.
 
 [^handbook]: Porsche, *Boxster, Boxster S Owner's Manual*, WKD 987 021 10, 5/09, printed **pp. 60 and 172–173**, [PDF pp. 62 and 174–175](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=174). North American handbook used for mechanical operation, not UK option availability.
 
-[^lever]: Porsche, *The Boxster*, UK edition **01/10**, printed **p. 47**, [PDF p. 21](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=21): manual, dual-mass flywheel and cable control.
+[^lever]: Porsche, *The Boxster*, UK edition **01/10**, printed **p. 47**, [PDF p. 21](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=21): manual, dual-mass flywheel and cable control. Porsche workshop information, *Removing and installing engine*, [2009 Boxster 2.9, Part 1, step 34.1](https://charm.li/Porsche/2009/Boxster%20%28987%29%20F6-2.9L/Repair%20and%20Diagnosis/Engine%2C%20Cooling%20and%20Exhaust/Engine/Service%20and%20Repair/Removal%20and%20Replacement/100119%20Removing%20and%20installing%20engine/Part%201/), separately identifies the shift and selector cables for the six-speed manual.
 
-[^synchroniser]: ZF, [*From Intermediate Throttle to Shifting Fun*, 25 July 2024](https://www.zf.com/mobile/en/company/strategy/heritage_zf/stories/all_synchronous_transmission.html), general constant-mesh and synchroniser principles. The drawing does not assign this historical ZF gearbox or a particular cone count to G87/10.
+[^synchroniser]: ZF, [*From Intermediate Throttle to Shifting Fun*, 25 July 2024](https://www.zf.com/mobile/en/company/strategy/heritage_zf/stories/all_synchronous_transmission.html), general constant-mesh principles; Schaeffler, [*Selector Hub Assemblies*, TPI 125, printed **pp. 6–10** / PDF **pp. 8–12**](https://www.schaeffler.com/remotemedien/media/_shared_media/08_media_library/01_publications/schaeffler_2/tpi/downloads_8/tpi_125_de_en.pdf#page=8), hub/sleeve/fork, blocking and cone-then-tooth sequence. These general mechanisms do not identify G87/10’s supplier or cone count.
 
 [^ratios]: Porsche Cars North America, [*2010 Boxster Specifications*, **p. 2**, basic Boxster manual column](https://newsroom.porsche.com/dam/jcr:e5abc517-c680-47c0-974f-b84aefde568f/2010-Boxster-Specifications.pdf#page=2). Source prints ratios to three decimals; author calculations retain that precision. The sheet's S sixth entry reads **0.081**, an evident conflict with later Porsche data; it is not copied into this chapter or the calculator.
 
@@ -126,4 +132,6 @@ Age can affect several different links in the chain. Friction-lining wear, conta
 
 [^later]: Porsche, *The Boxster*, UK 01/10, printed **pp. 126–127**; Porsche Cars North America, [*2012 Boxster Technical Specifications*, **p. 1**](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf#page=1).
 
-[^special]: Porsche, *The Boxster Spyder*, UK **01/10**, printed **pp. 26–27 and 42–43**, [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf); Porsche Cars North America, [*2012 Boxster Technical Specifications*, **p. 1**, Black Edition and Spyder columns](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf#page=1). Mechanical transmission comparison only; no US equipment package is assigned to UK cars.
+[^special]: Porsche, *The Boxster Spyder*, UK **01/10**, printed **pp. 26–27 and 41** ([technical table, PDF p. 19](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=19)); Porsche Cars Great Britain, *Boxster S Black Edition Price List*, **03/2011**, printed **p. 8** (standard six-speed/dual-mass flywheel) and **pp. 16–17** (optional seven-speed PDK), [original scanned UK price list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0), PDF **pp. 5 and 9**. Locally archived original inspected; the live Dropbox viewer was unavailable during this audit. No identical clutch-assembly or ratio claim is inferred.
+
+[^ageing]: ZF/SACHS, [*Clutch Slipping*](https://aftermarket.zf.com/en/aftermarket-portal/knowledge-hub/clutch-slipping/) and [*Clutch Doesn’t Disengage*](https://aftermarket.zf.com/en/aftermarket-portal/knowledge-hub/clutch-does-not-disengage/), supplier guidance on wear, contamination, clamp load and release faults. These are possible causes, not a diagnosis of a particular car.

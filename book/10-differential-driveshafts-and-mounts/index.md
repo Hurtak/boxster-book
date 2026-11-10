@@ -4,6 +4,12 @@ The gearbox supplies one rotating output, but the Boxster has two driven rear wh
 
 These relationships apply to the reference 2010 2.9 with its standard six-speed manual, and to the optional seven-speed PDK. Their internal transmission arrangements differ; both must ultimately drive two independently suspended rear wheels.[^drive-layout]
 
+Start with the rear power unit in the complete car, then follow the drive sideways to the hubs. The cutaway keeps the supports visible so their connection to the body can be distinguished from the rotating drive path.
+
+::: {.book-diagram data-diagram="drivetrain-explorer"}
+![The engine lies ahead of the rear transaxle; an open differential connects through two booted CV shafts to bearing-supported rear hubs. A forward engine mount and two transmission supports carry the joined power unit.](diagrams/drivetrain-explorer/poster.svg)
+:::
+
 ## From gearbox to rear wheels
 
 The **transaxle** combines the gearbox and final drive in one assembly behind the engine. The selected gear ratio establishes the relationship between engine speed and the gearbox's output. The **final drive** supplies another, fixed reduction before torque reaches the wheels. Changing from second to third changes the selected ratio; it does not exchange the final-drive gears. The manual and PDK chapters explain the steps before this point.[^drive-layout]
@@ -12,7 +18,7 @@ The [ratio explorer](../08-manual-transmission-and-clutch/index.md#ratios-exchan
 
 In Porsche's PDK training cutaway, a pinion drives a large ring gear through a **hypoid** final drive. This turns the drive across the car and reduces its speed. The ring gear is attached to the differential carrier. The carrier's bearings locate it in the transmission casing; output flanges connect the differential to the two driveshafts.[^final-drive]
 
-![Original plan-view schematic locating the engine ahead of the transaxle, the final drive between the rear driveshafts and three compliant power-unit support positions.](drivetrain-layout.svg)
+![Original plan-view schematic locating the engine ahead of the transaxle, the final drive between the rear driveshafts and three compliant power-unit support positions.](images/drivetrain-layout.svg)
 
 *Torque travels through the power unit, then sideways to the wheels. The mounts connect the power unit to the structure; they are not part of the rotating drive path. Positions and proportions are schematic.*
 
@@ -28,7 +34,7 @@ For a symmetrical differential, the carrier speed is the average of the output s
 
 A carrier turning at 300 rpm can therefore accompany outputs turning at 240 and 360 rpm. The same average also permits 0 and 600 rpm. That second case helps explain a spinning wheel, but the equation alone cannot tell us which wheel will spin: road grip, load, braking and inertia determine the actual behaviour.
 
-The ideal open differential also delivers **equal torque** to the two outputs. Equal torque can accompany unequal speeds. Power is torque multiplied by angular speed, so the faster output receives more power when the output torques are equal. A differential is therefore easiest to understand by keeping speed, torque and power as separate quantities.
+The ideal open differential also delivers **equal torque** to the two outputs. Equal torque can accompany unequal speeds. Power is torque multiplied by angular speed, so the faster output receives more power when the output torques are equal. A differential is therefore easiest to understand by keeping speed, torque and power as separate quantities.[^open-principles]
 
 ### Why unequal grip limits both sides
 
@@ -37,7 +43,7 @@ Suppose one tyre can react only 100 Nm at its wheel before slipping, while the o
 These are wheel-torque limits, not engine-torque figures. They already represent the combined effects of normal load, road friction and tyre radius. A real car also has bearing friction, rotating inertia and control interventions. Once a wheel accelerates into spin, a static torque balance no longer describes the whole event.
 
 ::: {.book-diagram data-diagram="drivetrain-open-differential"}
-![At a carrier speed of 300 rpm, an illustrative 20 percent speed difference gives left and right outputs of 240 and 360 rpm. Both output speeds average back to the carrier speed.](diagrams/drivetrain-open-differential/poster.svg)
+![At a carrier speed of 300 rpm, illustrative offsets of minus and plus 20 percent of carrier speed give left and right outputs of 240 and 360 rpm. Both output speeds average back to the carrier speed.](diagrams/drivetrain-open-differential/poster.svg)
 :::
 
 *Explore the speed relationship, then select unequal grip to see the steady open-differential torque limit. The two views answer different questions: the speed slider prescribes a kinematic example; the grip slider sets a torque ceiling. They do not simulate tyre slip or predict the car's acceleration.*
@@ -58,7 +64,7 @@ Each rear driveshaft, often called a **half-shaft**, connects a transmission out
 
 **Constant-velocity joints** transmit rotation across an angle without the cyclic speed variation of a single ordinary universal joint. Articulation accommodates the changing angle; a sliding or **plunging** joint accommodates the length change. These are distinct freedoms. The balls and tracks inside the joint carry torque, while the joint geometry allows movement. These are the two freedoms illustrated below.[^cv]
 
-![Original schematic of a driveshaft between a fixed transmission flange and moving wheel, showing joint articulation, axial plunge and the separation between the rotating hub and stationary wheel carrier.](drivetrain-cv-and-hub.svg)
+![Original schematic of a driveshaft between a fixed transmission flange and moving wheel, showing joint articulation, axial plunge and the separation between the rotating hub and stationary wheel carrier.](images/drivetrain-cv-and-hub.svg)
 
 *Articulation changes the shaft angle; plunge accommodates changing joint-centre distance. The dashed position is an illustrative suspension movement. No actual joint angle or travel limit is implied.*
 
@@ -102,13 +108,15 @@ During inspection, useful observations include grease thrown from a damaged boot
 
 [^drive-layout]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 42–47 and 126–127, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf). See also the [manual transmission](../08-manual-transmission-and-clutch/index.md) and [PDK](../09-pdk-transmission/index.md) chapters.
 
-[^final-drive]: Porsche, *2009 Technik Introduction — All Boxster Cayman Models*, printed Transmission p. 86, [viewer p. 92](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=92). Its PDK illustration identifies ring gear, differential pinions, shaft bevel gears, carrier and discs; accompanying text identifies hypoid drive and standard/optional differentials. General equations and numerical teaching examples here are the author's idealised calculations.
+[^final-drive]: Porsche AfterSales Training, *2009 Technik Introduction — All Boxster Cayman Models*, PCNA edition 2/09, PNA 987 021 09, printed Transmission p. 86, [viewer p. 92](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=92); [accessible original text](https://www.scribd.com/document/972719474/Boxster-2009). Its PDK illustration identifies ring gear, differential pinions, shaft bevel gears, carrier and discs; accompanying text identifies hypoid drive and standard/optional differentials. Its construction detail is not assumed to describe the manual gearbox.
+
+[^open-principles]: MathWorks, [“Differential”](https://www.mathworks.com/help/sdl/ref/differential.html), “Ideal Fundamental Constraints”, gives the equal-and-opposite output speeds relative to the carrier for equal bevel-gear ratios. S. E. Chocholek (Gleason Corporation), *The development of a differential for the improvement of traction control*, IMechE paper C368/88 (1988), §§2.1–2.2, [archived reproduction, PDF pp. 1–2](https://www.flashoffroad.com/features/Torsen/Torsen_white_paper.pdf), explains power, equal output torque and the twice-low-grip-side torque ceiling of a conventional open differential. These are general engineering principles; the numerical examples here are the author's idealised calculations, not Porsche limits or a claim that this car uses a Torsen differential.
 
 [^lock-values]: *2009 Technik Introduction*, printed Transmission p. 86; Porsche, *Boxster S Black Edition Price List*, UK edition 03/2011, printed pp. 16–17, [original scan](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0), explicitly describes multi-disc locking under traction (22%) and overrun (27%). Neither source supplies a complete torque/preload map.
 
 [^abd]: Porsche, *The Boxster*, January 2010 UK, printed pp. 54 and 63–64, [brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf). ABD and ASR are described within standard PSM. System detail: [brakes and stability systems](../13-brakes-and-stability-systems/index.md).
 
-[^cv]: GKN Automotive, [“Constant velocity joints”](https://www.gknautomotive.com/en/aftermarket/portfolio/constant-velocity-joints/) and [“Sideshafts”](https://www.gknautomotive.com/en/aftermarket/portfolio/sideshafts/), manufacturer explanations of articulation, plunge and joint arrangements. General principles only; no GKN product type, supplier identity or published generic travel limit is assigned to this car.
+[^cv]: GKN Automotive, [“Constant velocity joints”](https://www.gknautomotive.com/en/aftermarket/portfolio/constant-velocity-joints/) and [“Sideshafts”](https://www.gknautomotive.com/en/aftermarket/portfolio/sideshafts/), manufacturer explanations of articulation, plunge and joint arrangements; its [aftermarket portfolio](https://www.gknautomotive.com/aftermarket/portfolio), “Constant velocity joints” and “Driveshaft boots”, explicitly explains equal rotational speed across the joint and sealing against lubricant loss and contamination. General principles only; no GKN product type, supplier identity or published generic travel limit is assigned to this car.
 
 [^pet-shafts]: Porsche, *Boxster 2009–2012 PET*, model 987209, issue 19 July 2018, plates 501-000 and 501-005, PDF pp. 181–182 and 187–188, [catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=187). Later service-catalogue evidence of assemblies and application distinctions, not a claim of unchanged original production parts.
 
@@ -118,4 +126,4 @@ During inspection, useful observations include grease thrown from a damaged boot
 
 [^option-launch]: Porsche, *The new Boxster*, UK edition 08/08, printed pp. 54 and 107, [launch brochure](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf#page=50). The option-table footnote says available from 05/2009 at the earliest with manual transmission.
 
-[^derivatives]: Porsche, *The Boxster Spyder*, UK edition 01/10, printed pp. 28–29, [brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf); *Boxster S Black Edition Price List*, UK edition 03/2011, printed pp. 16–17, [scan](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0).
+[^derivatives]: Porsche, *The Boxster Spyder*, UK edition 01/10, printed pp. 28–29 / PDF p. 13, [brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=13); *Boxster S Black Edition Price List*, UK edition 03/2011, printed pp. 8–9 / PDF p. 5 (standard wheels) and pp. 16–17 / PDF p. 9 (optional differential), [scan](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0).

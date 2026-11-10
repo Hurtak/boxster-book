@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 872" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">Starting uses battery energy; running uses fuel energy</title>
+  <desc id="desc">During starting, stored battery energy powers the starter motor, which supplies the engine's initial cranking rotation. Once combustion sustains the engine, fuel supplies the running energy. The engine drives the alternator through a belt. A rectifier converts its alternating current to direct current, and a regulator controls voltage. The electrical supply serves the loads and can recharge the battery when output allows. The battery supplies loads during an output shortfall. Arrows show electrical or mechanical energy transfer, not a complete current circuit or physical wiring.</desc>
+  <defs>
+    <marker id="electric-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto-start-reverse"><path d="M0 0L6 3L0 6Z" fill="#39765b"/></marker>
+    <marker id="mechanical-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#a36d30"/></marker>
+  </defs>
+  <rect width="540" height="872" fill="#f8faf7" rx="12"/>
+
+  <text x="24" y="39" fill="#243d32" font-size="28" font-weight="700">Starting: stored energy</text>
+  <g fill="#edf3ec" stroke="#718477" stroke-width="2">
+    <rect x="24" y="67" width="140" height="96" rx="8"/>
+    <rect x="200" y="67" width="140" height="96" rx="8"/>
+    <rect x="376" y="67" width="140" height="96" rx="8"/>
+  </g>
+  <g text-anchor="middle" fill="#243d32">
+    <g font-size="26"><text x="94" y="106">Battery</text><text x="270" y="106">Starter</text><text x="446" y="106">Engine</text></g>
+    <g font-size="22" fill="#53695b"><text x="94" y="139">stored energy</text><text x="270" y="139">electric motor</text><text x="446" y="139">cranking</text></g>
+  </g>
+  <g fill="none" stroke-width="3.5">
+    <path d="M167 115H191" stroke="#39765b" marker-end="url(#electric-arrow)"/>
+    <path d="M343 115H367" stroke="#a36d30" marker-end="url(#mechanical-arrow)"/>
+  </g>
+  <text x="24" y="201" fill="#243d32" font-size="24">Starter provides the initial rotation.</text>
+  <path d="M24 226H516" stroke="#c8d4ca" stroke-width="2"/>
+
+  <text x="24" y="268" fill="#243d32" font-size="28" font-weight="700">Running: energy from fuel</text>
+  <g fill="#edf3ec" stroke="#718477" stroke-width="2">
+    <rect x="24" y="294" width="156" height="88" rx="8"/>
+    <rect x="312" y="294" width="204" height="88" rx="8"/>
+    <rect x="24" y="560" width="156" height="76" rx="8"/>
+    <rect x="312" y="560" width="204" height="76" rx="8"/>
+  </g>
+  <g text-anchor="middle" fill="#243d32">
+    <g font-size="26"><text x="102" y="332">Engine</text><text x="414" y="332">Alternator</text><text x="102" y="607">Battery</text><text x="414" y="607">Loads</text></g>
+    <g font-size="22" fill="#53695b"><text x="102" y="363">fuel burns</text><text x="414" y="363">generates AC</text></g>
+  </g>
+  <path d="M184 344H303" fill="none" stroke="#a36d30" stroke-width="3.5" marker-end="url(#mechanical-arrow)"/>
+  <text x="244" y="328" text-anchor="middle" fill="#925f27" font-size="24">Belt</text>
+
+  <g fill="#243d32" font-size="24"><text x="24" y="425">Rectifier: AC becomes DC.</text><text x="24" y="459">Regulator: controls voltage.</text></g>
+  <g fill="none" stroke="#39765b" stroke-width="3.5">
+    <path d="M414 386V551" marker-end="url(#electric-arrow)"/>
+    <path d="M414 491H102"/>
+    <path d="M102 494V551" marker-start="url(#electric-arrow)" marker-end="url(#electric-arrow)"/>
+  </g>
+  <circle cx="414" cy="491" r="5" fill="#39765b"/>
+  <text x="433" y="433" fill="#39765b" font-size="24">DC</text>
+
+  <g fill="#243d32" font-size="24"><text x="24" y="676">Surplus output can recharge the battery.</text><text x="24" y="711">With a shortfall, the battery feeds loads.</text></g>
+  <g fill="none" stroke-width="3.5">
+    <path d="M24 751H66" stroke="#39765b" marker-end="url(#electric-arrow)"/>
+    <path d="M24 789H66" stroke="#a36d30" marker-end="url(#mechanical-arrow)"/>
+  </g>
+  <g font-size="24"><text x="82" y="759" fill="#39765b">Electrical energy</text><text x="82" y="797" fill="#925f27">Mechanical energy / rotation</text></g>
+  <g fill="#53695b" font-size="20"><text x="24" y="833">AC = alternating current; DC = direct current.</text><text x="24" y="860">Energy paths; wiring, return circuits and losses omitted.</text></g>
+</svg>

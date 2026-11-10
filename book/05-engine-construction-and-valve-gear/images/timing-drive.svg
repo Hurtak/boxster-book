@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 785" role="img" aria-labelledby="title desc">
+  <title id="title">2010 2.9 timing chains: drive connections and slack control</title>
+  <desc id="desc">The crankshaft directly drives two timing chains without an intermediate shaft. Each chain drives the inlet and exhaust camshafts of one cylinder bank. All four camshafts turn once for every two crankshaft turns. Arrows show drive connections, not chain routing or rotation direction. A separate, simplified chain-segment detail shows a guide rail and an oil-fed hydraulic tensioner pressing a tensioning rail against the chain. The engine has two hydraulic chain tensioners, one for each chain. Shapes, positions and sizes are schematic; no sprocket tooth counts or timing-setting positions are shown.</desc>
+  <defs>
+    <marker id="drive-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 7 3.5 0 7Z" fill="#b07d38"/>
+    </marker>
+    <marker id="tension-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 9 4.5 0 9Z" fill="#3c7592"/>
+    </marker>
+  </defs>
+  <rect width="420" height="785" fill="#f5f3eb"/>
+  <g font-family="sans-serif" fill="#243f33" text-anchor="middle">
+    <text x="210" y="31" font-size="23" font-weight="700">2010 2.9: timing chain drive</text>
+    <text x="210" y="58" font-size="18">Crankshaft drives four camshafts</text>
+
+    <!-- Boxes and arrows are a connection map, deliberately not chain loops. -->
+    <rect x="122" y="91" width="176" height="54" rx="7" fill="#ead8b9" stroke="#b07d38" stroke-width="2"/>
+    <text x="210" y="125" font-size="21" font-weight="700">Crankshaft</text>
+    <g fill="#eeefe7" stroke="#c7d2c9" stroke-width="1.5">
+      <rect x="20" y="188" width="180" height="207" rx="8"/>
+      <rect x="220" y="188" width="180" height="207" rx="8"/>
+    </g>
+    <g fill="none" stroke="#b07d38" stroke-width="3" marker-end="url(#drive-arrow)">
+      <path d="M174 145V169H110V202"/>
+      <path d="M246 145V169H310V202"/>
+    </g>
+    <g fill="#ead8b9" stroke="#b07d38" stroke-width="2">
+      <rect x="46" y="202" width="128" height="40" rx="5"/>
+      <rect x="246" y="202" width="128" height="40" rx="5"/>
+    </g>
+    <g font-size="20" font-weight="700">
+      <text x="110" y="229">Chain 1</text>
+      <text x="310" y="229">Chain 2</text>
+    </g>
+    <g fill="none" stroke="#b07d38" stroke-width="2.5">
+      <path d="M110 242V254H42V343"/>
+      <path d="M310 242V254H242V343"/>
+      <g marker-end="url(#drive-arrow)">
+        <path d="M42 288H63"/>
+        <path d="M42 343H63"/>
+        <path d="M242 288H263"/>
+        <path d="M242 343H263"/>
+      </g>
+    </g>
+    <g fill="#d2e1d5" stroke="#345e49" stroke-width="1.5">
+      <rect x="63" y="269" width="119" height="38" rx="5"/>
+      <rect x="63" y="324" width="119" height="38" rx="5"/>
+      <rect x="263" y="269" width="119" height="38" rx="5"/>
+      <rect x="263" y="324" width="119" height="38" rx="5"/>
+    </g>
+    <g font-size="18">
+      <text x="122.5" y="294">Inlet cam</text>
+      <text x="122.5" y="349">Exhaust cam</text>
+      <text x="322.5" y="294">Inlet cam</text>
+      <text x="322.5" y="349">Exhaust cam</text>
+      <text x="110" y="383">One bank</text>
+      <text x="310" y="383">Other bank</text>
+    </g>
+    <text x="210" y="427" font-size="20" font-weight="700">2 crank turns = 1 cam turn</text>
+    <text x="210" y="456" font-size="20">No intermediate shaft</text>
+    <text x="210" y="484" font-size="18">Connection map · not physical routing</text>
+    <text x="210" y="509" font-size="18">Arrows show drive connections.</text>
+
+    <path d="M24 532H396" stroke="#c7d2c9" stroke-width="1.5"/>
+    <text x="210" y="558" font-size="21" font-weight="700">Guides and tensioners</text>
+    <text x="210" y="583" font-size="18">One simplified chain segment</text>
+
+    <!-- Separate functional detail: no actual engine route or scale implied. -->
+    <path d="M44 640H376" fill="none" stroke="#b07d38" stroke-width="6" stroke-dasharray="8 3"/>
+    <g fill="none" stroke="#526f60" stroke-width="10" stroke-linecap="round">
+      <path d="M44 632H147"/>
+      <path d="M234 648H376"/>
+    </g>
+    <g font-size="18">
+      <text x="96" y="612">Guide rail</text>
+      <text x="324" y="612">Chain</text>
+      <text x="124" y="674">Tensioning rail</text>
+    </g>
+    <g fill="none" stroke="#526f60" stroke-width="1.5">
+      <path d="M96 617V625"/>
+      <path d="M324 617V635"/>
+      <path d="M198 667L234 650"/>
+    </g>
+    <rect x="288" y="710" width="44" height="26" rx="3" fill="#3c7592"/>
+    <path d="M310 710V653" stroke="#3c7592" stroke-width="4" marker-end="url(#tension-arrow)"/>
+    <path d="M216 723H285" stroke="#3c7592" stroke-width="1.5"/>
+    <g font-size="18" fill="#305f77">
+      <text x="125" y="710">Oil-fed hydraulic</text>
+      <text x="125" y="734">tensioner pushes rail</text>
+    </g>
+    <text x="210" y="767" font-size="18">2 tensioners total · one per chain</text>
+  </g>
+</svg>

@@ -4,13 +4,19 @@ The steering wheel begins a chain of mechanical movement that ends at two small 
 
 The 2010 Boxster 2.9 combines hydraulically assisted, variable-ratio steering with different wheel and tyre sizes at the front and rear. Its standard wheels are 17-inch Boxster III alloys. Larger catalogue alternatives change the rim, tyre width and sidewall together, rather than simply making the entire wheel-and-tyre assembly much taller.[^baseline]
 
+Start with the steering gear’s position in the car, then follow the column, track rods and hydraulic connections. Separating the front-left rim and tyre also reveals the bead seats that join them.
+
+::: {.book-diagram data-diagram="steering-explorer"}
+![The front steering rack joins the driver’s column and both front carriers, while long hydraulic paths reach the engine-driven pump behind the cabin. The separated front-left rim and tyre expose their bead-seat connection.](diagrams/steering-explorer/poster.svg)
+:::
+
 ## From steering wheel to front wheels
 
 A shaft connects the steering wheel to the pinion, a small gear meshing with the rack. Turning the pinion slides the rack across the car. A track rod, also called a tie rod, connects each end of the rack to a steering arm on a front wheel carrier. Its joints articulate as the suspension rises and falls. The carrier turns around its steering axis while the wheel continues rotating on its bearing.
 
 The rack therefore moves both front wheels through a linked mechanism. Their angles in a corner need not be identical: the inside wheel follows a tighter path. The relationship between those angles, the steering axis and suspension movement belongs with the [wheel geometry](../11-suspension-and-wheel-geometry/index.md) already described. Here the important distinction is between the mechanism that positions the wheels and the tyres that generate the resulting force. Porsche's parts drawing identifies the steering gear, protective bellows, joints and two track rods as separate components.[^rack]
 
-![The steering shaft turns a pinion; the rack slides sideways and moves two track rods, which turn the front carriers. An engine-driven pump supplies hydraulic assistance to the rack housing.](steering-hydraulic.svg)
+![The steering shaft turns a pinion; the rack slides sideways and moves two track rods, which turn the front carriers. An engine-driven pump supplies hydraulic assistance to the rack housing.](images/steering-hydraulic.svg)
 
 *Original schematic: a mechanical path from the driver to the front wheels, with a separate hydraulic assistance circuit. The arrangement is simplified; hoses and steering arms are not drawn to installation dimensions.*
 
@@ -24,7 +30,7 @@ The 987's **variable steering ratio is mechanical**. Around straight ahead, a gi
 
 ## Reading a wheel and tyre size
 
-A wheel marking such as **7 J × 17** describes the rim rather than the whole rolling assembly. The 7 is the nominal width between bead seats, in inches; J identifies the flange contour; 17 is the nominal bead-seat diameter, also in inches. The tyre's outer diameter is larger because its sidewall extends beyond the rim.
+A wheel marking such as **7 J × 17** describes the rim rather than the whole rolling assembly. The 7 is the nominal width between the inner faces of the rim flanges, in inches; J identifies the flange contour; 17 is the nominal bead-seat diameter, also in inches. The tyre's outer diameter is larger because its sidewall extends beyond the rim.[^wheel-dimensions]
 
 The corresponding front tyre, **205/55 ZR 17**, has a nominal section width of 205 mm. Its aspect ratio is 55 per cent, so the nominal sidewall height is 205 × 0.55 = **112.75 mm**. R identifies radial construction; ZR is a high-speed designation. Load index and the additional speed symbol complete the service description and matter alongside size. Width alone cannot establish whether a tyre is suitable.[^markings]
 
@@ -43,9 +49,9 @@ The UK brochure establishes the standard dimensions; the contemporary Porsche ha
 
 **Offset**, commonly marked ET, is the distance between the rim's centre plane and its hub mounting face. With positive offset, the mounting face lies towards the outer side of the wheel. At a fixed width, reducing positive offset moves the wheel outwards. Increasing it moves the wheel inwards. A wider rim also extends farther on both sides of its centre plane, so width and offset must be considered together.
 
-![A wheel section shows rim width between bead seats, its centre plane and a mounting face 55 mm towards the outside. A second outline shows how reducing offset at the same width moves the rim outwards.](wheel-offset.svg)
+![A wheel section shows rim width between the flanges, its centre plane and a mounting face 55 mm towards the outside. A second outline shows how reducing offset at the same width moves the rim outwards.](images/wheel-offset.svg)
 
-*Original diagram: offset is measured from the rim centre plane, not from its inner edge. The 55-to-45 mm example illustrates a 10 mm outward movement at unchanged width; it is not a recommended alteration.*
+*Original diagram: offset is measured from the rim centre plane, not from its inner edge. The 55-to-45 mm example illustrates a 10 mm outward movement at unchanged width; it is not a recommended alteration.*[^offset]
 
 The five wheel bolts follow a 130 mm pitch circle, conventionally written **5 × 130**.[^bolt-circle] That describes the hole pattern, not complete compatibility. The centre location, bolt seat, bolt length, brake clearance, wheel load capacity and available space around the suspension and body also matter. Porsche's handbook specifically distinguishes standard bolts from arrangements involving spacers. A wheel that can be bolted on has not thereby been established as an approved wheel-and-tyre combination.[^bolts]
 
@@ -79,6 +85,8 @@ The rear 17-to-18-inch comparison changes nominal diameter by only about **0.36 
 
 The January 2010 UK catalogue offered an alternative 17-inch Cayman II design, two 18-inch designs and several 19-inch designs. The 18-inch choices were Boxster S II, code 408, and Cayman S II, code 409. The 19-inch choices included Carrera S II (419), Carrera Classic (405), SportDesign (407), Carrera Sport (XRR), 911 Turbo (404) and 911 Turbo II (421).[^uk-options]
 
+Wheel choice also affected another factory option: this catalogue required 18- or 19-inch wheels with the [mechanically locking rear differential](../10-differential-driveshafts-and-mounts/index.md), code 220. Larger wheels alone do not show that the differential was fitted.[^wheel-dependency]
+
 For the diameter comparison above, Porsche's contemporary handbook lists **235/40 ZR18 front and 265/40 ZR18 rear**, or **235/35 ZR19 front and 265/35 ZR19 rear**. It also lists two 19-inch rim-width/offset pairings, so one universal “19-inch Boxster offset” would be misleading. These are period mechanical fitment data; the UK catalogue is the evidence for UK option availability.[^fitments]
 
 A shorter sidewall changes compliance and the way tyre deformation builds during a steering input. Wheel design and tyre construction also affect the result, so rim diameter alone cannot predict comfort or grip. The consequences of wheel mass are covered in [suspension and unsprung mass](../11-suspension-and-wheel-geometry/index.md).
@@ -87,7 +95,7 @@ A shorter sidewall changes compliance and the way tyre deformation builds during
 
 ## Changes in other 2.9 model years
 
-The 2008 launch publication and January 2010 UK brochure agree on the 17-inch base combination and hydraulic variable-ratio steering. Later Porsche technical data retain the ordinary Boxster's 17-inch dimensions. These sources establish continuity of the principal arrangement, rather than a complete annual history of UK wheel designs, approvals or tyre suppliers. No distinct yearly steering mechanism change is established here.[^years]
+The 2008 launch publication and January 2010 UK brochure agree on the 17-inch base combination and hydraulic variable-ratio steering. A North American 2012 Porsche specification sheet also lists the ordinary Boxster's 17-inch tyre sizes. These sources corroborate the principal arrangement at those dates, rather than providing a complete annual history of UK wheel designs, approvals or tyre suppliers. No distinct yearly steering mechanism change is established here.[^years]
 
 ## The S, Spyder and Black Edition
 
@@ -101,17 +109,21 @@ The UK Black Edition includes black-painted 19-inch Boxster Spyder wheels. Its [
 
 Check the casting markings behind the spokes, tyre size, service description and manufacture date. These identify the fitted dimensions more reliably than the spoke pattern.
 
-Condition then becomes as important as original specification. Tyre hardening, damage, uneven wear, incorrect pressure and out-of-balance assemblies can change the steering's behaviour. Play in a track-rod joint and damage to a steering bellows concern different parts of the mechanism; fluid leakage concerns the hydraulic circuit. A vibration or pull therefore needs assessment across the wheel, tyre, linkage and geometry rather than being assigned to the rack from the symptom alone. Keeping these relationships separate makes both the original engineering and the ageing car easier to understand.
+Condition then becomes as important as original specification. Tyre hardening, damage, uneven wear, incorrect pressure and out-of-balance assemblies can change the steering's behaviour. Play in a track-rod joint and damage to a steering bellows concern different parts of the mechanism; fluid leakage concerns the hydraulic circuit. A vibration or pull therefore needs assessment across the wheel, tyre, linkage and geometry rather than being assigned to the rack from the symptom alone. Keeping these relationships separate makes both the original engineering and the ageing car easier to understand.[^condition]
 
 [^baseline]: Porsche, *The Boxster*, UK edition 01/10, printed pp. 20–23, 52–53 and 126–127, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
 [^rack]: Porsche, *Boxster 2009–2012 PET*, snapshot 19 July 2018, illustration 403-000, PDF pp. 138–139, [parts drawing and list](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=138). Used for component relationships; later replacement listings do not prove every car's original part number.
 
-[^hydraulics]: Porsche PET, illustration 101-010, PDF pp. 37–38 (pump pulley and belt), and 403-001/403-003, PDF pp. 140–145 (lines, reservoir and pump), [catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=140). General valve/power-cylinder principle: Bosch, *Hydraulic Power Steering — Rack and Pinion*, pp. 1–2, [manufacturer explanation](https://www.boschautoparts.com/documents/647135/1488085/Hydraulic%20Power%20Steering%20Line%20Card.pdf). Bosch's illustrated applications are not asserted to be this Porsche's exact rack.
+[^hydraulics]: Porsche PET, illustration 101-010, PDF pp. 37–38 (pump pulley and belt), and 403-001/403-003, PDF pp. 140–143 (lines, reservoir and pump), [catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=140). General valve/power-cylinder principle: Bosch, *Hydraulic Power Steering — Rack and Pinion*, PDF p. 2, [manufacturer explanation and hydraulic cutaway](https://www.boschautoparts.com/documents/647135/1488085/Hydraulic%20Power%20Steering%20Line%20Card.pdf#page=2). Bosch's illustrated applications are not asserted to be this Porsche's exact rack.
 
 [^ratio]: Porsche, *General Servicing & Repair — Sports Cars*, P001, 5/07, printed p. 4.6, PDF p. 212, [training manual](https://souzaweb.com/caymanregister/downloads/54580-General_Porsche_Repair_%28P001_-_Book_5-07%29.pdf#page=212), identifies the 987 hydraulic rack and variable ratio. Porsche, *The Boxster*, UK 01/10, printed pp. 51 and 126–127, confirms the reference car's hydraulic variable-ratio system and 11.1 m turning circle. Exact earlier training ratios are not presented as a measured 2010 calibration.
 
 [^markings]: Porsche, *Boxster, Boxster S Owner's Manual*, MY2010 North America, WKD 987 021 10, 5/09, printed pp. 232–233, [tyre and wheel markings](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=234). General marking definitions, not evidence for UK standard equipment.
+
+[^wheel-dimensions]: Porsche MY2010 owner manual, printed p. 233 / PDF p. 235, identifies rim width, flange-contour code and rim diameter. MAXXIS, [“Tire School”](https://www.maxxis.com/us/tire-school/), glossary entries “Rim Width” and “Rim Diameter”, distinguishes width between flanges from diameter at the tyre bead heel. General definitions, not a claim that MAXXIS supplied this car's tyres.
+
+[^offset]: Compomotive, [“Technical Information”](https://www.comp.co.uk/info/technicalinfo.asp), “Offset”, diagrams 1–2: offset is backspacing minus half the overall width for equal rim edges. Its “Centre Bore” and “Caliper Clearance” sections explain two further compatibility checks. Generic wheel geometry, not Porsche approval data.
 
 [^fitments]: Porsche, *The Boxster*, UK 01/10, printed pp. 126–127, standard rims and tyres; Porsche MY2010 owner manual, printed p. 278, [summer tyre/rim/offset table](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=280). The handbook is North American: used for mechanical dimensions and period combinations, with UK availability taken separately from the UK option table.
 
@@ -123,12 +135,16 @@ Condition then becomes as important as original specification. Tyre hardening, d
 
 [^pressure]: Michelin, [“What can cause excessive or uneven tyre wear?”](https://www.michelin.co.uk/auto/advice/change-tyres/tyre-wear), updated 22 July 2025, on underinflation, flexing, heat and cold pressure. Porsche MY2010 owner manual, printed pp. 223–225, gives the vehicle-specific pressure/tyre relationship.
 
-[^uk-options]: Porsche, *The Boxster*, UK 01/10, printed pp. 108–109, UK wheel option table and codes, [catalogue](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=51).
+[^uk-options]: Porsche, *The Boxster*, UK 01/10, printed pp. 108–109 / PDF p. 50, UK wheel option table and codes, [catalogue](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=50).
+
+[^wheel-dependency]: Same UK 01/10 catalogue, printed p. 107 / PDF p. 49, option 220 and its 18/19-inch wheel condition. This is a dated catalogue ordering condition; it does not date the first delivery or establish equipment on an individual car.
 
 [^tpm]: UK 01/10 brochure, printed pp. 52 and 109 (optional TPM, code 482); MY2010 owner manual, printed pp. 147–155 and 229, [TPM operation and wheel sensors](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=149).
 
 [^years]: Porsche, *The new Boxster*, UK 08/08, printed pp. 52–53 and 126–127, [launch brochure](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf); UK 01/10 brochure, corresponding pages; Porsche Cars North America, *2012 Boxster specifications*, p. 2, [mechanical corroboration](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf).
 
-[^spyder]: Porsche, *The Boxster Spyder*, UK 01/10, printed pp. 30–31 and 42–43, [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=21).
+[^spyder]: Porsche, *The Boxster Spyder*, UK 01/10, printed pp. 30–31 / PDF p. 14 (specific lightweight wheel design) and printed p. 41 / PDF p. 19 (technical wheel/tyre and steering table), [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=19).
 
 [^black]: Porsche, *Boxster S Black Edition Price List*, UK 03/2011, printed pp. 8–9 and 16–17, [original UK list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0).
+
+[^condition]: Porsche MY2010 owner manual, printed pp. 226–230 / PDF pp. 228–232, covers tyre damage, wear, balance, handling and ageing; printed pp. 232–233 covers sidewall and wheel identification. PET illustrations 403-000/001/003 distinguish joints, bellows and fluid-circuit components. These identify separate assessment areas, not a diagnosis from a symptom.

@@ -17,4 +17,4 @@ These two third-party photographs are retained locally for the user's personal i
 - **Identification:** Original caption identifies **3.4-litre six-cylinder Boxer engine in the Boxster S**. Accessory-drive-end photograph, not a 2.9 engine photograph. Used only in the related-model comparison.
 - **Local treatment:** Embedded JPEG extracted with Poppler `pdfimages -f 11 -l 11 -j`, image 001, 527 × 336. Image identity checked against the complete rendered spread; no added labels or changes. Visually inspected 10 November 2026.
 
-All four chapter SVGs and the interactive D3 graphics are original explanatory artwork created for the book. They are mechanically simplified and distinguish the 2010 2.9 baseline from the labelled comparison photograph.
+The chapter's SVG diagrams and interactive D3 graphics are original explanatory artwork created for the book. They are mechanically simplified and distinguish the 2010 2.9 baseline from the labelled comparison photograph.

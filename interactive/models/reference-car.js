@@ -3,7 +3,8 @@ import { palette } from './boxster/surfaces.js';
 import { exterior } from './boxster/body.js';
 import { cabin, windscreen } from './boxster/cabin.js';
 
-// Original photo-guided mesh. Metres; +Z is the front, -X the driver's side.
+// Original photo-guided mesh. Metres; +Z is the front, +Y up, so +X is the car's
+// left: the driver's side of this left-hand-drive car.
 export function referenceCar() {
   const car = group('reference-car');
   car.userData = {
@@ -48,10 +49,10 @@ export function referenceCar() {
     }
   }
   for (const [name, x, z] of [
-    ['wheel-fl', -0.76, 1.2075],
-    ['wheel-fr', 0.76, 1.2075],
-    ['wheel-rl', -0.76, -1.2075],
-    ['wheel-rr', 0.76, -1.2075],
+    ['wheel-fl', 0.76, 1.2075],
+    ['wheel-fr', -0.76, 1.2075],
+    ['wheel-rl', 0.76, -1.2075],
+    ['wheel-rr', -0.76, -1.2075],
   ]) {
     const result = wheel(car, name, [x, 0.329, z], p.silver);
     if (x < 0) result.rotation.y = Math.PI;
@@ -65,7 +66,7 @@ export function referenceCar() {
   cylinder(gearbox, 0.13, 0.55, p.silver, [0, 0, 0], [Math.PI / 2, 0, 0]);
   const lines = group('hydraulics', car),
     blue = material('#1d5fbf', 0.1, 0.4);
-  const master = group('master-cylinder', lines, [-0.28, 0.59, 0.75]);
+  const master = group('master-cylinder', lines, [0.28, 0.59, 0.75]);
   cylinder(master, 0.045, 0.25, blue, [0, 0, 0], [Math.PI / 2, 0, 0]);
   box(master, [0.11, 0.08, 0.12], material('#e5e9e9'), [0, 0.08, 0]);
   for (const x of [-0.76, 0.76])
@@ -73,9 +74,9 @@ export function referenceCar() {
       tube(
         lines,
         [
-          [-0.28, 0.59, 0.75],
-          [-0.12, 0.35, 0.55],
-          [-0.12, 0.3, z],
+          [0.28, 0.59, 0.75],
+          [0.12, 0.35, 0.55],
+          [0.12, 0.3, z],
           [x, 0.33, z],
         ],
         0.009,

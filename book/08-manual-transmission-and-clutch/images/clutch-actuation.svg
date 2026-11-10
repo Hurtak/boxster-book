@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1640" font-family="sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">One dry clutch plate: clamping, release and pedal actuation</title>
+  <desc id="desc">Functional axial half-sections, with the engine on the left. With the pedal up, a diaphragm spring clamps the two linings of one driven disc between the flywheel and pressure plate. The disc web joins a hub splined to the separate gearbox input shaft. With the pedal down, the release bearing moves towards the engine, the spring rocks about its cover fulcrum, and the pressure plate lifts away. The single disc remains intact. Below, a pedal moves a master piston; hydraulic pressure moves a separate slave piston, whose rod turns a pivoted lever and pushes the bearing into the spring. Arrows in the sections show axial force or movement, not rotational drive. Component shapes, lever positions and released gaps are explanatory, not measured Boxster geometry.</desc>
+  <defs>
+    <marker id="clutch-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#286449"/></marker>
+  </defs>
+  <rect width="600" height="1640" fill="#f1f4ef"/>
+  <g fill="#243d32">
+    <text x="24" y="42" font-size="31">One dry plate, two friction faces</text>
+    <text x="24" y="78" font-size="24" fill="#4c6155">Axial half-sections · engine left, gearbox right</text>
+    <text x="24" y="137" font-size="30" font-weight="bold">Pedal up · drive connected</text>
+    <g font-size="28">
+      <text x="28" y="195">Flywheel</text>
+      <text x="213" y="184">Driven</text><text x="213" y="216">disc</text>
+      <text x="398" y="184">Pressure</text><text x="398" y="216">plate</text>
+    </g>
+  </g>
+  <g fill="none" stroke="#8da195" stroke-width="2">
+    <path d="M100 203 135 243"/><path d="M231 222 191 269"/><path d="M410 223 235 251"/>
+  </g>
+  <!-- Engine-side assembly and input shaft are separate coaxial components. -->
+  <g stroke="#243d32" stroke-width="2">
+    <rect x="38" y="424" width="80" height="32" fill="#8da195"/>
+    <rect x="118" y="240" width="54" height="216" fill="#8da195"/>
+    <rect x="198" y="428" width="354" height="24" fill="#8da195"/>
+    <!-- One disc: two facings, one carrier web and one splined hub. -->
+    <path d="M184 260H194V421H184Z" fill="#b1bdb2"/>
+    <rect x="172" y="270" width="12" height="90" fill="#bb774b"/>
+    <rect x="194" y="270" width="12" height="90" fill="#bb774b"/>
+    <rect x="178" y="416" width="47" height="47" fill="#bb774b"/>
+    <path d="M183 430H225M183 437H225M183 445H225" stroke="#f1f4ef"/>
+    <rect x="206" y="263" width="44" height="104" fill="#8da195"/>
+    <path d="M250 279H270" stroke-width="6"/>
+    <!-- Cover attached to flywheel supports the diaphragm's fulcrum. -->
+    <path d="M145 241V232H478V287H314" stroke="#8da195" stroke-width="7" fill="none"/>
+    <path d="M314 288 305 302H323Z" fill="#8da195"/>
+    <path d="M270 279 314 309 440 414" fill="none" stroke="#243d32" stroke-width="6"/>
+    <circle cx="314" cy="309" r="6" fill="#f1f4ef"/>
+    <rect x="440" y="395" width="32" height="28" rx="3" fill="#d6dfd5"/>
+  </g>
+  <path d="M35 440H564" stroke="#4c6155" stroke-dasharray="6 7" opacity=".55"/>
+  <g fill="#243d32" font-size="28">
+    <text x="370" y="344">Diaphragm</text><text x="411" y="376">spring</text>
+    <text x="25" y="502">Crankshaft</text>
+    <text x="253" y="502">Hub + input shaft</text>
+  </g>
+  <g fill="none" stroke="#8da195" stroke-width="2"><path d="M89 477V457"/><path d="M284 477 218 460"/></g>
+  <path d="M306 357H254" stroke="#286449" stroke-width="4" marker-end="url(#clutch-arrow)"/>
+  <text x="280" y="400" font-size="25" fill="#286449" text-anchor="middle">Clamp force</text>
+  <g fill="#243d32" font-size="28">
+    <text x="24" y="550">Drive: flywheel → friction faces</text>
+    <text x="24" y="586">→ disc hub → gearbox input shaft.</text>
+  </g>
+  <path d="M24 620H576" stroke="#bbc8bc" stroke-width="2"/>
+  <text x="24" y="667" font-size="30" font-weight="bold" fill="#243d32">Pedal down · clamp relieved</text>
+  <text x="24" y="707" font-size="27" fill="#4c6155">Both friction faces remain on one disc.</text>
+  <g stroke="#243d32" stroke-width="2">
+    <rect x="38" y="925" width="80" height="32" fill="#8da195"/>
+    <rect x="118" y="741" width="54" height="216" fill="#8da195"/>
+    <rect x="198" y="929" width="354" height="24" fill="#8da195"/>
+    <path d="M202 761H212V922H202Z" fill="#b1bdb2"/>
+    <rect x="190" y="771" width="12" height="90" fill="#bb774b"/>
+    <rect x="212" y="771" width="12" height="90" fill="#bb774b"/>
+    <rect x="196" y="917" width="47" height="47" fill="#bb774b"/>
+    <path d="M201 931H243M201 938H243M201 946H243" stroke="#f1f4ef"/>
+    <rect x="236" y="764" width="44" height="104" fill="#8da195"/>
+    <path d="M280 780H300" stroke-width="6"/>
+    <path d="M145 742V733H478V788H314" stroke="#8da195" stroke-width="7" fill="none"/>
+    <path d="M314 789 305 803H323Z" fill="#8da195"/>
+    <path d="M270 780 314 810 440 915" fill="none" stroke="#8da195" stroke-width="3" stroke-dasharray="7 6"/>
+    <path d="M300 780 314 810 360 915" fill="none" stroke-width="6"/>
+    <circle cx="314" cy="810" r="6" fill="#f1f4ef"/>
+    <rect x="360" y="896" width="32" height="28" rx="3" fill="#d6dfd5"/>
+  </g>
+  <path d="M35 941H564" stroke="#4c6155" stroke-dasharray="6 7" opacity=".55"/>
+  <g fill="#243d32" font-size="28">
+    <text x="371" y="827">Cover</text><text x="371" y="859">fulcrum</text>
+    <text x="24" y="1022">Plate lifts</text>
+    <text x="305" y="1022">Release bearing</text>
+  </g>
+  <path d="M365 837 320 813" fill="none" stroke="#8da195" stroke-width="2"/>
+  <g fill="none" stroke="#286449" stroke-width="4" marker-end="url(#clutch-arrow)">
+    <path d="M254 890H291"/><path d="M458 901H398"/>
+  </g>
+  <g fill="none" stroke="#8da195" stroke-width="2"><path d="M137 998 253 875"/><path d="M401 997 378 930"/></g>
+  <text x="24" y="1070" font-size="27" fill="#243d32">Spring rocks; dashed = pedal-up shape.</text>
+  <text x="24" y="1108" font-size="26" fill="#4c6155">Flywheel and input can turn at different speeds.</text>
+  <path d="M24 1140H576" stroke="#bbc8bc" stroke-width="2"/>
+  <text x="24" y="1188" font-size="30" font-weight="bold" fill="#243d32">Pedal → hydraulic release</text>
+  <!-- Functional hydraulic path, not the car's installation geometry. -->
+  <g stroke="#243d32" stroke-width="3" fill="none">
+    <path d="M70 1230 105 1365" stroke-width="8"/>
+    <circle cx="70" cy="1230" r="8" fill="#d6dfd5"/>
+    <path d="M85 1290H195" stroke-width="5"/>
+    <rect x="156" y="1262" width="135" height="56" rx="4" fill="#d6dfd5"/>
+    <rect x="195" y="1263" width="8" height="54" fill="#8da195"/>
+    <path d="M85 1290H195" stroke-width="5"/>
+    <path d="M291 1290H535V1390H511" stroke="#286449" stroke-width="5"/>
+    <rect x="398" y="1362" width="113" height="56" rx="4" fill="#d6dfd5"/>
+    <rect x="430" y="1363" width="8" height="54" fill="#8da195"/>
+    <path d="M430 1390H350" stroke-width="5"/>
+    <path d="M350 1338V1477" stroke-width="8"/>
+    <path d="M338 1321H362L350 1338Z" fill="#8da195"/>
+    <circle cx="350" cy="1338" r="7" fill="#f1f4ef"/>
+    <path d="M350 1455H298" stroke-width="5"/>
+    <rect x="270" y="1439" width="28" height="32" rx="3" fill="#d6dfd5"/>
+    <path d="M239 1419 270 1455 239 1491" stroke-width="5"/>
+  </g>
+  <g fill="#243d32" font-size="28">
+    <text x="158" y="1242">Master cylinder</text>
+    <text x="396" y="1457">Slave</text><text x="396" y="1489">cylinder</text>
+    <text x="24" y="1415">Pedal</text>
+    <text x="24" y="1480">Bearing</text>
+    <text x="288" y="1526">Pivoted lever</text>
+  </g>
+  <text x="325" y="1274" font-size="26" fill="#286449">Fluid pressure</text>
+  <g fill="none" stroke="#286449" stroke-width="4" marker-end="url(#clutch-arrow)">
+    <path d="M27 1343H72"/><path d="M364 1434H311"/>
+  </g>
+  <path d="M124 1472 265 1457" stroke="#8da195" stroke-width="2" fill="none"/>
+  <g font-size="23" fill="#4c6155">
+    <text x="24" y="1576">Arrows: axial force / movement, not rotation.</text>
+    <text x="24" y="1609">Schematic · release gaps and motion enlarged.</text>
+  </g>
+</svg>

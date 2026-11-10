@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="1190" viewBox="0 0 480 1190" font-family="sans-serif" role="img" aria-labelledby="cabin-seat-title cabin-seat-desc">
+  <title id="cabin-seat-title">Standard Boxster seat: support and adjustment</title>
+  <desc id="cabin-seat-desc">Simplified side view of the MY2010 UK standard seat. Foam and trim spread seated weight over the cushion suspension and frame, which are supported through the runners and their attachments to the body floor. The integrated head restraint has no separate adjustment. Manual fore-and-aft adjustment releases the runner lock; manual height adjustment moves the seat above the runners; an electric switch changes backrest angle about its lower pivot. Geometry and travel are illustrative.</desc>
+  <defs>
+    <marker id="cabin-seat-motion" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#27684d"/></marker>
+    <marker id="cabin-seat-load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#9b6137"/></marker>
+    <pattern id="cabin-seat-floor" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M0 12 12 0" stroke="#a8b6ae" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="480" height="1190" fill="#fafbf9"/>
+  <g fill="#263e34">
+    <text x="24" y="38" font-size="27">Seat support and position</text>
+    <text x="24" y="72" font-size="21">Standard seat · MY2010 UK Boxster</text>
+  </g>
+
+  <rect x="16" y="96" width="448" height="596" rx="12" fill="#fff" stroke="#d7dfd9" stroke-width="2"/>
+  <text x="32" y="134" font-size="24" fill="#263e34">Support through the seat</text>
+  <!-- Side-view cutaway: frame, padding, suspended cushion and floor. -->
+  <path d="M127 220 Q122 200 141 199 Q157 199 159 222 L188 467 H387 V518 H166 L153 481Z" fill="#a8b6ae" stroke="#263e34" stroke-width="3"/>
+  <path d="M144 214 Q156 214 158 233 L184 444 Q186 457 200 457 H375 Q394 458 396 479 H180 Q166 477 163 458 L138 235 Q136 216 144 214Z" fill="#d8b692" stroke="#8a6848" stroke-width="2"/>
+  <path d="M146 215 Q155 217 157 233 L183 443 Q185 456 201 456 H375 Q391 457 396 475" fill="none" stroke="#8a6848" stroke-width="4"/>
+  <path d="M192 488 H212 L219 480 230 496 241 480 252 496 263 480 274 496 285 480 296 496 307 480 318 496 329 480 340 496 351 480 360 488 H382" fill="none" stroke="#52665b" stroke-width="3"/>
+  <path d="M178 506 H385" fill="none" stroke="#263e34" stroke-width="9"/>
+  <circle cx="169" cy="486" r="11" fill="#fafbf9" stroke="#263e34" stroke-width="4"/>
+  <!-- Functional supports only; not the exact height-linkage geometry. -->
+  <path d="M205 520 V548 M352 520 V548" stroke="#52665b" stroke-width="10"/>
+  <rect x="171" y="548" width="231" height="12" rx="3" fill="#a8b6ae" stroke="#263e34" stroke-width="2"/>
+  <rect x="159" y="566" width="255" height="11" rx="3" fill="#263e34"/>
+  <path d="M181 577 V607 M383 577 V607" stroke="#263e34" stroke-width="8"/>
+  <path d="M169 606 H193 M371 606 H395" stroke="#263e34" stroke-width="5"/>
+  <rect x="145" y="613" width="283" height="15" fill="url(#cabin-seat-floor)"/>
+  <path d="M145 613 H428" stroke="#263e34" stroke-width="4"/>
+
+  <g fill="none" stroke="#52665b" stroke-width="2">
+    <path d="M226 191 H187 L153 215"/>
+    <path d="M258 305 H193 L169 320"/>
+    <path d="M121 366 H138 L149 405"/>
+    <path d="M153 479 H163 L216 488"/>
+    <path d="M152 526 H162 L182 506"/>
+    <path d="M129 575 H157"/>
+    <path d="M339 637 V617"/>
+  </g>
+  <g font-size="22" fill="#263e34">
+    <text x="232" y="184">Fixed head</text>
+    <text x="232" y="211">restraint</text>
+    <text x="266" y="313">Foam + trim</text>
+    <text x="32" y="354">Backrest</text>
+    <text x="32" y="381">frame</text>
+    <text x="32" y="454">Cushion</text>
+    <text x="32" y="481">suspension</text>
+    <text x="32" y="533">Base frame</text>
+    <text x="32" y="583">Runners</text>
+    <text x="280" y="661">Body floor</text>
+  </g>
+  <text x="226" y="378" font-size="22" fill="#9b6137">Seated weight</text>
+  <g fill="none" stroke="#9b6137" stroke-width="4" marker-end="url(#cabin-seat-load)">
+    <path d="M283 393 V447"/>
+    <path d="M283 482 V505"/>
+    <path d="M205 522 V546"/>
+    <path d="M352 522 V546"/>
+    <path d="M181 581 V605"/>
+    <path d="M383 581 V605"/>
+  </g>
+  <text x="32" y="682" font-size="18" fill="#52665b">Orange arrows: simplified weight-support path.</text>
+
+  <text x="24" y="734" font-size="24" fill="#263e34">Three adjustments</text>
+  <g fill="#263e34" font-size="22">
+    <text x="164" y="779">Fore-and-aft · manual</text>
+    <text x="164" y="812">Lift lever to unlock;</text>
+    <text x="164" y="839">slide, then re-engage.</text>
+    <text x="164" y="904">Height · manual</text>
+    <text x="164" y="937">Pump lever to raise</text>
+    <text x="164" y="964">or lower the seat.</text>
+    <text x="164" y="1029">Recline · electric</text>
+    <text x="164" y="1062">Switch tilts backrest;</text>
+    <text x="164" y="1089">head restraint follows.</text>
+  </g>
+  <g stroke="#d7dfd9" stroke-width="2"><path d="M24 865 H456"/><path d="M24 990 H456"/></g>
+  <!-- Adjustment icons separate direction arrows from the weight path. -->
+  <g fill="none" stroke="#263e34" stroke-width="5" stroke-linejoin="round">
+    <path d="M59 771 67 810 H132 M49 823 H142"/>
+    <path d="M65 895 73 934 H137 M52 956 H142"/>
+    <path d="M76 1005 88 1064 H141 M64 1078 H144"/>
+  </g>
+  <path d="M43 844 H140" fill="none" stroke="#27684d" stroke-width="4" marker-start="url(#cabin-seat-motion)" marker-end="url(#cabin-seat-motion)"/>
+  <path d="M37 903 V945" fill="none" stroke="#27684d" stroke-width="4" marker-start="url(#cabin-seat-motion)" marker-end="url(#cabin-seat-motion)"/>
+  <path d="M50 1021 A58 58 0 0 1 110 1010" fill="none" stroke="#27684d" stroke-width="4" marker-start="url(#cabin-seat-motion)" marker-end="url(#cabin-seat-motion)"/>
+  <path d="M52 1018 88 1064 109 1012" fill="none" stroke="#a8b6ae" stroke-width="2" stroke-dasharray="4 5"/>
+  <circle cx="88" cy="1064" r="6" fill="#fff" stroke="#263e34" stroke-width="3"/>
+  <g fill="#52665b" font-size="19">
+    <text x="24" y="1140">Functional side view; shapes and travel illustrative.</text>
+    <text x="24" y="1170">Head restraint has no separate adjustment.</text>
+  </g>
+</svg>

@@ -4,6 +4,12 @@ The Boxster's body has to do several jobs in the same small space. It locates th
 
 [The opening chapter](../01-the-2010-boxster-2-9-in-the-987-2-family/index.md#a-roadster-arranged-around-its-engine) locates the major components. Here the useful question is how those spaces fit together, and which parts of the body connect them.
 
+Start with the complete car, then expose the lower shell and its front and rear connections. Selecting a region shows how it meets its neighbours; separating the regions makes those relationships easier to see.
+
+::: {.book-diagram data-diagram="body-explorer"}
+![The body shell in the car: a formed floor and centre tunnel join the sills below the doors, with bulkheads across the front and rear of the cabin and the reinforced windscreen frame rising ahead of the occupants.](diagrams/body-explorer/poster.svg)
+:::
+
 ## A connected shell around an open centre
 
 The 2010 Boxster is a **monocoque**: its load-carrying shell forms the basis of the car, rather than sitting on a separate ladder chassis. Porsche's contemporary specification describes a galvanised steel bodyshell. This concerns the principal structure; the front and rear luggage lids are aluminium.[^shell]
@@ -12,7 +18,7 @@ A flat sheet is easy to bend. Folding it into a deep section, joining it to anot
 
 The **sills** run below the door openings. The floor, central tunnel and transverse members connect the sides. Ahead of the occupants, the bulkhead and windscreen-frame region join the front structure to the cabin; behind them, the rear bulkhead closes the passenger compartment against the engine area. Together these provide routes through which loads can spread around the open centre. Porsche's original 987 training material specifically identifies the sill and A-pillar joints, a bulkhead crossmember and an additional upper load path as areas of development.[^structure]
 
-![Plan-view schematic showing the sills, centre tunnel and transverse connections carrying loads around an open passenger compartment.](body-load-paths.svg)
+![Plan-view schematic showing the sills, centre tunnel and transverse connections carrying loads around an open passenger compartment.](images/body-load-paths.svg)
 
 *Original structural concept drawing. The highlighted routes explain connectivity; they are not a stress analysis or a map of every reinforcement.*
 
@@ -62,7 +68,7 @@ Air management has two connected tasks. Some air should pass around the car with
 
 The radiators are at the front, separated from the engine by much of the car's length. Air enters through the front openings, passes through the heat exchangers and leaves through the surrounding outlet routes below and around the front end. The engine's side openings serve another part of the package. Porsche's 987 training account identifies the left-side route to the air cleaner and the right-side opening for engine-compartment ventilation.[^air] Those left and right references mean the car's sides when facing forward, regardless of steering-wheel position.
 
-![Functional flow map separating front radiator airflow, left-side combustion-air intake and right-side engine-compartment ventilation.](body-airflow.svg)
+![Functional flow map separating front radiator airflow, left-side combustion-air intake and right-side engine-compartment ventilation.](images/body-airflow.svg)
 
 *Original functional map. Arrows identify the destination of each air stream; they are not measured streamlines or exact duct routing. Coolant carries heat forward to the radiators; combustion air travels to the engine.*
 
@@ -80,7 +86,7 @@ Options affecting ride height and wheel clearance are covered in [suspension](..
 
 ## Changes in other 2.9 model years
 
-The 2.9 arrived with the facelift's revised front and rear treatment. Across the ordinary 987.2 period, the evidence examined here establishes the same basic roadster package, rather than a documented annual redesign of its passenger cell. No year-by-year change in steel specification, joining method or structural stiffness has been established. The [timeline](../02-the-yearly-timeline/index.md) sets out the supported range changes without making a registration date into a body-construction specification.
+The 2.9 arrived with the facelift's revised front and rear treatment. Porsche's 2009 technical introduction describes its bodyshell technology as essentially the same as the 2005 model for bending and torsional rigidity and side-impact protection.[^facelift-body] That establishes the inherited structural concept at the facelift; it does not establish an unchanged annual body specification throughout the ordinary 987.2 period. No year-by-year change in steel specification, joining method or structural stiffness has been established. The [timeline](../02-the-yearly-timeline/index.md) sets out the supported range changes without making a registration date into a body-construction specification.
 
 ## The S, Spyder and Black Edition
 
@@ -106,7 +112,7 @@ Underneath, inspect whether panels and air guides are present and securely retai
 
 [^luggage]: Porsche, *The Boxster*, January 2010 UK edition, printed p. 79, [PDF p. 37](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=37).
 
-[^air]: Porsche, *Boxster, Boxster S Owner's Manual*, MY2010 North American edition, **WKD 987 021 10, 5/09**, printed p. 76, [PDF p. 78](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=78), front radiator/fan location; Porsche AfterSales Training P001, printed pp. 2.29 and 5.3, left intake/right ventilation and air-guidance concept. The diagram generalises outlet regions rather than asserting a measured 2010 flow field.
+[^air]: Porsche, *Boxster, Boxster S Owner's Manual*, MY2010 North American edition, **WKD 987 021 10, 5/09**, printed p. 76, [PDF p. 78](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=78), front radiator/fan location; Porsche AfterSales Training P001, printed pp. 2.29 and 5.3, left intake/right ventilation and air-guidance concept. Facelift corroboration: Porsche PET 987209, illustration **801-080**, [PDF pp. 261–262](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=261), shows the left air-guide assembly and right fan/duct assembly. Porsche AfterSales Training, *2009 Technik Introduction*, **PNA 987 021 09, 2/09**, printed p. 51 ([viewer p. 57](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=57)), confirms retention of the earlier air cleaner. The diagram generalises outlet regions rather than asserting a measured 2010 flow field.
 
 [^underbody]: Porsche AfterSales Training P001, printed pp. 5.3–5.4. Earlier 987-generation explanation; no pre-facelift lift coefficients or percentage improvements are transferred to the reference car.
 
@@ -114,9 +120,11 @@ Underneath, inspect whether panels and air guides are present and securely retai
 
 [^hardtop]: Porsche, *The Boxster*, January 2010 UK edition, printed p. 81, [PDF p. 38](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=38).
 
+[^facelift-body]: Porsche AfterSales Training, *2009 Technik Introduction – All Boxster/Cayman Models*, **PNA 987 021 09, 2/09**, printed p. 126, [viewer p. 132](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=132). Mechanical body evidence; it does not establish every market's equipment or subsequent annual material specification.
+
 [^black]: Porsche, *Boxster S Black Edition Price List*, UK edition **03/2011**, standard bodyshell equipment, printed p. 10, [PDF p. 6](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0).
 
-[^spyder]: Porsche, *The Boxster Spyder*, January 2010 UK edition, printed pp. 16–20, [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=7); Porsche UK launch material, “The definitive Porsche roadster – the new Boxster Spyder”, [reproduced and explicitly attributed to Porsche UK by AUSmotive, 26 March 2010](https://www.ausmotive.com/2010/03/26/porsche-boxster-spyder-image-gallery.html), aluminium single-piece rear lid and doors.
+[^spyder]: Porsche, *The Boxster Spyder*, January 2010 UK edition, printed pp. 16–21, PDF pp. 7–9, [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=7); Porsche UK launch material, “The definitive Porsche roadster – the new Boxster Spyder”, [reproduced and explicitly attributed to Porsche UK by AUSmotive, 26 March 2010](https://www.ausmotive.com/2010/03/26/porsche-boxster-spyder-image-gallery.html), aluminium single-piece rear lid and doors.
 
 [^spyder-development]: Porsche Engineering, *Magazine 1/2010*, “Hats off! Boxster Spyder – The development of a Derivative”, printed p. 20, [original magazine, PDF p. 20](https://porschecarshistory.com/wp-content/old/Porsche_engineering/PE-01.2010.pdf#page=20).
 

@@ -49,6 +49,7 @@ export function slider(container, { label, min = 0, max = 100, step = 1, value, 
 export function buttons(container, items, signal) {
   const row = document.createElement('div');
   row.className = 'diagram-buttons';
+  row.style.setProperty('--longest-label', `${Math.max(...items.map((item) => item.label.length))}ch`);
   for (const { label, action } of items) {
     const button = document.createElement('button');
     button.type = 'button';

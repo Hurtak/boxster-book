@@ -4,6 +4,12 @@ The standard **2010 Boxster 2.9** has independent suspension with coil-over McPh
 
 The engineering problem is more demanding than making a car feel firm. A wheel needs freedom to follow a bump, yet its direction and inclination must remain controlled when the tyre also transmits braking, driving and cornering forces. Meanwhile, the occupants should experience much less movement than the wheel. Suspension reconciles those competing demands through geometry, springing, damping and carefully chosen flexibility.
 
+Start at the front-left wheel, then expose the strut and the links behind it. The translucent wheel makes it easier to distinguish wheel guidance, steering and the anti-roll connection before looking at each function in detail.
+
+::: {.book-diagram data-diagram="suspension-explorer"}
+![The front-left suspension is located in the car, then separated into its wheel, hub and carrier, coil-over strut, body mountings, lower arm, fore/aft guide, steering tie rod and anti-roll bar with drop link.](diagrams/suspension-explorer/poster.svg)
+:::
+
 ![Boxster 2.9, left, and S on the road. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 51. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).](images/boxster-and-s-on-road.jpg){alt="The green ordinary Boxster and red Boxster S driving along a mountain road, from Porsche's period UK catalogue."}
 
 ## How a wheel is held
@@ -28,13 +34,13 @@ The [hub bearing](../10-differential-driveshafts-and-mounts/index.md#driveshaft-
 
 ![S rear axle, showing struts and wheel-guiding links. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 50. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).](images/rear-axle-boxster-s.jpg){alt="Porsche's rear axle assembly showing its two coil-over struts, wheel carriers and several lower guiding links."}
 
-![A conceptual Boxster suspension corner routes vertical load through its coil-over strut and reacts tyre forces through the carrier, lower arm, guide and body. A key distinguishes the front steering tie rod from the rear toe-control link.](strut-forcepaths.svg)
+![A conceptual Boxster suspension corner routes vertical load through its coil-over strut and reacts tyre forces through the carrier, lower arm, guide and body. A key distinguishes the front steering tie rod from the rear toe-control link.](images/strut-forcepaths.svg)
 
 *A guide to force paths, not a measured assembly drawing. The fore-and-aft links and tie/toe rods are identified in the key rather than projected into this simplified front view.*
 
 ## Springs support; dampers settle
 
-On the standard 2010 2.9, a coil spring compresses until its force balances the load carried through that corner. Added luggage or a passenger changes that balance. During a bump the wheel moves upwards relative to the body and the spring compresses farther, storing energy. As it expands again, it returns energy to the moving suspension.
+On the standard 2010 2.9, a coil spring remains compressed at rest and provides the main support for the body load at that corner, acting through the suspension geometry. Added luggage or a passenger changes that balance. During a bump the wheel moves upwards relative to the body and the spring compresses farther, storing energy. As it expands again, it returns energy to the moving suspension.
 
 **Spring rate** describes how much extra force is required for an extra amount of compression. It is different from spring free length, and neither measurement alone defines the car's ride height. Installed geometry, spring seats, vehicle load and the rest of the spring specification also matter. The effective rate at the tyre is influenced by the relationship between wheel movement and spring movement.
 
@@ -84,7 +90,7 @@ The reference 2.9's geometry is easiest to understand by changing viewpoint. The
 
 **Toe** describes the directions the wheels point when viewed from above. Toe-in places their leading edges closer together; toe-out places them farther apart. Toe affects straight-line behaviour, steering response and tyre scrub. Rear toe is particularly relevant to the direction in which the rear axle guides the car. A rear wheel's small unintended change of direction can be felt as a change in the car's attitude.
 
-![Camber is shown from the front, caster from the side and toe from above. Negative camber leans the tops inward; positive caster places the steering-axis top rearward; toe-in brings the wheel fronts closer together.](alignment-views.svg)
+![Camber is shown from the front, caster from the side and toe from above. Negative camber leans the tops inward; positive caster places the steering-axis top rearward; toe-in brings the wheel fronts closer together.](images/alignment-views.svg)
 
 *Three separate viewing directions; angles are exaggerated. None is an alignment target for the Boxster.*
 
@@ -98,7 +104,7 @@ The January 2010 UK catalogue lists **Porsche Active Suspension Management, code
 
 The driver selects **Normal** or **Sport**. Each is an operating range within which the controller varies damping at individual wheels according to vehicle movement and driving conditions. Sport generally requests firmer control, but can soften its damping response on rough surfaces. Normal can become firmer during more demanding driving. These are adaptive programmes rather than two permanently fixed damper settings.
 
-The button changes hydraulic damping force. Spring rate and static ride height remain fixed by the fitted components; the factory PASM installation uses a matched suspension specification.[^suspension-pasm]
+The button changes hydraulic damping force. It does not change spring rate or select a different static ride height; the factory PASM installation uses a matched suspension specification. Actual static height also depends on the load carried.[^suspension-pasm]
 
 Sport Chrono can request the Sport programme on a PASM-equipped car. PASM remains a separate option. The UK catalogue lists no separate 20 mm-lowered sports chassis for the ordinary Boxster or S.[^suspension-options]
 
@@ -140,22 +146,22 @@ Establish the fitted configuration and investigate play or damage before interpr
 
 [^suspension-layout]: Porsche, *The Boxster*, edition 01/10, UK publication WSLB1101000125, printed pp. 50–51 and 126–127: coil-over McPherson suspension, lateral arms, aluminium construction and technical layout. [Original catalogue PDF](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
-[^suspension-front]: Porsche, *2009 Technik Introduction — All Boxster Cayman Models*, printed p. 108: front strut suspension with trailing link and wishbone, optional PASM reduction, and rear anti-roll-bar adaptation with differential lock. [ManualsLib viewer page 114](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=114).
+[^suspension-front]: Porsche Cars North America, *2009 Technik Introduction — All Boxster/Cayman Models*, aftersales training adapted from Porsche AG's rest-of-world text (market notice, viewer p. 2), printed p. 108: front strut suspension with trailing link and wishbone, optional PASM reduction, and rear anti-roll-bar adaptation with differential lock. [ManualsLib viewer page 114](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=114); [same Porsche training text on Scribd](https://www.scribd.com/document/972719474/Boxster-2009).
 
 [^suspension-rear]: Porsche, *2009 Technik Introduction*, printed p. 110: McPherson rear axle, revised springs, dampers, bars, rebound stops and spring pads. [Viewer page 116](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=116). Porsche, *Boxster 2009–2012 PET*, illustrations 401-000 and 501-000, PDF pp. 129–130 and 181–182: separate front/rear arms, guides and rear track rod. This catalogue is a 2018 parts snapshot, not an annual production-change log. [Original PET PDF](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=181).
 
-[^suspension-damping]: Monroe, [“What Do Shock Absorbers Do?”](https://www.monroeheavyduty.com/en-US/shocks-101/what-do-shock-absorbers-do/), manufacturer explanation of spring control, velocity-sensitive hydraulic damping and energy conversion. Its commercial-vehicle examples are used only for general operating principles; they do not establish the Boxster's original supplier or calibration.
+[^suspension-damping]: Monroe, [“What Do Shock Absorbers Do?”](https://www.monroeheavyduty.com/en-US/shocks-101/what-do-shock-absorbers-do/), manufacturer explanation of spring control, velocity-sensitive hydraulic damping and energy conversion; ZF Aftermarket, [“Shock Absorbers and Dampers”](https://media-aftermarket.zf.com/us/aftermarket-portal/our-portfolio/passenger-cars/products/shock-absorbers-dampers/), “Twin-tube dampers”, “Compression stage” and “Rebound stage”, for oil flow through valves. These explain general operating principles; they do not establish the Boxster's original supplier or calibration.
 
 [^suspension-struts]: Porsche, *2009 Technik Introduction*, printed pp. 109–110, double-tube gas-filled dampers, coil springs and identification by spring colour codes. [Viewer page 115](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=115). Porsche cautions that this overview may change during the model year and that current technical information governs identification.
 
-[^suspension-geometry]: Bridgestone, [“What You Need to Know About Tire Alignment”](https://tires.bridgestone.com/en-us/learn/automotive/tire-maintenance/tire-alignment), general camber, caster and toe definitions; Hunter Engineering, *WinAlign Operation Manual*, printed p. 78 and glossary pp. 312–313, alignment measurements and their reference conditions. [Manufacturer manual](https://www.hunter.com/globalassets/hunter/products/alignment-systems/winalign-standard/documents/align-winalign-ops-3850-t.pdf). Neither source supplies Boxster alignment targets here.
+[^suspension-geometry]: Bridgestone, [“Tire Alignment: What You Need to Know”](https://tires.bridgestone.com/en-us/learn/automotive/tire-maintenance/tire-alignment), general camber, caster and toe definitions; Hunter Engineering, *WinAlign Alignment Software Operation Manual*, version 16, Form 3850-T, 07-19a, printed/PDF p. 78 and glossary pp. 312–313, alignment measurements and their reference conditions. [Manufacturer manual](https://www.hunter.com/globalassets/hunter/products/alignment-systems/winalign-standard/documents/align-winalign-ops-3850-t.pdf). Neither source supplies Boxster alignment targets here.
 
 [^suspension-options]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 54–57 and 107: PASM operation, 10 mm reduction, Sport Chrono interaction, and option code 475 for both Boxster and S. The option table lists no separate 20 mm sports chassis for either ordinary model. [Original catalogue](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
 [^suspension-pasm]: Porsche, *2009 Technik Introduction*, printed p. 111: modified PASM hydraulic characteristics and control, model-specific tuning, and variable damping within each programme. [Viewer page 117](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=117).
 
-[^suspension-later]: Porsche Cars North America, [2011 Boxster/S/Spyder technical specifications, p. 2](https://newsroom.porsche.com/dam/jcr:6e750179-ddfd-40cb-a969-d1cc825d4717/2011_Boxster_Spyder_Specifications.pdf) and [2012 Boxster technical specifications, p. 1](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf). Used for broad mechanical continuity, not UK annual option availability.
+[^suspension-later]: Porsche, *The new Boxster*, UK edition 08/08, printed pp. 54–55 and 107 (PDF pp. 26 and 50), lists the PASM option with 10 mm lowering for the facelift launch. [Original UK launch brochure](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf). Porsche Cars North America, [2011 Boxster/S/Spyder technical specifications, p. 2](https://newsroom.porsche.com/dam/jcr:6e750179-ddfd-40cb-a969-d1cc825d4717/2011_Boxster_Spyder_Specifications.pdf) and [2012 Boxster technical specifications, p. 1](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf), corroborate the later broad mechanical layout, not UK annual option availability.
 
-[^suspension-spyder]: Porsche, *The Boxster Spyder*, UK edition 01/10, printed pp. 28–31: fixed sports chassis, 20 mm reduction relative to Boxster S, and lightweight 19-inch wheels. [Original brochure PDF](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf). Its European arrival in February 2010 is established by [Porsche's announcement of 6 November 2009](https://nieuws.porsche.nl/porsche-boxster-spyder-lichtgewicht-roadster-voor-puristen/); a later US model-year label does not alter that introduction date.
+[^suspension-spyder]: Porsche, *The Boxster Spyder*, UK edition 01/10, printed pp. 28–31 (PDF pp. 13–14): fixed sports chassis, 20 mm reduction relative to Boxster S, and lightweight 19-inch wheels. [Original brochure PDF](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf). [Porsche Netherlands' announcement of 6 November 2009](https://nieuws.porsche.nl/porsche-boxster-spyder-lichtgewicht-roadster-voor-puristen/) gives February 2010 as the planned market introduction. That prospective announcement does not establish completed deliveries across Europe or a particular car's model year.
 
 [^suspension-black]: Porsche, *Boxster S Black Edition Price List*, UK edition 03/2011, printed pp. 8–11 and 16–17: standard wheels and optional PASM, code 475, Normal/Sport and 10 mm reduction. [Original UK price list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0).

@@ -16,4 +16,4 @@ These two Porsche-authored illustrations/photographs are retained locally for th
 - **Image:** studio photograph of the red **Boxster S**, front and rear luggage lids raised. Caption identifies the S as a comparison; its photograph does not establish the reference 2.9's options.
 - **Local treatment:** extracted original embedded JPEG using Poppler `pdfimages -f 37 -l 37 -j`, image 002, **527 × 300**. No compositing, recolouring or crop. Checked visually against the complete source spread on 10 November 2026.
 
-The three explanatory SVGs and the D3 packaging-layer view are original book artwork. Their shapes, clearances and load/air paths are schematic, not factory CAD or measured analysis.
+The load-path and airflow SVGs, the D3 packaging-layer view and the 3D body-shell explorer are original book artwork. Their shapes, clearances and load/air paths are schematic, not factory CAD or measured analysis.

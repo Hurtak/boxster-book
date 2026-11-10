@@ -6,14 +6,46 @@ const soundLabels = { standard: 'Standard speakers', plus: 'Sound Package Plus',
 
 function pathFor(state) {
   const pcm = state.headUnit === 'pcm';
-  let missing = '';
-  if (state.source === 'usb' && !pcm) missing = 'USB / iPod control needs PCM 3.0. The UK 2010 CDR-30 interface supplies AUX only.';
-  else if (['aux', 'usb'].includes(state.source) && !state.audioInterface) missing = 'This external source needs the optional universal audio interface (870).';
-  else if (state.source === 'dvd' && (!pcm || state.sound !== 'bose')) missing = 'This discrete 5.1 DVD example needs PCM 3.0 and BOSE. CDR-30 reads CDs; BOSE can derive surround from a stereo CD.';
-  const source = { radio: 'FM broadcast → tuner', cd: 'CD drive → decoded audio', aux: 'Player → analogue AUX', usb: 'USB / iPod → PCM interface', dvd: 'DVD drive → 5.1 programme' }[state.source];
-  const amplifier = { standard: 'Head-unit output stages', plus: 'Analogue → Plus amplifier', bose: pcm ? 'MOST → BOSE amplifier' : 'Digital → BOSE amplifier' }[state.sound];
-  const speakers = { standard: ['2 dashboard tweeters', '+ 2 door woofers'], plus: ['7 speakers', '185 W total'], bose: ['11 speakers · subwoofer', '385 W total'] }[state.sound];
-  return { pcm, missing, source, amplifier, speakers };
+  let missing = '', blockedAt = '';
+  if (state.source === 'usb' && !pcm) {
+    missing = 'USB / iPod control needs PCM 3.0 and its version of interface 870. In the January 2010 UK catalogue, the CDR-30 version supplies AUX only.';
+    blockedAt = 'source';
+  } else if (['aux', 'usb'].includes(state.source) && !state.audioInterface) {
+    missing = 'The selected external source needs the optional universal audio interface (870). The sound package does not add this input.';
+    blockedAt = 'source';
+  } else if (state.source === 'dvd' && !pcm) {
+    missing = 'CDR-30 reads CDs, not DVDs. This recorded 5.1 example needs the PCM 3.0 CD/DVD drive and BOSE; adding BOSE alone does not add a DVD drive.';
+    blockedAt = 'source';
+  } else if (state.source === 'dvd' && state.sound !== 'bose') {
+    missing = 'The selected example is discrete DVD 5.1, which needs BOSE with PCM. PCM’s single CD/DVD drive is sufficient: the optional six-disc changer is not required. Other playback modes are outside this example.';
+    blockedAt = 'amplifier';
+  }
+  const source = {
+    radio: ['FM broadcast', 'Aerial receives the radio signal'],
+    cd: ['Audio / MP3 CD', 'Disc read inside the head unit'],
+    aux: ['External player · AUX', 'Player decodes its own music'],
+    usb: ['USB / period iPod', 'Compatible device and cable'],
+    dvd: ['Discrete 5.1 DVD', '5 main channels + LFE'],
+  }[state.source];
+  const input = {
+    radio: ['Radio signal to tuner'],
+    cd: ['Disc information to decoder'],
+    aux: ['870 · analogue left/right audio'],
+    usb: ['870 · programme to PCM', 'PCM track commands to device'],
+    dvd: ['Disc information to decoder'],
+  }[state.source];
+  const signal = { standard: 'Internal audio signal', plus: 'Analogue audio', bose: pcm ? 'MOST · programme data' : 'Programme signal' }[state.sound];
+  const amplifier = {
+    standard: ['Head-unit output stages', pcm ? 'Inside PCM · standard sound' : 'Inside CDR-30 · 2 × 25 W'],
+    plus: ['Separate Plus amplifier', 'Fully active · 185 W total'],
+    bose: ['Separate BOSE amplifier', '7-channel digital · 385 W total'],
+  }[state.sound];
+  const speakers = {
+    standard: ['4 speakers', '2 dashboard tweeters', '+ 2 door woofers'],
+    plus: ['7 speakers', 'Drivers matched to the cabin'],
+    bose: ['11 speakers', 'Includes centre + active subwoofer'],
+  }[state.sound];
+  return { pcm, missing, blockedAt, source, input, signal, amplifier, speakers };
 }
 
 export function mount(host, { state, signal }) {
@@ -26,35 +58,64 @@ export function mount(host, { state, signal }) {
   if (!Object.hasOwn(soundLabels, state.sound)) state.sound = 'standard';
   const { stage, controls, explanation } = panel(host, {
     title: 'Follow one programme through the system',
-    description: 'Choose the source, head unit and sound package. Add interface 870 for an external player.',
-    note: 'January 2010 UK catalogue relationships, simplified signal paths. This is not a complete factory configurator or wiring diagram. “DVD” here specifically means the PCM + BOSE discrete 5.1 example.',
+    description: 'Follow programme information into the head unit, then electrical power out to the speakers. Interface 870 and the sound package do different jobs.',
+    note: 'MY2010 UK Boxster 2.9 · functional paths, not cable routing or a complete factory configurator. “DVD” means a compatible recorded 5.1 programme with PCM + BOSE. Device compatibility is equipment-specific. Grey marks an inactive programme path, not disconnected vehicle power.',
   });
-  stage.style.height = '420px';
-  const redraw = svgDiagram(stage, 'Selected audio source, head unit, amplification and loudspeakers', (svg, { width, height }) => {
+  stage.style.height = '650px';
+  explanation.setAttribute('aria-live', 'polite');
+  const redraw = svgDiagram(stage, 'Audio information, source control, amplifier power and speaker sound', (svg, { width }) => {
     svg.selectAll('*').remove();
     const route = pathFor(state);
-    const centre = width / 2;
-    const boxWidth = width - 24;
     const active = !route.missing;
-    const labels = [
-      [route.source],
-      [route.pcm ? 'PCM 3.0' : 'CDR-30', active ? 'programme selected' : 'source unavailable'],
-      [route.amplifier],
-      route.speakers,
-    ];
-    const ys = [22, 120, 218, 316];
-    for (let i = 0; i < labels.length; i++) {
-      const enabled = i === 0 || active;
+    const sourceActive = route.blockedAt !== 'source';
+    const centre = width / 2;
+    const ink = '#203e33', green = '#176b53', rust = '#a4412b', power = '#966827';
+    svg.append('title').text('Selected audio programme and its equipment dependencies');
+    svg.append('desc').text(`${sourceLabels[state.source]} through ${route.pcm ? 'PCM 3.0' : 'CDR-30'} and ${soundLabels[state.sound]}. ${route.missing || 'Programme information controls an amplifier powered by the vehicle; its output current moves the speakers to make sound.'}`);
+    const text = (x, y, label, size = 19, colour = ink, anchor = 'middle') => svg.append('text').attr('x', x).attr('y', y).attr('text-anchor', anchor).attr('font-size', size).attr('fill', colour).text(label);
+    const card = (y, h, lines, enabled = true, fill = '#fff') => {
       const group = svg.append('g').attr('opacity', enabled ? 1 : 0.52);
-      group.append('rect').attr('x', 12).attr('y', ys[i]).attr('width', boxWidth).attr('height', 72).attr('rx', 5).attr('fill', '#fff').attr('stroke', i === 1 && !active ? '#a4412b' : '#72887b').attr('stroke-width', 2);
-      labels[i].forEach((label, line) => group.append('text').attr('x', centre).attr('y', ys[i] + (labels[i].length === 1 ? 44 : 29 + line * 28)).attr('text-anchor', 'middle').attr('font-size', 20).attr('fill', '#203e33').text(label));
-      if (i < 3) {
-        const x = centre, top = ys[i] + 76;
-        svg.append('path').attr('d', active ? `M${x},${top}v15m-5,-5l5,5l5,-5` : `M${x - 5},${top + 2}l10,10m0,-10l-10,10`).attr('stroke', active ? '#176b53' : '#a4412b').attr('stroke-width', 3).attr('fill', 'none');
-      }
+      group.append('rect').attr('x', 12).attr('y', y).attr('width', width - 24).attr('height', h).attr('rx', 5).attr('fill', fill).attr('stroke', '#72887b').attr('stroke-width', 1.5);
+      lines.forEach((line, i) => group.append('text').attr('x', centre).attr('y', y + 28 + i * 25).attr('text-anchor', 'middle').attr('font-size', i ? 17 : 21).attr('fill', ink).attr('font-weight', i ? 400 : 600).text(line));
+      return group;
+    };
+    const down = (top, bottom, labels, enabled = true, colour = green, thick = false) => {
+      const x = 31;
+      svg.append('path').attr('d', enabled ? `M${x},${top}V${bottom}m-5,-6l5,6l5,-6` : `M${x},${top}V${bottom}`).attr('stroke', enabled ? colour : rust).attr('stroke-width', thick ? 4 : 2).attr('stroke-dasharray', enabled ? null : '4 4').attr('fill', 'none');
+      if (!enabled) svg.append('path').attr('d', `M${x - 6},${(top + bottom) / 2 - 6}l12,12m0,-12l-12,12`).attr('stroke', rust).attr('stroke-width', 3);
+      labels.forEach((label, i) => text(49, (top + bottom) / 2 + (labels.length > 1 ? -6 : 6) + i * 23, label, 17, enabled ? colour : rust, 'start'));
+    };
+    text(centre, 22, active ? 'PROGRAMME PATH AVAILABLE' : 'SELECTED ROUTE UNAVAILABLE', 16, active ? green : rust);
+    card(38, 76, route.source);
+    const inputLabels = sourceActive ? route.input : [state.source === 'usb' && !route.pcm ? 'Needs PCM + interface 870' : state.source === 'dvd' ? 'CDR-30 cannot read DVDs' : 'Interface 870 not fitted'];
+    down(120, 164, inputLabels, sourceActive);
+    if (state.source === 'usb' && sourceActive) {
+      // A functional return-command path, without assigning an unverified device transport.
+      svg.append('path').attr('d', `M${width - 27},164v-40m-5,6l5,-6l5,6`).attr('stroke', green).attr('stroke-width', 2).attr('fill', 'none');
     }
-    const details = state.sound === 'bose' ? `${route.pcm ? 'The PCM MOST programme path feeds' : 'The digital sound system uses'} the BOSE amplifier, which drives the speakers.` : state.sound === 'plus' ? 'The separate analogue Sound Package Plus amplifier drives all speaker channels.' : 'The standard arrangement uses the head unit’s output stages and four speakers.';
-    explanation.textContent = route.missing || `${sourceLabels[state.source]} is available through ${route.pcm ? 'PCM 3.0' : 'CDR-30'}. ${details}${state.source === 'aux' ? ' Choose tracks on the external player.' : ''}${state.source === 'usb' ? ' Supported USB/iPod selections can be controlled through PCM.' : ''}`;
+    card(174, 76, [route.pcm ? 'PCM 3.0' : 'CDR-30', state.source === 'radio' ? 'Tune · select · set volume' : 'Select programme · set volume'], sourceActive);
+    down(257, 301, route.blockedAt === 'amplifier' ? ['Needs BOSE for discrete 5.1'] : [route.signal], active);
+    const amp = card(312, 119, route.amplifier, active, '#faf7ef');
+    // Supply energy and programme information are different inputs to amplification.
+    amp.append('text').attr('x', 29).attr('y', 405).attr('font-size', 17).attr('fill', power).text('Vehicle power');
+    const gainX = Math.max(205, width - 78);
+    amp.append('path').attr('d', `M155,399H${gainX - 8}m-6,-4l6,4l-6,4M${gainX},384l27,15l-27,15Z`).attr('fill', 'none').attr('stroke', power).attr('stroke-width', 2);
+    down(439, 479, ['Speaker-driving current'], active, power, true);
+    card(490, state.sound === 'standard' ? 98 : 84, route.speakers, active);
+    // Generic loudspeaker symbol and outgoing pressure waves; no mounting geometry.
+    const speakerY = 615;
+    svg.append('path').attr('d', `M${centre - 58},${speakerY - 7}h10l15,-10v34l-15,-10h-10Z M${centre - 21},${speakerY - 12}q12,12 0,24 M${centre - 13},${speakerY - 20}q20,20 0,40`).attr('stroke', active ? green : '#72887b').attr('stroke-width', 2).attr('fill', 'none').attr('opacity', active ? 1 : 0.52);
+    text(centre + 59, speakerY - 2, 'Cone motion', 18, active ? ink : '#72887b');
+    text(centre + 59, speakerY + 21, '→ sound waves', 18, active ? ink : '#72887b');
+    const details = state.sound === 'bose' ? `${route.pcm ? 'PCM sends programme data over MOST to the' : 'The selected programme feeds the'} digital BOSE amplifier. Its output stages supply speaker-driving current; eleven speakers do not imply eleven programme channels.` : state.sound === 'plus' ? 'Analogue audio feeds the separate, fully active Plus amplifier. It drives all seven speakers; the head unit does not retain the speaker-driving role.' : 'The output stages are inside the head unit, rather than a separate amplifier. They drive two dashboard tweeters and two door woofers; four drivers can reproduce a two-channel stereo programme.';
+    const sourceDetails = {
+      radio: 'The tuner recovers audio from the aerial’s radio signal.',
+      cd: 'The drive and decoder recover audio from the disc.',
+      aux: 'AUX carries analogue left/right sound through interface 870. Choose tracks on the external player; AUX adds no track-control return path.',
+      usb: 'Interface 870 connects a supported USB or period iPod device. Programme audio goes to PCM, with supported selection commands returning to the device. Connector and device support still matter.',
+      dvd: 'A compatible audio/video DVD supplies five recorded main channels plus low-frequency effects. PCM’s single CD/DVD drive is sufficient; the optional six-disc changer is not required. This is recorded surround, unlike surround derived from stereo by BOSE Centerpoint.',
+    }[state.source];
+    explanation.textContent = route.missing || `${sourceDetails} ${details}`;
     host.dataset.audioHeadUnit = state.headUnit;
     host.dataset.audioSource = state.source;
     host.dataset.audioSound = state.sound;

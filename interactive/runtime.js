@@ -9,7 +9,12 @@ export function boot(registry) {
   const release = (record) => {
     if (record.element.classList.contains('diagram-ready')) {
       // Disposing an offscreen scene must not pull later paragraphs upwards.
-      record.element.style.setProperty('--diagram-reserved-height', `${record.element.getBoundingClientRect().height}px`);
+      const height = record.element.getBoundingClientRect().height;
+      // A chapter hidden by navigation has no measurable layout to preserve.
+      if (height > 0) {
+        record.element.style.setProperty('--diagram-reserved-height', `${height}px`);
+        record.element.classList.add('diagram-suspended');
+      }
     }
     record.controller?.abort();
     record.cleanup?.();
@@ -37,11 +42,14 @@ export function boot(registry) {
       record.cleanup = cleanup;
       record.fallback.forEach((node) => { node.hidden = true; });
       record.element.classList.add('diagram-ready');
+      record.element.classList.remove('diagram-suspended');
       record.element.style.removeProperty('--diagram-reserved-height');
     } catch (error) {
       if (controller.signal.aborted) return;
       console.error(`Diagram ${record.element.dataset.diagram}:`, error);
       release(record);
+      record.element.classList.remove('diagram-suspended');
+      record.element.style.removeProperty('--diagram-reserved-height');
       record.failed = true;
       const notice = document.createElement('p');
       notice.className = 'diagram-notice';

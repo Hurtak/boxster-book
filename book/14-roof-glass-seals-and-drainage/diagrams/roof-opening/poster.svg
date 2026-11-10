@@ -1,1 +1,124 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 760" role="img" aria-labelledby="t d"><title id="t">The ordinary roof folds behind the seats</title><desc id="d">Four schematic stages show the closed roof, a raised compartment cover, the folded frame and the stowed roof with its cover closed.</desc><rect width="480" height="760" fill="#f3f5f0"/><g font-family="sans-serif" fill="#263c34"><text x="24" y="37" font-size="25" font-weight="bold">Where the roof goes</text><text x="24" y="65" font-size="21">2010 Boxster 2.9 · schematic stages</text><g stroke="#315d4d" stroke-linecap="round" stroke-linejoin="round" fill="none"><g transform="translate(0 70)"><path d="M45 169 Q55 145 130 145 L174 154 H430" stroke-width="4"/><path d="M130 145 L184 90" stroke="#718c91" stroke-width="6"/><path d="M184 90 Q250 42 312 84 L368 144" stroke-width="9"/><path d="M335 143 L425 146" stroke-width="7"/></g><g transform="translate(0 230)"><path d="M45 169 Q55 145 130 145 L174 154 H430" stroke-width="4"/><path d="M130 145 L184 90" stroke="#718c91" stroke-width="6"/><path d="M216 66 Q285 39 321 95 L366 144" stroke-width="9"/><path d="M365 143 L410 62" stroke-width="7"/></g><g transform="translate(0 390)"><path d="M45 169 Q55 145 130 145 L174 154 H430" stroke-width="4"/><path d="M130 145 L184 90" stroke="#718c91" stroke-width="6"/><path d="M327 82 L303 47 L375 70 L339 111 L371 143" stroke-width="9"/><path d="M365 143 L410 62" stroke-width="7"/></g><g transform="translate(0 550)"><path d="M45 169 Q55 145 130 145 L174 154 H430" stroke-width="4"/><path d="M130 145 L184 90" stroke="#718c91" stroke-width="6"/><path d="M339 157 l15 -7 l21 8 l16 -6 l17 6" stroke-width="7"/><path d="M335 143 L425 146" stroke-width="7"/></g></g><g font-size="21"><text x="24" y="111">1  Closed and latched</text><text x="24" y="271">2  Cover gives clearance</text><text x="24" y="431">3  Frame folds rearwards</text><text x="24" y="591">4  Roof stowed; cover closed</text></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 1130" role="img" aria-labelledby="t d">
+<title id="t">How the ordinary Boxster roof folds behind the seats</title>
+<desc id="d">A functional side cutaway of the MY2010 Boxster 2.9 roof. The front header is released manually. The powered frame and compartment cover move in overlapping stages. The heated rear glass stays rigid while the fabric and articulated frame fold into a well behind the seats. The cover closes above the stowed roof. Pale bodywork is a fixed reference and cut away over the well. Intermediate geometry is illustrative.</desc>
+<rect width="480" height="1130" fill="#f3f5f0"/>
+<g font-family="sans-serif" fill="#263c34">
+<text x="20" y="34" font-size="27" font-weight="bold">Where the roof goes</text>
+<text x="20" y="63" font-size="20">MY2010 2.9 · ordinary powered fabric roof</text>
+<g transform="translate(0 85)"><text x="20" y="23" font-size="21" font-weight="600">Closed · header latched</text><g transform="translate(15 22) scale(0.66)">
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <!-- Fixed reference structure: the body is cut away over the roof well. -->
+      <path d="M26 221 Q46 203 105 196 L207 190 L247 199 L421 199 L429 190 L573 190 Q623 190 651 218 L651 247 L28 247 Z" fill="#dfe7df" stroke="#637b70" stroke-width="3"/>
+      <path d="M205 191 L278 100 L286 104 L220 193" fill="#b9d7dc" stroke="#5b7e86" stroke-width="3"/>
+      <path d="M269 102 L287 102" stroke="#315d4d" stroke-width="6"/>
+      <path d="M253 201 L259 237 H405 V201" fill="none" stroke="#a0b0a5" stroke-width="2"/>
+      <path d="M337 202 L332 164 Q331 150 344 150 L353 153 L365 202 M329 204 H373" fill="#c9ad8d" stroke="#96744d" stroke-width="4"/>
+      <path d="M394 198 V164 Q394 143 405 143 Q416 143 416 164 V199" fill="none" stroke="#71837b" stroke-width="7"/>
+      <path d="M430 198 L442 240 L564 240 L574 198" fill="#f3f5f0" stroke="#70877a" stroke-width="2"/>
+      <path d="M449 241 H558" stroke="#bbc9bf" stroke-width="4"/>
+      <g fill="#f3f5f0" stroke="#637b70" stroke-width="3"><circle cx="133" cy="246" r="32"/><circle cx="587" cy="246" r="32"/></g>
+      <g fill="#bac6bd"><circle cx="133" cy="246" r="18"/><circle cx="587" cy="246" r="18"/></g>
+      <path d="M243 192 L281 119 L389 119 L414 191 Z" fill="#b9d7dc" fill-opacity=".35" stroke="#8cabb1" stroke-width="2"/>
+
+      <!-- The pale body cutaway makes the stowed package visible below the lid. -->
+      <path d="M278 100 Q356 65 428 98 L510 192 L493 195 L417 115 Q355 85 280 115 Z" fill="#526a61" stroke="#273f35" stroke-width="3"/>
+      <path d="M280 114 L355 106 L417 116 L438 204 M385 111 L438 204 L493 191" fill="none" stroke="#c39b64" stroke-width="5"/>
+      <g transform="translate(472 148) rotate(59)">
+        <rect x="-34" y="-8" width="68" height="16" rx="3" fill="#b5d8de" stroke="#477b88" stroke-width="3"/>
+        <path d="M-26 -3 H26 M-26 3 H26" stroke="#6f9fa9" stroke-width="1.5"/>
+      </g>
+      <path d="M425 190 Q493 184 573 190 L570 200 Q493 194 428 200 Z" fill="#789b80" stroke="#315d4d" stroke-width="3"/>
+      <path d="M278 112 l6 4 v7 h-7" fill="none" stroke="#a56d34" stroke-width="4"/>
+
+
+    </g></g><g transform="translate(0 22)"><path d="M198.48000000000002 66 L186.6 46.2" fill="none" stroke="#637b70"/><circle cx="186.6" cy="46.2" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="186.6" y="51.2" text-anchor="middle" font-size="16">1</text><path d="M259.20000000000005 54.78 L262.5 31.020000000000003" fill="none" stroke="#637b70"/><circle cx="262.5" cy="31.020000000000003" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="262.5" y="36.02" text-anchor="middle" font-size="16">2</text><path d="M334.44 97.02000000000001 L337.74 109.56" fill="none" stroke="#637b70"/><circle cx="337.74" cy="109.56" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="337.74" y="114.56" text-anchor="middle" font-size="16">3</text><path d="M377.34000000000003 126.06 L385.26 105.60000000000001" fill="none" stroke="#637b70"/><circle cx="385.26" cy="105.60000000000001" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="385.26" y="110.60000000000001" text-anchor="middle" font-size="16">4</text><path d="M377.34000000000003 161.04000000000002 L380.64000000000004 184.8" fill="none" stroke="#637b70"/><circle cx="380.64000000000004" cy="184.8" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="380.64000000000004" y="189.8" text-anchor="middle" font-size="16">5</text></g></g>
+<g transform="translate(0 285)"><text x="20" y="23" font-size="21" font-weight="600">Powered travel · cover clears</text><g transform="translate(15 22) scale(0.66)">
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <!-- Fixed reference structure: the body is cut away over the roof well. -->
+      <path d="M26 221 Q46 203 105 196 L207 190 L247 199 L421 199 L429 190 L573 190 Q623 190 651 218 L651 247 L28 247 Z" fill="#dfe7df" stroke="#637b70" stroke-width="3"/>
+      <path d="M205 191 L278 100 L286 104 L220 193" fill="#b9d7dc" stroke="#5b7e86" stroke-width="3"/>
+      <path d="M269 102 L287 102" stroke="#315d4d" stroke-width="6"/>
+      <path d="M253 201 L259 237 H405 V201" fill="none" stroke="#a0b0a5" stroke-width="2"/>
+      <path d="M337 202 L332 164 Q331 150 344 150 L353 153 L365 202 M329 204 H373" fill="#c9ad8d" stroke="#96744d" stroke-width="4"/>
+      <path d="M394 198 V164 Q394 143 405 143 Q416 143 416 164 V199" fill="none" stroke="#71837b" stroke-width="7"/>
+      <path d="M430 198 L442 240 L564 240 L574 198" fill="#f3f5f0" stroke="#70877a" stroke-width="2"/>
+      <path d="M449 241 H558" stroke="#bbc9bf" stroke-width="4"/>
+      <g fill="#f3f5f0" stroke="#637b70" stroke-width="3"><circle cx="133" cy="246" r="32"/><circle cx="587" cy="246" r="32"/></g>
+      <g fill="#bac6bd"><circle cx="133" cy="246" r="18"/><circle cx="587" cy="246" r="18"/></g>
+      <path d="M243 200 L281 148 L389 148 L414 200 Z" fill="#b9d7dc" fill-opacity=".35" stroke="#8cabb1" stroke-width="2"/>
+      <path d="M426 193 Q495 187 570 193" fill="none" stroke="#a5b7a9" stroke-width="3" stroke-dasharray="7 6"/>
+      <!-- The pale body cutaway makes the stowed package visible below the lid. -->
+      <path d="M315 69 Q394 34 455 94 L509 187 L493 193 L443 110 Q390 56 320 84 Z" fill="#526a61" stroke="#273f35" stroke-width="3"/>
+      <path d="M320 83 L389 88 L437 129 L438 204 M410 107 L438 204 L493 188" fill="none" stroke="#c39b64" stroke-width="5"/>
+      <g transform="translate(478 147) rotate(54)">
+        <rect x="-34" y="-8" width="68" height="16" rx="3" fill="#b5d8de" stroke="#477b88" stroke-width="3"/>
+        <path d="M-26 -3 H26 M-26 3 H26" stroke="#6f9fa9" stroke-width="1.5"/>
+      </g>
+      <path d="M520 111 Q585 110 650 139 L646 150 Q582 126 515 124 Z" fill="#789b80" stroke="#315d4d" stroke-width="3"/>
+      <path d="M315 81 l-9 11 h-6" fill="none" stroke="#a56d34" stroke-width="4"/>
+      <path d="M336 47 Q393 12 435 48 M424 36 L435 48 L419 50" fill="none" stroke="#a56d34" stroke-width="3"/>
+
+    </g></g></g>
+<g transform="translate(0 485)"><text x="20" y="23" font-size="21" font-weight="600">Frame folds · glass stays rigid</text><g transform="translate(15 22) scale(0.66)">
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <!-- Fixed reference structure: the body is cut away over the roof well. -->
+      <path d="M26 221 Q46 203 105 196 L207 190 L247 199 L421 199 L429 190 L573 190 Q623 190 651 218 L651 247 L28 247 Z" fill="#dfe7df" stroke="#637b70" stroke-width="3"/>
+      <path d="M205 191 L278 100 L286 104 L220 193" fill="#b9d7dc" stroke="#5b7e86" stroke-width="3"/>
+      <path d="M269 102 L287 102" stroke="#315d4d" stroke-width="6"/>
+      <path d="M253 201 L259 237 H405 V201" fill="none" stroke="#a0b0a5" stroke-width="2"/>
+      <path d="M337 202 L332 164 Q331 150 344 150 L353 153 L365 202 M329 204 H373" fill="#c9ad8d" stroke="#96744d" stroke-width="4"/>
+      <path d="M394 198 V164 Q394 143 405 143 Q416 143 416 164 V199" fill="none" stroke="#71837b" stroke-width="7"/>
+      <path d="M430 198 L442 240 L564 240 L574 198" fill="#f3f5f0" stroke="#70877a" stroke-width="2"/>
+      <path d="M449 241 H558" stroke="#bbc9bf" stroke-width="4"/>
+      <g fill="#f3f5f0" stroke="#637b70" stroke-width="3"><circle cx="133" cy="246" r="32"/><circle cx="587" cy="246" r="32"/></g>
+      <g fill="#bac6bd"><circle cx="133" cy="246" r="18"/><circle cx="587" cy="246" r="18"/></g>
+      <path d="M243 200 L281 148 L389 148 L414 200 Z" fill="#b9d7dc" fill-opacity=".35" stroke="#8cabb1" stroke-width="2"/>
+      <path d="M426 193 Q495 187 570 193" fill="none" stroke="#a5b7a9" stroke-width="3" stroke-dasharray="7 6"/>
+      <!-- The pale body cutaway makes the stowed package visible below the lid. -->
+      <path d="M451 124 L425 70 Q459 77 504 103 L466 161 L523 194 L508 204 L446 165 L484 108 L447 91 L466 119 Z" fill="#526a61" stroke="#273f35" stroke-width="3"/>
+      <path d="M459 123 L438 88 L490 108 L453 164 L438 204 M453 164 L513 196" fill="none" stroke="#c39b64" stroke-width="5"/>
+      <g transform="translate(493 177) rotate(24)">
+        <rect x="-34" y="-8" width="68" height="16" rx="3" fill="#b5d8de" stroke="#477b88" stroke-width="3"/>
+        <path d="M-26 -3 H26 M-26 3 H26" stroke="#6f9fa9" stroke-width="1.5"/>
+      </g>
+      <path d="M520 111 Q585 110 650 139 L646 150 Q582 126 515 124 Z" fill="#789b80" stroke="#315d4d" stroke-width="3"/>
+      <path d="M451 136 l-9 11 h-6" fill="none" stroke="#a56d34" stroke-width="4"/>
+
+      <path d="M378 78 Q397 166 428 185 M415 174 L428 185 L429 169" fill="none" stroke="#a56d34" stroke-width="3"/>
+    </g></g></g>
+<g transform="translate(0 685)"><text x="20" y="23" font-size="21" font-weight="600">Stowed · roof beneath cover</text><g transform="translate(15 22) scale(0.66)">
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <!-- Fixed reference structure: the body is cut away over the roof well. -->
+      <path d="M26 221 Q46 203 105 196 L207 190 L247 199 L421 199 L429 190 L573 190 Q623 190 651 218 L651 247 L28 247 Z" fill="#dfe7df" stroke="#637b70" stroke-width="3"/>
+      <path d="M205 191 L278 100 L286 104 L220 193" fill="#b9d7dc" stroke="#5b7e86" stroke-width="3"/>
+      <path d="M269 102 L287 102" stroke="#315d4d" stroke-width="6"/>
+      <path d="M253 201 L259 237 H405 V201" fill="none" stroke="#a0b0a5" stroke-width="2"/>
+      <path d="M337 202 L332 164 Q331 150 344 150 L353 153 L365 202 M329 204 H373" fill="#c9ad8d" stroke="#96744d" stroke-width="4"/>
+      <path d="M394 198 V164 Q394 143 405 143 Q416 143 416 164 V199" fill="none" stroke="#71837b" stroke-width="7"/>
+      <path d="M430 198 L442 240 L564 240 L574 198" fill="#f3f5f0" stroke="#70877a" stroke-width="2"/>
+      <path d="M449 241 H558" stroke="#bbc9bf" stroke-width="4"/>
+      <g fill="#f3f5f0" stroke="#637b70" stroke-width="3"><circle cx="133" cy="246" r="32"/><circle cx="587" cy="246" r="32"/></g>
+      <g fill="#bac6bd"><circle cx="133" cy="246" r="18"/><circle cx="587" cy="246" r="18"/></g>
+      <path d="M243 200 L281 148 L389 148 L414 200 Z" fill="#b9d7dc" fill-opacity=".35" stroke="#8cabb1" stroke-width="2"/>
+
+      <!-- The pale body cutaway makes the stowed package visible below the lid. -->
+      <path d="M444 209 Q461 201 477 208 L491 205 L508 211 L542 207 L556 222 L538 235 L512 230 L485 235 L464 228 L448 231 Z" fill="#526a61" stroke="#273f35" stroke-width="3"/>
+      <path d="M448 216 L479 225 L505 214 L539 226 M455 230 L490 216 L548 230" fill="none" stroke="#c39b64" stroke-width="5"/>
+      <g transform="translate(504 220) rotate(0)">
+        <rect x="-34" y="-8" width="68" height="16" rx="3" fill="#b5d8de" stroke="#477b88" stroke-width="3"/>
+        <path d="M-26 -3 H26 M-26 3 H26" stroke="#6f9fa9" stroke-width="1.5"/>
+      </g>
+      <path d="M425 190 Q493 184 573 190 L570 200 Q493 194 428 200 Z" fill="#789b80" stroke="#315d4d" stroke-width="3"/>
+      <path d="M448 228 l-9 11 h-6" fill="none" stroke="#a56d34" stroke-width="4"/>
+
+
+    </g></g><g transform="translate(0 22)"><path d="M354.24 146.52 L350.28000000000003 180.84" fill="none" stroke="#637b70"/><circle cx="350.28000000000003" cy="180.84" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="350.28000000000003" y="185.84" text-anchor="middle" font-size="16">3</text><path d="M377.34000000000003 126.06 L384.6 104.94000000000001" fill="none" stroke="#637b70"/><circle cx="384.6" cy="104.94000000000001" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="384.6" y="109.94000000000001" text-anchor="middle" font-size="16">4</text><path d="M377.34000000000003 161.04000000000002 L397.8 189.42000000000002" fill="none" stroke="#637b70"/><circle cx="397.8" cy="189.42000000000002" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="397.8" y="194.42000000000002" text-anchor="middle" font-size="16">5</text></g></g>
+<text x="20" y="925" font-size="19">1  Manual latch travels with the roof</text>
+<text x="20" y="948" font-size="19">2  Fabric and articulated supporting frame</text>
+<text x="20" y="971" font-size="19">3  Heated rear glass: one rigid pane</text>
+<text x="20" y="994" font-size="19">4  Moving roof-compartment cover</text>
+<text x="20" y="1017" font-size="19">5  Stowage well behind the occupants</text>
+<text x="20" y="1061" font-size="20">1 motor → 2 flexible drive shafts</text>
+<text x="20" y="1086" font-size="20">→ left/right gearboxes → roof + cover</text>
+<text x="20" y="1114" font-size="18">Schematic cutaway; real movements overlap.</text>
+</g></svg>

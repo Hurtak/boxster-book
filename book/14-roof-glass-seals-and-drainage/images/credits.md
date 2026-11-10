@@ -14,4 +14,4 @@ Ordinary-model original: [January 2010 UK catalogue](https://mrsportscars.com/wp
 
 Spyder original: [January 2010 UK Spyder brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=9).
 
-The ordinary-model photos are small original brochure assets (346–527 pixels wide). Their limited resolution is retained; no invented detail has been added. Visible manuscript captions link to the original publications.
+The ordinary-model photos are small original brochure assets (344–527 pixels wide). Their limited resolution is retained; no invented detail has been added. Visible manuscript captions link to the original publications.

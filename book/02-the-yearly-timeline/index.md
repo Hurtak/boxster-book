@@ -12,12 +12,12 @@ An announcement tells us when Porsche made a product public. An advertised marke
 
 Brochures add a sixth useful date: publication. The launch catalogue is marked **08/08**, while the ordinary UK catalogue used for this book is **01/10**. Those marks date the documents. They do not turn the facelift into a 2008-model-year car or establish the production day on which an option first appeared.[^timeline-catalogues]
 
-![Announcement, market availability, model year, build date and registration describe different events. The first two concern a product range; the last two concern an individual car.](dating-labels.svg)
+![Announcement, market availability, model year, build date and registration describe different events. The first two concern a product range; the last two concern an individual car.](images/dating-labels.svg)
 
 *Use the date that answers the question being asked. The ordering shown for an individual car is illustrative; no particular owner's production or registration dates are assumed.*
 
 ::: {.book-diagram data-diagram="timeline-evidence"}
-![The initial timeline selects 2010: a January UK reference brochure and a February European Spyder market introduction. A later 2011 Spyder label does not move that introduction into 2011.](diagrams/timeline-evidence/poster.svg)
+![The initial timeline selects 2010: a January UK reference brochure and the February Spyder introduction planned in Porsche's Dutch announcement. Porsche Classic's later 2011 heading is a separate label.](diagrams/timeline-evidence/poster.svg)
 :::
 
 *Select a calendar year, then compare its events with the labels on the evidence. Dates and distinctions are documented in the sources below; the controls do not imply that a complete annual UK specification history has been recovered.*
@@ -32,11 +32,11 @@ The announcement belongs in the 2008 calendar column; customer availability belo
 
 ## 2009: the principal revision reaches customers
 
-February deliveries established the reference car's new-generation flat-six, six-speed manual and optional seven-speed PDK. The 2.9 uses port injection; the S uses DFI, as introduced in [the family overview](../01-the-2010-boxster-2-9-in-the-987-2-family/index.md#the-ordinary-2.9-and-its-relatives).[^timeline-injection]
+The range available from February introduced the reference car's new-generation flat-six, six-speed manual and optional seven-speed PDK. The 2.9 uses port injection; the S uses DFI, as introduced in [the family overview](../01-the-2010-boxster-2-9-in-the-987-2-family/index.md#the-ordinary-2.9-and-its-relatives).[^timeline-injection]
 
 The revision also changed the front and rear styling, headlamps and LED rear lamps. Porsche described revised chassis and steering tuning, new wheels, and additional PSM functions for brake precharging and brake assistance. These changes formed part of the launch package.[^timeline-launch]
 
-![The facelift Boxster S in launch photography. Photo: Porsche AG, *The Boxster* (UK, 08/08), unnumbered spread after p. 10. [Source](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf#page=6).](images/2009-launch-boxster-s.jpg){alt="A red facelift Boxster S in side profile in Porsche's contemporary launch photography, showing the revised front bumper and lights and the familiar 987 body proportions."}
+![The facelift Boxster S in launch photography. Photo: Porsche AG, *The new Boxster* (UK, 08/08), unnumbered spread after p. 10. [Source](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf#page=6).](images/2009-launch-boxster-s.jpg){alt="A red facelift Boxster S in side profile in Porsche's contemporary launch photography, showing the revised front bumper and lights and the familiar 987 body proportions."}
 
 Launch availability was not necessarily identical for every option. The early UK catalogue attached these qualifications to its engine, transmission and chassis list:[^timeline-launch-options]
 
@@ -53,21 +53,21 @@ A documented running change followed on **31 August 2009**, when Porsche introdu
 
 For the ordinary 2.9, the January 2010 UK brochure documents continuity in the headline engine and transmission specification. Its 2,893 cm³ engine remains rated at 188 kW / 255 PS and 290 Nm. Manual and PDK remain the transmission choices; the S retains 228 kW / 310 PS.[^timeline-reference]
 
-The January catalogue also documents the sports steering wheel with separate PDK paddles, option 840, alongside the switch-operated wheel. This establishes availability by the publication date; the first UK production fitment remains unverified.[^timeline-paddles]
+The January catalogue also lists the sports steering wheel with separate PDK paddles, option 840, alongside the switch-operated wheel. This establishes its inclusion in that edition; the first UK order and production-fitment dates remain unverified.[^timeline-paddles]
 
-The year's major range addition was the **Boxster Spyder**. Porsche announced it on **6 November 2009** for market introduction in **February 2010**. The release presented it as a third production variant beside Boxster and S, expressly distinguishing it from earlier limited-series Boxsters that had used the Spyder name.[^timeline-spyder-arrival]
+The year's major range addition was the **Boxster Spyder**. Porsche's Dutch release of **6 November 2009** announced market introduction in **February 2010**. That is the release's planned date, rather than a record of first customer delivery. It presented the Spyder as a third production variant beside Boxster and S, expressly distinguishing it from earlier limited-series Boxsters that had used the Spyder name.[^timeline-spyder-arrival]
 
 The Spyder changed the compromise. Its 235 kW / 320 PS 3.4-litre DFI engine accompanied a lighter body and cabin, manually assembled lightweight hood, lower sports suspension and standard mechanical locking differential. Its January 2010 UK brochure lists radio and air conditioning as additions to the stripped basic specification. It was not a new specification applied to all 2.9s.[^timeline-spyder-brochure]
 
 ![The Spyder’s distinctive rear deck. Photo: Porsche AG, *The Boxster Spyder* (UK, 01/10), p. 15. [Source](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=6).](images/2010-spyder-rear.jpg){alt="The Boxster Spyder viewed directly from behind, with its twin raised rear-deck forms, open cabin and Spyder script visible."}
 
-Some later references place the Spyder under **2011**, including Porsche Classic's model summary. Preserve that label when describing that source, while retaining February 2010 as the contemporary European introduction. An index heading, a market-specific model year and a calendar launch can coexist; they answer different questions.[^timeline-classic]
+Porsche Classic's later model summary heads the Spyder **2011**. Preserve that heading when describing that source, while retaining February 2010 as the date planned in the contemporary Dutch announcement. Neither the November 2009 announcement nor the January 2010 brochure makes the Spyder a European MY2009 or MY2010 car. A retrospective heading, a market-specific model year and a calendar launch date answer different questions.[^timeline-classic]
 
-## 2011: continuity for the 2.9, a numbered S derivative
+## 2011: a numbered S derivative
 
-The sources reviewed establish no new 2.9 output or further facelift for 2011. Annual colour, price, software and option changes are less completely documented.
+The sources reviewed do not reconstruct a complete 2011 UK specification for the ordinary 2.9. Annual colour, price, software and option changes remain less completely documented.
 
-The dated range event is the **Boxster S Black Edition**. Porsche's European announcement of **2 February 2011** specified availability from **March 2011**. Its 235 kW / 320 PS output was higher than the ordinary S's 228 kW / 310 PS; the announcement still made that ordinary-S comparison. The edition was limited to **987 cars worldwide**.[^timeline-black-arrival]
+The dated range event is the **Boxster S Black Edition**. Porsche's Dutch announcement of **2 February 2011** specified planned availability from **March 2011** in that market. Its 235 kW / 320 PS output was higher than the ordinary S's 228 kW / 310 PS; the announcement still made that ordinary-S comparison. The edition was limited to **987 cars worldwide**.[^timeline-black-arrival]
 
 Black Edition meant both a defined appearance and additional equipment. In the UK, the March price list bundled PCM/navigation, Sound Package Plus, bi-xenon lights, automatic climate control and cruise control. PDK, PASM, the locking differential, PCCB, Sport Chrono Plus and sports exhaust remained options. The Black Edition retained the electrically operated hood rather than adopting the Spyder's lightweight roof.[^timeline-black-uk]
 
@@ -77,9 +77,9 @@ The dating distinction is unusually explicit here. Porsche Cars North America's 
 
 The final 987.2 2.9 belongs to the same broad mechanical family as the reference car. Porsche's US 2012 technical sheet still lists the 2.9 with multipoint injection, six-speed manual and optional PDK, alongside S, Black Edition and Spyder. This corroborates the late-range mechanical picture. It does not establish every UK final-year equipment detail or a final build date.[^timeline-final]
 
-The replacement belongs in a separate column. Porsche announced the new Boxster generation in **January 2012**; the Dutch release dated **12 January** gives a dealer introduction of **14 April 2012**. It describes a new chassis, longer wheelbase and electromechanical steering, with a 2.7-litre direct-injected base engine rated at 195 kW / 265 PS. These are 981 features, not final-year improvements to the 987.2 2.9.[^timeline-981]
+The replacement belongs in a separate column. Porsche announced the new Boxster generation in **January 2012**; the Dutch release dated **12 January** gives a planned dealer introduction of **14 April 2012** in that market. It describes a new chassis, longer wheelbase and electromechanical steering, with a 2.7-litre direct-injected base engine rated at 195 kW / 265 PS. These are 981 features, not final-year improvements to the 987.2 2.9.[^timeline-981]
 
-![Two specification columns distinguish the outgoing 987.2 base Boxster, with a 2.9-litre port-injected engine and 188 kW, from the incoming 981 base Boxster, with a 2.7-litre direct-injected engine and 195 kW. A 2012 registration alone cannot choose between them.](transition-2012.svg)
+![Two specification columns distinguish the outgoing 987.2 base Boxster, with a 2.9-litre port-injected engine and 188 kW, from the incoming 981 base Boxster, with a 2.7-litre direct-injected engine and 195 kW. A 2012 registration alone cannot choose between them.](images/transition-2012.svg)
 
 *A generation check comes before an equipment comparison. The diagram compares ordinary base models; it does not describe the S or special editions.*
 
@@ -101,24 +101,24 @@ Use the timeline to identify the generation and the dated equipment documents th
 
 [^timeline-launch-options]: Porsche, *The new Boxster*, UK 08/08 edition, printed p. 107, [PDF p. 50](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf#page=50), option numbers and availability footnotes.
 
-[^timeline-reference]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 126–127, [PDF p. 59](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=59); compare the same printed pages in the 08/08 launch edition.
+[^timeline-reference]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 126–127, [PDF p. 59](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=59); compare printed pp. 126–127 in the 08/08 launch edition, [PDF p. 60](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf#page=60).
 
 [^timeline-paddles]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 46–47 and 113, [steering-wheel descriptions, PDF p. 21](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=21) and [option 840, PDF p. 52](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=52).
 
-[^timeline-spyder-arrival]: Porsche Netherlands, [“Porsche Boxster Spyder: lichtgewicht Roadster voor puristen”, 6 November 2009](https://nieuws.porsche.nl/porsche-boxster-spyder-lichtgewicht-roadster-voor-puristen/), introduction and final historical paragraph.
+[^timeline-spyder-arrival]: Porsche Netherlands, [“Porsche Boxster Spyder: lichtgewicht Roadster voor puristen”, 6 November 2009](https://nieuws.porsche.nl/porsche-boxster-spyder-lichtgewicht-roadster-voor-puristen/), introduction and final historical paragraph. The February 2010 date is prospective in this release.
 
-[^timeline-spyder-brochure]: Porsche, *The Boxster Spyder*, January 2010 UK edition, printed pp. 10–17, 24–35 and 38–43, [original PDF](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf). Publication code WSLB1101000225 GB/UK.
+[^timeline-spyder-brochure]: Porsche, *The Boxster Spyder*, January 2010 UK edition: lightweight concept printed pp. 10–11 / PDF p. 4; manual hood pp. 14–15 / PDF p. 6; engine pp. 24–26 / PDF pp. 11–12; standard lower suspension and differential p. 28 / PDF p. 13; optional climate control and radio pp. 36–40 / PDF pp. 17–19; technical data p. 41 / PDF p. 19. [Original PDF](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf). Colophon, PDF p. 23: WSLB1101000225 GB/UK, edition 01/10.
 
-[^timeline-classic]: Porsche Classic, [Boxster type 987 model summary](https://www.porsche.com/netherlands/nl/service/classic/models/987b/987b/), headings “Boxster (2009–2012)” and “Boxster Spyder (2011)”. This retrospective heading does not override the dated contemporary introduction.
+[^timeline-classic]: Porsche Classic, [Boxster type 987 model summary](https://www.porsche.com/netherlands/nl/service/classic/models/987b/987b/), headings “Boxster (2009–2012)” and “Boxster Spyder (2011)”. This retrospective heading does not change the date planned in the contemporary announcement.
 
-[^timeline-black-arrival]: Porsche Netherlands, [“Slechts 987 exemplaren: rijk uitgeruste Boxster S Black Edition”, 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/), engine comparison and March availability; worldwide limit also stated in the PCNA release below.
+[^timeline-black-arrival]: Porsche Netherlands, [“Slechts 987 exemplaren: rijk uitgeruste Boxster S Black Edition”, 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/), engine comparison and prospective March availability in the Netherlands; worldwide limit also stated in the PCNA release below.
 
-[^timeline-black-uk]: Porsche, *Boxster S Black Edition Price List*, UK, Edition **03/2011**, printed pp. 8–17, [original scanned price list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0): electrically operated hood p. 10, equipment pp. 11–13, engine/transmission/chassis options pp. 16–17.
+[^timeline-black-uk]: Porsche, *Boxster S Black Edition Price List*, UK, Edition **03/2011**, printed pp. 8–17 / PDF pp. 5–9, [original scanned price list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0): electrically operated hood p. 10 / PDF p. 6; equipment pp. 11–13 / PDF pp. 6–7; engine/transmission/chassis options pp. 16–17 / PDF p. 9. Locally archived original inspected; the live Dropbox viewer was unavailable during this audit.
 
-[^timeline-black-us]: Porsche Cars North America, [“Porsche Boxster S Black Edition Has More Features, More Value and More Horsepower”, 2 February 2011](https://www.prnewswire.com/news-releases/porsche-boxster-s-black-edition-has-more-features-more-value-and-more-horsepower-115085449.html), expressly describes the **2012** model. UK price list, printed p. 5, supplies its differently worded model-year/pricing statement.
+[^timeline-black-us]: Porsche Cars North America, [“Porsche Boxster S Black Edition Has More Features, More Value and More Horsepower”, 2 February 2011](https://www.prnewswire.com/news-releases/porsche-boxster-s-black-edition-has-more-features-more-value-and-more-horsepower-115085449.html), expressly describes the **2012** model. UK price list, printed p. 5 / PDF p. 3, supplies its differently worded model-year/pricing statement.
 
 [^timeline-final]: Porsche Cars North America, [2012 Boxster technical specifications, p. 1](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf#page=1). US figures are not used to rename European PS as SAE horsepower or to reconstruct UK equipment.
 
-[^timeline-981]: Porsche Netherlands, [“Porsche presenteert nieuwe Boxster”, 12 January 2012](https://nieuws.porsche.nl/porsche-presenteert-nieuwe-boxster/), new chassis, steering, engines and **14 April** Dutch dealer introduction. The precise day is market-specific.
+[^timeline-981]: Porsche Netherlands, [“Porsche presenteert nieuwe Boxster”, 12 January 2012](https://nieuws.porsche.nl/porsche-presenteert-nieuwe-boxster/), new chassis, steering, engines and planned **14 April** Dutch dealer introduction. The precise day is market-specific and prospective in this source.
 
-[^timeline-drains]: Porsche, Technical Information **29/09 ENU 5393**, *Cabriolet Top Compartment Water Drains*, introduction date and retrofit provision; [original bulletin reproduced in the workshop archive](https://charm.li/Porsche/2011/Boxster%20%28987%29%20F6-2.9L/Repair%20and%20Diagnosis/Technical%20Service%20Bulletins/All%20Technical%20Service%20Bulletins/Body%20-%20Convertible%20Top%20Drain%20Information/).
+[^timeline-drains]: Porsche, Technical Information **29/09 ENU 5393**, *Cabriolet Top Compartment Water Drains*, [workshop-archive reproduction](https://charm.li/Porsche/2011/Boxster%20%28987%29%20F6-2.9L/Repair%20and%20Diagnosis/Technical%20Service%20Bulletins/All%20Technical%20Service%20Bulletins/Body%20-%20Convertible%20Top%20Drain%20Information/), “Information” and “Date of Introduction” paragraphs: additional filters on cars manufactured on or after 31 August 2009, with retrofit provision for earlier cars.

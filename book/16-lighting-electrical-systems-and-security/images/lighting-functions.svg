@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1170" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">MY2010 UK Boxster: standard and optional front-light functions</title>
+  <desc id="desc">The standard main headlamps provide halogen dipped and main beams; the separate lower modules contain front fog lamps and LED position lights. Option P75 provides bi-xenon dipped and main beams, dynamic cornering, automatic beam-height adjustment and headlamp cleaning; the lower modules provide LED daytime running and position-light functions in place of front fog lamps. Horizontal and vertical arrows distinguish cornering from levelling, not beam patterns or measured lamp geometry. Detailed Porsche sources call the standard LEDs position lights; the brochure's broader daytime-running-light wording conflicts, and country-specific DRL operation is not inferred.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#456653"/></marker>
+  </defs>
+  <rect width="600" height="1170" rx="12" fill="#f8faf7"/>
+  <text x="300" y="40" text-anchor="middle" font-size="28" font-weight="700" fill="#243d32">MY2010 UK · front lights</text>
+  <text x="300" y="74" text-anchor="middle" font-size="24" fill="#53695b">Functions shown; lamp shapes simplified</text>
+
+  <path d="M300 103V593" stroke="#cbd6cb" stroke-width="2"/>
+  <g text-anchor="middle" fill="#243d32">
+    <text x="150" y="132" font-size="30" font-weight="700">Standard</text>
+    <text x="450" y="132" font-size="30" font-weight="700">P75 option</text>
+  </g>
+  <!-- Each outline represents an assembly, not its internal bulb count. -->
+  <g stroke="#456653" stroke-width="3">
+    <path d="M57 184Q71 153 139 161Q239 170 243 226Q230 256 130 248Q58 241 57 184Z" fill="#fff6c5"/>
+    <path d="M357 184Q371 153 439 161Q539 170 543 226Q530 256 430 248Q358 241 357 184Z" fill="#e6f1f5"/>
+  </g>
+  <g text-anchor="middle" fill="#243d32">
+    <text x="150" y="214" font-size="28" font-weight="700">Halogen</text>
+    <text x="450" y="214" font-size="28" font-weight="700">Bi-xenon</text>
+    <text x="150" y="290" font-size="27">Dipped +</text>
+    <text x="150" y="322" font-size="27">main beam</text>
+    <text x="450" y="290" font-size="27">Dipped +</text>
+    <text x="450" y="322" font-size="27">main beam</text>
+  </g>
+  <g stroke="#cbd6cb" stroke-width="2"><path d="M150 344V373M450 344V373"/></g>
+  <text x="300" y="400" text-anchor="middle" font-size="25" fill="#53695b">Separate lower modules</text>
+  <g stroke="#456653" stroke-width="3">
+    <rect x="45" y="426" width="210" height="46" rx="12" fill="#e2e8dc"/>
+    <rect x="61" y="438" width="91" height="22" rx="4" fill="#fff6c5"/>
+    <path d="M173 443H235M173 455H235" stroke="#7eaac2" stroke-width="5"/>
+    <rect x="345" y="426" width="210" height="46" rx="12" fill="#e2e8dc"/>
+    <path d="M363 443H537M363 455H537" stroke="#7eaac2" stroke-width="5"/>
+  </g>
+  <g text-anchor="middle" font-size="26" fill="#243d32">
+    <text x="150" y="514">Front fog lamp +</text>
+    <text x="150" y="546">LED position light</text>
+    <text x="450" y="514">LED DRL +</text>
+    <text x="450" y="546">position light</text>
+    <text x="450" y="580" font-size="24" fill="#53695b">No front fog lamp</text>
+  </g>
+
+  <rect x="22" y="612" width="556" height="348" rx="12" fill="#eaf0e6"/>
+  <text x="44" y="652" font-size="28" font-weight="700" fill="#243d32">P75: two different adjustments</text>
+  <!-- Arrows indicate the axis of adjustment, not a photometric beam pattern. -->
+  <g fill="none" stroke="#456653" stroke-width="4">
+    <path d="M68 704H154" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <path d="M111 800V875" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+  <g fill="#243d32">
+    <text x="188" y="706" font-size="28" font-weight="700">Cornering</text>
+    <text x="188" y="740" font-size="26">Swivels into a bend</text>
+    <text x="188" y="810" font-size="28" font-weight="700">Automatic levelling</text>
+    <text x="188" y="844" font-size="26">Corrects beam height</text>
+    <text x="188" y="876" font-size="26">for load and body pitch</text>
+  </g>
+  <text x="44" y="931" font-size="26" fill="#243d32">Headlamp cleaning is also included.</text>
+
+  <g text-anchor="middle" fill="#53695b" font-size="24">
+    <text x="300" y="999">Position lights: presence + width.</text>
+    <text x="300" y="1031">DRL: daytime running light for visibility.</text>
+    <text x="300" y="1081">Standard LEDs shown as position lights.</text>
+    <text x="300" y="1111">Porsche’s DRL wording varies; operation</text>
+    <text x="300" y="1141">also depends on country specification.</text>
+  </g>
+</svg>

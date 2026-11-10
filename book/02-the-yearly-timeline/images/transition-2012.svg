@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 625" role="img" aria-labelledby="timeline-transition-title timeline-transition-desc">
+<title id="timeline-transition-title">Two generations around 2012</title>
+<desc id="timeline-transition-desc">The outgoing 987.2 base Boxster uses a 2.9-litre port-injected engine with 188 kW or 255 PS, the same family as the 2010 reference car. The incoming 981 base Boxster uses a 2.7-litre direct-injected engine with 195 kW or 265 PS. It was announced in January 2012, with a planned Dutch dealer introduction of 14 April 2012. The announcement is not a first-delivery record. First registration in 2012 does not establish which generation it is. Check the generation, model year, build date and original market before choosing a brochure.</desc>
+<rect width="600" height="625" fill="#f5f3eb"/>
+<g font-family="sans-serif" fill="#233e33">
+<text x="28" y="43" font-size="28" font-weight="700">2012: identify the generation</text>
+<rect x="28" y="68" width="544" height="178" fill="#e1e8df"/>
+<text x="48" y="108" font-size="28" font-weight="700">Outgoing 987.2 · base Boxster</text>
+<text x="48" y="149" font-size="26">2.9 litres · port injection</text>
+<text x="48" y="190" font-size="28">188 kW / 255 PS</text>
+<text x="48" y="226" font-size="25">The 2010 reference car’s family.</text>
+<rect x="28" y="266" width="544" height="214" fill="#ede0d0"/>
+<text x="48" y="306" font-size="28" font-weight="700">Incoming 981 · base Boxster</text>
+<text x="48" y="347" font-size="26">2.7 litres · direct injection</text>
+<text x="48" y="388" font-size="28">195 kW / 265 PS</text>
+<text x="48" y="428" font-size="25">Announced January 2012</text>
+<text x="48" y="462" font-size="25">Dutch launch planned: 14 April 2012</text>
+<text x="28" y="524" font-size="26" font-weight="600">2012 registration? Check generation,</text>
+<text x="28" y="560" font-size="26">model year, build date and market.</text>
+<text x="28" y="596" font-size="26">Then choose the matching brochure.</text>
+</g></svg>

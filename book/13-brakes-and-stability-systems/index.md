@@ -1,6 +1,6 @@
 # Brakes and stability systems
 
-Braking turns motion into heat. In the 2010 Boxster 2.9, pressing the pedal starts a chain of events: hydraulic pressure rises, pads clamp the discs, and the tyres transmit the slowing force to the road. Alongside that physical chain, electronic systems monitor the wheels and the car's movement, adjusting individual brakes when necessary.
+Braking turns motion into heat. In the 2010 Boxster 2.9, pressing the pedal starts a chain of events: hydraulic pressure rises, pads clamp the discs, and contact with the road supplies the force that slows the car. Alongside that physical chain, electronic systems monitor the wheels and the car's movement, adjusting individual brakes when necessary.
 
 ## The brakes on the 2010 Boxster 2.9
 
@@ -25,7 +25,7 @@ Most of the visible hardware sits behind the wheels. The master cylinder and bra
 
 ## How a stop happens
 
-![The braking chain: foot force is assisted and converted to hydraulic pressure; calipers clamp the discs, and the tyres transmit the slowing force to the road.](braking-chain.svg)
+![The braking chain: foot force is assisted and converted to hydraulic pressure; calipers clamp the rotating discs, and road force on the tyres slows the car.](images/braking-chain.svg)
 
 ### From your foot to hydraulic pressure
 
@@ -43,7 +43,7 @@ A fixed caliper is mounted firmly around the disc, with pistons on both sides. W
 
 *Monobloc* describes a body made as one main piece. Its stiffness helps limit the deformation that would otherwise absorb fluid movement and soften the relationship between pressure and clamping force. Four pistons describe the arrangement of the actuators; braking performance also depends on their area, the pads, disc geometry, cooling and tyres.[^calipers]
 
-The pads contain the friction material. Their formulation influences how readily the brakes bite, how friction changes with temperature, and how much noise, dust and wear they produce. As the lining wears, the pistons rest progressively farther out to maintain the small working clearance. The fluid level in the reservoir can consequently fall slightly during normal pad wear.[^handbook]
+The pads contain the friction material. Their formulation influences how readily the brakes bite, how friction changes with temperature, and how much noise, dust and wear they produce.[^friction] As the lining wears, the pistons rest progressively farther out to maintain the small working clearance. The fluid level in the reservoir can consequently fall slightly during normal pad wear.[^handbook]
 
 ::: {.book-diagram data-diagram="caliper-pressure"}
 ![A simplified fixed-caliper cutaway: two pistons on each side press two pads towards opposite faces of the brake disc.](diagrams/caliper-pressure/poster.svg)
@@ -51,7 +51,7 @@ The pads contain the friction material. Their formulation influences how readily
 
 ### From clamping force to heat
 
-Friction between pad and disc produces a torque opposing wheel rotation. The tyres then exert a rearward force at the road surface, slowing the car. The disc absorbs much of the resulting heat before releasing it to the surrounding air and neighbouring components.
+Friction between pad and disc produces a torque opposing wheel rotation. When the car rolls forwards under braking, the road exerts a rearward force on the tyres, slowing the car; the tyres push forwards on the road. The disc absorbs much of the resulting heat before releasing it to the surrounding air and neighbouring components.
 
 The energy involved rises quickly with speed. Using a deliberately rounded example of a 1,400 kg car, its straight-line kinetic energy at 100 km/h is about **540 kilojoules**. At 200 km/h it is about **2,160 kilojoules**: four times as much. These are illustrative calculations using one-half mass times speed squared, rather than measured Boxster stopping-test results. They leave out rotating components, aerodynamic drag and other losses.
 
@@ -97,9 +97,9 @@ PSM also provides **anti-slip regulation (ASR)** to limit driven-wheel spin, and
 
 The facelift's braking electronics introduced two useful assistance functions. **Prefilling**, also described as precharging, prepares the brakes when a very rapid release of the accelerator suggests that braking may follow. It brings the pads into light contact with the discs, taking up clearance before the driver asks for substantial braking.
 
-**Brake assist** responds to an emergency braking input and helps build the pressure needed for strong deceleration. Prefilling concerns readiness; brake assist concerns the pressure generated during the stop. Both act through the hydraulic system.[^assistance]
+**Brake assist** recognises an emergency braking application from the speed and force of pedal actuation. The PSM hydraulic unit then supplies additional pressure for maximum deceleration, supplementing the ordinary vacuum brake booster. Prefilling concerns readiness; brake assist concerns the pressure generated during the stop. Both act through the hydraulic system, subject to the PSM and Sport-mode conditions below.[^assistance]
 
-These functions should also be understood separately from hill-start assistance. The **Drive-Off Assistant** can briefly retain brake pressure while the driver changes from braking to moving off on a suitable incline. It is provided with manual and PDK transmissions. The hold lasts approximately two seconds at most, with release related to moving off; it is a short transition aid and requires the operating conditions described in the handbook.[^hill]
+These functions should also be understood separately from hill-start assistance. The **Drive-Off Assistant** can briefly retain brake pressure while the driver changes from braking to moving off on a suitable incline. It is provided with manual and PDK transmissions. The hold lasts approximately two seconds at most, with release related to moving off. The handbook specifies a stationary car, engine running, sufficient brake pressure and a gradient of around 5% or more, with a gear selected for travel up the slope; the manual car also requires the clutch pedal depressed.[^hill]
 
 ### The parking brake has its own job
 
@@ -113,7 +113,7 @@ PSM and ABS are standard. Optional Sport Chrono is **639**, or **640** in Plus f
 
 For this chapter, the relevant change is the control strategy. Selecting Sport mode raises the threshold for PSM intervention, allowing more movement before it intervenes. The iron-disc brake dimensions remain unchanged; [chapter 18](../18-occupant-protection-and-system-integration/index.md#options-on-the-2010-2.9) connects the equipment-dependent mode changes.[^options]
 
-The PSM OFF button also changes the system's behaviour, but some functions remain available. ABS is retained, one-sided driven-wheel spin can still be controlled, and stability intervention can return under specified braking conditions. Sport mode affects those conditions. The handbook's description is therefore more informative than treating the button as a switch that removes every form of electronic assistance.[^handbook]
+With **PSM OFF**, ABS and ABD remain available. Stability intervention returns during braking when either front wheel enters ABS regulation; with Sport mode selected, both front wheels must enter that range. The handbook says the additional braking functions are deactivated with PSM off, with emergency reactivation linked to PSM intervention. The technical introduction also specifies that selecting SPORT with Sport Chrono Package Plus deactivates the additional hydraulic brake assist. The ordinary vacuum booster remains a separate source of pedal assistance.[^modes]
 
 **Porsche Ceramic Composite Brake (PCCB)** was an S option, unavailable on the ordinary 2.9 in the UK catalogue. Its hardware is compared below.[^options]
 
@@ -125,10 +125,10 @@ The important starting point is the 2009 facelift. The 2.9 adopted 318 mm front 
 | --- | --- |
 | 2009 | Introduced the facelift's larger ordinary-model front brakes and revised assistance functions. |
 | 2010 | The reference specification: 318 × 28 mm front and 299 × 20 mm rear iron discs. |
-| 2011 | Published specifications retain the 318/299 mm disc diameters and four-piston fixed-caliper arrangement. |
-| 2012 | Published specifications again retain those diameters and the same broad caliper arrangement. |
+| 2011 | The North American technical sheet retains 318/299 mm diameters and four-piston fixed calipers; this corroborates the broad design rather than every UK detail. |
+| 2012 | The North American sheet retains four-piston fixed calipers and gives rounded 12.5/11.8-inch diameters, without thicknesses. |
 
-Later specification sheets retain the basic design. Match replacement components to the VIN and fitted equipment; detailed supplier, part-number and software changes are not resolved by these tables.[^later]
+These later US descriptions do not establish every UK running change. Match replacement components to the VIN and fitted equipment; detailed supplier, part-number and software changes are not resolved by these tables.[^later]
 
 ## The S, Spyder and Black Edition {#where-else-the-system-appears}
 
@@ -139,16 +139,17 @@ The 2.9 shares its general braking architecture with the more powerful 987.2 mod
 | Boxster 2.9 | 318 × 28 mm | 299 × 20 mm | Black |
 | Boxster S | 318 × 28 mm | 299 × 24 mm | Red |
 | Boxster Spyder | 318 × 28 mm | 299 × 24 mm | Red |
+| Boxster S Black Edition | 318 × 28 mm | 299 × 24 mm | Red |
 
 The notable dimensional difference between the ordinary 2.9 and S is at the **rear**: the S disc is 4 mm thicker. The front disc's nominal diameter and thickness are the same. Extra thickness can provide additional thermal capacity, but matching dimensions alone do not prove that all calipers, pads or complete assemblies are interchangeable.[^hardware]
 
 Porsche's technical introduction also lists the corresponding Cayman 2.9 and Cayman S with these ordinary-model and S disc dimensions. This is another shared application of the design within the 987 family.[^hardware]
 
-The Spyder's dimensions are specified in its European price list. It also asks its brakes to slow a lighter basic vehicle; braking depends on mass as well as engine output. The Black Edition's period technical sheet describes four-piston fixed calipers with a red finish and standard iron discs, but supplies only rounded disc diameters and no thicknesses. That description establishes the broad arrangement without proving a complete parts match to the S.[^special]
+The Spyder's dimensions are specified in its German price list. It also asks its brakes to slow a lighter basic vehicle; braking depends on mass as well as engine output. The UK Black Edition price list independently specifies the same nominal disc dimensions as the S, while its brochure confirms red four-piston monobloc calipers. These dimensions establish the broad hardware specification, without proving that every part is interchangeable.[^special]
 
 ### What PCCB changes
 
-The S could be ordered with ceramic-composite discs and yellow calipers. The catalogue describes 350 mm discs, six-piston front calipers and four-piston rear calipers. This is a complete brake-system specification, involving the appropriate discs, calipers and pads.[^pccb]
+The S could be ordered with ceramic-composite discs and yellow calipers; PCCB also appears as an option in the Spyder and UK Black Edition catalogues. The ordinary UK catalogue describes 350 mm discs at both axles, six-piston front calipers and four-piston rear calipers. This is a complete brake-system specification, involving the appropriate discs, calipers and pads.[^pccb]
 
 Lighter discs reduce rotating mass and [unsprung mass](../11-suspension-and-wheel-geometry/index.md#compliance-and-unsprung-mass). Ceramic-composite material also changes thermal and wear behaviour, requiring the matching discs, pads and calipers.
 
@@ -164,7 +165,7 @@ Brake components age in different ways. Pads lose friction material, discs lose 
 
 Light surface rust on an iron disc after rain or washing is different from established corrosion, heavy pitting or an uneven working surface. Porsche's handbook specifically notes that cast-iron discs can corrode during extended parking. The condition of both friction faces matters; a wheel can conceal much of the inner face.[^handbook]
 
-Heat introduces another distinction. **Friction fade** concerns a loss of useful friction as the pad/disc interface becomes too hot. **Fluid boiling** creates compressible vapour in a system that relies on liquid pressure transmission. Different mechanisms can therefore produce different pedal sensations during reduced braking performance.[^fluid]
+Heat introduces another distinction. **Friction fade** concerns a loss of useful friction as the pad/disc interface becomes too hot.[^friction] **Fluid boiling** creates compressible vapour in a system that relies on liquid pressure transmission. Different mechanisms can therefore produce different pedal sensations during reduced braking performance.[^fluid]
 
 Brake fluid is hygroscopic: it absorbs moisture over time, lowering its boiling point. That makes fluid age relevant even when the pads remain thick. Fluid specification and replacement timing should follow the maintenance requirements for the car and its use.[^fluid]
 
@@ -173,32 +174,36 @@ Seals and flexible hoses also deserve attention as the car ages. Leakage, restri
 The parking brake has separate shoes, cables and adjustment. Fresh rear disc pads therefore say little about its condition. Similarly, a wheel-speed signal fault can affect electronic assistance while leaving the visible discs and pads apparently sound. Mechanical braking hardware and electronic brake control need to be considered together.
 
 
-[^hardware]: Porsche, *2009 Technik Introduction — All Boxster Cayman Models*, brake-system table, printed p. 119, hosted as [ManualsLib viewer page 125](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=125). The table separates front and rear disc thicknesses. See also *The Boxster*, January 2010 UK edition, printed pp. 60–63.
+[^hardware]: Porsche Cars North America, *2009 Technik Introduction — All Boxster/Cayman Models*, PNA 987 021 09, edition 2/09, brake-system descriptions, printed p. 119 ([Porsche-authored text reproduced on Scribd](https://www.scribd.com/document/972719474/Boxster-2009)). This separates front and rear disc thicknesses. The UK catalogue independently confirms the diameters, caliper construction and colours: *The Boxster*, edition 01/10, printed pp. 22 and 61 (PDF pp. 9 and 28).
 
-[^handbook]: Porsche, *Boxster, Boxster S Owner's Manual*, 2010 North American edition, sections “Parking Brake”, “Brakes”, “ABS Brake System”, “Porsche Stability Management” and “Brake Fluid Level”. [Original handbook PDF](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf).
+[^handbook]: Porsche, *Boxster, Boxster S Owner's Manual*, North American MY2010 edition, WKD 987 021 10, 5/09, printed pp. 55–59, 63–65 and 202–203 (PDF pp. 57–61, 65–67 and 204–205): parking brake, axle-split hydraulic circuits, corrosion, ABS, PSM and fluid level. [Original handbook PDF](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf).
 
-[^calipers]: Brembo, [“Differences between fixed and floating brake calipers”](https://www.bremboparts.com/europe/en/support/car/insights/brake-caliper-technology-and-operation-324333), general explanation of caliper construction and operation.
+[^calipers]: Brembo, [“Brake caliper technology and operation”](https://www.bremboparts.com/europe/en/support/car/insights/brake-caliper-technology-and-operation-324333), general explanation of caliper construction and operation.
 
-[^brochure]: Porsche, *The Boxster*, edition 01/10, UK publication WSLB1101000125, printed pp. 60–65: brake construction, cooling and PSM functions. [Original UK catalogue PDF](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+[^brochure]: Porsche, *The Boxster*, edition 01/10, UK publication WSLB1101000125, printed pp. 60–64 (PDF pp. 28–30): brake construction, cooling and PSM functions. [Original UK catalogue PDF](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
 [^abs]: Bosch Mobility, [“Antilock braking system”](https://www.bosch-mobility.com/en/solutions/braking-systems/antilock-braking-system/), general operating principle of wheel-speed monitoring and hydraulic pressure regulation.
 
-[^stability]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 63–65; Bosch Mobility, [“Electronic stability program”](https://www.bosch-mobility.com/en/solutions/braking-systems/electronic-stability-program/), general explanation of steering-angle, wheel-speed and vehicle-motion inputs. Current Bosch product specifications are not being assigned to the 2010 car.
+[^stability]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 63–64 (PDF pp. 29–30); Bosch Mobility, [“Electronic stability program”](https://www.bosch-mobility.com/en/solutions/braking-systems/electronic-stability-program/), general explanation of steering-angle, wheel-speed and vehicle-motion inputs. Current Bosch product specifications are not being assigned to the 2010 car.
 
-[^assistance]: Porsche, *2009 Technik Introduction*, printed pp. 120–121, PSM and enhanced braking readiness; [manual and page index](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html). These functions also appear in the January 2010 UK catalogue, printed p. 65.
+[^assistance]: Porsche Cars North America, *2009 Technik Introduction*, edition 2/09, printed pp. 120–121, PSM, enhanced braking readiness and brake assist ([original Porsche text](https://www.scribd.com/document/972719474/Boxster-2009)). See also the January 2010 UK catalogue, printed p. 64 (PDF p. 30), and MY2010 North American handbook, printed p. 63 (PDF p. 65).
 
-[^hill]: Porsche, *2009 Technik Introduction*, Drive-Off Assistant, printed p. 122, [ManualsLib viewer page 128](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=128); 2010 owner's handbook, “Drive-Off Assistant”, for operating conditions.
+[^hill]: Porsche Cars North America, *2009 Technik Introduction*, edition 2/09, Drive-Off Assistant, printed p. 122 ([original Porsche text](https://www.scribd.com/document/972719474/Boxster-2009)); MY2010 North American handbook, printed p. 173 (PDF p. 175), for the gradient and operating conditions.
 
-[^parking]: Porsche, *Boxster 2009–2012 PET parts catalogue*, handbrake illustration 603-005 and cable illustration 701-005, together with the 2010 owner's handbook's description of cable operation. [Original PET catalogue, handbrake diagram](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=207).
+[^parking]: Porsche, *Boxster 2009–2012 PET parts catalogue*, 987209, revision 19 July 2018, illustrations 603-005 (PDF pp. 207–208) and 701-005 (PDF pp. 225–228): separate shoes, actuating parts and left/right cables. [Original PET catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=207). The MY2010 North American handbook, printed p. 55 (PDF p. 57), confirms mechanical cable operation to the rear wheels. Porsche workshop instruction WM 468320, [S-labelled archive reproduction](https://charm.li/Porsche/2010/Boxster%20S%20%28987%29%20F6-3.4L/Repair%20and%20Diagnosis/Brakes%20and%20Traction%20Control/Parking%20Brake%20System/Parking%20Brake%20Shoe/Service%20and%20Repair/), requires rear-disc removal to reach the shoes; PET establishes the base-model application. PET is later service-parts evidence, not an original-fitment audit.
 
-[^options]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 56–57 and 106–107: Sport Chrono codes 639/640, PCM dependency, and PCCB option applicability.
+[^options]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 56–57 and 106–107 (PDF pp. 26 and 49): Sport Chrono codes 639/640, PCM dependency, and PCCB option applicability.
 
-[^introduction]: Porsche, *2009 Technik Introduction*, brake-system comparison, printed p. 119, and PSM sections that follow. [Technical introduction](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=125).
+[^modes]: Porsche, *The Boxster*, UK edition 01/10, printed pp. 56 and 64 (PDF pp. 26 and 30); MY2010 North American handbook, printed p. 64 (PDF p. 66); *2009 Technik Introduction*, printed p. 121, specifically names PSM OFF and SPORT with Sport Chrono Package Plus for hydraulic brake-assist deactivation. These conditions do not remove ordinary vacuum assistance.
 
-[^later]: Porsche Cars North America, [2011 technical specifications](https://newsroom.porsche.com/dam/jcr:6e750179-ddfd-40cb-a969-d1cc825d4717/2011_Boxster_Spyder_Specifications.pdf) and [2012 technical specifications](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf), standard brake descriptions and disc diameters. These corroborate the broad hardware specification; they are not evidence of every UK running change.
+[^introduction]: Porsche Cars North America, *2009 Technik Introduction*, edition 2/09, brake-system comparison, printed p. 119, and PSM additions, printed pp. 120–122. [Original Porsche text](https://www.scribd.com/document/972719474/Boxster-2009).
 
-[^special]: Porsche, *Boxster Spyder Preisliste*, German edition 08/2010, printed pp. 48–49, specifies 318 × 28 mm front and 299 × 24 mm rear discs. [Original European price list](https://auto-preisliste.de/wp-content/uploads/2025/10/2010-08_preisliste_porsche_boxster-spyder.pdf). Porsche Cars North America's [2012 technical sheet, p. 1](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf#page=1) describes the Black Edition's standard brake arrangement and caliper colour. The Spyder's lower basic weight is documented in the [original UK Spyder brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf).
+[^later]: Porsche Cars North America, [2011 technical specifications](https://newsroom.porsche.com/dam/jcr:6e750179-ddfd-40cb-a969-d1cc825d4717/2011_Boxster_Spyder_Specifications.pdf) and [2012 technical specifications](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf), PDF pp. 2 and 1 respectively, standard-brake descriptions and disc diameters (the 2012 sheet uses rounded inches). These corroborate the broad hardware specification; they are not evidence of every UK running change.
 
-[^pccb]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 62–63 and 107: PCCB construction, dimensions, piston counts and S applicability.
+[^special]: Porsche, *Boxster Spyder Preisliste*, German edition 08/2010, printed pp. 48–49, specifies 318 × 28 mm front and 299 × 24 mm rear discs. [Original European price list](https://auto-preisliste.de/wp-content/uploads/2025/10/2010-08_preisliste_porsche_boxster-spyder.pdf). The red finish is listed on printed pp. 8–9. Porsche Cars Great Britain, *Boxster S Black Edition Price list*, edition 03/2011, LGB 200 105 85, printed p. 42 (PDF p. 22), gives the Black Edition's disc diameters and thicknesses; its UK brochure, printed p. 13 (PDF p. 7), confirms red four-piston monobloc calipers. [UK price list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=1); [UK brochure](https://www.dropbox.com/scl/fi/4apbqs3um5jdfryqy51ns/2011-987-Porsche-Boxster-Black-Edition-Brochure-UK.pdf?rlkey=tw7xw4lemnstkgus30glszqao&dl=1). The Spyder's lower basic weight is documented in its [UK brochure, printed p. 41 / PDF p. 19](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=19), compared with the ordinary UK catalogue, printed p. 127 (PDF p. 59).
 
-[^fluid]: Ferodo, *Technical Tips — Vapour Lock No. 1*, explanation of fluid moisture absorption, boiling and compressibility. [Original technical leaflet](https://www.ferodo.com/content/dam/marketing/emea/ferodo/pdf/technicaltips/brakeefficiency/Technical-tip-Vapour-Lock_N1.pdf).
+[^pccb]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 62–63 and 107 (PDF pp. 29 and 49): PCCB dimensions, piston counts and S applicability; *2009 Technik Introduction*, printed p. 119, identifies yellow PCCB calipers. The UK Spyder brochure, printed p. 31 (PDF p. 14), and UK Black Edition price list, printed pp. 16–17 (PDF p. 9), independently list PCCB as an option.
+
+[^friction]: AP Racing, [“Pad Characteristics”](https://apracing.com/race-car/brake-pads/pad-characteristics), definitions of bite, fade, wear, noise and effective temperature range; general material behaviour, not a specification of the Boxster's original pad compound.
+
+[^fluid]: Porsche MY2010 North American handbook, printed p. 203 (PDF p. 205), moisture absorption and replacement according to the separate maintenance booklet. Ferodo, *Technical Tips — Vapour Lock No. 1*, explanation of fluid moisture absorption, boiling and compressibility. [Original technical leaflet](https://www.ferodo.com/content/dam/marketing/emea/ferodo/pdf/technicaltips/brakeefficiency/Technical-tip-Vapour-Lock_N1.pdf).

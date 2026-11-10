@@ -19,18 +19,23 @@ export async function mount(host, { state, signal }) {
   const { stage, controls, explanation } = panel(host, {
     title: 'From the car to the front brake',
     description: 'Move through the assembly with the slider. Select a part for a closer view. Drag to rotate; pinch or scroll to zoom.',
-    note: 'Photo-guided green and tan model of the 2010 2.9 layout. Selected parts are blue. Mechanical geometry, pipe routing, clearances and separation distances are illustrative.',
+    note: '2010 2.9 layout with a photo-guided green and tan car. Selected parts are blue; the wheel is ghosted to expose the brake. Mechanical geometry, pipe routing, clearances and exploded distances are illustrative.',
   });
   let view;
   try { view = scene3D(stage, { signal }); }
   catch (error) { disposeObject(car); disposeObject(brake); throw error; }
   view.scene.add(car, brake);
-  brake.position.set(-0.76, 0.329, 1.2075);
-  brake.rotation.y = Math.PI;
+  brake.position.set(0.76, 0.329, 1.2075);
   car.getObjectByName('wheel-fl').visible = false;
   const body = car.getObjectByName('body');
   const faded = ['chassis', 'interior', 'engine', 'gearbox', 'wheel-fr', 'wheel-rl', 'wheel-rr'].map((name) => car.getObjectByName(name));
   const lines = car.getObjectByName('hydraulics');
+  const wheelAxis = new THREE.Line(
+    new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-0.24, 0, 0), new THREE.Vector3(1.2, 0, 0)]),
+    new THREE.LineDashedMaterial({ color: '#7d9387', dashSize: 0.025, gapSize: 0.018, transparent: true }),
+  );
+  wheelAxis.computeLineDistances();
+  brake.add(wheelAxis);
   const parts = config.parts.map((part) => {
     const object = brake.getObjectByName(part.name);
     if (!object) throw new Error(`Missing named model part: ${part.name}`);
@@ -56,8 +61,10 @@ export async function mount(host, { state, signal }) {
     body.position.y = segment(p, 0, 30) * 0.75;
     opacity(body, 1 - segment(p, 5, 52));
     faded.forEach((object) => opacity(object, 1 - segment(p, 35, 65)));
-    opacity(lines, 1 - segment(p, 45, 75));
+    opacity(lines, 1 - segment(p, 35, 60));
     const exploded = segment(p, 65, 100);
+    wheelAxis.visible = exploded > 0 && !state.focusPart;
+    wheelAxis.material.opacity = exploded * 0.6;
     for (const part of parts) {
       part.object.position.copy(part.initial).addScaledVector(new THREE.Vector3(...part.offset), exploded);
       if (part.name === 'wheel' && p > 30) part.object.position.x += segment(p, 30, 65) * 0.18;
@@ -68,9 +75,9 @@ export async function mount(host, { state, signal }) {
           if (material.emissive) material.emissiveIntensity = part.name === state.part ? 0.65 : 0;
         }
       });
-      opacity(part.object, state.focusPart && part.name !== state.part ? 0.08 : part.name === 'wheel' && state.part !== 'wheel' ? 1 - exploded * 0.72 : 1);
+      opacity(part.object, state.focusPart && part.name !== state.part ? 0.08 : part.name === 'wheel' && state.part !== 'wheel' ? 1 - segment(p, 45, 65) * 0.85 : 1);
     }
-    const currentStage = [...config.stages].reverse().find((item) => p >= item.value) ?? config.stages[0];
+    const currentStage = exploded > 0 ? config.stages.at(-1) : [...config.stages].reverse().find((item) => p >= item.value) ?? config.stages[0];
     const selected = parts.find((part) => part.name === state.part);
     view.camera.position.fromArray(pose.position);
     view.controls.target.fromArray(pose.target);
@@ -85,7 +92,7 @@ export async function mount(host, { state, signal }) {
       view.camera.position.copy(sphere.center).addScaledVector(direction, distance);
     }
     view.controls.update();
-    callout.textContent = p < 60 ? currentStage.label : selected.label;
+    callout.textContent = state.focusPart ? selected.label : currentStage.label;
     explanation.textContent = `${currentStage.text} ${p >= 60 ? selected.text : ''}`;
     stageRow?.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(config.stages[i] === currentStage)));
     partRow?.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(parts[i].name === state.part)));

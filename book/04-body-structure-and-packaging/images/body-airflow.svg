@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1160" role="img" aria-labelledby="title desc">
+<title id="title">Three airflow jobs in the Boxster body</title>
+<desc id="desc">Functional plan view with the front at the top. Outside air crosses the front radiators and warmed air leaves below and around the front end. Coolant carries engine heat forward to those radiators. The vehicle-left side inlet supplies the air cleaner and then the engine intake. The vehicle-right side inlet supplies the space around the engine, assisted by an engine-compartment blower. Left and right follow the direction of travel. The car outline establishes relative locations; arrows are functional connections, not exact ducts or measured streamlines.</desc>
+<defs>
+  <marker id="body-air-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#357694"/></marker>
+  <marker id="body-air-warm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#a35d32"/></marker>
+</defs>
+<rect width="600" height="1160" fill="#f7f6f0"/>
+<g font-family="sans-serif" fill="#253d32" font-size="28">
+  <text x="300" y="42" text-anchor="middle" font-size="32" font-weight="bold">Three separate airflow jobs</text>
+  <text x="300" y="82" text-anchor="middle" font-size="27">Plan view · front at top</text>
+
+  <!-- Outline is a location key, not a scale drawing of the ducts. -->
+  <path d="M155 151Q300 118 445 151L470 246L458 568Q300 636 142 568L130 246Z" fill="#e3e7df" stroke="#9aa99d" stroke-width="3"/>
+  <g fill="#9aa99d">
+    <rect x="119" y="268" width="20" height="66" rx="5"/>
+    <rect x="461" y="268" width="20" height="66" rx="5"/>
+    <rect x="129" y="529" width="20" height="58" rx="5"/>
+    <rect x="451" y="529" width="20" height="58" rx="5"/>
+  </g>
+  <rect x="174" y="183" width="252" height="52" rx="5" fill="#dce8e8" stroke="#357694" stroke-width="2"/>
+  <text x="300" y="218" text-anchor="middle">Front radiators</text>
+  <g stroke="#357694" stroke-width="6" fill="none" marker-end="url(#body-air-blue)">
+    <path d="M220 114V172"/>
+    <path d="M380 114V172"/>
+  </g>
+  <g stroke="#a35d32" stroke-width="6" fill="none" marker-end="url(#body-air-warm)">
+    <path d="M220 241Q216 265 145 285"/>
+    <path d="M380 241Q384 265 455 285"/>
+  </g>
+  <circle cx="300" cy="273" r="20" fill="#a35d32"/>
+  <text x="300" y="283" text-anchor="middle" fill="#fff" font-weight="bold">1</text>
+
+  <rect x="189" y="326" width="222" height="84" rx="16" fill="#f7f6f0" stroke="#b1beb2" stroke-width="2"/>
+  <text x="300" y="379" text-anchor="middle">Cabin</text>
+  <rect x="150" y="431" width="300" height="149" rx="12" fill="#f1e2d3" stroke="#a35d32" stroke-width="2"/>
+  <text x="300" y="568" text-anchor="middle">Engine bay</text>
+  <rect x="160" y="444" width="115" height="68" rx="5" fill="#dce8e8" stroke="#357694" stroke-width="2"/>
+  <text x="217.5" y="470" text-anchor="middle" font-size="27">Air</text>
+  <text x="217.5" y="503" text-anchor="middle" font-size="27">cleaner</text>
+  <rect x="285" y="496" width="140" height="48" rx="5" fill="#e2e9df" stroke="#176b53" stroke-width="2"/>
+  <text x="355" y="529" text-anchor="middle">Engine</text>
+  <g stroke="#357694" stroke-width="6" fill="none" marker-end="url(#body-air-blue)">
+    <path d="M32 478H148"/>
+    <path d="M280 470H325V489"/>
+    <path d="M568 453H461"/>
+    <path d="M442 457V533"/>
+  </g>
+  <circle cx="63" cy="432" r="20" fill="#357694"/>
+  <text x="63" y="442" text-anchor="middle" fill="#fff" font-weight="bold">2</text>
+  <circle cx="537" cy="410" r="20" fill="#357694"/>
+  <text x="537" y="420" text-anchor="middle" fill="#fff" font-weight="bold">3</text>
+  <text x="68" y="521" text-anchor="middle" font-size="26">Left</text>
+  <text x="534" y="498" text-anchor="middle" font-size="26">Right</text>
+  <text x="300" y="632" text-anchor="middle" font-size="26">Rear</text>
+
+  <path d="M28 662H572" stroke="#c9d3c8" stroke-width="2"/>
+  <circle cx="47" cy="705" r="20" fill="#a35d32"/>
+  <text x="47" y="715" text-anchor="middle" fill="#fff" font-weight="bold">1</text>
+  <text x="82" y="715" font-weight="bold">Front: remove heat</text>
+  <text x="28" y="757">Air crosses the radiators, then leaves</text>
+  <text x="28" y="793">below and around the front end.</text>
+  <text x="28" y="829">Coolant brings engine heat forward.</text>
+
+  <circle cx="47" cy="879" r="20" fill="#357694"/>
+  <text x="47" y="889" text-anchor="middle" fill="#fff" font-weight="bold">2</text>
+  <text x="82" y="889" font-weight="bold">Left: supply combustion air</text>
+  <text x="28" y="931">Side inlet → air cleaner → engine intake.</text>
+
+  <circle cx="47" cy="979" r="20" fill="#357694"/>
+  <text x="47" y="989" text-anchor="middle" fill="#fff" font-weight="bold">3</text>
+  <text x="82" y="989" font-weight="bold">Right: ventilate the engine bay</text>
+  <text x="28" y="1031">Air enters the space around the engine.</text>
+  <text x="28" y="1067">A blower assists this flow.</text>
+  <text x="300" y="1114" text-anchor="middle" font-size="23">Left/right follow the direction of travel.</text>
+  <text x="300" y="1145" text-anchor="middle" font-size="23">Functional plan; ducts and exits are schematic.</text>
+</g>
+</svg>

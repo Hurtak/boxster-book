@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 1045" role="img" aria-labelledby="t d">
+  <title id="t">Frameless door glass drops before the door opens</title>
+  <desc id="d">Three functional end sections of the 2010 Boxster 2.9 with its roof closed. First, raised glass engages the resilient roof seal. Pulling the door handle lets the motor and cable regulator lower the glass into the still-closed door. A downward arrow and a dashed former glass position show this short drop. With the upper edge below the seal, the door swings out with the glass; the arrow shows its local outward motion to the right, not a hinge path. Closing the door lets the glass rise again. Window lowering for roof operation is a separate event. Seal profile, drop and outward movement are exaggerated, with no measured geometry or adjustment dimensions.</desc>
+  <defs>
+    <marker id="motion" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#315d4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <g id="fixed-roof" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 0 H222" fill="none" stroke="#315d4d" stroke-width="18"/>
+      <path d="M136 13 H181 Q196 13 196 29 V43 Q196 56 181 56 H177" fill="none" stroke="#b28049" stroke-width="13"/>
+    </g>
+  </defs>
+  <rect width="480" height="1045" fill="#f3f5f0"/>
+  <g font-family="sans-serif" fill="#263c34">
+    <text x="24" y="38" font-size="26" font-weight="bold">Glass drops before opening</text>
+    <text x="24" y="70" font-size="22">2010 2.9 · functional end sections</text>
+    <text x="24" y="104" font-size="21">Roof stays closed · outside is to the right</text>
+
+    <text x="24" y="148" font-size="24" font-weight="bold">1  Closed: seal engaged</text>
+    <g transform="translate(0 183)">
+      <use href="#fixed-roof"/>
+      <path d="M172 39 V139" stroke="#78a7b8" stroke-width="10" stroke-linecap="round"/>
+      <path d="M100 127 H227 V157 H100Z" fill="#dce5dc" stroke="#315d4d" stroke-width="3"/>
+      <g fill="none" stroke="#6b7c72" stroke-width="2">
+        <path d="M225 0 H253"/>
+        <path d="M202 33 H240 L253 48"/>
+        <path d="M180 90 H253"/>
+        <path d="M230 142 H253"/>
+      </g>
+      <g font-size="22">
+        <text x="267" y="8">Roof edge</text>
+        <text x="267" y="56">Resilient seal</text>
+        <text x="267" y="98">Raised glass</text>
+        <text x="267" y="150">Door</text>
+      </g>
+    </g>
+
+    <path d="M24 365 H456" stroke="#d2dcd3" stroke-width="2"/>
+    <text x="24" y="404" font-size="24" font-weight="bold">2  Handle pulled: glass drops</text>
+    <g transform="translate(0 440)">
+      <use href="#fixed-roof"/>
+      <path d="M172 39 V79" stroke="#78a7b8" stroke-width="5" stroke-dasharray="6 6" opacity=".65"/>
+      <path d="M172 82 V139" stroke="#78a7b8" stroke-width="10" stroke-linecap="round"/>
+      <path d="M100 127 H227 V157 H100Z" fill="#dce5dc" stroke="#315d4d" stroke-width="3"/>
+      <path d="M131 42 V84" fill="none" stroke="#315d4d" stroke-width="4" marker-end="url(#motion)"/>
+      <g fill="none" stroke="#6b7c72" stroke-width="2">
+        <path d="M201 69 H253"/>
+        <path d="M230 142 H253"/>
+      </g>
+      <g font-size="22">
+        <text x="267" y="33">Glass down</text>
+        <text x="267" y="77">Clearance</text>
+        <text x="267" y="150">Door still shut</text>
+      </g>
+    </g>
+    <text x="24" y="631" font-size="22">Motor + cable regulator lower the glass.</text>
+
+    <path d="M24 653 H456" stroke="#d2dcd3" stroke-width="2"/>
+    <text x="24" y="692" font-size="24" font-weight="bold">3  Door swings out with glass</text>
+    <g transform="translate(0 728)">
+      <use href="#fixed-roof"/>
+      <g fill="none" stroke="#9aaca0" stroke-width="2" stroke-dasharray="6 5">
+        <path d="M172 82 V127"/>
+        <path d="M100 127 H227 V157 H100Z"/>
+      </g>
+      <path d="M223 82 V139" stroke="#78a7b8" stroke-width="10" stroke-linecap="round"/>
+      <path d="M151 127 H278 V157 H151Z" fill="#dce5dc" stroke="#315d4d" stroke-width="3"/>
+      <path d="M232 83 H253" fill="none" stroke="#6b7c72" stroke-width="2"/>
+      <path d="M131 181 H244" fill="none" stroke="#315d4d" stroke-width="4" marker-end="url(#motion)"/>
+      <g font-size="22">
+        <text x="267" y="63">Glass below</text>
+        <text x="267" y="91">the seal</text>
+        <text x="267" y="189">Outwards</text>
+      </g>
+    </g>
+    <text x="24" y="957" font-size="22">Door closing: glass rises again.</text>
+    <text x="24" y="987" font-size="22">Roof-operation lowering is separate.</text>
+    <text x="24" y="1025" font-size="19">Seal shape and travel exaggerated · no dimensions</text>
+  </g>
+</svg>

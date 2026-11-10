@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1360" role="img" aria-labelledby="injection-title injection-desc">
+  <title id="injection-title">Fuel enters before the inlet valve on the 2.9, inside the cylinder on the 3.4 S</title>
+  <desc id="injection-desc">Two simplified cutaway sections show an inlet port, an open poppet valve, a cylinder and a piston. The 2.9 port injector sprays upstream of the valve; air and fuel then enter through its opening. The 3.4 S direct injector passes through the cylinder head and sprays into the combustion chamber, separately from the inlet air. Porsche's period system descriptions give approximately 4 bar for the 2.9 and 40 to 120 bar for the S high-pressure system. The sections are rotated and simplified, with one inlet valve shown; they do not reproduce actual geometry, spray pattern or injection timing.</desc>
+  <defs>
+    <marker id="injection-air-arrow" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 14 6 0 12Z" fill="#276950"/>
+    </marker>
+    <g id="injection-section">
+      <!-- Grey represents the surrounding head and bore; the pale connected space is the gas passage. -->
+      <path d="M26 182H225L293 225 355 171H544V399H263V314L202 289H26Z" fill="#dce3da"/>
+      <path d="M32 207H214L300 267 351 204Q371 188 395 196L520 239V365H287V302L205 267H32Z" fill="#fffdf7"/>
+      <!-- Port walls, chamber roof and cylinder bore. Gaps at the valve seat connect port and chamber. -->
+      <path d="M32 207H214L300 267M32 267H205L287 302M300 267 351 204Q371 188 395 196L520 239V392M287 302V392" fill="none" stroke="#718678" stroke-width="5" stroke-linejoin="round"/>
+      <!-- The valve is displaced into the chamber, leaving a visible inlet opening. -->
+      <path d="M260 172 343 305" stroke="#202d27" stroke-width="8" stroke-linecap="round"/>
+      <path d="M315 328 369 291" stroke="#202d27" stroke-width="13" stroke-linecap="round"/>
+      <path d="M319 325 365 294" stroke="#9aa89e" stroke-width="3" stroke-linecap="round"/>
+      <rect x="292" y="365" width="223" height="29" rx="3" fill="#9fb3a4" stroke="#718678" stroke-width="3"/>
+      <path d="M294 373H513M294 381H513" stroke="#718678" stroke-width="2"/>
+    </g>
+  </defs>
+  <rect width="600" height="1360" fill="#f4f5ef"/>
+  <g font-family="sans-serif" fill="#202d27">
+    <text x="26" y="43" font-size="32" font-weight="700">Where the fuel enters</text>
+    <text x="26" y="82" font-size="26">MY2010 Boxster 987.2</text>
+
+    <g transform="translate(0 108)">
+      <text x="26" y="34" font-size="30" font-weight="700">2.9 · port injection</text>
+      <text x="26" y="74" font-size="27" fill="#925326">Fuel supply ≈ 4 bar</text>
+      <use href="#injection-section"/>
+      <!-- A recognisable injector body, with its nozzle ending inside the port. -->
+      <g transform="translate(173 145) rotate(-25)">
+        <path d="M-7-22H7V-2H-7Z" fill="#925326"/>
+        <rect x="-13" y="-2" width="26" height="59" rx="4" fill="#b56a31" stroke="#925326" stroke-width="3"/>
+        <rect x="-17" y="8" width="34" height="10" rx="2" fill="#202d27"/>
+        <path d="M-7 57H7L5 80H-5Z" fill="#718678" stroke="#202d27" stroke-width="2"/>
+      </g>
+      <!-- Orange droplets mark fuel, rather than an undifferentiated flow triangle. -->
+      <g fill="#b56a31">
+        <circle cx="211" cy="224" r="3"/><circle cx="220" cy="232" r="3"/><circle cx="228" cy="242" r="3"/>
+        <circle cx="228" cy="230" r="3"/><circle cx="240" cy="239" r="3"/><circle cx="250" cy="248" r="3"/>
+        <circle cx="239" cy="252" r="3"/><circle cx="254" cy="261" r="3"/><circle cx="263" cy="251" r="3"/>
+        <circle cx="272" cy="270" r="3"/><circle cx="284" cy="282" r="3"/>
+        <circle cx="296" cy="314" r="3"/><circle cx="316" cy="345" r="3"/><circle cx="343" cy="347" r="3"/>
+      </g>
+      <path d="M45 246H177Q231 246 264 286L288 316Q300 349 345 349H420" fill="none" stroke="#276950" stroke-width="5" marker-end="url(#injection-air-arrow)"/>
+      <text x="37" y="235" font-size="26" fill="#276950">Air</text>
+      <text x="26" y="123" font-size="26">Injector</text>
+      <path d="M129 117H146L162 147" fill="none" stroke="#526159" stroke-width="2"/>
+      <text x="26" y="338" font-size="26">Inlet port</text>
+      <path d="M151 330 181 281" fill="none" stroke="#526159" stroke-width="2"/>
+      <text x="26" y="388" font-size="26">Inlet valve</text>
+      <path d="M161 380H213L322 322" fill="none" stroke="#526159" stroke-width="2"/>
+      <text x="366" y="279" font-size="26">Cylinder</text>
+      <text x="367" y="427" font-size="26">Piston</text>
+      <path d="M405 401V389" stroke="#526159" stroke-width="2"/>
+      <text x="26" y="474" font-size="26">Fuel joins the air before the valve.</text>
+      <text x="26" y="510" font-size="26">Both enter through the valve opening.</text>
+    </g>
+
+    <path d="M26 648H574" stroke="#9fb3a4" stroke-width="2"/>
+    <g transform="translate(0 666)">
+      <text x="26" y="34" font-size="30" font-weight="700">3.4 S · direct injection (DFI)</text>
+      <text x="26" y="74" font-size="27" fill="#925326">High-pressure fuel: 40–120 bar</text>
+      <use href="#injection-section"/>
+      <!-- The S injector penetrates the chamber roof, downstream of the inlet valve. -->
+      <g transform="translate(473 146) rotate(20)">
+        <path d="M-7-22H7V-2H-7Z" fill="#925326"/>
+        <rect x="-13" y="-2" width="26" height="59" rx="4" fill="#b56a31" stroke="#925326" stroke-width="3"/>
+        <rect x="-17" y="8" width="34" height="10" rx="2" fill="#202d27"/>
+        <path d="M-7 57H7L5 80H-5Z" fill="#718678" stroke="#202d27" stroke-width="2"/>
+      </g>
+      <g fill="#b56a31">
+        <circle cx="443" cy="230" r="3"/><circle cx="439" cy="241" r="3"/><circle cx="433" cy="253" r="3"/>
+        <circle cx="433" cy="234" r="3"/><circle cx="422" cy="245" r="3"/><circle cx="413" cy="256" r="3"/>
+        <circle cx="427" cy="268" r="3"/><circle cx="404" cy="269" r="3"/><circle cx="396" cy="281" r="3"/>
+        <circle cx="419" cy="283" r="3"/><circle cx="409" cy="298" r="3"/><circle cx="382" cy="292" r="3"/>
+      </g>
+      <path d="M45 246H177Q231 246 264 286L288 316Q300 349 345 349H420" fill="none" stroke="#276950" stroke-width="5" marker-end="url(#injection-air-arrow)"/>
+      <text x="37" y="235" font-size="26" fill="#276950">Air only</text>
+      <text x="324" y="123" font-size="26">Injector</text>
+      <path d="M425 117H444L466 148" fill="none" stroke="#526159" stroke-width="2"/>
+      <text x="26" y="338" font-size="26">Inlet port</text>
+      <path d="M151 330 181 281" fill="none" stroke="#526159" stroke-width="2"/>
+      <text x="26" y="388" font-size="26">Inlet valve</text>
+      <path d="M161 380H213L322 322" fill="none" stroke="#526159" stroke-width="2"/>
+      <text x="365" y="321" font-size="26">Cylinder</text>
+      <text x="367" y="427" font-size="26">Piston</text>
+      <path d="M405 401V389" stroke="#526159" stroke-width="2"/>
+      <text x="26" y="474" font-size="26">Air passes through the inlet valve.</text>
+      <text x="26" y="510" font-size="26">Fuel sprays directly into the cylinder.</text>
+    </g>
+
+    <g font-size="23" fill="#526159">
+      <text x="26" y="1221">Simplified sections, rotated for clarity.</text>
+      <text x="26" y="1253">One inlet valve shown open to reveal the path;</text>
+      <text x="26" y="1285">actual geometry and injection timing are not shown.</text>
+      <text x="26" y="1322">Period Porsche system figures, not test specifications.</text>
+    </g>
+  </g>
+</svg>

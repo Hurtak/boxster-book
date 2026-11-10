@@ -19,4 +19,4 @@ The two reproduced images are genuine Porsche factory technical illustrations, n
 - Local origin: same independently checked original PDF.
 - Modifications: rendered at a maximum dimension of 1,500 pixels; cropped to the complete exploded support assembly to remove the page border, headings, vehicle locator and footer. No part of the assembly or callouts changed. Output 619 × 665 pixels.
 
-The original schematic files `drivetrain-layout.svg`, `drivetrain-cv-and-hub.svg` and `diagrams/drivetrain-open-differential/poster.svg` and their interactive code were authored for this chapter. Their simplified geometry is not Porsche workshop artwork or a scale drawing.
+The original schematic files `drivetrain-layout.svg`, `drivetrain-cv-and-hub.svg`, `diagrams/drivetrain-open-differential/poster.svg` and `diagrams/drivetrain-explorer/poster.svg`, together with their interactive code and source models, were authored for this chapter. Their simplified geometry is not Porsche workshop artwork or a scale drawing. The explorer's symmetrical shaft geometry does not establish factory lengths or parts interchangeability.

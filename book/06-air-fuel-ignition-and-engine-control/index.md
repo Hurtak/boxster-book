@@ -4,11 +4,17 @@ The 2.9-litre engine produces its torque by admitting air, adding the appropriat
 
 On the reference 2010 Boxster, fuel enters the **inlet ports**, before the inlet valves. The contemporary S injects directly into the cylinders. Porsche's technical introduction identifies the 2.9's controller as Bosch **ME 7.8.2**, a more precise designation than the brochure's ME 7.8 family label.[^controller] The mechanical structure and VarioCam Plus hardware are explained in [Engine construction and valve gear](../05-engine-construction-and-valve-gear/index.md). Here the subject is how the engine decides what to do with them.
 
+Start with their positions in the car. The side inlet feeds the engine's intake, while electrical connections let the controller coordinate the air charge, fuel and spark. Select a part to distinguish its physical connections from its control signals.
+
+::: {.book-diagram data-diagram="intake-explorer"}
+![The left side inlet feeds the air cleaner, air-mass sensor and throttle above the rear-mounted engine. Two-bank runners lead to six port injectors; the DME separately controls the throttle, injectors and six coil-and-plug units.](diagrams/intake-explorer/poster.svg)
+:::
+
 ## Following the air
 
 The air-cleaner element removes particles before incoming air reaches the measuring and metering components. A hot-film mass-air-flow sensor, or **MAF**, reports the mass of incoming air. Mass matters because combustion requires a corresponding quantity of fuel: the same volume of hot, thin air contains less oxygen than colder, denser air. The electronic throttle then controls the restriction into the intake system, whose branches serve the two cylinder banks.[^air-cleaner][^maf-principle]
 
-![Schematic flow from air filter through MAF and throttle to the resonance intake and six inlet ports.](air-path.svg)
+![Schematic flow from air filter through MAF and throttle to the resonance intake and the cylinders’ inlet ports.](images/air-path.svg)
 
 *The functional sequence, rather than the physical routing of hoses. Fuel joins the air at the individual inlet ports.*
 
@@ -24,11 +30,11 @@ This arrangement gives other systems a route to influence engine output. Idle co
 
 ## Supplying and metering the fuel
 
-An electric fuel pump supplies pressurised petrol at the engine.[^inputs] The injectors then meter that supply into six separate inlet ports. In a port-injected system, electrical opening periods determine how much fuel each injector delivers, with the controller accounting for the operating conditions. *Sequential multipoint injection* means that the individual cylinders' injectors are operated in an appropriate sequence, rather than feeding one shared carburettor.[^port-principle][^later]
+An electric fuel pump supplies pressurised petrol at the engine.[^inputs] The six injectors then meter that supply into the individual cylinders’ inlet ports. In a port-injected system, electrical opening periods determine how much fuel each injector delivers, with the controller accounting for the operating conditions. *Sequential multipoint injection* means that the individual cylinders' injectors are operated in an appropriate sequence, rather than feeding one shared carburettor.[^port-principle][^later]
 
 For this 2.9, Porsche specifies Bosch **EV14 injectors**, with eight fine outlet holes, at approximately **4 bar** fuel pressure. Their mounting openings are in the flange area of the individual intake ports. Fuel is therefore sprayed upstream of the inlet valve and becomes part of the charge that passes into the cylinder.[^injectors]
 
-![Port injection places the fuel spray before the inlet valve; the 3.4 DFI comparison places it in the cylinder.](injection-location.svg)
+![Port injection places the fuel spray before the inlet valve; the 3.4 DFI comparison places it in the cylinder.](images/injection-location.svg)
 
 *Location is the defining difference. The documented 2.9 port-injection supply is approximately 4 bar; the contemporary 3.4 DFI high-pressure system operates at 40–120 bar. These are system descriptions, not a workshop pressure-test procedure.*
 
@@ -40,7 +46,7 @@ Each cylinder has its own ignition coil directly at its spark plug. The coil sto
 
 Porsche's new coils incorporate their own electronic output drivers and diagnostic functions. The controller activates the six modules individually. There is no rotating distributor and no long set of high-voltage leads carrying sparks from a central coil. The training document also describes surface-gap plugs with four ground electrodes arranged around the insulator. That describes plug construction, rather than four separately timed ignition events.[^ignition][^plug]
 
-Knock is abnormal combustion in which part of the charge ignites rapidly and creates sharp pressure disturbances. A knock sensor detects characteristic vibration transmitted through the engine structure. It is an acoustic feedback device, separate from the oxygen sensors that observe mixture behaviour in the exhaust.[^knock-principle]
+Knock is abnormal combustion in which part of the unburned charge auto-ignites and creates sharp pressure disturbances. A knock sensor detects characteristic vibration transmitted through the engine structure. It is an acoustic feedback device, separate from the oxygen sensors that observe mixture behaviour in the exhaust.[^knock-principle]
 
 The 2.9 has one knock sensor on each side of the crankcase. Porsche describes cylinder-selective control: the controller adjusts the timing of a knocking cylinder until the condition stops. If a sensor fails, protective retard under load can reduce power and increase consumption. Knock control manages combustion within the engine's calibrated operating range.[^ignition]
 
@@ -52,7 +58,7 @@ Other signals answer different questions. Oxygen sensors report the result of mi
 
 ## Mixture feedback: checking the result
 
-The 2.9 uses **LSU 4.9 wideband oxygen sensors before the catalysts** and **LSF 4.2 switching sensors after the first catalyst in each tract**. The upstream sensors support mixture control; the downstream sensing helps monitor exhaust treatment. There are separate exhaust paths for the two banks, so control can respond to differences between the sides.[^controller][^exhaust-sensors]
+The 2.9 uses **LSU 4.9 wideband oxygen sensors before the first catalyst brick** and **LSF 4.2 switching sensors between the two bricks in each bank's converter assembly**. The upstream sensors support mixture control; the downstream sensing helps monitor exhaust treatment. Separate exhaust paths let control respond to differences between the banks.[^controller][^exhaust-sensors]
 
 Lambda, written **λ**, expresses the air-to-fuel ratio relative to the chemically balanced ratio for the fuel. At λ = 1, the air and fuel are in their stoichiometric proportions. Above one the mixture is lean, with excess air; below one it is rich. Wideband sensing can quantify mixtures on either side of that point, rather than merely indicating a rich/lean transition.[^lambda]
 
@@ -92,11 +98,11 @@ All three use 3.4-litre direct injection, including the high-pressure fuel stage
 
 Useful observations connect symptoms to operating state: cold or warm, idle or loaded, one bank or both, intermittent or repeatable. Intake joints, electrical connections, coils, plugs and fuel delivery all participate in the same process. Stored fault information and measured values help distinguish an actuator failure from the controller's attempt to compensate for another problem. A rough idle or warning light alone does not identify which component needs replacement. Porsche specifically refers plug and air-filter replacement intervals to the market-specific maintenance schedule.[^plug][^air-cleaner]
 
-[^controller]: Porsche, *2009 Technik Introduction — All Boxster Cayman Models*, printed Fuel and ignition p. 58, [viewer p. 64](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=64).
+[^controller]: Porsche AfterSales Training, *2009 Technik Introduction — All Boxster/Cayman Models*, **PNA 987 021 09, edition 2/09**, printed Fuel and ignition p. 58, [viewer p. 64](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=64). The front matter identifies Porsche AG material edited for North America; UK options use the UK catalogue. [Indexed reproduction of the Porsche-authored text](https://www.scribd.com/document/972719474/Boxster-2009).
 
 [^air-cleaner]: Porsche, *2009 Technik Introduction*, printed p. 51, [viewer p. 57](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=57), air cleaner and Boxster outlet resonator.
 
-[^maf-principle]: Bosch, *Automotive Electrics and Automotive Electronics*, fifth edition, pp. 336–338, “Hot-film air-mass meters”, [archived manufacturer technical text](https://device.report/m/14f02593b29bf3a81944c4dc5e9ef8c3ffc497fa6b4f1c6f826418e60878add1). Used for the measurement principle; Porsche fitment is established by the technical introduction p. 58.
+[^maf-principle]: Bosch, *Automotive Electrics and Automotive Electronics*, fifth edition, pp. 336–338, “Hot-film air-mass meters”, [archived manufacturer technical text](https://device.report/m/14f02593b29bf3a81944c4dc5e9ef8c3ffc497fa6b4f1c6f826418e60878add1). Used for the measurement principle; Porsche fitment is established by the technical introduction printed pp. 38 and 58 (viewer pp. 44 and 64); p. 38 explicitly describes the hot-film MAF 7 on all new Boxster/Cayman models.
 
 [^intake]: Porsche, *2009 Technik Introduction*, printed p. 59, [viewer p. 65](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=65). Published flap thresholds are the training description, not a complete map of every operating-state condition.
 
@@ -108,7 +114,7 @@ Useful observations connect symptoms to operating state: cold or warm, idle or l
 
 [^injectors]: Porsche, *2009 Technik Introduction*, printed p. 59, [viewer p. 65](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=65), EV14 and approximately 4-bar system.
 
-[^dfi]: Porsche, *2009 Technik Introduction*, printed p. 41, [viewer p. 47](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=47); *The Boxster*, January 2010 UK brochure, printed pp. 28–31, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+[^dfi]: Porsche, *2009 Technik Introduction*, printed p. 11 (DFI piston crown), pp. 41–42 (pressure system and camshaft-driven pump) and p. 47 (injection strategy), [indexed text](https://www.scribd.com/document/972719474/Boxster-2009); the corresponding viewer pages are 17, 47–48 and 53. *The Boxster*, January 2010 UK brochure, printed pp. 28–31 / PDF pp. 12–13, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
 [^coil-principle]: Bosch, *Automotive Electrics and Automotive Electronics*, pp. 20–22, “Inductive ignition system”, [archived manufacturer technical text](https://device.report/m/14f02593b29bf3a81944c4dc5e9ef8c3ffc497fa6b4f1c6f826418e60878add1).
 
@@ -118,11 +124,11 @@ Useful observations connect symptoms to operating state: cold or warm, idle or l
 
 [^knock-principle]: Bosch, *Knock sensor*, p. 2, [manufacturer technical sheet](https://www.bosch-mobility.com/media/global/solutions/commercial-vehicles/powertrain-solutions/natural-gas/knock-sensor/product_data_sheet_knock_sensor.pdf).
 
-[^inputs]: Porsche, *The Boxster*, UK launch edition 08/08, printed pp. 34–35, [original brochure](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf), engine-management input/output diagram.
+[^inputs]: Porsche, *The Boxster*, UK launch edition 08/08, printed pp. 34–35 / PDF p. 16, [original brochure](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf), engine-management input/output diagram.
 
-[^exhaust-sensors]: Porsche, *2009 Technik Introduction*, printed p. 53, [viewer p. 59](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=59), together with the 2.9 sensor specification on printed p. 58.
+[^exhaust-sensors]: Porsche, *2009 Technik Introduction*, printed pp. 53–54: [sensor sequence, viewer p. 59](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=59) and [converter construction, viewer p. 60](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=60), together with the 2.9 sensor specification on printed p. 58.
 
-[^lambda]: Bosch, *Lambda sensors*, “Technology”, [manufacturer publication](https://www.boschaftermarket.com/xrm/media/images/country_specific/sg/services_and_support_6/downloads_18/lambda_sensors.pdf). Feedback-step arithmetic is the author's illustrative model, not measured Porsche behaviour.
+[^lambda]: Bosch, *Lambda sensors*, “Technology”, PDF p. 4, [manufacturer publication](https://www.boschaftermarket.com/xrm/media/images/country_specific/sg/services_and_support_6/downloads_18/lambda_sensors.pdf). Feedback-step arithmetic is the author's illustrative model, not measured Porsche behaviour.
 
 [^lambda-heating]: Bosch Mobility, [Wideband lambda sensor](https://www.bosch-mobility.com/en/solutions/sensors/wideband-lambda-sensor/), operating principle and heating; current component figures are not assigned to the 2010 sensor.
 
@@ -130,8 +136,8 @@ Useful observations connect symptoms to operating state: cold or warm, idle or l
 
 [^warmup-dfi]: Porsche, *2009 Technik Introduction*, printed p. 56, [viewer p. 62](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=62).
 
-[^chrono]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 56–57 and 126–127, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+[^chrono]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 56–57 / PDF p. 26 and printed pp. 126–127 / PDF p. 59, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
 [^later]: Porsche Cars North America, *2012 Boxster Technical Specifications*, p. 1, [original technical sheet](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf). Used for injection and controller-family continuity, not UK equipment or European power units.
 
-[^variants]: Porsche, *The Boxster Spyder*, January 2010 UK edition, printed pp. 24–27 and 42–43, [brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf); Porsche Netherlands, [S Black Edition release, 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/); ordinary S figures in the January 2010 UK brochure, printed pp. 126–127.
+[^variants]: Porsche, *The Boxster Spyder*, January 2010 UK edition, printed pp. 24–27 / PDF pp. 11–12 and printed p. 41 / PDF p. 19, [brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf); Porsche Netherlands, [S Black Edition release, 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/); ordinary S figures in the January 2010 UK brochure, printed pp. 126–127 / PDF p. 59. Black Edition DFI is also explicit in *The Boxster S Black Edition*, UK edition 11/10, printed p. 10 / PDF p. 6, [original brochure](https://www.dropbox.com/scl/fi/4apbqs3um5jdfryqy51ns/2011-987-Porsche-Boxster-Black-Edition-Brochure-UK.pdf?rlkey=tw7xw4lemnstkgus30glszqao&dl=0).

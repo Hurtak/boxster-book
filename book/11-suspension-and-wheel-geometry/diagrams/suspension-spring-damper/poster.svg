@@ -1,17 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="430" viewBox="0 0 360 430" role="img" aria-labelledby="title desc">
-<title id="title">A spring responds to position; a damper responds to motion</title><desc id="desc">Two compressed springs have the same restoring force. At rest the ideal damper has no force. During compression it resists the motion. Rates and forces are illustrative.</desc>
-<rect width="360" height="430" fill="#faf8f1"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="666" viewBox="0 0 360 666" role="img" aria-labelledby="title desc">
+<title id="title">Equal spring compression; different damper velocity</title>
+<desc id="desc">Both springs have 20 millimetres of extra compression and add 400 newtons upward on the body. The left lower mounting is still, so its ideal damper has no velocity force. The right mounting is moving upward at 0.1 metres per second: the damper pushes the body upward with 150 newtons and the lower mounting downward. Each rod and piston joins the body while its cylinder joins the lower mounting. Solid arrows show body forces; the dashed arrow shows lower-mount motion. Functional symbols and illustrative rates, not measured Boxster geometry or calibration.</desc>
+<rect width="360" height="666" fill="#faf8f1"/>
 <g font-family="Arial,sans-serif" fill="#273e35" text-anchor="middle" font-size="16">
-<text x="180" y="28" font-size="19" font-weight="bold">Position and motion are different</text>
-<text x="90" y="66">Compressed, still</text><text x="270" y="66">Compressed, moving</text>
-<path d="M25 89H155M205 89H335M25 240H155M205 240H335" stroke="#273e35" stroke-width="9"/>
-<g fill="none" stroke-width="4"><path d="M65 89V113L51 122L79 137L51 152L79 167L51 182L79 197L65 212V240M245 89V113L231 122L259 137L231 152L259 167L231 182L259 197L245 212V240" stroke="#a6552b"/>
-<path d="M118 89V151M110 151H126M118 213V240M298 89V151M290 151H306M298 213V240" stroke="#27627b"/>
-<path d="M104 130H132V213H104ZM284 130H312V213H284Z" stroke="#27627b"/>
-<path d="M339 223V173L333 183M339 173L345 183" stroke="#27627b"/></g>
-<text x="90" y="278" fill="#a6552b">Spring: 400 N extra</text><text x="270" y="278" fill="#a6552b">Spring: 400 N extra</text>
-<text x="90" y="306" fill="#27627b">Damper: 0 N</text><text x="270" y="306" fill="#27627b">Damper: resists motion</text>
-<text x="180" y="345">Same compression; different velocity.</text>
-<text x="180" y="373">Separate symbols; coil-over on the car.</text>
-<text x="180" y="403" font-size="14">Illustrative forces, not Porsche calibration.</text>
-</g></svg>
+<text x="180" y="28" font-size="19" font-weight="bold">Spring position, damper motion</text>
+<text x="180" y="55">Same 20 mm extra compression</text>
+<text x="90" y="87" font-weight="bold">Still</text>
+<text x="270" y="87" font-weight="bold">Compressing</text>
+<!-- Each piston/rod is attached only to the upper bar; each fixed-length
+     cylinder and its bottom stem are attached to the lower bar. -->
+<g fill="none" stroke="#273e35" stroke-width="9">
+<path d="M24 135H156M204 135H336M24 303H156M204 303H336"/>
+</g>
+<g fill="none" stroke="#a6552b" stroke-width="4" stroke-linejoin="round">
+<path d="M66 135V154L53 164L79 178L53 192L79 206L53 220L79 234L53 248L79 262L66 276V303"/>
+<path d="M246 135V154L233 164L259 178L233 192L259 206L233 220L259 234L233 248L259 262L246 276V303"/>
+</g>
+<g stroke="#27627b" stroke-width="3">
+<path d="M112 167H140V282H112ZM292 167H320V282H292Z" fill="#dbe7ed"/>
+<path d="M126 282V303M306 282V303" fill="none" stroke-width="4"/>
+</g>
+<path d="M126 135V208M306 135V208" stroke="#273e35" stroke-width="4"/>
+<path d="M113 208H139M293 208H319" stroke="#27627b" stroke-width="9"/>
+<path d="M120 203V213M132 203V213M300 203V213M312 203V213" stroke="#faf8f1" stroke-width="2"/>
+<!-- Solid arrows act on the body, so compression damping is upward here. -->
+<g fill="none" stroke-width="3" stroke-linejoin="round">
+<path d="M40 135V104M35 112L40 104L45 112M220 135V104M215 112L220 104L225 112" stroke="#a6552b"/>
+<path d="M332 135V109M327 117L332 109L337 117" stroke="#27627b"/>
+<path d="M345 301V267" stroke="#526159" stroke-dasharray="5 4"/>
+<path d="M340 275L345 267L350 275" stroke="#526159"/>
+</g>
+<text x="180" y="334">Upper bars: body; lower bars: wheel</text>
+<text x="90" y="371" fill="#a6552b">Spring: 400 N ↑</text>
+<text x="270" y="371" fill="#a6552b">Spring: 400 N ↑</text>
+<text x="90" y="401" fill="#27627b">Damper: 0 N</text>
+<text x="270" y="401" fill="#27627b">Damper: 150 N ↑</text>
+<text x="90" y="430">0 m/s</text>
+<text x="270" y="430">+0.10 m/s</text>
+<text x="180" y="465">Solid arrows: forces on the body.</text>
+<text x="180" y="489">Dashed arrow: lower-mount motion.</text>
+<text x="180" y="513">Lower mount feels opposite forces.</text>
+<text x="180" y="550">Rod and piston join the body.</text>
+<text x="180" y="574">Cylinder joins the lower mounting.</text>
+<text x="180" y="611">Separate symbols; Boxster is coil-over.</text>
+<text x="180" y="636" font-size="14">Illustrative: 20 N/mm and 1,500 N·s/m.</text>
+<text x="180" y="656" font-size="14">Static support omitted; not Porsche calibration.</text>
+</g>
+</svg>

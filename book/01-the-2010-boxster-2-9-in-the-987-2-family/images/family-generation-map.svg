@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="765" viewBox="0 0 600 765" role="img" aria-labelledby="title desc">
+<title id="title">Locate the 2010 2.9 within the generations</title><desc id="desc">Read downwards from the original 987 phase, grouped by Porsche Classic as 2005 to 2008, to the revised phase, grouped as 2009 to 2012. The revised phase contains the reference 2010 Boxster 2.9, with manual gearbox or optional PDK. The succeeding 981 was introduced in 2012 and had a 2.7-litre ordinary Boxster. The decimal suffixes 987.1 and 987.2 are phase shorthand. These year groups are not registration dates.</desc>
+<rect width="600" height="765" rx="10" fill="#f4f7f3"/>
+<g font-family="sans-serif" fill="#263d34">
+<text x="28" y="43" font-size="34" font-weight="bold">The 2010 2.9 in context</text>
+<text x="28" y="81" font-size="28">One type, two phases; then a successor</text>
+<rect x="28" y="105" width="544" height="130" rx="8" fill="#e5ebe5"/>
+<text x="48" y="148" font-size="30" font-weight="bold">987.1 · 2005–2008</text>
+<text x="48" y="191" font-size="28">Original phase of type 987</text>
+<path d="M300 247v23m-7-7 7 7 7-7" fill="none" stroke="#7c8f80" stroke-width="3"/>
+<rect x="28" y="282" width="544" height="181" rx="8" fill="#176b53"/>
+<g fill="white">
+<text x="48" y="322" font-size="30" font-weight="bold">987.2 · 2009–2012</text>
+<text x="48" y="359" font-size="28">Revised phase of type 987</text>
+<text x="48" y="397" font-size="28" font-weight="bold">Reference: 2010 Boxster 2.9</text>
+<text x="48" y="435" font-size="28">Manual; optional PDK</text>
+</g>
+<path d="M300 475v23m-7-7 7 7 7-7" fill="none" stroke="#7c8f80" stroke-width="3"/>
+<rect x="28" y="511" width="544" height="147" rx="8" fill="#e5ebe5"/>
+<text x="48" y="551" font-size="30" font-weight="bold">981 · introduced in 2012</text>
+<text x="48" y="590" font-size="28">New Boxster generation</text>
+<text x="48" y="628" font-size="28">Ordinary Boxster: 2.7 litres</text>
+<text x="28" y="705" font-size="26">987.1 / 987.2 are phase shorthand.</text>
+<text x="28" y="741" font-size="26">Year groups are not registration dates.</text>
+</g></svg>

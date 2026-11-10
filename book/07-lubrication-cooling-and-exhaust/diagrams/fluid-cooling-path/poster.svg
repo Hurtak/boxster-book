@@ -1,1 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" role="img" aria-labelledby="fluid-cooling-poster-title fluid-cooling-poster-desc"><title id="fluid-cooling-poster-title">Coolant circulation during warm-up</title><desc id="fluid-cooling-poster-desc">The pump circulates coolant through the engine's short bypass while the thermostat restricts the long route through the front radiator pair. An expansion tank connects to the coolant system. Fan airflow and coolant circulation are separate functions.</desc><defs><marker id="fluid-cooling-poster-warm" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#b35e37"/></marker><marker id="fluid-cooling-poster-cool" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#26708a"/></marker></defs><rect width="600" height="440" fill="#f7f7f2"/><g font-family="sans-serif" fill="#24342c" text-anchor="middle"><text x="300" y="28" font-size="25" font-weight="700">Warm-up: keep the short circuit moving</text><path d="M217 364H70V95H204M396 95H530V300" fill="none" stroke="#aab1aa" stroke-width="5" stroke-dasharray="7 5"/><path d="M217 364H110V300H525" fill="none" stroke="#b35e37" stroke-width="6" marker-end="url(#fluid-cooling-poster-warm)"/><path d="M530 312V364H388" fill="none" stroke="#26708a" stroke-width="6" marker-end="url(#fluid-cooling-poster-cool)"/><rect x="204" y="59" width="192" height="70" rx="8" fill="#edf0e9" stroke="#aab1aa" stroke-width="2"/><text x="300" y="87" font-size="22">Front radiator</text><text x="300" y="114" font-size="22">pair</text><text x="300" y="160" font-size="20">Fans: not requested</text><rect x="209" y="194" width="182" height="52" rx="8" fill="#eef1ea" stroke="#7c897c" stroke-width="2"/><text x="300" y="227" font-size="22">Expansion tank</text><path d="M300 246V334" stroke="#7c897c" stroke-width="3" stroke-dasharray="7 5"/><text x="300" y="282" font-size="21">Short bypass</text><circle cx="530" cy="300" r="14" fill="#f2ddb9" stroke="#526455" stroke-width="2"/><text x="300" y="326" font-size="21">Thermostat restricts radiator route</text><rect x="217" y="340" width="166" height="61" rx="8" fill="#e0ebdf" stroke="#236148" stroke-width="2"/><text x="300" y="365" font-size="22">Engine + pump</text><text x="300" y="391" font-size="20">Rear of car</text><text x="300" y="429" font-size="18">Functional schematic; auxiliary branches omitted</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 342 720" role="img" aria-labelledby="fluid-cooling-poster-title fluid-cooling-poster-desc" style="max-width:430px;margin-inline:auto">
+  <title id="fluid-cooling-poster-title">Coolant circuit: warm-up example</title>
+  <desc id="fluid-cooling-poster-desc">The belt-driven pump circulates coolant through the engine jackets and short bypass while the thermostat restricts the long route to the front radiator pair. Orange return coolant has not passed through the radiators. Dashed green arrows show air, separate from liquid circulation; fans are not requested in this example. The expansion tank is a side connection that accommodates volume changes and provides a rear filling and level-checking point. Functional schematic, not actual pipe geometry: the radiator pair is grouped, tank plumbing is simplified and auxiliary branches are omitted. Thermostat opening is progressive.</desc>
+  <defs>
+    <marker id="fluid-cooling-poster-warm" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#b35e37"/></marker>
+    <marker id="fluid-cooling-poster-air" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M1 1L5 3.5L1 6" fill="none" stroke="#52715a" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="342" height="720" fill="#f7f7f2"/>
+  <g fill="none" stroke-width="4">
+    <path d="M83 515H16V270" stroke="#b35e37"/>
+    <path d="M16 270V105H83M259 105H326V325H259" stroke="#aab1aa" stroke-dasharray="6 5"/>
+    <g stroke="#b35e37" marker-end="url(#fluid-cooling-poster-warm)">
+      <path d="M16 270H171V294"/><path d="M171 356V387"/>
+      <path d="M171 448V478"/><path d="M79 515H26"/>
+    </g>
+    <path d="M171 363H283V606H261" stroke="#7c897c" stroke-width="2"/>
+  </g>
+  <circle cx="171" cy="363" r="3" fill="#7c897c"/>
+  <g stroke="#52715a" stroke-width="2.5" fill="none" stroke-dasharray="6 5" marker-end="url(#fluid-cooling-poster-air)">
+    <path d="M123 36V60"/><path d="M171 36V60"/><path d="M219 36V60"/>
+    <path d="M123 148V176"/><path d="M171 148V176"/><path d="M219 148V176"/>
+  </g>
+  <rect x="83" y="70" width="176" height="68" rx="8" fill="#edf0e9" stroke="#aab1aa" stroke-width="2"/>
+  <rect x="83" y="294" width="176" height="62" rx="8" fill="#f2ddb9" stroke="#526455" stroke-width="2"/>
+  <rect x="83" y="392" width="176" height="56" rx="8" fill="#e0ebdf" stroke="#236148" stroke-width="2"/>
+  <rect x="83" y="484" width="176" height="62" rx="8" fill="#e0ebdf" stroke="#236148" stroke-width="2"/>
+  <rect x="81" y="572" width="180" height="66" rx="8" fill="#eef1ea" stroke="#7c897c" stroke-width="2"/>
+  <g font-family="'Source Sans 3',sans-serif" fill="#24342c" text-anchor="middle">
+    <text x="171" y="23" font-size="16" font-weight="600">FRONT · WARM-UP EXAMPLE</text>
+    <text x="171" y="96" font-size="20" font-weight="600">Front radiator</text>
+    <text x="171" y="126" font-size="20">pair</text>
+    <text x="171" y="199" font-size="17" font-weight="600">Airflow depends on conditions</text>
+    <text x="171" y="222" font-size="16">Fans: not requested in this example</text>
+    <text x="171" y="254" font-size="18" font-weight="600">Short bypass</text>
+    <text x="171" y="320" font-size="20" font-weight="600">Thermostat</text>
+    <text x="171" y="343" font-size="16">Radiator restricted</text>
+    <text x="171" y="414" font-size="20" font-weight="600">Coolant pump</text>
+    <text x="171" y="441" font-size="17">Belt driven</text>
+    <text x="171" y="508" font-size="20" font-weight="600">Engine jackets</text>
+    <text x="171" y="535" font-size="17">Heat enters coolant</text>
+    <text x="171" y="598" font-size="20" font-weight="600">Expansion tank</text>
+    <text x="171" y="622" font-size="16">Expansion + fill / level</text>
+    <text x="171" y="658" font-size="16" font-weight="600">REAR / ENGINE AREA</text>
+    <text x="171" y="686" font-size="15">Functional schematic; branches omitted</text>
+    <text x="171" y="708" font-size="15">Solid: coolant · green dashes: air</text>
+  </g>
+</svg>

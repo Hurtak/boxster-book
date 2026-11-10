@@ -1,13 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 430" role="img" aria-labelledby="feedback-title feedback-desc">
-<title id="feedback-title">Lambda feedback corrects a mixture error</title><desc id="feedback-desc">Initially, ten percent unmetered extra air makes lambda 1.100. Successive illustrative fuel corrections approach lambda one. Fuel correction does not repair an air leak.</desc>
-<rect width="600" height="430" fill="#f4f5ef"/>
-<g font-family="sans-serif" fill="#203b2d">
-<text x="28" y="36" font-size="26">Extra air: +10%; fuel correction: 0%</text>
-<text x="28" y="76" font-size="24">Initial λ = 1.100: a lean mixture</text>
-<path d="M83 125V327H567" stroke="#263e31" stroke-width="2" fill="none"/>
-<path d="M83 308H567" stroke="#73847a" stroke-dasharray="6 6" stroke-width="2"/>
-<path d="M83 148L143 248L204 284L264 299L325 304L385 307L446 308L506 308L567 308" stroke="#9aaba0" stroke-width="3" fill="none"/>
-<circle cx="83" cy="148" r="7" fill="#ad622d"/>
-<g font-size="22"><text x="21" y="154">1.10</text><text x="21" y="315">1.00</text><text x="78" y="355">0</text><text x="319" y="355">4</text><text x="562" y="355">8</text><text x="230" y="386">Correction step</text></g>
-<text x="28" y="418" font-size="21">Illustrative steps, not measured time or Porsche maps.</text>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1045" role="img" aria-labelledby="feedback-title feedback-desc">
+<title id="feedback-title">Mixture feedback adds fuel but leaves the air leak</title>
+<desc id="feedback-desc">A functional closed loop: the upstream wideband oxygen sensor informs the DME, the DME commands port injectors, and combustion produces exhaust for the sensor to observe. In the initial illustrative state, air is 110 percent of metered air and fuel is 100 percent of the base quantity required at stoichiometry. Lambda is therefore 1.100, a lean mixture. Added fuel approaches lambda one without closing the intake leak. Steps have no time scale and do not represent Porsche calibration.</desc>
+<rect width="600" height="1045" fill="#f4f5ef"/>
+<g font-family="'Source Sans 3',sans-serif" fill="#203b2d">
+<text x="20" y="39" font-size="30" font-weight="600">A control loop, not a leak repair</text>
+<g fill="#fff" stroke="#9aaba0" stroke-width="2">
+<rect x="20" y="66" width="250" height="119" rx="3"/>
+<rect x="330" y="66" width="250" height="119" rx="3"/>
+<rect x="20" y="288" width="250" height="119" rx="3"/>
+<rect x="330" y="288" width="250" height="119" rx="3"/>
+</g>
+<g text-anchor="middle" font-size="28">
+<text x="145" y="99" font-weight="600">DME</text>
+<text x="145" y="132">MAF-based fuel</text>
+<text x="145" y="165">+ feedback trim</text>
+<text x="455" y="99" font-weight="600">Port injectors</text>
+<text x="455" y="132">Meter commanded</text>
+<text x="455" y="165">fuel into ports</text>
+<text x="145" y="321" font-weight="600">Wideband sensor</text>
+<text x="145" y="354">Reads exhaust λ</text>
+<text x="145" y="387">Before catalyst</text>
+<text x="455" y="321" font-weight="600">Combustion</text>
+<text x="455" y="354">Air + fuel burn</text>
+<text x="455" y="387">Exhaust leaves</text>
+</g>
+<g fill="none" stroke-width="3.5">
+<g stroke="#276950"><path d="M276 125H324M145 281V192" stroke-dasharray="7 6"/><path d="m312 118 12 7-12 7M138 204l7-12 7 12"/></g>
+<g stroke="#ad622d"><path d="M455 192V281M324 347H276M455 444V414"/><path d="m448 269 7 12 7-12M288 340l-12 7 12 7M448 426l7-12 7 12"/></g>
+</g>
+<rect x="80" y="216" width="130" height="39" fill="#f4f5ef"/><rect x="417" y="216" width="76" height="39" fill="#f4f5ef"/>
+<g text-anchor="middle" font-size="28">
+<text x="145" y="245" fill="#276950">λ signal</text><text x="455" y="245" fill="#ad622d">Fuel</text>
+<text x="145" y="456" fill="#276950">Dashed = signal</text><text x="145" y="492" fill="#ad622d">Solid = flow</text>
+<text x="455" y="476">Intake air</text><text x="455" y="512" fill="#ad622d">100% + 10% leak</text>
+</g>
+<path d="M20 538H580" stroke="#b6c1ba" stroke-width="2"/>
+<text x="20" y="578" font-size="28">Air: 110% of metered air</text>
+<text x="20" y="615" font-size="28">Fuel: 100% of base fuel</text>
+<text x="20" y="660" font-size="36" font-weight="600">λ = 1.100</text>
+<text x="580" y="658" font-size="28" text-anchor="end">Lean</text>
+<text x="86" y="699" font-size="28">Lambda λ</text>
+<path d="M86 718V853H575" stroke="#203b2d" stroke-width="2" fill="none"/>
+<path d="M86 847H575" stroke="#73847a" stroke-dasharray="6 6" stroke-width="2"/>
+<path d="M86 785L147 824L208 838L269 844L331 846L392 847L453 847L514 847L575 847" stroke="#9aaba0" stroke-width="4" fill="none"/>
+<circle cx="86" cy="785" r="8" fill="#ad622d"/>
+<g font-size="28">
+<text x="68" y="733" text-anchor="end">1.2</text><text x="68" y="795" text-anchor="end">1.1</text><text x="68" y="857" text-anchor="end">1.0</text>
+<text x="86" y="884" text-anchor="middle">0</text><text x="208" y="884" text-anchor="middle">2</text><text x="331" y="884" text-anchor="middle">4</text><text x="453" y="884" text-anchor="middle">6</text><text x="575" y="884" text-anchor="middle">8</text>
+<text x="575" y="831" text-anchor="end">Target 1</text>
+<text x="330" y="925" text-anchor="middle">Correction step (not time)</text>
+</g>
+<text x="20" y="979" font-size="26" fill="#526159">Illustrative warm, steady feedback.</text>
+<text x="20" y="1017" font-size="26" fill="#526159">No time scale or Porsche calibration.</text>
+</g>
+</svg>

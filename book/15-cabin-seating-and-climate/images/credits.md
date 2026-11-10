@@ -16,4 +16,4 @@ Third-party photographs are retained locally for the user's personal illustrated
 - **Source identification:** Original caption **Sports bucket seat**; one of three separate seat photographs on that spread. The brochure describes optional ordinary-model equipment. It is used as a construction comparison, not to establish a car's original seat specification.
 - **Local treatment:** Embedded JPEG extracted with Poppler `pdfimages -f 35 -l 35 -j`, local extraction image 001, **165×209**, displayed at a modest 180px width. No upscaling/compositing or labels added. Extraction order was checked against the complete rendered spread; image 002 is the adaptive sports seat, not this bucket. Visually inspected 10 November 2026.
 
-All three explanatory SVGs and the D3 rendering are original schematic artwork created for this chapter. They are not Porsche factory engineering drawings.
+The two static explanatory SVGs, D3 airflow diagram and 3D cabin model are original schematic artwork created for this chapter. They are not Porsche factory engineering drawings.

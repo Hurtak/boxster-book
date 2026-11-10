@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1110" viewBox="0 0 360 1110" role="img" aria-labelledby="title desc">
+  <title id="title">Strut support and wheel location on the 2010 Boxster 2.9</title>
+  <desc id="desc">A conceptual suspension corner, viewed across the car. The hub joins the wheel to its carrier; the carrier joins the lower arm and the structural strut, whose upper mount attaches to the body. The coil spring bears on upper and lower seats. Orange arrows trace the principal vertical support route from the tyre through the carrier and spring to the body. Blue arrows indicate a sideways tyre force and reactions through the lower arm and strut. A separate connection key shows the fore-and-aft guide joining the lower arm to the chassis, and a separate tie or toe link joining the carrier. At the front the steering rack moves the tie rod; at the rear the toe link guides wheel direction without a steering rack. Force paths interact; no exact geometry, load shares or force magnitudes are represented.</desc>
+  <defs>
+    <marker id="vertical-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#a6552b"/></marker>
+    <marker id="location-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#27627b"/></marker>
+  </defs>
+  <rect width="360" height="1110" fill="#faf8f1"/>
+  <g font-family="Arial,sans-serif" fill="#273e35" font-size="18">
+    <text x="180" y="29" text-anchor="middle" font-size="21" font-weight="bold">One corner, several force paths</text>
+    <text x="180" y="55" text-anchor="middle" font-size="16">Across the car · simplified front view</text>
+    <!-- The carrier, hub and strut are physically joined. The two spring
+         seats close the spring's support path to the body and carrier. -->
+    <path d="M15 112H323M15 112V379" fill="none" stroke="#273e35" stroke-width="10"/>
+    <rect x="218" y="103" width="33" height="18" rx="7" fill="#82988d" stroke="#273e35" stroke-width="2"/>
+    <path d="M225 121L221 150M243 121L239 152" stroke="#82988d" stroke-width="4"/>
+    <path d="M234 121L226 190" stroke="#82988d" stroke-width="8"/>
+    <path d="M226 190L209 329" stroke="#27627b" stroke-width="14"/>
+    <path d="M211 149L247 153M193 279L229 283" stroke="#273e35" stroke-width="7" stroke-linecap="round"/>
+    <path d="M230 151L245 164L210 178L241 192L207 206L238 221L204 235L234 250L200 265L211 281" fill="none" stroke="#a6552b" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M200 319L224 319L231 348L222 371L205 371Z" fill="#82988d" stroke="#273e35" stroke-width="2"/>
+    <rect x="253" y="285" width="39" height="124" rx="11" fill="#273e35"/>
+    <path d="M222 347H273" stroke="#82988d" stroke-width="15"/>
+    <circle cx="272" cy="347" r="8" fill="#faf8f1" stroke="#82988d" stroke-width="3"/>
+    <path d="M15 379L207 370" stroke="#637a6e" stroke-width="11"/>
+    <circle cx="15" cy="379" r="7" fill="#faf8f1" stroke="#273e35" stroke-width="3"/>
+    <circle cx="207" cy="370" r="8" fill="#faf8f1" stroke="#273e35" stroke-width="3"/>
+    <path d="M24 412H334" stroke="#82988d" stroke-width="2"/>
+    <g fill="none" stroke="#82988d" stroke-width="1.5">
+      <path d="M122 88L220 107"/>
+      <path d="M117 180H208"/>
+      <path d="M145 230L219 239"/>
+      <path d="M107 323L201 335"/>
+      <path d="M125 354L129 374"/>
+      <path d="M319 325L280 343"/>
+    </g>
+    <text x="20" y="91">Top mount</text>
+    <text x="20" y="140" font-size="16">Body</text>
+    <text x="20" y="184">Coil spring</text>
+    <text x="20" y="234">Damper / strut</text>
+    <text x="20" y="327">Carrier</text>
+    <text x="79" y="350">Lower arm</text>
+    <text x="299" y="319" font-size="16">Hub</text>
+    <!-- Orange support route; blue wheel-guidance reactions. Arrows show
+         one example direction, never relative force magnitudes. -->
+    <g fill="none" stroke="#a6552b" stroke-width="3" marker-end="url(#vertical-arrow)">
+      <path d="M272 408V359"/>
+      <path d="M261 347H237L212 320L216 291"/>
+      <path d="M231 144L234 123"/>
+    </g>
+    <g fill="none" stroke="#27627b" stroke-width="3" marker-end="url(#location-arrow)">
+      <path d="M329 409H290"/>
+      <path d="M189 371L38 378"/>
+      <path d="M214 309L218 279"/>
+      <path d="M244 142L247 122"/>
+    </g>
+    <text x="20" y="435" fill="#a6552b" font-weight="bold">↑ Vertical support</text>
+    <text x="20" y="461" fill="#27627b" font-weight="bold">← Side force: routes to body</text>
+    <path d="M20 482H340" stroke="#c9d1c8"/>
+    <text x="20" y="511" font-weight="bold">Support and guidance overlap</text>
+    <text x="20" y="541"><tspan x="20">The spring carries body load through</tspan><tspan x="20" dy="24">its seats. The damper resists motion.</tspan></text>
+    <text x="20" y="598"><tspan x="20">The structural strut and lower arm</tspan><tspan x="20" dy="24">also react sideways tyre loads.</tspan></text>
+    <path d="M20 644H340" stroke="#c9d1c8"/>
+    <text x="20" y="674" font-weight="bold">Links out of the front view</text>
+    <text x="20" y="700" font-size="16">Connection key · not a plan of the axle</text>
+    <!-- A connection graph, deliberately not a projected axle layout.
+         The guide attaches to the arm, the tie/toe link to the carrier. -->
+    <path d="M45 738V870" stroke="#273e35" stroke-width="10"/>
+    <path d="M284 786V870" stroke="#82988d" stroke-width="14"/>
+    <path d="M45 808H284" stroke="#637a6e" stroke-width="9"/>
+    <path d="M45 745L151 808" stroke="#637a6e" stroke-width="8"/>
+    <path d="M45 862H284" stroke="#27627b" stroke-width="7"/>
+    <g fill="#faf8f1" stroke="#273e35" stroke-width="2">
+      <circle cx="45" cy="745" r="6"/><circle cx="45" cy="808" r="6"/><circle cx="45" cy="862" r="6"/>
+      <circle cx="151" cy="808" r="6"/><circle cx="284" cy="808" r="6"/><circle cx="284" cy="862" r="6"/>
+    </g>
+    <text x="73" y="741">Fore/aft guide</text>
+    <text x="139" y="792">Lower arm</text>
+    <text x="99" y="846" fill="#27627b">Tie / toe link</text>
+    <text x="20" y="897" font-size="16">Inboard mounts</text>
+    <text x="250" y="897" font-size="16">Carrier</text>
+    <text x="20" y="930"><tspan font-weight="bold">Front:</tspan><tspan> tie rod joins rack to carrier.</tspan><tspan x="20" dy="24">Rack movement steers the wheel.</tspan></text>
+    <text x="20" y="986"><tspan font-weight="bold">Rear:</tspan><tspan> toe link guides direction.</tspan><tspan x="20" dy="24">No steering rack commands it.</tspan></text>
+    <text x="20" y="1042"><tspan x="20">Fore/aft tyre loads reach the chassis</tspan><tspan x="20" dy="24">through the arm and guide system.</tspan></text>
+    <text x="180" y="1096" text-anchor="middle" font-size="15">Schematic only · no geometry or load shares</text>
+  </g>
+</svg>

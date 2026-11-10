@@ -1,20 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-labelledby="title desc">
-<title id="title">Separate rear body spaces</title><desc id="desc">Side section of the rear half, front to left. The roof bay is above the engine region. The rear boot is farther back. The roof compartment cover and luggage lid are separate exterior panels, while another removable cover lies above the engine.</desc>
-<rect width="600" height="360" fill="#f7f6f0"/>
-<g font-family="sans-serif" fill="#253d32" font-size="25" text-anchor="middle">
-<text x="80" y="33">← Front</text><text x="520" y="33">Rear →</text>
-<path d="M113 64V300H586" fill="none" stroke="#9cae9e" stroke-width="3"/>
-<path d="M66 102V293H107" fill="none" stroke="#253d32" stroke-width="10"/>
-<text x="66" y="334">Seat</text>
-<rect x="162" y="71" width="222" height="64" rx="5" fill="#e4e2c9" stroke="#8a7e34" stroke-width="3"/>
-<text x="273" y="111">Roof bay</text><path d="M162 60H384" stroke="#8a7e34" stroke-width="6"/>
-<path d="M162 168H384" stroke="#a35d32" stroke-width="5" stroke-dasharray="8 5"/>
-<text x="273" y="198" fill="#80512e">Top cover</text>
-<rect x="162" y="221" width="222" height="71" rx="5" fill="#d3e1d3" stroke="#176b53" stroke-width="3"/>
-<text x="273" y="265">Engine</text>
-<path d="M414 131H576" stroke="#357694" stroke-width="6"/>
-<rect x="414" y="142" width="162" height="90" rx="5" fill="#d9e5eb" stroke="#357694" stroke-width="3"/>
-<text x="495" y="177">Rear boot</text><text x="495" y="214" fill="#357694">130 l</text>
-<circle cx="495" cy="245" r="5" fill="#a35d32"/><path d="M495 252V266" stroke="#a35d32" stroke-width="2"/><text x="495" y="292" fill="#80512e">Fillers</text>
-<text x="358" y="336" font-size="22">Separate covers; expanded gaps</text>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" role="img" aria-labelledby="title desc" viewBox="0 0 600 620">
+<title id="title">Three spaces behind the seats, with different access covers</title>
+<desc id="desc">Illustrative rear-half side cutaway, front to the left. A seat and rear cabin boundary locate the roof bay above the engine. The rear boot is farther back and holds 130 litres with the roof lowered. The roof-bay outer cover and rear boot lid are separate; trim and a removable engine cover are internal layers. A flap within the boot gives access to oil and coolant fillers. Expanded gaps and generic shapes do not represent measured geometry or a removal sequence.</desc>
+<rect width="600" height="620" fill="#f7f6f0"/>
+<text x="24" y="31" text-anchor="start" font-size="25" fill="#63736a">← Front</text>
+<text x="576" y="31" text-anchor="end" font-size="25" fill="#63736a">Rear →</text>
+<path d="M24 344V438H379C383 401 402 380 442 380S502 403 506 438H565Q585 438 585 414V241Q582 212 565 200L377 174H158" fill="#e8ece5" stroke="#a1afa3" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<circle cx="443" cy="439" r="48" fill="#f1f3f2" stroke="#a1afa3" stroke-width="4">
+</circle>
+<circle cx="443" cy="439" r="24" fill="none" stroke="#b7c1b8" stroke-width="3">
+</circle>
+<path d="M145 178V438" fill="none" stroke="#7c9182" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<path d="M67 222Q68 207 83 208L99 213L110 357H47" fill="none" stroke="#253d32" stroke-width="13" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<path d="M50 369H119" fill="none" stroke="#253d32" stroke-width="11" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<text x="77" y="411" text-anchor="middle" font-size="27" fill="#253d32">Seat</text>
+<path d="M173 174Q267 155 367 174" fill="none" stroke="#8a7e34" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<text x="267" y="69" text-anchor="middle" font-size="27" fill="#8a7e34">Roof-bay</text>
+<text x="267" y="107" text-anchor="middle" font-size="27" fill="#8a7e34">outer cover</text>
+<path d="M267 118V161" fill="none" stroke="#8a7e34" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<path d="M399 188Q482 181 567 200" fill="none" stroke="#357694" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<text x="485" y="69" text-anchor="middle" font-size="27" fill="#357694">Rear boot</text>
+<text x="485" y="107" text-anchor="middle" font-size="27" fill="#357694">lid</text>
+<path d="M485 118V184" fill="none" stroke="#357694" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<path d="M174 191H368V253Q366 271 344 271H195Q174 271 174 253Z" fill="#e4e2c9" stroke="#8a7e34" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<text x="270" y="225" text-anchor="middle" font-size="27" fill="#253d32">Roof bay</text>
+<path d="M194 251L211 241L235 252L260 240L285 252L309 241L342 251" fill="none" stroke="#8a7e34" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<path d="M178 285H366" fill="none" stroke="#6f7d69" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<path d="M185 281L195 289M208 281L218 289M231 281L241 289M254 281L264 289M277 281L287 289M300 281L310 289M323 281L333 289M346 281L356 289" fill="none" stroke="#6f7d69" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<text x="272" y="308" text-anchor="middle" font-size="26" fill="#253d32">Trim above</text>
+<text x="272" y="347" text-anchor="middle" font-size="26" fill="#a35d32">engine cover</text>
+<path d="M174 358H369" fill="none" stroke="#a35d32" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7">
+</path>
+<path d="M185 380L207 368H337L360 380V423H185Z" fill="#d3e1d3" stroke="#176b53" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<path d="M194 380H226M319 380H352" fill="none" stroke="#176b53" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<text x="272" y="409" text-anchor="middle" font-size="27" fill="#253d32">Engine</text>
+<path d="M399 213L566 224V327Q563 342 546 342H420Q399 342 399 324Z" fill="#d9e5eb" stroke="#357694" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<text x="488" y="283" text-anchor="middle" font-size="27" fill="#253d32">Rear boot</text>
+<text x="488" y="324" text-anchor="middle" font-size="27" fill="#357694">130 L</text>
+<path d="M408 232H445V259H408Z" fill="#efe0d2" stroke="#a35d32" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+</path>
+<circle cx="419" cy="245" r="4" fill="#a35d32">
+</circle>
+<circle cx="434" cy="245" r="4" fill="#a35d32">
+</circle>
+<path d="M447 245H578V505H492" fill="none" stroke="#87988c" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 5">
+</path>
+<text x="448" y="536" text-anchor="middle" font-size="26" fill="#a35d32">Boot service flap</text>
+<text x="448" y="575" text-anchor="middle" font-size="26" fill="#a35d32">oil + coolant</text>
+<text x="24" y="606" text-anchor="start" font-size="23" fill="#63736a">Cutaway · gaps expanded</text>
+</svg>

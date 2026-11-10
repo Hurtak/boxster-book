@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="840" viewBox="0 0 360 840" role="img" aria-labelledby="title desc">
+  <title id="title">Camber, caster and toe use three different viewing directions</title>
+  <desc id="desc">Three exaggerated angle diagrams. From the front, negative camber is the inward tilt of the wheel plane from a dashed vertical reference. From the side, positive caster is the rearward tilt of the steering axis from vertical; the tyre touches the ground and a separate arrow points forward to the right. From above, toe-in points the wheel fronts towards each other, with each wheel's angle marked against a dashed straight-ahead reference and forward pointing up. Orange arcs identify the angles. These are definitions, not Boxster alignment targets or measured geometry.</desc>
+  <defs>
+    <marker id="alignment-forward" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#27627b"/>
+    </marker>
+  </defs>
+  <rect width="360" height="840" fill="#faf8f1"/>
+  <g font-family="Arial,sans-serif" fill="#273e35" font-size="16">
+    <text x="180" y="29" text-anchor="middle" font-size="20" font-weight="bold">Three angles, three views</text>
+
+    <text x="22" y="65" font-weight="bold">CAMBER · front view</text>
+    <text x="22" y="90">Negative: wheel tops lean inward</text>
+    <text x="22" y="116" fill="#526159">Vertical</text>
+    <path d="M88 120V224M272 120V224" fill="none" stroke="#82988d" stroke-width="2" stroke-dasharray="5 5"/>
+    <g fill="#273e35">
+      <rect x="76" y="145" width="24" height="78" rx="5" transform="rotate(18 88 184)"/>
+      <rect x="260" y="145" width="24" height="78" rx="5" transform="rotate(-18 272 184)"/>
+    </g>
+    <path d="M112.04 110L75 224M247.96 110L285 224" fill="none" stroke="#a6552b" stroke-width="2.5"/>
+    <path d="M88 184V123A61 61 0 0 1 106.85 125.99ZM272 184V123A61 61 0 0 0 253.15 125.99Z" fill="#a6552b" fill-opacity=".14"/>
+    <path d="M88 123A61 61 0 0 1 106.85 125.99M272 123A61 61 0 0 0 253.15 125.99" fill="none" stroke="#a6552b" stroke-width="3"/>
+    <text x="126" y="135" fill="#a6552b">Camber</text>
+    <path d="M122 137L101 125" fill="none" stroke="#a6552b" stroke-width="1.5"/>
+    <path d="M28 224H332" stroke="#82988d" stroke-width="2"/>
+    <text x="270" y="246" fill="#526159">Ground</text>
+    <text x="180" y="270" text-anchor="middle">Wheel plane against vertical</text>
+    <path d="M22 289H338" stroke="#c9d1c8"/>
+
+    <text x="22" y="319" font-weight="bold">CASTER · front wheel, side view</text>
+    <text x="22" y="344">Positive: upper point is rearward</text>
+    <text x="22" y="378" fill="#a6552b">Steering</text>
+    <text x="22" y="397" fill="#a6552b">axis</text>
+    <path d="M83 383L112 376" fill="none" stroke="#a6552b" stroke-width="1.5"/>
+    <text x="166" y="377" fill="#526159">Vertical</text>
+    <circle cx="126" cy="447" r="41" fill="none" stroke="#273e35" stroke-width="12"/>
+    <path d="M152 366V494" stroke="#82988d" stroke-width="2" stroke-dasharray="5 5"/>
+    <path d="M108 367L163.88 494" fill="none" stroke="#a6552b" stroke-width="3"/>
+    <path d="M152 467V389A78 78 0 0 0 120.59 395.61Z" fill="#a6552b" fill-opacity=".14"/>
+    <path d="M152 389A78 78 0 0 0 120.59 395.61" fill="none" stroke="#a6552b" stroke-width="3"/>
+    <text x="178" y="405" fill="#a6552b">Caster</text>
+    <path d="M174 401L138 391" fill="none" stroke="#a6552b" stroke-width="1.5"/>
+    <path d="M234 445H322" fill="none" stroke="#27627b" stroke-width="2.5" marker-end="url(#alignment-forward)"/>
+    <text x="235" y="429" fill="#27627b">Forward</text>
+    <path d="M28 494H332" stroke="#82988d" stroke-width="2"/>
+    <path d="M116 494H136" stroke="#273e35" stroke-width="4"/>
+    <text x="270" y="516" fill="#526159">Ground</text>
+    <text x="180" y="540" text-anchor="middle">Steering axis against vertical</text>
+    <path d="M22 559H338" stroke="#c9d1c8"/>
+
+    <text x="22" y="589" font-weight="bold">TOE · looking down</text>
+    <text x="22" y="614">Toe-in: wheel fronts are closer</text>
+    <text x="180" y="640" text-anchor="middle" fill="#27627b">Forward</text>
+    <path d="M180 758V652" fill="none" stroke="#27627b" stroke-width="2.5" marker-end="url(#alignment-forward)"/>
+    <path d="M88 650V773M272 650V773" fill="none" stroke="#82988d" stroke-width="2" stroke-dasharray="5 5"/>
+    <g fill="#273e35">
+      <rect x="76" y="693" width="24" height="78" rx="5" transform="rotate(18 88 732)"/>
+      <rect x="260" y="693" width="24" height="78" rx="5" transform="rotate(-18 272 732)"/>
+    </g>
+    <path d="M114.64 650L74.68 773M245.36 650L285.32 773" fill="none" stroke="#a6552b" stroke-width="2.5"/>
+    <path d="M88 732V671A61 61 0 0 1 106.85 673.99ZM272 732V671A61 61 0 0 0 253.15 673.99Z" fill="#a6552b" fill-opacity=".14"/>
+    <path d="M88 671A61 61 0 0 1 106.85 673.99M272 671A61 61 0 0 0 253.15 673.99" fill="none" stroke="#a6552b" stroke-width="3"/>
+    <text x="127" y="681" fill="#a6552b">Toe</text>
+    <path d="M123 681L101 673" fill="none" stroke="#a6552b" stroke-width="1.5"/>
+    <text x="180" y="797" text-anchor="middle">Each wheel against straight ahead</text>
+    <text x="180" y="825" text-anchor="middle" font-size="14">Exaggerated; no alignment targets.</text>
+  </g>
+</svg>

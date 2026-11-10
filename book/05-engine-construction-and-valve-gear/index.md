@@ -2,7 +2,13 @@
 
 The 2010 European Boxster 2.9 has a water-cooled, naturally aspirated flat-six mounted behind the seats and ahead of the rear axle. Its cylinders lie across the car rather than standing upright. Inside, six pistons turn one crankshaft, while four camshafts coordinate the valves that admit the fresh charge and release the exhaust.
 
-This engine belongs to the new generation introduced with the 2009 facelift. It is **port-injected**, even though the contemporary Boxster S uses direct injection. It also dispenses with the earlier engine's intermediate shaft. Those two facts can coexist: direct injection does not define whether an engine has the new timing-drive architecture.[^engine-id]
+This engine belongs to the new generation introduced with the 2009 facelift. It is **port-injected**, even though the contemporary Boxster S uses direct injection. It also dispenses with the earlier engine's intermediate shaft. Those two facts can coexist: direct injection does not define whether an engine has the new timing-drive architecture.[^engine-id][^specification]
+
+Start with the engine's position in the car, then separate its major assemblies. Selecting a part shows how it connects to the surrounding mechanism; the cutaway exposes components that the real crankcase, heads and covers conceal.
+
+::: {.book-diagram data-diagram="engine-explorer"}
+![The flat-six sits behind the seats and ahead of the rear axle. Its two horizontal cylinder banks surround a longitudinal crankshaft; heads and four cams sit outside the banks, intake runners above and exhaust manifolds below.](diagrams/engine-explorer/poster.svg)
+:::
 
 ## The engine in the 2010 2.9
 
@@ -26,7 +32,7 @@ The crankshaft runs along the centre of the engine. Three cylinders lie on each 
 
 The opposed layout helps balance piston forces and permits a low installation. Combustion still delivers pulses of torque, and mounts isolate the resulting vibration from the body.[^flat]
 
-![A plan of the 2010 2.9 shows three cylinders on either side of the crankshaft, connecting rods between pistons and crank throws, and two camshafts in each outer cylinder head.](engine-layout.svg)
+![A plan of the 2010 2.9 shows three cylinders on either side of the crankshaft, connecting rods between pistons and crank throws, and two camshafts in each outer cylinder head.](images/engine-layout.svg)
 
 The drawing separates the major parts deliberately. In the real engine, the intake, wiring, coolant passages, covers and accessories conceal most of this arrangement. A photograph from above therefore shows the breathing equipment more readily than the pistons that give the engine its name.
 
@@ -82,13 +88,13 @@ The cylinder head forms the roof of each combustion chamber and carries the inta
 
 Porsche's new head construction integrates the tappet guidance into the head rather than retaining the previous separate guide housing. “Four valves per cylinder” therefore describes only one aspect of a more substantial assembly. Passage shape, valve size, cam motion and the chamber all influence how effectively a cylinder fills and empties.[^head-construction]
 
-The inlet passages also house the 2.9's port injectors. Their position relative to the valves is explained in [fuel supply and metering](../06-air-fuel-ignition-and-engine-control/index.md#supplying-and-metering-the-fuel).[^port]
+The 2.9's port injectors sit at the flange area of the individual intake ports, upstream of the inlet valves. Their position relative to the valves is explained in [fuel supply and metering](../06-air-fuel-ignition-and-engine-control/index.md#supplying-and-metering-the-fuel).[^port]
 
 ## Chains synchronise crankshaft and camshafts
 
 The camshafts rotate at **half crankshaft speed**, providing one set of valve events for each two-turn cycle. In the 2010 2.9, two timing chains transmit the crankshaft's rotation to the camshafts, one chain serving each bank. Guide and tensioning rails control the chain paths; two hydraulic tensioners connected to the oil circuit maintain the required tension.[^chains]
 
-![A connection schematic shows the crankshaft driving two chains and four camshafts, with guide rails and oil-fed hydraulic tensioners. There is no intermediate shaft between crankshaft and camshafts.](timing-drive.svg)
+![A connection schematic shows the crankshaft driving two chains and four camshafts, with guide rails and oil-fed hydraulic tensioners. There is no intermediate shaft between crankshaft and camshafts.](images/timing-drive.svg)
 
 The chain links carry force, the guides constrain the route, and the tensioners act through the rails to control slack. The sprockets establish the required two-to-one speed relationship.
 
@@ -139,13 +145,13 @@ The ordinary 987.2 **Boxster S** uses 3,436 cm³, a 97 mm bore and the same 77.5
 
 The **Spyder** and **Boxster S Black Edition** are also 3.4-litre DFI comparisons. Their European figures are 235 kW / 320 PS at 7,200 rpm and 370 Nm at 4,750 rpm. Their higher output is specific to those derivatives. A complete comparison of their internal parts and engine-code suffixes has not been established here.[^special]
 
-The Cayman's related 2.9 application is designated **MA120C** and rated at **195 kW / 265 PS**, compared with the Boxster's 188 kW / 255 PS. Match engines and internal parts by their documented application as well as capacity.
+The Cayman's related 2.9 application is designated **MA120C** and rated at **195 kW / 265 PS**, compared with the Boxster's 188 kW / 255 PS. Match engines and internal parts by their documented application as well as capacity.[^engine-id]
 
 ## Identification and ageing
 
 The installed type and serial details identify the engine. Porsche designates the Boxster 2.9 **MA120**, distinct from the Cayman’s **MA120C** application.[^engine-id] For condition, investigate the chain drive, bearings and oil-fed adjusters against the observed noise or fault information; an engine code alone says nothing about their state of wear.
 
-[^engine-id]: Porsche, *2009 Technik Introduction — All Boxster Cayman Models*, “Technical data”, printed Engine p. 4, [viewer p. 10](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=10); “Chain drive”, printed Engine p. 17, [viewer p. 23](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=23). The viewer's page numbers include front matter; they differ from the printed section page numbers.
+[^engine-id]: Porsche Cars North America, *2009 Technik Introduction — All Boxster/Cayman Models*, edition 2/09 (PNA 987 021 09), “Technical data”, printed Engine p. 4, [viewer p. 10](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=10); “Chain drive”, printed Engine p. 17, [viewer p. 23](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=23). [Accessible copy of the Porsche-authored original text](https://www.scribd.com/document/972719474/Boxster-2009). The viewer's page numbers include front matter; they differ from the printed section page numbers.
 
 [^specification]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 126–127, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=59). Bore/stroke and engine type: *2009 Technik Introduction*, printed Engine p. 4, [viewer p. 10](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=10). Port injection and valve gear corroboration: Porsche Cars North America, [2010 specifications, p. 1](https://newsroom.porsche.com/dam/jcr:e5abc517-c680-47c0-974f-b84aefde568f/2010-Boxster-Specifications.pdf#page=1); its 88 mm bore entry conflicts with the training source and displacement, so is not adopted.
 
@@ -169,7 +175,7 @@ The installed type and serial details identify the engine. Porsche designates th
 
 [^chains]: Porsche, *2009 Technik Introduction*, “Chain drive”, printed Engine p. 17, [viewer p. 23](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=23). The dedicated technical account explicitly removes the intermediate shaft; generic servicing copy in the 2010 sales brochure still mentions intermediate shafts and is not used to infer this engine's architecture.
 
-[^variocam]: Porsche, *The Boxster*, January 2010 UK edition, printed p. 36, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=16), expressly captioned for Boxster S and Boxster.
+[^variocam]: Porsche, *The Boxster*, January 2010 UK edition, printed p. 8 (VarioCam Plus on the 2.9) and p. 36 (mechanism and operating combinations), [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=16).
 
 [^phase]: Porsche, *2009 Technik Introduction*, “Camshaft control with valve-lift adjustment (VarioCam Plus)”, printed Engine p. 18, [viewer p. 24](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=24).
 
@@ -179,6 +185,6 @@ The installed type and serial details identify the engine. Porsche designates th
 
 [^years]: Porsche, *The new Boxster*, UK launch edition 08/08, printed pp. 126–127, [original brochure](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf); January 2010 UK brochure, printed pp. 126–127; Porsche Cars North America, [2012 Boxster technical specifications, p. 1](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf#page=1). US data is used for mechanical corroboration, not UK equipment availability.
 
-[^s]: Porsche, *2009 Technik Introduction*, printed Engine pp. 4 and 16, [viewer p. 10](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=10) and [viewer p. 22](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=22); *The new Boxster*, UK launch edition, printed pp. 126–127.
+[^s]: Porsche, *2009 Technik Introduction*, printed Engine pp. 4 and 16, [viewer p. 10](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=10) and [viewer p. 22](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=22); *The new Boxster*, UK launch edition, printed pp. 26–27 (S DFI) and 126–127 (technical data).
 
-[^special]: Porsche, *The Boxster Spyder*, January 2010 UK edition, printed pp. 24–27 and 42–43, [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf); Porsche Netherlands, [Boxster S Black Edition release, 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/).
+[^special]: Porsche, *The Boxster Spyder*, January 2010 UK edition, printed pp. 24–26 and 41 (technical table; PDF p. 19), [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=19); Porsche Netherlands, [Boxster S Black Edition release, 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/).

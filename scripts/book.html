@@ -6,6 +6,15 @@
   <meta name="generator" content="pandoc">
   <meta name="theme-color" content="#174b3d">
   <title>$pagetitle$</title>
+  <script>
+    // Lay out the cover before the reader script runs; keep the plain document if it never does.
+    if (!location.hash || location.hash === '#title') {
+      document.documentElement.dataset.view = 'cover';
+      addEventListener('load', () => {
+        if (!document.documentElement.classList.contains('reader-enhanced')) delete document.documentElement.dataset.view;
+      });
+    }
+  </script>
 $for(css)$
   <link rel="stylesheet" href="$css$">
 $endfor$
@@ -25,6 +34,7 @@ $endif$
       <button class="contents-toggle enhanced-only" type="button" aria-haspopup="dialog">Contents</button>
       <a class="static-contents" href="#contents">Contents</a>
     </div>
+    <div class="reading-bar enhanced-only" aria-hidden="true"><span></span></div>
   </header>
   <div class="reader-layout">
 $if(toc)$
@@ -41,12 +51,17 @@ $endif$
         <figure class="cover-illustration">
           <img src="assets/book-cover.png" width="1440" height="910" alt="Illustration of a dark green Boxster with a tan interior, viewed from the front quarter">
         </figure>
-        <p>Understand the car, one system at a time. Start with the 2010 2.9-litre Boxster, then compare its options, other model years and the S, Spyder and Black Edition.</p>
-        <a class="start-reading" href="#book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__the-2010-boxster-2.9-in-the-987.2-family" data-start-reading>Start reading <span aria-hidden="true">→</span></a>
-        <p class="manuscript-note" data-draft-status>An illustrated draft with chapter source notes.</p>
+        <div class="cover-intro">
+          <p>Understand the car, one system at a time. Start with the 2010 2.9-litre Boxster, then compare its options, other model years and the S, Spyder and Black Edition.</p>
+          <div class="cover-actions">
+            <a class="start-reading" href="#book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__the-2010-boxster-2.9-in-the-987.2-family" data-start-reading>Start reading <span aria-hidden="true">→</span></a>
+            <a class="continue-reading" href="#title" data-continue-reading hidden></a>
+          </div>
+          <p class="manuscript-note" data-draft-status>An illustrated draft with chapter source notes.</p>
+        </div>
         <section class="available-chapters enhanced-only" data-written-chapters hidden>
           <h2>Available chapters</h2>
-          <nav aria-label="Written chapters"><ul></ul></nav>
+          <nav aria-label="Written chapters"><ol></ol></nav>
         </section>
       </header>
 $body$

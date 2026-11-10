@@ -3,7 +3,7 @@ import { group, mesh, cylinder } from '../geometry.js';
 import { rounded, ellipsoid, line3, patch, profile } from './surfaces.js';
 
 function seat(parent, p, side) {
-  const root = group(side < 0 ? 'driver-seat' : 'passenger-seat', parent, [
+  const root = group(side > 0 ? 'driver-seat' : 'passenger-seat', parent, [
     side * 0.345,
     0,
     0,
@@ -163,7 +163,7 @@ function instruments(parent, p) {
     (u, v) => {
       const a = u * Math.PI;
       return [
-        -0.345 + 0.198 * Math.cos(a),
+        0.345 + 0.198 * Math.cos(a),
         0.82 + 0.1 * Math.sin(a),
         0.41 + v * 0.145,
       ];
@@ -172,8 +172,8 @@ function instruments(parent, p) {
     20,
     p.tan
   );
-  ellipsoid(parent, [0.198, 0.1, 0.06], p.tan, [-0.345, 0.82, 0.55]);
-  const cluster = group('five-dial-instruments', parent, [-0.345, 0.82, 0.45]);
+  ellipsoid(parent, [0.198, 0.1, 0.06], p.tan, [0.345, 0.82, 0.55]);
+  const cluster = group('five-dial-instruments', parent, [0.345, 0.82, 0.45]);
   for (let i = 0; i < 5; i++) {
     const x = (i - 2) * 0.064,
       y = Math.abs(i - 2) * -0.006,
@@ -216,7 +216,7 @@ function instruments(parent, p) {
       new THREE.MeshStandardMaterial({ color: '#bd3e2e' })
     );
   }
-  const steering = group('tan-steering-wheel', parent, [-0.345, 0.795, 0.197]);
+  const steering = group('tan-steering-wheel', parent, [0.345, 0.795, 0.197]);
   steering.rotation.x = -0.28;
   mesh(steering, new THREE.TorusGeometry(0.143, 0.016, 12, 80), p.tan);
   for (const a of [0, Math.PI, Math.PI * 1.5]) {
@@ -243,8 +243,8 @@ function instruments(parent, p) {
   line3(
     parent,
     [
-      [-0.37, 0.73, 0.45],
-      [-0.34, 0.75, 0.24],
+      [0.37, 0.73, 0.45],
+      [0.34, 0.75, 0.24],
     ],
     0.022,
     p.black
@@ -255,9 +255,9 @@ export function windscreen(body, p) {
   const sample = (u, v) => {
     const t = u * 2 - 1;
     return [
-      t * (0.727 - 0.068 * v),
-      0.813 + 0.428 * v - 0.028 * t * t,
-      0.675 - 0.458 * v + 0.07 * t * t,
+      t * (0.727 - 0.078 * v),
+      0.84 + 0.335 * v - 0.02 * t * t,
+      0.64 - 0.52 * v + 0.06 * t * t,
     ];
   };
   patch(body, 'curved-windscreen', sample, 72, 32, p.glass);
@@ -305,17 +305,49 @@ export function windscreen(body, p) {
       p.black
     );
   }
-  rounded(body, [0.19, 0.055, 0.034], p.black, [0, 1.153, 0.27], 0.015);
-  rounded(body, [0.173, 0.04, 0.003], p.chrome, [0, 1.153, 0.25], 0.01);
+  rounded(body, [0.19, 0.055, 0.034], p.black, [0, 1.1, 0.19], 0.015);
+  rounded(body, [0.173, 0.04, 0.003], p.chrome, [0, 1.1, 0.17], 0.01);
   line3(
     body,
     [
-      [0, 1.21, 0.25],
-      [0, 1.173, 0.27],
+      [0, 1.16, 0.14],
+      [0, 1.12, 0.19],
     ],
     0.008,
     p.black
   );
+}
+
+// Leather-covered roll-over hoop just behind the seat back: a flat band whose
+// legs stand in the rear bulkhead.
+function rollHoop(parent, p, side) {
+  const x0 = side * 0.345,
+    half = 0.165,
+    shoulder = 1.025,
+    z = -0.615;
+  const points = [];
+  for (const y of [0.74, 0.88, shoulder]) points.push([x0 - half, y, z]);
+  for (let i = 1; i < 16; i++) {
+    const a = Math.PI * (1 - i / 16);
+    points.push([x0 + half * Math.cos(a), shoulder + half * Math.sin(a), z]);
+  }
+  for (const y of [shoulder, 0.88, 0.74]) points.push([x0 + half, y, z]);
+  const path = new THREE.CatmullRomCurve3(points.map((point) => new THREE.Vector3(...point)), false, 'centripetal');
+  const w = 0.031,
+    d = 0.022,
+    r = 0.012;
+  const band = new THREE.Shape();
+  band.moveTo(-w + r, -d);
+  band.lineTo(w - r, -d);
+  band.absarc(w - r, -d + r, r, -Math.PI / 2, 0);
+  band.lineTo(w, d - r);
+  band.absarc(w - r, d - r, r, 0, Math.PI / 2);
+  band.lineTo(-w + r, d);
+  band.absarc(-w + r, d - r, r, Math.PI / 2, Math.PI);
+  band.lineTo(-w, -d + r);
+  band.absarc(-w + r, -d + r, r, Math.PI, Math.PI * 1.5);
+  mesh(parent, new THREE.ExtrudeGeometry(band, { steps: 64, extrudePath: path, curveSegments: 2, bevelEnabled: false }), p.tan);
+  line3(parent, path.getPoints(80).map((point) => [point.x, point.y, z + d + 0.0006]), 0.0006, p.stitch);
 }
 
 export function cabin(parent, p) {
@@ -352,21 +384,7 @@ export function cabin(parent, p) {
       [side * 0.622, 0.682, 0.06],
       0.008
     );
-    const hoop = Array.from({ length: 51 }, (_, i) => {
-      const a = (Math.PI * i) / 50;
-      return [
-        side * 0.345 + 0.175 * Math.cos(a),
-        0.945 + 0.235 * Math.sin(a),
-        -0.65,
-      ];
-    });
-    line3(interior, hoop, 0.035, p.tan);
-    line3(
-      interior,
-      hoop.map(([x, y, z]) => [x, y - 0.017, z - 0.012]),
-      0.022,
-      p.black
-    );
+    rollHoop(interior, p, side);
   }
   rounded(interior, [1.26, 0.17, 0.1], p.black, [0, 0.71, -0.66], 0.04);
   const deflectorMaterial = new THREE.MeshStandardMaterial({

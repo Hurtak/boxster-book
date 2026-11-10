@@ -1,1 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 620" role="img" aria-labelledby="t d"><title id="t">Sealing and drainage do different jobs</title><desc id="d">A clear drain lets water leave a drip pan. A blocked drain lets water build up and overflow even with the upper seal intact.</desc><rect width="480" height="620" fill="#f3f5f0"/><g font-family="sans-serif" fill="#263c34"><text x="24" y="38" font-size="25" font-weight="bold">Give water an escape route</text><text x="24" y="69" font-size="21">One side of the roof compartment</text><text x="24" y="105" font-size="22" font-weight="bold">Clear outlet</text><path d="M70 157 Q160 132 250 156" stroke="#315d4d" stroke-width="11" fill="none"/><rect x="252" y="150" width="60" height="14" rx="6" fill="#b28049"/><text x="323" y="162" font-size="21">Seal intact</text><path d="M80 184 V273 H330 V184 M160 273 V317" stroke="#455b50" stroke-width="5" fill="none"/><path d="M85 259 H325 V269 H85Z" fill="#7fb8d0"/><path d="M160 265 V312 m-7 -9 l7 9 l7 -9 M130 171 l-5 23 M190 171 l-5 23" stroke="#22779e" stroke-width="4" fill="none"/><text x="191" y="307" font-size="21">Water leaves the body</text><text x="24" y="369" font-size="22" font-weight="bold">Blocked outlet</text><path d="M70 421 Q160 396 250 420" stroke="#315d4d" stroke-width="11" fill="none"/><rect x="252" y="414" width="60" height="14" rx="6" fill="#b28049"/><text x="323" y="426" font-size="21">Seal intact</text><path d="M80 448 V537 H330 V448 M160 537 V576" stroke="#455b50" stroke-width="5" fill="none"/><path d="M85 455 H325 V533 H85Z" fill="#7fb8d0"/><path d="M150 546 l20 18 m-20 0 l20 -18 M319 457 h37 v85 m-7 -9 l7 9 l7 -9" stroke="#a14f39" stroke-width="5" fill="none"/><text x="95" y="491" font-size="21">Water accumulates</text><text x="180" y="569" font-size="21">Debris</text><text x="24" y="604" font-size="21">Concept only · no measured water capacity</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 900" role="img" aria-labelledby="t d">
+  <title id="t">Sealing and drainage do different jobs</title>
+  <desc id="d">Two functional sections compare the same intact roof seal. Water on the wet side reaches a side drip pan. A clear opening and pipe let water leave the body; debris at the opening retains water, which can overflow towards the interior. Shapes, water levels and spill paths are illustrative, not measured capacities or hose routing.</desc>
+  <rect width="480" height="900" fill="#f3f5f0"/>
+  <g font-family="'Source Sans 3', sans-serif" fill="#263c34" font-size="22">
+    <text x="24" y="37" font-size="27" font-weight="600">Give water an escape route</text>
+    <text x="24" y="69">One side · functional section</text>
+    <text x="24" y="112" font-size="24" font-weight="600">1  Clear outlet</text>
+    <text x="74" y="151">Roof fabric</text>
+    <text x="325" y="151">Intact seal</text>
+    <path d="M44 210 L287 174 M314 174 H449" stroke="#315d4d" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <rect x="285" y="165" width="31" height="18" rx="8" fill="#b28049"/>
+    <path d="M352 157 L305 162" stroke="#7f9890" stroke-width="2" fill="none"/>
+    <path d="M227 173 L59 198 Q44 201 44 220 V234 M44 265 V295 m-6 -10 l6 10 l6 -10" stroke="#22779e" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="71" y="255" fill="#22779e">Runoff reaches pan</text>
+    <path d="M33 355 H302 V369 H33Z" fill="#7fb8d0" opacity=".7"/>
+    <path d="M30 279 V372 H134 V428 M154 428 V372 H305 V279" stroke="#455b50" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <text x="74" y="315" font-weight="600">Side drip pan</text>
+    <text x="342" y="320" fill="#a14f39">Interior</text>
+    <path d="M144 357 V439 m-7 -10 l7 10 l7 -10" stroke="#22779e" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="181" y="408">Drain opening<tspan x="181" dy="27">and pipe</tspan></text>
+    <text x="67" y="470">Outside body</text>
+    <text x="24" y="526" font-size="24" font-weight="600">2  Blocked outlet</text>
+    <text x="74" y="565">Roof fabric</text>
+    <text x="325" y="565">Intact seal</text>
+    <path d="M44 624 L287 588 M314 588 H449" stroke="#315d4d" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <rect x="285" y="579" width="31" height="18" rx="8" fill="#b28049"/>
+    <path d="M352 571 L305 576" stroke="#7f9890" stroke-width="2" fill="none"/>
+    <path d="M227 587 L59 612 Q44 615 44 634 V648 M44 679 V709 m-6 -10 l6 10 l6 -10" stroke="#22779e" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="71" y="669" fill="#22779e">Runoff reaches pan</text>
+    <path d="M33 693 H302 V783 H33Z" fill="#7fb8d0" opacity=".7"/>
+    <path d="M30 693 V786 H134 V831 M154 831 V786 H305 V693" stroke="#455b50" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <text x="74" y="729" font-weight="600">Side drip pan</text>
+    <text x="65" y="759">Water at rim</text>
+    <path d="M132 778 l24 17 m-24 0 l24 -17 M291 693 H314 Q332 693 332 712 V806 m-7 -10 l7 10 l7 -10" stroke="#a14f39" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="350" y="713" fill="#a14f39">Possible<tspan x="350" dy="27">overflow</tspan></text>
+    <text x="350" y="795" fill="#a14f39">Interior</text>
+    <text x="178" y="819">Debris blocks<tspan x="178" dy="27">the opening</tspan></text>
+    <text x="24" y="886" font-size="21">Illustrative levels · no capacity or routing scale</text>
+  </g>
+</svg>

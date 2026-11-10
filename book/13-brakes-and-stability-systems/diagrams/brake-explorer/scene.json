@@ -1,23 +1,23 @@
 {
   "camera": [
-    { "at": 0, "position": [-3.5, 2.2, 4.5], "target": [0, 0.56, 0] },
-    { "at": 30, "position": [-3.4, 3.2, 4.4], "target": [0, 0.5, 0.2] },
-    { "at": 65, "position": [-1.8, 0.92, 2.1], "target": [-0.86, 0.329, 1.2075] },
-    { "at": 100, "position": [-3, 1.18, 2.4], "target": [-1.38, 0.2, 1.14] }
+    { "at": 0, "position": [3.5, 2.2, 4.5], "target": [0, 0.56, 0] },
+    { "at": 30, "position": [3.4, 3.2, 4.4], "target": [0, 0.5, 0.2] },
+    { "at": 65, "position": [1.55, 0.76, 1.94], "target": [0.86, 0.329, 1.2075] },
+    { "at": 100, "position": [3, 1.18, 2.4], "target": [1.38, 0.2, 1.14] }
   ],
   "stages": [
-    { "value": 0, "label": "Whole car", "text": "The selected front-left wheel contains one of four wheel brakes. The engine is behind the seats; the hydraulic source is at the front." },
-    { "value": 30, "label": "Connections", "text": "The body lifts away to reveal a schematic hydraulic connection from the front-mounted master cylinder to all four wheel brakes." },
-    { "value": 65, "label": "At the wheel", "text": "The camera moves to the front-left brake. The wheel is pulled aside so the disc and fixed caliper can be seen." },
-    { "value": 100, "label": "Exploded", "text": "The wheel, disc, two pads, four pistons and one-piece caliper separate for inspection. This separation is explanatory, not a workshop disassembly sequence." }
+    { "value": 0, "label": "Whole car", "text": "The front-left assembly is one of four hydraulic service brakes. The engine is behind the seats; the brake master cylinder is at the front." },
+    { "value": 30, "label": "Connections", "text": "Blue lines show hydraulic connectivity. Pressure from the master cylinder reaches the calipers through the ABS/PSM hydraulic unit, pipes and flexible hoses. Valves, separate circuits and actual pipe routes are omitted." },
+    { "value": 65, "label": "At the wheel", "text": "The front-left wheel is ghosted and drawn outboard to expose the assembled brake. The hub, disc and wheel rotate together; the caliper is fixed to the wheel carrier." },
+    { "value": 100, "label": "Exploded", "text": "The stack spreads along the wheel axis; the caliper and four pistons are lifted clear for inspection. These offsets are neither working piston travel nor a workshop disassembly sequence." }
   ],
   "parts": [
-    { "name": "wheel", "label": "Wheel", "offset": [0.95, 0, 0], "text": "The wheel bolts to the hub. Its spokes leave space around the brake and allow a view of the assembly." },
-    { "name": "disc", "label": "Brake disc", "offset": [0.29, 0, 0], "text": "The front disc's nominal envelope is 318 mm in diameter and 28 mm thick. Two friction faces enclose the ventilation gap." },
-    { "name": "inner-pad", "label": "Inner pad", "offset": [-0.16, -0.04, 0], "text": "The inboard pad presses against one face of the rotating disc." },
-    { "name": "outer-pad", "label": "Outer pad", "offset": [0.54, -0.04, 0], "text": "The outboard pad presses against the opposite face. The pair creates the clamping action." },
-    { "name": "caliper", "label": "Caliper body", "offset": [0, 0.02, 0.36], "text": "The fixed monobloc caliper body stays in one piece. It carries the reaction forces as pistons push both pads inward." },
-    { "name": "pistons", "label": "Four pistons", "offset": [0.04, 0.23, 0.06], "text": "Two pistons act from each side. Their motion converts hydraulic pressure into force on the pads." },
-    { "name": "hub", "label": "Hub", "offset": [0, 0, 0], "text": "The hub connects the rotating assembly to the wheel bearing and suspension. The drawing omits many fasteners and supporting parts." }
+    { "name": "wheel", "label": "Wheel", "offset": [0.95, 0, 0], "text": "Wheel bolts secure the wheel to the hub, with the disc's central hat between their mounting faces. The wheel, disc and hub turn together. The visible wheel style and mounting clearances are illustrative." },
+    { "name": "disc", "label": "Brake disc", "offset": [0.29, 0, 0], "text": "The front friction ring is nominally 318 mm in diameter and 28 mm thick. Two friction faces enclose the ventilation gap; the holes through the faces are cross-drilling, a separate feature. The disc rotates between the pads." },
+    { "name": "inner-pad", "label": "Inner pad", "offset": [-0.16, -0.04, 0], "text": "Inboard means towards the vehicle's centre. Two pistons push this pad's backing plate so its brown friction lining presses the inboard disc face. The pad stays with the caliper while the disc rotates." },
+    { "name": "outer-pad", "label": "Outer pad", "offset": [0.54, -0.04, 0], "text": "Outboard means towards the wheel's outer face. Two opposing pistons press this pad against the other disc face. The two pads clamp the rotating disc from both sides." },
+    { "name": "caliper", "label": "Caliper body", "offset": [0, 0.02, 0.36], "text": "The black aluminium monobloc body stays in one piece. Fixed to the wheel carrier, it does not rotate with the disc or slide across it. It supports the pads and carries their braking reaction into the suspension." },
+    { "name": "pistons", "label": "Four pistons", "offset": [0.04, 0.23, 0.06], "text": "Two pistons act on each pad, one pair on each side of the disc. Hydraulic pressure pushes both pairs towards the disc through the pad backing plates. Their real working movement is small; this lifted group only exposes their arrangement." },
+    { "name": "hub", "label": "Hub", "offset": [0, 0, 0], "text": "The hub rotates in the wheel bearing and supports the disc and wheel. Its five holes receive removable wheel bolts; they are not projecting studs. Bearing, wheel carrier, fasteners and the flexible brake hose are simplified or omitted." }
   ]
 }

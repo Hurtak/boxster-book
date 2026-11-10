@@ -1,15 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 430" role="img" aria-labelledby="title desc" font-family="sans-serif">
-<title id="title">Rear tyre geometric comparison at 60 mph</title>
-<desc id="desc">A 235/50 R17 tyre has nominal diameter 666.8 millimetres. A 265/40 R18 has diameter 669.2 millimetres, only 0.36 per cent greater. Their estimated wheel speeds at 60 mph are 768.3 and 765.5 rpm. These are geometric estimates, not loaded rolling circumference.</desc>
-<rect width="600" height="430" fill="#f5f5ee"/>
-<g fill="#233c31" font-size="24" text-anchor="middle"><text x="150" y="35">17-inch rim</text><text x="450" y="35">18-inch rim</text></g>
-<circle cx="150" cy="145" r="89.9" fill="#333b38"/><circle cx="450" cy="145" r="90.2" fill="#333b38"/>
-<circle cx="150" cy="145" r="58.2" fill="#e8eae5" stroke="#65716b" stroke-width="5"/><circle cx="450" cy="145" r="61.6" fill="#e8eae5" stroke="#17654c" stroke-width="5"/>
-<g fill="none" stroke-width="6"><path d="M150 145V93M150 145L199 129M150 145L181 187M150 145L119 187M150 145L101 129" stroke="#65716b"/><path d="M450 145V89M450 145L503 128M450 145L483 190M450 145L417 190M450 145L397 128" stroke="#17654c"/></g>
-<g fill="#233c31" font-size="24" text-anchor="middle">
-<text x="150" y="268">235/50 R17</text><text x="450" y="268">265/40 R18</text>
-<text x="150" y="301">Ø 666.8 mm</text><text x="450" y="301">Ø 669.2 mm</text>
-<text x="150" y="333">768.3 rpm</text><text x="450" y="333">765.5 rpm</text>
-<text x="300" y="379" font-size="22">Rear tyres at 60 mph: diameter +0.36%</text>
-<text x="300" y="411" font-size="20">Geometric estimates; actual rolling sizes vary</text>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 710" role="img" aria-labelledby="title desc" font-family="'Source Sans 3', sans-serif">
+<title id="title">Rear tyre nominal dimensions and wheel speed at 60 mph</title>
+<desc id="desc">The standard 235/50 R17 rear tyre has nominal sidewall height 117.5 millimetres, rim bead-seat diameter 431.8 millimetres, overall diameter 666.8 millimetres and circumference 2094.8 millimetres. The period 265/40 R18 has sidewall height 106.0 millimetres, rim diameter 457.2 millimetres, overall diameter 669.2 millimetres and circumference 2102.4 millimetres, 0.36 per cent greater. At 60 mph the geometric wheel speeds are 768.3 and 765.5 rpm. Both circles share a scale. Widths and loaded deflection are not shown. These estimates do not establish actual loaded rolling circumference, fitment approval or speedometer calibration.</desc>
+<rect width="600" height="710" fill="#f5f5ee"/>
+<g fill="#233c31" font-size="28" text-anchor="middle">
+<text x="150" y="34">17-inch rim</text><text x="450" y="34">18-inch rim</text>
+<text x="150" y="72" font-size="26">235/50 R17</text><text x="450" y="72" font-size="26">265/40 R18</text>
+</g>
+<!-- Inner circles are nominal bead-seat diameters, not the outside of rim flanges. -->
+<circle cx="150" cy="185" r="90.018" fill="#333b38"/><circle cx="450" cy="185" r="90.342" fill="#333b38"/>
+<circle cx="150" cy="185" r="58.293" fill="#e8eae5" stroke="#65716b" stroke-width="2"/><circle cx="450" cy="185" r="61.722" fill="#e8eae5" stroke="#17654c" stroke-width="2"/>
+<g fill="none" stroke-width="2">
+<path d="M51.982 94.982V275.018M45.982 94.982H57.982M45.982 275.018H57.982M91.707 185H208.293M91.707 179V191M208.293 179V191" stroke="#65716b"/>
+<path d="M351.658 94.658V275.342M345.658 94.658H357.658M345.658 275.342H357.658M388.278 185H511.722M388.278 179V191M511.722 179V191" stroke="#17654c"/>
+<path d="M150 94.982V126.707M144 94.982H156M144 126.707H156M450 94.658V123.278M444 94.658H456M444 123.278H456" stroke="#fff"/>
+</g>
+<g font-size="26" text-anchor="middle">
+<g fill="#65716b"><text x="30" y="194">D</text><text x="150" y="172">d</text></g>
+<g fill="#17654c"><text x="330" y="194">D</text><text x="450" y="172">d</text></g>
+<g fill="#fff"><text x="173" y="120">h</text><text x="473" y="118">h</text></g>
+</g>
+<g fill="#233c31" font-size="26" text-anchor="middle">
+<text x="150" y="324">D 666.8 mm</text><text x="450" y="324">D 669.2 mm</text>
+<text x="150" y="362">Rim d 431.8 mm</text><text x="450" y="362">Rim d 457.2 mm</text>
+<text x="150" y="400">Sidewall h 117.5 mm</text><text x="450" y="400">Sidewall h 106.0 mm</text>
+<text x="150" y="438">C 2094.8 mm</text><text x="450" y="438">C 2102.4 mm</text>
+<text x="150" y="476">768.3 rpm</text><text x="450" y="476">765.5 rpm</text>
+<text x="300" y="528">Rear tyres at 60 mph: diameter +0.36%</text>
+<text x="300" y="570">D = d + 2h; C = πD; 1 inch = 25.4 mm</text>
+</g>
+<g fill="#4c5c54" font-size="24" text-anchor="middle">
+<text x="300" y="614">Nominal geometry · same scale · widths omitted</text>
+<text x="300" y="651">Actual loaded rolling circumference varies</text>
+<text x="300" y="688">No fitment approval or speedometer calibration</text>
+</g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 810" role="img" aria-labelledby="body-load-title body-load-desc">
+  <title id="body-load-title">An open roof above a connected floor structure</title>
+  <desc id="body-load-desc">Conceptual plan of the passenger compartment, front at top. The left and right sills join the front and rear bulkhead regions. A centre tunnel and a transverse crossmember connect to this structure, while floor panels join the members between them. The cabin is open above these floor panels. Continuous connections allow loads to pass between members; no particular force direction, load magnitude, stress distribution or crash result is shown. Shapes and member spacing are illustrative, not measured Boxster geometry.</desc>
+  <rect width="600" height="810" fill="#f7f6f0"/>
+  <g font-family="sans-serif" fill="#253d32" text-anchor="middle">
+    <text x="300" y="43" font-size="31" font-weight="bold">Open roof, connected floor</text>
+    <text x="300" y="80" font-size="23">Cabin plan · front at top</text>
+
+    <text x="300" y="132" font-size="28">Front bulkhead region</text>
+    <path d="M300 144V181" fill="none" stroke="#253d32" stroke-width="2"/>
+
+    <!-- Topology only: the surrounding contour is not a measured body outline. -->
+    <path d="M115 177Q300 146 485 177L493 570Q300 619 107 570Z" fill="#e3e7df" stroke="#9aa99d" stroke-width="3"/>
+    <!-- Floor panels continue between and join the surrounding members. -->
+    <rect x="140" y="205" width="320" height="364" fill="#d1ded2"/>
+    <rect x="274" y="205" width="52" height="364" fill="#a4bda9"/>
+    <!-- All highlighted members meet; transverse regions include their joints. -->
+    <path d="M140 205V569M460 205V569M140 205H460M140 569H460" fill="none" stroke="#176b53" stroke-width="40" stroke-linejoin="round"/>
+    <path d="M140 492H460" fill="none" stroke="#176b53" stroke-width="44"/>
+
+    <rect x="173" y="238" width="254" height="211" rx="12" fill="none" stroke="#789582" stroke-width="2" stroke-dasharray="8 7"/>
+    <rect x="200" y="245" width="200" height="38" rx="5" fill="#f7f6f0"/>
+    <text x="300" y="274" font-size="28">Open above</text>
+    <text x="216" y="382" font-size="28">Floor</text>
+    <text x="384" y="382" font-size="28">Floor</text>
+    <text x="300" y="374" transform="rotate(-90 300 374)" font-size="28">Centre tunnel</text>
+    <text x="140" y="368" transform="rotate(-90 140 368)" font-size="28" fill="#fff">Sill below door</text>
+    <text x="460" y="368" transform="rotate(-90 460 368)" font-size="28" fill="#fff">Sill below door</text>
+    <text x="300" y="502" font-size="28" fill="#fff">Crossmember</text>
+
+    <path d="M300 592V614" fill="none" stroke="#253d32" stroke-width="2"/>
+    <text x="300" y="648" font-size="28">Rear bulkhead region</text>
+    <text x="300" y="696" font-size="28" font-weight="bold">Joined members share loads</text>
+    <text x="300" y="731" font-size="26">The floor connects the routes too.</text>
+    <text x="300" y="772" font-size="21">Connections schematic; spacing is illustrative.</text>
+    <text x="300" y="799" font-size="21">Force direction depends on the loading.</text>
+  </g>
+</svg>

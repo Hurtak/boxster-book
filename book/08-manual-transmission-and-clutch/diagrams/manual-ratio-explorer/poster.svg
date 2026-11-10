@@ -1,21 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" role="img" aria-labelledby="title desc" font-family="sans-serif">
-  <title id="title">Third gear, 3,000 rpm and 200 Nm</title>
-  <desc id="desc">The 2.9 manual's third ratio is 1.407, giving total reduction 5.452 with the 3.875 final drive. Ideal road speed is 69.3 kilometres per hour with an illustrative 2.10 metre circumference. Total torque after the final drive is 1,090 Nm and wheel speed is 550 rpm. Bars compare six gears at the same engine rpm.</desc>
-  <rect width="600" height="440" fill="#f1f4ef"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">Ideal third-gear speed, total torque and conserved power</title>
+  <desc id="desc">At 3,000 engine rpm and 200 Nm, the 2.9 manual's third ratio, 1.407, times its 3.875 final drive gives 5.452 total reduction. Wheel speed is 550 rpm; an illustrative 2.10 metre rolling circumference gives 69.3 kilometres per hour. Total torque after the final drive is 1,090 Nm, before division between the two rear wheels. Input and output power are both 62.8 kW, assuming a locked clutch, equal wheel speeds, no slip and no losses. Six bars compare ideal road speeds at the same engine rpm on a fixed zero to 300 kilometre per hour scale. This is gearing arithmetic, not an engine map or achievable top-speed prediction.</desc>
+  <rect width="360" height="640" fill="#f1f4ef"/>
   <g fill="#243d32" text-anchor="middle">
-    <text x="300" y="33" font-size="24">Gear 3 · 1.407 : 1</text>
-    <text x="300" y="78" font-size="38">69.3 km/h</text>
-    <text x="300" y="111" font-size="26">1,090 Nm total</text>
-    <text x="300" y="141" font-size="22">550 wheel rpm</text>
-    <text x="300" y="174" font-size="21">Speed by gear · km/h</text>
-    <text x="300" y="201" font-size="20">at 3,000 engine rpm</text>
+    <text x="180" y="27" font-size="22">Gear 3 · 1.407 : 1</text>
+    <text x="180" y="56" font-size="18">× 3.875 final drive = 5.452 total</text>
+    <text x="180" y="91" font-size="18">Ideal road speed</text>
+    <text x="180" y="133" font-size="34">69.3 km/h</text>
+    <text x="180" y="164" font-size="18">550 wheel rpm</text>
+    <text x="180" y="207" font-size="28">1,090 Nm total</text>
+    <text x="180" y="237" font-size="18">after final drive · from 200 Nm</text>
+    <text x="180" y="277" font-size="22">62.8 kW in = 62.8 kW out</text>
+    <text x="180" y="306" font-size="18">Ideal power is conserved</text>
+    <text x="180" y="350" font-size="21">Speed by gear · km/h</text>
+    <text x="180" y="379" font-size="18">3,000 engine rpm · fixed scale</text>
+  </g>
+  <path d="M0 323H360" fill="none" stroke="#c2cec5"/>
+  <path d="M32 412V603M118.667 412V603M205.333 412V603M292 412V603" fill="none" stroke="#d5ded6"/>
+  <g fill="#243d32" text-anchor="middle" font-size="16">
+    <text x="32" y="405">0</text><text x="118.667" y="405">100</text><text x="205.333" y="405">200</text><text x="292" y="405">300</text>
   </g>
   <g fill="#c2cec5">
-    <rect x="55" y="219" width="98" height="24"/><rect x="55" y="250" width="176" height="24"/>
-    <rect x="55" y="281" width="257" height="24" fill="#286449"/><rect x="55" y="312" width="319" height="24"/>
-    <rect x="55" y="343" width="372" height="24"/><rect x="55" y="374" width="430" height="24"/>
+    <rect x="32" y="416" width="23.055" height="22"/>
+    <rect x="32" y="448" width="41.240" height="22"/>
+    <rect x="32" y="480" width="60.087" height="22" fill="#286449"/>
+    <rect x="32" y="512" width="74.616" height="22"/>
+    <rect x="32" y="544" width="86.975" height="22"/>
+    <rect x="32" y="576" width="100.525" height="22"/>
   </g>
-  <g fill="#243d32" font-size="22"><text x="22" y="239">1</text><text x="22" y="270">2</text><text x="22" y="301">3</text><text x="22" y="332">4</text><text x="22" y="363">5</text><text x="22" y="394">6</text></g>
-  <g fill="#243d32" font-size="22" text-anchor="end"><text x="575" y="239">26.6</text><text x="575" y="270">47.6</text><text x="575" y="301">69.3</text><text x="575" y="332">86.1</text><text x="575" y="363">100.4</text><text x="575" y="394">116.0</text></g>
-  <text x="300" y="430" font-size="20" text-anchor="middle" fill="#4c6155">Ideal · 2.10 m circumference · no losses</text>
+  <g fill="#243d32" font-size="18" text-anchor="middle">
+    <text x="12" y="434">1</text><text x="12" y="466">2</text><text x="12" y="498">3</text><text x="12" y="530">4</text><text x="12" y="562">5</text><text x="12" y="594">6</text>
+  </g>
+  <g fill="#4c6155" font-size="18" text-anchor="end">
+    <text x="358" y="434">26.6</text><text x="358" y="466">47.6</text><text x="358" y="498" fill="#1d5038">69.3</text><text x="358" y="530">86.1</text><text x="358" y="562">100.4</text><text x="358" y="594">116.0</text>
+  </g>
+  <text x="180" y="631" font-size="18" text-anchor="middle" fill="#243d32">Ideal gearing, not a top-speed forecast</text>
 </svg>

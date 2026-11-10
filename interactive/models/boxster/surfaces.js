@@ -74,6 +74,19 @@ export function palette() {
       metalness: 0.15,
       clearcoat: 1,
     }),
+    tailClear: new THREE.MeshPhysicalMaterial({
+      name: 'Clear tail lamp band',
+      color: '#c3c7cc',
+      roughness: 0.12,
+      metalness: 0.7,
+      clearcoat: 1,
+    }),
+    tailLed: new THREE.MeshPhysicalMaterial({
+      color: '#7d0915',
+      roughness: 0.2,
+      metalness: 0.2,
+      clearcoat: 1,
+    }),
     white: new THREE.MeshStandardMaterial({
       color: '#e5e8dc',
       roughness: 0.32,

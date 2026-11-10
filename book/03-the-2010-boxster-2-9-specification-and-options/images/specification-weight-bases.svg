@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="728" viewBox="0 0 600 728" role="img" aria-labelledby="title desc">
+  <title id="title">Three weight references for the 2010 Boxster 2.9 manual</title>
+  <desc id="desc">The standard-specification manual car has a published DIN unladen weight of 1335 kilograms. Adding the EC allowance of 68 kilograms for a driver and 7 kilograms for luggage gives 1410 kilograms EC unladen. The separate permissible gross weight of 1635 kilograms is the loaded-vehicle limit: 300 kilograms above DIN or 225 kilograms above EC. These are catalogue comparisons; options add weight and the individual car's loading limits must be checked.</desc>
+  <rect width="600" height="728" fill="#f2f4ee"/>
+  <g font-family="sans-serif" fill="#233e32">
+    <text x="24" y="46" font-size="32">2010 Boxster 2.9 · manual</text>
+    <text x="24" y="85" font-size="28">Read the weight basis</text>
+
+    <rect x="24" y="112" width="552" height="117" fill="#176b53"/>
+    <text x="45" y="157" font-size="30" fill="#fff">DIN unladen</text>
+    <text x="550" y="157" font-size="32" fill="#fff" text-anchor="end">1,335 kg</text>
+    <text x="45" y="203" font-size="28" fill="#fff">Standard-specification car</text>
+
+    <text x="300" y="280" text-anchor="middle" font-size="28">+ 68 kg driver + 7 kg luggage</text>
+    <path d="M300 297v33m-9-9 9 9 9-9" fill="none" stroke="#233e32" stroke-width="3"/>
+
+    <rect x="24" y="350" width="552" height="117" fill="#dce5da"/>
+    <text x="45" y="395" font-size="30">EC unladen</text>
+    <text x="550" y="395" font-size="32" text-anchor="end">1,410 kg</text>
+    <text x="45" y="441" font-size="28">75 kg allowance already included</text>
+
+    <path d="M24 498h552" stroke="#9eafa0" stroke-width="2" stroke-dasharray="7 6"/>
+    <text x="24" y="544" font-size="30">Permissible gross</text>
+    <text x="576" y="544" font-size="32" text-anchor="end">1,635 kg</text>
+    <text x="24" y="586" font-size="28">Separate loaded-vehicle limit</text>
+    <text x="24" y="627" font-size="28">300 kg above DIN; 225 kg above EC</text>
+
+    <text x="24" y="667" font-size="25">Catalogue figures; options add weight.</text>
+    <text x="24" y="695" font-size="25">Check the individual car’s loading limits.</text>
+  </g>
+</svg>

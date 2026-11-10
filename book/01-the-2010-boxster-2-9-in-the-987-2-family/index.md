@@ -12,7 +12,7 @@ The book follows the connections between systems. Engine torque reaches the road
 
 The revision brought new engines, a standard six-speed manual and optional PDK in place of Tiptronic S. Revised chassis, steering, stability control and styling accompanied those changes. [The yearly timeline](../02-the-yearly-timeline/index.md) dates their introduction.[^facelift]
 
-![Three stacked cards distinguish the original 987, revised 987.2 and succeeding 981. The 2010 2.9 belongs to the middle card.](family-generation-map.svg)
+![Three stacked cards distinguish the original 987, revised 987.2 and succeeding 981. The 2010 2.9 belongs to the middle card.](images/family-generation-map.svg)
 
 *The generation map is an identification aid. The detailed sequence of announcements, availability and model years belongs to [the yearly timeline](../02-the-yearly-timeline/index.md).*
 
@@ -24,7 +24,7 @@ The succeeding **981**, introduced during 2012, has a new chassis, longer wheelb
 
 The layout gives the Boxster a recognisable sequence of spaces. At the front is a luggage compartment. The two seats occupy the central cabin. Behind them are the engine and the folding-roof area, with another luggage compartment towards the rear. The folding roof has its own stowage space, leaving both luggage compartments available.[^luggage]
 
-![A simplified side view places front luggage, two seats, the engine ahead of the rear axle, and the rear luggage compartment.](family-layout.svg)
+![A simplified side view places front luggage, two seats, the engine ahead of the rear axle, and the rear luggage compartment.](images/family-layout.svg)
 
 *Packaging diagram, with the car facing left. The engine location and the two luggage spaces are the point of the drawing; shapes and spacing are schematic.*
 
@@ -76,16 +76,16 @@ The reading order moves from context to mechanisms: chapters 2–3 establish dat
 
 [^facelift]: Porsche Netherlands, [“De nieuwe Porsche Boxster en Cayman: krachtiger en zuiniger”, 19 November 2008](https://nieuws.porsche.nl/de-nieuwe-porsche-boxster-en-cayman-krachtiger-en-zuiniger/), sections on powertrains, PDK, chassis and styling.
 
-[^981]: Porsche Netherlands, [“Porsche presenteert nieuwe Boxster”, 12 January 2012](https://nieuws.porsche.nl/porsche-presenteert-nieuwe-boxster/), introduction and engine sections. It gives Dutch dealer arrival as 14 April 2012; that is not used as a universal registration or model-year boundary.
+[^981]: Porsche Netherlands, [“Porsche presenteert nieuwe Boxster”, 12 January 2012](https://nieuws.porsche.nl/porsche-presenteert-nieuwe-boxster/), introduction and engine sections. It announces Dutch dealer arrival for 14 April 2012; that is not used as a universal registration or model-year boundary. Porsche's [2021 family retrospective](https://newsroom.porsche.com/en_US/2021/products/porsche-boxster-25-years-premiere-23382.html), section “Porsche presented the 981 generation Boxster in 2012”, explicitly identifies the type.
 
 [^layout]: Porsche Cars North America, [*2010 Boxster specifications*, pp. 1–2](https://newsroom.porsche.com/dam/jcr:e5abc517-c680-47c0-974f-b84aefde568f/2010-Boxster-Specifications.pdf), mid-mounted horizontally opposed six-cylinder engine, common engine/transmission unit, rear-wheel drive and two-seat roadster. Used for mechanical layout, not UK equipment.
 
 [^luggage]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 78–79 and 126–127, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
-[^injection]: Porsche Cars North America, [*2010 Boxster specifications*, p. 1](https://newsroom.porsche.com/dam/jcr:e5abc517-c680-47c0-974f-b84aefde568f/2010-Boxster-Specifications.pdf). Injection types corroborate the European engine distinction; the table's unrelated dimensional errors are not adopted here.
+[^injection]: Porsche Cars North America, *2009 Technik Introduction — All Boxster Cayman Models*, edition 2/09, PNA 987 021 09, Fuel and ignition system, printed p. 59 ([viewer p. 65](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=65); [accessible original text](https://www.scribd.com/document/972719474/Boxster-2009)), locates the 2.9's injectors at the individual intake ports; *The Boxster*, January 2010 UK edition, printed pp. 28–29 (PDF p. 12), [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf), describes the S's injection into the combustion chamber.
 
-[^spyder]: Porsche Netherlands, [“Porsche Boxster Spyder: lichtgewicht Roadster voor puristen”, 6 November 2009](https://nieuws.porsche.nl/porsche-boxster-spyder-lichtgewicht-roadster-voor-puristen/), announcement, roof and engine sections; Porsche, *The Boxster Spyder*, January 2010 UK edition, printed pp. 12–17, 24–27 and 42–43, [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf).
+[^spyder]: Porsche Netherlands, [“Porsche Boxster Spyder: lichtgewicht Roadster voor puristen”, 6 November 2009](https://nieuws.porsche.nl/porsche-boxster-spyder-lichtgewicht-roadster-voor-puristen/), announcement, roof and engine sections; Porsche, *The Boxster Spyder*, January 2010 UK edition, printed pp. 10–17, 24–27 and 41 (technical data, PDF p. 19), [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf).
 
-[^black]: Porsche Netherlands, [“Slechts 987 exemplaren: rijk uitgeruste Boxster S Black Edition”, 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/), engine, limited-series and availability details; Porsche, *Boxster S Black Edition UK price list*, Edition 03/2011, pp. 10–11 (electrically operated hood), [original price list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0).
+[^black]: Porsche Netherlands, [“Slechts 987 exemplaren: rijk uitgeruste Boxster S Black Edition”, 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/), engine, limited-series and announced availability details; Porsche, *Boxster S Black Edition UK price list*, Edition 03/2011, printed p. 10 (PDF p. 6, electrically operated hood), [original price list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0).
 
 [^cayman]: Porsche Netherlands, [19 November 2008 Boxster/Cayman announcement](https://nieuws.porsche.nl/de-nieuwe-porsche-boxster-en-cayman-krachtiger-en-zuiniger/), opening power figures and “Meer onderscheid tussen Boxster en Cayman”.

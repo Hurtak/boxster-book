@@ -4,13 +4,19 @@ The Boxster’s entertainment system has three layers: a source supplies the pro
 
 For the 2010 UK 2.9, the starting point is the **CDR-30** radio/CD unit. Optional **Porsche Communication Management, PCM 3.0**, replaces that control centre and brings the UK catalogue’s navigation package. Sound Package Plus and BOSE are separate choices, available with either unit.[^uk-selection]
 
+Locate that standard system in the car before following the signal path. The view separates the centre-console unit, its internal output stages and the four dashboard/door speakers; selecting a driver reveals its magnet, coil and diaphragm.
+
+::: {.book-diagram data-diagram="audio-explorer"}
+![The standard CDR-30 is in the centre console, with two tweeters on the dashboard and one woofer in each door. Schematic aerial reception and vehicle electrical power are shown separately; open speaker sections reveal the fixed magnet, voice coil and diaphragm.](diagrams/audio-explorer/poster.svg)
+:::
+
 ## From stored music to moving air
 
 A radio aerial supplies a very small electrical signal containing the broadcast. The tuner selects a station and recovers its audio. A CD drive instead reads encoded information from a disc and reconstructs the music. An external player connected through AUX has already done the decoding: it supplies a changing analogue voltage representing left and right sound channels.
 
 The head unit chooses one source and applies the listener’s settings. Amplification then provides enough electrical power to move a speaker’s diaphragm. In a conventional moving-coil speaker, current through a coil creates a magnetic force; the attached cone moves backwards and forwards, pushing and pulling the air. A tweeter handles high frequencies with a small, light diaphragm; a larger bass driver moves more air at low frequencies. A stereo programme has two channels even when each channel feeds more than one driver. Loudspeaker count and programme-channel count therefore describe different things.
 
-![An original schematic separates source selection, electrical amplification and the speaker’s conversion of current into movement.](audio-amplification.svg)
+![An original schematic separates source selection, electrical amplification and the speaker’s conversion of current into movement.](images/audio-amplification.svg)
 
 *The music signal controls a larger flow of electrical energy. The cone’s motion makes pressure variations in the air. Power supply and vehicle-network fundamentals are covered in [Lighting, electrical systems and security](../16-lighting-electrical-systems-and-security/index.md).*
 
@@ -42,21 +48,21 @@ This distinction matters in an older car: an operating receiver can locate the c
 
 *Select a source, head unit and sound package. AUX requires the optional interface; USB/iPod control requires PCM and its interface in the January 2010 UK specification. The specific DVD 5.1 example requires PCM and BOSE. An unavailable combination stops the programme path and explains the missing equipment.*
 
-BOSE also separates **recorded surround** from **processed surround**. With PCM, a suitable audio or video DVD can supply discrete 5.1 music: five main programme channels plus a low-frequency-effects channel. For stereo sources, Centerpoint processing derives a surround presentation from two-channel material. SurroundStage distributes the resulting channels among the speakers. AudioPilot uses a cabin microphone to adapt playback to ambient noise; its purpose differs from the telephone microphone’s capture of speech.[^bose-processing] These functions change reproduction, not the original number of channels recorded on a CD.
+BOSE also separates **recorded surround** from **processed surround**. With PCM, a suitable audio or video DVD can supply discrete 5.1 music: five main programme channels plus a low-frequency-effects channel. PCM’s integral single CD/DVD drive can do this; the optional six-disc changer is not required. For stereo sources, Centerpoint processing derives a surround presentation from two-channel material. SurroundStage distributes the resulting channels among the speakers. AudioPilot uses a cabin microphone to adapt playback to ambient noise; its purpose differs from the telephone microphone’s capture of speech.[^bose-processing] These functions change reproduction, not the original number of channels recorded on a CD.
 
 ## External players and telephone equipment
 
 The centre-console storage compartment is the location to inspect for the optional universal audio interface, **870**. In the January 2010 UK catalogue, its CDR-30 version provides **AUX**. With PCM, the interface provides AUX, USB and a period iPod connection, with compatible USB/iPod devices operated through PCM.[^uk-interface] AUX sends sound into the system while track selection remains on the external player. USB and the iPod connection also permit supported information and control to pass between the device and PCM. The connector, cable, device generation and software support all matter; a USB-shaped socket does not establish universal compatibility.
 
-Bluetooth needs equally careful identification. **Mobile phone preparation**, **619**, or **618** with the mounting arrangement, supplies hands-free calling through the Hands-Free Profile, HFP. The mobile telephone remains the device connected to the cellular network; the car supplies the speech interface and basic call control. This was offered with CDR-30 as well as PCM.[^hfp]
+Bluetooth needs equally careful identification. **Mobile phone preparation**, **619**, or **618** with the mounting arrangement, supplies hands-free calling through the Hands-Free Profile, HFP. The mobile telephone remains the device connected to the cellular network; the car supplies the speech interface and basic call control. In Bluetooth-only operation the phone uses its own aerial; a compatible aerial-connected cradle can change that aerial path. This was offered with CDR-30 as well as PCM.[^hfp]
 
 The optional **telephone module for PCM**, **666**, adds a different capability: a GSM telephone within the car. It can use a SIM inserted into PCM, or compatible SIM Access Profile, SAP, communication with a mobile phone. In SAP operation the car uses the SIM information and its own radio/aerial path. The module can also work with HFP-only phones, in which case the phone retains the cellular connection. The optional cordless handset, **669**, belongs to this module and cannot handle calls made through HFP.[^telephone]
 
-![Three telephone arrangements distinguish the device that actually connects to the mobile network: the mobile phone in HFP mode, or the PCM telephone module with a direct SIM or compatible SAP connection.](telephone-paths.svg)
+![Three telephone arrangements distinguish the device that actually connects to the mobile network: the mobile phone in HFP mode without an aerial-connected cradle, or the PCM telephone module with a direct SIM or compatible SAP connection.](images/telephone-paths.svg)
 
 *“Bluetooth” describes a wireless link; its profile determines what crosses it. HFP hands-free operation and SAP access to SIM information perform different jobs.*
 
-A successful telephone pairing consequently proves a call connection, not a music-streaming feature. The 2010 UK source routes described here are the advertised radio, disc and wired external-player arrangements. Apple CarPlay and Android Auto are not original functions of these units. If a car now offers them, record the fitted retrofit and how it connects to the existing amplifier; the current installation and the original order specification are separate pieces of evidence.
+Pairing establishes the Bluetooth link. Completing a call still requires compatible telephone operation and an available mobile network; pairing does not establish a music-streaming feature. The 2010 UK source routes described here are the advertised radio, disc and wired external-player arrangements. Apple CarPlay and Android Auto are not original functions of these units. If a car now offers them, record the fitted retrofit and how it connects to the existing amplifier; the current installation and the original order specification are separate pieces of evidence.
 
 ## Options on the 2010 2.9
 
@@ -72,7 +78,7 @@ The UK launch brochure, published in August 2008 for the facelift’s arrival, a
 
 The UK S shares the CDR-30 starting point and principal entertainment choices.[^uk-selection]
 
-The Spyder deliberately starts without a radio. Its January 2010 UK brochure offers CDR-30 and PCM/navigation, but expressly makes **either dependent on Sound Package Plus**.[^spyder]
+The Spyder deliberately starts without a radio. Its January 2010 UK brochure offers CDR-30 (**695**) and PCM/navigation, but expressly makes **either dependent on Sound Package Plus**.[^spyder]
 
 The March 2011 UK Black Edition price list makes PCM/navigation, Sound Package Plus, the AUX/USB/iPod interface and mobile phone preparation standard. Sport Chrono Plus remains optional.[^black]
 
@@ -80,11 +86,11 @@ The March 2011 UK Black Edition price list makes PCM/navigation, Sound Package P
 
 Start with the face of the unit, then inspect the console sockets and the build specification. CDR-30’s monochrome screen and PCM’s colour touchscreen are useful identifiers; a PHONE key alone does not establish the fitted telephone hardware. Speaker grilles or a badge are clues, while the amplifier identification and option record provide better evidence of the installed sound package.
 
-Treat an ageing installation as a chain. Missing sound from one source can originate in its medium, cable, interface or settings; missing sound across all sources points attention farther along the common route. A retrofit can preserve the original speakers while changing source selection, conversion and control. Documenting each layer makes the present car understandable and keeps its period specification clear.
+Treat an ageing installation as a chain. Missing sound from one source can originate in its medium, cable, interface or settings; missing sound across all sources calls for checking the shared power, controls and output path. A retrofit can preserve the original speakers while changing source selection, conversion and control. Documenting each layer makes the present car understandable and keeps its period specification clear.
 
-[^uk-selection]: Porsche, *The Boxster*, UK edition **01/10**, printed pp. **117–118**, option table, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=56).
+[^uk-selection]: Porsche, *The Boxster*, UK edition **01/10**, printed pp. **117–118**, option table, **PDF pp. 54–55**, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=54).
 
-[^cdr-training]: Porsche, *2009 Technik Introduction — All Boxster Cayman Models*, printed Electrics and electronics p. **167**, [viewer p. 173](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=173).
+[^cdr-training]: Porsche Cars North America, *2009 Technik Introduction — All Boxster Cayman Models*, PNA 987 021 09, edition 2/09, printed Electrics and electronics p. **167**, [viewer p. 173](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=173); [accessible Porsche-authored original text](https://www.scribd.com/document/972719474/Boxster-2009). UK equipment availability is established separately by the dated UK brochure.
 
 [^uk-cdr]: Porsche, *The Boxster*, UK **01/10**, printed p. **82**, [brochure, PDF p. 39](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=39).
 
@@ -96,13 +102,13 @@ Treat an ageing installation as a chain. Missing sound from one source can origi
 
 [^bose-hardware]: Porsche, *2009 Technik Introduction*, printed p. **180**, [viewer p. 186](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=186); UK **01/10** brochure printed pp. **88–89** confirms compatibility with both CDR-30 and PCM and restricts DVD 5.1 playback to PCM.
 
-[^pcm-architecture]: Porsche, *2009 Technik Introduction*, printed p. **171**, schematic **9_26.2_09**, [viewer p. 177](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=177). The drawing labels analogue amplification and MOST/digital amplification separately; the chapter does not reproduce an exact vehicle network or wiring diagram.
+[^pcm-architecture]: Porsche, *2009 Technik Introduction*, printed p. **171**, schematic **9_26.2_09**, [viewer p. 177](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=177). The drawing labels analogue amplification and MOST/digital amplification separately. Porsche’s later *PCCM+ 9x7.II Installation and Conversion Instructions*, **102/25 ENU 9112**, **28 July 2026**, pp. **1, 5**, identifies the existing BOSE MOST line on these models, excluding the Japan arrangement ([Porsche original via NHTSA](https://static.nhtsa.gov/odi/tsbs/2026/MC-11035929-0001.pdf#page=5)). This corroborates the PCM/BOSE route; retrofit functions are not attributed to the original unit, and no CDR MOST topology is inferred.
 
-[^bose-processing]: Porsche, *2009 Technik Introduction*, printed p. **181**, [viewer p. 187](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=187).
+[^bose-processing]: Porsche, *2009 Technik Introduction*, printed p. **181**, [viewer p. 187](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=187); UK **01/10** brochure printed p. **84 / PDF p. 40** confirms 5.1 playback from PCM’s integral single CD/DVD drive.
 
 [^uk-interface]: Porsche, *The Boxster*, UK **01/10**, printed pp. **86–87, 117–118**, [brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=41). These market-specific descriptions take precedence over the broader interface list beneath CDR-30 in the generic 2009 training material.
 
-[^hfp]: Porsche, *The Boxster*, UK **01/10**, printed p. **86** and option table p. **117**; Porsche, *2009 Technik Introduction*, printed p. **168**, [viewer p. 174](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=174).
+[^hfp]: Porsche, *The Boxster*, UK **01/10**, printed p. **86** and option table p. **117 / PDF p. 54**; Porsche, *2009 Technik Introduction*, printed pp. **168, 178**, [viewer pp. 174, 184](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=184). The compatible cradle/external-aerial exception is also explicit in the UK **08/08** brochure, printed p. **117 / PDF p. 55**. The telephone schematic shows Bluetooth-only HFP without that cradle.
 
 [^telephone]: Porsche, *The Boxster*, UK **01/10**, printed pp. **85–86, 118**, [brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=40). Contemporary GSM/SAP descriptions establish original operation, not present network or phone compatibility.
 
@@ -110,6 +116,6 @@ Treat an ageing installation as a chain. Missing sound from one source can origi
 
 [^launch]: Porsche, *The new Boxster*, UK **08/08**, printed pp. **82–89, 117–118**, [launch brochure](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf).
 
-[^spyder]: Porsche, *The Boxster Spyder*, UK **01/10**, printed pp. **34–35, 41**, [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf).
+[^spyder]: Porsche, *The Boxster Spyder*, UK **01/10**, printed pp. **34–35 / PDF p. 16** (no radio as standard), **40 / PDF p. 19** (optional CDR-30 **695**, PCM **P23**, and Sound Package Plus dependencies), [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=19).
 
 [^black]: Porsche Cars Great Britain, *Boxster S Black Edition Price List*, **03/2011**, printed p. **11** (standard audio equipment), pp. **16–17** (optional Chrono Plus), [original scan](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0).

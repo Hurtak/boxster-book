@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="1350" viewBox="0 0 480 1350" role="img" aria-labelledby="title description">
+  <title id="title">From pedal force to brake torque, heat and road force</title>
+  <desc id="description">Functional schematic of the Boxster's service brakes, showing one of four wheel brakes. Foot force is increased by pedal leverage and booster assistance. The master cylinder creates hydraulic pressure, passed through the ABS and PSM hydraulic unit to caliper pistons. Pads clamp the disc. Pad-disc friction creates opposing torque and heats the discs and pads, with heat then escaping to the air. The disc, hub, wheel and tyre rotate together; the road's force opposite the car's motion on the braking tyre slows the car, within available grip. Dashed blue arrows show wheel-speed feedback and control signals; steering angle, yaw rate and lateral acceleration also inform PSM. The schematic omits exact pipe routing, circuit division, engine-torque intervention and performance predictions.</desc>
+  <defs>
+    <marker id="force-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#141414"/></marker>
+    <marker id="pressure-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#326b8c"/></marker>
+    <marker id="heat-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#a24d20"/></marker>
+  </defs>
+  <rect width="480" height="1350" fill="#fff"/>
+  <g fill="#f2f4f7">
+    <rect x="32" y="16" width="416" height="98" rx="6"/>
+    <rect x="32" y="164" width="416" height="98" rx="6"/>
+    <rect x="32" y="312" width="416" height="132" rx="6"/>
+    <rect x="32" y="494" width="416" height="98" rx="6"/>
+    <rect x="32" y="642" width="416" height="182" rx="6"/>
+    <rect x="32" y="874" width="416" height="124" rx="6"/>
+    <rect x="32" y="1048" width="416" height="124" rx="6"/>
+  </g>
+  <!-- Black links describe the force/torque chain; blue solid links are hydraulic. -->
+  <g fill="none" stroke="#141414" stroke-width="2.5" marker-end="url(#force-arrow)">
+    <path d="M106 120 V156"/>
+    <path d="M106 598 V634"/>
+    <path d="M106 830 V866"/>
+    <path d="M106 1004 V1040"/>
+  </g>
+  <g fill="none" stroke="#326b8c" stroke-width="2.5" marker-end="url(#pressure-arrow)">
+    <path d="M106 268 V304"/>
+    <path d="M106 450 V486"/>
+  </g>
+  <!-- Signals are a feedback branch, not another stage in the hydraulic path. -->
+  <rect x="32" y="1218" width="416" height="92" rx="6" fill="#eef4f7" stroke="#326b8c" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <g fill="none" stroke="#326b8c" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#pressure-arrow)">
+    <path d="M448 936 H466 V1250 H450"/>
+    <path d="M32 1250 H14 V378 H30"/>
+  </g>
+  <g fill="#141414" font-family="Arial, sans-serif" text-anchor="middle">
+    <g font-size="26" font-weight="600">
+      <text x="240" y="55">Foot, pedal and booster</text>
+      <text x="240" y="203">Master cylinder</text>
+      <text x="240" y="344">ABS / PSM hydraulic unit</text>
+      <text x="240" y="533">Calipers and pads</text>
+      <text x="240" y="681">Pad–disc friction</text>
+      <text x="240" y="913">Disc, hub, wheel and tyre</text>
+      <text x="240" y="1087">Tyre–road contact</text>
+    </g>
+    <g font-size="22">
+      <text x="240" y="87">Pedal leverage + booster assistance</text>
+      <text x="240" y="235">Piston force creates fluid pressure</text>
+      <text x="240" y="376">Valves / pump vary wheel pressure</text>
+      <text x="240" y="402">ABS: resist lock-up</text>
+      <text x="240" y="428">PSM: help stabilise the car</text>
+      <text x="240" y="565">Pistons press pads onto the disc</text>
+      <text x="240" y="714">Creates opposing brake torque</text>
+      <text x="240" y="948">Rotate together; brake torque</text>
+      <text x="240" y="979">opposes their rotation</text>
+      <text x="240" y="1122">Road force opposes car motion;</text>
+      <text x="240" y="1153">available grip limits that force</text>
+    </g>
+    <g font-size="22" text-anchor="start">
+      <text x="128" y="146">Mechanical force</text>
+      <text x="128" y="294" fill="#326b8c">Hydraulic pressure</text>
+      <text x="128" y="476" fill="#326b8c">Hydraulic pressure</text>
+      <text x="128" y="624">Clamping force</text>
+      <text x="128" y="856">Brake torque</text>
+      <text x="128" y="1030">Contact force</text>
+    </g>
+    <path d="M57 744 H423" fill="none" stroke="#dbb69d"/>
+    <g fill="#a24d20" font-size="22">
+      <text x="240" y="774">Motion energy heats discs and pads</text>
+      <text x="240" y="805">Heat then escapes to the air</text>
+    </g>
+    <path d="M60 779 V801" fill="none" stroke="#a24d20" stroke-width="2" marker-end="url(#heat-arrow)"/>
+    <g fill="#326b8c" font-size="22">
+      <text x="240" y="1204">Dashed blue = feedback / control</text>
+      <text x="240" y="1248" font-weight="600">Wheel speed + PSM motion inputs</text>
+      <text x="240" y="1274">Steering angle, yaw rate,</text>
+      <text x="240" y="1300">lateral acceleration</text>
+    </g>
+    <text x="240" y="1338" font-size="18" fill="#5e6268">Functional paths; one of four wheel brakes. No pipe routing.</text>
+  </g>
+</svg>

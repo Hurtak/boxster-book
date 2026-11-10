@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1490" font-family="sans-serif" role="img" aria-labelledby="title desc">
+<title id="title">Constant mesh: friction matches speed, dog teeth lock the gear</title>
+<desc id="desc">Generic axial section of a two-ratio gearbox, with gear B selected. Both upper gears are fixed to the input shaft and remain meshed with lower gears A and B. The lower gears ride on bearings around the output shaft. Gear A remains free to rotate relative to that shaft. Gear B's dog teeth are engaged by a sleeve that stays splined to a hub fixed to the output shaft. Green arrows trace engine-driving torque through gear B, the sleeve and hub, then into the output shaft. An enlarged half-section shows the separate friction cone, blocker ring and dog teeth. Cone friction matches gear and hub speeds; the blocker delays engagement until speeds match, then the sleeve passes the ring and engages the dog teeth. The section is functional, not the G87/10's actual shaft layout, cone count, dimensions or tooth counts.</desc>
+<defs>
+  <marker id="s16-torque" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#286449"/></marker>
+  <marker id="s16-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#bb774b"/></marker>
+  <pattern id="s16-spline" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M0 3H12M0 9H12" stroke="#4c6155" stroke-width="2"/></pattern>
+</defs>
+<rect width="600" height="1490" fill="#f1f4ef"/>
+<g fill="#243d32">
+  <text x="24" y="42" font-size="32" font-weight="700">Gear teeth stay in mesh</text>
+  <text x="24" y="82" font-size="26">Generic two-ratio section · B selected</text>
+  <text x="24" y="136" font-size="26">Input shaft: both gears fixed</text>
+</g>
+<!-- Axial sections: the different radii illustrate two ratios, not Porsche dimensions. -->
+<path d="M160 147V184M440 147V164" fill="none" stroke="#4c6155" stroke-width="2"/>
+<path d="M40 250H560M40 410H560" stroke="#8da195" stroke-width="20"/>
+<!-- Upper gears are positively connected to their shaft. -->
+<g fill="#b5c3b8" stroke="#243d32" stroke-width="3">
+  <path d="M140 190H180V306H170V314H160V306H150V314H140Z"/>
+  <path d="M420 170H460V326H450V334H440V326H430V334H420Z" fill="#67917a"/>
+</g>
+<g stroke="#243d32" stroke-width="4">
+  <path d="M134 190H186M414 170H466"/>
+  <path d="M140 241H180M140 259H180M420 241H460M420 259H460"/>
+</g>
+<!-- Lower gear wheels have a visible bearing interface, not a fixed joint. -->
+<g stroke="#243d32" stroke-width="3">
+  <path d="M140 314H150V306H160V314H170V306H180V510H140Z" fill="#d9e0d7"/>
+  <path d="M420 334H430V326H440V334H450V326H460V490H420Z" fill="#67917a"/>
+  <path d="M134 510H186M414 490H466" fill="none" stroke-width="4"/>
+  <path d="M136 388H184V432H136ZM416 388H464V432H416Z" fill="#f1f4ef"/>
+</g>
+<path d="M40 410H560" stroke="#8da195" stroke-width="18"/>
+<g fill="#b5c3b8" stroke="#4c6155" stroke-width="2">
+  <rect x="144" y="391" width="32" height="8" rx="4"/><rect x="144" y="421" width="32" height="8" rx="4"/>
+  <rect x="424" y="391" width="32" height="8" rx="4"/><rect x="424" y="421" width="32" height="8" rx="4"/>
+</g>
+<!-- Hub splines permanently connect to the output shaft. The sleeve bridges hub and B's dog collar. -->
+<rect x="255" y="380" width="52" height="60" fill="#8da195" stroke="#243d32" stroke-width="3"/>
+<rect x="256" y="397" width="50" height="26" fill="url(#s16-spline)"/>
+<path d="M386 388H420V400H386L380 394ZM386 420H420V432H386L380 426Z" fill="#67917a" stroke="#243d32" stroke-width="3"/>
+<path d="M270 368H404V384L398 390H270ZM270 430H398L404 436V452H270Z" fill="#bb774b" stroke="#243d32" stroke-width="3"/>
+<path d="M278 385H303M278 435H303" stroke="#243d32" stroke-width="4"/>
+<!-- These arrows are a power-path trace, not shaft rotation or axial force. -->
+<g fill="none" stroke="#286449" stroke-width="7" stroke-linejoin="round" marker-end="url(#s16-torque)">
+  <path d="M42 250H439"/>
+  <path d="M440 263V355"/>
+  <path d="M440 370V394H397V381H281V410"/>
+  <path d="M316 410H557"/>
+</g>
+<g fill="#243d32" font-size="26" text-anchor="middle">
+  <text x="160" y="350">A</text><text x="485" y="365">B</text>
+</g>
+<g fill="none" stroke="#4c6155" stroke-width="2">
+  <path d="M160 433V525H115"/><path d="M440 434V525H480"/>
+</g>
+<g fill="#243d32" font-size="26">
+  <text x="24" y="558">A: free on bearing</text>
+  <text x="310" y="558">B: locked to shaft</text>
+  <text x="24" y="610">H: hub splined to the output shaft.</text>
+  <text x="24" y="648">S: sleeve slides on hub to lock gear B.</text>
+</g>
+<path d="M281 444V463M348 455V463" fill="none" stroke="#4c6155" stroke-width="2"/>
+<g fill="#243d32" font-size="26" text-anchor="middle"><text x="281" y="491">H</text><text x="348" y="491">S</text></g>
+<path d="M24 689H66" stroke="#286449" stroke-width="6" marker-end="url(#s16-torque)"/>
+<text x="82" y="697" fill="#286449" font-size="26">Engine drive → final drive</text>
+<path d="M24 727H576" stroke="#bbc8bc" stroke-width="2"/>
+<g fill="#243d32">
+  <text x="24" y="773" font-size="30" font-weight="700">Friction first, tooth lock second</text>
+  <text x="24" y="811" font-size="24">Enlarged half-section · one cone illustrated</text>
+</g>
+<!-- Upper half-section of a generic synchroniser, at the friction/blocking stage. -->
+<text x="24" y="860" fill="#9c5832" font-size="26">Sleeve moves →</text>
+<path d="M236 851H306" fill="none" stroke="#bb774b" stroke-width="5" marker-end="url(#s16-shift)"/>
+<text x="370" y="860" fill="#243d32" font-size="26">Dog teeth</text>
+<path d="M432 869V909" fill="none" stroke="#4c6155" stroke-width="2"/>
+<path d="M64 1030H540" stroke="#8da195" stroke-width="20"/>
+<path d="M91 949H233V1020H91Z" fill="#8da195" stroke="#243d32" stroke-width="3"/>
+<path d="M91 1008H233V1020H91Z" fill="url(#s16-spline)"/>
+<path d="M112 899H315L326 909V927H112Z" fill="#bb774b" stroke="#243d32" stroke-width="3"/>
+<path d="M127 927V948H150V927M169 927V948H192V927M211 927V948H234V927" fill="#bb774b" stroke="#243d32" stroke-width="3"/>
+<!-- Gear body and its dog collar/cone are one rotating unit. -->
+<path d="M463 896H507V1020H463V985L335 976V960L463 932Z" fill="#67917a" stroke="#243d32" stroke-width="3"/>
+<path d="M382 910H463V934H382L370 922Z" fill="#67917a" stroke="#243d32" stroke-width="3"/>
+<!-- Ring's tooth blocks sleeve; its tapered inner face touches the gear cone. -->
+<path d="M334 914L347 926V942L384 949L335 960L323 953V926Z" fill="#d5b477" stroke="#243d32" stroke-width="3"/>
+<path d="M335 960L384 949" stroke="#9c5832" stroke-width="5"/>
+<rect x="467" y="1019" width="36" height="8" rx="4" fill="#f1f4ef" stroke="#4c6155" stroke-width="2"/>
+<text x="124" y="991" fill="#243d32" font-size="26">Hub</text>
+<g fill="none" stroke="#4c6155" stroke-width="2">
+  <path d="M333 951L287 1080H230"/><path d="M409 963V1080H440"/>
+</g>
+<g fill="#243d32" font-size="26">
+  <text x="24" y="1090">Blocker ring</text><text x="444" y="1090">Cone</text>
+  <text x="24" y="1153" font-weight="700">1 · Cone friction changes relative speed.</text>
+  <text x="24" y="1189">Ring teeth delay early sleeve engagement.</text>
+  <text x="24" y="1240" font-weight="700">2 · Gear and hub speeds match.</text>
+  <text x="24" y="1276">Blocking releases; sleeve can pass the ring.</text>
+  <text x="24" y="1327" font-weight="700">3 · Sleeve engages the gear’s dog teeth.</text>
+  <text x="24" y="1363">Teeth carry torque through sleeve and hub.</text>
+</g>
+<path d="M24 1395H576" stroke="#bbc8bc" stroke-width="2"/>
+<g fill="#4c6155" font-size="24">
+  <text x="24" y="1432">Functional schematic, not a G87/10 layout.</text>
+  <text x="24" y="1466">No model-specific cone or tooth counts.</text>
+</g>
+</svg>

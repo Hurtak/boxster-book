@@ -2,7 +2,7 @@ import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright-core';
 import { createServer } from 'node:http';
-import { readFile, mkdir } from 'node:fs/promises';
+import { readFile, mkdir, readdir } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
@@ -77,6 +77,9 @@ test('portable HTML works offline; keyboard and part controls survive leaving th
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await figure.locator('canvas').waitFor({ state: 'detached' });
     assert.equal(await figure.evaluate((element) => element.clientHeight), occupiedHeight, 'Releasing a diagram must preserve the surrounding reading layout');
+    await page.emulateMedia({ media: 'print' });
+    assert.ok(await figure.locator('.diagram-static img').isVisible(), 'A released view must retain its printable fallback');
+    await page.emulateMedia({ media: 'screen' });
     await ready(page, 'brake-explorer');
     assert.equal(await figure.getByRole('slider').inputValue(), '100');
     assert.equal(await figure.getByRole('button', { name: 'Caliper body', exact: true }).getAttribute('aria-pressed'), 'true');
@@ -91,7 +94,7 @@ test('D3 diagrams explain pressure and the fourfold energy increase at twice the
   try {
     await page.goto(portable);
     const caliper = await ready(page, 'caliper-pressure');
-    await caliper.getByRole('slider', { name: 'Pedal input' }).fill('100');
+    await caliper.getByRole('slider', { name: 'Relative hydraulic pressure' }).fill('100');
     assert.equal(Number(await caliper.locator('.diagram-interactive').getAttribute('data-relative-pressure')), 1);
     assert.match(await caliper.locator('.diagram-explanation').textContent(), /100%/);
     await caliper.screenshot({ path: resolve(previews, 'hydraulic-pressure.png') });
@@ -103,6 +106,18 @@ test('D3 diagrams explain pressure and the fourfold energy increase at twice the
     assert.match(await energy.locator('.diagram-explanation').textContent(), /4.00 times/);
     await energy.getByRole('slider', { name: 'Illustrative total mass' }).fill('1000');
     assert.ok(Math.abs(await value() - 1543.20987654) < 1e-6);
+    const massCurve = energy.locator('path[data-energy-curve="selected"]');
+    const referenceCurve = energy.locator('path[data-energy-curve="reference"]');
+    const curveBefore = await massCurve.getAttribute('d');
+    const fixedReference = await referenceCurve.getAttribute('d');
+    const ticks = () => energy.locator('[data-energy-axis="energy"] .tick').evaluateAll((elements) => elements.map((element) => ({ text: element.textContent, position: element.getAttribute('transform') })));
+    const fixedScale = await ticks();
+    const lowerMassEnergy = await value();
+    await energy.getByRole('slider', { name: 'Illustrative total mass' }).fill('1800');
+    assert.ok(Math.abs(await value() / lowerMassEnergy - 1.8) < 1e-10);
+    assert.notEqual(await massCurve.getAttribute('d'), curveBefore, 'Mass must visibly move the curve');
+    assert.equal(await referenceCurve.getAttribute('d'), fixedReference);
+    assert.deepEqual(await ticks(), fixedScale, 'Changing mass must not disguise the change by rescaling the axis');
     await energy.screenshot({ path: resolve(previews, 'kinetic-energy.png') });
     await page.emulateMedia({ media: 'print' });
     assert.equal(await energy.locator('.diagram-interactive').isVisible(), false);
@@ -276,6 +291,37 @@ test('phone contents traps focus, closes with Escape and opens the chosen chapte
   } finally { await page.close(); }
 });
 
+test('chapters number their own notes, list their sections in the contents and offer a way back in', async () => {
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  try {
+    await page.goto(portable);
+    await page.locator('html.reader-enhanced').waitFor();
+    assert.equal(await page.locator('[data-continue-reading]').isVisible(), false);
+    await page.getByRole('navigation', { name: 'Written chapters' }).getByRole('link', { name: 'Brakes and stability systems', exact: true }).click();
+    const chapter = page.locator('#book > .level2:not([hidden])');
+    assert.equal(await chapter.locator('.footnote-ref').first().innerText(), '1');
+    assert.equal(await chapter.locator('.chapter-notes ol > li').first().evaluate((element) => element.value), 1);
+    assert.match(await chapter.locator('.notes-count').innerText(), /^\d+ notes$/);
+    await page.getByRole('button', { name: 'Contents', exact: true }).click();
+    const dialog = page.getByRole('dialog', { name: 'Contents', exact: true });
+    const sections = dialog.locator('.chapter-sections a');
+    assert.equal(await sections.count(), await chapter.locator(':scope > .level3, :scope > .chapter-notes').count());
+    await dialog.getByRole('link', { name: 'ABS and PSM', exact: true }).click();
+    await dialog.waitFor({ state: 'hidden' });
+    await page.waitForFunction(() => document.querySelector('.chapter-sections [aria-current="location"]')?.textContent === 'ABS and PSM');
+    assert.ok(await page.locator('.reading-bar span').evaluate((element) => new DOMMatrix(getComputedStyle(element).transform).a > 0));
+    await page.locator('.book-name').click();
+    const resume = page.locator('[data-continue-reading]');
+    await resume.waitFor();
+    assert.match(await resume.innerText(), /Chapter 13: Brakes and stability systems/);
+    await resume.click();
+    await page.getByRole('heading', { name: 'ABS and PSM', exact: true }).waitFor();
+    await page.setViewportSize({ width: 1024, height: 768 });
+    assert.ok(await page.locator('.book-sidebar').isVisible(), 'A landscape tablet keeps the contents beside the page');
+    assert.equal(await page.getByRole('button', { name: 'Contents', exact: true }).isVisible(), false);
+  } finally { await page.close(); }
+});
+
 test('cover and chapter reflow from a small phone to a wide desktop, with offline fonts', async () => {
   const context = await browser.newContext({ offline: true });
   try {
@@ -391,6 +437,35 @@ test('cross-chapter explanations navigate to the owning section and every book f
   }
 });
 
+test('every static SVG has an accessible explanation and keeps its labels within a phone-sized canvas', async () => {
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  try {
+    const files = (await readdir(resolve('book'), { recursive: true })).filter((file) => file.endsWith('.svg')).sort();
+    assert.ok(files.length >= 59, 'Cover standalone illustrations and every interactive fallback');
+    for (const file of files) {
+      const source = await readFile(resolve('book', file), 'utf8');
+      const result = await page.evaluate((source) => {
+        const xml = new DOMParser().parseFromString(source, 'image/svg+xml');
+        const error = xml.querySelector('parsererror');
+        if (error) return { error: error.textContent };
+        const svg = document.importNode(xml.documentElement, true);
+        svg.style.width = '342px';
+        svg.style.height = 'auto';
+        document.body.replaceChildren(svg);
+        const bounds = svg.getBoundingClientRect();
+        const clipped = [...svg.querySelectorAll('text')].filter((text) => {
+          const box = text.getBoundingClientRect();
+          return box.width && (box.left < bounds.left - 2 || box.right > bounds.right + 2 || box.top < bounds.top - 2 || box.bottom > bounds.bottom + 2);
+        }).map((text) => text.textContent);
+        return { title: svg.querySelector('title')?.textContent.trim(), description: svg.querySelector('desc')?.textContent.trim(), clipped };
+      }, source);
+      assert.equal(result.error, undefined, `${file} must be valid SVG XML`);
+      assert.ok(result.title && result.description, `${file} needs an accessible title and description`);
+      assert.deepEqual(result.clipped, [], `${file} clips labels at phone width`);
+    }
+  } finally { await page.close(); }
+});
+
 test('family and option comparisons keep the 2.9 baseline while changing the selected configuration', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
@@ -413,45 +488,107 @@ test('family and option comparisons keep the 2.9 baseline while changing the sel
   } finally { await page.close(); }
 });
 
-test('every interactive illustration mounts, responds to native controls and fits a phone', async () => {
-  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
-  const errors = [];
-  page.on('pageerror', (error) => errors.push(error.message));
-  try {
-    await page.goto(portable);
-    const names = await page.locator('[data-diagram]').evaluateAll((figures) => figures.map((figure) => figure.dataset.diagram));
-    assert.ok(names.length >= 23, 'The completed manuscript should retain its interactive illustrations');
-    for (const name of names) {
-      const figure = await ready(page, name);
-      assert.ok(await figure.locator('.diagram-explanation').innerText(), `${name} needs a textual explanation`);
-      for (const range of await figure.getByRole('slider').all()) {
-        await range.focus();
-        await range.press('End');
-        assert.equal(await range.inputValue(), await range.getAttribute('max'), `${name} must respond to the keyboard`);
-        await range.press('Home');
-        assert.equal(await range.inputValue(), await range.getAttribute('min'));
+test('every interactive illustration responds to native controls and fits phone, tablet and desktop canvases', async () => {
+  for (const width of [390, 768, 1440]) {
+    const page = await browser.newPage({ viewport: { width, height: 844 } });
+    const errors = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    try {
+      await page.goto(portable);
+      const names = await page.locator('[data-diagram]').evaluateAll((figures) => figures.map((figure) => figure.dataset.diagram));
+      assert.ok(names.length >= 24, 'The completed manuscript should retain its interactive illustrations');
+      for (const name of names) {
+        const figure = await ready(page, name);
+        const checkLabels = async () => {
+          const clipped = await figure.evaluate((element) => {
+            const svg = element.querySelector('.diagram-stage svg');
+            if (!svg) return [];
+            const bounds = svg.getBoundingClientRect();
+            return [...svg.querySelectorAll('text')].filter((text) => {
+              const box = text.getBoundingClientRect();
+              return box.width && (box.left < bounds.left - 2 || box.right > bounds.right + 2 || box.top < bounds.top - 2 || box.bottom > bounds.bottom + 2);
+            }).map((text) => text.textContent);
+          });
+          assert.deepEqual(clipped, [], `${name} clips its live labels at ${width}px`);
+        };
+        assert.ok(await figure.locator('.diagram-explanation').innerText(), `${name} needs a textual explanation`);
+        await checkLabels();
+        for (const range of await figure.getByRole('slider').all()) {
+          await range.focus();
+          await range.press('End');
+          assert.equal(await range.inputValue(), await range.getAttribute('max'), `${name} must respond to the keyboard`);
+          await checkLabels();
+          await range.press('Home');
+          assert.equal(await range.inputValue(), await range.getAttribute('min'));
+          await checkLabels();
+        }
+        for (const select of await figure.getByRole('combobox').all()) {
+          const value = await select.locator('option').last().getAttribute('value');
+          await select.selectOption(value);
+          assert.equal(await select.inputValue(), value);
+          await checkLabels();
+        }
+        for (const checkbox of await figure.getByRole('checkbox').all()) {
+          await checkbox.check();
+          assert.ok(await checkbox.isChecked());
+          await checkbox.uncheck();
+        }
+        const buttons = figure.getByRole('button');
+        for (const button of await buttons.all()) {
+          await button.click();
+          await checkLabels();
+        }
+        const overwideTables = await figure.locator('.diagram-interactive table').evaluateAll((tables) => tables.filter((table) => table.scrollWidth > table.clientWidth + 1).map((table) => table.textContent));
+        assert.deepEqual(overwideTables, [], `${name} needs a readable comparison without sideways table scrolling`);
+        assert.equal(await figure.locator('.diagram-notice').count(), 0, `${name} must not fall back after a runtime error`);
+        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${name} overflows the ${width}px viewport`);
+        await figure.screenshot({
+          path: resolve(previews, `all-${name}-${width === 390 ? 'phone' : width === 768 ? 'tablet' : 'desktop'}.png`),
+          style: '.viewer-bar, .skip-link { visibility: hidden !important; }',
+        });
       }
-      for (const select of await figure.getByRole('combobox').all()) {
-        const value = await select.locator('option').last().getAttribute('value');
-        await select.selectOption(value);
-        assert.equal(await select.inputValue(), value);
+      assert.deepEqual(errors, []);
+    } finally { await page.close(); }
+  }
+});
+
+test('component tours locate, connect, separate and focus their parts while retaining state across chapters', async () => {
+  const names = ['body', 'engine', 'intake', 'fluids', 'manual', 'pdk', 'drivetrain', 'suspension', 'steering', 'roof', 'cabin', 'electrical', 'audio', 'protection'].map(name => `${name}-explorer`);
+  for (const width of [390, 1440]) {
+    const page = await browser.newPage({ viewport: { width, height: 1000 } });
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    try {
+      await page.goto(portable);
+      for (const name of names) {
+        const figure = await ready(page, name);
+        assert.equal(await figure.locator('canvas').count(), 1);
+        const host = figure.locator('.diagram-interactive');
+        for (const [label, progress] of [['Connections', '30'], ['Assembly', '65'], ['Exploded', '100']]) {
+          await figure.getByRole('button', { name: label, exact: true }).click();
+          assert.equal(await host.getAttribute('data-progress'), progress);
+          await figure.locator('.component-marker:not([hidden])').first().waitFor();
+          await figure.screenshot({ path: resolve(previews, `tour-${name}-${label.toLowerCase()}-${width}.png`), style: '.viewer-bar, .skip-link { visibility: hidden !important; }' });
+        }
+        const part = figure.locator('button[data-part]').last();
+        const selected = await part.getAttribute('data-part');
+        await part.click();
+        assert.equal(await host.getAttribute('data-part'), selected);
+        assert.equal(await part.getAttribute('aria-pressed'), 'true');
+        assert.equal(await host.getAttribute('data-focus-part'), 'true');
+        assert.ok((await figure.locator('.diagram-connections').textContent()).length > 40);
+        await figure.getByRole('checkbox', { name: 'Show connections' }).uncheck();
+        await page.locator('.book-name').click();
+        await figure.locator('canvas').waitFor({ state: 'detached' });
+        await ready(page, name);
+        assert.equal(await host.getAttribute('data-part'), selected, `${name}: preserve the inspected part after returning`);
+        assert.equal(await host.getAttribute('data-focus-part'), 'true');
+        assert.equal(await figure.getByRole('checkbox', { name: 'Show connections' }).isChecked(), false);
+        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       }
-      for (const checkbox of await figure.getByRole('checkbox').all()) {
-        await checkbox.check();
-        assert.ok(await checkbox.isChecked());
-        await checkbox.uncheck();
-      }
-      const buttons = figure.getByRole('button');
-      if (await buttons.count()) await buttons.last().click();
-      assert.equal(await figure.locator('.diagram-notice').count(), 0, `${name} must not fall back after a runtime error`);
-      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${name} overflows a phone`);
-      await figure.screenshot({
-        path: resolve(previews, `all-${name}-phone.png`),
-        style: '.viewer-bar, .skip-link { visibility: hidden !important; }',
-      });
-    }
-    assert.deepEqual(errors, []);
-  } finally { await page.close(); }
+      assert.deepEqual(errors, []);
+    } finally { await page.close(); }
+  }
 });
 
 test('engine feedback corrects the mixture without removing the leak, while cooling controls distinguish air and liquid flow', async () => {
@@ -466,16 +603,16 @@ test('engine feedback corrects the mixture without removing the leak, while cool
     assert.ok(Math.abs(Number(await model.getAttribute('data-lambda')) - 1.1 / 1.06) < 1e-6);
     await mixture.getByRole('slider', { name: 'Feedback correction step', exact: true }).fill('8');
     assert.ok(Math.abs(Number(await model.getAttribute('data-lambda')) - 1) < 0.001);
-    assert.match(await mixture.locator('.diagram-explanation').innerText(), /leak still exists/);
+    assert.match(await mixture.locator('.diagram-explanation').innerText(), /cannot close the leak/);
     await mixture.getByRole('slider', { name: 'Additional unmetered air', exact: true }).fill('0');
     assert.equal(Number(await model.getAttribute('data-lambda')), 1);
     assert.equal(Number(await model.getAttribute('data-fuel-correction')), 0);
     const cooling = await ready(page, 'fluid-cooling-path');
     await cooling.getByRole('button', { name: 'Warm in traffic', exact: true }).click();
     assert.equal(await cooling.locator('.diagram-interactive').getAttribute('data-cooling-condition'), '2');
-    assert.match(await cooling.locator('.diagram-explanation').innerText(), /fans provide airflow/);
+    assert.match(await cooling.locator('.diagram-explanation').innerText(), /fans now assist airflow/);
     await cooling.getByRole('button', { name: 'Warming up', exact: true }).click();
-    assert.match(await cooling.locator('.diagram-explanation').innerText(), /short return path/);
+    assert.match(await cooling.locator('.diagram-explanation').innerText(), /engine and short bypass/);
   } finally { await page.close(); }
 });
 
@@ -503,6 +640,28 @@ test('PDK selection prepares an unloaded path and transfers drive through contro
     assert.equal(await model.getAttribute('data-pdk-k1'), 'closed');
     assert.equal(await model.getAttribute('data-pdk-k2'), 'open');
     assert.equal(await model.getAttribute('data-pdk-even-gear'), '2');
+  } finally { await page.close(); }
+});
+
+test('open differential displays fractional output speeds and respects the weaker tyre torque limit', async () => {
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  try {
+    await page.goto(portable);
+    const figure = await ready(page, 'drivetrain-open-differential');
+    const model = figure.locator('.diagram-interactive');
+    await figure.getByRole('slider', { name: 'Carrier speed', exact: true }).fill('50');
+    await figure.getByRole('slider', { name: 'Speed difference about the mean', exact: true }).fill('5');
+    assert.equal(Number(await model.getAttribute('data-drivetrain-left-rpm')), 47.5);
+    assert.equal(Number(await model.getAttribute('data-drivetrain-right-rpm')), 52.5);
+    assert.match(await figure.locator('svg').textContent(), /47\.5 \+ 52\.5 = 2 × 50/);
+    await figure.getByRole('button', { name: 'Unequal grip', exact: true }).click();
+    await figure.getByRole('slider', { name: 'Requested axle torque', exact: true }).fill('800');
+    const grip = figure.getByRole('slider', { name: 'Left tyre torque capacity', exact: true });
+    await grip.fill('0');
+    assert.equal(Number(await model.getAttribute('data-drivetrain-total-nm')), 0);
+    await grip.fill('600');
+    assert.equal(Number(await model.getAttribute('data-drivetrain-each-nm')), 400);
+    assert.equal(Number(await model.getAttribute('data-drivetrain-total-nm')), 800);
   } finally { await page.close(); }
 });
 
@@ -570,14 +729,18 @@ test('suspension illustrations distinguish damping velocity from spring deflecti
     await spring.getByRole('slider', { name: 'Extra spring compression', exact: true }).fill('20');
     const velocity = spring.getByRole('slider', { name: 'Compression velocity', exact: true });
     await velocity.fill('0');
-    const values = () => spring.locator('.diagram-interactive').evaluate((element) => ({ spring: Number(element.dataset.springForceN), damper: Number(element.dataset.damperForceN) }));
+    const values = () => spring.locator('.diagram-interactive').evaluate((element) => ({ spring: Number(element.dataset.springForceN), damper: Number(element.dataset.damperForceN), body: Number(element.dataset.damperBodyForceN) }));
     const stationary = await values();
     assert.equal(stationary.spring, 400);
     assert.equal(stationary.damper, 0);
+    assert.equal(stationary.body, 0);
     await velocity.fill('0.1');
     const moving = await values();
     assert.equal(moving.spring, stationary.spring, 'Velocity alone must not change the spring force');
     assert.equal(Math.abs(moving.damper), 150);
+    assert.equal(moving.body, 150, 'Bump pushes up on the body while the damper resists compression');
+    await velocity.fill('-0.1');
+    assert.equal((await values()).body, -150, 'Rebound reverses the damper reaction on the body');
     await spring.screenshot({ path: resolve(previews, 'suspension-spring-damper-phone.png') });
     const bar = await ready(page, 'suspension-anti-roll');
     await bar.getByRole('button', { name: 'Both wheels rise', exact: true }).click();
@@ -602,6 +765,15 @@ test('engine illustrations connect the four strokes, half-speed cams and separat
       assert.equal(await cycle.locator('.diagram-interactive').getAttribute('data-engine-stroke'), stroke);
       assert.equal(Number(await cycle.locator('.diagram-interactive').getAttribute('data-engine-cam-angle')), degrees / 2);
     }
+    // One complete cycle returns to the initial valve state after two crank turns.
+    const cylinder = cycle.locator('.diagram-interactive');
+    for (const [degrees, inlet, exhaust] of [[0, true, false], [180, false, false], [360, false, false], [540, false, true], [720, true, false]]) {
+      await angle.fill(String(degrees));
+      assert.equal(await cylinder.getAttribute('data-engine-inlet-open'), String(inlet));
+      assert.equal(await cylinder.getAttribute('data-engine-exhaust-open'), String(exhaust));
+      assert.equal(Number(await cylinder.getAttribute('data-engine-cam-angle')), degrees / 2);
+    }
+    assert.equal(await cylinder.getAttribute('data-engine-stroke'), 'intake');
     await cycle.screenshot({ path: resolve(previews, 'engine-four-stroke-phone.png') });
     const valves = await ready(page, 'engine-timing-lift');
     await valves.getByRole('slider', { name: 'Illustrative inlet advance', exact: true }).fill('20');
@@ -627,13 +799,21 @@ test('roof illustrations separate opening sequence from drainage and retain clea
     await page.goto(portable);
     const opening = await ready(page, 'roof-opening');
     const stage = opening.getByRole('slider', { name: 'Opening stage', exact: true });
+    const roof = opening.locator('.diagram-interactive');
+    for (const [position, cover, header, glass] of [[0, 'closed', 'latched', 'visible'], [1, 'closed', 'released', 'visible'], [2, 'clear', 'released', 'visible'], [3, 'clear', 'released', 'visible'], [4, 'closed', 'released', 'stowed']]) {
+      await stage.fill(String(position));
+      assert.equal(await roof.getAttribute('data-roof-cover'), cover);
+      assert.equal(await roof.getAttribute('data-roof-header'), header);
+      assert.equal(await roof.getAttribute('data-roof-glass'), glass);
+      assert.equal(await roof.getAttribute('data-roof-door-glass'), position === 0 ? 'raised' : 'lowered');
+    }
     await stage.fill('4');
     assert.equal(await opening.locator('.diagram-interactive').getAttribute('data-roof-stage'), '4');
     await stage.fill('0');
     assert.equal(await opening.locator('.diagram-interactive').getAttribute('data-roof-stage'), '0');
     await opening.screenshot({ path: resolve(previews, 'roof-opening-phone.png') });
     const drain = await ready(page, 'roof-drainage');
-    await drain.getByRole('slider', { name: 'Illustrative rain input', exact: true }).fill('100');
+    await drain.getByRole('slider', { name: 'Illustrative water added', exact: true }).fill('100');
     await drain.getByRole('button', { name: 'Clear drain', exact: true }).click();
     assert.equal(await drain.locator('.diagram-interactive').getAttribute('data-drain-state'), 'clear');
     assert.equal(await drain.locator('.diagram-interactive').getAttribute('data-water-outcome'), 'drained');
@@ -641,10 +821,12 @@ test('roof illustrations separate opening sequence from drainage and retain clea
     assert.equal(await drain.locator('.diagram-interactive').getAttribute('data-drain-state'), 'blocked');
     assert.equal(await drain.locator('.diagram-interactive').getAttribute('data-water-outcome'), 'overflow');
     await drain.screenshot({ path: resolve(previews, 'roof-drainage-phone.png') });
+    await page.setViewportSize({ width: 1440, height: 1100 });
     await page.emulateMedia({ media: 'print' });
     for (const figure of [opening, drain]) {
       assert.equal(await figure.locator('.diagram-interactive').isVisible(), false);
       assert.equal(await figure.locator('.diagram-static img').isVisible(), true);
+      assert.ok(await figure.locator('.diagram-static img').evaluate((image) => image.getBoundingClientRect().height <= 220 * 96 / 25.4 + 1), 'Tall fallback artwork must fit a printed page');
     }
   } finally { await page.close(); }
 });

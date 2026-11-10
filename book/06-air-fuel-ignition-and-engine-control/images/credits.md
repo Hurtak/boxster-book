@@ -10,4 +10,4 @@
 - Identification: Porsche catalogue photograph of the optional Sport Chrono dashboard stopwatch, applicable to the ordinary Boxster/Boxster S package description. It establishes the appearance of the illustrated equipment, not the options fitted to a particular car.
 - Use: retained locally for the user's personal reading. Original project MIT licence does not relicense this photograph.
 
-The three explanatory SVGs and D3 module are original project work, based on the mechanisms documented in `../research.md`. They reproduce no Porsche diagram geometry.
+The air-path and injection-location SVGs, the mixture-feedback D3 view and its poster, and the intake 3D explorer and its poster are original project work, based on the mechanisms documented in `../research.md`. They reproduce no Porsche diagram geometry.

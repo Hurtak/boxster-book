@@ -2,7 +2,7 @@
 
 The book uses the **2010 European/UK Boxster 987.2 2.9-litre** as its reference car. All 18 chapters are drafted: the family introduction, yearly timeline and specification lead into component explanations, options, documented changes and comparisons with the S, Spyder and Black Edition.
 
-The chapters combine original explanatory diagrams, interactive examples and locally stored period photographs and factory illustrations. Chapter-local research and image credits preserve the evidence behind them. The [editorial review](book-editorial-notes.md) explains the reading order and where shared explanations belong.
+The chapters combine original explanatory diagrams, interactive examples and locally stored period photographs and factory illustrations. Chapter-local research and image credits preserve the evidence behind them. The [editorial review](.agents/book-editorial-notes.md) explains the reading order and where shared explanations belong. The [diagram review](.agents/reviews/diagram-review.md) records the correctness, detail and responsive checks. The [text and source review](.agents/reviews/text-and-source-review.md) records the subsequent 18-chapter factual audit and its evidence limits. The [rendering verification](.agents/reviews/render-verification.md) records the desktop and phone release checks.
 
 [Read the online book](https://hurtak.github.io/boxster-book/). GitHub Actions builds and publishes the latest edition after each successful push to `main`.
 
@@ -23,7 +23,7 @@ book/
 
 Keep one chapter per `index.md`, starting with `# Chapter title`. Use `##` and deeper headings within a chapter when writing begins. Numbered folders determine the reading order; numbers must be positive and unique. Add chapters using the same `NN-chapter-name/index.md` pattern, with at least two digits.
 
-The [book guidelines](boxster-987-2-book-guidelines.md) define the chapter coverage. [Historical research](model-year-research.md) supplies source notes. These planning documents are separate from the manuscript and are excluded from the HTML build.
+The [book guidelines](.agents/boxster-987-2-book-guidelines.md) define the chapter coverage. [Historical research](.agents/model-year-research.md) supplies source notes. AI guidance and review records live in `.agents/`, with reading instructions in [AGENTS.md](AGENTS.md). These documents are separate from the manuscript and are excluded from the HTML build. The [MDX/React/Vite migration plan](.agents/mdx-react-vite-migration-plan.md) records proposed future build work.
 
 ## Build the reading edition
 
@@ -45,7 +45,7 @@ Open `dist/book.html` in a browser. On macOS:
 open dist/book.html
 ```
 
-The HTML includes all chapters in numerical order, a book cover and a chapter reader. Desktop navigation stays beside the page; phones and tablets use a contents drawer. Styles, fonts, images, JavaScript and 3D models are embedded, so the interactive book works offline without a server. External source links still require an internet connection. Rebuild after editing Markdown or diagram code; the HTML is generated output.
+The HTML includes all chapters in numerical order, a book cover and a chapter reader. From 1000 px wide (landscape tablets and up) the contents stay beside the page; narrower screens use a contents drawer. Styles, fonts, images, JavaScript and 3D models are embedded, so the interactive book works offline without a server. External source links still require an internet connection. Rebuild after editing Markdown or diagram code; the HTML is generated output.
 
 For a larger book, build the **web edition**, which downloads diagram code and models as the reader approaches them:
 
@@ -75,7 +75,7 @@ The repository's Pages source is **GitHub Actions**. The deployment uses the `gi
 ## Markdown conventions
 
 - Paragraphs, lists, links, tables, code blocks and footnotes use [Pandoc Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown).
-- Store images beside their chapter and reference them relative to that chapter, for example `![Description](images/diagram.png)`. The build embeds them into the HTML and fails if a referenced resource cannot be loaded.
+- Store standalone SVG illustrations and photographs in each chapter's `images/` folder and reference them relative to the chapter, for example `![Description](images/diagram.svg)`. Interactive figures keep their `poster.svg` beside their code in `diagrams/`. The build embeds images into the HTML and fails if a referenced resource cannot be loaded.
 - Give photographs one concise visible caption with variant, credit and source. Keep the longer visual description in an `alt` attribute, for example `![Boxster S front axle. Photo: Porsche AG.](images/front-axle.jpg){alt="Front axle with struts, lower arms and steering rack"}`.
 - Links such as `[Oil circuit](#oil-circuit)` can target a heading within the same chapter. Chapter-local identifiers and footnotes are kept distinct when the files are combined.
 - The contents list is generated from chapter titles. Cross-chapter links such as `[Unsprung mass](../11-suspension-and-wheel-geometry/index.md#compliance-and-unsprung-mass)` work in the source and become internal navigation in the HTML. Builds reject unknown chapter files or heading fragments.
@@ -88,10 +88,12 @@ Edit `scripts/book.css` for presentation and `scripts/book.html` for the reading
 The brakes sample includes three working examples:
 
 - **Car to brake, in 3D:** move one slider through the whole car, hydraulic connections, wheel brake and exploded assembly. Part buttons highlight and zoom in on the disc, pads, one-piece caliper, four pistons, hub or wheel. Drag to orbit and scroll or pinch to zoom.
-- **Hydraulic clamping:** a D3 cutaway shows four pistons taking up pad clearance, then increasing relative pressure.
+- **Hydraulic clamping:** a D3 cutaway shows connected pressure chambers and four opposing pistons clamping two pads, with force increasing as relative pressure rises.
 - **Speed and energy:** D3 plots kinetic energy as speed and illustrative total mass change.
 
-[Diagram authoring and architecture](interactive/README.md) explains the boundary between shared code and chapter assets. D3 handles SVG diagrams and charts; Three.js renders the 3D GLB models. All runtime dependencies are bundled locally. Dependency license notices are embedded in the HTML and also shipped as `THIRD_PARTY_NOTICES.txt` in the web assets.
+Every component chapter, from body structure through occupant protection (chapters 4–18), also has a **3D location and component tour**. The fourteen additional assemblies cover the flat-six, intake and engine control, fluids and exhaust, manual clutch/gearbox, optional PDK, driveline, suspension, steering and wheels, roof, cabin and climate, electrical system, audio and restraints. Like the brake viewer, they move from the whole green-and-tan car through connections and assembled parts to an exploded view. Numbered part buttons focus individual components; a checkbox shows their functional connections.
+
+[Diagram authoring and architecture](interactive/README.md) explains the boundary between shared code and chapter assets. D3 handles SVG diagrams and charts; Three.js renders GLB models and chapter-owned procedural assemblies. The component viewers share framing, selection, controls, resource handling and the reference car; each chapter owns its geometry and explanations. `npm run posters` regenerates their printable illustrations. All runtime dependencies are bundled locally. Dependency license notices are embedded in the HTML and also shipped as `THIRD_PARTY_NOTICES.txt` in the web assets.
 
 Every interactive figure has a static SVG for printing, disabled JavaScript or unavailable WebGL. Controls use native labelled sliders and buttons. The runtime releases 3D resources offscreen while retaining control values, and renders on interaction rather than running a continuous animation loop.
 
@@ -105,9 +107,9 @@ Run `npm test` to rebuild the portable, web and Pages outputs and check the calc
 
 The reader follows **The page is the object** direction (seed `1298968287`): the contents acts as the book’s spine, with a white reading sheet and a green accent taken from the reference car. Source Serif 4 carries the text; Source Sans 3 carries headings and navigation. The fonts are bundled in `assets/fonts/` under the SIL Open Font License, with notices included in both reading editions. No font service is contacted while reading.
 
-The enhanced reader shows one chapter at a time, preserving section and footnote deep links, browser history and chapter-local notes. Wide desktops also show an in-chapter outline and reading progress. Text-size buttons retain a local preference. Without JavaScript, the complete document and contents remain available; printing includes every chapter and static diagrams.
+The enhanced reader shows one chapter at a time, preserving section and footnote deep links, browser history and chapter-local notes, numbered from 1 in each chapter. The current chapter's sections are listed under it in the contents; wide desktops also show them as an outline beside the page. A bar under the header shows progress through the chapter, and the cover offers a link back to the last section read. Text-size buttons and the reading place are kept as local preferences. Photographs and drawings sit on a common plate whatever their size, and interactive panels run to the screen edges on phones. Without JavaScript, the complete document and contents remain available; printing includes every chapter and static diagrams.
 
-The cover lists drafted chapters automatically, and title-only chapters are marked as planned. It uses an original render of the project’s green and tan car model. The component chapters combine original explanatory diagrams with credited period photographs. Chapter-local `research.md` files record technical evidence and uncertainties; `images/credits.md` files record image origins. The [design review](reader-design-review.md) records the reader’s layout and responsive checks. Screenshots are generated under `dist/design-review/`.
+The cover lists drafted chapters automatically, and title-only chapters are marked as planned. It uses an original render of the project’s green and tan car model. The component chapters combine original explanatory diagrams with credited period photographs. Chapter-local `research.md` files record technical evidence and uncertainties; `images/credits.md` files record image origins. The [design review](.agents/reviews/reader-design-review.md) records the reader’s layout and responsive checks. Screenshots are generated under `dist/design-review/`.
 
 ## License
 

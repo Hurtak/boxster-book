@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1448" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">Who makes the cellular connection?</title>
+  <desc id="desc">Three original optional telephone arrangements for the 2010 UK Boxster. The HFP example omits an aerial-connected cradle: the phone keeps its SIM, cellular radio and aerial, while Bluetooth carries speech and basic call control between phone and car. A compatible cradle can instead connect the phone to an external aerial. With a SIM inserted into PCM, the telephone module uses that SIM and its own GSM radio through the car aerial. With SAP, a compatible phone keeps the SIM but gives the module remote access to its subscriber credentials over Bluetooth; the module again uses its GSM radio and the car aerial, while the phone's cellular aerial is off. Green two-way arrows show the cellular path; dashed blue arrows show the Bluetooth link. These are functional relationships, not wiring or present compatibility claims.</desc>
+  <defs>
+    <marker id="cell-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.5" markerHeight="3.5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
+    <marker id="bt-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#366a81"/></marker>
+    <marker id="sim-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#946b36"/></marker>
+  </defs>
+  <rect width="600" height="1448" fill="#f4f3ec"/>
+  <g fill="#203e33">
+    <text x="25" y="41" font-size="31" font-weight="bold">Who makes the cellular link?</text>
+    <text x="25" y="78" font-size="25">2010 UK Boxster · optional systems</text>
+  </g>
+
+  <!-- HFP: the phone is the cellular telephone; the car is its hands-free terminal. -->
+  <rect x="20" y="108" width="560" height="405" rx="8" fill="#fff" stroke="#9cad9e"/>
+  <g fill="#203e33">
+    <text x="40" y="148" font-size="30" font-weight="bold">HFP · phone radio</text>
+    <text x="40" y="183" font-size="25">HFP shown without a phone cradle</text>
+  </g>
+  <g stroke="#9cad9e" fill="#edf4ef">
+    <rect x="44" y="211" width="250" height="110" rx="5"/>
+    <rect x="44" y="356" width="250" height="54" rx="5"/>
+    <rect x="44" y="445" width="250" height="54" rx="5"/>
+  </g>
+  <rect x="350" y="211" width="206" height="110" rx="5" fill="#f0f5f7" stroke="#9cad9e"/>
+  <g fill="#203e33" font-size="26" text-anchor="middle">
+    <text x="169" y="243" font-size="28" font-weight="bold">Phone</text>
+    <text x="169" y="274">SIM + cellular</text>
+    <text x="169" y="305">radio</text>
+    <text x="169" y="391">Phone aerial</text>
+    <text x="169" y="480">Mobile network</text>
+    <text x="453" y="243">Car microphone,</text>
+    <text x="453" y="274">speakers and</text>
+    <text x="453" y="305">call controls</text>
+  </g>
+  <g fill="none" stroke="#176b53" stroke-width="3" marker-start="url(#cell-arr)" marker-end="url(#cell-arr)">
+    <path d="M169 323V354"/>
+    <path d="M169 412V443"/>
+  </g>
+  <path d="M304 266H340" fill="none" stroke="#366a81" stroke-width="3" stroke-dasharray="5 4" marker-start="url(#bt-arr)" marker-end="url(#bt-arr)"/>
+  <g font-size="26" text-anchor="middle">
+    <text x="453" y="361" fill="#366a81" font-weight="bold">Bluetooth HFP</text>
+    <text x="453" y="393" fill="#366a81">voice + basic</text>
+    <text x="453" y="425" fill="#366a81">call control</text>
+    <text x="453" y="465" fill="#203e33">Phone keeps the</text>
+    <text x="453" y="497" fill="#203e33">cellular link.</text>
+  </g>
+
+  <!-- Direct SIM: subscriber credentials are available inside PCM. -->
+  <rect x="20" y="533" width="560" height="390" rx="8" fill="#fff" stroke="#9cad9e"/>
+  <g fill="#203e33">
+    <text x="40" y="573" font-size="30" font-weight="bold">SIM inserted into PCM</text>
+    <text x="40" y="608" font-size="25">Telephone module required</text>
+  </g>
+  <g stroke="#9cad9e" fill="#edf4ef">
+    <rect x="44" y="636" width="250" height="80" rx="5"/>
+    <rect x="44" y="751" width="250" height="54" rx="5"/>
+    <rect x="44" y="840" width="250" height="54" rx="5"/>
+  </g>
+  <rect x="350" y="636" width="206" height="80" rx="5" fill="#f8f1e6" stroke="#b8a487"/>
+  <g fill="#203e33" font-size="26" text-anchor="middle">
+    <text x="169" y="669" font-size="28" font-weight="bold">PCM module</text>
+    <text x="169" y="701">GSM radio</text>
+    <text x="169" y="786">Car aerial</text>
+    <text x="169" y="875">Mobile network</text>
+    <text x="453" y="669">SIM inserted</text>
+    <text x="453" y="701">into PCM</text>
+    <text x="453" y="840">Car handles</text>
+    <text x="453" y="872">speech and</text>
+    <text x="453" y="904">call control.</text>
+  </g>
+  <g fill="none" stroke="#176b53" stroke-width="3" marker-start="url(#cell-arr)" marker-end="url(#cell-arr)">
+    <path d="M169 718V749"/>
+    <path d="M169 807V838"/>
+  </g>
+  <path d="M304 676H340" fill="none" stroke="#946b36" stroke-width="3" marker-start="url(#sim-arr)" marker-end="url(#sim-arr)"/>
+  <g fill="#946b36" font-size="26" text-anchor="middle">
+    <text x="453" y="756">Subscriber</text>
+    <text x="453" y="788">credentials</text>
+  </g>
+
+  <!-- SAP: the Bluetooth connection accesses the SIM, rather than relaying voice. -->
+  <rect x="20" y="943" width="560" height="390" rx="8" fill="#fff" stroke="#9cad9e"/>
+  <g fill="#203e33">
+    <text x="40" y="983" font-size="30" font-weight="bold">SAP · remote SIM access</text>
+    <text x="40" y="1018" font-size="25">Module + compatible SAP phone</text>
+  </g>
+  <g stroke="#9cad9e" fill="#edf4ef">
+    <rect x="44" y="1046" width="250" height="80" rx="5"/>
+    <rect x="44" y="1161" width="250" height="54" rx="5"/>
+    <rect x="44" y="1250" width="250" height="54" rx="5"/>
+  </g>
+  <rect x="350" y="1046" width="206" height="80" rx="5" fill="#f8f1e6" stroke="#b8a487"/>
+  <g fill="#203e33" font-size="26" text-anchor="middle">
+    <text x="169" y="1079" font-size="28" font-weight="bold">PCM module</text>
+    <text x="169" y="1111">GSM radio</text>
+    <text x="169" y="1196">Car aerial</text>
+    <text x="169" y="1285">Mobile network</text>
+    <text x="453" y="1079">Phone’s SIM</text>
+    <text x="453" y="1111">stays in phone</text>
+    <text x="453" y="1265">Phone aerial</text>
+    <text x="453" y="1297">off in SAP.</text>
+  </g>
+  <g fill="none" stroke="#176b53" stroke-width="3" marker-start="url(#cell-arr)" marker-end="url(#cell-arr)">
+    <path d="M169 1128V1159"/>
+    <path d="M169 1217V1248"/>
+  </g>
+  <path d="M304 1086H340" fill="none" stroke="#366a81" stroke-width="3" stroke-dasharray="5 4" marker-start="url(#bt-arr)" marker-end="url(#bt-arr)"/>
+  <g fill="#366a81" font-size="26" text-anchor="middle">
+    <text x="453" y="1166" font-weight="bold">Bluetooth SAP</text>
+    <text x="453" y="1198">SIM access</text>
+  </g>
+  <g fill="#53675d" font-size="24">
+    <text x="25" y="1370">Functional paths, not a wiring diagram.</text>
+    <text x="25" y="1403">Original functions; present phone and</text>
+    <text x="25" y="1433">network support varies.</text>
+  </g>
+</svg>

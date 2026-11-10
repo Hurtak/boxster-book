@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 800" role="img" aria-labelledby="title desc" font-family="sans-serif">
+<title id="title">Rim width and positive wheel offset</title>
+<desc id="desc">Two aligned, schematic wheel sections compare ET55 and ET45 at the same rim width. In both, positive offset is measured outwards from the rim centre plane to the same fixed hub mounting face. Nominal rim width is measured between the inner faces of the rim flanges, excluding their thickness. Reducing offset from positive 55 to positive 45 millimetres shifts the rim centre and both edges outwards by 10 millimetres; the mounting face stays fixed. The rim profiles are illustrative, not measured Porsche geometry or a fitment approval.</desc>
+<rect width="480" height="800" fill="#f5f5ee"/>
+<defs>
+  <marker id="offset-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#17654c"/></marker>
+  <path id="rim-section" d="M45 166H63V180H347V166H365V197H45ZM45 280H63V266H347V280H365V249H45Z"/>
+</defs>
+<g fill="#233c31">
+  <text x="24" y="35" font-size="26" font-weight="bold">Positive wheel offset (ET)</text>
+  <g font-size="22"><text x="24" y="76">← Inboard</text><text x="315" y="76">Outboard →</text></g>
+</g>
+<!-- Both sections share the fixed mounting plane. Positive x is outboard. -->
+<path d="M315 143V600" stroke="#17654c" stroke-width="3" stroke-dasharray="8 6"/>
+<!-- ET55: inner flange faces x=63 and 347; centre x=205; hub face x=315. -->
+<g fill="none" stroke-linejoin="round">
+  <use href="#rim-section" fill="#e6e8df" stroke="#233c31" stroke-width="4"/>
+  <path d="M315 208Q335 208 347 197H360Q340 210 327 220V226Q340 238 360 249H347Q335 238 315 238Z" fill="#d3e2d6" stroke="#233c31" stroke-width="3"/>
+  <path d="M205 145V293" stroke="#77887b" stroke-width="2" stroke-dasharray="6 5"/>
+  <path d="M315 208V238" stroke="#17654c" stroke-width="6"/>
+  <path d="M205 137H315" stroke="#17654c" stroke-width="2" marker-start="url(#offset-arrow)" marker-end="url(#offset-arrow)"/>
+  <path d="M63 285V315M347 285V315M63 307H347" stroke="#17654c" stroke-width="2"/>
+  <path d="M63 307H347" stroke="#17654c" stroke-width="2" marker-start="url(#offset-arrow)" marker-end="url(#offset-arrow)"/>
+  <path d="M164 233H205M368 231H315" stroke="#67796b" stroke-width="2"/>
+</g>
+<g fill="#233c31" font-size="22">
+  <text x="24" y="118" font-size="24" font-weight="bold">ET55</text>
+  <text x="260" y="118" text-anchor="middle">+55 mm</text>
+  <text x="24" y="239">Centre plane</text>
+  <text x="378" y="219">Fixed</text><text x="378" y="245">hub face</text>
+  <text x="205" y="338" text-anchor="middle">Rim width</text>
+  <text x="205" y="366" text-anchor="middle">between flange faces</text>
+</g>
+<path d="M24 391H456" stroke="#c7d1c6" stroke-width="2"/>
+<!-- ET45: the same rim translated 20 units outwards; the hub face remains x=315. -->
+<g fill="none" stroke-linejoin="round">
+  <use href="#rim-section" transform="translate(20 310)" fill="#e0ecea" stroke="#277c84" stroke-width="4"/>
+  <path d="M315 518Q345 518 367 507H380Q350 520 327 530V536Q350 548 380 559H367Q345 548 315 548Z" fill="#e0ecea" stroke="#277c84" stroke-width="3"/>
+  <path d="M225 455V603" stroke="#277c84" stroke-width="2" stroke-dasharray="6 5"/>
+  <path d="M315 518V548" stroke="#17654c" stroke-width="6"/>
+  <path d="M225 447H315" stroke="#17654c" stroke-width="2" marker-start="url(#offset-arrow)" marker-end="url(#offset-arrow)"/>
+  <path d="M83 595V625M367 595V625M83 617H367" stroke="#17654c" stroke-width="2"/>
+  <path d="M83 617H367" stroke="#17654c" stroke-width="2" marker-start="url(#offset-arrow)" marker-end="url(#offset-arrow)"/>
+  <path d="M164 543H225M368 541H315" stroke="#67796b" stroke-width="2"/>
+</g>
+<g fill="#233c31" font-size="22">
+  <text x="24" y="428" font-size="24" font-weight="bold" fill="#277c84">ET45</text>
+  <text x="270" y="428" text-anchor="middle">+45 mm</text>
+  <text x="24" y="549">Centre plane</text>
+  <text x="378" y="529">Fixed</text><text x="378" y="555">hub face</text>
+  <text x="225" y="648" text-anchor="middle">Same rim width</text>
+  <text x="24" y="692" font-weight="bold">55 − 45 = 10 mm</text>
+  <text x="24" y="722" fill="#277c84">Rim moves outwards →</text>
+</g>
+<g fill="#53685a" font-size="18">
+  <text x="24" y="758">Schematic rim profile. Illustrative change;</text>
+  <text x="24" y="782">no fitment approval is implied.</text>
+</g>
+</svg>

@@ -8,9 +8,9 @@ The source PDF was independently opened online and its lighting spread was rende
 
 | Local file | Image object | Origin and treatment |
 | --- | --- | --- |
-| `porsche-front-lights.jpg` | PDF object 120; 381 × 282 px | Photograph captioned “Night-time illumination (front)”. Original JPEG extracted without cropping, rescaling or retouching. Used to show the physical relationship of the main headlamps and auxiliary modules; not proof of an individual car's equipment. |
+| `porsche-front-lights.jpg` | PDF object 120; 381 × 282 px | Photograph captioned “Night-time illumination (front)”. Original JPEG extracted without cropping, rescaling or retouching. Shows the optional bi-xenon main headlamps above illuminated lower LED modules. No model badge is visible, so the photograph is not identified as the 2.9 or S. |
 | `porsche-boxster-s-rear-lights.jpg` | PDF object 121; 385 × 282 px | Photograph captioned “Night-time illumination (rear)”. Boxster S model designation visible. Original JPEG extracted without cropping, rescaling or retouching. Explicitly labelled as an S comparison; ordinary 2.9 LED rear-light claim is separately sourced. |
 
 Copyright remains with Dr. Ing. h.c. F. Porsche AG. These reproductions are included for the requested personal reading draft; the project's MIT licence does not relicense them. No claim is made that an archive host owns the photographs.
 
-The three explanatory SVG diagrams and the D3 circuit are original project material. Their geometry is schematic and is not a reproduction of Porsche wiring, photometry or workshop drawings.
+The explanatory SVG diagrams, D3 circuit and 3D explorer are original project material. Their geometry is schematic and is not a reproduction of Porsche wiring, photometry or workshop drawings.

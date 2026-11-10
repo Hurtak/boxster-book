@@ -1,10 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 410" font-family="sans-serif" fill="#243e35" role="img" aria-labelledby="t d">
-<title id="t">An open differential averages the two output speeds</title><desc id="d">Carrier 300 rpm, left output 240 rpm and right output 360 rpm. Each differs from the mean by 20 percent.</desc>
-<rect width="600" height="410" fill="#fff"/>
-<text x="300" y="35" text-anchor="middle" font-size="26">Carrier (ring gear)</text>
-<rect x="80" y="55" width="440" height="64" rx="12" fill="#eef3ee" stroke="#c9d5cc"/>
-<text x="300" y="98" text-anchor="middle" font-size="32" fill="#176b53">300 rpm</text>
-<path d="M300 119V151M150 175V151H450V175" fill="none" stroke="#176b53" stroke-width="4"/>
-<g fill="#eef3ee" stroke="#c9d5cc"><rect x="35" y="175" width="230" height="130" rx="12"/><rect x="335" y="175" width="230" height="130" rx="12"/></g>
-<g text-anchor="middle"><text x="150" y="206" font-size="24">Left</text><text x="450" y="206" font-size="24">Right</text><text x="150" y="254" font-size="36" fill="#176b53">240</text><text x="450" y="254" font-size="36" fill="#9a4e22">360</text><text x="150" y="286" font-size="22">rpm</text><text x="450" y="286" font-size="22">rpm</text><text x="300" y="349" font-size="26">240 + 360 = 2 × 300</text><text x="300" y="389" font-size="22">Illustrative difference: ±20% about the mean.</text></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 650" font-family="'Source Sans 3', sans-serif" fill="#243e35" role="img" aria-labelledby="t d">
+<title id="t">An open differential: gears and output-speed averaging</title>
+<desc id="d">The ring gear drives the carrier and its cross-pin. Spider pinions on that pin mesh with both side gears, each fixed to an output shaft. With the carrier at 300 rpm, prescribed outputs of 240 and 360 rpm average back to 300 rpm. The pinions spin on the cross-pin to allow this difference. This is a functional section, not measured gear geometry or a tyre-slip simulation.</desc>
+<rect width="360" height="650" fill="#fff"/>
+<g text-anchor="middle">
+<text x="180" y="22" font-size="19">Ring gear drives the carrier</text>
+<text x="180" y="55" font-size="24" fill="#176b53">Carrier: 300 rpm</text>
+</g>
+<g fill="none" stroke="#176b53" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M180 64V78M175 73L180 79L185 73"/></g>
+<rect x="52" y="81" width="256" height="181" rx="12" fill="#f6f8f5" stroke="#176b53" stroke-width="3"/>
+<path d="M180 84V259" fill="none" stroke="#6c7b72" stroke-width="5" stroke-linecap="round"/>
+<path d="M27 171H97M333 171H263" fill="none" stroke="#176b53" stroke-width="12" stroke-linecap="round"/>
+<g fill="#dbeae1" stroke="#176b53" stroke-width="2.5" stroke-linejoin="round"><path d="M96 116L143 144V198L96 226Z"/><path d="M264 116L217 144V198L264 226Z"/></g>
+<g fill="none" stroke="#176b53" stroke-width="1.5" stroke-linecap="round"><path d="M111 125L122 145M125 134L135 153M111 217L122 197M125 208L135 189M249 125L238 145M235 134L225 153M249 217L238 197M235 208L225 189"/></g>
+<g fill="#f1dbc9" stroke="#9a4e22" stroke-width="2.5" stroke-linejoin="round"><path d="M143 144L156 116H204L217 144Z"/><path d="M143 198L156 226H204L217 198Z"/></g>
+<rect x="116" y="88" width="128" height="23" fill="#f6f8f5"/>
+<rect x="138" y="158" width="84" height="25" rx="4" fill="#f6f8f5"/>
+<g text-anchor="middle" font-size="17"><text x="180" y="105" fill="#9a4e22">Spider pinions</text><text x="180" y="176" fill="#526159">Cross-pin</text></g>
+<path d="M96 226V278M264 226V278" fill="none" stroke="#176b53" stroke-width="1.5" stroke-linecap="round"/>
+<g text-anchor="middle" font-size="17" fill="#176b53"><text x="96" y="298">Left side gear</text><text x="264" y="298">Right side gear</text></g>
+<g fill="#eef3ee" stroke="#c9d5cc"><rect x="12" y="315" width="161" height="113" rx="12"/><rect x="187" y="315" width="161" height="113" rx="12"/></g>
+<g text-anchor="middle"><text x="92.5" y="340" font-size="19">Left output</text><text x="267.5" y="340" font-size="19">Right output</text><text x="92.5" y="376" font-size="27" fill="#176b53">240 rpm</text><text x="267.5" y="376" font-size="27" fill="#9a4e22">360 rpm</text><text x="92.5" y="406" font-size="16">−60 vs carrier</text><text x="267.5" y="406" font-size="16">+60 vs carrier</text><text x="180" y="461" font-size="18">Pinions also spin on the cross-pin.</text><text x="180" y="489" font-size="18">One side gains what the other loses.</text><text x="180" y="525" font-size="23" fill="#176b53">240 + 360 = 2 × 300</text><text x="180" y="563" font-size="16">Cross-pin fixed to carrier; pinions free to spin.</text><text x="180" y="600" font-size="16" fill="#526159">Functional section; illustrative speeds.</text><text x="180" y="624" font-size="16" fill="#526159">No tyre-slip or vehicle-motion calculation.</text></g>
 </svg>

@@ -16,4 +16,4 @@ Both third-party images are Porsche factory illustrations retained locally for t
 - **Original identification:** “Boxster S”. A factory photographic cutaway locates front radiator installation, rear engine/gearbox, coolant tank and exhaust. This is a related-model layout illustration, not evidence of the reference car's installed gearbox, PASM, brake equipment or other options.
 - **Local treatment:** Embedded JPEG extracted from the same PDF with Poppler`pdfimages`, image003,971×536pixels. The original numbered key is a separate PDF text/vector overlay and is not part of the JPEG; no unreadable spread text is reproduced. No compositing or part changes.
 
-The four SVG illustrations in this chapter and the D3 interactive are original explanatory artwork created for the book. Their shapes and routes are functional schematics, not Porsche CAD or workshop assembly drawings.
+The chapter's schematic SVGs, D3 interactive and 3D component explorer are original explanatory artwork created for the book. Their shapes and routes are functional schematics, not Porsche CAD or workshop assembly drawings.

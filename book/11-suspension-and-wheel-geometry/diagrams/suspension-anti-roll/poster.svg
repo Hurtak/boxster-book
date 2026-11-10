@@ -1,19 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="460" viewBox="0 0 360 460" role="img" aria-labelledby="title desc">
-<title id="title">An anti-roll bar responds to unequal left and right wheel travel</title><desc id="desc">When both wheels rise equally, the bar rotates in its mounts without added twist. When one rises relative to the other, its connecting arms twist the bar. This schematic omits real lever angles.</desc>
-<rect width="360" height="460" fill="#faf8f1"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="830" viewBox="0 0 360 830" role="img" aria-labelledby="title desc">
+<title id="title">Anti-roll bar: rotation versus added torsional twist</title>
+<desc id="desc">An oblique functional schematic shows a shaft supported in body-mounted bushes, lever arms, and separate drop links to moving suspension. With only the left wheel in bump, the bar resists with downward force on the left suspension and upward force on the right. End-orientation comparisons use the same viewing direction: equal 25 millimetre bump on both sides rotates the bar without added twist; left 25 and right zero adds twist. All travel, angles, geometry and arrow lengths are illustrative, not Boxster measurements.</desc>
+<rect width="360" height="830" fill="#faf8f1"/>
 <g font-family="Arial,sans-serif" font-size="16" fill="#273e35" text-anchor="middle">
-<text x="180" y="28" font-size="20" font-weight="bold">Compare left with right</text>
-<text x="180" y="62">Both wheels rise 25 mm</text>
-<path d="M30 87H330" stroke="#273e35" stroke-width="9"/>
-<path d="M65 135H100V118H260V135H295" stroke="#637a6e" stroke-width="6" fill="none"/>
-<g fill="#273e35"><rect x="45" y="112" width="29" height="62" rx="7"/><rect x="286" y="112" width="29" height="62" rx="7"/></g>
-<path d="M121 87V118M239 87V118" stroke="#82988d" stroke-width="4"/>
-<text x="180" y="204">0 mm difference → no added twist</text>
-<text x="180" y="254">Only the left wheel rises 25 mm</text>
-<path d="M30 279H330" stroke="#273e35" stroke-width="9"/>
-<path d="M65 327H100V310H260V352H295" stroke="#a6552b" stroke-width="6" fill="none"/>
-<g fill="#273e35"><rect x="45" y="304" width="29" height="62" rx="7"/><rect x="286" y="329" width="29" height="62" rx="7"/></g>
-<path d="M121 279V310M239 279V310" stroke="#82988d" stroke-width="4"/>
-<text x="180" y="415">25 mm difference → torsional resistance</text>
-<text x="180" y="444" font-size="14">Illustrative travel; body held level.</text>
-</g></svg>
+  <text x="180" y="28" font-size="20" font-weight="bold">Rotation or added twist?</text>
+  <text x="180" y="53">Functional view; illustrative travel</text>
+  <text x="180" y="88" font-size="18">Body held level</text>
+  <text x="180" y="111">Bushes allow bar rotation</text>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 134H332" stroke="#273e35" stroke-width="10"/>
+    <path d="M96 139V178M257 139V178" stroke="#82988d" stroke-width="6"/>
+    <path d="M48 190H284M48 190L73 235M284 190L312 260" stroke="#a6552b" stroke-width="8"/>
+    <path d="M73 235V305M312 260V330" stroke="#273e35" stroke-width="3"/>
+  </g>
+  <g fill="#faf8f1" stroke="#273e35" stroke-width="2">
+    <rect x="87" y="178" width="18" height="24" rx="5"/>
+    <rect x="248" y="178" width="18" height="24" rx="5"/>
+    <circle cx="73" cy="235" r="4"/><circle cx="312" cy="260" r="4"/>
+  </g>
+  <path d="M91 190H101M252 190H262" stroke="#a6552b" stroke-width="7" stroke-linecap="round"/>
+  <text x="180" y="172">Torsion section</text>
+  <path d="M180 176V183" stroke="#82988d" stroke-width="1.5"/>
+  <text x="180" y="244">Lever arms</text>
+  <path d="M134 239L65 216M226 239L293 220" stroke="#82988d" stroke-width="1.5" fill="none"/>
+  <text x="180" y="290">Drop links</text>
+  <path d="M137 296H80M223 296H305" stroke="#82988d" stroke-width="1.5"/>
+  <g fill="#273e35"><rect x="58" y="290" width="30" height="50" rx="7"/><rect x="297" y="315" width="30" height="50" rx="7"/></g>
+  <g fill="#faf8f1"><circle cx="73" cy="305" r="5"/><circle cx="312" cy="330" r="5"/></g>
+  <path d="M43 296V334M38 327L43 334L48 327M341 354V316M336 323L341 316L346 323" fill="none" stroke="#a6552b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="75" y="395">Left +25 mm</text><text x="298" y="395">Right 0 mm</text>
+  <text x="180" y="420">Arrows: bar force on suspension</text>
+  <path d="M18 442H342" stroke="#c2cbc5"/>
+  <text x="180" y="472" font-size="18">Compare both bar ends</text>
+  <text x="180" y="495">Same viewing direction along the shaft</text>
+  <g stroke-linecap="round">
+    <path d="M70 520H100" stroke="#273e35" stroke-width="6"/>
+    <path d="M239 520H269" stroke="#a6552b" stroke-width="3"/>
+  </g>
+  <text x="133" y="525">Left</text><text x="303" y="525">Right</text>
+  <!-- Equal displacement: both witness spokes rotate together from the dashed reference. -->
+  <circle cx="72" cy="583" r="35" fill="none" stroke="#c2cbc5" stroke-width="2"/>
+  <path d="M72 583V618" stroke="#82988d" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M72 583L56.8 614.5" stroke="#273e35" stroke-width="6" stroke-linecap="round"/>
+  <path d="M72 583L60.3 607.3" stroke="#a6552b" stroke-width="3" stroke-linecap="round"/>
+  <text x="228" y="562">Both wheels +25 mm</text>
+  <text x="228" y="586">0 mm difference</text>
+  <text x="228" y="610">Rotate together</text>
+  <text x="228" y="634">No added twist</text>
+  <!-- Unequal displacement: orientation difference represents added twist, not a measured angle. -->
+  <circle cx="72" cy="696" r="35" fill="none" stroke="#c2cbc5" stroke-width="2"/>
+  <path d="M72 696V731" stroke="#82988d" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M72 696L56.8 727.5" stroke="#273e35" stroke-width="6" stroke-linecap="round"/>
+  <path d="M72 696V723" stroke="#a6552b" stroke-width="3" stroke-linecap="round"/>
+  <text x="228" y="680">Left +25; right 0 mm</text>
+  <text x="228" y="704">25 mm difference</text>
+  <text x="228" y="728">Added torsional twist</text>
+  <text x="180" y="769" font-size="14">Dashed line: zero-travel orientation.</text>
+  <text x="180" y="790" font-size="14">Ideal symmetric, initially unpreloaded bar.</text>
+  <text x="180" y="811" font-size="14">Angles and forces have no measured scale.</text>
+</g>
+</svg>

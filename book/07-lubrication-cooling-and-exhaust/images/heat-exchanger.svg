@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" role="img" aria-labelledby="fluid-heat-title fluid-heat-desc">
+  <title id="fluid-heat-title">Oil and coolant exchange heat through a separating wall</title>
+  <desc id="fluid-heat-desc">Enlarged conceptual section of two adjacent passages. Oil occupies the upper channel and coolant the lower channel, with a continuous metal wall between them. Brown arrows show heat passing from the hotter oil through the wall into cooler coolant, not liquid passing between the channels. If coolant is hotter than oil, heat transfer reverses. The section does not depict the Porsche exchanger's plate count or internal routing; wall thickness is exaggerated.</desc>
+  <defs>
+    <pattern id="fluid-heat-metal" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#dce0d8"/>
+      <path d="M-2 2L2-2M0 10L10 0M8 12L12 8" fill="none" stroke="#788878" stroke-width="1.5"/>
+    </pattern>
+    <marker id="fluid-heat-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0L7 3.5L0 7Z" fill="#8d5933"/>
+    </marker>
+  </defs>
+  <rect width="600" height="700" fill="#f7f7f2"/>
+  <g font-family="sans-serif" fill="#24342c" text-anchor="middle">
+    <text x="300" y="44" font-size="32" font-weight="700">Heat crosses the wall</text>
+    <text x="300" y="84" font-size="27">Oil and coolant remain separate</text>
+
+    <!-- Open ends indicate passages continuing beyond this enlarged section. -->
+    <rect x="60" y="146" width="480" height="112" fill="#f2ddb9"/>
+    <rect x="60" y="278" width="480" height="112" fill="#d5e8ef"/>
+    <g fill="url(#fluid-heat-metal)" stroke="#788878" stroke-width="2">
+      <rect x="60" y="132" width="480" height="14"/>
+      <rect x="60" y="258" width="480" height="20"/>
+      <rect x="60" y="390" width="480" height="14"/>
+    </g>
+
+    <text x="190" y="191" font-size="29" font-weight="700">Oil channel</text>
+    <text x="190" y="231" font-size="27">Hotter here</text>
+    <text x="190" y="325" font-size="29" font-weight="700">Coolant channel</text>
+    <text x="190" y="365" font-size="27">Cooler here</text>
+    <text x="447" y="181" font-size="28" font-weight="700" fill="#8d5933">Heat</text>
+    <g fill="none" stroke="#8d5933" stroke-width="5" marker-end="url(#fluid-heat-arrow)">
+      <path d="M415 207V325"/>
+      <path d="M480 207V325"/>
+    </g>
+
+    <path d="M540 268H570V444H452" fill="none" stroke="#536557" stroke-width="2"/>
+    <circle cx="540" cy="268" r="4" fill="#536557"/>
+    <text x="292" y="453" font-size="28">Metal separating wall</text>
+    <text x="300" y="511" font-size="28" font-weight="700">Heat: hotter fluid → cooler fluid</text>
+    <text x="300" y="554" font-size="28">If coolant is warmer,</text>
+    <text x="300" y="592" font-size="28">heat passes towards the oil.</text>
+    <text x="300" y="642" font-size="24">Conceptual section; wall thickness exaggerated.</text>
+    <text x="300" y="676" font-size="24">No plate count or internal routing shown.</text>
+  </g>
+</svg>

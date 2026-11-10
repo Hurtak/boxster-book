@@ -25,11 +25,11 @@ export function mount(host, { state, signal }) {
   if (!Number.isInteger(state.shift) || !shifts[state.shift]) state.shift = 0;
   if (!Number.isInteger(state.phase) || state.phase < 0 || state.phase > 3) state.phase = 0;
   const { stage, controls, explanation } = panel(host, {
-    title: 'A gear ready behind an open clutch',
-    description: 'Choose an upshift or downshift, then move through four stages. Read the clutch state as well as the selected gear.',
-    note: 'Functional schematic. Transfer shows regulated frictional overlap, never two clutches rigidly locked at different ratios. Stages are not equally timed; the next preselection is an illustrative prediction, not a Porsche shift map.',
+    title: 'A selected gear can turn behind an open clutch',
+    description: 'Choose a shift, then follow engine drive and the gear already selected on the other path. An open clutch disconnects the engine; it does not stop that input shaft.',
+    note: 'Functional paths unfolded side by side; the input shafts are actually concentric. Clutch symbols show friction contact or an open gap, not disc count or geometry. Transfer uses regulated slip, never two rigidly locked ratios. Stages have no calibrated timing; the next gear is an illustrative prediction.',
   });
-  stage.style.height = '460px';
+  stage.style.height = '620px';
   const wrapper = document.createElement('div');
   const label = document.createElement('label');
   const select = document.createElement('select');
@@ -52,35 +52,59 @@ export function mount(host, { state, signal }) {
     svg.selectAll('*').remove();
     const model = shiftState(state.shift, state.phase);
     const cx = width / 2;
-    const text = (x, y, value, size = 20, colour = '#243c32') => svg.append('text').attr('x', x).attr('y', y).attr('text-anchor', 'middle').attr('font-size', size).attr('fill', colour).text(value);
+    const ink = '#243c32';
+    const drive = '#176b53';
+    const passive = '#697c71';
+    const amber = '#a56418';
+    const transfer = state.phase === 1;
+    svg.append('title').text(`PDK ${model.from} to ${model.to}: ${phases[state.phase]}`);
+    svg.append('desc').text('Two unfolded clutch and selected-gear paths share an output. A visible gap marks an open clutch. Green arrows show engine drive, grey upward arrows show a selected shaft being turned from the output, and amber shows regulated frictional handover. The real input shafts are concentric.');
+    const text = (x, y, value, size = 20, colour = ink) => svg.append('text').attr('x', x).attr('y', y).attr('text-anchor', 'middle').attr('font-size', size).attr('fill', colour).text(value);
+    const halo = node => node.attr('stroke', '#f1f3f2').attr('stroke-width', 7).attr('paint-order', 'stroke');
+    const line = (x1, y1, x2, y2, colour, weight = 4) => svg.append('line').attr('x1', x1).attr('y1', y1).attr('x2', x2).attr('y2', y2).attr('stroke', colour).attr('stroke-width', weight);
     const box = (x, y, w, h, fill, stroke) => svg.append('rect').attr('x', x).attr('y', y).attr('width', w).attr('height', h).attr('rx', 5).attr('fill', fill).attr('stroke', stroke).attr('stroke-width', 2);
-    box(cx - 70, 12, 140, 46, '#edf3ee', '#526c5d');
-    text(cx, 42, 'Engine', 23);
+    const arrow = (x, y, down, colour) => svg.append('path').attr('d', down ? `M${x - 7},${y - 9} L${x},${y} L${x + 7},${y - 9}` : `M${x - 7},${y + 9} L${x},${y} L${x + 7},${y + 9}`).attr('fill', 'none').attr('stroke', colour).attr('stroke-width', 3);
+
+    box(cx - 68, 12, 136, 42, '#edf3ee', '#526c5d');
+    text(cx, 40, 'Engine', 23);
+    line(cx, 54, cx, 78, ink);
+    line(width * 0.25, 78, width * 0.75, 78, ink);
     for (const clutch of [1, 2]) {
       const x = width * (clutch === 1 ? 0.25 : 0.75);
       const status = model.clutches[clutch];
-      const transfer = state.phase === 1;
       const active = status !== 'open';
-      const colour = transfer ? '#ac681b' : active ? '#176b53' : '#84938b';
-      const line = svg.append('path').attr('d', `M${cx},58 V86 H${x} V360 H${cx} V376`).attr('fill', 'none').attr('stroke', colour).attr('stroke-width', active ? 7 : 3);
-      if (!active) line.attr('stroke-dasharray', '7 6');
-      const card = Math.min(142, width * 0.44);
-      box(x - card / 2, 115, card, 76, active ? '#edf4ef' : '#f6f6f3', colour);
-      text(x, 143, `K${clutch} · ${clutch === 1 ? 'odd' : 'even'}`, 21);
-      text(x, 174, status, 20, colour);
-      text(x, 222, clutch === 1 ? 'Inner shaft' : 'Hollow shaft', 20).attr('stroke', '#fff').attr('stroke-width', 5).attr('paint-order', 'stroke');
-      box(x - card / 2, 245, card, 74, '#fff', colour);
-      text(x, 274, `Gear ${model.gears[clutch]}`, 23);
-      text(x, 304, transfer ? 'handover' : active ? 'driving' : 'waiting', 20, colour);
+      const colour = transfer ? amber : active ? drive : passive;
+      const lowerPlate = active ? 156 : 178;
+      line(x, 78, x, 150, ink);
+      halo(text(x, 114, `Clutch K${clutch}`, 21));
+      // The two faces touch when clamped or slipping; only an open clutch has a gap.
+      line(x - 30, 150, x + 30, 150, ink, 6);
+      line(x - 30, lowerPlate, x + 30, lowerPlate, colour, 6);
+      line(x, lowerPlate, x, 314, colour, active ? 6 : 3);
+      halo(text(x, 212, status, 20, colour));
+      halo(text(x, 255, `Shaft ${clutch}`, 21));
+      halo(text(x, 282, clutch === 1 ? 'inner · odd + R' : 'hollow · even', 18));
+      const card = Math.min(156, width * 0.45);
+      box(x - card / 2, 314, card, 70, '#fff', colour);
+      text(x, 342, `Gear ${model.gears[clutch]}`, 23);
+      text(x, 369, transfer ? 'handover' : active ? 'engine drive' : 'output-driven', 18, colour);
+      line(x, 384, x, 432, colour, active ? 6 : 3);
+      arrow(x, active ? 419 : 398, active, colour);
     }
-    box(cx - 85, 376, 170, 44, '#edf3ee', '#526c5d');
-    text(cx, 405, 'Final drive', 22);
-    text(cx, 451, 'Then differential → wheels', width < 330 ? 19 : 21);
+    line(width * 0.25, 432, width * 0.75, 432, ink, 5);
+    line(cx, 432, cx, 487, ink, 5);
+    halo(text(cx, 465, 'Common output', 21));
+    box(cx - 106, 487, 212, 68, '#edf3ee', '#526c5d');
+    text(cx, 513, 'Final drive', 22);
+    text(cx, 544, 'then differential', 20);
+    line(cx, 555, cx, 571, ink, 4);
+    arrow(cx, 571, true, ink);
+    text(cx, 604, 'Rear wheels', 21);
     const detail = [
-      `Gear ${model.from} drives through K${model.outgoing}, which is closed. Gear ${model.to} is already selected on the other path, but K${model.incoming} is open. That path is ready without connecting the engine through a second ratio.`,
-      `Both gears stay selected. K${model.outgoing} releases as K${model.incoming} applies. Controlled clutch slip permits the engine speed to move towards the new ratio while drive is handed over. The amber paths indicate transfer, not fixed shares of torque.`,
-      `Gear ${model.to} now drives through closed K${model.incoming}. K${model.outgoing} is open; gear ${model.from} can remain selected briefly without carrying engine drive.`,
-      `Gear ${model.to} continues to drive. Behind open K${model.outgoing}, the old gear is deselected and gear ${model.next} is prepared for a possible ${model.next > model.to ? 'upshift' : 'downshift'}. The controller can choose a different next gear when demand changes.`,
+      `Gear ${model.from} drives through K${model.outgoing}, which is closed. Gear ${model.to} is already selected on the other path, but K${model.incoming} is open. The common output turns the selected ${model.to} path back towards open K${model.incoming}; its shaft can run at a different speed from the engine. The grey upward arrow shows this mechanical connection, not a second engine-drive path.`,
+      `Both gears stay selected. K${model.outgoing} releases as K${model.incoming} applies. Regulated clutch slip allows the engine speed to ${model.to > model.from ? 'fall for this upshift' : 'rise for this downshift'} towards the new ratio while drive is handed over. Amber indicates frictional handover, not fixed shares of torque or two rigidly locked clutches.`,
+      `Gear ${model.to} now drives through closed K${model.incoming}. K${model.outgoing} is open; gear ${model.from} can remain selected briefly and be turned from the output without carrying engine drive. Its open clutch separates this input-shaft speed from the engine.`,
+      `Gear ${model.to} continues to drive. Behind open K${model.outgoing}, the old gear is deselected and gear ${model.next} is synchronised and selected for a possible ${model.next > model.to ? 'upshift' : 'downshift'}. The displayed state is after that selection: the output can turn this shaft through gear ${model.next}. The controller can choose a different next gear when demand changes.`,
     ];
     explanation.textContent = detail[state.phase];
     Object.assign(host.dataset, {

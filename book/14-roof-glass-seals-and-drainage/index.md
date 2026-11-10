@@ -4,6 +4,12 @@ The **2010 Boxster 2.9** has an electrically operated fabric roof with a manuall
 
 Three systems make this possible. The mechanism moves and supports the roof. The glass and seals close the openings around it. Channels, drip pans and drains give water a route out of the body. Understanding their separate jobs helps explain why a roof can move correctly yet leak, or remain dry while developing a window or linkage fault.
 
+Start with their positions around the cabin. The 3D view separates the closed roof's cloth, supporting frame and rigid rear glass from its drive and water-management components. The opening sequence appears later in this chapter.
+
+::: {.book-diagram data-diagram="roof-explorer"}
+![The ordinary roof sits above the cabin, with its motor, paired side gearboxes and stowage well behind the seats. A separated cutaway identifies the fixed header, manual front latch, supporting frame, fabric, rigid heated rear pane, drive paths, compartment cover and side drainage areas.](diagrams/roof-explorer/poster.svg)
+:::
+
 ![The powered fabric roof, closed. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 80. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=38).](images/ordinary-roof-closed.jpg){width=70% alt="The ordinary 987.2 roof closed, showing the curved fabric profile between the windscreen and rear deck."}
 
 ## How the ordinary roof moves
@@ -16,7 +22,7 @@ These flexible shafts, often called roof cables, transmit **rotation**. They do 
 
 The side gearboxes reduce speed and provide the drive to the external levers. Rods with articulated ends can transmit force while their angles change. The frame’s pivots constrain the sections to a repeatable folding path, allowing a large roof to fit into a short compartment.
 
-![Connection map showing one roof motor driving left and right gearboxes through two flexible shafts, then levers and rods moving the roof frame and compartment cover.](roof-drive-chain.svg)
+![Connection map showing one roof motor driving left and right gearboxes through two flexible shafts, then levers and rods moving the roof frame and compartment cover.](images/roof-drive-chain.svg)
 
 *Original schematic of the 2010 2.9 drive architecture. The branches show connections, not the parts’ physical positions or cable routing.*
 
@@ -44,7 +50,7 @@ The console switch requests movement. Small switches elsewhere report mechanical
 
 The handbook also distinguishes an intermediate roof position from a completed movement. Its opening or closing message disappears when the end position is reached. A roof which looks nearly finished may consequently still be short of the condition the system expects.
 
-Porsche quotes **12 seconds** for opening and an operating ceiling of **50 km/h, approximately 30 mph**. The handbook also requires clearance and even support, prohibits operation below **0°C**, and warns against obstructions. Use the car’s handbook for the full operating conditions and sequence.[^operation]
+Porsche’s UK catalogue quotes **12 seconds** for opening and an operating ceiling of **50 km/h, approximately 30 mph**. The MY2010 North American handbook used here also requires clearance and even support, prohibits operation below **0°C**, and warns against obstructions. Use the car’s own market-specific handbook for the full operating conditions and sequence.[^operation]
 
 ## Glass and weather sealing
 
@@ -54,13 +60,13 @@ The doors have frameless glass. When fully raised with the door closed, the uppe
 
 The handbook specifies a drop of a few millimetres when opening the door, followed by raising when it closes. Door-handle sensing and the window mechanism participate in this coordinated action. Inside each door, an electric motor drives a cable regulator which guides the glass up and down. The parts catalogue identifies the regulator, motor and a window-regulator microswitch among the door-handle components.[^windows]
 
-![Conceptual end sections show raised frameless glass meeting a resilient roof seal, then the glass lowered slightly to give clearance before the door swings outwards.](roof-window-seal.svg)
+![Conceptual end sections show raised frameless glass meeting a resilient roof seal, then the glass lowered slightly to give clearance before the door swings outwards.](images/roof-window-seal.svg)
 
 *Original schematic. The drop and seal section are exaggerated; neither is an adjustment specification.*
 
 Roof operation also has to coordinate with the side glass rather than dragging the roof seals over fully seated windows. The small drop at door opening and the window lowering associated with roof movement serve related clearance needs, but they are different events. Neither establishes that the roof’s mechanical drive is healthy.
 
-The window’s stored end position is part of this control. After battery disconnection, automatic raising may need that position stored again, as described in the handbook.[^windows]
+The window’s stored end position is part of this control. The handbook states that after battery disconnection and reconnection, the glass will not rise automatically when the door closes until its end position is stored again.[^windows]
 
 ### Seals need the right contact
 
@@ -92,7 +98,7 @@ Drain filters intercept debris, which can then accumulate on the filters themsel
 
 The January 2010 UK catalogue shows five fabric colours: **Black, Stone Grey, Metropole Blue, Cocoa and Red**. The separate price list gives the recommended paint/interior combinations.[^options]
 
-The **three-piece wind deflector, code 551**, was optional. Its outer pieces fit in the roll-over bars; the removable centre section spans the space between them. It reduces air turbulence around the occupants’ heads and shoulders when the roof is open. It neither seals the car against rain nor forms a structural roof panel.
+The **three-piece wind deflector, code 551**, was optional. Its outer pieces fit in the roll-over bars; the removable centre section spans the space between them. It reduces air turbulence around the occupants’ heads and shoulders when the roof is open. The catalogue describes it in combination with the rear-bulkhead storage box or the BOSE® Surround Sound System. It neither seals the car against rain nor forms a structural roof panel.[^options]
 
 ![The optional three-piece wind deflector. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 81. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=38).](images/ordinary-wind-deflector.jpg){width=70% alt="The ordinary Boxster’s three-piece wind deflector, with inserts in the roll-over bars and a transparent centre section."}
 
@@ -106,16 +112,16 @@ The handbook states that cars delivered without a hardtop lack the inserts for i
 
 ## Changes in other 2.9 model years {#other-2.9-model-years}
 
-The clearly dated running change concerns additional drain filters. The table records their production introduction; earlier cars could receive a retrofit.[^drain-bulletin]
+The documented drainage change below introduced additional filters. The table records their production introduction; earlier cars could receive a retrofit.[^drain-bulletin]
 
 | Period | Relationship to the 2010 reference |
 | --- | --- |
-| 2009 introduction | The ordinary facelift catalogue already describes the powered fabric roof, heated rear glass and 50 km/h operation. |
+| 2009-model launch brochure (08/08) | The ordinary facelift catalogue already describes the powered fabric roof, heated rear glass and 50 km/h operation. |
 | From 31 August 2009 | Additional rear drain filters introduced in production, with retrofit provision for earlier cars. |
 | 2010 | The dated UK catalogue establishes the reference roof and the colour, wind-deflector and hardtop choices above. |
 | 2011–2012 | The 2009–2012 parts catalogue covers the same broad ordinary-model drive arrangement; the sources checked do not establish a further redesign of it. |
 
-Later service coverage supports continuity of the drive layout. Annual UK changes to fabrics, colours and individual components have not been fully established.[^years]
+This is later service coverage, rather than a year-by-year record of the original installations. Annual UK changes to fabrics, colours and individual components have not been fully established.[^years]
 
 ## The S, Spyder and Black Edition {#s-black-edition-and-spyder}
 
@@ -154,19 +160,19 @@ Stop an uneven movement and investigate its cause. Forcing the frame adds load; 
 
 [^catalogue]: Porsche, *The Boxster*, edition 01/10, UK publication WSLB1101000125, printed pp. 80–81, hood construction and accommodation. [Original PDF, scan p. 38](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=38).
 
-[^drive]: Porsche, *PET, Boxster 2009–2012, type 987209*, snapshot 19 July 2018, illustrations **811-005** (frame) and **811-012** (drive and compartment cover), especially scan pp. 403–405 and 410–411. One motor, two pliable shafts, paired gearboxes, guide arms, hinge levers and slide rods. [Original parts catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=410).
+[^drive]: Porsche, *PET, Boxster 2009–2012, type 987209*, snapshot 19 July 2018, illustrations **811-005** (frame) and **811-012** (drive and compartment cover), especially scan pp. 403–405 and 410–411. One motor, two pliable shafts, paired gearboxes, guide arms, hinge levers and slide rods. [Original parts catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=410). The 2010 owner’s handbook, printed p. **187**, separately identifies the roof and compartment-cover joint rods; [PDF p. 189](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=189).
 
 [^operation]: Porsche, *Boxster, Boxster S Owner’s Manual*, North American 2010 edition, WKD 987 021 10, 5/09, printed pp. **182–185**, conditions, manual latch and roof controls; p. 168, roof status messages. [Handbook PDF](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=184). The 12-second and 50 km/h claims are also in the January 2010 UK catalogue, p. 80. This chapter does not reproduce the handbook’s complete operating sequence.
 
 [^switch]: Porsche workshop instruction **WM 616419**, “Removing and installing microswitch for roof”, front-lock switch location; original instruction reproduced in the [2010 Boxster S 987 workshop archive](https://charm.li/Porsche/2010/Boxster%20S%20%28987%29%20F6-3.4L/Repair%20and%20Diagnosis/Sensors%20and%20Switches/Sensors%20and%20Switches%20-%20Body%20and%20Frame/Hard%20Top%20Position%20Switch%20%2F%20Sensor/Service%20and%20Repair/61641900%20Removing%20and%20installing%20microswitch%20for%20roof/). This establishes the shared ordinary-roof front-lock switch, not the earlier 986’s full switch layout.
 
-[^windows]: Porsche, 2010 owner’s handbook, printed pp. **18, 27–28**, door short drop, automatic lowering and stored window end position; [PDF](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=20). Porsche PET, illustrations **804-020** and **804-030**, scan pp. 286 and 288, door-handle microswitch and cable window regulator/motor; [parts catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=288).
+[^windows]: Porsche, 2010 owner’s handbook, printed pp. **18, 27–28**, door short drop, automatic lowering and stored window end position; [PDF](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=20). Porsche PET, illustrations **804-020** and **804-030**, scan pp. 286 and 288, door-handle microswitch and cable window regulator/motor; [parts catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=288). Porsche workshop instruction **WM 644019**, “Removing and installing front door window”, distinguishes short-stroke lowering from position-controlled lowering during roof actuation in its “Standardising the power windows” section; [2009 ordinary 2.9 workshop archive](https://charm.li/Porsche/2009/Boxster%20%28987%29%20F6-2.9L/Repair%20and%20Diagnosis/Body%20and%20Frame/Doors%2C%20Hood%20and%20Trunk/Doors/Front%20Door/Front%20Door%20Window%20Glass/Service%20and%20Repair/Removal%20and%20Replacement/644019%20Removing%20and%20installing%20front%20door%20window/). No exact roof-lowering trigger or distance is specified here.
 
 [^seals]: Porsche PET, illustration **811-010**, scan pp. 408–409, roof-frame, B-pillar and roof-arch seals. [Parts catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=409). The discussion of seal contact explains general mechanical principles, without assigning adjustment dimensions.
 
 [^glass]: Porsche, January 2010 UK catalogue, printed p. **80**, heated rear glass; 2010 owner’s handbook, printed pp. **31, 189**, rear-window heating and ventilation with the windstop installed. [Handbook PDF](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=191).
 
-[^drains]: Porsche PET, illustrations **811-012**, **811-013** and **811-030**, drain plates, compartment seals/hoses and side drip-pan/drain components, scan pp. 411, 413 and 420. [Parts catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=420).
+[^drains]: Porsche PET, illustrations **811-012**, **811-013** and **812-000**, drain plates, compartment seals/hoses and side drip-pan/drain components, scan pp. 411, 413 and 418–420. [Parts catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=418).
 
 [^drain-bulletin]: Porsche, Technical Information **29/09 ENU 5393**, *Cabriolet Top Compartment Water Drains*, Boxster/Boxster S 987, model year as of 2005. States filter introduction **31 August 2009**, debris/blockage mechanism, retrofit provision and continuing inspection/cleaning requirement. [Original bulletin text reproduced in workshop archive](https://charm.li/Porsche/2011/Boxster%20%28987%29%20F6-2.9L/Repair%20and%20Diagnosis/Technical%20Service%20Bulletins/All%20Technical%20Service%20Bulletins/Body%20-%20Convertible%20Top%20Drain%20Information/).
 
@@ -182,4 +188,4 @@ Stop an uneven movement and investigate its cause. Forcing the frame adds load; 
 
 [^black]: Porsche, *Boxster S Black Edition Price List*, UK edition **03/2011**, standard-equipment section, printed p. **10**, electrically operated black hood and wind deflector; [original UK price list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0). Porsche Netherlands’ [release of 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/) independently identifies the hood marking and black finish.
 
-[^spyder]: Porsche, *The Boxster Spyder*, January 2010 UK brochure, WSLB1101000225 GB/UK, printed pp. **20–21** (two pieces, manual operation, stowage, 21 kg roof saving and closed-hood restriction), **42–43** (manual/PDK technical table). [Original PDF, scan p. 9](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=9).
+[^spyder]: Porsche, *The Boxster Spyder*, January 2010 UK brochure, WSLB1101000225 GB/UK, printed pp. **20–21** (two pieces, manual operation, stowage, 21 kg roof saving and closed-hood restriction), [scan p. 9](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=9); printed p. **41** (manual/PDK technical table), [scan p. 19](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=19).
