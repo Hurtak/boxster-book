@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">Two shafts share one centreline</title>
+  <desc id="desc">End view of the concentric inputs. Shaft 1 is inside hollow shaft 2. Outer clutch pack K1 connects to inner shaft 1; inner clutch pack K2 connects to hollow shaft 2. The clutches and shafts have different inner/outer relationships.</desc>
+  <rect width="600" height="420" fill="#fff"/>
+  <text x="300" y="35" text-anchor="middle" font-size="25" fill="#243c32">Two inputs, one centreline</text>
+  <circle cx="160" cy="188" r="111" fill="#dae8ed" stroke="#37748b" stroke-width="3"/>
+  <circle cx="160" cy="188" r="75" fill="#fff" stroke="#37748b" stroke-width="3"/>
+  <circle cx="160" cy="188" r="44" fill="#dcebe1" stroke="#176b53" stroke-width="4"/>
+  <path d="M160 188H310M233 114H310" fill="none" stroke="#84938b" stroke-width="2"/>
+  <g fill="#243c32" font-size="23"><text x="325" y="112">Hollow shaft 2</text><text x="325" y="145">2 · 4 · 6</text><text x="325" y="193">Inner shaft 1</text><text x="325" y="226">1 · 3 · 5 · 7 · R</text></g>
+  <g text-anchor="middle" font-size="22"><text x="160" y="325" fill="#37748b">End view of inputs</text><text x="300" y="371" fill="#176b53">Outer clutch K1 → inner shaft 1</text><text x="300" y="404" fill="#37748b">Inner clutch K2 → hollow shaft 2</text></g>
+</svg>

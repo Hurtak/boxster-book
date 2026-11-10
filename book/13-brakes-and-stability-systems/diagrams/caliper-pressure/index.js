@@ -18,7 +18,7 @@ export function mount(host, { state, signal }) {
     const gap = scaleLinear([0, 15], [18, 0]).clamp(true)(state.input);
     const pressure = clamp((state.input - 15) / 85);
     const colour = scaleLinear([0, 1], ['#9aa3af', '#1d5fbf'])(pressure);
-    const text = (x, y, content, anchor = 'middle') => svg.append('text').attr('x', x).attr('y', y).attr('text-anchor', anchor).attr('font-size', 13).attr('fill', '#363c44').text(content);
+    const text = (x, y, content, anchor = 'middle') => svg.append('text').attr('x', x).attr('y', y).attr('text-anchor', anchor).attr('font-size', 14).attr('fill', '#363c44').text(content);
     svg.append('path').attr('d', `M${cx - 106},${bottom} V${top} H${cx + 106} V${bottom}`).attr('fill', 'none').attr('stroke', '#22272d').attr('stroke-width', 18).attr('stroke-linejoin', 'round');
     svg.append('path').attr('d', `M${cx},32 V${top - 8} M${cx - 106},${top} H${cx + 106}`).attr('fill', 'none').attr('stroke', colour).attr('stroke-width', 5);
     text(cx, 20, 'Hydraulic pressure');

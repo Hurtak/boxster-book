@@ -1,0 +1,12 @@
+# PDK chapter image credits
+
+Both files are genuine period Porsche publication assets, extracted unchanged from embedded JPEG objects on 10 November 2026. Neither is AI-generated or an original diagram by this book's author. The source creator is Porsche AG; the brochure does not name an individual photographer or cutaway artist. The original rights remain with their respective holders and are not transferred by the repository's MIT licence. Retained for the requested personal reading edition.
+
+Original source: Porsche AG, *The Boxster*, January 2010 UK edition, **WSLB1101000125 GB/UK**, ©2010. [Exact source PDF](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf). Its colophon, relevant spreads and extracted images were inspected. The archive filename does not define the publication market or date.
+
+| Local file | Original location | Description and modifications |
+| --- | --- | --- |
+| `pdk-factory-cutaway.jpg` | Printed **p. 43**, PDF **p. 19**, embedded image object **69 0**, **527 × 320 px** | Porsche factory cutaway of the range's seven-speed PDK. Extracted losslessly with `pdfimages -j`; no crop, labels added, retouching or enlargement. The adjacent source photograph is captioned Boxster S, but this cutaway is captioned Porsche Doppelkupplung (PDK), without an engine variant. Used for the documented common arrangement, not parts interchangeability. |
+| `pdk-paddle-wheel.jpg` | Printed **p. 46**, PDF **p. 21**, embedded image object **76 0**, **255 × 228 px** | Optional three-spoke paddle wheel and PDK selector in a personalised period Boxster-range cabin. Extracted losslessly, without modifications; native source resolution retained. Does not identify a particular owner's specification or establish factory fitment in an individual car. |
+
+The three explanatory SVGs and the D3 interaction in this chapter are original author-created schematics. They are separate from the credited Porsche images.

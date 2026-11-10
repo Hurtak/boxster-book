@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" role="img" aria-labelledby="title desc" font-family="sans-serif">
+<title id="title">Accelerating in the standard manual Boxster</title><desc id="desc">Pedal and engine inputs inform DME. It requests engine torque through throttle, injection and ignition. The manual driver controls clutch and gear. The cell, screen frame and rear bars are always present. The crash system assesses its own inputs; this map predicts no deployment or outcome.</desc>
+<rect width="600" height="520" fill="#fff"/>
+<text x="300" y="27" text-anchor="middle" fill="#173f32" font-weight="bold" font-size="25">Accelerating · manual</text>
+<g stroke="#a8baad"><rect x="12" y="46" width="576" height="108" rx="10" fill="#e8eef4"/><rect x="12" y="182" width="576" height="108" rx="10" fill="#e3ede4"/><rect x="12" y="318" width="576" height="108" rx="10" fill="#f1e8dc"/><rect x="12" y="458" width="576" height="55" rx="8" fill="#f5f7f2"/></g>
+<g font-size="18" font-weight="bold" fill="#173f32"><text x="27" y="70">OBSERVE</text><text x="27" y="206">DECIDE / REQUEST</text><text x="27" y="342">PHYSICAL ACTION</text><text x="27" y="479">Always present:</text></g>
+<g font-size="23" fill="#173f32"><text x="27" y="104">Pedal + engine state</text><text x="27" y="133">Driver asks for torque</text><text x="27" y="240">DME</text><text x="27" y="269">Engine torque request</text><text x="27" y="376">Air, fuel and ignition</text><text x="27" y="405">Driver clutch + gear</text><text x="27" y="502">Cell, screen frame, bars</text></g>
+<path d="M300 159v16m-7-7 7 7 7-7 M300 295v16m-7-7 7 7 7-7" stroke="#6a8b78" stroke-width="3" fill="none"/>
+</svg>

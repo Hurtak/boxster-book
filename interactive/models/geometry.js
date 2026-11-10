@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { roadWheel } from './boxster/wheel.js';
 
 export const material = (color, metalness = 0.15, roughness = 0.55) => new THREE.MeshStandardMaterial({ color, metalness, roughness });
 export function group(name, parent, position = [0, 0, 0]) {
@@ -24,16 +25,7 @@ export function tube(parent, points, radius, surface) {
 }
 
 export function wheel(parent, name, position, surface) {
-  const result = group(name, parent, position);
-  const rubber = material('#22252a', 0, 0.95);
-  mesh(result, new THREE.TorusGeometry(0.275, 0.054, 16, 48), rubber, [0, 0, 0], [0, Math.PI / 2, 0]);
-  const rim = mesh(result, new THREE.TorusGeometry(0.207, 0.014, 8, 48), surface, [0.045, 0, 0], [0, Math.PI / 2, 0]);
-  cylinder(result, 0.049, 0.11, surface, [0, 0, 0]);
-  for (let i = 0; i < 5; i++) {
-    const angle = i * Math.PI * 2 / 5;
-    box(result, [0.03, 0.034, 0.17], surface, [0.04, Math.sin(angle) * 0.12, Math.cos(angle) * 0.12], [-angle, 0, 0]);
-  }
-  return result;
+  return roadWheel(parent, name, position, surface);
 }
 
 export function annulus(parent, outer, inner, depth, surface, position = [0, 0, 0], holes = false) {

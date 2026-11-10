@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 430" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">A complete circuit supplies one lamp</title>
+  <desc id="desc">An ideal 12 volt battery supplies a 24 watt lamp through an intact fuse and closed switch. The earth return completes the loop and current is 2 amperes. A second parallel lamp is not connected in the initial state.</desc>
+  <rect width="600" height="430" rx="12" fill="#f8faf7"/>
+  <g fill="none" stroke-width="4" stroke-linejoin="round"><path d="M55 169V80H190M228 80H535V160H398M350 160H130" stroke="#b2762f"/><path d="M130 160V333H55V207" stroke="#39765b"/><path d="M130 250H350M398 250H535V160" stroke="#cbd4cb" stroke-dasharray="6 7"/></g>
+  <rect x="190" y="70" width="38" height="20" rx="3" fill="#f1f5ef" stroke="#456653" stroke-width="2"/>
+  <path d="M195 80H223M55 169V173M38 173H72M46 195H64M55 195V207" stroke="#456653" stroke-width="4"/>
+  <circle cx="374" cy="160" r="24" fill="#fff0a7" stroke="#b2762f" stroke-width="3"/><path d="M358 144L390 176M358 176L390 144" stroke="#b2762f" stroke-width="3"/>
+  <circle cx="374" cy="250" r="24" fill="#f1f5ef" stroke="#cbd4cb" stroke-width="3" stroke-dasharray="5 6"/><path d="M358 234L390 266M358 266L390 234" stroke="#cbd4cb" stroke-width="3"/>
+  <path d="M458 80H498" stroke="#b2762f" stroke-width="4"/><circle cx="458" cy="80" r="4" fill="#456653"/><circle cx="498" cy="80" r="4" fill="#456653"/>
+  <g text-anchor="middle" fill="#243d32" font-size="22"><text x="209" y="43">Fuse intact</text><text x="478" y="43">Closed</text><text x="55" y="149">+</text><text x="55" y="237">−</text><text x="55" y="270">12 V</text><text x="374" y="209">Lamp 1: on</text><text x="374" y="298">Lamp 2 absent</text><text x="300" y="393" font-size="25">Supply current: 2 A</text></g>
+  <text x="145" y="362" font-size="22" fill="#39765b">Earth return</text><text x="300" y="421" text-anchor="middle" font-size="18" fill="#53695b">Ideal teaching values: 24 W ÷ 12 V = 2 A</text>
+</svg>

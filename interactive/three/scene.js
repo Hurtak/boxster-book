@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const bytes = new Map();
 const byteBudget = 32 * 1024 * 1024;
@@ -56,19 +57,39 @@ export async function loadModel(source, signal, base = location.href) {
   const data = await modelBytes(source);
   signal.throwIfAborted();
   const gltf = await new GLTFLoader().parseAsync(data, '');
+  gltf.scene.traverse(object => {
+    if (!object.isMesh) return;
+    const materials = [object.material].flat();
+    for (const surface of materials) if (surface.transparent) {
+      surface.forceSinglePass = true;
+      surface.depthWrite = false;
+    }
+    object.castShadow = materials.every(surface => !surface.transparent && !surface.transmission);
+    object.receiveShadow = true;
+  });
   if (signal.aborted) { disposeObject(gltf.scene); signal.throwIfAborted(); }
   return gltf.scene;
 }
 
 export function scene3D(host, { signal, onRender = () => {} }) {
+  host.classList.add('diagram-stage-3d');
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('#f2f4f7');
   const camera = new THREE.PerspectiveCamera(36, 1, 0.01, 60);
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.3;
+  renderer.toneMappingExposure = 0.95;
+  const studio = new RoomEnvironment();
+  const generator = new THREE.PMREMGenerator(renderer);
+  const environment = generator.fromScene(studio, 0.04);
+  scene.environment = environment.texture;
+  scene.environmentIntensity = 0.45;
+  studio.dispose();
+  generator.dispose();
   renderer.domElement.setAttribute('aria-label', '3D diagram. Drag to rotate; use the controls below to explore.');
   renderer.domElement.setAttribute('role', 'img');
   renderer.domElement.addEventListener('webglcontextlost', (event) => {
@@ -83,11 +104,16 @@ export function scene3D(host, { signal, onRender = () => {} }) {
   controls.enablePan = false;
   controls.minDistance = 0.35;
   controls.maxDistance = 10;
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x718096, 3));
-  const key = new THREE.DirectionalLight(0xffffff, 4);
+  scene.add(new THREE.HemisphereLight(0xf7f8ff, 0x7b8584, 0.85));
+  const key = new THREE.DirectionalLight(0xffffff, 2);
   key.position.set(-3, 6, 5);
+  key.castShadow = true;
+  key.shadow.mapSize.set(2048, 2048);
+  Object.assign(key.shadow.camera, { left: -3, right: 3, top: 3, bottom: -3, near: 0.5, far: 18 });
+  key.shadow.bias = -0.00015;
+  key.shadow.normalBias = 0.006;
   scene.add(key);
-  const rim = new THREE.DirectionalLight(0xffffff, 2);
+  const rim = new THREE.DirectionalLight(0xffffff, 1.4);
   rim.position.set(3, 3, -4);
   scene.add(rim);
   let frame = 0;
@@ -120,6 +146,8 @@ export function scene3D(host, { signal, onRender = () => {} }) {
     resize.disconnect();
     controls.dispose();
     disposeObject(scene);
+    environment.dispose();
+    key.shadow.dispose();
     renderer.dispose();
     renderer.forceContextLoss();
     renderer.domElement.remove();
@@ -138,6 +166,7 @@ export function opacity(root, amount) {
       material.opacity = value;
       material.depthWrite = value > 0.5;
     }
+    if (object.isMesh) object.castShadow = [object.material].flat().every(surface => surface.opacity > 0.95 && !surface.transmission);
   });
   root.visible = amount > 0.01;
 }

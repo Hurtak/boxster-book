@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="460" viewBox="0 0 360 460" role="img" aria-labelledby="title desc">
+<title id="title">An anti-roll bar responds to unequal left and right wheel travel</title><desc id="desc">When both wheels rise equally, the bar rotates in its mounts without added twist. When one rises relative to the other, its connecting arms twist the bar. This schematic omits real lever angles.</desc>
+<rect width="360" height="460" fill="#faf8f1"/>
+<g font-family="Arial,sans-serif" font-size="16" fill="#273e35" text-anchor="middle">
+<text x="180" y="28" font-size="20" font-weight="bold">Compare left with right</text>
+<text x="180" y="62">Both wheels rise 25 mm</text>
+<path d="M30 87H330" stroke="#273e35" stroke-width="9"/>
+<path d="M65 135H100V118H260V135H295" stroke="#637a6e" stroke-width="6" fill="none"/>
+<g fill="#273e35"><rect x="45" y="112" width="29" height="62" rx="7"/><rect x="286" y="112" width="29" height="62" rx="7"/></g>
+<path d="M121 87V118M239 87V118" stroke="#82988d" stroke-width="4"/>
+<text x="180" y="204">0 mm difference → no added twist</text>
+<text x="180" y="254">Only the left wheel rises 25 mm</text>
+<path d="M30 279H330" stroke="#273e35" stroke-width="9"/>
+<path d="M65 327H100V310H260V352H295" stroke="#a6552b" stroke-width="6" fill="none"/>
+<g fill="#273e35"><rect x="45" y="304" width="29" height="62" rx="7"/><rect x="286" y="329" width="29" height="62" rx="7"/></g>
+<path d="M121 279V310M239 279V310" stroke="#82988d" stroke-width="4"/>
+<text x="180" y="415">25 mm difference → torsional resistance</text>
+<text x="180" y="444" font-size="14">Illustrative travel; body held level.</text>
+</g></svg>

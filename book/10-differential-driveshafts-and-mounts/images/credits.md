@@ -1,0 +1,22 @@
+# Chapter 10 image credits
+
+The two reproduced images are genuine Porsche factory technical illustrations, not generated pictures. Retained locally for the book's requested personal reading use. Copyright remains with Dr. Ing. h.c. F. Porsche AG; the project's MIT licence does not relicense them.
+
+## `porsche-driveshaft-and-hub.png`
+
+- Creator: Porsche AG, PET parts illustration 501-005.
+- Publication: *Boxster 2009–2012*, model 987209, catalogue P33, issue 19 July 2018, PDF page 187 (illustration page, followed by parts list at page 188).
+- Exact source: <https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=187>.
+- Local origin: the existing independently downloaded `/tmp/suspension-pet.pdf`, whose online original was separately opened for this chapter on 10 November 2026. Catalogue date, illustration identity and adjacent application list checked.
+- Modifications: rendered PDF page at a maximum dimension of 1,500 pixels using `pdftoppm`; cropped to the drawing field, including the complete small vehicle locator, to remove page headings, border and footer. No components or callouts changed. Output 730 × 1,040 pixels.
+- Caption identifies the image as a later service-catalogue illustration. It establishes component relationships, not unchanged original production parts or an owner's differential option.
+
+## `porsche-engine-support.png`
+
+- Creator: Porsche AG, PET parts illustration 109-000.
+- Publication: same catalogue, PDF page 96; accompanying parts list at page 97 identifies engine brackets, mounting console, stops and vibration damper for A120/A121.
+- Exact source: <https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=96>.
+- Local origin: same independently checked original PDF.
+- Modifications: rendered at a maximum dimension of 1,500 pixels; cropped to the complete exploded support assembly to remove the page border, headings, vehicle locator and footer. No part of the assembly or callouts changed. Output 619 × 665 pixels.
+
+The original schematic files `drivetrain-layout.svg`, `drivetrain-cv-and-hub.svg` and `diagrams/drivetrain-open-differential/poster.svg` and their interactive code were authored for this chapter. Their simplified geometry is not Porsche workshop artwork or a scale drawing.

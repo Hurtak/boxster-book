@@ -12,7 +12,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from urllib.parse import quote
+from urllib.parse import quote, unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -32,12 +32,58 @@ class DiagramReferences(HTMLParser):
                 self.names.add(value)
 
 
+class BookLinks(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.ids = set()
+        self.chapter_ids = []
+        self.hrefs = set()
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if attrs.get("id"):
+            self.ids.add(attrs["id"])
+        if tag == "section" and "level2" in attrs.get("class", "").split():
+            self.chapter_ids.append(attrs["id"])
+        if tag == "a" and attrs.get("href"):
+            self.hrefs.add(attrs["href"])
+
+
+def resolve_chapter_links(document, chapters):
+    """Keep Markdown source links usable in the combined, file-scoped book."""
+    links = BookLinks()
+    links.feed(document)
+    if len(links.chapter_ids) != len(chapters):
+        raise ValueError("Each chapter must have exactly one top-level title")
+    targets = dict(zip(chapters, links.chapter_ids))
+    replacements = {}
+    for href in links.hrefs:
+        url = urlsplit(href)
+        if url.scheme or url.netloc or not url.path:
+            continue
+        path = (ROOT / unquote(url.path)).resolve()
+        if path not in targets:
+            if path.name == "index.md":
+                raise ValueError(f"Unknown chapter link: {href}")
+            continue
+        target = targets[path]
+        if url.fragment:
+            prefix = target[:target.rfind("__") + 2]
+            target = prefix + unquote(url.fragment)
+        if target not in links.ids:
+            raise ValueError(f"Unknown chapter heading: {href}")
+        replacements[escape(href, quote=True)] = f"#{target}"
+    return re.sub(
+        r'(\bhref\s*=\s*")([^"]*)(")',
+        lambda match: match[1] + replacements.get(match[2], match[2]) + match[3],
+        document,
+    )
+
+
 def compile_diagrams(chapters, temporary, edition):
-    if not any((chapter.parent / "diagrams").is_dir() for chapter in chapters):
-        return {"ids": [], "script": None, "css": None}
     node = shutil.which("node")
     if not node or not (ROOT / "node_modules" / "esbuild").is_dir():
-        raise ValueError("Interactive diagrams require Node 22+ and npm dependencies. Run npm ci first.")
+        raise ValueError("The book reader requires Node 22+ and npm dependencies. Run npm ci first.")
     result = subprocess.run(
         [node, str(ROOT / "scripts" / "build-diagrams.mjs"), edition, temporary, *map(str, chapters)],
         cwd=ROOT, check=True, capture_output=True, text=True,
@@ -116,7 +162,7 @@ def main() -> int:
                 cwd=ROOT,
                 check=True,
             )
-            document = built.read_text(encoding="utf-8")
+            document = resolve_chapter_links(built.read_text(encoding="utf-8"), chapters)
             references = DiagramReferences()
             references.feed(document)
             missing = references.names - set(diagrams["ids"])

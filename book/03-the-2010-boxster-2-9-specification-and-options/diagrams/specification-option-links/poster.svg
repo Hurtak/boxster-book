@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" role="img" aria-labelledby="title desc">
+  <title id="title">PDK and Sport Chrono work together</title>
+  <desc id="desc">The selected relationship is PDK plus Sport Chrono, providing Launch Control and the SPORT PLUS shift strategy. The other selectable relationships are Chrono Plus requiring PCM and differential 220 requiring 18- or 19-inch wheels.</desc>
+  <rect width="600" height="420" fill="#f2f4ee"/>
+  <g font-family="sans-serif" text-anchor="middle" fill="#233e32">
+    <rect x="32" y="20" width="536" height="94" fill="#e1e8df"/>
+    <text x="300" y="57" font-size="28">PDK</text><text x="300" y="91" font-size="23">Seven-speed transmission · 250</text>
+    <text x="300" y="147" font-size="30">+</text>
+    <rect x="32" y="161" width="536" height="94" fill="#e1e8df"/>
+    <text x="300" y="198" font-size="28">Sport Chrono</text><text x="300" y="232" font-size="23">639 or Plus 640</text>
+    <text x="300" y="290" font-size="30">↓</text>
+    <rect x="32" y="307" width="536" height="94" fill="#176b53"/>
+    <text x="300" y="344" font-size="28" fill="white">Launch Control</text><text x="300" y="378" font-size="23" fill="white">+ SPORT PLUS shift strategy</text>
+  </g>
+</svg>

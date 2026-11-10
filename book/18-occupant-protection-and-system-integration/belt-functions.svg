@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" role="img" aria-labelledby="title desc" font-family="sans-serif">
+<title id="title">Three functions within the belt system</title><desc id="desc">The diagonal shoulder belt and lap belt connect the occupant to structural anchorages. The reel allows slow movement and locks; the pretensioner removes slack; the force limiter manages rising belt tension.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="none" stroke="#a56430" stroke-width="1.5"/></marker></defs>
+<rect width="600" height="440" rx="14" fill="#f5f7f2"/>
+<text x="26" y="37" font-size="25" fill="#173f32" font-weight="bold">Belt: locate, engage, manage force</text>
+<path d="M62 366H248 M90 348V370 M230 348V370" stroke="#74897e" stroke-width="13" fill="none"/>
+<path d="M112 330L87 176Q82 155 104 145L140 142Q160 145 167 164L202 276L226 327" fill="#dbe4dc" stroke="#74897e" stroke-width="8"/>
+<circle cx="140" cy="118" r="27" fill="#e9cfad" stroke="#526b5d" stroke-width="3"/>
+<path d="M143 158L168 244L220 265L241 326 M155 243L128 280L134 329" stroke="#bba485" stroke-width="23" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M84 145L187 269L124 282" stroke="#1e6250" stroke-width="11" fill="none"/>
+<circle cx="84" cy="145" r="8" fill="#173f32"/><circle cx="187" cy="269" r="8" fill="#173f32"/><circle cx="124" cy="282" r="8" fill="#173f32"/>
+<path d="M80 163L60 224 M184 288L200 342" stroke="#a56430" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="34" y="405" font-size="21" fill="#173f32">Anchors connect to the cell</text>
+<g fill="#fff" stroke="#aabbb0" stroke-width="2"><rect x="284" y="66" width="288" height="91" rx="10"/><rect x="284" y="174" width="288" height="91" rx="10"/><rect x="284" y="282" width="288" height="91" rx="10"/></g>
+<g fill="#173f32" font-size="22"><text x="301" y="96" font-weight="bold">Reel locking</text><text x="301" y="130">Restrains rapid motion</text><text x="301" y="204" font-weight="bold">Pretensioner</text><text x="301" y="238">Takes up belt slack</text><text x="301" y="312" font-weight="bold">Force limiter</text><text x="301" y="346">Manages belt tension</text></g>
+</svg>

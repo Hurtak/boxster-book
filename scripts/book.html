@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="pandoc">
+  <meta name="theme-color" content="#174b3d">
   <title>$pagetitle$</title>
 $for(css)$
   <link rel="stylesheet" href="$css$">
@@ -13,26 +14,55 @@ $if(highlighting-css)$
 $endif$
 </head>
 <body>
-  <a class="skip-link" href="#book">Skip to chapters</a>
-  <div class="viewer-bar">
-    <a class="book-name" href="#title">Boxster 2.9</a>
-    <a href="#contents">Contents</a>
-  </div>
-  <div class="reading-edition">
-    <header id="title" class="book-title">
-      <h1>$title$</h1>
-      <p>$subtitle$</p>
-    </header>
+  <a class="skip-link" href="#book">Skip to reading</a>
+  <header class="viewer-bar" data-ui>
+    <a class="book-name" href="#title">Boxster 2.9 <span>2010 · 987.2</span></a>
+    <div class="reader-tools">
+      <div class="type-controls enhanced-only" role="group" aria-label="Reading text size">
+        <button type="button" data-text-size="-1" aria-label="Decrease text size">A−</button>
+        <button type="button" data-text-size="1" aria-label="Increase text size">A+</button>
+      </div>
+      <button class="contents-toggle enhanced-only" type="button" aria-haspopup="dialog">Contents</button>
+      <a class="static-contents" href="#contents">Contents</a>
+    </div>
+  </header>
+  <div class="reader-layout">
 $if(toc)$
-    <details id="contents" open>
-      <summary>Contents</summary>
+    <aside id="contents" class="book-sidebar">
+      <h2>Contents</h2>
       <nav aria-label="Book chapters">$table-of-contents$</nav>
-    </details>
+      <p class="edition-note">Europe &amp; UK edition<br>2010 2.9-litre baseline</p>
+    </aside>
 $endif$
     <main id="book" tabindex="-1">
+      <header id="title" class="book-cover">
+        <h1>$title$</h1>
+        <p class="cover-subtitle">An illustrated guide to the 987.2</p>
+        <figure class="cover-illustration">
+          <img src="assets/book-cover.png" width="1440" height="910" alt="Illustration of a dark green Boxster with a tan interior, viewed from the front quarter">
+        </figure>
+        <p>Understand the car, one system at a time. Start with the 2010 2.9-litre Boxster, then compare its options, other model years and the S, Spyder and Black Edition.</p>
+        <a class="start-reading" href="#book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__the-2010-boxster-2.9-in-the-987.2-family" data-start-reading>Start reading <span aria-hidden="true">→</span></a>
+        <p class="manuscript-note" data-draft-status>An illustrated draft with chapter source notes.</p>
+        <section class="available-chapters enhanced-only" data-written-chapters hidden>
+          <h2>Available chapters</h2>
+          <nav aria-label="Written chapters"><ul></ul></nav>
+        </section>
+      </header>
 $body$
+      <nav class="chapter-pagination enhanced-only" aria-label="Adjacent chapters" hidden></nav>
+      <footer class="book-footer">An independent guide. Europe &amp; UK specifications.<br><a href="#title">Back to the book</a></footer>
     </main>
-    <footer><a href="#title">Back to the beginning</a></footer>
+    <aside class="chapter-outline enhanced-only" aria-label="Reading guide" hidden>
+      <h2>In this chapter</h2>
+      <nav aria-label="Chapter sections"></nav>
+      <p class="reading-progress" aria-live="off"></p>
+    </aside>
   </div>
+  <dialog class="contents-dialog" aria-labelledby="dialog-title" data-ui>
+    <div class="dialog-header"><h2 id="dialog-title">Contents</h2><button type="button" data-close-contents>Close</button></div>
+    <div class="dialog-navigation"></div>
+    <p class="edition-note">Europe &amp; UK · 2010 2.9-litre baseline</p>
+  </dialog>
 </body>
 </html>

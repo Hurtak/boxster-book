@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">Third gear, 3,000 rpm and 200 Nm</title>
+  <desc id="desc">The 2.9 manual's third ratio is 1.407, giving total reduction 5.452 with the 3.875 final drive. Ideal road speed is 69.3 kilometres per hour with an illustrative 2.10 metre circumference. Total torque after the final drive is 1,090 Nm and wheel speed is 550 rpm. Bars compare six gears at the same engine rpm.</desc>
+  <rect width="600" height="440" fill="#f1f4ef"/>
+  <g fill="#243d32" text-anchor="middle">
+    <text x="300" y="33" font-size="24">Gear 3 · 1.407 : 1</text>
+    <text x="300" y="78" font-size="38">69.3 km/h</text>
+    <text x="300" y="111" font-size="26">1,090 Nm total</text>
+    <text x="300" y="141" font-size="22">550 wheel rpm</text>
+    <text x="300" y="174" font-size="21">Speed by gear · km/h</text>
+    <text x="300" y="201" font-size="20">at 3,000 engine rpm</text>
+  </g>
+  <g fill="#c2cec5">
+    <rect x="55" y="219" width="98" height="24"/><rect x="55" y="250" width="176" height="24"/>
+    <rect x="55" y="281" width="257" height="24" fill="#286449"/><rect x="55" y="312" width="319" height="24"/>
+    <rect x="55" y="343" width="372" height="24"/><rect x="55" y="374" width="430" height="24"/>
+  </g>
+  <g fill="#243d32" font-size="22"><text x="22" y="239">1</text><text x="22" y="270">2</text><text x="22" y="301">3</text><text x="22" y="332">4</text><text x="22" y="363">5</text><text x="22" y="394">6</text></g>
+  <g fill="#243d32" font-size="22" text-anchor="end"><text x="575" y="239">26.6</text><text x="575" y="270">47.6</text><text x="575" y="301">69.3</text><text x="575" y="332">86.1</text><text x="575" y="363">100.4</text><text x="575" y="394">116.0</text></g>
+  <text x="300" y="430" font-size="20" text-anchor="middle" fill="#4c6155">Ideal · 2.10 m circumference · no losses</text>
+</svg>

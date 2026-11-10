@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 430" role="img" aria-labelledby="title desc" font-family="sans-serif">
+<title id="title">Rear tyre geometric comparison at 60 mph</title>
+<desc id="desc">A 235/50 R17 tyre has nominal diameter 666.8 millimetres. A 265/40 R18 has diameter 669.2 millimetres, only 0.36 per cent greater. Their estimated wheel speeds at 60 mph are 768.3 and 765.5 rpm. These are geometric estimates, not loaded rolling circumference.</desc>
+<rect width="600" height="430" fill="#f5f5ee"/>
+<g fill="#233c31" font-size="24" text-anchor="middle"><text x="150" y="35">17-inch rim</text><text x="450" y="35">18-inch rim</text></g>
+<circle cx="150" cy="145" r="89.9" fill="#333b38"/><circle cx="450" cy="145" r="90.2" fill="#333b38"/>
+<circle cx="150" cy="145" r="58.2" fill="#e8eae5" stroke="#65716b" stroke-width="5"/><circle cx="450" cy="145" r="61.6" fill="#e8eae5" stroke="#17654c" stroke-width="5"/>
+<g fill="none" stroke-width="6"><path d="M150 145V93M150 145L199 129M150 145L181 187M150 145L119 187M150 145L101 129" stroke="#65716b"/><path d="M450 145V89M450 145L503 128M450 145L483 190M450 145L417 190M450 145L397 128" stroke="#17654c"/></g>
+<g fill="#233c31" font-size="24" text-anchor="middle">
+<text x="150" y="268">235/50 R17</text><text x="450" y="268">265/40 R18</text>
+<text x="150" y="301">Ø 666.8 mm</text><text x="450" y="301">Ø 669.2 mm</text>
+<text x="150" y="333">768.3 rpm</text><text x="450" y="333">765.5 rpm</text>
+<text x="300" y="379" font-size="22">Rear tyres at 60 mph: diameter +0.36%</text>
+<text x="300" y="411" font-size="20">Geometric estimates; actual rolling sizes vary</text>
+</g></svg>

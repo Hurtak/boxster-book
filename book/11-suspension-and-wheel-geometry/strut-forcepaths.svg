@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="550" viewBox="0 0 360 550" role="img" aria-labelledby="title desc">
+<title id="title">Strut support and wheel location on the 2010 Boxster 2.9</title><desc id="desc">A simplified single corner shows the top mount, spring and damper strut, wheel carrier, lower arm and body. Vertical load reaches the body through the spring. Lateral and longitudinal tyre forces are reacted through the wheel-guiding structure. A lower plan-view key distinguishes the front steering tie rod from the rear toe-control link. Layout is conceptual, not measured.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#a6552b"/></marker></defs>
+<rect width="360" height="550" fill="#faf8f1"/>
+<g font-family="Arial,sans-serif" fill="#273e35" font-size="16">
+<text x="180" y="27" font-size="20" text-anchor="middle" font-weight="bold">One corner, several force paths</text>
+<path d="M35 70H320M45 70V252" stroke="#273e35" stroke-width="11" fill="none"/>
+<circle cx="224" cy="70" r="10" fill="#82988d"/><path d="M224 79L202 235" stroke="#27627b" stroke-width="13"/>
+<path d="M217 100L201 105L226 120L195 133L221 150L192 163L217 180L188 193L210 206" fill="none" stroke="#a6552b" stroke-width="5"/>
+<path d="M203 225V282L239 270V229Z" fill="#82988d"/>
+<rect x="236" y="205" width="39" height="98" rx="10" fill="#273e35"/>
+<path d="M47 250L204 272" stroke="#637a6e" stroke-width="10"/><circle cx="204" cy="272" r="8" fill="#faf8f1" stroke="#273e35" stroke-width="3"/>
+<path d="M26 304H328" stroke="#82988d" stroke-width="2"/>
+<path d="M291 296V225M254 326H172" stroke="#a6552b" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="22" y="110">Top mount</text><path d="M110 106L213 74" stroke="#82988d" fill="none"/>
+<text x="22" y="153">Coil spring</text><path d="M108 149L197 149" stroke="#82988d"/>
+<text x="22" y="190">Damper / strut</text><path d="M133 186L205 201" stroke="#82988d"/>
+<text x="65" y="234">Lower arm</text><text x="286" y="211" font-size="14">Vertical</text>
+<text x="166" y="351" text-anchor="middle">Tyre forces also enter arms and body</text>
+<path d="M22 372H338" stroke="#c9d1c8"/>
+<text x="180" y="405" text-anchor="middle" font-weight="bold">Location differs front to rear</text>
+<text x="24" y="438">Front</text><text x="102" y="438">Lower arm + fore/aft guide</text>
+<text x="102" y="464">Steering tie rod turns the carrier</text>
+<text x="24" y="497">Rear</text><text x="102" y="497">Lower arm + fore/aft guide</text>
+<text x="102" y="523">Toe link controls wheel direction</text>
+</g></svg>

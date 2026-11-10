@@ -1,7 +1,7 @@
 import { select } from 'd3';
 
 export function svgDiagram(host, title, draw, signal) {
-  const svg = select(host).append('svg').attr('xmlns', 'http://www.w3.org/2000/svg').attr('font-family', 'Arial, sans-serif').attr('role', 'img').attr('aria-label', title);
+  const svg = select(host).append('svg').attr('xmlns', 'http://www.w3.org/2000/svg').attr('font-family', "'Source Sans 3', sans-serif").attr('role', 'img').attr('aria-label', title);
   const redraw = () => {
     const width = Math.max(280, host.clientWidth);
     const height = Math.max(280, host.clientHeight);

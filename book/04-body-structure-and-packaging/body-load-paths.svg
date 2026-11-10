@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" role="img" aria-labelledby="title desc">
+<title id="title">Connected structure around an open passenger compartment</title>
+<desc id="desc">Plan-view concept, front at top. Two side sills connect transverse structures ahead of and behind the open cabin. The centre tunnel provides another longitudinal connection. Arrows illustrate connectivity, not calculated loads.</desc>
+<defs><marker id="body-load-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#a35d32"/></marker></defs>
+<rect width="600" height="440" fill="#f7f6f0"/>
+<g font-family="sans-serif" fill="#253d32">
+<text x="300" y="34" text-anchor="middle" font-size="27" font-weight="bold">An open centre needs connections</text>
+<path d="M133 88Q300 56 467 88L485 140L485 340Q300 386 115 340L115 140Z" fill="#e3e7df" stroke="#9aa99d" stroke-width="3"/>
+<path d="M147 153L147 322M453 153L453 322" stroke="#176b53" stroke-width="28"/>
+<path d="M147 151H453M147 321H453" stroke="#176b53" stroke-width="22"/>
+<path d="M300 167V309" stroke="#a4bda9" stroke-width="45"/>
+<rect x="170" y="173" width="260" height="125" rx="10" fill="#f7f6f0" stroke="#b1beb2" stroke-dasharray="7 6" stroke-width="2"/>
+<path d="M300 173V298" stroke="#a4bda9" stroke-width="33"/>
+<text x="300" y="109" text-anchor="middle" font-size="25">Front</text>
+<text x="300" y="221" text-anchor="middle" font-size="26">Open cabin</text>
+<text x="300" y="275" text-anchor="middle" font-size="23">Tunnel</text>
+<text x="300" y="375" text-anchor="middle" font-size="23">Rear bulkhead</text>
+<path d="M105 179V294" fill="none" stroke="#a35d32" stroke-width="5" marker-end="url(#body-load-arrow)"/><path d="M495 179V294" fill="none" stroke="#a35d32" stroke-width="5" marker-end="url(#body-load-arrow)"/>
+<path d="M48 236H91M509 236H552" stroke="#176b53" stroke-width="2"/>
+<text x="45" y="218" text-anchor="middle" font-size="24">Sill</text>
+<text x="554" y="218" text-anchor="middle" font-size="24">Sill</text>
+<text x="300" y="407" text-anchor="middle" font-size="23">Floor + tunnel + crossmembers</text>
+</g></svg>

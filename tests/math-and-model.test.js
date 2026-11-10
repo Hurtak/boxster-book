@@ -4,8 +4,28 @@ import { readFile } from 'node:fs/promises';
 import { Box3, Vector3 } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { kineticEnergy, sampleTimeline } from '../interactive/math.js';
+import { calculateManualRatio } from '../book/08-manual-transmission-and-clutch/diagrams/manual-ratio-explorer/index.js';
+import { differentialSpeeds, openDifferentialTorque } from '../book/10-differential-driveshafts-and-mounts/diagrams/drivetrain-open-differential/model.js';
 
 const config = JSON.parse(await readFile(new URL('../book/13-brakes-and-stability-systems/diagrams/brake-explorer/scene.json', import.meta.url), 'utf8'));
+
+test('ideal gearing conserves rotational power and the open differential respects speed and grip constraints', () => {
+  const first = calculateManualRatio(1, 3000, 200);
+  const sixth = calculateManualRatio(6, 3000, 200);
+  assert.ok(first.axleTorqueNm > sixth.axleTorqueNm);
+  assert.ok(first.wheelRpm < sixth.wheelRpm);
+  for (let gear = 1; gear <= 6; gear++) {
+    const result = calculateManualRatio(gear, 3000, 200);
+    assert.ok(Math.abs(result.axleTorqueNm * result.wheelRpm - 200 * 3000) < 1e-8);
+  }
+  for (const difference of [-100, -20, 0, 20, 100]) {
+    const speeds = differentialSpeeds(300, difference);
+    assert.equal((speeds.leftRpm + speeds.rightRpm) / 2, 300);
+  }
+  assert.deepEqual(openDifferentialTorque(800, 100), { eachNm: 100, totalNm: 200, unusedNm: 600 });
+  assert.deepEqual(openDifferentialTorque(800, 600), { eachNm: 400, totalNm: 800, unusedNm: 0 });
+  assert.equal(openDifferentialTorque(800, 0).totalNm, 0);
+});
 
 test('the energy example uses SI units, speed squared and total mass', () => {
   const reference = kineticEnergy(1400, 100);
@@ -46,4 +66,32 @@ test('the actual shipped GLB has the named parts and the stated front-disc envel
   }
   assert.equal(scene.getObjectByName('pistons').children.length, 4);
   assert.equal(scene.getObjectByName('front-brake-assembly').userData.units, 'metres');
+});
+
+test('the photo-guided car keeps the complete book interface and valid detailed geometry', async () => {
+  const source=await readFile(new URL('../interactive/models/reference-car.glb',import.meta.url));
+  const {scene}=await new GLTFLoader().parseAsync(source.buffer.slice(source.byteOffset,source.byteOffset+source.byteLength),'');
+  for(const name of ['body','interior','chassis','engine','gearbox','hydraulics','wheel-fl','wheel-fr','wheel-rl','wheel-rr','driver-seat','passenger-seat','curved-windscreen']) {
+    assert.ok(scene.getObjectByName(name),`Missing ${name}`);
+  }
+  let vertices=0,paint,tan;
+  scene.traverse(object=>{
+    if(!object.geometry)return;
+    const position=object.geometry.attributes.position,normal=object.geometry.attributes.normal;
+    vertices+=position.count;
+    for(let i=0;i<position.count;i++) {
+      assert.ok(Number.isFinite(position.getX(i)+position.getY(i)+position.getZ(i)),`Invalid vertex in ${object.name}`);
+      if(normal)assert.ok(Number.isFinite(normal.getX(i)+normal.getY(i)+normal.getZ(i)),`Invalid normal in ${object.name}`);
+    }
+    for(const surface of [object.material].flat()) {
+      if(surface.name.startsWith('Deep metallic green'))paint=surface;
+      if(surface.name.startsWith('Tan leather'))tan=surface;
+    }
+  });
+  assert.ok(vertices>100000,'The shipped asset should retain its detailed geometry');
+  assert.ok(source.length<16*1024*1024,'Keep the model practical for the web edition');
+  assert.ok(paint&&paint.color.g>paint.color.r*1.5&&paint.color.g>paint.color.b);
+  assert.ok(tan&&tan.color.r>tan.color.g&&tan.color.g>tan.color.b);
+  const dimensions=new Box3().setFromObject(scene).getSize(new Vector3());
+  assert.ok(dimensions.x>1.8&&dimensions.x<2.2&&dimensions.y>1.1&&dimensions.y<1.4&&dimensions.z>4.2&&dimensions.z<4.7,JSON.stringify(dimensions));
 });

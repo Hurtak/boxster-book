@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="470" viewBox="0 0 600 470" role="img" aria-labelledby="title desc">
+<title id="title">A roadster with its engine ahead of the rear axle</title><desc id="desc">Schematic side view facing left. From front to rear: front luggage space, two-seat cabin, engine, rear axle with transmission, and rear luggage space. The engine is behind the seats but between the axles. The rear luggage area is above and behind parts of the drivetrain. Not to scale.</desc>
+<rect width="600" height="470" rx="10" fill="#f4f7f3"/>
+<g font-family="sans-serif" fill="#263d34">
+<text x="28" y="40" font-size="27" font-weight="bold">Mid-engine means between the axles</text>
+<path d="M25 270 39 226Q80 204 155 204L199 155 243 152 264 205 520 206Q556 207 576 239L579 276Z" fill="#d4dfd5" stroke="#3c5e4d" stroke-width="3"/>
+<path d="M198 155 178 203M263 204H284" fill="none" stroke="#3c5e4d" stroke-width="5"/>
+<circle cx="112" cy="271" r="37" fill="#263d34"/><circle cx="112" cy="271" r="21" fill="#a4b6a8"/>
+<circle cx="467" cy="271" r="37" fill="#263d34"/><circle cx="467" cy="271" r="21" fill="#a4b6a8"/>
+<path d="M112 313V390M467 313V390" stroke="#829888" stroke-width="2" stroke-dasharray="5 5"/>
+<path d="M123 375H456m-327-6-6 6 6 6m321-12 6 6-6 6" fill="none" stroke="#647d6a" stroke-width="2"/>
+<text x="290" y="406" text-anchor="middle" font-size="23">Between the axles</text>
+<rect x="62" y="221" width="106" height="29" rx="4" fill="#91b6a3"/>
+<path d="M218 199v42h39m-41-42h10v30h29" fill="none" stroke="#536c5d" stroke-width="8"/>
+<rect x="311" y="223" width="90" height="42" rx="6" fill="#176b53"/>
+<rect x="405" y="238" width="64" height="25" rx="4" fill="#a2b6a7"/>
+<rect x="456" y="214" width="91" height="18" rx="3" fill="#91b6a3"/>
+<g fill="none" stroke="#3c5e4d" stroke-width="2">
+<path d="M104 220V124H40"/><path d="M241 198V93H178"/><path d="M354 224V151H313"/><path d="M508 213V124H423"/>
+</g>
+<text x="39" y="107" font-size="23">Front luggage</text>
+<text x="177" y="77" font-size="23">Two seats</text>
+<text x="312" y="134" font-size="23">Engine</text>
+<text x="422" y="107" font-size="23">Rear luggage</text>
+<path d="M37 336h48m-39-7-9 7 9 7" fill="none" stroke="#3c5e4d" stroke-width="2"/>
+<text x="98" y="343" font-size="22">Front</text>
+<text x="28" y="448" font-size="21">Side view · schematic · not to scale</text>
+</g></svg>

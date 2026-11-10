@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="timeline-evidence-title timeline-evidence-desc">
+<title id="timeline-evidence-title">2010 calendar events</title><desc id="timeline-evidence-desc">The 2010 reference year has a January UK ordinary-model brochure and February European Spyder introduction. A later 2011 Spyder label does not change the introduction date.</desc>
+<rect width="600" height="400" fill="#f5f3eb"/>
+<g font-family="sans-serif" fill="#233e33">
+<text x="28" y="40" font-size="27" font-weight="700">2010 · Calendar events</text>
+<path d="M52 89H548" stroke="#9ba99f" stroke-width="3"/>
+<g fill="#637e6d"><circle cx="52" cy="89" r="6"/><circle cx="176" cy="89" r="6"/><circle cx="424" cy="89" r="6"/><circle cx="548" cy="89" r="6"/></g><circle cx="300" cy="89" r="11" fill="#233e33"/>
+<g font-size="21" text-anchor="middle"><text x="52" y="122">2008</text><text x="176" y="122">2009</text><text x="300" y="122" font-weight="700">2010</text><text x="424" y="122">2011</text><text x="548" y="122">2012</text></g>
+<rect x="28" y="151" width="544" height="83" fill="#e1e8df"/><text x="46" y="183" font-size="22" font-weight="600">January · UK reference brochure</text><text x="46" y="215" font-size="21">Ordinary Boxster and S documented.</text>
+<rect x="28" y="250" width="544" height="83" fill="#e1e8df"/><text x="46" y="282" font-size="22" font-weight="600">February · Spyder market arrival</text><text x="46" y="314" font-size="21">Announced in November 2009.</text>
+<text x="28" y="374" font-size="21">A later “2011” label does not move this arrival.</text>
+</g></svg>

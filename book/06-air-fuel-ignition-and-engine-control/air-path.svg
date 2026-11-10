@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-labelledby="air-title air-desc">
+<title id="air-title">The 2.9-litre intake path</title><desc id="air-desc">Filtered air passes a mass-air-flow sensor and electronic throttle before the resonance intake system distributes it to both banks. Fuel is added at the individual inlet ports.</desc>
+<defs><marker id="air-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#276950"/></marker></defs>
+<rect width="600" height="450" fill="#f4f5ef"/>
+<g font-family="sans-serif" fill="#202d27" text-anchor="middle">
+<text x="300" y="37" font-size="26">Air enters before fuel is added</text>
+<g fill="#fff" stroke="#276950" stroke-width="2"><rect x="20" y="75" width="162" height="90"/><rect x="219" y="75" width="162" height="90"/><rect x="418" y="75" width="162" height="90"/></g>
+<g font-size="24"><text x="101" y="112">Air filter</text><text x="300" y="112">MAF</text><text x="499" y="112">Throttle</text></g>
+<g font-size="20" fill="#52685b"><text x="101" y="143">Traps particles</text><text x="300" y="143">Measures mass</text><text x="499" y="143">Controls flow</text></g>
+<g stroke="#276950" stroke-width="3" fill="none" marker-end="url(#air-arrow)"><path d="M182 120H214"/><path d="M381 120H413"/><path d="M499 165V212H300V247"/></g>
+<rect x="140" y="253" width="320" height="64" fill="#dce8df" stroke="#276950" stroke-width="2"/>
+<text x="300" y="293" font-size="24">Resonance intake</text>
+<g stroke="#276950" stroke-width="3" fill="none" marker-end="url(#air-arrow)"><path d="M220 317V355H150V377"/><path d="M380 317V355H450V377"/></g>
+<g fill="#fff" stroke="#276950" stroke-width="2"><rect x="30" y="383" width="240" height="46"/><rect x="330" y="383" width="240" height="46"/></g>
+<text x="150" y="414" font-size="23">3 inlet ports + fuel</text><text x="450" y="414" font-size="23">3 inlet ports + fuel</text>
+</g></svg>

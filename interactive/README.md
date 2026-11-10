@@ -15,7 +15,9 @@ interactive/
   three/scene.js              # GLB loading, lighting, orbiting and disposal
   models/
     reference-car.glb         # Shared car for later component chapters
-    reference-car.js          # Editable source for the schematic car
+    reference-car.js          # Assemble the photo-guided car and named subsystems
+    boxster/                 # Curved shell, lamps, bumpers, tan cabin and wheels
+    prepare-model.js         # Batch trim geometry while preserving named parts
     geometry.js               # Geometry authoring primitives
 book/13-brakes-and-stability-systems/
   index.md
@@ -98,11 +100,12 @@ The brake example maps a single 0–100 slider onto four authored stops:
 
 Camera poses interpolate smoothly between stops. Node transformations use the slider's absolute value, so scrubbing backwards reassembles the same scene without accumulating movement. Part buttons then focus a selected component; moving the main slider returns to the guided view. Named nodes separate the wheel, disc, pads, complete monobloc caliper, pistons and hub. The caliper body never splits into fictional halves.
 
-The renderer uses demand-based frames, a capped pixel ratio and disposable WebGL surfaces. A 32 MiB cache of recently used model bytes avoids repeated downloads, while each mounted scene gets its own parsed objects. Larger assets still load, but are not retained in this cache. The portable edition also retains its embedded bundle. The shared reference car can serve the cooling, suspension or engine chapters; each chapter should supply its own local assembly and explanation. The sample's approximate geometry must not be treated as CAD or a workshop disassembly sequence.
+The renderer uses demand-based frames, a capped pixel ratio, a generated studio reflection environment, self-shadowing and disposable WebGL surfaces. Reflections supply the green paint and glass finish without adding a photographic background. A 32 MiB cache of recently used model bytes avoids repeated downloads, while each mounted scene gets its own parsed objects. Larger assets still load, but are not retained in this cache. The portable edition also retains its embedded bundle. The shared reference car can serve the cooling, suspension or engine chapters; each chapter should supply its own local assembly and explanation. The sample's approximate geometry must not be treated as CAD or a workshop disassembly sequence.
 
 ## Build and delivery
 
 - `npm run models` regenerates the two sample GLBs. Regenerate only when changing their geometry sources.
+- `npm run preview:model` regenerates the models and builds a full-size inspection viewer at `dist/model-preview/`. Serve `dist/` with `npm run serve`; its camera presets support front, rear, side and cabin comparisons.
 - `npm run build` makes one portable offline HTML file. All interactive code and models are embedded, so its size grows with the whole book.
 - `npm run build:web` produces `dist/web/book.html` with hashed code chunks and GLBs in `book-assets/`. Serve the directory over HTTP. Only diagrams near the viewport are mounted; their code and model assets load when needed.
 - `npm test` rebuilds both editions and exercises the real browser interfaces and shipped GLB.

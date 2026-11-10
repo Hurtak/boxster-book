@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 410" font-family="sans-serif" fill="#243e35" role="img" aria-labelledby="t d">
+<title id="t">An open differential averages the two output speeds</title><desc id="d">Carrier 300 rpm, left output 240 rpm and right output 360 rpm. Each differs from the mean by 20 percent.</desc>
+<rect width="600" height="410" fill="#fff"/>
+<text x="300" y="35" text-anchor="middle" font-size="26">Carrier (ring gear)</text>
+<rect x="80" y="55" width="440" height="64" rx="12" fill="#eef3ee" stroke="#c9d5cc"/>
+<text x="300" y="98" text-anchor="middle" font-size="32" fill="#176b53">300 rpm</text>
+<path d="M300 119V151M150 175V151H450V175" fill="none" stroke="#176b53" stroke-width="4"/>
+<g fill="#eef3ee" stroke="#c9d5cc"><rect x="35" y="175" width="230" height="130" rx="12"/><rect x="335" y="175" width="230" height="130" rx="12"/></g>
+<g text-anchor="middle"><text x="150" y="206" font-size="24">Left</text><text x="450" y="206" font-size="24">Right</text><text x="150" y="254" font-size="36" fill="#176b53">240</text><text x="450" y="254" font-size="36" fill="#9a4e22">360</text><text x="150" y="286" font-size="22">rpm</text><text x="450" y="286" font-size="22">rpm</text><text x="300" y="349" font-size="26">240 + 360 = 2 × 300</text><text x="300" y="389" font-size="22">Illustrative difference: ±20% about the mean.</text></g>
+</svg>

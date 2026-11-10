@@ -8,7 +8,7 @@ export function brakeAssembly() {
   const steel = material('#abb5c2', 0.75, 0.4);
   const black = material('#24272c', 0.25, 0.45);
   const padMaterial = material('#8f6546', 0.05, 0.9);
-  wheel(root, 'wheel', [0.065, 0, 0], steel);
+  wheel(root, 'wheel', [0, 0, 0], steel);
   const rotor = group('disc', root);
   annulus(rotor, 0.159, 0.079, 0.009, steel, [-0.0095, 0, 0], true);
   annulus(rotor, 0.159, 0.079, 0.009, steel, [0.0095, 0, 0], true);
@@ -33,6 +33,9 @@ export function brakeAssembly() {
   box(caliper, [0.17, 0.055, 0.035], black, [0, 0, 0.064]);
   for (const y of [-0.074, 0.074]) box(caliper, [0.17, 0.035, 0.04], black, [0, y, 0.054]);
   const pistons = group('pistons', root, [0, 0, 0.12]);
-  for (const side of [-1, 1]) for (const y of [-0.048, 0.048]) cylinder(pistons, 0.022, 0.026, steel, [side * 0.042, y, 0]);
+  for (const side of [-1, 1]) for (const y of [-0.048, 0.048]) {
+    const piston = cylinder(pistons, 0.022, 0.026, steel, [side * 0.042, y, 0]);
+    piston.name = `piston-${side < 0 ? 'inboard' : 'outboard'}-${y < 0 ? 'lower' : 'upper'}`;
+  }
   return root;
 }

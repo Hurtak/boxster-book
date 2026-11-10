@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">First gear driving, second gear preselected</title>
+  <desc id="desc">Engine drive passes through closed clutch K1 and first gear to the final drive. Second gear is selected on the other input shaft, but its clutch K2 is open.</desc>
+  <rect width="600" height="460" fill="#fff"/>
+  <g fill="none" stroke-width="7"><path d="M300 58V86H150V360H300V376" stroke="#176b53"/><path d="M300 58V86H450V360H300V376" stroke="#84938b" stroke-width="3" stroke-dasharray="7 6"/></g>
+  <g fill="#edf3ee" stroke="#526c5d" stroke-width="2"><rect x="230" y="12" width="140" height="46" rx="5"/><rect x="215" y="376" width="170" height="44" rx="5"/></g>
+  <g fill="#fff" stroke-width="2"><rect x="79" y="115" width="142" height="76" rx="5" stroke="#176b53"/><rect x="379" y="115" width="142" height="76" rx="5" stroke="#84938b"/><rect x="79" y="245" width="142" height="74" rx="5" stroke="#176b53"/><rect x="379" y="245" width="142" height="74" rx="5" stroke="#84938b"/></g>
+  <g text-anchor="middle" fill="#243c32" font-size="23"><text x="300" y="42">Engine</text><text x="150" y="143">K1 · odd</text><text x="450" y="143">K2 · even</text><text x="150" y="274">Gear 1</text><text x="450" y="274">Gear 2</text><text x="300" y="405">Final drive</text></g>
+  <g text-anchor="middle" font-size="21"><g fill="#176b53"><text x="150" y="174">closed</text><text x="150" y="304">driving</text></g><g fill="#6b7d73"><text x="450" y="174">open</text><text x="450" y="304">waiting</text></g><g fill="#243c32"><text x="150" y="222" stroke="#fff" stroke-width="5" paint-order="stroke">Inner shaft</text><text x="450" y="222" stroke="#fff" stroke-width="5" paint-order="stroke">Hollow shaft</text><text x="300" y="451">Then differential → wheels</text></g></g>
+</svg>

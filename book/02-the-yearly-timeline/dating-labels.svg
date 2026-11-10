@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" role="img" aria-labelledby="timeline-dates-title timeline-dates-desc">
+<title id="timeline-dates-title">Different dates describe different events</title><desc id="timeline-dates-desc">Announcement and market availability concern a model range. Model year is a manufacturer label. Build and registration dates concern an individual car and can be different years.</desc>
+<rect width="600" height="460" fill="#f5f3eb"/>
+<g font-family="sans-serif" fill="#233e33">
+<text x="28" y="43" font-size="27" font-weight="700">Which date do you mean?</text>
+<path d="M50 92V187" stroke="#637e6d" stroke-width="4"/><circle cx="50" cy="98" r="9" fill="#233e33"/><circle cx="50" cy="181" r="9" fill="#233e33"/>
+<text x="78" y="103" font-size="24" font-weight="600">Announcement</text><text x="78" y="132" font-size="21">The range becomes public.</text>
+<text x="78" y="186" font-size="24" font-weight="600">Market arrival</text><text x="78" y="215" font-size="21">Availability in a stated market.</text>
+<rect x="28" y="242" width="544" height="63" rx="3" fill="#e1e8df"/><text x="46" y="269" font-size="23" font-weight="600">Model year = specification label</text><text x="46" y="294" font-size="20">A separate label, not a calendar guarantee.</text>
+<path d="M50 340V408" stroke="#a86b42" stroke-width="4"/><circle cx="50" cy="346" r="9" fill="#a86b42"/><circle cx="50" cy="408" r="9" fill="#a86b42"/>
+<text x="78" y="352" font-size="23" font-weight="600">Build date: this car is assembled.</text><text x="78" y="414" font-size="23" font-weight="600">Registration: this car is recorded.</text>
+</g></svg>

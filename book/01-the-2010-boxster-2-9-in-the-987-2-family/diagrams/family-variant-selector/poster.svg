@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="410" viewBox="0 0 600 410" role="img" aria-labelledby="title desc">
+<title id="title">The reference ordinary Boxster 2.9</title><desc id="desc">The initial selection is the ordinary Boxster 2.9. Both power bars show 255 PS on the same 320 PS scale. The engine produces 188 kW, uses multipoint injection and the car has a powered fabric roof.</desc>
+<rect width="600" height="410" rx="10" fill="#f4f7f3"/>
+<g font-family="sans-serif" fill="#263d34">
+<text x="30" y="44" font-size="28" font-weight="bold">Boxster 2.9</text>
+<text x="30" y="88" font-size="23">Reference 2.9 · 255 PS</text>
+<rect x="30" y="102" width="540" height="23" rx="4" fill="#e0e7e0"/><rect x="30" y="102" width="430.3" height="23" rx="4" fill="#8a9d91"/>
+<text x="30" y="166" font-size="23">Selected · 255 PS</text>
+<rect x="30" y="180" width="540" height="23" rx="4" fill="#e0e7e0"/><rect x="30" y="180" width="430.3" height="23" rx="4" fill="#176b53"/>
+<text x="30" y="259" font-size="27">188 kW · 2.9 litres</text>
+<text x="30" y="300" font-size="24">Multipoint injection</text>
+<text x="30" y="341" font-size="24">Powered fabric roof</text>
+<text x="30" y="385" font-size="20">Both bars use a 320 PS scale.</text>
+</g></svg>

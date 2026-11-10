@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">Starting and running have different energy paths</title>
+  <desc id="desc">Starting sends battery energy to the starter, which turns the engine. Running sends engine rotation to an alternator, which supplies loads and charges the battery.</desc>
+  <defs><marker id="electric-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#39765b"/></marker><marker id="mechanical-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#a36d30"/></marker></defs>
+  <rect width="600" height="440" fill="#f8faf7" rx="12"/>
+  <g fill="#243d32" font-size="24" font-weight="700"><text x="24" y="39">Starting</text><text x="24" y="220">Running</text></g>
+  <g stroke-width="2" stroke="#718477" fill="#edf3ec">
+    <rect x="24" y="67" width="146" height="76" rx="8"/><rect x="227" y="67" width="146" height="76" rx="8"/><rect x="430" y="67" width="146" height="76" rx="8"/>
+    <rect x="24" y="248" width="146" height="76" rx="8"/><rect x="227" y="248" width="146" height="76" rx="8"/><rect x="430" y="248" width="146" height="76" rx="8"/>
+    <rect x="227" y="365" width="146" height="56" rx="8"/>
+  </g>
+  <g text-anchor="middle" fill="#243d32" font-size="22"><text x="97" y="113">Battery</text><text x="300" y="113">Starter</text><text x="503" y="113">Engine</text><text x="97" y="294">Engine</text><text x="300" y="294">Alternator</text><text x="503" y="294">Loads</text><text x="300" y="401">Battery</text></g>
+  <g stroke-width="4" fill="none"><path d="M173 105H220" stroke="#39765b" marker-end="url(#electric-arrow)"/><path d="M376 105H423" stroke="#a36d30" marker-end="url(#mechanical-arrow)"/><path d="M173 286H220" stroke="#a36d30" marker-end="url(#mechanical-arrow)"/><path d="M376 286H423" stroke="#39765b" marker-end="url(#electric-arrow)"/><path d="M300 327V357" stroke="#39765b" marker-end="url(#electric-arrow)"/></g>
+  <g text-anchor="middle" font-size="20"><text x="198" y="169" fill="#39765b">Current</text><text x="401" y="169" fill="#925f27">Rotation</text><text x="198" y="350" fill="#925f27">Belt</text><text x="457" y="350" fill="#39765b">Current</text></g>
+  <text x="24" y="392" font-size="18" fill="#53695b">Functional paths</text><text x="24" y="416" font-size="18" fill="#53695b">not cable routing</text>
+</svg>

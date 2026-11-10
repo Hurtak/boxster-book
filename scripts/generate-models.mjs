@@ -3,6 +3,7 @@ import { dirname, resolve } from 'node:path';
 import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 import { referenceCar } from '../interactive/models/reference-car.js';
 import { brakeAssembly } from '../book/13-brakes-and-stability-systems/diagrams/brake-explorer/model.js';
+import { prepareModel } from '../interactive/models/prepare-model.js';
 
 // GLTFExporter uses this browser interface to read its output Blob in Node.
 globalThis.FileReader = class {
@@ -14,7 +15,7 @@ for (const [path, object] of [
   ['interactive/models/reference-car.glb', referenceCar()],
   ['book/13-brakes-and-stability-systems/diagrams/brake-explorer/brake.glb', brakeAssembly()],
 ]) {
-  const bytes = await new GLTFExporter().parseAsync(object, { binary: true });
+  const bytes = await new GLTFExporter().parseAsync(prepareModel(object), { binary: true });
   await mkdir(dirname(resolve(path)), { recursive: true });
   await writeFile(path, new Uint8Array(bytes));
   console.log(`${path}: ${Math.round(bytes.byteLength / 1024)} KiB`);

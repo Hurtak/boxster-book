@@ -2,8 +2,6 @@
 
 Braking turns motion into heat. In the 2010 Boxster 2.9, pressing the pedal starts a chain of events: hydraulic pressure rises, pads clamp the discs, and the tyres transmit the slowing force to the road. Alongside that physical chain, electronic systems monitor the wheels and the car's movement, adjusting individual brakes when necessary.
 
-Understanding the whole chain explains more than the size of a brake disc alone. It explains why the pedal can pulse during a hard stop, why a thicker disc can matter on a long descent, and why changing the car's driving mode can change its behaviour without changing any brake hardware.
-
 ## The brakes on the 2010 Boxster 2.9
 
 The reference car has a hydraulic, power-assisted braking system with cast-iron discs at all four wheels. Its black calipers are fixed aluminium monobloc units with four pistons each. The discs are internally ventilated and cross-drilled. The basic arrangement is the same whether the car has the six-speed manual gearbox or optional PDK.[^hardware]
@@ -93,7 +91,7 @@ An individual brake can create a turning influence on the car. If the vehicle's 
 
 Imagine the car turning into a bend and the rear beginning to rotate farther than intended. PSM can select an appropriate wheel brake to oppose that rotation. The driver may notice a flashing control light, hydraulic noise or a reduction in engine response. The precise intervention depends on the situation; there is no single wheel that PSM always brakes in every slide.
 
-PSM also includes traction functions. **ASR**, or anti-slip regulation, limits excessive driven-wheel spin. **ABD**, the automatic brake differential function, can brake a spinning driven wheel. Its action creates resistance through the differential and can help the other driven wheel transmit torque. A mechanical limited-slip differential is a separate piece of equipment, discussed in the drivetrain chapter.[^brochure]
+PSM also provides **anti-slip regulation (ASR)** to limit driven-wheel spin, and **automatic brake differential (ABD)** to brake a spinning driven wheel. The [drivetrain chapter](../10-differential-driveshafts-and-mounts/index.md#mechanical-limited-slip-and-brake-intervention) explains ABD’s torque-transfer effect and the separate mechanical locking differential.[^brochure]
 
 ### Preparing for an urgent stop
 
@@ -107,17 +105,17 @@ These functions should also be understood separately from hill-start assistance.
 
 The hand lever pulls cables leading to the rear wheels. There, separate parking-brake shoes act against drum surfaces inside the rear disc assemblies. This lets the car remain held without maintaining hydraulic pressure at the ordinary disc-brake pads.[^parking]
 
-On a PDK car, selecting P engages a transmission parking lock, which is another mechanism again. The handbrake, PDK parking lock and temporary hill-start hold therefore perform distinct functions. The presence of one does not identify the condition or operation of the others.
+The handbrake, [PDK parking lock](../09-pdk-transmission/index.md#the-selector-and-steering-wheel-controls) and temporary hill hold are three separate ways of restraining movement. Each has its own mechanism and operating conditions.
 
 ## Options on the 2010 2.9
 
-The standard 2.9 already includes PSM and its anti-lock braking functions. Buyers did not need to order Sport Chrono to obtain stability control. The January 2010 UK catalogue lists **Sport Chrono Package, code 639**, and **Sport Chrono Package Plus, code 640**; the latter requires PCM.[^options]
+PSM and ABS are standard. Optional Sport Chrono is **639**, or **640** in Plus form with PCM.[^options]
 
-For this chapter, the relevant change is the control strategy. Selecting Sport mode raises the threshold for PSM intervention, allowing more movement before it intervenes. Other Sport Chrono effects depend on the equipment fitted, including the transmission and optional suspension. The underlying iron-disc brakes retain their dimensions.[^options]
+For this chapter, the relevant change is the control strategy. Selecting Sport mode raises the threshold for PSM intervention, allowing more movement before it intervenes. The iron-disc brake dimensions remain unchanged; [chapter 18](../18-occupant-protection-and-system-integration/index.md#options-on-the-2010-2.9) connects the equipment-dependent mode changes.[^options]
 
 The PSM OFF button also changes the system's behaviour, but some functions remain available. ABS is retained, one-sided driven-wheel spin can still be controlled, and stability intervention can return under specified braking conditions. Sport mode affects those conditions. The handbook's description is therefore more informative than treating the button as a switch that removes every form of electronic assistance.[^handbook]
 
-**Porsche Ceramic Composite Brake, or PCCB, was listed as an option for the S, with the ordinary Boxster marked unavailable in the UK catalogue.** It belongs in the model comparison below. Larger optional wheels on a 2.9 are likewise a wheel specification: their presence alone does not establish that a different brake system was installed.[^options]
+**Porsche Ceramic Composite Brake (PCCB)** was an S option, unavailable on the ordinary 2.9 in the UK catalogue. Its hardware is compared below.[^options]
 
 ## Changes in other 2.9 model years
 
@@ -130,9 +128,9 @@ The important starting point is the 2009 facelift. The 2.9 adopted 318 mm front 
 | 2011 | Published specifications retain the 318/299 mm disc diameters and four-piston fixed-caliper arrangement. |
 | 2012 | Published specifications again retain those diameters and the same broad caliper arrangement. |
 
-The later specification sheets support continuity in this basic design. They do not establish that every supplier detail, part number or software revision remained identical. A replacement component should consequently be matched to the car's VIN and fitted equipment, even when the year-to-year description looks the same.[^later]
+Later specification sheets retain the basic design. Match replacement components to the VIN and fitted equipment; detailed supplier, part-number and software changes are not resolved by these tables.[^later]
 
-## Where else the system appears
+## The S, Spyder and Black Edition {#where-else-the-system-appears}
 
 The 2.9 shares its general braking architecture with the more powerful 987.2 models. The following comparison covers their standard iron brakes.
 
@@ -152,19 +150,15 @@ The Spyder's dimensions are specified in its European price list. It also asks i
 
 The S could be ordered with ceramic-composite discs and yellow calipers. The catalogue describes 350 mm discs, six-piston front calipers and four-piston rear calipers. This is a complete brake-system specification, involving the appropriate discs, calipers and pads.[^pccb]
 
-Reducing disc mass reduces part of the mass moving with the suspension and rotating with the wheel. Ceramic-composite material also changes the system's thermal and wear behaviour. Those differences explain why PCCB deserves its own description rather than being treated as a colour choice for the calipers.
+Lighter discs reduce rotating mass and [unsprung mass](../11-suspension-and-wheel-geometry/index.md#compliance-and-unsprung-mass). Ceramic-composite material also changes thermal and wear behaviour, requiring the matching discs, pads and calipers.
 
-For a reader examining a 2.9 today, yellow calipers establish very little by themselves. The build record identifies what left the factory; the components fitted to the car identify its present configuration.
+## Identification and ageing {#identifying-the-fitted-version}
 
-## Identifying the fitted version
-
-Begin with the vehicle's model, build information and factory equipment record. Then compare those records with the visible hardware. A standard 2010 2.9 should lead the investigation towards black four-piston calipers and the iron-disc dimensions shown at the start of this chapter.
+### Identifying the fitted version
 
 Caliper paint is only an initial clue. A previous owner may have repainted a caliper, fitted replacement discs or changed the complete system. Disc part numbers and the correct dimensional specification provide stronger evidence. A visible outer wear lip also makes an improvised measurement a poor substitute for a proper inspection.
 
-Inside the cabin, the Sport Chrono timer and associated controls can help identify a configuration, although a retrofit may have changed what is present. PSM itself is standard; its button is not evidence that the car has Sport Chrono. Establishing the factory specification and establishing the currently fitted specification are two separate tasks.
-
-## Ageing and wear
+### Ageing and wear {#ageing-and-wear}
 
 Brake components age in different ways. Pads lose friction material, discs lose thickness, fluid takes up moisture, and exposed metal can corrode. A car with little annual mileage can therefore still need attention to its braking system.
 
@@ -178,11 +172,6 @@ Seals and flexible hoses also deserve attention as the car ages. Leakage, restri
 
 The parking brake has separate shoes, cables and adjustment. Fresh rear disc pads therefore say little about its condition. Similarly, a wheel-speed signal fault can affect electronic assistance while leaving the visible discs and pads apparently sound. Mechanical braking hardware and electronic brake control need to be considered together.
 
-The purpose of the original system is consistent throughout: make the force requested at the pedal controllable, turn the car's energy into heat repeatedly, and preserve useful control at the tyres. The 2010 2.9's brake system makes sense when those three jobs are considered as one connected mechanism.
-
-## Sources
-
-The model-specific references are Porsche publications. Original documents hosted by collectors are identified by title and section. The North American owner's handbook is used for descriptions of system operation; UK option availability comes from the UK sales catalogue. Bosch, Brembo and Ferodo references explain general operating principles.
 
 [^hardware]: Porsche, *2009 Technik Introduction — All Boxster Cayman Models*, brake-system table, printed p. 119, hosted as [ManualsLib viewer page 125](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=125). The table separates front and rear disc thicknesses. See also *The Boxster*, January 2010 UK edition, printed pp. 60–63.
 

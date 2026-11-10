@@ -14,16 +14,18 @@ export function energyDiagram(host, { state, signal }, config) {
     const y = scaleLinear([0, kineticEnergy(state.mass, config.maxSpeed)], [height - margin.bottom, margin.top]);
     const grid = svg.append('g').attr('transform', `translate(${margin.left},0)`)
       .call(axisLeft(y).ticks(4).tickSize(-(width - margin.left - margin.right)).tickFormat(format(',.0f')));
+    grid.attr('font-family', 'inherit');
     grid.select('.domain').remove();
     grid.selectAll('.tick line').attr('stroke', '#d5dae1');
-    grid.selectAll('text').attr('font-size', 12).attr('fill', '#5e6268');
+    grid.selectAll('text').attr('font-size', 14).attr('fill', '#526159');
     const axis = svg.append('g').attr('transform', `translate(0,${height - margin.bottom})`)
       .call(axisBottom(x).tickValues([0, 50, 100, 150, 200]).tickSize(4));
-    axis.selectAll('text').attr('font-size', 12).attr('fill', '#5e6268');
+    axis.attr('font-family', 'inherit');
+    axis.selectAll('text').attr('font-size', 14).attr('fill', '#526159');
     axis.selectAll('path,line').attr('stroke', '#9aa3af');
     axis.select('.tick:last-child text').attr('text-anchor', 'end');
-    svg.append('text').attr('x', margin.left).attr('y', 18).attr('font-size', 13).attr('fill', '#5e6268').text('Kinetic energy (kJ)');
-    svg.append('text').attr('x', width - margin.right).attr('y', height - 6).attr('text-anchor', 'end').attr('font-size', 13).attr('fill', '#5e6268').text('Speed (km/h)');
+    svg.append('text').attr('x', margin.left).attr('y', 18).attr('font-size', 14).attr('fill', '#526159').text('Kinetic energy (kJ)');
+    svg.append('text').attr('x', width - margin.right).attr('y', height - 6).attr('text-anchor', 'end').attr('font-size', 14).attr('fill', '#526159').text('Speed (km/h)');
     svg.append('path').datum(range(0, config.maxSpeed + 1, 2)).attr('fill', 'none').attr('stroke', '#1d5fbf').attr('stroke-width', 3)
       .attr('d', line().x((speed) => x(speed)).y((speed) => y(kineticEnergy(state.mass, speed))));
     const reference = kineticEnergy(state.mass, 100);

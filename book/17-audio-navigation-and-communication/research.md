@@ -1,0 +1,55 @@
+# Chapter 17 research: audio, navigation and communication
+
+Checked **10 November 2026**. Baseline: **2010 European/UK 987.2 Boxster 2.9**. Research skill applied directly by this delegated fresh-context research author; no further delegation. UK equipment claims are taken from the dated UK brochure; technical training supplies mechanism and architecture, without converting generic system lists into a UK order specification.
+
+## Primary sources read
+
+1. Porsche, *The Boxster*, **01/10**, UK document **WSLB1101000125**. [Original PDF](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf). Web tool opened the original. Independently read the existing downloaded PDF `/tmp/boxster-ch05/brochure-2010.pdf` and its text, and rendered the relevant spreads. **Printed pp. 82–83 = PDF39; 84–85 = PDF40; 86–87 = PDF41; 88–89 = PDF42; 116–117 = PDF56; p.118 = PDF57.** Printed pp.56–57/PDF26 describe Chrono; printed p.107 identifies dependency on PCM.
+2. Porsche, *2009 Technik Introduction — All Boxster Cayman Models*, Electrics and electronics, printed **pp.167–184**. [ManualsLib original-document viewer](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html). Viewer pages are printed page +6. Direct web `open` frequently failed for query-string pages; following the root page's numbered links succeeded for the pages below. A direct curl attempt encountered 403. No unseen page is treated as evidence.
+3. Porsche, *The new Boxster*, UK **08/08**, document **WVK 314 725 09 GB/UK**, printed **pp.82–89, 117–118**. [Original launch brochure](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf), web opened. Used only to establish that the two head units and principal sound/interface choices existed at facelift introduction, not an annual software history.
+4. Porsche, *The Boxster Spyder*, UK **01/10**, document **WSLB1101000225 GB/UK**, printed **pp.34–35, 41**. [Original PDF](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf), web opened; relevant full text independently read from `/tmp/suspension-spyder-uk.txt`.
+5. Porsche Cars Great Britain, *Boxster S Black Edition Price List*, **Edition03/2011**, document **LGB 200 105 85**. [Original scan](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0). Pre-existing scan `/tmp/boxster-black-edition-uk-pricelist.pdf` has provenance in the repository source library. It contains no usable text layer. **PDF6/printed pp.10–11** and **PDF9/printed pp.16–17** were rendered and visually read here. Audio equipment is on printed p.11, not pp.12–13.
+
+## Claim ledger and source decisions
+
+| Subject | Exact evidence and treatment |
+| --- | --- |
+| CDR-30 standard | UK01/10 printed p.82 and table p.117; training printed **167/[viewer173](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=173)**. Standard on ordinary Boxster and S; 5-inch monochrome display, MP3-compatible CD, FM dual tuner/RDS diversity, 30 memories, speed-dependent volume; two dash tweeters, two door woofers, 2 ×25W output stages. This does not describe the Spyder's starting specification. |
+| PCM identity | Training **169/[viewer175](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=175)** expressly calls optional second-generation Boxster/Cayman unit **PCM3.0**, with formerly separate CD-changer/phone/navigation modules integrated. UK01/10 pp.83–85 establishes its **6.5-inch colour touchscreen**, button operation, UK navigation package and hard-drive map storage. Training describes Low/High generic variants; UK voice control remains optional per table, so no assumption that PCM automatically contains it. |
+| PCM architecture/MOST | Training **171/[viewer177](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=177)**, drawing **9_26.2_09**, explicitly labels analogue amplifier, digital amplifier and MOST as well as HDD, GPS/gyrometer, CAN and other optional functions. Chapter only draws source/head-unit/amplifier/speaker teaching paths, not the detailed network. Interactive labels **MOST only with PCM + BOSE**; CDR + BOSE is labelled digital amplification, avoiding extension of the PCM-specific drawing into a CDR wiring claim. |
+| Sound Package Plus | UK01/10 printed p.87: **7 speakers, 185W**, works with CDR-30/PCM. Training **168/[viewer174](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=174)** calls it analogue, fully active, all channels through amplifier with driver ICs moved from HU. Interactive uses analogue Plus-amplifier route, no crossover frequencies, output voltages or pinouts. |
+| BOSE | UK01/10 pp.88–89: compatible with CDR-30 and PCM; **11** Boxster speakers, active subwoofer, centre speaker, **seven-channel digital amplifier/385W**; discrete DVD5.1 only with PCM. Training **180/[viewer186](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=186)** confirms Boxster11 vs Cayman12 and amplifier specification. No speaker-to-amplifier-channel one-to-one mapping invented. |
+| BOSE processing | Training **181/[viewer187](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=187)**: CenterpointII generates surround from stereo; SurroundStage routes channels to speaker combinations; dynamic Loudness and AudioPilot microphone compensate listening conditions. Chapter distinguishes recorded5.1 from derived surround and AudioPilot from speech capture. |
+| CDR vs PCM interface | UK01/10 printed pp.86–87 and table **117–118**: **870 = AUX for CDR; AUX/USB/iPod for PCM**. This market/date-specific evidence controls text and interactive. Training p.168 groups iPod/USB/AUX under a generic CDR-options list and lists DVD playback nearby; it is broader and misleading if read as a UK CDR compatibility table. Do not use that list to grant USB or DVD to baseline CDR-30. |
+| HFP preparation | UK01/10 p.86, p.117: **619**, **618** with cradle/mounting arrangement, works with CDR/PCM. HFP makes car a hands-free terminal; network connection remains through phone/aerial. Training p.168 confirms microphone/wiring, muting/basic controls. No inference that a PHONE button proves option installed; no inference of music streaming from telephone Bluetooth. |
+| PCM phone module | UK01/10 printed pp.85–86 and118: **666**; integrated SIM reader and quad-band GSM; SAP phone uses car radio/aerial; HFP-only phone mode uses phone/aerial. **669** cordless handset cannot be used for HFP calls. These are original functional descriptions, not present carrier/service compatibility promises. |
+| Other PCM options | UK01/10 table p.118: **P23** PCM/navigation, **693** changer, **666** telephone module, **669** handset, **671** voice control, **641** electronic logbook; p.117 **692** CDR changer. No modern apps, CarPlay or Android Auto assigned to original hardware. |
+| Chrono Plus | UK01/10 p.57: PCM personal memory and lap-time performance display; table p.107 **640 only with PCM**. No audio requirement implied and no claim PCM adds power. Non-Plus639 works without PCM; vehicle dynamics discussion bridged to18. |
+| Ordinary S | UK01/10 pp.82,117–118 list the same standard CDR and principal upgrades for both ordinary models. No S standard-PCM or standard-BOSE claim. |
+| Spyder | UK01/10 pp.34–35 says no radio; p.41 offers CDR-30 and PCM/navigation, both **only with Sound Package Plus**, code490. No Bose option asserted from the ordinary car's table. |
+| Black Edition | UK03/2011 scanned price list **p.11/PDF6**, directly read: standard PCM including navigation; Sound Package Plus including CD storage; universal interface AUX/USB/iPod; mobile phone preparation. **pp.16–17/PDF9**, directly read:640 Chrono Plus optional. No ordinary 2.9 equipment inference. |
+
+## Diagram and interaction contract
+
+Three original diagrams:
+
+- `audio-amplification.svg`: source/control/power/cone principle; generic moving-coil schematic, no measured hardware dimensions.
+- `telephone-paths.svg`: HFP, direct-SIM and SAP cellular paths. HFP means phone radio/aerial; direct-SIM or SAP means PCM module/car aerial. No RF or CAN wiring layout.
+- **`audio-source-path`**: D3 route with native selects and checkbox, persistent supplied state, ResizeObserver/signal lifecycle through shared helper. Initial **cdr/radio/standard/interface=false** matches static poster. Sound upgrade alone does not enable an unsupported source. Controls intentionally allow unavailable examples so the missing dependency is explained in text.
+
+Expected checks: **cdr + radio + standard** true; **cdr + USB +870** false; **pcm + USB without870** false; **pcm + USB +870** true; **cdr + AUX without870** false; **cdr + AUX +870** true; **pcm + DVD5.1 + standard** false; **pcm + DVD5.1 + BOSE** true; **cdr + DVD5.1 + BOSE** false; **cdr + CD + BOSE** true. DOM attributes: `data-audio-head-unit`, `data-audio-source`, `data-audio-sound`, `data-audio-interface`, `data-audio-available`.
+
+## Evidence limits
+
+- No complete2009–2012 UK order-guide/software revision sequence. No invented annual Bluetooth/audio upgrades; registration does not identify hardware/software.
+- A broadly titled **Porsche PCM operating manual WKD95222010,03/09** at [Manualzz](https://manualzz.com/doc/63019330/porsche-pcm-car-entertainment-system-operating-manual) was inspected as a possible source. Its references to Panamera/Burmester/CAR screens and Bluetooth audio mean it is not sufficient to attribute those features to UK987.2PCM3.0; not used for fitment claims.
+- No present phone, iPod, cellular network or retrofit compatibility guarantee, and no recommendation of particular retrofit hardware. Current equipment must be documented as installed equipment.
+- No exact CDR MOST topology, fibre routing, pinouts, amplifier channel wiring, fault-code procedure, or repair instructions claimed.
+
+## Local validation completed
+
+- `node --check` passed for the chapter module; esbuild bundled its real shared imports.
+- SVG XML parsing, local resource existence and manuscript footnote-definition parity passed.
+- A temporary Playwright check (`/tmp/boxster-ch17/check.mjs`, not a repository file) mounted the actual module in headless Chrome. All ten expected availability cases above passed, along with explicit native label lookup, remount state retention, 390px horizontal/text bounds and 800px rendering.
+- The 390px interactive screenshot and all three static SVGs were visually inspected. Browser launch needed sandbox escalation; this was an environment launch restriction, not a module failure. Native select labels were made explicit after the first browser check exposed ambiguous wrapped-label lookup.
+- `git diff --check -- book/17-audio-navigation-and-communication` passed. No staging, commits, shared-runtime changes or full book build performed; parent owns final integration/build.

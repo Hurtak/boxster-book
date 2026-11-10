@@ -20,9 +20,7 @@ for (const file of chapterFiles) {
   }
 }
 await mkdir(destination, { recursive: true });
-if (!modules.size) {
-  console.log(JSON.stringify({ ids: [], script: null, css: null }));
-} else {
+{
   const entry = join(destination, 'entry.mjs');
   const runtime = resolve('interactive/runtime.js');
   const registry = [...modules].map(([id, path]) => `${JSON.stringify(id)}: () => import(${JSON.stringify(path)})`).join(',\n');
@@ -56,6 +54,10 @@ if (!modules.size) {
     notices.push(`${metadata.name} ${metadata.version}\n${(await Promise.all(licenses.map((name) => readFile(join(directory, name), 'utf8')))).join('\n')}`);
   }
   const noticeFile = join(destination, 'assets', 'THIRD_PARTY_NOTICES.txt');
+  const fontDirectory = resolve('assets/fonts');
+  for (const name of (await readdir(fontDirectory)).filter((name) => /^OFL-.*\.txt$/.test(name)).sort()) {
+    notices.push(await readFile(join(fontDirectory, name), 'utf8'));
+  }
   await writeFile(noticeFile, notices.join('\n\n--------------------\n\n'));
   console.log(JSON.stringify({ ids: [...modules.keys()], script: resolve(output[0]), css: output[1].cssBundle ? resolve(output[1].cssBundle) : null, assets: join(destination, 'assets'), notices: noticeFile }));
 }

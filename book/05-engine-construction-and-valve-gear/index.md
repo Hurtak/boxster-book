@@ -1,1 +1,184 @@
 # Engine construction and valve gear
+
+The 2010 European Boxster 2.9 has a water-cooled, naturally aspirated flat-six mounted behind the seats and ahead of the rear axle. Its cylinders lie across the car rather than standing upright. Inside, six pistons turn one crankshaft, while four camshafts coordinate the valves that admit the fresh charge and release the exhaust.
+
+This engine belongs to the new generation introduced with the 2009 facelift. It is **port-injected**, even though the contemporary Boxster S uses direct injection. It also dispenses with the earlier engine's intermediate shaft. Those two facts can coexist: direct injection does not define whether an engine has the new timing-drive architecture.[^engine-id]
+
+## The engine in the 2010 2.9
+
+| Feature | Reference engine |
+| --- | --- |
+| Layout | Six horizontally opposed cylinders; mid-mounted |
+| Capacity | 2,893 cm³, marketed as 2.9 litres |
+| Bore × stroke | 89.0 × 77.5 mm |
+| Compression ratio | 11.5:1 |
+| Fuel preparation | Sequential multipoint port injection |
+| Valve gear | Four overhead camshafts; four valves per cylinder |
+| Inlet control | VarioCam Plus: variable timing and two-stage lift |
+
+These mechanical specifications apply to both transmissions. Published output and performance figures are collected in [the reference tables](../03-the-2010-boxster-2-9-specification-and-options/index.md#the-reference-specification).[^specification]
+
+![A related 2009 Cayman 2.9 engine, viewed from the gearbox end. Photo: Redline Auto Parts. [Donor identification and source](https://www.redlineautoparts.com/porsche/2005-2012-boxster-cayman-987/2009-2012-porsche-987-boxster-cayman-2-9l-engine-long-block-ma1-20-89k-bc026/).](images/ma120-cayman-2-9-engine.jpg){alt="A complete used 987-generation 2.9-litre engine, viewed from its gearbox end, with a broad black intake assembly above the low aluminium crankcase."}
+
+### What “flat-six” describes
+
+The crankshaft runs along the centre of the engine. Three cylinders lie on each side, with a cylinder head outside each bank. The opposed cylinders are slightly staggered along the shaft because their connecting rods occupy different crank throws. Each piston moves towards its own head and back towards the crankshaft.
+
+The opposed layout helps balance piston forces and permits a low installation. Combustion still delivers pulses of torque, and mounts isolate the resulting vibration from the body.[^flat]
+
+![A plan of the 2010 2.9 shows three cylinders on either side of the crankshaft, connecting rods between pistons and crank throws, and two camshafts in each outer cylinder head.](engine-layout.svg)
+
+The drawing separates the major parts deliberately. In the real engine, the intake, wiring, coolant passages, covers and accessories conceal most of this arrangement. A photograph from above therefore shows the breathing equipment more readily than the pistons that give the engine its name.
+
+## Four strokes turn fuel into rotation
+
+Follow one cylinder through its cycle. **Intake** draws in a fresh air–fuel charge as the piston moves away from the head. **Compression** follows as the piston returns with the valves closed. Ignition starts combustion near the end of compression. During the **power stroke**, expanding gas pushes the piston away from the head. Finally, **exhaust** returns the piston towards the head while the exhaust valves let the spent gas leave.[^cycle]
+
+The connecting rod links the piston pin to an offset crank pin. Its angle changes as the crank turns, converting the piston's back-and-forth movement into rotation. The other cylinders share the task at different points in their cycles, so the complete engine delivers a succession of power strokes.
+
+::: {.book-diagram data-diagram="engine-four-stroke"}
+![Intake, compression, power and exhaust occupy two crankshaft revolutions. The crank turns 720 degrees while each camshaft turns 360 degrees; the illustrated valve events are simplified to the stroke boundaries.](diagrams/engine-four-stroke/poster.svg)
+:::
+
+One complete cycle takes **two crankshaft revolutions**, or 720°. A piston reaches the head end of its travel twice: once between compression and power, and once between exhaust and intake. Its position alone therefore cannot identify the stroke. The valve state and the engine's position within the two-turn cycle matter too.
+
+The familiar names *top dead centre* and *bottom dead centre* describe the ends of piston travel. They still apply to this horizontal engine: “top” means the head end, not necessarily the highest point above the road. The interactive figure turns one cylinder upright to make that movement easy to follow.
+
+Real valves do not simply snap open at each stroke boundary. Opening takes time, and moving gas has momentum. Designers choose opening and closing events that extend across the simple four-stroke divisions. VarioCam Plus adjusts part of that breathing process, as described below.
+
+## Understanding the dimensions and output
+
+**Bore** is the cylinder's internal diameter; **stroke** is the distance the piston travels between its end positions. The 2.9's 89 mm bore exceeds its 77.5 mm stroke. Multiplying one cylinder's circular area by its stroke gives its swept volume. Multiplying by six gives the engine's displacement:[^dimensions]
+
+**6 × π/4 × 89² × 77.5 ÷ 1,000 ≈ 2,893 cm³.**
+
+This is the volume swept by the pistons, not the total space inside the engine. It excludes the small combustion-chamber volume remaining when a piston is nearest its head. The **11.5:1 compression ratio** compares the cylinder's largest enclosed volume with its smallest. Compression ratio is a geometric relationship; a compression test measures pressure under its own test conditions.[^compression]
+
+**Torque** is the turning effect at the crankshaft. **Power** describes the rate at which the engine does work. For rotation, power equals torque multiplied by angular speed. Using rpm and Nm, the convenient conversion is:
+
+**Power in kW = torque × rpm ÷ approximately 9,550.**
+
+At the published 290 Nm and 6,000 rpm, that gives about **182 kW**. At the separate peak-power point of 188 kW and 6,400 rpm, the same relationship implies about **281 Nm**. These are calculations from the published figures, not additional dynamometer measurements. They explain why maximum power can occur after the maximum-torque plateau: the engine performs more cycles each second even while torque begins to fall.
+
+The 4,400–6,000 rpm range marks the maximum-torque plateau. [Transmission ratios](../08-manual-transmission-and-clutch/index.md#ratios-exchange-speed-for-torque) determine how that engine torque becomes force at the tyres.
+
+## Crankcase, crankshaft, rods and pistons
+
+The 2.9 uses a two-part, vertically split aluminium-silicon crankcase. Porsche identifies the alloy as **Alusil**. Its prepared cylinder surfaces expose silicon particles on which the pistons and rings run; this construction does not use conventional cast-in iron cylinder liners.[^crankcase]
+
+The crankcase has several jobs at once. It locates the cylinders, supports the crankshaft bearings and contains passages for oil and coolant. Keeping those relationships stable matters: the pistons must run in their bores while the crankshaft turns on accurately aligned bearings, despite changing temperature and combustion loads.
+
+The crankshaft is forged and runs in eight main-bearing positions. The connecting rods are also forged. Their big ends are fracture-split, creating matching surfaces between each rod and its cap. The pistons are forged light-alloy components; Porsche specifically distinguishes the conventional crown form of the port-injected basic engine from the crown required by the S engine's DFI combustion process.[^rotating]
+
+A piston crown faces the combustion chamber. Rings around the piston help seal the gas pressure and control oil at the cylinder wall. The piston pin permits the rod to pivot as the crank rotates. The rod's big-end bearing and the crankshaft's main bearings support rotation through lubricated bearing surfaces. They are different interfaces from the sliding contact between the piston assembly and cylinder bore.
+
+The mechanism needs lubrication and temperature control as well as strong metal parts. The valve gear and timing drive also use oil as a working fluid. [Lubrication, cooling and exhaust](../07-lubrication-cooling-and-exhaust/index.md) follows these supporting systems.
+
+## Heads and valves control the gas exchange
+
+Each cylinder has two inlet valves and two exhaust valves: **24 valves in total**. Each head carries an inlet camshaft and an exhaust camshaft, giving four camshafts across the engine. Cam lobes operate the valve gear; springs return the valves to their seats as the lobes rotate away. Hydraulic valve-clearance compensation takes up the working clearance in the valve train.[^heads]
+
+The cylinder head forms the roof of each combustion chamber and carries the intake and exhaust passages, valve guides and seats. The valves must open to provide a flow path, then seal against their seats so that compression and combustion pressure act on the piston.
+
+Porsche's new head construction integrates the tappet guidance into the head rather than retaining the previous separate guide housing. “Four valves per cylinder” therefore describes only one aspect of a more substantial assembly. Passage shape, valve size, cam motion and the chamber all influence how effectively a cylinder fills and empties.[^head-construction]
+
+The inlet passages also house the 2.9's port injectors. Their position relative to the valves is explained in [fuel supply and metering](../06-air-fuel-ignition-and-engine-control/index.md#supplying-and-metering-the-fuel).[^port]
+
+## Chains synchronise crankshaft and camshafts
+
+The camshafts rotate at **half crankshaft speed**, providing one set of valve events for each two-turn cycle. In the 2010 2.9, two timing chains transmit the crankshaft's rotation to the camshafts, one chain serving each bank. Guide and tensioning rails control the chain paths; two hydraulic tensioners connected to the oil circuit maintain the required tension.[^chains]
+
+![A connection schematic shows the crankshaft driving two chains and four camshafts, with guide rails and oil-fed hydraulic tensioners. There is no intermediate shaft between crankshaft and camshafts.](timing-drive.svg)
+
+The chain links carry force, the guides constrain the route, and the tensioners act through the rails to control slack. The sprockets establish the required two-to-one speed relationship.
+
+The new drive runs without the earlier **intermediate shaft** or its bearing arrangement. Its own chains, guides, bearings and seals remain working components subject to wear.
+
+It also distinguishes the internal timing chains from the external accessory belt. An accessory pulley and belt seen in a photograph do not identify a camshaft timing belt. The two drives have different purposes.
+
+## VarioCam Plus: timing and lift
+
+VarioCam Plus is standard on the reference 2.9. It combines two inlet-side adjustments. **Timing** changes when the inlet valves open and close relative to crankshaft position. **Lift** changes how far they open. These are separate dimensions of the valve event.[^variocam]
+
+A camshaft phase adjuster changes the inlet camshaft's angular relationship to its drive. Porsche describes an electro-hydraulic vane mechanism, with a **40° crank-angle adjustment range**. The engine controller compares the requested phase with the measured camshaft position and controls the hydraulic adjustment.[^phase]
+
+Advancing the inlet cam moves its opening and closing events earlier relative to the crank. Retarding moves them later. This shifts their relationship to piston movement and exhaust events; it does not make the camshaft run continuously faster than its normal half-speed relationship. During adjustment its phase changes, after which it retains the new relationship.
+
+The 2.9's two documented peak inlet lifts are **3.6 mm and 10.0 mm**. Changing lift selects a different cam-controlled motion for the valves. A greater opening can provide more flow capacity, while a smaller event suits other operating conditions. The actual amount of air admitted still depends on pressure differences, valve duration, port geometry and engine speed.[^lift]
+
+::: {.book-diagram data-diagram="engine-timing-lift"}
+![Moving a valve event earlier changes its timing, while switching from 3.6 to 10.0 millimetres changes peak inlet lift. Curves and durations are illustrative, not a measured Porsche valve map.](diagrams/engine-timing-lift/poster.svg)
+:::
+
+The controller chooses a combination using operating conditions, including speed, load and temperature. Porsche describes low lift with advanced timing in low and medium load operation, and high lift for high torque and output. High lift can also be used during warm-up with a different timing setting. There is therefore no single “VarioCam comes on” rpm that explains the whole system.[^variocam]
+
+## Options on the 2010 2.9
+
+VarioCam Plus and the 188 kW engine are standard. The January 2010 UK catalogue offers no alternative bore, stroke, pistons or valve gear for the 2.9.[^options]
+
+Sport Chrono changes accelerator response and adds equipment-dependent driving functions, while leaving the published peak output unchanged. Its engine-control effects are covered in [Air, fuel, ignition and engine control](../06-air-fuel-ignition-and-engine-control/index.md). The optional sports exhaust is covered with [the exhaust system](../07-lubrication-cooling-and-exhaust/index.md).[^options]
+
+## Changes in other 2.9 model years {#other-2.9-model-years}
+
+The 2009 introduction established the architecture described here. The January 2010 UK brochure retains the 2,893 cm³, 188 kW and 290 Nm specification. Porsche's later North American 2012 sheet also retains the 2.9's port injection, VarioCam Plus, 89 mm bore and 77.5 mm stroke.[^years]
+
+| Year | Relationship to the reference engine |
+| --- | --- |
+| 2009 | New 2.9 engine generation introduced; the technical introduction documents its construction. |
+| 2010 | Reference European/UK specification used throughout this chapter. |
+| 2011 | No separate internal redesign established by the sources inspected here. |
+| 2012 | Later US technical data corroborates the core specification; it does not establish every UK production detail. |
+
+The sources establish continuity of the main design; detailed annual UK production revisions remain incompletely documented. The [timeline](../02-the-yearly-timeline/index.md#identify-the-outgoing-car-before-reading-its-specification) distinguishes the outgoing 987.2 from its replacement.
+
+## The S, Spyder, Black Edition and Cayman
+
+The ordinary 987.2 **Boxster S** uses 3,436 cm³, a 97 mm bore and the same 77.5 mm stroke. It adds DFI, has a 12.5:1 compression ratio, and produces 228 kW / 310 PS and 360 Nm. Porsche's introduction calls this Boxster engine **MA121**. Its 10.5 mm high inlet lift differs from the 2.9's 10.0 mm, despite both systems being called VarioCam Plus.[^s]
+
+![Comparison: the 3.4-litre S engine and its external accessory drive. The timing chains are enclosed. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 27. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=11).](images/porsche-3-4-engine-comparison.jpg){alt="Porsche's period photograph of the 3.4-litre Boxster S engine, viewed from its accessory-drive end, showing pulleys above and around the crankshaft pulley."}
+
+The **Spyder** and **Boxster S Black Edition** are also 3.4-litre DFI comparisons. Their European figures are 235 kW / 320 PS at 7,200 rpm and 370 Nm at 4,750 rpm. Their higher output is specific to those derivatives. A complete comparison of their internal parts and engine-code suffixes has not been established here.[^special]
+
+The Cayman's related 2.9 application is designated **MA120C** and rated at **195 kW / 265 PS**, compared with the Boxster's 188 kW / 255 PS. Match engines and internal parts by their documented application as well as capacity.
+
+## Identification and ageing
+
+The installed type and serial details identify the engine. Porsche designates the Boxster 2.9 **MA120**, distinct from the Cayman’s **MA120C** application.[^engine-id] For condition, investigate the chain drive, bearings and oil-fed adjusters against the observed noise or fault information; an engine code alone says nothing about their state of wear.
+
+[^engine-id]: Porsche, *2009 Technik Introduction — All Boxster Cayman Models*, “Technical data”, printed Engine p. 4, [viewer p. 10](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=10); “Chain drive”, printed Engine p. 17, [viewer p. 23](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=23). The viewer's page numbers include front matter; they differ from the printed section page numbers.
+
+[^specification]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 126–127, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=59). Bore/stroke and engine type: *2009 Technik Introduction*, printed Engine p. 4, [viewer p. 10](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=10). Port injection and valve gear corroboration: Porsche Cars North America, [2010 specifications, p. 1](https://newsroom.porsche.com/dam/jcr:e5abc517-c680-47c0-974f-b84aefde568f/2010-Boxster-Specifications.pdf#page=1); its 88 mm bore entry conflicts with the training source and displacement, so is not adopted.
+
+[^flat]: Porsche, [“The flat engine tradition”, 3 July 2018](https://newsroom.porsche.com/en_US/technology/porsche-flat-engine-sports-car-tradition-design-principle-internal-combustion-engine-lightweight-power-dynamic-15767.html). Generic design explanation, not evidence that the later engines illustrated there are fitted to a 2010 Boxster.
+
+[^cycle]: NASA Glenn Research Center, [“Internal Combustion Engine Stages”](https://www.grc.nasa.gov/WWW/K-12/airplane/engstage.html) and [“Combustion Chamber”](https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/combustion-chamber/). General four-stroke principles; their teaching engine is not a Porsche engine.
+
+[^dimensions]: NASA Glenn Research Center, [“Bore and Stroke”](https://www.grc.nasa.gov/WWW/K-12/BGP/stroke.html). Displacement calculation here uses Porsche's dimensions.
+
+[^compression]: NASA Glenn Research Center, [“Engine Thermodynamic Analysis”](https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/engine-thermodynamic-analysis/), compression-volume ratio and relationship between cycle work and power. The numerical torque/power examples are calculations, not measured curves.
+
+[^crankcase]: Porsche, *2009 Technik Introduction*, “Crankcase”, printed Engine p. 7, [viewer p. 13](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=13).
+
+[^rotating]: Porsche, *2009 Technik Introduction*, “Crankshaft/crankshaft bearings”, printed Engine p. 9, [viewer p. 15](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=15); “Connecting rods”, printed Engine p. 10, [viewer p. 16](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=16); “Pistons”, printed Engine p. 11, [viewer p. 17](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=17).
+
+[^heads]: Porsche Cars North America, [2010 Boxster specifications, p. 1](https://newsroom.porsche.com/dam/jcr:e5abc517-c680-47c0-974f-b84aefde568f/2010-Boxster-Specifications.pdf#page=1): four overhead camshafts, four valves per cylinder, hydraulic valve-play compensation.
+
+[^head-construction]: Porsche, *2009 Technik Introduction*, “Cylinder head”, printed Engine p. 14, [viewer p. 20](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=20).
+
+[^port]: Porsche, *2009 Technik Introduction*, “Intake system of the 2.9-litre engine with intake manifold injection”, printed Fuel and ignition system p. 59, [viewer p. 65](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=65).
+
+[^chains]: Porsche, *2009 Technik Introduction*, “Chain drive”, printed Engine p. 17, [viewer p. 23](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=23). The dedicated technical account explicitly removes the intermediate shaft; generic servicing copy in the 2010 sales brochure still mentions intermediate shafts and is not used to infer this engine's architecture.
+
+[^variocam]: Porsche, *The Boxster*, January 2010 UK edition, printed p. 36, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=16), expressly captioned for Boxster S and Boxster.
+
+[^phase]: Porsche, *2009 Technik Introduction*, “Camshaft control with valve-lift adjustment (VarioCam Plus)”, printed Engine p. 18, [viewer p. 24](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=24).
+
+[^lift]: Porsche, *2009 Technik Introduction*, “Camshafts”, printed Engine p. 16, [viewer p. 22](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=22). Explicitly distinguishes 2.9 inlet lifts 3.6/10.0 mm from the 3.4's 3.6/10.5 mm. Interactive curves are author-created simplifications.
+
+[^options]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 38, 42–47, 56–57 and 107, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf). Scope is ordinary catalogue equipment, not a claim about every possible special-order programme.
+
+[^years]: Porsche, *The new Boxster*, UK launch edition 08/08, printed pp. 126–127, [original brochure](https://porschecarshistory.com/wp-content/old/brochures5/26/2009%20987%20Boxster%20UK.pdf); January 2010 UK brochure, printed pp. 126–127; Porsche Cars North America, [2012 Boxster technical specifications, p. 1](https://newsroom.porsche.com/dam/jcr:f533d37f-82ef-4c9c-90cc-56b43185a8de/2012_Boxster_Specs.pdf#page=1). US data is used for mechanical corroboration, not UK equipment availability.
+
+[^s]: Porsche, *2009 Technik Introduction*, printed Engine pp. 4 and 16, [viewer p. 10](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=10) and [viewer p. 22](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=22); *The new Boxster*, UK launch edition, printed pp. 126–127.
+
+[^special]: Porsche, *The Boxster Spyder*, January 2010 UK edition, printed pp. 24–27 and 42–43, [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf); Porsche Netherlands, [Boxster S Black Edition release, 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/).

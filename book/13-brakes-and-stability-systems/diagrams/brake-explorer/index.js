@@ -19,7 +19,7 @@ export async function mount(host, { state, signal }) {
   const { stage, controls, explanation } = panel(host, {
     title: 'From the car to the front brake',
     description: 'Move through the assembly with the slider. Select a part for a closer view. Drag to rotate; pinch or scroll to zoom.',
-    note: 'Simplified 3D schematic of the 2010 2.9 layout. Selected parts are blue. Bodywork, pipe routing, clearances and separation distances are illustrative; this is not a dimensional CAD model.',
+    note: 'Photo-guided green and tan model of the 2010 2.9 layout. Selected parts are blue. Mechanical geometry, pipe routing, clearances and separation distances are illustrative.',
   });
   let view;
   try { view = scene3D(stage, { signal }); }

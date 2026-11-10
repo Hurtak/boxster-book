@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450" role="img" aria-labelledby="title desc">
+  <title id="title">Three weight references for the manual Boxster</title>
+  <desc id="desc">DIN unladen weight is 1335 kilograms. The EC figure adds 68 kilograms driver and 7 kilograms luggage for 1410 kilograms. The permissible gross weight is a distinct loaded limit of 1635 kilograms.</desc>
+  <rect width="600" height="450" fill="#f2f4ee"/>
+  <g font-family="sans-serif" fill="#233e32">
+    <text x="24" y="40" font-size="26">Manual · read the weight basis</text>
+    <rect x="24" y="66" width="552" height="93" fill="#176b53"/>
+    <text x="45" y="103" font-size="25" fill="#fff">DIN unladen</text><text x="550" y="103" font-size="28" fill="#fff" text-anchor="end">1,335 kg</text>
+    <text x="45" y="137" font-size="21" fill="#fff">Published standard-car reference</text>
+    <text x="300" y="195" text-anchor="middle" font-size="23">+ 68 kg driver + 7 kg luggage</text>
+    <path d="M300 206v24m-8-8 8 8 8-8" fill="none" stroke="#233e32" stroke-width="3"/>
+    <rect x="24" y="243" width="552" height="77" fill="#dce5da"/>
+    <text x="45" y="277" font-size="25">EC unladen</text><text x="550" y="277" font-size="28" text-anchor="end">1,410 kg</text>
+    <text x="45" y="306" font-size="21">The 75 kg allowance is already included</text>
+    <path d="M24 345h552" stroke="#9eafa0" stroke-width="2" stroke-dasharray="7 6"/>
+    <text x="24" y="384" font-size="25">Permissible gross</text><text x="576" y="384" font-size="28" text-anchor="end">1,635 kg</text>
+    <text x="24" y="421" font-size="22">A separate limit for the loaded vehicle</text>
+  </g>
+</svg>

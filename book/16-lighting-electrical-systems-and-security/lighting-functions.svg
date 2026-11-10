@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">Standard and optional front-light functions</title>
+  <desc id="desc">Standard halogen headlamps sit above separate fog and LED position lights. Optional bi-xenon adds cornering and automatic beam levelling; the auxiliary modules provide LED daytime running lights instead of front fog lamps.</desc>
+  <rect width="600" height="450" rx="12" fill="#f8faf7"/>
+  <path d="M300 52V405" stroke="#cbd6cb" stroke-width="2"/>
+  <g fill="#243d32" text-anchor="middle"><text x="150" y="37" font-size="24" font-weight="700">Standard</text><text x="450" y="37" font-size="24" font-weight="700">P75 option</text></g>
+  <g stroke="#456653" stroke-width="3"><path d="M65 85Q80 59 148 67Q233 75 238 130Q225 160 135 151Q66 143 65 85Z" fill="#e2e8dc"/><path d="M365 85Q380 59 448 67Q533 75 538 130Q525 160 435 151Q366 143 365 85Z" fill="#e2e8dc"/><circle cx="133" cy="106" r="28" fill="#fff6c5"/><circle cx="433" cy="106" r="28" fill="#f5fbff"/></g>
+  <g font-size="22" text-anchor="middle" fill="#243d32"><text x="150" y="187">Halogen</text><text x="450" y="187">Bi-xenon</text></g>
+  <g font-size="20" text-anchor="middle" fill="#53695b"><text x="150" y="215">Dipped / main beam</text><text x="450" y="215">Dipped / main beam</text><text x="450" y="244">Swivel + levelling</text></g>
+  <g stroke="#456653" stroke-width="3"><rect x="48" y="281" width="204" height="42" rx="12" fill="#e2e8dc"/><rect x="348" y="281" width="204" height="42" rx="12" fill="#e2e8dc"/><rect x="66" y="292" width="98" height="20" rx="4" fill="#fff6c5"/><path d="M180 296H233M180 307H233M367 296H532M367 307H532" stroke="#7eaac2" stroke-width="5"/></g>
+  <g font-size="21" text-anchor="middle" fill="#243d32"><text x="150" y="358">Fog + LED position</text><text x="450" y="358">LED DRL / position</text></g>
+  <g font-size="20" text-anchor="middle" fill="#53695b"><text x="150" y="387">Two separate jobs</text><text x="450" y="387">Daytime visibility</text><text x="300" y="431">Schematic lamps; simplified geometry</text></g>
+</svg>

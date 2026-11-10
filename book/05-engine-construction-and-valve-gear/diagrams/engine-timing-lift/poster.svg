@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 530" role="img" aria-labelledby="title desc">
+<title id="title">Inlet timing and lift are different adjustments</title><desc id="desc">The upper plot moves an event earlier along crank angle without increasing height. The lower plot compares the 2.9's documented 3.6 and 10.0 millimetre peak inlet lifts. Curves are illustrative, not measured valve profiles.</desc>
+<rect width="420" height="530" fill="#f5f3eb"/>
+<g font-family="sans-serif" fill="#243f33">
+<text x="210" y="34" text-anchor="middle" font-size="23" font-weight="700">Timing and lift</text>
+<text x="32" y="83" font-size="20" font-weight="700">Timing: when it opens</text>
+<path d="M40 200H386 M40 112V200" stroke="#819589" fill="none" stroke-width="2"/>
+<path d="M137 199C162 199 169 120 225 120S288 199 315 199" fill="none" stroke="#9daaa1" stroke-width="3" stroke-dasharray="6 5"/>
+<path d="M77 199C102 199 109 120 165 120S228 199 255 199" fill="none" stroke="#176b53" stroke-width="4"/>
+<path d="M229 100H169m10-6-10 6 10 6" stroke="#176b53" stroke-width="3" fill="none"/>
+<text x="210" y="230" text-anchor="middle" font-size="18">Earlier ← crank angle → later</text>
+<text x="32" y="280" font-size="20" font-weight="700">Lift: how far it opens</text>
+<path d="M40 417H386 M40 302V417" stroke="#819589" fill="none" stroke-width="2"/>
+<path d="M85 416C110 416 130 318 212 318S314 416 339 416" fill="none" stroke="#176b53" stroke-width="4"/>
+<path d="M85 416C110 416 130 381 212 381S314 416 339 416" fill="none" stroke="#b07d38" stroke-width="4"/>
+<text x="65" y="459" font-size="18" fill="#8e6129">3.6 mm low</text><text x="235" y="459" font-size="18" fill="#176b53">10.0 mm high</text>
+<text x="210" y="489" text-anchor="middle" font-size="18">2010 2.9 inlet valve peak lifts</text>
+<text x="210" y="514" text-anchor="middle" font-size="18">Curves and durations are illustrative.</text>
+</g></svg>

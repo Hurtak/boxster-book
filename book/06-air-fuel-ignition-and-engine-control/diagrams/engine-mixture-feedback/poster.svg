@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 430" role="img" aria-labelledby="feedback-title feedback-desc">
+<title id="feedback-title">Lambda feedback corrects a mixture error</title><desc id="feedback-desc">Initially, ten percent unmetered extra air makes lambda 1.100. Successive illustrative fuel corrections approach lambda one. Fuel correction does not repair an air leak.</desc>
+<rect width="600" height="430" fill="#f4f5ef"/>
+<g font-family="sans-serif" fill="#203b2d">
+<text x="28" y="36" font-size="26">Extra air: +10%; fuel correction: 0%</text>
+<text x="28" y="76" font-size="24">Initial λ = 1.100: a lean mixture</text>
+<path d="M83 125V327H567" stroke="#263e31" stroke-width="2" fill="none"/>
+<path d="M83 308H567" stroke="#73847a" stroke-dasharray="6 6" stroke-width="2"/>
+<path d="M83 148L143 248L204 284L264 299L325 304L385 307L446 308L506 308L567 308" stroke="#9aaba0" stroke-width="3" fill="none"/>
+<circle cx="83" cy="148" r="7" fill="#ad622d"/>
+<g font-size="22"><text x="21" y="154">1.10</text><text x="21" y="315">1.00</text><text x="78" y="355">0</text><text x="319" y="355">4</text><text x="562" y="355">8</text><text x="230" y="386">Correction step</text></g>
+<text x="28" y="418" font-size="21">Illustrative steps, not measured time or Porsche maps.</text>
+</g></svg>

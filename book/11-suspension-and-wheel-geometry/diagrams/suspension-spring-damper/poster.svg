@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="430" viewBox="0 0 360 430" role="img" aria-labelledby="title desc">
+<title id="title">A spring responds to position; a damper responds to motion</title><desc id="desc">Two compressed springs have the same restoring force. At rest the ideal damper has no force. During compression it resists the motion. Rates and forces are illustrative.</desc>
+<rect width="360" height="430" fill="#faf8f1"/>
+<g font-family="Arial,sans-serif" fill="#273e35" text-anchor="middle" font-size="16">
+<text x="180" y="28" font-size="19" font-weight="bold">Position and motion are different</text>
+<text x="90" y="66">Compressed, still</text><text x="270" y="66">Compressed, moving</text>
+<path d="M25 89H155M205 89H335M25 240H155M205 240H335" stroke="#273e35" stroke-width="9"/>
+<g fill="none" stroke-width="4"><path d="M65 89V113L51 122L79 137L51 152L79 167L51 182L79 197L65 212V240M245 89V113L231 122L259 137L231 152L259 167L231 182L259 197L245 212V240" stroke="#a6552b"/>
+<path d="M118 89V151M110 151H126M118 213V240M298 89V151M290 151H306M298 213V240" stroke="#27627b"/>
+<path d="M104 130H132V213H104ZM284 130H312V213H284Z" stroke="#27627b"/>
+<path d="M339 223V173L333 183M339 173L345 183" stroke="#27627b"/></g>
+<text x="90" y="278" fill="#a6552b">Spring: 400 N extra</text><text x="270" y="278" fill="#a6552b">Spring: 400 N extra</text>
+<text x="90" y="306" fill="#27627b">Damper: 0 N</text><text x="270" y="306" fill="#27627b">Damper: resists motion</text>
+<text x="180" y="345">Same compression; different velocity.</text>
+<text x="180" y="373">Separate symbols; coil-over on the car.</text>
+<text x="180" y="403" font-size="14">Illustrative forces, not Porsche calibration.</text>
+</g></svg>

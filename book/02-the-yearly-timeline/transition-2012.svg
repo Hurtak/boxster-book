@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" role="img" aria-labelledby="timeline-transition-title timeline-transition-desc">
+<title id="timeline-transition-title">Two generations around 2012</title><desc id="timeline-transition-desc">The outgoing 987.2 ordinary Boxster uses a 2.9-litre port-injected engine with 188 kW or 255 PS. The incoming 981 ordinary Boxster uses a 2.7-litre direct-injected engine with 195 kW or 265 PS. First registration in 2012 does not establish which car it is.</desc>
+<rect width="600" height="530" fill="#f5f3eb"/>
+<g font-family="sans-serif" fill="#233e33">
+<text x="28" y="43" font-size="27" font-weight="700">A 2012 date needs a generation</text>
+<rect x="28" y="69" width="544" height="167" fill="#e1e8df"/>
+<text x="48" y="104" font-size="27" font-weight="700">Outgoing 987.2 · base Boxster</text><text x="48" y="140" font-size="24">2.9 litres · port injection</text><text x="48" y="175" font-size="24">188 kW / 255 PS</text><text x="48" y="211" font-size="21">The family of the 2010 reference car.</text>
+<rect x="28" y="256" width="544" height="178" fill="#ede0d0"/>
+<text x="48" y="291" font-size="27" font-weight="700">Incoming 981 · base Boxster</text><text x="48" y="327" font-size="24">2.7 litres · direct injection</text><text x="48" y="362" font-size="24">195 kW / 265 PS</text><text x="48" y="397" font-size="21">January announcement; April arrival.</text><text x="48" y="422" font-size="20">14 April is the documented Dutch date.</text>
+<text x="28" y="477" font-size="23" font-weight="600">Check identity → then use the right brochure.</text><text x="28" y="509" font-size="21">Registration year alone cannot choose a column.</text>
+</g></svg>

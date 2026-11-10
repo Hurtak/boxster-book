@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-labelledby="title desc">
+<title id="title">Separate rear body spaces</title><desc id="desc">Side section of the rear half, front to left. The roof bay is above the engine region. The rear boot is farther back. The roof compartment cover and luggage lid are separate exterior panels, while another removable cover lies above the engine.</desc>
+<rect width="600" height="360" fill="#f7f6f0"/>
+<g font-family="sans-serif" fill="#253d32" font-size="25" text-anchor="middle">
+<text x="80" y="33">← Front</text><text x="520" y="33">Rear →</text>
+<path d="M113 64V300H586" fill="none" stroke="#9cae9e" stroke-width="3"/>
+<path d="M66 102V293H107" fill="none" stroke="#253d32" stroke-width="10"/>
+<text x="66" y="334">Seat</text>
+<rect x="162" y="71" width="222" height="64" rx="5" fill="#e4e2c9" stroke="#8a7e34" stroke-width="3"/>
+<text x="273" y="111">Roof bay</text><path d="M162 60H384" stroke="#8a7e34" stroke-width="6"/>
+<path d="M162 168H384" stroke="#a35d32" stroke-width="5" stroke-dasharray="8 5"/>
+<text x="273" y="198" fill="#80512e">Top cover</text>
+<rect x="162" y="221" width="222" height="71" rx="5" fill="#d3e1d3" stroke="#176b53" stroke-width="3"/>
+<text x="273" y="265">Engine</text>
+<path d="M414 131H576" stroke="#357694" stroke-width="6"/>
+<rect x="414" y="142" width="162" height="90" rx="5" fill="#d9e5eb" stroke="#357694" stroke-width="3"/>
+<text x="495" y="177">Rear boot</text><text x="495" y="214" fill="#357694">130 l</text>
+<circle cx="495" cy="245" r="5" fill="#a35d32"/><path d="M495 252V266" stroke="#a35d32" stroke-width="2"/><text x="495" y="292" fill="#80512e">Fillers</text>
+<text x="358" y="336" font-size="22">Separate covers; expanded gaps</text>
+</g></svg>

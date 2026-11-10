@@ -1,8 +1,10 @@
 import './styles.css';
+import { mountReader } from './reader.js';
 
 // A chapter exports mount(host, { state, signal }) -> cleanup (optionally async).
 // State survives leaving the viewport; WebGL resources do not.
 export function boot(registry) {
+  mountReader();
   const records = new Map();
   const release = (record) => {
     if (record.element.classList.contains('diagram-ready')) {
@@ -64,6 +66,7 @@ export function boot(registry) {
     }
   }, { rootMargin: '200px' });
   for (const element of document.querySelectorAll('[data-diagram]')) {
+    element.setAttribute('data-ui', '');
     const fallback = [...element.children];
     fallback.forEach((node) => node.classList.add('diagram-static'));
     const record = { element, fallback, state: {}, failed: false };

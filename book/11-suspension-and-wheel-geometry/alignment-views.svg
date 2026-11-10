@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="610" viewBox="0 0 360 610" role="img" aria-labelledby="title desc">
+<title id="title">Camber, caster and toe use three different viewing directions</title><desc id="desc">A front view shows negative camber as a wheel top leaning towards the centre of the car. A side view shows positive caster with the upper steering-axis point behind the lower point. A plan view shows toe-in with the wheel fronts closer together. All angles are exaggerated and are not alignment targets.</desc>
+<defs><marker id="direction" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#27627b"/></marker></defs>
+<rect width="360" height="610" fill="#faf8f1"/>
+<g font-family="Arial,sans-serif" fill="#273e35" font-size="16">
+<text x="180" y="27" text-anchor="middle" font-size="20" font-weight="bold">Three angles, three views</text>
+<text x="22" y="67" font-weight="bold">CAMBER · front view</text>
+<path d="M70 88V163M290 88V163M180 83V171" stroke="#82988d" stroke-dasharray="5 5"/>
+<rect x="61" y="92" width="24" height="72" rx="6" fill="#273e35" transform="rotate(12 73 128)"/><rect x="275" y="92" width="24" height="72" rx="6" fill="#273e35" transform="rotate(-12 287 128)"/>
+<path d="M28 166H331" stroke="#82988d" stroke-width="2"/>
+<text x="180" y="196" text-anchor="middle">Negative: tops lean inward</text>
+<path d="M22 216H338" stroke="#c9d1c8"/>
+<text x="22" y="248" font-weight="bold">CASTER · front wheel, side view</text>
+<circle cx="153" cy="307" r="39" fill="none" stroke="#273e35" stroke-width="14"/>
+<path d="M129 260L169 350M153 257V351" stroke="#a6552b" stroke-width="3"/><path d="M153 257V351" stroke="#82988d" stroke-dasharray="5 5"/>
+<path d="M25 350H326M234 294H309" stroke="#27627b" stroke-width="2" marker-end="url(#direction)"/>
+<text x="240" y="279">Forward</text><text x="180" y="382" text-anchor="middle">Positive: axis top sits rearward</text>
+<path d="M22 402H338" stroke="#c9d1c8"/>
+<text x="22" y="434" font-weight="bold">TOE · looking down</text>
+<path d="M180 538V457" stroke="#27627b" stroke-width="3" marker-end="url(#direction)"/>
+<rect x="73" y="464" width="24" height="72" rx="6" fill="#273e35" transform="rotate(12 85 500)"/><rect x="263" y="464" width="24" height="72" rx="6" fill="#273e35" transform="rotate(-12 275 500)"/>
+<text x="180" y="566" text-anchor="middle">Toe-in: fronts closer together</text>
+<text x="180" y="596" text-anchor="middle" font-size="14">Exaggerated geometry; no alignment values.</text>
+</g></svg>

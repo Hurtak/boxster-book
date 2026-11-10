@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">PDK has separate hydraulic and gear-oil functions</title>
+  <desc id="desc">The electronic controller receives feedback and commands the hydraulic block. Hydraulic fluid operates clutch packs and shift actuators, and carries clutch heat to a coolant heat exchanger. Separate gear oil lubricates gears and final drive, losing heat through the gearbox housing.</desc>
+  <rect width="600" height="450" fill="#fff"/>
+  <g stroke-width="2"><rect x="20" y="20" width="560" height="67" rx="5" fill="#f0f2ef" stroke="#526c5d"/><rect x="20" y="140" width="265" height="121" rx="5" fill="#e3eeea" stroke="#176b53"/><rect x="315" y="140" width="265" height="121" rx="5" fill="#edf0f7" stroke="#526b8c"/><rect x="20" y="333" width="265" height="91" rx="5" fill="#e3eeea" stroke="#176b53"/><rect x="315" y="333" width="265" height="91" rx="5" fill="#edf0f7" stroke="#526b8c"/></g>
+  <g text-anchor="middle" fill="#243c32" font-size="23"><text x="300" y="48">Electronic controller</text><text x="300" y="77" font-size="21">Requests + sensor feedback</text><text x="152" y="174">Hydraulic block</text><text x="152" y="210" font-size="21">Clutches + selectors</text><text x="152" y="242" font-size="21">Hydraulic fluid</text><text x="448" y="174">Gears + final drive</text><text x="448" y="210" font-size="21">Lubrication</text><text x="448" y="242" font-size="21">Separate gear oil</text><text x="152" y="368">Oil / coolant</text><text x="152" y="401">heat exchanger</text><text x="448" y="368">Heat through</text><text x="448" y="401">gearbox housing</text></g>
+  <path d="M90 88V128M81 117L90 128L99 117M214 139V98M205 109L214 98L223 109" fill="none" stroke="#526c5d" stroke-width="3"/>
+  <text x="424" y="120" text-anchor="middle" font-size="20" fill="#526c5d">Control and feedback</text>
+  <g fill="none" stroke-width="5"><path d="M152 261V321M142 309L152 321L162 309" stroke="#176b53"/><path d="M448 261V321M438 309L448 321L458 309" stroke="#526b8c"/></g>
+  <g text-anchor="middle" font-size="20"><text x="152" y="297" fill="#176b53" stroke="#fff" stroke-width="6" paint-order="stroke">Clutch heat</text><text x="448" y="297" fill="#526b8c" stroke="#fff" stroke-width="6" paint-order="stroke">Gear heat</text></g>
+</svg>

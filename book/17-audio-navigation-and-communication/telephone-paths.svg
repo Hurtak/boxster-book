@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">Who makes the cellular connection?</title>
+  <desc id="desc">In HFP operation the mobile phone reaches the mobile network and the car handles speech. With a SIM in PCM, or with SAP access to a compatible phone's SIM, the PCM GSM module makes the network connection through the car aerial.</desc>
+  <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker></defs>
+  <rect width="600" height="480" fill="#f4f3ec"/>
+  <g fill="#203e33"><text x="25" y="35" font-size="24" font-weight="bold">Who reaches the mobile network?</text></g>
+  <g fill="#fff" stroke="#9cad9e"><rect x="20" y="57" width="560" height="119" rx="6"/><rect x="20" y="190" width="560" height="119" rx="6"/><rect x="20" y="323" width="560" height="119" rx="6"/></g>
+  <g font-size="21" fill="#203e33">
+    <text x="38" y="86" font-weight="bold">HFP · phone preparation / module</text>
+    <text x="38" y="120">Mobile phone</text><text x="355" y="120">Phone aerial</text>
+    <text x="38" y="152" font-size="20">Car provides microphone, sound and call control.</text>
+    <text x="38" y="219" font-weight="bold">SIM inserted in PCM · module</text>
+    <text x="38" y="253">PCM GSM radio</text><text x="355" y="253">Car aerial</text>
+    <text x="38" y="285" font-size="20">The car contains the SIM and cellular radio.</text>
+    <text x="38" y="352" font-weight="bold">SAP · module + compatible phone</text>
+    <text x="38" y="386">PCM GSM radio</text><text x="355" y="386">Car aerial</text>
+    <text x="38" y="418" font-size="20">The phone supplies SIM access over Bluetooth.</text>
+  </g>
+  <g stroke="#176b53" stroke-width="4" marker-end="url(#arr)"><path d="M222 114H337"/><path d="M222 247H337"/><path d="M222 380H337"/></g>
+  <text x="25" y="468" font-size="19" fill="#53675d">Original functions; present phone/network support varies.</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 470" role="img" aria-labelledby="title desc" font-family="sans-serif">
+<title id="title">Steering rack and hydraulic assistance</title>
+<desc id="desc">The steering wheel turns a shaft and pinion, which moves the rack and two track rods. A pump and reservoir form a hydraulic circuit assisting a piston within the rack housing. This is a conceptual schematic.</desc>
+<rect width="600" height="470" fill="#f5f5ee"/>
+<g fill="none" stroke-linejoin="round">
+<path d="M300 87V238" stroke="#233c31" stroke-width="12"/>
+<circle cx="300" cy="59" r="30" stroke="#233c31" stroke-width="9"/>
+<path d="M270 59H330M300 59V89" stroke="#233c31" stroke-width="6"/>
+<rect x="57" y="91" width="126" height="66" rx="8" fill="#dcece6" stroke="#17654c" stroke-width="3"/>
+<rect x="416" y="91" width="130" height="66" rx="8" fill="#dcece6" stroke="#17654c" stroke-width="3"/>
+<path d="M183 120H220V224H275M416 120H383V224H328" stroke="#277c84" stroke-width="5"/>
+<path d="M82 157V181H480V157" stroke="#277c84" stroke-width="4" stroke-dasharray="7 5"/>
+<rect x="166" y="239" width="268" height="62" rx="10" fill="#e0e5dc" stroke="#53665b" stroke-width="4"/>
+<path d="M95 271H505" stroke="#233c31" stroke-width="12"/>
+<path d="M180 256H423" stroke="#fff" stroke-width="3" stroke-dasharray="5 6"/>
+<circle cx="300" cy="241" r="20" fill="#adbdab" stroke="#233c31" stroke-width="4"/>
+<rect x="352" y="244" width="12" height="52" fill="#277c84" stroke="#277c84"/>
+<path d="M95 271L82 330M505 271L518 330" stroke="#233c31" stroke-width="8"/>
+<rect x="48" y="318" width="43" height="88" rx="10" fill="#38443d" stroke="#233c31" transform="rotate(-18 70 360)"/>
+<rect x="509" y="318" width="43" height="88" rx="10" fill="#38443d" stroke="#233c31" transform="rotate(-18 530 360)"/>
+<path d="M106 330L150 351M494 330L452 351M300 317V346" stroke="#67796b" stroke-width="2"/>
+</g>
+<g fill="#233c31" font-size="22" text-anchor="middle">
+<text x="300" y="21">Driver input</text>
+<text x="120" y="119">Pump</text><text x="120" y="144" font-size="18">belt driven</text>
+<text x="481" y="131">Reservoir</text>
+<text x="300" y="209" font-size="20">Pinion + control valve</text>
+<text x="300" y="373">Sliding rack</text>
+<text x="168" y="350" text-anchor="start" font-size="20">Track rod</text>
+<text x="435" y="350" text-anchor="end" font-size="20">Track rod</text>
+<text x="300" y="414" font-size="20">Shaft and gears set direction</text>
+<text x="300" y="443" font-size="20" fill="#277c84">Fluid pressure helps move the rack</text>
+</g>
+</svg>
