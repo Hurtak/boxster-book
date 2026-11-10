@@ -158,11 +158,9 @@ td:first-child, th:first-child { padding-left: 8px; }
 [data-view="cover"]:not(.reader-enhanced) #book > :not(.book-cover) { display: none; }
 .book-cover h1 { margin-bottom: 0; font-family: var(--text); font-size: clamp(44px, 6.4vw, 88px); font-weight: 500; line-height: 1.02; letter-spacing: -.045em; }
 .cover-subtitle { margin: 16px 0 0; color: var(--muted); font: 26px/1.35 var(--ui); }
-/* The band follows the screen height so the first action stays in view;
-   the render is placed by the car's measured bounds within the image. */
-.cover-illustration { --band: min(50vw, 400px); position: relative; height: max(160px, var(--band)); margin: 32px calc(-1 * var(--sheet-padding)); overflow: hidden; background: #f2f4f7; }
-@supports (height: 1svh) { .cover-illustration { --band: min(50vw, 40svh, 400px); } }
-.cover-illustration img { position: absolute; top: 50%; left: 50%; width: auto; max-width: none; height: calc(max(160px, var(--band)) * 1.6); transform: translate(-55.8%, -58.3%); }
+/* Crop the surrounding sky and road while keeping the whole car in view. */
+.cover-illustration { aspect-ratio: 2 / 1; margin: 32px calc(-1 * var(--sheet-padding)); overflow: hidden; }
+.cover-illustration img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
 .cover-intro > p:first-child { max-width: 40em; font-size: max(var(--reading-size), 22px); line-height: 1.55; }
 .cover-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
 .start-reading { display: inline-flex; align-items: center; gap: 24px; min-height: 52px; padding: 12px 24px; color: var(--paper); background: var(--focus); text-decoration: none; font: 600 18px/1.35 var(--ui); }
@@ -263,8 +261,8 @@ body:has(.contents-dialog[open]) { overflow: hidden; }
   #book > .level2[hidden], .book-cover[hidden] { display: block !important; }
   .level2 { break-before: page; min-height: 0; }
   .book-cover h1, h1, .level2 > h2 { font-size: 28pt; }
-  .cover-illustration { height: auto; margin-inline: 0; }
-  .cover-illustration img { position: static; width: 100%; height: auto; transform: none; }
+  .cover-illustration { aspect-ratio: auto; margin-inline: 0; }
+  .cover-illustration img { width: 100%; height: auto; }
   h2, h3, h4 { break-after: avoid; }
   #book figure:not(.cover-illustration) { padding: 0; background: none; break-inside: avoid; }
   #book figure:not(.cover-illustration) img { max-height: 220mm; }

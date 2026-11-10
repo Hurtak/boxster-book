@@ -29,7 +29,7 @@ export function BookApp({chapters,assets}: {chapters:Chapter[];assets:AssetMap})
         <header id="title" className="book-cover" hidden={!!active}>
           {createElement(active ? 'h2' : 'h1',null,'Porsche Boxster 2.9')}
           <p className="cover-subtitle">An illustrated guide to the 987.2</p>
-          <figure className="cover-illustration"><BookImage src={cover} alt="Illustration of a dark green Boxster with a tan interior, viewed from the front quarter" width={1440}/></figure>
+          <figure className="cover-illustration"><BookImage src={cover} alt="Dark green Porsche Boxster with tan seats and the roof open, photographed from a low front three-quarter angle against a blue sky" width={1440}/></figure>
           <div className="cover-intro"><p>Understand the car, one system at a time. Start with the 2010 2.9-litre Boxster, then compare its options, other model years and the S, Spyder and Black Edition.</p>
             <div className="cover-actions"><a className="start-reading" href={first ? '#'+first.id : '#title'} data-start-reading hidden={!first}>Start reading <span aria-hidden="true">→</span></a>
               <a className="continue-reading" href={'#'+reader.place} data-continue-reading hidden={!continued || (continued===first && reader.place===first.id)}><span>Continue reading</span>{continued && `Chapter ${continued.number}: ${continued.title}`}</a></div>
