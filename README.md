@@ -2,6 +2,8 @@
 
 The book uses the **2010 Boxster 987.2 2.9-litre** as its reference car. [Chapter 13, Brakes and stability systems](book/13-brakes-and-stability-systems/index.md), is the first complete sample draft. The other chapters currently contain their titles only.
 
+[Read the book online](https://hurtak.github.io/boxster-book/).
+
 ## Chapter files
 
 Each chapter has a numbered folder and an `index.md` file:
@@ -59,6 +61,14 @@ python3 scripts/build_book.py --source book --output dist/book.html
 ```
 
 Default paths are relative to this project, so the script also works when invoked from another directory. Explicit paths are relative to the directory where you run the command.
+
+## GitHub Pages
+
+The [Pages workflow](.github/workflows/pages.yml) builds and tests the book on pushes to `main`, pull requests and manual runs. It installs Node 24, Python 3.13, Pandoc 3.10 and Chromium, then runs `npm test`. After a successful build on `main`, GitHub Actions publishes `dist/site/` to <https://hurtak.github.io/boxster-book/>.
+
+`npm run build:pages` creates the web edition at `dist/site/index.html`, with relative asset URLs that work under the `/boxster-book/` project path. With `npm run serve`, preview it at <http://localhost:8000/site/>. Browser tests also serve this artifact under `/boxster-book/` to check code and 3D-model loading.
+
+The repository's Pages source is **GitHub Actions**. The deployment uses the `github-pages` environment and GitHub's built-in token; no personal access token or committed build output is needed. The `petrhurtak.com` repository supplies the existing build/deploy pattern and owns its custom domain. This project has its own Pages address and no `CNAME` file.
 
 ## Markdown conventions
 

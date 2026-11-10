@@ -9,12 +9,15 @@ import { pathToFileURL } from 'node:url';
 const root = resolve('dist');
 const portable = pathToFileURL(resolve(root, 'book.html')).href;
 const previews = resolve(root, 'previews');
-let browser, server, web;
+let browser, server, web, site;
 
 before(async () => {
   await mkdir(previews, { recursive: true });
   server = createServer(async (request, response) => {
-    const file = resolve(root, `.${decodeURIComponent(new URL(request.url, 'http://localhost').pathname)}`);
+    const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
+    // Mount the Pages artifact under the same project prefix used in production.
+    const resource = pathname.startsWith('/boxster-book/') ? `/site${pathname.slice('/boxster-book'.length)}` : pathname;
+    const file = resolve(root, `.${resource.endsWith('/') ? resource + 'index.html' : resource}`);
     if (!file.startsWith(root + sep)) { response.writeHead(403).end(); return; }
     try {
       const data = await readFile(file);
@@ -24,6 +27,7 @@ before(async () => {
   });
   await new Promise((done) => server.listen(0, '127.0.0.1', done));
   web = `http://127.0.0.1:${server.address().port}/web/book.html`;
+  site = `http://127.0.0.1:${server.address().port}/boxster-book/`;
   browser = await chromium.launch({
     ...(process.env.BROWSER_EXECUTABLE_PATH ? { executablePath: process.env.BROWSER_EXECUTABLE_PATH } : { channel: 'chrome' }),
     headless: true,
@@ -152,5 +156,30 @@ test('static diagrams remain readable without JavaScript or WebGL', async () => 
     assert.equal(await figure.locator('.diagram-static img').isVisible(), true);
     assert.equal(await figure.getByRole('button', { name: 'Try again' }).count(), 1);
     assert.equal(await figure.locator('canvas').count(), 0);
+  } finally { await page.close(); }
+});
+
+test('Pages index loads interactive code and models under the project URL', async () => {
+  const page = await browser.newPage({ viewport: { width: 1280, height: 1000 } });
+  try {
+    const errors = [], assets = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    page.on('response', (response) => {
+      if (/\.(js|glb)$/.test(new URL(response.url()).pathname)) {
+        assets.push({ url: response.url(), status: response.status() });
+      }
+    });
+    const response = await page.goto(site);
+    assert.equal(response.status(), 200);
+    assert.equal(await page.title(), 'Porsche Boxster 2.9');
+    const car = await ready(page, 'brake-explorer');
+    await car.getByRole('button', { name: 'Exploded', exact: true }).click();
+    assert.equal(await car.getByRole('slider').inputValue(), '100');
+    const energy = await ready(page, 'braking-energy');
+    await energy.getByRole('slider', { name: 'Speed', exact: true }).fill('200');
+    assert.match(await energy.locator('.diagram-explanation').textContent(), /4.00 times/);
+    assert.equal(assets.filter((asset) => asset.url.endsWith('.glb')).length, 2);
+    assert.ok(assets.every((asset) => asset.status === 200 && asset.url.startsWith(`${site}index-assets/`)), JSON.stringify(assets));
+    assert.deepEqual(errors, []);
   } finally { await page.close(); }
 });
