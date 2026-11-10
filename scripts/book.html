@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="$lang$">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="pandoc">
+  <title>$pagetitle$</title>
+$for(css)$
+  <link rel="stylesheet" href="$css$">
+$endfor$
+$if(highlighting-css)$
+  <style>$highlighting-css$</style>
+$endif$
+</head>
+<body>
+  <a class="skip-link" href="#book">Skip to chapters</a>
+  <div class="viewer-bar">
+    <a class="book-name" href="#title">Boxster 2.9</a>
+    <a href="#contents">Contents</a>
+  </div>
+  <div class="reading-edition">
+    <header id="title" class="book-title">
+      <h1>$title$</h1>
+      <p>$subtitle$</p>
+    </header>
+$if(toc)$
+    <details id="contents" open>
+      <summary>Contents</summary>
+      <nav aria-label="Book chapters">$table-of-contents$</nav>
+    </details>
+$endif$
+    <main id="book" tabindex="-1">
+$body$
+    </main>
+    <footer><a href="#title">Back to the beginning</a></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "boxster-book",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "python3 scripts/build_book.py",
+    "build:web": "python3 scripts/build_book.py --format web --output dist/web/book.html",
+    "models": "node scripts/generate-models.mjs",
+    "serve": "python3 -m http.server 8000 --directory dist",
+    "test": "npm run build && npm run build:web && node --test tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "d3": "7.9.2",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "playwright-core": "1.65.0"
+  }
+}

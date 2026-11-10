@@ -1,0 +1,23 @@
+{
+  "camera": [
+    { "at": 0, "position": [-3.5, 2.7, 4.5], "target": [0, 0.52, 0] },
+    { "at": 30, "position": [-3.4, 3.2, 4.4], "target": [0, 0.5, 0.2] },
+    { "at": 65, "position": [-1.8, 0.92, 2.1], "target": [-0.86, 0.329, 1.2075] },
+    { "at": 100, "position": [-3, 1.18, 2.4], "target": [-1.38, 0.2, 1.14] }
+  ],
+  "stages": [
+    { "value": 0, "label": "Whole car", "text": "The selected front-left wheel contains one of four wheel brakes. The engine is behind the seats; the hydraulic source is at the front." },
+    { "value": 30, "label": "Connections", "text": "The body lifts away to reveal a schematic hydraulic connection from the front-mounted master cylinder to all four wheel brakes." },
+    { "value": 65, "label": "At the wheel", "text": "The camera moves to the front-left brake. The wheel is pulled aside so the disc and fixed caliper can be seen." },
+    { "value": 100, "label": "Exploded", "text": "The wheel, disc, two pads, four pistons and one-piece caliper separate for inspection. This separation is explanatory, not a workshop disassembly sequence." }
+  ],
+  "parts": [
+    { "name": "wheel", "label": "Wheel", "offset": [0.95, 0, 0], "text": "The wheel bolts to the hub. Its spokes leave space around the brake and allow a view of the assembly." },
+    { "name": "disc", "label": "Brake disc", "offset": [0.29, 0, 0], "text": "The front disc's nominal envelope is 318 mm in diameter and 28 mm thick. Two friction faces enclose the ventilation gap." },
+    { "name": "inner-pad", "label": "Inner pad", "offset": [-0.16, -0.04, 0], "text": "The inboard pad presses against one face of the rotating disc." },
+    { "name": "outer-pad", "label": "Outer pad", "offset": [0.54, -0.04, 0], "text": "The outboard pad presses against the opposite face. The pair creates the clamping action." },
+    { "name": "caliper", "label": "Caliper body", "offset": [0, 0.02, 0.36], "text": "The fixed monobloc caliper body stays in one piece. It carries the reaction forces as pistons push both pads inward." },
+    { "name": "pistons", "label": "Four pistons", "offset": [0.04, 0.23, 0.06], "text": "Two pistons act from each side. Their motion converts hydraulic pressure into force on the pads." },
+    { "name": "hub", "label": "Hub", "offset": [0, 0, 0], "text": "The hub connects the rotating assembly to the wheel bearing and suspension. The drawing omits many fasteners and supporting parts." }
+  ]
+}

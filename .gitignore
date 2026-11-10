@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+.venv/
+
+# Build output and test artifacts
+/dist/
+/coverage/
+/playwright-report/
+/test-results/
+.book-build-*/
+
+# Language and tool caches
+__pycache__/
+*.py[cod]
+.cache/
+
+# Local machine files and logs
+.DS_Store
+*.log
