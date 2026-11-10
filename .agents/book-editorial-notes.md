@@ -32,7 +32,7 @@ Porsche and other primary publications are cited in chapter-local endnotes. Chap
 
 ## Reader integration
 
-Cross-chapter Markdown links are converted to internal HTML fragments in both editions, with unknown chapters and headings rejected at build time. Numbered chapter folders remain the source of reading order. The reader preserves the owning chapter when following section and source links, and provides the complete manuscript and static figures without JavaScript.
+Chapter entries are MDX; research and credits remain Markdown. Cross-chapter `index.mdx` links become internal HTML fragments, with unknown chapters and headings rejected at build time. Legacy `index.md` links remain aliases and published fragment IDs retain that extension. Numbered folders determine reading order. React preserves the owning chapter for section/source navigation; the prerendered document contains the complete manuscript and static figures without JavaScript. Use the shared Figure/Diagram components and follow the authoring forms in README rather than Pandoc attributes or fenced divs.
 
 ## Final read-through
 

@@ -8,6 +8,6 @@ The reference car is the **2010 European/UK Boxster 987.2 2.9-litre**: six-speed
 - **Before changing interactive figures**, read [diagram authoring and architecture](interactive/README.md).
 - **For previous findings**, use the [text and source review](.agents/reviews/text-and-source-review.md) for factual corrections, the [diagram review](.agents/reviews/diagram-review.md) for figures, and the [reader design review](.agents/reviews/reader-design-review.md) for layout.
 
-- **For the proposed MDX/React/Vite build migration**, read the [migration plan](.agents/mdx-react-vite-migration-plan.md).
+- **Before changing MDX compilation, reader state or exports**, read the [build architecture](README.md#mdx-and-rendering). The [migration plan](.agents/mdx-react-vite-migration-plan.md) records the compatibility requirements and rationale.
 
 Build commands and reader usage are documented in [README.md](README.md).

@@ -1,6 +1,6 @@
 # MDX, React and Vite migration plan
 
-Status: proposed implementation plan, revised 10 November 2026. This plan replaces the earlier Markdown-it proposal. Implementation has not started.
+Status: implemented and validated locally, 10 November 2026. This plan replaces the earlier Markdown-it proposal and records the migration requirements. See the [implementation and validation review](reviews/mdx-migration.md) for the result and measured limits.
 
 ## Target
 

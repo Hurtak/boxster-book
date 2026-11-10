@@ -1,4 +1,5 @@
 .book-diagram {
+  position: relative;
   margin: 32px 0;
   min-height: var(--diagram-reserved-height, 0px);
   color: var(--ink);
@@ -7,7 +8,7 @@
 }
 #book .book-diagram > figure { margin: 0; }
 .book-diagram .diagram-interactive { background: var(--ground); padding: 24px; }
-.book-diagram:not(.diagram-ready) .diagram-interactive { position: absolute; visibility: hidden; pointer-events: none; width: min(700px, 90vw); }
+.book-diagram:not(.diagram-ready) .diagram-interactive { position: absolute; inset: 0 0 auto; visibility: hidden; pointer-events: none; width: 100%; }
 .book-diagram .diagram-static[hidden] { display: none; }
 /* Keep the measured placeholder while an offscreen view is suspended. A tall
    poster must not expand it; print and failure states still show the poster. */

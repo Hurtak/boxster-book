@@ -5,6 +5,7 @@ import { createServer } from 'node:http';
 import { readFile, mkdir, readdir } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const root = resolve('dist');
 const portable = pathToFileURL(resolve(root, 'book.html')).href;
@@ -22,7 +23,7 @@ before(async () => {
     if (!file.startsWith(root + sep)) { response.writeHead(403).end(); return; }
     try {
       const data = await readFile(file);
-      const types = { '.html': 'text/html', '.js': 'text/javascript', '.glb': 'model/gltf-binary', '.txt': 'text/plain' };
+      const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.glb': 'model/gltf-binary', '.woff2': 'font/woff2', '.txt': 'text/plain' };
       response.writeHead(200, { 'Content-Type': types[extname(file)] ?? 'application/octet-stream' }).end(data);
     } catch { response.writeHead(404).end(); }
   });
@@ -181,6 +182,86 @@ test('static diagrams remain readable without JavaScript or WebGL', async () => 
     assert.equal(await figure.getByRole('button', { name: 'Try again' }).count(), 1);
     assert.equal(await figure.locator('canvas').count(), 0);
   } finally { await page.close(); }
+});
+
+test('all prerendered editions preserve the manuscript, tables, figures and published note links', async () => {
+  const baseline = JSON.parse(await readFile(resolve('tests/fixtures/manuscript-baseline.json'), 'utf8'));
+  const normal = value => value.normalize('NFKC').replace(/[’‘]/g, "'").replace(/[“”]/g, '"').replace(/[^\p{L}\p{N}]/gu, '');
+  const hash = value => createHash('sha256').update(normal(value)).digest('hex');
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  try {
+    const page = await context.newPage();
+    for (const edition of [portable, web, site]) {
+      await page.goto(edition);
+      await page.locator('#book img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
+      const actual = await page.evaluate(() => {
+        const clean = element => {
+          const clone = element.cloneNode(true);
+          clone.querySelectorAll('.footnote-ref,.footnote-back,.chapter-notes').forEach(node => node.remove());
+          return clone.textContent.replace(/\s+/g, ' ').trim();
+        };
+        return [...document.querySelectorAll('#book > section.level2')].map(chapter => ({
+          id: chapter.id, text: clean(chapter),
+          headings: [...chapter.querySelectorAll('section[id]')].map(node => node.id),
+          tables: [...chapter.querySelectorAll('table')].map(clean),
+          figures: [...chapter.querySelectorAll('figure')].map(node => ({ alt: node.querySelector('img').alt, caption: clean(node.querySelector('figcaption')) })),
+          notes: [...chapter.querySelectorAll('.footnote-ref')].map(reference => ({ id: reference.hash.slice(1), reference: reference.id, text: clean(document.getElementById(reference.hash.slice(1))) })),
+        }));
+      });
+      assert.equal(actual.length, baseline.chapters.length);
+      for (let i = 0; i < actual.length; i++) {
+        const after = actual[i], before = baseline.chapters[i], label = `${edition}: ${before.title}`;
+        assert.equal(after.id, before.id, label);
+        assert.equal(hash(after.text), before.textHash, `${label}: prose and captions`);
+        assert.deepEqual(after.headings, before.headings.map(h => h.id), `${label}: legacy section IDs`);
+        assert.deepEqual(after.tables.map(hash), before.tables, `${label}: table cells`);
+        assert.deepEqual(after.figures.map(f => [normal(f.alt), hash(f.caption)]), before.figures.map(f => [normal(f.alt), f.captionHash]), `${label}: captions and descriptive alternatives`);
+        assert.deepEqual(after.notes.map(n => ({ id: n.id, reference: n.reference, textHash: hash(n.text) })), before.notes, `${label}: repeated notes and backlinks`);
+      }
+    }
+  } finally { await context.close(); }
+});
+
+test('all editions hydrate without warnings, missing assets or premature model downloads', async () => {
+  for (const edition of [portable, web, site]) {
+    const page = await browser.newPage(), errors = [], models = [];
+    try {
+      page.on('pageerror', error => errors.push(error.message));
+      page.on('console', message => { if (message.type() === 'error' || /hydration|did not match/i.test(message.text())) errors.push(message.text()); });
+      page.on('response', response => { if (response.status() >= 400 && !response.url().endsWith('/favicon.ico')) errors.push(`${response.status()} ${response.url()}`); });
+      page.on('request', request => { if (request.url().endsWith('.glb')) models.push(request.url()); });
+      await page.goto(edition);
+      await page.locator('html.reader-enhanced').waitFor();
+      await page.waitForLoadState('networkidle');
+      assert.deepEqual(models, []);
+      const notices = await page.locator('#third-party-notices').evaluate(element => element.content.textContent);
+      assert.match(notices, /react-dom 19\./);
+      assert.match(notices, /react 19\./);
+      assert.match(notices, /SIL OPEN FONT LICENSE/);
+      await page.getByRole('navigation', { name: 'Written chapters' }).getByRole('link', { name: 'Brakes and stability systems', exact: true }).click();
+      await page.getByRole('heading', { level: 1, name: 'Brakes and stability systems', exact: true }).waitFor();
+      assert.deepEqual(errors, [], edition);
+    } finally { await page.close(); }
+  }
+});
+
+test('every diagram module and model loads through both HTTP export registries', async () => {
+  for (const [edition,width] of [[web,390],[site,1440]]) {
+    const page = await browser.newPage({viewport:{width,height:1000}}), errors=[];
+    try {
+      page.on('pageerror',error=>errors.push(error.message));
+      page.on('console',message=>{if(message.type()==='error')errors.push(message.text());});
+      page.on('response',response=>{if(response.status()>=400&&!response.url().endsWith('/favicon.ico'))errors.push(`${response.status()} ${response.url()}`);});
+      await page.goto(edition);
+      const names=await page.locator('[data-diagram]').evaluateAll(figures=>figures.map(figure=>figure.dataset.diagram));
+      for(const name of names){
+        const figure=await ready(page,name);
+        assert.ok(await figure.locator('.diagram-explanation').innerText(),name);
+        assert.equal(await figure.locator('.diagram-notice').count(),0,name);
+      }
+      assert.deepEqual(errors,[],edition);
+    }finally{await page.close();}
+  }
 });
 
 test('reader navigation, sources and browser history preserve chapter context', async () => {
@@ -423,7 +504,7 @@ test('cross-chapter explanations navigate to the owning section and every book f
       const broken = await page.locator('#book a[href]').evaluateAll((links) => links.flatMap((link) => {
         const href = link.getAttribute('href');
         if (href.startsWith('#') && href.length > 1 && !document.getElementById(decodeURIComponent(href.slice(1)))) return [href];
-        if (/index\.md(?:#|$)/.test(href)) return [href];
+        if (/index\.mdx?(?:#|$)/.test(href)) return [href];
         return [];
       }));
       assert.deepEqual(broken, [], 'Every internal manuscript link must resolve in the reading edition');
@@ -862,7 +943,8 @@ test('engine illustrations connect the four strokes, half-speed cams and separat
     await valves.screenshot({ path: resolve(previews, 'engine-timing-lift-phone.png') });
     await page.locator('.book-name').click();
     await page.locator('#title').waitFor({ state: 'visible' });
-    await valves.locator('.diagram-interactive').waitFor({ state: 'detached' });
+    await valves.locator('.diagram-stage').waitFor({ state: 'detached' });
+    assert.equal(await valves.locator('.diagram-interactive').evaluate(host => host.childElementCount), 0, 'React retains an empty host after the drawing is disposed');
     await ready(page, 'engine-timing-lift');
     assert.equal(await valves.getByRole('slider').inputValue(), '20', 'Changing chapters must retain the illustration state');
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));

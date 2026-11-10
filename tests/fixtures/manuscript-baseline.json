@@ -1,0 +1,4155 @@
+{
+  "revision": "3a3ee94ef10705717e0a8e82834b2a403cbbf7fa",
+  "chapters": [
+    {
+      "id": "book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__the-2010-boxster-2.9-in-the-987.2-family",
+      "title": "The 2010 Boxster 2.9 in the 987.2 family",
+      "headings": [
+        {
+          "id": "book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__what-987.2-means",
+          "title": "What 987.2 means"
+        },
+        {
+          "id": "book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__a-roadster-arranged-around-its-engine",
+          "title": "A roadster arranged around its engine"
+        },
+        {
+          "id": "book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__the-ordinary-2.9-and-its-relatives",
+          "title": "The ordinary 2.9 and its relatives"
+        },
+        {
+          "id": "book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__where-the-cayman-fits",
+          "title": "Where the Cayman fits"
+        },
+        {
+          "id": "book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__reading-evidence-and-condition",
+          "title": "Reading evidence and condition"
+        },
+        {
+          "id": "book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__reading-this-book",
+          "title": "Reading this book"
+        }
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "alt": "A green ordinary 987.2 Boxster photographed from the front with its fabric roof lowered.",
+          "width": null,
+          "style": null,
+          "captionHash": "d8f8819cccdf64c976f4e2a21fbfa905cdacbc4b391bcc69245924f327a2cd01"
+        },
+        {
+          "alt": "Three stacked cards distinguish the original 987, revised 987.2 and succeeding 981. The 2010 2.9 belongs to the middle card.",
+          "width": null,
+          "style": null,
+          "captionHash": "c1e38d6f215acbdeb55fd59f8d3b1abb1ad2756ddeb72186048e16d325f03071"
+        },
+        {
+          "alt": "A simplified side view places front luggage, two seats, the engine ahead of the rear axle, and the rear luggage compartment.",
+          "width": null,
+          "style": null,
+          "captionHash": "255bba4f59f5b764af7beb8af768b6dfbff21ea326f192533895d72bb909dcb9"
+        },
+        {
+          "alt": "The reference Boxster 2.9 has 188 kW / 255 PS, multipoint injection and a powered fabric roof. The selector compares the S and later derivatives against that baseline.",
+          "width": null,
+          "style": null,
+          "captionHash": "66b7a113247dbce8bc1494eff1b9cce28a9a84532523bb21de595524a9e51360"
+        },
+        {
+          "alt": "The ordinary green Boxster seen from behind on a road, showing the two-seat cabin, rear deck and central exhaust outlet.",
+          "width": null,
+          "style": null,
+          "captionHash": "89a4bcc008601288a4c04215f2f779e3d77e25ae1912e2c7f9a78970c04be96b"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn1",
+          "reference": "fnref1",
+          "textHash": "7be989952a8cd6222dd80526854ba962ecc5630c2f6d4f11c12b0628be734323"
+        },
+        {
+          "id": "fn2",
+          "reference": "fnref2",
+          "textHash": "5a96f0a56cdc3d439387ee8cd7d5350dafe30b85426d243dc8039a1667ac2544"
+        },
+        {
+          "id": "fn3",
+          "reference": "fnref3",
+          "textHash": "d236ae716eabbd19e0bb1a6f4603f27ed6095746ddacfa3b2e090cdbabcc2f99"
+        },
+        {
+          "id": "fn4",
+          "reference": "fnref4",
+          "textHash": "1c6a38c3f67985ab2230e0f4279a2a7eb3840e438d9faa72b908e58588fbe65a"
+        },
+        {
+          "id": "fn5",
+          "reference": "fnref5",
+          "textHash": "d97da0eb3946b04d0f586b800f33ea15136484abace34d49a65cac29c1beb6a3"
+        },
+        {
+          "id": "fn6",
+          "reference": "fnref6",
+          "textHash": "f2ed24864b57635a2c3ee9e98b446dc274e5039d6a9318ee65ce7e221aed6afa"
+        },
+        {
+          "id": "fn7",
+          "reference": "fnref7",
+          "textHash": "f2ed24864b57635a2c3ee9e98b446dc274e5039d6a9318ee65ce7e221aed6afa"
+        },
+        {
+          "id": "fn8",
+          "reference": "fnref8",
+          "textHash": "7be989952a8cd6222dd80526854ba962ecc5630c2f6d4f11c12b0628be734323"
+        },
+        {
+          "id": "fn9",
+          "reference": "fnref9",
+          "textHash": "b8be6f9058d880c1a984bf818b868a422cd3f7d856fd4deabfc503bf287f3e41"
+        },
+        {
+          "id": "fn10",
+          "reference": "fnref10",
+          "textHash": "dcc93981ee6df20461451b513a386677ca74938bc6371e9c883848914c7617b4"
+        },
+        {
+          "id": "fn11",
+          "reference": "fnref11",
+          "textHash": "b8e28f5aca73de68f43a80b6bcd6fc0d07837683fa67bd3110fef9d449142f27"
+        },
+        {
+          "id": "fn12",
+          "reference": "fnref12",
+          "textHash": "6c2cfe513460d6ab64aa0b57a2f1af54006f7881424dd9a9a51f5ee43fe67f20"
+        }
+      ],
+      "diagrams": [
+        "family-variant-selector"
+      ],
+      "textHash": "7427196702cc1c9b6a6891da920e3427c174b3fc004566e325eb6ee60071cc80"
+    },
+    {
+      "id": "book__02-the-yearly-timeline__index.md__the-yearly-timeline",
+      "title": "The yearly timeline",
+      "headings": [
+        {
+          "id": "book__02-the-yearly-timeline__index.md__five-dates-that-answer-different-questions",
+          "title": "Five dates that answer different questions"
+        },
+        {
+          "id": "book__02-the-yearly-timeline__index.md__late-2008-the-2.9-is-announced",
+          "title": "Late 2008: the 2.9 is announced"
+        },
+        {
+          "id": "book__02-the-yearly-timeline__index.md__the-principal-revision-reaches-customers",
+          "title": "2009: the principal revision reaches customers"
+        },
+        {
+          "id": "book__02-the-yearly-timeline__index.md__the-reference-car-then-the-spyder",
+          "title": "2010: the reference car, then the Spyder"
+        },
+        {
+          "id": "book__02-the-yearly-timeline__index.md__a-numbered-s-derivative",
+          "title": "2011: a numbered S derivative"
+        },
+        {
+          "id": "book__02-the-yearly-timeline__index.md__identify-the-outgoing-car-before-reading-its-specification",
+          "title": "2012: identify the outgoing car before reading its\nspecification"
+        },
+        {
+          "id": "book__02-the-yearly-timeline__index.md__reading-an-individual-cars-history",
+          "title": "Reading an individual car’s history"
+        }
+      ],
+      "tables": [
+        "08a4c73f98d349abb7b216d31c95b618cf49e0e6e9634fbecfe12cf95ea13ed8"
+      ],
+      "figures": [
+        {
+          "alt": "Announcement, market availability, model year, build date and registration describe different events. The first two concern a product range; the last two concern an individual car.",
+          "width": null,
+          "style": null,
+          "captionHash": "24b46ab7165fb337683b4933cc14a1cf9588c62a142419bff7a58b0f7d224e08"
+        },
+        {
+          "alt": "The initial timeline selects 2010: a January UK reference brochure and the February Spyder introduction planned in Porsche’s Dutch announcement. Porsche Classic’s later 2011 heading is a separate label.",
+          "width": null,
+          "style": null,
+          "captionHash": "7cffc3e31bfe2ee51c8b32e0a05b952c53e2345382458c2c97a4adbacf7782d9"
+        },
+        {
+          "alt": "A red facelift Boxster S in side profile in Porsche's contemporary launch photography, showing the revised front bumper and lights and the familiar 987 body proportions.",
+          "width": null,
+          "style": null,
+          "captionHash": "5a5d047f38fef22253ad1609307243f083d4933d60cb76dc53dfcf9408363e54"
+        },
+        {
+          "alt": "The Boxster Spyder viewed directly from behind, with its twin raised rear-deck forms, open cabin and Spyder script visible.",
+          "width": null,
+          "style": null,
+          "captionHash": "3b28e96eef48543a270c001422479d3555b7da052dce5d5d915be26749905645"
+        },
+        {
+          "alt": "Two specification columns distinguish the outgoing 987.2 base Boxster, with a 2.9-litre port-injected engine and 188 kW, from the incoming 981 base Boxster, with a 2.7-litre direct-injected engine and 195 kW. A 2012 registration alone cannot choose between them.",
+          "width": null,
+          "style": null,
+          "captionHash": "b393e4fee4ceb61bf4efa1539832a33c85e652952fa7cecda442a2903d96db23"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn13",
+          "reference": "fnref13",
+          "textHash": "c265d199eff3f758b69967b0b87bf46928e147c66e85a1a76937838f054cb139"
+        },
+        {
+          "id": "fn14",
+          "reference": "fnref14",
+          "textHash": "b1c9c68152532077191eabb7a7b8dbd202ce6d6973e8c5772d0b478d157c5d58"
+        },
+        {
+          "id": "fn15",
+          "reference": "fnref15",
+          "textHash": "e287888578c5e0d573e194db25dd41b6377972ee47dd85ce8afc6f77d209da73"
+        },
+        {
+          "id": "fn16",
+          "reference": "fnref16",
+          "textHash": "c44eca5bf4c05005bd37870aa1e2f7a67e950876c92db31cf189c470d9a7a1c0"
+        },
+        {
+          "id": "fn17",
+          "reference": "fnref17",
+          "textHash": "781caac03f238b787f065a48bf22a492b08900fcacf634c74a131d3e86dd825c"
+        },
+        {
+          "id": "fn18",
+          "reference": "fnref18",
+          "textHash": "b1c9c68152532077191eabb7a7b8dbd202ce6d6973e8c5772d0b478d157c5d58"
+        },
+        {
+          "id": "fn19",
+          "reference": "fnref19",
+          "textHash": "6f9970da4e9c6441f163f9684a08f6ba38963adeecc8b2e3010c5b81a618fefc"
+        },
+        {
+          "id": "fn20",
+          "reference": "fnref20",
+          "textHash": "e526c05d0c23c595587956b423e5ecfc0b2856ec17883005d6dbf25720ba7fdc"
+        },
+        {
+          "id": "fn21",
+          "reference": "fnref21",
+          "textHash": "9224f82e66f89a7fc9d2ef159a802cc922056345657a719ab39084c073cd2f34"
+        },
+        {
+          "id": "fn22",
+          "reference": "fnref22",
+          "textHash": "4ce1d0024a674d6be29c1c05a838e4cc0da3b5f6185ac47a5e87936a4ac45aa8"
+        },
+        {
+          "id": "fn23",
+          "reference": "fnref23",
+          "textHash": "f5c24519fd040a0c55836081aaee60943660fd80816df6a58b38b8ffcf88836f"
+        },
+        {
+          "id": "fn24",
+          "reference": "fnref24",
+          "textHash": "c14d758c615168c27cc8aaee39a80d49d914263255aeebb2629aeec2f1409b63"
+        },
+        {
+          "id": "fn25",
+          "reference": "fnref25",
+          "textHash": "5efede2ff87d7b7be2323eca169c537ce3dcc3f78d849fac822f51827e277367"
+        },
+        {
+          "id": "fn26",
+          "reference": "fnref26",
+          "textHash": "a9ad64fdc4813288f548d0d8463ca8a4a36b160bdb3f7f1f795983401f4d8f84"
+        },
+        {
+          "id": "fn27",
+          "reference": "fnref27",
+          "textHash": "214fc93254ce652d26c98b448fcec9f3663397cd0bc7ac38df4fc3bce06427ef"
+        },
+        {
+          "id": "fn28",
+          "reference": "fnref28",
+          "textHash": "d74234f58284c16575dc8f07777ba15ffafc14fc1897918b5af7eeed9f88ffb3"
+        },
+        {
+          "id": "fn29",
+          "reference": "fnref29",
+          "textHash": "e4249955c292e40c1e647c619e66df98656e4a3a80932c4ec669448becef43cb"
+        },
+        {
+          "id": "fn30",
+          "reference": "fnref30",
+          "textHash": "bfa464c9e2c5d8aa7aecd5ad96756acf670f318c460565267906452c2d23da46"
+        },
+        {
+          "id": "fn31",
+          "reference": "fnref31",
+          "textHash": "31f92a4229e96eed1b782c49196084689625da99f2de27f8d556294e0c400545"
+        }
+      ],
+      "diagrams": [
+        "timeline-evidence"
+      ],
+      "textHash": "5ab6a463d5f2bb0b9ba25772d84a8c59065707d27fb065d59e80da6a343d2e9b"
+    },
+    {
+      "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__the-2010-boxster-2.9-specification-and-options",
+      "title": "The 2010 Boxster 2.9 specification and options",
+      "headings": [
+        {
+          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__the-reference-specification",
+          "title": "The reference specification"
+        },
+        {
+          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__what-the-gearbox-changes",
+          "title": "What the gearbox changes"
+        },
+        {
+          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__dimensions-luggage-and-the-meaning-of-weight",
+          "title": "Dimensions, luggage and the meaning of weight"
+        },
+        {
+          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__factory-options-grouped-by-purpose",
+          "title": "Factory options, grouped by purpose"
+        },
+        {
+          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__combinations-matter",
+          "title": "Combinations matter"
+        },
+        {
+          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__reading-an-individual-cars-record",
+          "title": "Reading an individual car’s record"
+        },
+        {
+          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__other-years-and-other-boxsters",
+          "title": "Other years and other Boxsters"
+        }
+      ],
+      "tables": [
+        "e3213baca780bc5fe320f53403421cedc8a7ddb3f95d51422a38ca621ad24d98",
+        "4b1b4b1df23d7f0d5de119ed325cbae3aa1812e88c232939f8a6121875fbb6f9",
+        "ed842db6ec277af631664f52a31ef6b9da0fa4cb71a6414e216553dde5c54f23",
+        "bfbb127f635534d454b7d9fc3a3c4c4b8dfb96742ac7d0700717a4b7a023590a"
+      ],
+      "figures": [
+        {
+          "alt": "A green ordinary 987.2 Boxster photographed from the front on a mountain road.",
+          "width": null,
+          "style": null,
+          "captionHash": "c0e347924d74832389ca420e7f79ef7e60cca8dd665e0eefa21da4e3b30fdd10"
+        },
+        {
+          "alt": "The manual takes 5.9 seconds to reach 100 km/h. PDK takes 5.8 seconds; PDK with Sport Chrono Sport Plus takes 5.6. Peak engine output remains 188 kW in all three configurations.",
+          "width": null,
+          "style": null,
+          "captionHash": "8f999153868c995d8fdbefdc8ad3e929708b23ac0aa026377f676fb781e3c3e5"
+        },
+        {
+          "alt": "Manual weight references: 1,335 kg DIN; add the EC allowance of 68 kg driver and 7 kg luggage to obtain 1,410 kg EC. The separately quoted permissible gross weight is 1,635 kg.",
+          "width": null,
+          "style": null,
+          "captionHash": "1957779b3150b6e8e2fffa75462c76f7df87c8260315065a3f482399d68e4def"
+        },
+        {
+          "alt": "Porsche photograph looking down into a tan Boxster cabin with both doors open, showing personalised interior trim and a manual gear lever.",
+          "width": null,
+          "style": null,
+          "captionHash": "04959c3a06389769990acc6264479abfc6ced0d9ff160320839d5db0f8710bc0"
+        },
+        {
+          "alt": "PDK plus Sport Chrono supplies Launch Control and the Sport Plus shift strategy. Sport Chrono Plus needs PCM; the locking differential needs 18- or 19-inch wheels. These are distinct option relationships.",
+          "width": null,
+          "style": null,
+          "captionHash": "f233b50af0282ec2b4c515ed35df8ed865a44338e4b64c6c1d0bd0404b9a59a8"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn32",
+          "reference": "fnref32",
+          "textHash": "4ec7020f4b52aa38e7f7ee0108c4de73396608c79fc4ce66306fefca459974c0"
+        },
+        {
+          "id": "fn33",
+          "reference": "fnref33",
+          "textHash": "2a44dd55027522961b55105f75a0bdb044f54820277e1eb52f508311c26f4781"
+        },
+        {
+          "id": "fn34",
+          "reference": "fnref34",
+          "textHash": "b42bbf63c61945d1e473db7721797051ef428744732fd24c6f7d32a107399d51"
+        },
+        {
+          "id": "fn35",
+          "reference": "fnref35",
+          "textHash": "b42bbf63c61945d1e473db7721797051ef428744732fd24c6f7d32a107399d51"
+        },
+        {
+          "id": "fn36",
+          "reference": "fnref36",
+          "textHash": "3397f0aa6c1ed8de8e3c49fa50c698899ec579ea2708ff71ee8bc3c6153cb52b"
+        },
+        {
+          "id": "fn37",
+          "reference": "fnref37",
+          "textHash": "a446f3abdcddf29b0ae924b72dd0e19c39d48c7056e09f83581249471c9ae767"
+        },
+        {
+          "id": "fn38",
+          "reference": "fnref38",
+          "textHash": "b42bbf63c61945d1e473db7721797051ef428744732fd24c6f7d32a107399d51"
+        },
+        {
+          "id": "fn39",
+          "reference": "fnref39",
+          "textHash": "ab94716ae889362614c32b328ecd7bc811bca7392ced6160c4f2825a76781208"
+        },
+        {
+          "id": "fn40",
+          "reference": "fnref40",
+          "textHash": "8200baa6317e3cb0a0e88088a8079ea373d76e18c9bfd46bc811c49c3f6211b6"
+        },
+        {
+          "id": "fn41",
+          "reference": "fnref41",
+          "textHash": "b42bbf63c61945d1e473db7721797051ef428744732fd24c6f7d32a107399d51"
+        },
+        {
+          "id": "fn42",
+          "reference": "fnref42",
+          "textHash": "b546affd453a09b59c4bd544bf07d9fab3e721b71f972326667500ce29b52d0e"
+        },
+        {
+          "id": "fn43",
+          "reference": "fnref43",
+          "textHash": "3d42ce73d70191ab122431c73f5d03bd9c214e9ac7795dbaf3fcb139b377c4ea"
+        },
+        {
+          "id": "fn44",
+          "reference": "fnref44",
+          "textHash": "a446f3abdcddf29b0ae924b72dd0e19c39d48c7056e09f83581249471c9ae767"
+        },
+        {
+          "id": "fn45",
+          "reference": "fnref45",
+          "textHash": "7bd49919bbb7e8c0865375dfea796ab2d9e0441de51206fa0d7d1eff3083790f"
+        },
+        {
+          "id": "fn46",
+          "reference": "fnref46",
+          "textHash": "abb75306d39bab09059d892176a65424dfcd67e4a192b3e6b261c7354f71a439"
+        },
+        {
+          "id": "fn47",
+          "reference": "fnref47",
+          "textHash": "3edeeae0c70fe3f078c42aa14a59e1bfa3557f7a23c0429d69886cc7dba60cb9"
+        },
+        {
+          "id": "fn48",
+          "reference": "fnref48",
+          "textHash": "31ee1cab4c69ca595b1756178a94c8b14cd88e6e89174a40e9a6811ef1ade0a5"
+        },
+        {
+          "id": "fn49",
+          "reference": "fnref49",
+          "textHash": "2a0e50a98588f94b052f2f44eddffb7c1f53e1269a7cade5879ef3ce6817bc0b"
+        }
+      ],
+      "diagrams": [
+        "specification-gearbox-comparison",
+        "specification-option-links"
+      ],
+      "textHash": "ea632b6ee1061a8ed2fc7920e27349cfc582f6dd4a5106c6071542ea4253fc1e"
+    },
+    {
+      "id": "book__04-body-structure-and-packaging__index.md__body-structure-and-packaging",
+      "title": "Body structure and packaging",
+      "headings": [
+        {
+          "id": "book__04-body-structure-and-packaging__index.md__a-connected-shell-around-an-open-centre",
+          "title": "A connected shell around an open centre"
+        },
+        {
+          "id": "book__04-body-structure-and-packaging__index.md__stiffness-and-occupant-protection-have-different-aims",
+          "title": "Stiffness and occupant protection have different aims"
+        },
+        {
+          "id": "book__04-body-structure-and-packaging__index.md__three-different-spaces-behind-the-seats",
+          "title": "Three different spaces behind the seats"
+        },
+        {
+          "id": "book__04-body-structure-and-packaging__index.md__two-boots-with-different-shapes",
+          "title": "Two boots, with different shapes"
+        },
+        {
+          "id": "book__04-body-structure-and-packaging__index.md__the-body-also-guides-air",
+          "title": "The body also guides air"
+        },
+        {
+          "id": "book__04-body-structure-and-packaging__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__04-body-structure-and-packaging__index.md__changes-in-other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__04-body-structure-and-packaging__index.md__the-s-spyder-and-black-edition",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__04-body-structure-and-packaging__index.md__identification-and-ageing",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "alt": "The body shell in the car: a formed floor and centre tunnel join the sills below the doors, with bulkheads across the front and rear of the cabin and the reinforced windscreen frame rising ahead of the occupants.",
+          "width": null,
+          "style": null,
+          "captionHash": "115fbacc3d2992d07263e2db2b659f8b0d0e75fd2cad4d54812752ae86e7a537"
+        },
+        {
+          "alt": "Plan-view schematic showing the sills, centre tunnel and transverse connections carrying loads around an open passenger compartment.",
+          "width": null,
+          "style": null,
+          "captionHash": "bb2564d767b0586b21c974364514c4b268c084825f0c44d3c13ce0467011f7b1"
+        },
+        {
+          "alt": "Porsche factory cutaway illustration exposing the front structure, sills, windscreen frame and rollover structures, with material categories shown in colour.",
+          "width": null,
+          "style": null,
+          "captionHash": "7ab52b31adcfb3d6f609ec2a73ae1ca78dfc189992aa0c34de352d346449508e"
+        },
+        {
+          "alt": "A rear-half section separates seats, the roof bay above the engine cover, the engine below and the rear boot farther back. The roof cover and rear boot lid are different panels.",
+          "width": null,
+          "style": null,
+          "captionHash": "0614b02c8aded8448a4d8ec0f27f460ece642048948b47ebf39adca896c1ff0c"
+        },
+        {
+          "alt": "A red Boxster S with the front and rear luggage lids raised together, showing that the folded roof and two luggage openings occupy separate regions.",
+          "width": null,
+          "style": null,
+          "captionHash": "4cbb614b73cc0f7fd122660e91bb6c4fb3951e578315fdd1bef56a78a8b77687"
+        },
+        {
+          "alt": "Functional flow map separating front radiator airflow, left-side combustion-air intake and right-side engine-compartment ventilation.",
+          "width": null,
+          "style": null,
+          "captionHash": "e7ceae4e25c08ec90a802c8361f580a216da77ed5c72322413a81003ad104e6d"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn50",
+          "reference": "fnref50",
+          "textHash": "22c9c1a6f64efb22ccb9cc221cae9310c548309afad20cc8b3f59e3d11122e72"
+        },
+        {
+          "id": "fn51",
+          "reference": "fnref51",
+          "textHash": "bb1547ff8d74e7f885c4f772ea6c0567729aa639303fc90a663e64761516bb57"
+        },
+        {
+          "id": "fn52",
+          "reference": "fnref52",
+          "textHash": "f27ef7592048440fade688996bfc1525b8302c3d0e2982458fe7b1b4778c8010"
+        },
+        {
+          "id": "fn53",
+          "reference": "fnref53",
+          "textHash": "e96025c6be175170b8fe38a026a7c489f489f4fc9fbb10dc09073ea857dbbdd2"
+        },
+        {
+          "id": "fn54",
+          "reference": "fnref54",
+          "textHash": "0ebefbfcdaa3dd555bf5cb83e024073dd4a48143867c809bc1b02d0731368562"
+        },
+        {
+          "id": "fn55",
+          "reference": "fnref55",
+          "textHash": "56d78deb3c15b912856ee6166a18bbe991d7479818bd00bf95db40fdd6a213f2"
+        },
+        {
+          "id": "fn56",
+          "reference": "fnref56",
+          "textHash": "842d082e3a23474fd54fbea0a0bd66533b1ed5d52197e365fa7867bd83973050"
+        },
+        {
+          "id": "fn57",
+          "reference": "fnref57",
+          "textHash": "012a12dedeb26affc017031b7acee46964453c985e124b2a38ab7c033497394b"
+        },
+        {
+          "id": "fn58",
+          "reference": "fnref58",
+          "textHash": "82875931f274be4f4540c49eb20347104b7e39c17780a2a279b209a0cafdb305"
+        },
+        {
+          "id": "fn59",
+          "reference": "fnref59",
+          "textHash": "c4228195ea41ac9c30d56ea81c29c2baae77706c5141d9ce1a131f386b63fdf8"
+        },
+        {
+          "id": "fn60",
+          "reference": "fnref60",
+          "textHash": "bb4c038f66d1f45a20571e16ea2770c63a0e8ede7db37538c29248c50ff14f54"
+        },
+        {
+          "id": "fn61",
+          "reference": "fnref61",
+          "textHash": "177c389a9f9dc09623538fb6c53a999ff116d3b0bdc74a21295d475b15e84ebf"
+        },
+        {
+          "id": "fn62",
+          "reference": "fnref62",
+          "textHash": "8a28260419659135f90eaab48cc466c23918143c765d6cd42e4777e0aae31657"
+        },
+        {
+          "id": "fn63",
+          "reference": "fnref63",
+          "textHash": "f8561623943de84f00a537364eb5b5215e1f7f2fbc0e9adf9d1fce517baedd95"
+        },
+        {
+          "id": "fn64",
+          "reference": "fnref64",
+          "textHash": "fbbafd265a4962919591d9c0f91813bb240df7a107524bb34f03e579d9b0d4fd"
+        }
+      ],
+      "diagrams": [
+        "body-explorer",
+        "body-packaging-layers"
+      ],
+      "textHash": "59394b8e2d3d495b33cd10358f103eb32e325e9dd339a77ee05bd8d40d8b77ef"
+    },
+    {
+      "id": "book__05-engine-construction-and-valve-gear__index.md__engine-construction-and-valve-gear",
+      "title": "Engine construction and valve gear",
+      "headings": [
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__the-engine-in-the-2010-2.9",
+          "title": "The engine in the 2010 2.9"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__what-flat-six-describes",
+          "title": "What “flat-six” describes"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__four-strokes-turn-fuel-into-rotation",
+          "title": "Four strokes turn fuel into rotation"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__understanding-the-dimensions-and-output",
+          "title": "Understanding the dimensions and output"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__crankcase-crankshaft-rods-and-pistons",
+          "title": "Crankcase, crankshaft, rods and pistons"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__heads-and-valves-control-the-gas-exchange",
+          "title": "Heads and valves control the gas exchange"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__chains-synchronise-crankshaft-and-camshafts",
+          "title": "Chains synchronise crankshaft and camshafts"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__the-external-accessory-drive",
+          "title": "The external accessory drive"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__variocam-plus-timing-and-lift",
+          "title": "VarioCam Plus: timing and lift"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__the-s-spyder-black-edition-and-cayman",
+          "title": "The S, Spyder, Black Edition and Cayman"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__identification-and-ageing",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [
+        "fda8f9b0432178202ea47047737dcdf27c599a6e75e65d03e09afbe0771b27df"
+      ],
+      "figures": [
+        {
+          "alt": "The flat-six sits behind the seats and ahead of the rear axle. Its two horizontal cylinder banks surround a longitudinal crankshaft; heads and four cams sit outside the banks, intake runners above and exhaust manifolds below.",
+          "width": null,
+          "style": null,
+          "captionHash": "19e8f34140dba69b1b36e724b8466ce7884a6e67bb9522e89fe67bf0840f4358"
+        },
+        {
+          "alt": "A complete used 987-generation 2.9-litre engine, viewed from its gearbox end, with a broad black intake assembly above the low aluminium crankcase.",
+          "width": null,
+          "style": null,
+          "captionHash": "203091b1cba7652242d9615a717f48e16a412756dc7679d7d46647e105cc6ac7"
+        },
+        {
+          "alt": "A plan of the 2010 2.9 shows three cylinders on either side of the crankshaft, connecting rods between pistons and crank throws, and two camshafts in each outer cylinder head.",
+          "width": null,
+          "style": null,
+          "captionHash": "e74f7418f239d085274b2431c559775ce58ca2473ae0618152f3b2a631b55931"
+        },
+        {
+          "alt": "Intake, compression, power and exhaust occupy two crankshaft revolutions. The crank turns 720 degrees while each camshaft turns 360 degrees; the illustrated valve events are simplified to the stroke boundaries.",
+          "width": null,
+          "style": null,
+          "captionHash": "4493b78361097a2b65a4ff566fd4d1fef3c785b437a68c7f4a8127974ebce59b"
+        },
+        {
+          "alt": "A connection schematic shows the crankshaft driving two chains and four camshafts, with guide rails and oil-fed hydraulic tensioners. There is no intermediate shaft between crankshaft and camshafts.",
+          "width": null,
+          "style": null,
+          "captionHash": "7785ae5a5eaf27ea9b7152c209f2f71bfb1f34e1699a115b7269734de8bce076"
+        },
+        {
+          "alt": "A functional accessory-drive map connects the crankshaft pulley and common belt to four loads: alternator, hydraulic steering pump, A/C compressor and coolant pump. A hydraulic tensioner controls the belt.",
+          "width": null,
+          "style": null,
+          "captionHash": "79fa4eed9c605125457f2f16c895e0966805a93040f8f0f5e63aee9b22ba938c"
+        },
+        {
+          "alt": "Moving a valve event earlier changes its timing, while switching from 3.6 to 10.0 millimetres changes peak inlet lift. Curves and durations are illustrative, not a measured Porsche valve map.",
+          "width": null,
+          "style": null,
+          "captionHash": "d954e416dc9c2cb6522c06bed1d8f02703bf282ec8dc39057c2149c98befbbb3"
+        },
+        {
+          "alt": "Porsche's period photograph of the 3.4-litre Boxster S engine, viewed from its accessory-drive end, showing pulleys above and around the crankshaft pulley.",
+          "width": null,
+          "style": null,
+          "captionHash": "5ab66cd41243a1669adad22f262aeeeaa92cabf021c41c8d20bd0fcd02b1f032"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn65",
+          "reference": "fnref65",
+          "textHash": "00bb7479ad827ea4d73bf44e4bcb7bc18f2a27c60b56ea5e27df2e062ed6e3d5"
+        },
+        {
+          "id": "fn66",
+          "reference": "fnref66",
+          "textHash": "5d83334e9f0f5d8f0afba5268bd029407954e15e173378f23a0d501ab448b5e0"
+        },
+        {
+          "id": "fn67",
+          "reference": "fnref67",
+          "textHash": "5d83334e9f0f5d8f0afba5268bd029407954e15e173378f23a0d501ab448b5e0"
+        },
+        {
+          "id": "fn68",
+          "reference": "fnref68",
+          "textHash": "9d338c2ca8874f59f407e6eebd1c67479b560a5e199e9f106d01be5ade3c6a2a"
+        },
+        {
+          "id": "fn69",
+          "reference": "fnref69",
+          "textHash": "723acd7c098fd8d61fecc0b45729b7e7245c24b96f6b71a29582de548f3ac50c"
+        },
+        {
+          "id": "fn70",
+          "reference": "fnref70",
+          "textHash": "c0f602eb9e8bc39c69a9bce6cf6954e549b51a7b76f4ba0b159cbb6402e1c073"
+        },
+        {
+          "id": "fn71",
+          "reference": "fnref71",
+          "textHash": "ef0aef04dfaf8b2bd6ccfc56bf1e7da6fa3a32e933283dd3f54203dda3a96052"
+        },
+        {
+          "id": "fn72",
+          "reference": "fnref72",
+          "textHash": "935112f5d5a15a35432f0da68fb21a237aaa257c865378b9a258b45f06c88120"
+        },
+        {
+          "id": "fn73",
+          "reference": "fnref73",
+          "textHash": "40e776c476ec496a6ef318b6bc6531c9d5dc23a868bd7eaa96a193b1311d5649"
+        },
+        {
+          "id": "fn74",
+          "reference": "fnref74",
+          "textHash": "a1628e0660cde988956e56855d41a47239c1a6ceb970c70d11cd0096dca1498e"
+        },
+        {
+          "id": "fn75",
+          "reference": "fnref75",
+          "textHash": "e7437ebb214c06fbb66e0af1fc2d29d1dab13decb278a12e40bb82198eab7009"
+        },
+        {
+          "id": "fn76",
+          "reference": "fnref76",
+          "textHash": "aa866460518838fb6c5bfa57e46a45968f6341099c36b3c7c1b284374a80df80"
+        },
+        {
+          "id": "fn77",
+          "reference": "fnref77",
+          "textHash": "9da26919feb2125ca691a810b0f8969154815569c833cb5e6ce28d8f63e8aa35"
+        },
+        {
+          "id": "fn78",
+          "reference": "fnref78",
+          "textHash": "0651a8cdbb026fcfabc901cc5db801bf131680e3277bf802f874820663afc927"
+        },
+        {
+          "id": "fn79",
+          "reference": "fnref79",
+          "textHash": "0651a8cdbb026fcfabc901cc5db801bf131680e3277bf802f874820663afc927"
+        },
+        {
+          "id": "fn80",
+          "reference": "fnref80",
+          "textHash": "fb01f2208fc5eb3db1f3508f1f1eff2315910240054e9f3e4cc3e0e1335ca42f"
+        },
+        {
+          "id": "fn81",
+          "reference": "fnref81",
+          "textHash": "d8c2dca10304b1602b626d1c6e5e74ad08b9930187d0d01d0186c5c2ca749772"
+        },
+        {
+          "id": "fn82",
+          "reference": "fnref82",
+          "textHash": "be118cec222a3b26ddc6d1f0d0b67c0f2f6636ca4dec9104ced20d23a9b3deda"
+        },
+        {
+          "id": "fn83",
+          "reference": "fnref83",
+          "textHash": "fb01f2208fc5eb3db1f3508f1f1eff2315910240054e9f3e4cc3e0e1335ca42f"
+        },
+        {
+          "id": "fn84",
+          "reference": "fnref84",
+          "textHash": "7ff6eb2c9673e783b921ea99af160f61fd25167750ee86a69e8b077ed8a2f097"
+        },
+        {
+          "id": "fn85",
+          "reference": "fnref85",
+          "textHash": "7ff6eb2c9673e783b921ea99af160f61fd25167750ee86a69e8b077ed8a2f097"
+        },
+        {
+          "id": "fn86",
+          "reference": "fnref86",
+          "textHash": "1a572fad1f91b3211ae5e3185dfaee9a1d7fd37d96552ec9d1f6f0eb83f7d509"
+        },
+        {
+          "id": "fn87",
+          "reference": "fnref87",
+          "textHash": "29dcd73351e018abc10bef74858d79f2d343421c7034870dbef63a82d8ae67fc"
+        },
+        {
+          "id": "fn88",
+          "reference": "fnref88",
+          "textHash": "31469e10ec5217ae5eeb1831cd3cd2a9ff65e2adcba61643e4ece6e587cceaa8"
+        },
+        {
+          "id": "fn89",
+          "reference": "fnref89",
+          "textHash": "00bb7479ad827ea4d73bf44e4bcb7bc18f2a27c60b56ea5e27df2e062ed6e3d5"
+        },
+        {
+          "id": "fn90",
+          "reference": "fnref90",
+          "textHash": "00bb7479ad827ea4d73bf44e4bcb7bc18f2a27c60b56ea5e27df2e062ed6e3d5"
+        }
+      ],
+      "diagrams": [
+        "engine-explorer",
+        "engine-four-stroke",
+        "engine-timing-lift"
+      ],
+      "textHash": "8d5b33c696977ee5c1195957abafe00100f511862f729ba11deda631ebd4a802"
+    },
+    {
+      "id": "book__06-air-fuel-ignition-and-engine-control__index.md__air-fuel-ignition-and-engine-control",
+      "title": "Air, fuel, ignition and engine control",
+      "headings": [
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__following-the-air",
+          "title": "Following the air"
+        },
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__the-accelerator-asks-for-torque",
+          "title": "The accelerator asks for torque"
+        },
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__supplying-and-metering-the-fuel",
+          "title": "Supplying and metering the fuel"
+        },
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__tank-ventilation-and-stored-vapour",
+          "title": "Tank ventilation and stored vapour"
+        },
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__crankcase-ventilation-and-oil-separation",
+          "title": "Crankcase ventilation and oil separation"
+        },
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__making-the-spark-useful",
+          "title": "Making the spark useful"
+        },
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__what-the-controller-needs-to-know",
+          "title": "What the controller needs to know"
+        },
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__mixture-feedback-checking-the-result",
+          "title": "Mixture feedback: checking the result"
+        },
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__cold-running-and-emissions",
+          "title": "Cold running and emissions"
+        },
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__changes-in-other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__the-s-spyder-and-black-edition",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__identification-and-ageing",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [
+        "d69e4cb15f846899e87d1b8e2d2bb05edc1a860340dd807a4c8ee9e6658e6f68"
+      ],
+      "figures": [
+        {
+          "alt": "The left side inlet feeds the air cleaner, air-mass sensor and throttle above the rear-mounted engine. Two-bank runners lead to six port injectors; the DME separately controls the throttle, injectors and six coil-and-plug units.",
+          "width": null,
+          "style": null,
+          "captionHash": "12626c280a54cd99a7784a3c63af87027778fd78435b6c0557875fd65f327ea4"
+        },
+        {
+          "alt": "Schematic flow from air filter through MAF and throttle to the resonance intake and the cylinders’ inlet ports.",
+          "width": null,
+          "style": null,
+          "captionHash": "1d2b0ff00540e7accf4cd7d9adaff20c662e9468031977b13583ba5833a7eb1d"
+        },
+        {
+          "alt": "Port injection places the fuel spray before the inlet valve; the 3.4 DFI comparison places it in the cylinder.",
+          "width": null,
+          "style": null,
+          "captionHash": "ae948f003dc250e58394faa53e2ce521991793753746eb93f2338917f32ab279"
+        },
+        {
+          "alt": "Two separate fuel paths connect the front tank and rear engine: pressurised liquid through pump, filter/regulation and injectors; vapour through the carbon canister and controlled purge to the intake.",
+          "width": null,
+          "style": null,
+          "captionHash": "6144804a26acf8d5112e685270bd973424aa0a50fe0d35cb729efa029a763e0c"
+        },
+        {
+          "alt": "Blow-by enters the crankcase past the piston rings, reaches oil separation, then returns as ventilated gas to the intake. Separated oil returns to the engine’s oil collection; it is not sent through the carbon canister.",
+          "width": null,
+          "style": null,
+          "captionHash": "5ff1fcaab1793d4fae14568c53eb50f7ead6a5986db75d8c1982eaa4026bbef2"
+        },
+        {
+          "alt": "Ten per cent additional unmetered air initially gives lambda 1.100 in this illustrative model. Successive fuel corrections approach lambda one.",
+          "width": null,
+          "style": null,
+          "captionHash": "c3f56f0f1c84353f69ff345532a8b48906bdb627271d81381ac5b949c1734703"
+        },
+        {
+          "alt": "Porsche's period photograph of the dashboard-mounted Sport Chrono stopwatch.",
+          "width": null,
+          "style": null,
+          "captionHash": "b5ce65be6e5119621bac0efcd168f89f27da9eb5d3f646dd13bd4690d0fb65b9"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn91",
+          "reference": "fnref91",
+          "textHash": "647f03c6f9c55ecd5cbb21ac9f102db239daacf80641ca6e39f055909815d016"
+        },
+        {
+          "id": "fn92",
+          "reference": "fnref92",
+          "textHash": "d570a5bdb0199fd69fb36cfd61789f9105f98175aacd64b5c668fa0f28ec93c5"
+        },
+        {
+          "id": "fn93",
+          "reference": "fnref93",
+          "textHash": "3a8bd51b24ec0218a21033c1e77e372c370992541bf15de0cb7b771463aa9208"
+        },
+        {
+          "id": "fn94",
+          "reference": "fnref94",
+          "textHash": "c6ada939bed481727526fd06d75d37c2a8c555ff1d767ffc2668a0962450a136"
+        },
+        {
+          "id": "fn95",
+          "reference": "fnref95",
+          "textHash": "e6e1c2e85a1e20c0e519b02c215eced07ad34faa806f70c8db5f5c522c96c070"
+        },
+        {
+          "id": "fn96",
+          "reference": "fnref96",
+          "textHash": "81aa3acd3cecde58f5ce23ac835af2e02d4bded8cf3f02562750664d7c3c093d"
+        },
+        {
+          "id": "fn97",
+          "reference": "fnref97",
+          "textHash": "647f03c6f9c55ecd5cbb21ac9f102db239daacf80641ca6e39f055909815d016"
+        },
+        {
+          "id": "fn98",
+          "reference": "fnref98",
+          "textHash": "81aa3acd3cecde58f5ce23ac835af2e02d4bded8cf3f02562750664d7c3c093d"
+        },
+        {
+          "id": "fn99",
+          "reference": "fnref99",
+          "textHash": "96174fa662e447c8f3f7475025cac76bc23d6d909477996ddf0aee30633f2732"
+        },
+        {
+          "id": "fn100",
+          "reference": "fnref100",
+          "textHash": "18eec1b9d54fb8d9f1abcd7ed251a73918784d613223618a8774bd123b570aae"
+        },
+        {
+          "id": "fn101",
+          "reference": "fnref101",
+          "textHash": "7864d02377709d3a8b31c34b0db177768a3423ede311dbc70d8422c481bc2276"
+        },
+        {
+          "id": "fn102",
+          "reference": "fnref102",
+          "textHash": "c6ef8f9b6dab93f0aa9a47c20808693a2e8716d4887c26cbcac63bcfbadd7365"
+        },
+        {
+          "id": "fn103",
+          "reference": "fnref103",
+          "textHash": "d0b0450530a982a7da26ea7b3a5297ecdb8fad9cc8a3fc3215035fd7384d6a9b"
+        },
+        {
+          "id": "fn104",
+          "reference": "fnref104",
+          "textHash": "96174fa662e447c8f3f7475025cac76bc23d6d909477996ddf0aee30633f2732"
+        },
+        {
+          "id": "fn105",
+          "reference": "fnref105",
+          "textHash": "65e62ce2355a9d226d29b69d0c86bbab6f8401a4690f3330567d64f9f70faba0"
+        },
+        {
+          "id": "fn106",
+          "reference": "fnref106",
+          "textHash": "65e62ce2355a9d226d29b69d0c86bbab6f8401a4690f3330567d64f9f70faba0"
+        },
+        {
+          "id": "fn107",
+          "reference": "fnref107",
+          "textHash": "1305c73e07ade2a7430edee0e293a27b465d997b3e0cfb0d5784e3417f7af956"
+        },
+        {
+          "id": "fn108",
+          "reference": "fnref108",
+          "textHash": "8743afbca1ab127f9f5c431b69916b5d21553ad2991024374f95dcb0a1211857"
+        },
+        {
+          "id": "fn109",
+          "reference": "fnref109",
+          "textHash": "d836be7d93c68f640bf261b75b808c2f3ede04c65dd19ab876ad85505728ae6f"
+        },
+        {
+          "id": "fn110",
+          "reference": "fnref110",
+          "textHash": "e8f0bed81651cf24571b4d5d3967d38e46bddd48cf649506be909af7c2878155"
+        },
+        {
+          "id": "fn111",
+          "reference": "fnref111",
+          "textHash": "7c122c58bcf538fbc0335e837fb5eeba46f5de9d41a4e2d194ae50037d8076fd"
+        },
+        {
+          "id": "fn112",
+          "reference": "fnref112",
+          "textHash": "d836be7d93c68f640bf261b75b808c2f3ede04c65dd19ab876ad85505728ae6f"
+        },
+        {
+          "id": "fn113",
+          "reference": "fnref113",
+          "textHash": "c3d4567f9aa91197c38fb77a3e5071e5453cb5615f6689e260df6e0043d6cb27"
+        },
+        {
+          "id": "fn114",
+          "reference": "fnref114",
+          "textHash": "647f03c6f9c55ecd5cbb21ac9f102db239daacf80641ca6e39f055909815d016"
+        },
+        {
+          "id": "fn115",
+          "reference": "fnref115",
+          "textHash": "3a8bd51b24ec0218a21033c1e77e372c370992541bf15de0cb7b771463aa9208"
+        },
+        {
+          "id": "fn116",
+          "reference": "fnref116",
+          "textHash": "c6ef8f9b6dab93f0aa9a47c20808693a2e8716d4887c26cbcac63bcfbadd7365"
+        },
+        {
+          "id": "fn117",
+          "reference": "fnref117",
+          "textHash": "98096dbdd86a3fc3e270cba871371da354f66f08e388abb916b36c43ce858ab0"
+        },
+        {
+          "id": "fn118",
+          "reference": "fnref118",
+          "textHash": "647f03c6f9c55ecd5cbb21ac9f102db239daacf80641ca6e39f055909815d016"
+        },
+        {
+          "id": "fn119",
+          "reference": "fnref119",
+          "textHash": "98096dbdd86a3fc3e270cba871371da354f66f08e388abb916b36c43ce858ab0"
+        },
+        {
+          "id": "fn120",
+          "reference": "fnref120",
+          "textHash": "c789208b073b0eb5e7773505882e3689b85477163f40566fe7ebac0464dc5032"
+        },
+        {
+          "id": "fn121",
+          "reference": "fnref121",
+          "textHash": "c789208b073b0eb5e7773505882e3689b85477163f40566fe7ebac0464dc5032"
+        },
+        {
+          "id": "fn122",
+          "reference": "fnref122",
+          "textHash": "c87cc1956ae10ef6c5d792177f42c3f39428bcaa562b52d9e25047a1c191f19e"
+        },
+        {
+          "id": "fn123",
+          "reference": "fnref123",
+          "textHash": "87b125c2fb12e6b7b7f69a10d18fae00294ffb4b1be18074f15ad82c3b9e9ce0"
+        },
+        {
+          "id": "fn124",
+          "reference": "fnref124",
+          "textHash": "e4263f506f9ed6c196d153cf07781226af7bb124462ee11aa31e795a1764e6c2"
+        },
+        {
+          "id": "fn125",
+          "reference": "fnref125",
+          "textHash": "91d156174a4d35e91a78ab6fc1f752e0e0b106136fcd6ded3b9228283a4136fd"
+        },
+        {
+          "id": "fn126",
+          "reference": "fnref126",
+          "textHash": "91d156174a4d35e91a78ab6fc1f752e0e0b106136fcd6ded3b9228283a4136fd"
+        },
+        {
+          "id": "fn127",
+          "reference": "fnref127",
+          "textHash": "7864d02377709d3a8b31c34b0db177768a3423ede311dbc70d8422c481bc2276"
+        },
+        {
+          "id": "fn128",
+          "reference": "fnref128",
+          "textHash": "2e41795ff9901ade79c6c399caea637d7c3718c048b177ad501ff969cf948a8b"
+        },
+        {
+          "id": "fn129",
+          "reference": "fnref129",
+          "textHash": "e8f0bed81651cf24571b4d5d3967d38e46bddd48cf649506be909af7c2878155"
+        },
+        {
+          "id": "fn130",
+          "reference": "fnref130",
+          "textHash": "d570a5bdb0199fd69fb36cfd61789f9105f98175aacd64b5c668fa0f28ec93c5"
+        }
+      ],
+      "diagrams": [
+        "intake-explorer",
+        "engine-mixture-feedback"
+      ],
+      "textHash": "88716addc12825da6f31a27caf4da9e9fdbb218d4f00cd6872b5f6132336e06b"
+    },
+    {
+      "id": "book__07-lubrication-cooling-and-exhaust__index.md__lubrication-cooling-and-exhaust",
+      "title": "Lubrication, cooling and exhaust",
+      "headings": [
+        {
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__oil-collection-and-pressure-supply",
+          "title": "Oil collection and pressure supply"
+        },
+        {
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__reading-the-oil-level",
+          "title": "Reading the oil level"
+        },
+        {
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__moving-heat-to-the-front",
+          "title": "Moving heat to the front"
+        },
+        {
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__where-oil-and-water-exchange-heat",
+          "title": "Where oil and water exchange heat"
+        },
+        {
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__exhaust-collection-treatment-and-silencing",
+          "title": "Exhaust collection, treatment and silencing"
+        },
+        {
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__changes-in-other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__the-s-spyder-and-black-edition",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__identification-and-ageing",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "alt": "The rear engine, integrated oil reservoir and oil-to-coolant exchanger connect to a belt-driven coolant pump, front radiator pair through long pipes, and a rear expansion-tank branch. Separate exhaust assemblies and silencers lead to the 2.9’s single central outlet.",
+          "width": null,
+          "style": null,
+          "captionHash": "001eabe6923019bf17fa69061a9c4b9c44024e606560b4f600a2d30ff1cdd549"
+        },
+        {
+          "alt": "Four pumps return oil from the two heads; the fifth supplies the pressure circuit. The drawing groups functions and does not specify the order of every filter, cooler and gallery passage.",
+          "width": null,
+          "style": null,
+          "captionHash": "8c14aec5330c695d631e1baa6bc462f7773335e23626fc3b002edc73e4ced4bc"
+        },
+        {
+          "alt": "Porsche's period cutaway places the radiator installation at the front and the engine, rear silencers and coolant expansion tank towards the rear. This is the brochure's Boxster S illustration, used to show the shared mid-engine packaging rather than to identify the reference car's options. © Porsche AG.",
+          "width": null,
+          "style": null,
+          "captionHash": "67f8f1dc789824d3ce4611996c6acc10a1e592de3e2c6c1f53643cd073c64935"
+        },
+        {
+          "alt": "During warm-up, coolant keeps circulating through the engine’s short return path while the thermostat restricts the front radiator route. Once warm, the radiator circuit opens; electric fans can assist airflow when required.",
+          "width": null,
+          "style": null,
+          "captionHash": "e9f836e6e21fade1bf51e69f7be4154fcdc2cf7323dd59ceea27a5f7491930d2"
+        },
+        {
+          "alt": "The exchanger transfers heat across a metal wall while keeping oil and coolant separate. The arrows depict hotter oil losing heat to cooler coolant; the direction reverses if their relative temperatures reverse.",
+          "width": null,
+          "style": null,
+          "captionHash": "c939ec440acfe84aec7ada162bda3cf9cdcc468e502c61657639b6dff4224387"
+        },
+        {
+          "alt": "Each bank has two catalyst bricks within one manifold/converter assembly, with an oxygen sensor before the first brick and another between the bricks. The schematic shows gas-treatment sequence and connected silencers.",
+          "width": null,
+          "style": null,
+          "captionHash": "4c0adabe5be3b365afd9a72712fc6a60595c368583160e9a249af0f85898bc79"
+        },
+        {
+          "alt": "The standard Boxster S exhaust pictured by Porsche shows two manifold/catalyst assemblies, two rear silencers, connecting pipes and twin central outlets. Porsche describes the 2.9 system as matching the S apart from its tailpipe. © Porsche AG.",
+          "width": null,
+          "style": null,
+          "captionHash": "d6fec84aa8643df8d41a7e79f19a80a4a75038cbc209e06ec3cdb6094e344a42"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn131",
+          "reference": "fnref131",
+          "textHash": "895c00cc691724621a5adf532b852796aca2695c065a274a4fc900fec4bbca6f"
+        },
+        {
+          "id": "fn132",
+          "reference": "fnref132",
+          "textHash": "08521c1ebec2909124b0976fa27b4319b9ba3e464a3b1566e8c5948953dc97b6"
+        },
+        {
+          "id": "fn133",
+          "reference": "fnref133",
+          "textHash": "f5340d839017a7ae1c6c4093d4765ad67e5b22504c6d6d90fcefee52148f2f55"
+        },
+        {
+          "id": "fn134",
+          "reference": "fnref134",
+          "textHash": "5e233f967ba3857b2e7ac925ff4d31c494ac6dfd40e1baafae4a335a16c29882"
+        },
+        {
+          "id": "fn135",
+          "reference": "fnref135",
+          "textHash": "eb0450da92260c25081c2f4ca83011dac0f6d96b82f30ce13147c7753bc2e3a1"
+        },
+        {
+          "id": "fn136",
+          "reference": "fnref136",
+          "textHash": "f272ceb3db3750dd686c41a10e749c01114c33323eeae7e7e62277b9cbc003d7"
+        },
+        {
+          "id": "fn137",
+          "reference": "fnref137",
+          "textHash": "9bd717e5b56051c0f9f0f821e86e599b485e416cbdaf38d5f412fc7ecb0f7512"
+        },
+        {
+          "id": "fn138",
+          "reference": "fnref138",
+          "textHash": "727d8e823d4bd7ce6ccb797b77a2cc1391fdb5679eda2518e83d7117252e0e40"
+        },
+        {
+          "id": "fn139",
+          "reference": "fnref139",
+          "textHash": "f84a045b14318f5aad53df0f6075cbbb84399e76aea552cf922f4f0a563b7b6c"
+        },
+        {
+          "id": "fn140",
+          "reference": "fnref140",
+          "textHash": "f99863c09d86741e14f052474ad4f2cbcc29934f9ff9942d04932a49cc5bc607"
+        },
+        {
+          "id": "fn141",
+          "reference": "fnref141",
+          "textHash": "acd6602ffa04ec114f27504177bd788b597102a9b54f6c0440a6116dcb173045"
+        },
+        {
+          "id": "fn142",
+          "reference": "fnref142",
+          "textHash": "ea647f2ec94d8ab3d1ea727111ec2e72dd1b1aa2b7238ab3c01299ebccc03885"
+        },
+        {
+          "id": "fn143",
+          "reference": "fnref143",
+          "textHash": "ea647f2ec94d8ab3d1ea727111ec2e72dd1b1aa2b7238ab3c01299ebccc03885"
+        },
+        {
+          "id": "fn144",
+          "reference": "fnref144",
+          "textHash": "2d7d50d846f53d0839468755ce8f5b08992ebd42adb84dd16255c2b09aeee968"
+        },
+        {
+          "id": "fn145",
+          "reference": "fnref145",
+          "textHash": "60b557e595e605d5b45e743bb46271ce4bb875ae1c97dd999d32c0e5e039c4fd"
+        },
+        {
+          "id": "fn146",
+          "reference": "fnref146",
+          "textHash": "183f76fe7e27bf585ad41a04ab828d9fdf99bce1940131e91278187f11ba0193"
+        },
+        {
+          "id": "fn147",
+          "reference": "fnref147",
+          "textHash": "826313380b24acde0bc22a2f6dcea493e6e6c9c93625bd0ff3bf1bc842b5048b"
+        },
+        {
+          "id": "fn148",
+          "reference": "fnref148",
+          "textHash": "b08bca47dffd51e0994b83534b8c8937943854f2d02c092bf849bb06ac5a6ff5"
+        },
+        {
+          "id": "fn149",
+          "reference": "fnref149",
+          "textHash": "08521c1ebec2909124b0976fa27b4319b9ba3e464a3b1566e8c5948953dc97b6"
+        },
+        {
+          "id": "fn150",
+          "reference": "fnref150",
+          "textHash": "2d7d50d846f53d0839468755ce8f5b08992ebd42adb84dd16255c2b09aeee968"
+        },
+        {
+          "id": "fn151",
+          "reference": "fnref151",
+          "textHash": "76d63adf41fec94887a81f00346d7c5bfe273c35ef635b5b7004967e252aaeba"
+        }
+      ],
+      "diagrams": [
+        "fluids-explorer",
+        "fluid-cooling-path"
+      ],
+      "textHash": "4b83c5c5dc18dd97c2a4d7fcabe0cb2df5087b03e10757d22d0d0c551b017f98"
+    },
+    {
+      "id": "book__08-manual-transmission-and-clutch__index.md__manual-transmission-and-clutch",
+      "title": "Manual transmission and clutch",
+      "headings": [
+        {
+          "id": "book__08-manual-transmission-and-clutch__index.md__the-flywheel-and-clutch-make-a-controllable-connection",
+          "title": "The flywheel and clutch make a controllable connection"
+        },
+        {
+          "id": "book__08-manual-transmission-and-clutch__index.md__from-pedal-movement-to-release-movement",
+          "title": "From pedal movement to release movement"
+        },
+        {
+          "id": "book__08-manual-transmission-and-clutch__index.md__what-the-gear-lever-actually-moves",
+          "title": "What the gear lever actually moves"
+        },
+        {
+          "id": "book__08-manual-transmission-and-clutch__index.md__ratios-exchange-speed-for-torque",
+          "title": "Ratios exchange speed for torque"
+        },
+        {
+          "id": "book__08-manual-transmission-and-clutch__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__08-manual-transmission-and-clutch__index.md__changes-in-other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__08-manual-transmission-and-clutch__index.md__the-s-spyder-and-black-edition",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__08-manual-transmission-and-clutch__index.md__identification-and-ageing",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [
+        "fc33d8b0e080da94a609013dade613ed2330648ffb942ba6c3e7831dbe794722"
+      ],
+      "figures": [
+        {
+          "alt": "The manual transaxle sits behind the engine. The flywheel and dry clutch connect its longitudinal input, cables connect the cabin lever to selection, and the final drive connects sideways to the rear half-shafts.",
+          "width": null,
+          "style": null,
+          "captionHash": "2dbc0625f461c7bc5fd2162a52ee6d3c9e3b11769ac94fcade2705a718a61375"
+        },
+        {
+          "alt": "Two clutch sections compare the pedal-up state, with the friction plate clamped, against the pedal-down state, with pressure relieved. A separate path shows pedal force reaching the release mechanism through the master cylinder, fluid and slave cylinder.",
+          "width": null,
+          "style": null,
+          "captionHash": "bfdfecc3041b2cc569e0ff44658c38b3f579a67822a6dd0ad901b7c4ec196714"
+        },
+        {
+          "alt": "Porsche's period close-up of the six-speed manual gear lever in a tan centre console.",
+          "width": null,
+          "style": null,
+          "captionHash": "faf334fc80699ddab1e51733f119e7c4d5ca42bd2786bb6272fc12c1e7841690"
+        },
+        {
+          "alt": "A simplified two-ratio constant-mesh gearbox shows both gear pairs meshed, with one free-running wheel locked to the output shaft by a sliding sleeve. A three-stage strip explains cone friction, matching speeds and tooth engagement.",
+          "width": null,
+          "style": null,
+          "captionHash": "5c869a3ad56c4ba4fcee42366705bc6cf50f9f26546ef99e6064669dc71f56a8"
+        },
+        {
+          "alt": "At an illustrative 3,000 engine rpm and 200 Nm, third gear’s 1.407 ratio and 3.875 final drive give 550 wheel rpm, 69.3 km/h with a 2.10 metre circumference, and 1,090 Nm total after the final drive.",
+          "width": null,
+          "style": null,
+          "captionHash": "b5588da934a4331f72dc12d6bc4ab14847a1d194d7aa442754f3dd6962dedbbd"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn152",
+          "reference": "fnref152",
+          "textHash": "8edfea5f8315b0705d4b04f2664e7c59595e40692811b1dc9faf111c2ccc90ff"
+        },
+        {
+          "id": "fn153",
+          "reference": "fnref153",
+          "textHash": "197feb75b3936bc55dffab4f0a1089d679abf1086c62ff16fc26c50a53dc3331"
+        },
+        {
+          "id": "fn154",
+          "reference": "fnref154",
+          "textHash": "36d4d210560dcf95ab20fb7dbb812548ad42591afa80a70224e09b3a485ee092"
+        },
+        {
+          "id": "fn155",
+          "reference": "fnref155",
+          "textHash": "b77337e96ffed3cb2b85b5b0c920de5df0bcfc060751416f6c8f7ab0e4c921ba"
+        },
+        {
+          "id": "fn156",
+          "reference": "fnref156",
+          "textHash": "8ccfe240f48681978a6e02c8e5eb5eab3ecbf68917c157ba965147b74763945f"
+        },
+        {
+          "id": "fn157",
+          "reference": "fnref157",
+          "textHash": "8a4eadd4f2585140715a26517e2d585506d845e09d789f279e902ab9609932a6"
+        },
+        {
+          "id": "fn158",
+          "reference": "fnref158",
+          "textHash": "ff673ff523aa0cb927a8bae708eb10c63210bba0bb2393554fbd3101e9b03b86"
+        },
+        {
+          "id": "fn159",
+          "reference": "fnref159",
+          "textHash": "9e41e6988dafda64289ab61d92353fa748b8cef12d6c85d1e751addb3c82c100"
+        },
+        {
+          "id": "fn160",
+          "reference": "fnref160",
+          "textHash": "34bcb5b0a723cab87a3f3c7166a1283c8dc3afc57caf41db6b13658f1ee8e5a2"
+        },
+        {
+          "id": "fn161",
+          "reference": "fnref161",
+          "textHash": "b9c65f922b2fffed1b467b4ae5eba387d07df36c980c94a116da35c1dc9f5d87"
+        },
+        {
+          "id": "fn162",
+          "reference": "fnref162",
+          "textHash": "ff673ff523aa0cb927a8bae708eb10c63210bba0bb2393554fbd3101e9b03b86"
+        },
+        {
+          "id": "fn163",
+          "reference": "fnref163",
+          "textHash": "b9c65f922b2fffed1b467b4ae5eba387d07df36c980c94a116da35c1dc9f5d87"
+        },
+        {
+          "id": "fn164",
+          "reference": "fnref164",
+          "textHash": "2a00df9056884b50fc7afddb3dbef01c9052cb0dddc1511b199f466da2738610"
+        },
+        {
+          "id": "fn165",
+          "reference": "fnref165",
+          "textHash": "21703933c9b9324c8455aebe54ad377acfe7a12161acb60db5f11cba02715862"
+        },
+        {
+          "id": "fn166",
+          "reference": "fnref166",
+          "textHash": "8edfea5f8315b0705d4b04f2664e7c59595e40692811b1dc9faf111c2ccc90ff"
+        },
+        {
+          "id": "fn167",
+          "reference": "fnref167",
+          "textHash": "c10a3737878da1c3b676e68aea5fb45ad930839935ec908187e108e59fc0c8ee"
+        },
+        {
+          "id": "fn168",
+          "reference": "fnref168",
+          "textHash": "197feb75b3936bc55dffab4f0a1089d679abf1086c62ff16fc26c50a53dc3331"
+        },
+        {
+          "id": "fn169",
+          "reference": "fnref169",
+          "textHash": "8edfea5f8315b0705d4b04f2664e7c59595e40692811b1dc9faf111c2ccc90ff"
+        },
+        {
+          "id": "fn170",
+          "reference": "fnref170",
+          "textHash": "d0c4844755f7e59bdde92035e9cce336b03a0f7956ab1691054470158f23c34b"
+        },
+        {
+          "id": "fn171",
+          "reference": "fnref171",
+          "textHash": "741bb3466ebec4d55b68c954a03ba8cc248a5048de86156395fc5799986c9e52"
+        }
+      ],
+      "diagrams": [
+        "manual-explorer",
+        "manual-ratio-explorer"
+      ],
+      "textHash": "3ba77c0b4b849ee0b5b9cae1cefb0a76ee16d8159ba7515558af2aa965f7828a"
+    },
+    {
+      "id": "book__09-pdk-transmission__index.md__pdk-transmission",
+      "title": "PDK transmission",
+      "headings": [
+        {
+          "id": "book__09-pdk-transmission__index.md__two-clutches-and-two-inputs",
+          "title": "Two clutches and two inputs"
+        },
+        {
+          "id": "book__09-pdk-transmission__index.md__what-happens-during-a-shift",
+          "title": "What happens during a shift"
+        },
+        {
+          "id": "book__09-pdk-transmission__index.md__the-selector-and-steering-wheel-controls",
+          "title": "The selector and steering-wheel controls"
+        },
+        {
+          "id": "book__09-pdk-transmission__index.md__hydraulics-feedback-and-heat",
+          "title": "Hydraulics, feedback and heat"
+        },
+        {
+          "id": "book__09-pdk-transmission__index.md__why-seventh-is-a-cruising-gear",
+          "title": "Why seventh is a cruising gear"
+        },
+        {
+          "id": "book__09-pdk-transmission__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__09-pdk-transmission__index.md__changes-in-other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__09-pdk-transmission__index.md__the-s-spyder-and-black-edition",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__09-pdk-transmission__index.md__identification-and-ageing",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [
+        "8e65fa0efad74f0cff39ef7039bfea65a36ac9d2d8c0bfa5c19581eba5d342bb"
+      ],
+      "figures": [
+        {
+          "alt": "Optional PDK behind the engine connects its flywheel, nested K1 and K2 packs, concentric shafts and sample gearing to the rear final drive. Separate hydraulic, electronic and cooling components complete the system.",
+          "width": null,
+          "style": null,
+          "captionHash": "51c3766da51c67391b1a1db7f6b20739f667b3d818f9ef58062558f126ab091f"
+        },
+        {
+          "alt": "Porsche factory cutaway of the seven-speed PDK, showing the gear train, clutch end and final-drive assembly in one housing.",
+          "width": null,
+          "style": null,
+          "captionHash": "dcf703e161a133342cee3d4b44f74d4f5059907ecdb2222b09a00205acf7e8d1"
+        },
+        {
+          "alt": "End view of concentric input shafts: inner shaft 1 serves odd gears and reverse; hollow shaft 2 serves even gears. Outer clutch K1 connects to inner shaft 1, while inner clutch K2 connects to hollow shaft 2.",
+          "width": null,
+          "style": null,
+          "captionHash": "b5d0109f6cb82628bcf72fb02bb7dd63851e7ad00e3355ebf04b6b4dad118de3"
+        },
+        {
+          "alt": "First gear drives through closed clutch K1 while second is preselected behind open clutch K2. Both gear paths feed the final drive, but only the closed-clutch path carries engine drive in this steady state.",
+          "width": null,
+          "style": null,
+          "captionHash": "6d215a47f5bd3d7f22ef74e604b6e23b1067d9ead144488e4b74ac01b5729d1c"
+        },
+        {
+          "alt": "Period Porsche cabin photograph with the optional three-spoke paddle steering wheel and PDK selector.",
+          "width": null,
+          "style": null,
+          "captionHash": "c22d401534c1a22d943db0ff18914061af6cbd56c516191b82f5fe550f4c4a76"
+        },
+        {
+          "alt": "PDK control and oil functions: an electronic controller commands hydraulic clutch and selector operation; clutch heat reaches an oil-to-coolant exchanger, while separate gear oil lubricates the gears and final drive and loses heat through the housing.",
+          "width": null,
+          "style": null,
+          "captionHash": "e5e04e5ff15c53b4b476b6a447298959e4153fbf5afc9f57c0681427c5d64e4b"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn172",
+          "reference": "fnref172",
+          "textHash": "4e605b9f5f3cd61b6791dc50356095dfb22b24db40afd93b52e6ad8d88179600"
+        },
+        {
+          "id": "fn173",
+          "reference": "fnref173",
+          "textHash": "ce7003ab8f213aa6f23b0965fcc22b6c8bb8c640bddedadb6d8c12e08d6f6138"
+        },
+        {
+          "id": "fn174",
+          "reference": "fnref174",
+          "textHash": "609e516e2dc5b512370f662e66f759ed31c861eed396a5b6b7582b8788476e8c"
+        },
+        {
+          "id": "fn175",
+          "reference": "fnref175",
+          "textHash": "292e64f552ea58b8d62454c8aaaec7fa37090df6463e1ddc934f00a198447e1e"
+        },
+        {
+          "id": "fn176",
+          "reference": "fnref176",
+          "textHash": "e6ab1533c372cd81a0e7e43df7b8bac4884bd69193ccd75aa62a66c6a251f071"
+        },
+        {
+          "id": "fn177",
+          "reference": "fnref177",
+          "textHash": "c89de1bfdd8e99d075e58870e6c8c144308742edd5f1c085f5f2144921fc1b73"
+        },
+        {
+          "id": "fn178",
+          "reference": "fnref178",
+          "textHash": "8af102b14c823de821003caf7c16c018579de54eb62a00f2ae5be8a88c763025"
+        },
+        {
+          "id": "fn179",
+          "reference": "fnref179",
+          "textHash": "c89de1bfdd8e99d075e58870e6c8c144308742edd5f1c085f5f2144921fc1b73"
+        },
+        {
+          "id": "fn180",
+          "reference": "fnref180",
+          "textHash": "6bfe7857fbca0be054fb705b6c4a4990ce4ea17f17c0ce26f074457e3a5bbbce"
+        },
+        {
+          "id": "fn181",
+          "reference": "fnref181",
+          "textHash": "4d4ead85b388eaece5b63d7e4a3d16d28f4e81f27dac35b261f7b41ca53f90e4"
+        },
+        {
+          "id": "fn182",
+          "reference": "fnref182",
+          "textHash": "10765144a0c81f8782b39e0014fcda9b9201b25f6e2003ac98c4df8cda49d89f"
+        },
+        {
+          "id": "fn183",
+          "reference": "fnref183",
+          "textHash": "505dbbc316c7e52fd03544369ccea3dd262afd1baa9e6a65145313c2e528f68c"
+        },
+        {
+          "id": "fn184",
+          "reference": "fnref184",
+          "textHash": "4e605b9f5f3cd61b6791dc50356095dfb22b24db40afd93b52e6ad8d88179600"
+        },
+        {
+          "id": "fn185",
+          "reference": "fnref185",
+          "textHash": "a3a604bfa7f369a361cf1375510d112602072de64dcb0d9da5d6faf505fa56ce"
+        },
+        {
+          "id": "fn186",
+          "reference": "fnref186",
+          "textHash": "f641150d16a4d85ea42f653b9d19f192a7716609f7a3d83d940e8d1399a68af0"
+        },
+        {
+          "id": "fn187",
+          "reference": "fnref187",
+          "textHash": "9b8e7d0796ec69e72584696b4c69d9ab3a1bbf337a0e4d852e597fed8eb86a72"
+        },
+        {
+          "id": "fn188",
+          "reference": "fnref188",
+          "textHash": "32eddb2f62927e3b4ab8c1d61340e401dca866b3cc2a69a53ef2d33e5525d9bd"
+        },
+        {
+          "id": "fn189",
+          "reference": "fnref189",
+          "textHash": "a3a604bfa7f369a361cf1375510d112602072de64dcb0d9da5d6faf505fa56ce"
+        },
+        {
+          "id": "fn190",
+          "reference": "fnref190",
+          "textHash": "c9e54db839460b3a1b10b56378d18fad0004bb0c5cf8a227da0d62572cffe233"
+        },
+        {
+          "id": "fn191",
+          "reference": "fnref191",
+          "textHash": "6b9d7dd32d48f462781731b054325bb7bb8ba3d0ca62f7339321a8176814740c"
+        },
+        {
+          "id": "fn192",
+          "reference": "fnref192",
+          "textHash": "505dbbc316c7e52fd03544369ccea3dd262afd1baa9e6a65145313c2e528f68c"
+        }
+      ],
+      "diagrams": [
+        "pdk-explorer",
+        "pdk-power-path"
+      ],
+      "textHash": "1eebc4d1571fbff06f090ed84b71cb9e670464f9bf57e456aae0cc625ea21cf1"
+    },
+    {
+      "id": "book__10-differential-driveshafts-and-mounts__index.md__differential-driveshafts-and-mounts",
+      "title": "Differential, driveshafts and mounts",
+      "headings": [
+        {
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__from-gearbox-to-rear-wheels",
+          "title": "From gearbox to rear wheels"
+        },
+        {
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__how-the-open-differential-makes-a-corner-possible",
+          "title": "How the open differential makes a corner possible"
+        },
+        {
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__why-unequal-grip-limits-both-sides",
+          "title": "Why unequal grip limits both sides"
+        },
+        {
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__mechanical-limited-slip-and-brake-intervention",
+          "title": "Mechanical limited slip and brake intervention"
+        },
+        {
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__driveshaft-joints-plunge-and-the-hub",
+          "title": "Driveshaft joints, plunge and the hub"
+        },
+        {
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__mounts-support-isolate-and-locate",
+          "title": "Mounts support, isolate and locate"
+        },
+        {
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__changes-in-other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__the-s-spyder-and-black-edition",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__identification-and-ageing",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "alt": "The engine lies ahead of the rear transaxle; an open differential connects through two booted CV shafts to bearing-supported rear hubs. A forward engine mount and two transmission supports carry the joined power unit.",
+          "width": null,
+          "style": null,
+          "captionHash": "6bf36550ab1e2b6662959f5e1f35fb77dd0777f3e20ba0f75865f405d0096bb8"
+        },
+        {
+          "alt": "Original plan-view schematic locating the engine ahead of the transaxle, the final drive between the rear driveshafts and three compliant power-unit support positions.",
+          "width": null,
+          "style": null,
+          "captionHash": "b22a8646d7b26d4dbc23f93c0944156be5e3514d60e0582ac7d0bde04ab48436"
+        },
+        {
+          "alt": "At a carrier speed of 300 rpm, illustrative offsets of minus and plus 20 percent of carrier speed give left and right outputs of 240 and 360 rpm. Both output speeds average back to the carrier speed.",
+          "width": null,
+          "style": null,
+          "captionHash": "f8ef395c956f71b7bf87037851c38e238a3d6745ab09d308c302ef4af210ecb4"
+        },
+        {
+          "alt": "Original schematic of a driveshaft between a fixed transmission flange and moving wheel, showing joint articulation, axial plunge and the separation between the rotating hub and stationary wheel carrier.",
+          "width": null,
+          "style": null,
+          "captionHash": "bc550cecb0c645166cb25ccd9de4d81e6a20e90b8a2a104605ef36b3c59edacd"
+        },
+        {
+          "alt": "Porsche's exploded parts illustration of a rear driveshaft, splined wheel hub, joint, flexible boots and retaining hardware.",
+          "width": null,
+          "style": null,
+          "captionHash": "22928dde572349c3d0e143707db4bf70441b73552e976c02d8ed8d187b39a9f1"
+        },
+        {
+          "alt": "Porsche's engine-support illustration showing the mounting console, central compliant support, bracket and stops as separate parts.",
+          "width": null,
+          "style": null,
+          "captionHash": "c877ef99fed812566af432cfc1db4b49d1b43cd40f2a84c4f510ca17d1c73f24"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn193",
+          "reference": "fnref193",
+          "textHash": "549e3307190621b172dba637313501ce0bcc28f9382d7578f9613dfb67834c86"
+        },
+        {
+          "id": "fn194",
+          "reference": "fnref194",
+          "textHash": "549e3307190621b172dba637313501ce0bcc28f9382d7578f9613dfb67834c86"
+        },
+        {
+          "id": "fn195",
+          "reference": "fnref195",
+          "textHash": "212de7dc3e423c8dd269e920902e6382bb5f139632a87b536566e6478c30f65a"
+        },
+        {
+          "id": "fn196",
+          "reference": "fnref196",
+          "textHash": "212de7dc3e423c8dd269e920902e6382bb5f139632a87b536566e6478c30f65a"
+        },
+        {
+          "id": "fn197",
+          "reference": "fnref197",
+          "textHash": "a455c698e1687b04a95d7f3daf049629547f8b9b50886c30002bbbd6d91bb3be"
+        },
+        {
+          "id": "fn198",
+          "reference": "fnref198",
+          "textHash": "212de7dc3e423c8dd269e920902e6382bb5f139632a87b536566e6478c30f65a"
+        },
+        {
+          "id": "fn199",
+          "reference": "fnref199",
+          "textHash": "d0c8c7cbf44c6c60e3b4cbd7155b3e8c72a442d2f02fe4ae5c89ca38112110f0"
+        },
+        {
+          "id": "fn200",
+          "reference": "fnref200",
+          "textHash": "e4f89963bb62a842e720d67f687dc66a333d1cbd56ec09d5a39a0c09f151c645"
+        },
+        {
+          "id": "fn201",
+          "reference": "fnref201",
+          "textHash": "e4f89963bb62a842e720d67f687dc66a333d1cbd56ec09d5a39a0c09f151c645"
+        },
+        {
+          "id": "fn202",
+          "reference": "fnref202",
+          "textHash": "08177bc886ef768b67fa00c3a4a7c5dae739f0f0d9ba93c41c744ce94fddf587"
+        },
+        {
+          "id": "fn203",
+          "reference": "fnref203",
+          "textHash": "17d09cd7f8d8781a7be030ef0dc4ee735705d734a89d99f81e7c7306048cccf3"
+        },
+        {
+          "id": "fn204",
+          "reference": "fnref204",
+          "textHash": "96a906726f033be74651299e49a1ab27d048ab8701c65c7a1671fbc1ecc234a2"
+        },
+        {
+          "id": "fn205",
+          "reference": "fnref205",
+          "textHash": "eb63474047deb4e8c3e1f19a20879da1a1796df15d6fc0dc71510003a7b6142e"
+        },
+        {
+          "id": "fn206",
+          "reference": "fnref206",
+          "textHash": "79f81ea8a92df64728c601c609ebec75646416717c4fba4654356f6cb4ff78cc"
+        },
+        {
+          "id": "fn207",
+          "reference": "fnref207",
+          "textHash": "17d09cd7f8d8781a7be030ef0dc4ee735705d734a89d99f81e7c7306048cccf3"
+        },
+        {
+          "id": "fn208",
+          "reference": "fnref208",
+          "textHash": "eb63474047deb4e8c3e1f19a20879da1a1796df15d6fc0dc71510003a7b6142e"
+        },
+        {
+          "id": "fn209",
+          "reference": "fnref209",
+          "textHash": "bc21624d4ff6f0d9b7377678915dcb6b2df9f67938f15c5eac39f1e4089d1785"
+        }
+      ],
+      "diagrams": [
+        "drivetrain-explorer",
+        "drivetrain-open-differential"
+      ],
+      "textHash": "1b72bff7e34e55adf17b0b0f2c5ba054c47cd2ab999042ab0dba873f64aab650"
+    },
+    {
+      "id": "book__11-suspension-and-wheel-geometry__index.md__suspension-and-wheel-geometry",
+      "title": "Suspension and wheel geometry",
+      "headings": [
+        {
+          "id": "book__11-suspension-and-wheel-geometry__index.md__how-a-wheel-is-held",
+          "title": "How a wheel is held"
+        },
+        {
+          "id": "book__11-suspension-and-wheel-geometry__index.md__at-the-front",
+          "title": "At the front"
+        },
+        {
+          "id": "book__11-suspension-and-wheel-geometry__index.md__at-the-rear",
+          "title": "At the rear"
+        },
+        {
+          "id": "book__11-suspension-and-wheel-geometry__index.md__springs-support-dampers-settle",
+          "title": "Springs support; dampers settle"
+        },
+        {
+          "id": "book__11-suspension-and-wheel-geometry__index.md__what-the-anti-roll-bars-add",
+          "title": "What the anti-roll bars add"
+        },
+        {
+          "id": "book__11-suspension-and-wheel-geometry__index.md__compliance-and-unsprung-mass",
+          "title": "Compliance and unsprung mass"
+        },
+        {
+          "id": "book__11-suspension-and-wheel-geometry__index.md__three-angles-that-describe-the-wheel",
+          "title": "Three angles that describe the wheel"
+        },
+        {
+          "id": "book__11-suspension-and-wheel-geometry__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__11-suspension-and-wheel-geometry__index.md__other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__11-suspension-and-wheel-geometry__index.md__s-spyder-and-black-edition",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__11-suspension-and-wheel-geometry__index.md__identifying-and-assessing-the-reference-suspension",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "alt": "The front-left suspension is located in the car, then separated into its wheel, hub and carrier, coil-over strut, body mountings, lower arm, fore/aft guide, steering tie rod and anti-roll bar with drop link.",
+          "width": null,
+          "style": null,
+          "captionHash": "b4ea7089155117e377619620c3741236298b844d6059df2f535eb10844512d29"
+        },
+        {
+          "alt": "The green ordinary Boxster and red Boxster S driving along a mountain road, from Porsche's period UK catalogue.",
+          "width": null,
+          "style": null,
+          "captionHash": "21c37dd33fc16548f137a510c25cc55710a468d4326569ba28bfb41595c98a17"
+        },
+        {
+          "alt": "Porsche's isolated front axle assembly showing tall coil-over struts, lower arms, steering rack and red S brake calipers.",
+          "width": null,
+          "style": null,
+          "captionHash": "4fa959b889badd8e2cabf48a554a25e01a63dc72f70900df398cb4e23e39c7b3"
+        },
+        {
+          "alt": "Porsche's rear axle assembly showing its two coil-over struts, wheel carriers and several lower guiding links.",
+          "width": null,
+          "style": null,
+          "captionHash": "bb8f0ea3f61a0dc1563422bd66d25f50b68c650cde6b96a1a1b94503f0f5acba"
+        },
+        {
+          "alt": "A conceptual Boxster suspension corner routes vertical load through its coil-over strut and reacts tyre forces through the carrier, lower arm, guide and body. A key distinguishes the front steering tie rod from the rear toe-control link.",
+          "width": null,
+          "style": null,
+          "captionHash": "e40684fc62533c3ea76be6417a59557a1792cea061b08d3cbc4245460e636f94"
+        },
+        {
+          "alt": "Two springs with equal compression carry equal additional spring force. A stationary ideal damper produces no force; a moving damper resists its motion. Position and velocity can therefore change independently.",
+          "width": null,
+          "style": null,
+          "captionHash": "995853145e899f1bbc4250e2519a8b4204bf37c45fd6df5665430627ebd89a17"
+        },
+        {
+          "alt": "Equal 25 mm upward travel at both wheels gives no differential input to an ideal anti-roll bar. Raising only one wheel by 25 mm creates differential movement and twists the bar.",
+          "width": null,
+          "style": null,
+          "captionHash": "46fe6e9602d4d1b56ec82ffaea808006ad34050a7f0ba1016cd52ee2bd2ffa36"
+        },
+        {
+          "alt": "Camber is shown from the front, caster from the side and toe from above. Negative camber leans the tops inward; positive caster places the steering-axis top rearward; toe-in brings the wheel fronts closer together.",
+          "width": null,
+          "style": null,
+          "captionHash": "074ffe2e26efbb2c43b33c120d74e732c2f27d5cf7a209e683eac9b7622f9cac"
+        },
+        {
+          "alt": "A white 987 Boxster Spyder cornering in Porsche's period catalogue photograph, showing its 19-inch wheels and distinctive rear bodywork.",
+          "width": null,
+          "style": null,
+          "captionHash": "5428a300bb2740c0eb39757a895aba83e9961a8c2ca61f7cad88b20edcb404fe"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn210",
+          "reference": "fnref210",
+          "textHash": "591ed57d8ce006b2336a0e4931de0ee2ca44f3a9eba2dd389eacf46b44b19e2d"
+        },
+        {
+          "id": "fn211",
+          "reference": "fnref211",
+          "textHash": "85ee346ab4310d17505072eb660316bace664b35ee7b9d16e5f6c13b055ec7d9"
+        },
+        {
+          "id": "fn212",
+          "reference": "fnref212",
+          "textHash": "846c41342221244c0d6843037773eb50498523adfd2f67ad0b650f4e4becfa65"
+        },
+        {
+          "id": "fn213",
+          "reference": "fnref213",
+          "textHash": "030b55da11f1242c6032570a1c462c092449328dd9d513a177024e8cf9e385f8"
+        },
+        {
+          "id": "fn214",
+          "reference": "fnref214",
+          "textHash": "63e3040f4cb67c5e3d98d1d4e7776da2c87c0626903cdaf7db3a827cf6229166"
+        },
+        {
+          "id": "fn215",
+          "reference": "fnref215",
+          "textHash": "591ed57d8ce006b2336a0e4931de0ee2ca44f3a9eba2dd389eacf46b44b19e2d"
+        },
+        {
+          "id": "fn216",
+          "reference": "fnref216",
+          "textHash": "4cde58ffca191c2d2dfc527847d29dac69f0aa038b66416c6442ed0adf31fc1c"
+        },
+        {
+          "id": "fn217",
+          "reference": "fnref217",
+          "textHash": "4c2b08bbd497b3a2524b901193567e38471559686c12839486bd3de181b4421d"
+        },
+        {
+          "id": "fn218",
+          "reference": "fnref218",
+          "textHash": "d8585bab352c3136635f5d84e5c22a0239c16d6f8d3f4fed2dd9f7efaa26542c"
+        },
+        {
+          "id": "fn219",
+          "reference": "fnref219",
+          "textHash": "4c2b08bbd497b3a2524b901193567e38471559686c12839486bd3de181b4421d"
+        },
+        {
+          "id": "fn220",
+          "reference": "fnref220",
+          "textHash": "85ee346ab4310d17505072eb660316bace664b35ee7b9d16e5f6c13b055ec7d9"
+        },
+        {
+          "id": "fn221",
+          "reference": "fnref221",
+          "textHash": "846c41342221244c0d6843037773eb50498523adfd2f67ad0b650f4e4becfa65"
+        },
+        {
+          "id": "fn222",
+          "reference": "fnref222",
+          "textHash": "6b4c55e0ecee1343240384917f43f49fa9626ec02fd7d5ebcb737ee505ae4a64"
+        },
+        {
+          "id": "fn223",
+          "reference": "fnref223",
+          "textHash": "f625cd65b497f31ef352372e6e789398cf7e8b96282fda80f356f990cd160409"
+        },
+        {
+          "id": "fn224",
+          "reference": "fnref224",
+          "textHash": "0ee0407a3d867ca3305949c6ce23bbd80bc1da213dcf837b5154b9e4de018bd1"
+        },
+        {
+          "id": "fn225",
+          "reference": "fnref225",
+          "textHash": "63e3040f4cb67c5e3d98d1d4e7776da2c87c0626903cdaf7db3a827cf6229166"
+        }
+      ],
+      "diagrams": [
+        "suspension-explorer",
+        "suspension-spring-damper",
+        "suspension-anti-roll"
+      ],
+      "textHash": "f3aa4b7b40dfd79dd13994f1881e1365c473b24d3733d691904741ef812a9f04"
+    },
+    {
+      "id": "book__12-steering-wheels-and-tyres__index.md__steering-wheels-and-tyres",
+      "title": "Steering, wheels and tyres",
+      "headings": [
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__from-steering-wheel-to-front-wheels",
+          "title": "From steering wheel to front wheels"
+        },
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__what-the-hydraulic-assistance-contributes",
+          "title": "What the hydraulic assistance contributes"
+        },
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__reading-a-wheel-and-tyre-size",
+          "title": "Reading a wheel and tyre size"
+        },
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__offset-and-the-mounting-face",
+          "title": "Offset and the mounting face"
+        },
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__what-the-tyre-does",
+          "title": "What the tyre does"
+        },
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__slip-and-the-shared-grip-budget",
+          "title": "Slip and the shared grip budget"
+        },
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__rolling-radius-road-speed-and-engine-speed",
+          "title": "Rolling radius, road speed and engine speed"
+        },
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__changes-in-other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__the-s-spyder-and-black-edition",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__identification-and-ageing",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [
+        "baf204f219b74a8e8f19acdc9b17ba962461e1c588648ddc1ffd74f6dc4b69c4"
+      ],
+      "figures": [
+        {
+          "alt": "The front steering rack joins the driver’s column and both front carriers, while long hydraulic paths reach the engine-driven pump behind the cabin. The separated front-left rim and tyre expose their bead-seat connection.",
+          "width": null,
+          "style": null,
+          "captionHash": "92d34c950b15da6118d9d625318f0700b3ee7127ccb2b40923767c1df7374b1d"
+        },
+        {
+          "alt": "The steering shaft turns a pinion; the rack slides sideways and moves two track rods, which turn the front carriers. An engine-driven pump supplies hydraulic assistance to the rack housing.",
+          "width": null,
+          "style": null,
+          "captionHash": "18d6007f2c7b67c0c37eb8d86fd655938f33050983962c39e9d5252b1b29e8bc"
+        },
+        {
+          "alt": "Porsche’s standard 17-inch Boxster III wheel and tyre, with its open five-spoke pattern.",
+          "width": "210",
+          "style": null,
+          "captionHash": "45ded3d2fba9934f68789126a1afad3291905151dd2f46af3a067a67a5dea702"
+        },
+        {
+          "alt": "A wheel section shows rim width between the flanges, its centre plane and a mounting face 55 mm towards the outside. A second outline shows how reducing offset at the same width moves the rim outwards.",
+          "width": null,
+          "style": null,
+          "captionHash": "4289a21614284e9e08051837776ae670ac9fe59ff0c5620e68032da2aded1904"
+        },
+        {
+          "alt": "A green ordinary Boxster behind a red Boxster S, each on a different optional 19-inch wheel design.",
+          "width": null,
+          "style": null,
+          "captionHash": "3512710604d71fce2840ef93e6cb1c855dc721e950b16f1ce4906f4ec0faf365"
+        },
+        {
+          "alt": "A tyre viewed from above points slightly to the left of its travel arrow. The angle between its wheel plane and travel direction is slip angle; a lateral force acts across its path.",
+          "width": null,
+          "style": null,
+          "captionHash": "ab74fd534b7ac57d6ff7c08cf44bbb6525548fe765572a1a89f5623b823be85b"
+        },
+        {
+          "alt": "With an illustrative capacity of 100 units, demands of 60 longitudinal and 60 cornering units give a resultant of 84.9, within the circle. At 60 longitudinal units, at most 80 cornering units remain.",
+          "width": null,
+          "style": null,
+          "captionHash": "7e6113d41f29cc58f4e18c197d1ac6a8d66450fd4e62c69a416bc538029f4bd6"
+        },
+        {
+          "alt": "Compare the rear standard 235/50 ZR17 with the period 265/40 ZR18 combination. Estimated diameters are 666.8 and 669.2 mm; at 60 mph the wheel speeds are approximately 768 and 765 rpm. The larger rim is mostly offset by a shorter sidewall.",
+          "width": null,
+          "style": null,
+          "captionHash": "831340d5f2fc5fe322b1c0b2bc920c643951c54f33bc41759e16f823671e28ff"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn226",
+          "reference": "fnref226",
+          "textHash": "39e6806f600837759fc050aa98ccb9c4fb1b2248f5a3a71cb23e6da2118fe71f"
+        },
+        {
+          "id": "fn227",
+          "reference": "fnref227",
+          "textHash": "1ecef3cf9bbe3f0c6d187828c8a75b58bbb81263edfdca845d2d1bcb5ab4ce35"
+        },
+        {
+          "id": "fn228",
+          "reference": "fnref228",
+          "textHash": "a428f94bc74b605258fdb537cbefcbff5725a76cb8bf9b8a03f849292bfea903"
+        },
+        {
+          "id": "fn229",
+          "reference": "fnref229",
+          "textHash": "25a8aa007ddcf766a26cb82b81f8e0f7c14fb80adaaee01bb0f4d7b91c4cda77"
+        },
+        {
+          "id": "fn230",
+          "reference": "fnref230",
+          "textHash": "a0d67f90277672abf8ef6409e8c9d1a5f7fbfedc2f3c582231524ce580c32737"
+        },
+        {
+          "id": "fn231",
+          "reference": "fnref231",
+          "textHash": "e3ca0cb89b01b2a0afc06817bfe2cd2e527da74024d0442db947c8171f03a525"
+        },
+        {
+          "id": "fn232",
+          "reference": "fnref232",
+          "textHash": "0c1e6c84eab191a3a9c58b7676b70041e766e1308c1730e24abd613a78dc26c0"
+        },
+        {
+          "id": "fn233",
+          "reference": "fnref233",
+          "textHash": "c7b3065ba704f14709dd2ebd470e6ea6f63b61b7d18869b8bf47edb96bcac979"
+        },
+        {
+          "id": "fn234",
+          "reference": "fnref234",
+          "textHash": "9b6e7a6dba688bfce01f49074daf1060553d2cd85dc2d9c1732c498706637ed9"
+        },
+        {
+          "id": "fn235",
+          "reference": "fnref235",
+          "textHash": "6d7097784a0cbf07e09341ae33338ba2ae3145c54b998c35cf8f25255ae997d0"
+        },
+        {
+          "id": "fn236",
+          "reference": "fnref236",
+          "textHash": "332665105a676afed83810a781833e57e7b914a1c6289ef9c3a9dfb6d430b4cf"
+        },
+        {
+          "id": "fn237",
+          "reference": "fnref237",
+          "textHash": "7eaf20c8918fe8c9520a8f0465c5e4cbf430b66d3a0277a956c6ab5e4a42fcfb"
+        },
+        {
+          "id": "fn238",
+          "reference": "fnref238",
+          "textHash": "ab5965e02a1cf9ad76abf333263751547f844c35ca19a355aed7d7a75b08d058"
+        },
+        {
+          "id": "fn239",
+          "reference": "fnref239",
+          "textHash": "ab5965e02a1cf9ad76abf333263751547f844c35ca19a355aed7d7a75b08d058"
+        },
+        {
+          "id": "fn240",
+          "reference": "fnref240",
+          "textHash": "587303fadc0c982a1fd2b4ee558fa5a1d9c6e18bb301b0ae57b4003381777a93"
+        },
+        {
+          "id": "fn241",
+          "reference": "fnref241",
+          "textHash": "3c50cab8fbca0f690740efdea98cb28a47e11422c93c867d9c1e3190ccecb94a"
+        },
+        {
+          "id": "fn242",
+          "reference": "fnref242",
+          "textHash": "0c1e6c84eab191a3a9c58b7676b70041e766e1308c1730e24abd613a78dc26c0"
+        },
+        {
+          "id": "fn243",
+          "reference": "fnref243",
+          "textHash": "c5e49ccc799b551e4514cea49b2f0a5e0c2663d1d89b6528cf08e73a4cb10444"
+        },
+        {
+          "id": "fn244",
+          "reference": "fnref244",
+          "textHash": "1850e4c2f8f6a95bdfb621cc830610f18bdb21e4eafd58326a9fe7952f28cfd5"
+        },
+        {
+          "id": "fn245",
+          "reference": "fnref245",
+          "textHash": "39e6806f600837759fc050aa98ccb9c4fb1b2248f5a3a71cb23e6da2118fe71f"
+        },
+        {
+          "id": "fn246",
+          "reference": "fnref246",
+          "textHash": "d90578bec47d552e1718757d6988a1d1442b7914a44bbc3034d34decfd1d95a3"
+        },
+        {
+          "id": "fn247",
+          "reference": "fnref247",
+          "textHash": "81f9724b063f9d2bd38325f6cd333188a408362093354b5d52753767907aad7a"
+        },
+        {
+          "id": "fn248",
+          "reference": "fnref248",
+          "textHash": "b43c3268773c8396ea2a16013d8c195e3e69400d77cdd78d9b9c933fb5468101"
+        }
+      ],
+      "diagrams": [
+        "steering-explorer",
+        "tyre-grip-budget",
+        "tyres-rolling-size"
+      ],
+      "textHash": "ed14dc54b5feddeed46231f2d4d0748c4c8b41c8517b274c20ce381cec392aa9"
+    },
+    {
+      "id": "book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems",
+      "title": "Brakes and stability systems",
+      "headings": [
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__the-brakes-on-the-2010-boxster-2.9",
+          "title": "The brakes on the 2010 Boxster 2.9"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__how-a-stop-happens",
+          "title": "How a stop happens"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__from-your-foot-to-hydraulic-pressure",
+          "title": "From your foot to hydraulic pressure"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__where-brake-assistance-comes-from",
+          "title": "Where brake assistance comes from"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__what-the-four-piston-caliper-does",
+          "title": "What the four-piston caliper does"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__from-clamping-force-to-heat",
+          "title": "From clamping force to heat"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__why-the-front-and-rear-brakes-differ",
+          "title": "Why the front and rear brakes differ"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__abs-and-psm",
+          "title": "ABS and PSM"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__abs-keeps-the-wheels-controllable",
+          "title": "ABS keeps the wheels controllable"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__psm-watches-the-cars-direction",
+          "title": "PSM watches the car’s direction"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__preparing-for-an-urgent-stop",
+          "title": "Preparing for an urgent stop"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__the-parking-brake-has-its-own-job",
+          "title": "The parking brake has its own job"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__changes-in-other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__where-else-the-system-appears",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__what-pccb-changes",
+          "title": "What PCCB changes"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__identifying-the-fitted-version",
+          "title": "Identification and ageing"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__identifying-the-fitted-version-1",
+          "title": "Identifying the fitted version"
+        },
+        {
+          "id": "book__13-brakes-and-stability-systems__index.md__ageing-and-wear",
+          "title": "Ageing and wear"
+        }
+      ],
+      "tables": [
+        "269581d7a2af6dff185aae27f18960de18c353459b4a30b05f172b1c15725903",
+        "b152675beb074fabda6aa1d3908da315953c6613f646a94a9c535711714106d0"
+      ],
+      "figures": [
+        {
+          "alt": "The front brake in context: the master cylinder connects hydraulically to four wheel brakes; the front assembly contains a wheel, hub, disc, two pads and a fixed caliper.",
+          "width": null,
+          "style": null,
+          "captionHash": "963a931aaa2039d86fe7eec873a3c3b6b026942c259090a994afaa2507e6df94"
+        },
+        {
+          "alt": "The braking chain: foot force is assisted and converted to hydraulic pressure; calipers clamp the rotating discs, and road force on the tyres slows the car.",
+          "width": null,
+          "style": null,
+          "captionHash": "38abb6f6c8e1b654cb69d5baf350135ed70293eb9e02d454d363da2723b749d7"
+        },
+        {
+          "alt": "The exhaust camshaft drives a rear vacuum pump; a supply line and non-return valve serve the front booster. Pedal operation admits atmospheric pressure to one booster chamber so a pressure difference assists the pushrod into the hydraulic master cylinder.",
+          "width": null,
+          "style": null,
+          "captionHash": "7d9cbacef489e80027c767556cc3c67a13359dc9f66b7a6a48c6bde14b21a8ad"
+        },
+        {
+          "alt": "A simplified fixed-caliper cutaway: two pistons on each side press two pads towards opposite faces of the brake disc.",
+          "width": null,
+          "style": null,
+          "captionHash": "503cf8a2d9a2c2d5b5c5a1dda0dcb16d90530af8ae4e805d5ae51d4c1048a4c3"
+        },
+        {
+          "alt": "For an illustrative 1,400 kg car, kinetic energy rises from about 540 kJ at 100 km/h to about 2,160 kJ at 200 km/h. Doubling speed quadruples kinetic energy.",
+          "width": null,
+          "style": null,
+          "captionHash": "5670f60ffb4ec4d092921e743dee744eb889c1e57e5150f4db12e4cc10d13c50"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn249",
+          "reference": "fnref249",
+          "textHash": "d5d113a29700d00af45bd5e97b73772a9e02ed9b9cdf898f530462ff0367dda5"
+        },
+        {
+          "id": "fn250",
+          "reference": "fnref250",
+          "textHash": "d5d113a29700d00af45bd5e97b73772a9e02ed9b9cdf898f530462ff0367dda5"
+        },
+        {
+          "id": "fn251",
+          "reference": "fnref251",
+          "textHash": "a1292cd9ef22e6f2abe62190aebd3cb5912d106d1a8546fc4c04c5ed44a208d0"
+        },
+        {
+          "id": "fn252",
+          "reference": "fnref252",
+          "textHash": "d10c41fc0e502d3d8dba17fc76f5243b53f7e9c671cc195ab9f7e37a9ba2d215"
+        },
+        {
+          "id": "fn253",
+          "reference": "fnref253",
+          "textHash": "6fbd94bd5de5048f91339299351324dafa6e55b4e6f58cc49f46c73a8c29bc99"
+        },
+        {
+          "id": "fn254",
+          "reference": "fnref254",
+          "textHash": "e29f4e798033c028314e8cbbd59f3861aa5d7e2f4f24a4beeb100db6f375af19"
+        },
+        {
+          "id": "fn255",
+          "reference": "fnref255",
+          "textHash": "5c04a8ae11fc433a2b39975dae15247faa263c4de09e1371c2113c4c4fc4bda3"
+        },
+        {
+          "id": "fn256",
+          "reference": "fnref256",
+          "textHash": "a1292cd9ef22e6f2abe62190aebd3cb5912d106d1a8546fc4c04c5ed44a208d0"
+        },
+        {
+          "id": "fn257",
+          "reference": "fnref257",
+          "textHash": "d9c7bcdbfc0124415119589c3a323678587608ba9ab51a637d5483feeaa94b21"
+        },
+        {
+          "id": "fn258",
+          "reference": "fnref258",
+          "textHash": "8414301b3168b96d0d0800952fc22ca31fec961202d0674ccf13a27599b66fbe"
+        },
+        {
+          "id": "fn259",
+          "reference": "fnref259",
+          "textHash": "a1292cd9ef22e6f2abe62190aebd3cb5912d106d1a8546fc4c04c5ed44a208d0"
+        },
+        {
+          "id": "fn260",
+          "reference": "fnref260",
+          "textHash": "f76d9ce88fe26a5e9b5c8a4af94826d29fd2b910d3aaf68f63e9c5df5d9085e7"
+        },
+        {
+          "id": "fn261",
+          "reference": "fnref261",
+          "textHash": "d9c7bcdbfc0124415119589c3a323678587608ba9ab51a637d5483feeaa94b21"
+        },
+        {
+          "id": "fn262",
+          "reference": "fnref262",
+          "textHash": "c3a16fc72dab7d9f0c536e95268e6528cb6e1a784670692e61351650d9445cfc"
+        },
+        {
+          "id": "fn263",
+          "reference": "fnref263",
+          "textHash": "6e2f09dc0d2da6e3c6a54ca00dbf0b3842249abc7c50f9a22ae7928414b69e2f"
+        },
+        {
+          "id": "fn264",
+          "reference": "fnref264",
+          "textHash": "8b88ef0ab506b0964279afc95b4ac6f237881920383bb7f8d05be0d1e5dc93eb"
+        },
+        {
+          "id": "fn265",
+          "reference": "fnref265",
+          "textHash": "f08c26d2118fa80538bd47bd23d927215704be69db3b50c23b3b142466ea7518"
+        },
+        {
+          "id": "fn266",
+          "reference": "fnref266",
+          "textHash": "f08c26d2118fa80538bd47bd23d927215704be69db3b50c23b3b142466ea7518"
+        },
+        {
+          "id": "fn267",
+          "reference": "fnref267",
+          "textHash": "1e0a9501fab368baed53db9edc002a600b599cbcafa8eca9903078e727c0e8cc"
+        },
+        {
+          "id": "fn268",
+          "reference": "fnref268",
+          "textHash": "f08c26d2118fa80538bd47bd23d927215704be69db3b50c23b3b142466ea7518"
+        },
+        {
+          "id": "fn269",
+          "reference": "fnref269",
+          "textHash": "d1db944bdbd6ed07be9f9a5ca465faa8b991713240761cb956a523b79731bb0c"
+        },
+        {
+          "id": "fn270",
+          "reference": "fnref270",
+          "textHash": "2edd503a933df653030989b03f725397a000f9d4b5a7df5d1860b7f100da0a72"
+        },
+        {
+          "id": "fn271",
+          "reference": "fnref271",
+          "textHash": "d5d113a29700d00af45bd5e97b73772a9e02ed9b9cdf898f530462ff0367dda5"
+        },
+        {
+          "id": "fn272",
+          "reference": "fnref272",
+          "textHash": "d5d113a29700d00af45bd5e97b73772a9e02ed9b9cdf898f530462ff0367dda5"
+        },
+        {
+          "id": "fn273",
+          "reference": "fnref273",
+          "textHash": "fb21f5470ab6b2e89f94fbccc22ca4cc718774b6fca02ef6009117820a45d215"
+        },
+        {
+          "id": "fn274",
+          "reference": "fnref274",
+          "textHash": "23e727febfb71b8ae1a1ce8ff672c7e4b049c70fa5132e72580bbc55a28d9911"
+        },
+        {
+          "id": "fn275",
+          "reference": "fnref275",
+          "textHash": "a1292cd9ef22e6f2abe62190aebd3cb5912d106d1a8546fc4c04c5ed44a208d0"
+        },
+        {
+          "id": "fn276",
+          "reference": "fnref276",
+          "textHash": "5c04a8ae11fc433a2b39975dae15247faa263c4de09e1371c2113c4c4fc4bda3"
+        },
+        {
+          "id": "fn277",
+          "reference": "fnref277",
+          "textHash": "35e1519f4b444cd762a79702b9a0c3b3ae4d50e90abc0c3c13ef6b8ffdf39b92"
+        },
+        {
+          "id": "fn278",
+          "reference": "fnref278",
+          "textHash": "35e1519f4b444cd762a79702b9a0c3b3ae4d50e90abc0c3c13ef6b8ffdf39b92"
+        }
+      ],
+      "diagrams": [
+        "brake-explorer",
+        "caliper-pressure",
+        "braking-energy"
+      ],
+      "textHash": "1a7b7fdc79702fbec55e17ec4cad3d6db807f16bac99c8d0088f081def57ca8e"
+    },
+    {
+      "id": "book__14-roof-glass-seals-and-drainage__index.md__roof-glass-seals-and-drainage",
+      "title": "Roof, glass, seals and drainage",
+      "headings": [
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__how-the-ordinary-roof-moves",
+          "title": "How the ordinary roof moves"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__one-motor-drives-both-sides",
+          "title": "One motor drives both sides"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__the-cover-makes-room-for-the-folding-frame",
+          "title": "The cover makes room for the folding frame"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__the-latch-and-electrical-controls-do-different-jobs",
+          "title": "The latch and electrical controls do different jobs"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__glass-and-weather-sealing",
+          "title": "Glass and weather sealing"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__why-the-door-glass-makes-a-short-drop",
+          "title": "Why the door glass makes a short drop"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__seals-need-the-right-contact",
+          "title": "Seals need the right contact"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__water-needs-a-way-out",
+          "title": "Water needs a way out"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__choices-for-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__s-black-edition-and-spyder",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__the-spyder-takes-a-different-approach",
+          "title": "The Spyder takes a different approach"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__the-black-edition-retains-the-powered-roof",
+          "title": "The Black Edition retains the powered roof"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__reading-the-signs-of-age",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [
+        "b8cd11c1b31ec8667fdcfe7d8635ddd0b3e312ac3dc659bf7761675202d6ca30"
+      ],
+      "figures": [
+        {
+          "alt": "The ordinary roof sits above the cabin, with its motor, paired side gearboxes and stowage well behind the seats. A separated cutaway identifies the fixed header, manual front latch, supporting frame, fabric, rigid heated rear pane, drive paths, compartment cover and side drainage areas.",
+          "width": null,
+          "style": null,
+          "captionHash": "34329013e5afd0ca08efeb727bb42f9d4d2ecd17a8804f7ef198acdbab17ea69"
+        },
+        {
+          "alt": "The ordinary 987.2 roof closed, showing the curved fabric profile between the windscreen and rear deck.",
+          "width": null,
+          "style": "width:70.0%",
+          "captionHash": "05adbdd489c112da840380fa885f78fd6aa96207fc275ad01d3db27475ab6393"
+        },
+        {
+          "alt": "Connection map showing one roof motor driving left and right gearboxes through two flexible shafts, then levers and rods moving the roof frame and compartment cover.",
+          "width": null,
+          "style": null,
+          "captionHash": "ff1e900201585ec86a13509377904bcbf62ea6b7c97ba6fc60342ce15eebde87"
+        },
+        {
+          "alt": "Porsche’s ordinary Boxster roof part-way through folding behind the seats, with the compartment cover raised.",
+          "width": null,
+          "style": "width:70.0%",
+          "captionHash": "471062a4b8cc0ca2465c8edacbcbd6095d6673e22827eb9c6ef43b669af6b25b"
+        },
+        {
+          "alt": "Four schematic stages show the roof closed, the compartment cover raised for clearance, the frame folding rearwards, and the roof stowed beneath the closed cover.",
+          "width": null,
+          "style": null,
+          "captionHash": "438761fa16282a97a1bfc835d1b75d38cf9868426cdce52f381c133db63bef6c"
+        },
+        {
+          "alt": "Conceptual end sections show raised frameless glass meeting a resilient roof seal, then the glass lowered slightly to give clearance before the door swings outwards.",
+          "width": null,
+          "style": null,
+          "captionHash": "5b9ffdb84f63053888433f893b554d62284b8f2c29895a53310d8770755f6c08"
+        },
+        {
+          "alt": "With an intact upper seal, a clear drip-pan outlet lets water leave the body; blocking the same outlet lets water accumulate and eventually overflow.",
+          "width": null,
+          "style": null,
+          "captionHash": "aa0dc65961fef101c6871417e9205aa4333a69faca3c98971d701d9b87f42f87"
+        },
+        {
+          "alt": "The ordinary Boxster’s three-piece wind deflector, with inserts in the roll-over bars and a transparent centre section.",
+          "width": null,
+          "style": "width:70.0%",
+          "captionHash": "8373ff68b53ed78695d639dd920c61862fa3d65500025a317d385b216effb45e"
+        },
+        {
+          "alt": "A red ordinary-model 987.2 fitted with Porsche’s removable body-coloured hardtop.",
+          "width": null,
+          "style": null,
+          "captionHash": "303586f2dba51d8f4d607083b9d3a53d620c1cedd1bd992a8804f7fa26d4d504"
+        },
+        {
+          "alt": "The 987 Boxster Spyder with its lightweight sunshield in place and the rear opening exposed, showing why it is distinct from the ordinary folding roof.",
+          "width": null,
+          "style": null,
+          "captionHash": "578ff62727488a15315c1e2bc37b40c2eb4bfc7e1b6dabb95d5d0c036fb24647"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn279",
+          "reference": "fnref279",
+          "textHash": "38f48d6e269627576dbf98506e366f575a34683893fcf7f5d27a6b0dbe90a6e7"
+        },
+        {
+          "id": "fn280",
+          "reference": "fnref280",
+          "textHash": "0d37c44a7f989df5663dad1ccb47f154aaf3f4031c3baba17e771c036d464d2c"
+        },
+        {
+          "id": "fn281",
+          "reference": "fnref281",
+          "textHash": "0d37c44a7f989df5663dad1ccb47f154aaf3f4031c3baba17e771c036d464d2c"
+        },
+        {
+          "id": "fn282",
+          "reference": "fnref282",
+          "textHash": "afa93ee67602176d8cc38acdd7a0dd9ef0de309231d0ad96485e30b858e114a1"
+        },
+        {
+          "id": "fn283",
+          "reference": "fnref283",
+          "textHash": "2c1593a868ae761ed10b924877b820fe384c0232a8193976dd4cc7214fde5dd8"
+        },
+        {
+          "id": "fn284",
+          "reference": "fnref284",
+          "textHash": "afa93ee67602176d8cc38acdd7a0dd9ef0de309231d0ad96485e30b858e114a1"
+        },
+        {
+          "id": "fn285",
+          "reference": "fnref285",
+          "textHash": "99c7357be8510760f1ae4673fe8f6e6452ea3938670c20213678bd3d992a27b2"
+        },
+        {
+          "id": "fn286",
+          "reference": "fnref286",
+          "textHash": "99c7357be8510760f1ae4673fe8f6e6452ea3938670c20213678bd3d992a27b2"
+        },
+        {
+          "id": "fn287",
+          "reference": "fnref287",
+          "textHash": "f1e9aae5bbc9d63308f392e0fef7ecf7efee204254e0d4aeaee849dffcf1cd43"
+        },
+        {
+          "id": "fn288",
+          "reference": "fnref288",
+          "textHash": "8d7f638a928235eaa0f19ae271ba4730b83160d7909a9141d2edf40c38286122"
+        },
+        {
+          "id": "fn289",
+          "reference": "fnref289",
+          "textHash": "fdab4e967223ee1198bcd1742c601161c7d9a7120de0676203189edeab7e348c"
+        },
+        {
+          "id": "fn290",
+          "reference": "fnref290",
+          "textHash": "5cdeb69e99aa316ce282bbc996f289619eda730e56037bf87172f27c338cd814"
+        },
+        {
+          "id": "fn291",
+          "reference": "fnref291",
+          "textHash": "5cdeb69e99aa316ce282bbc996f289619eda730e56037bf87172f27c338cd814"
+        },
+        {
+          "id": "fn292",
+          "reference": "fnref292",
+          "textHash": "63c85ba8d34eff8ae895a945bd2ac751c2b709fcdf44806d3bf54a0eabc67d17"
+        },
+        {
+          "id": "fn293",
+          "reference": "fnref293",
+          "textHash": "63c85ba8d34eff8ae895a945bd2ac751c2b709fcdf44806d3bf54a0eabc67d17"
+        },
+        {
+          "id": "fn294",
+          "reference": "fnref294",
+          "textHash": "63c85ba8d34eff8ae895a945bd2ac751c2b709fcdf44806d3bf54a0eabc67d17"
+        },
+        {
+          "id": "fn295",
+          "reference": "fnref295",
+          "textHash": "f2e7e7571e9ea6978b10b9fe069be3e1b6315aefc76737a3ef523d98f348dc43"
+        },
+        {
+          "id": "fn296",
+          "reference": "fnref296",
+          "textHash": "cb44dd1d177407f4063d670e011e2d2d16c06edab1024d15d1c2113ea6231f5b"
+        },
+        {
+          "id": "fn297",
+          "reference": "fnref297",
+          "textHash": "904b458d1cfeff62690f0699e4f0d9d929502cd99ab2df33e54f7a57e47e66b8"
+        },
+        {
+          "id": "fn298",
+          "reference": "fnref298",
+          "textHash": "5cdeb69e99aa316ce282bbc996f289619eda730e56037bf87172f27c338cd814"
+        },
+        {
+          "id": "fn299",
+          "reference": "fnref299",
+          "textHash": "0d37c44a7f989df5663dad1ccb47f154aaf3f4031c3baba17e771c036d464d2c"
+        },
+        {
+          "id": "fn300",
+          "reference": "fnref300",
+          "textHash": "77b2dddaef803adbd0bfe89ec7f3657046d64957a848ea0b9f501ef000dcfc2f"
+        },
+        {
+          "id": "fn301",
+          "reference": "fnref301",
+          "textHash": "77b2dddaef803adbd0bfe89ec7f3657046d64957a848ea0b9f501ef000dcfc2f"
+        },
+        {
+          "id": "fn302",
+          "reference": "fnref302",
+          "textHash": "991590361fda11fb59c18e1d0b0f73fb3a673fcf9b96316b09b1e8d8e630d143"
+        },
+        {
+          "id": "fn303",
+          "reference": "fnref303",
+          "textHash": "c4b22aff0055a7f6978e4b5eebcb6c2323da97f85a6f01d672bb2870c8a950fe"
+        }
+      ],
+      "diagrams": [
+        "roof-explorer",
+        "roof-opening",
+        "roof-drainage"
+      ],
+      "textHash": "9dbeb254f307f9f448f0585349789131b3acd8fa0664834bff840c6623f08e0d"
+    },
+    {
+      "id": "book__15-cabin-seating-and-climate__index.md__cabin-seating-and-climate",
+      "title": "Cabin, seating and climate",
+      "headings": [
+        {
+          "id": "book__15-cabin-seating-and-climate__index.md__instruments-and-everyday-controls",
+          "title": "Instruments and everyday controls"
+        },
+        {
+          "id": "book__15-cabin-seating-and-climate__index.md__a-seat-is-a-support-structure",
+          "title": "A seat is a support structure"
+        },
+        {
+          "id": "book__15-cabin-seating-and-climate__index.md__electric-adjustment-bolsters-and-the-bucket-shell",
+          "title": "Electric adjustment, bolsters and the bucket shell"
+        },
+        {
+          "id": "book__15-cabin-seating-and-climate__index.md__heat-and-air-at-the-seat-surface",
+          "title": "Heat and air at the seat surface"
+        },
+        {
+          "id": "book__15-cabin-seating-and-climate__index.md__two-heat-circuits-one-stream-of-cabin-air",
+          "title": "Two heat circuits, one stream of cabin air"
+        },
+        {
+          "id": "book__15-cabin-seating-and-climate__index.md__choosing-the-air-route",
+          "title": "Choosing the air route"
+        },
+        {
+          "id": "book__15-cabin-seating-and-climate__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__15-cabin-seating-and-climate__index.md__changes-in-other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__15-cabin-seating-and-climate__index.md__the-s-spyder-and-black-edition",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__15-cabin-seating-and-climate__index.md__identification-and-ageing",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [
+        "a4d0c9243ff8dd9d6d9e71a76164a2969ca58f69c88eeb0ec12dd7bcc25288b4"
+      ],
+      "figures": [
+        {
+          "alt": "A spatial cabin cutaway locates the seat runners, frame and upholstery between the axles, the blower and two heat exchangers ahead of the occupants, and the ducts and coolant pipes connected to the air unit. Structural links distinguish body support from airflow and coolant flow.",
+          "width": null,
+          "style": null,
+          "captionHash": "6d5b79f2a2fdb156367706ead57a7871d304537a7b9d41ccca6db172303cdc47"
+        },
+        {
+          "alt": "Porsche's period photograph of a tan Boxster cabin, with the seats, steering wheel, dashboard vents and centre-console controls visible.",
+          "width": null,
+          "style": null,
+          "captionHash": "26746d54966c0af0a79540db9868d5073d6175bdd59bacd01222590d69a603c7"
+        },
+        {
+          "alt": "The period Boxster S dashboard with aluminium-coloured instrument faces, an optional multifunction PDK steering wheel, PCM and automatic climate controls.",
+          "width": null,
+          "style": null,
+          "captionHash": "dbdf28193b37ef7e276aa48653964b4c5a3edbdff9578f2a1a012ed6bf28c422"
+        },
+        {
+          "alt": "A schematic dashboard map identifies the three-dial instrument cluster, steering-column controls, audio and climate panels, and the lower console’s roof and equipment-dependent mode controls. A separate key marks optional cruise and multifunction controls.",
+          "width": null,
+          "style": null,
+          "captionHash": "fc8c8ee2c8d7a68c8bba898a09a18d9c73c89f5638c8af1fcaed5bf0b333e191"
+        },
+        {
+          "alt": "A seat schematic separates its supporting frame, cushion and runners, and shows that fore-and-aft travel, height and backrest angle change different parts of the driving position.",
+          "width": null,
+          "style": null,
+          "captionHash": "19a90a242fb0b339d623397ef4bd356d101485c9d9889af6f9e834cdc1d97cce"
+        },
+        {
+          "alt": "The optional folding sports bucket seat, with a deeply shaped shell, raised cushion bolsters and exposed mounting structure beneath.",
+          "width": "180",
+          "style": null,
+          "captionHash": "89c906e4776142ca7e6a7578ff9a9f34842736ee494f9f24050fb2a748b25052"
+        },
+        {
+          "alt": "Separate loops show hot engine coolant delivering heat to a heater core and refrigerant taking cabin heat through an evaporator to the front condensers. Only heat crosses between the fluids and the cabin air.",
+          "width": null,
+          "style": null,
+          "captionHash": "00946dc21b4c5adb6da6afc6627f1e9415515c4cb7e54b8310a581cc259e6657"
+        },
+        {
+          "alt": "With fresh air selected, the blower moves air through an evaporator with A/C enabled, around the heater and towards the face vents. Recirculation changes the source; heater contribution changes heat addition; outlet selection changes the destination.",
+          "width": null,
+          "style": null,
+          "captionHash": "5c346be1a6ff1a5eb0dee626e3e1213ba572ad579467c7be5bf0141ee6478077"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn304",
+          "reference": "fnref304",
+          "textHash": "4961b34a9bccfeb3c414252e76c5fdca65c86b3f1586297f170d9bb85562ab17"
+        },
+        {
+          "id": "fn305",
+          "reference": "fnref305",
+          "textHash": "61df2c4da2013c7fa1bb780251f247ae5dfb94702cb4dc0b26dd86d2e3918636"
+        },
+        {
+          "id": "fn306",
+          "reference": "fnref306",
+          "textHash": "b0b85a9e72b8486da22831577113ef6ada0023fd02a4a3bb19c558f63b4d04ac"
+        },
+        {
+          "id": "fn307",
+          "reference": "fnref307",
+          "textHash": "61df2c4da2013c7fa1bb780251f247ae5dfb94702cb4dc0b26dd86d2e3918636"
+        },
+        {
+          "id": "fn308",
+          "reference": "fnref308",
+          "textHash": "61df2c4da2013c7fa1bb780251f247ae5dfb94702cb4dc0b26dd86d2e3918636"
+        },
+        {
+          "id": "fn309",
+          "reference": "fnref309",
+          "textHash": "ad7d96636de51556734029f385b7a822481297100a9040da73474728a679714f"
+        },
+        {
+          "id": "fn310",
+          "reference": "fnref310",
+          "textHash": "ad7d96636de51556734029f385b7a822481297100a9040da73474728a679714f"
+        },
+        {
+          "id": "fn311",
+          "reference": "fnref311",
+          "textHash": "d5c2fe15a6166492bdc68f6315286a917d72f671437bd8d7bd92b579c065e980"
+        },
+        {
+          "id": "fn312",
+          "reference": "fnref312",
+          "textHash": "d5c2fe15a6166492bdc68f6315286a917d72f671437bd8d7bd92b579c065e980"
+        },
+        {
+          "id": "fn313",
+          "reference": "fnref313",
+          "textHash": "d5c2fe15a6166492bdc68f6315286a917d72f671437bd8d7bd92b579c065e980"
+        },
+        {
+          "id": "fn314",
+          "reference": "fnref314",
+          "textHash": "5ea5b738af1c2340560fcf4d4c0ab6ecea16f5ead1ef32f684f31f84857dbdb4"
+        },
+        {
+          "id": "fn315",
+          "reference": "fnref315",
+          "textHash": "5ea5b738af1c2340560fcf4d4c0ab6ecea16f5ead1ef32f684f31f84857dbdb4"
+        },
+        {
+          "id": "fn316",
+          "reference": "fnref316",
+          "textHash": "537f7d72a07eb8cc3947ae1531eaf0de94fab8d82379ed84a2757097afab4a96"
+        },
+        {
+          "id": "fn317",
+          "reference": "fnref317",
+          "textHash": "bf44259fb05f85c9e30ee53824195b21ddc6605f9c07db3ec9693bd9fcb8deab"
+        },
+        {
+          "id": "fn318",
+          "reference": "fnref318",
+          "textHash": "359f8cec6875807285fa7627c8bb63de4ced993b2db14beadc9b25e607b7ad5e"
+        },
+        {
+          "id": "fn319",
+          "reference": "fnref319",
+          "textHash": "7865000639b6de7b81432cfba4003d05f92065105b9d554946af58e6bea074c0"
+        },
+        {
+          "id": "fn320",
+          "reference": "fnref320",
+          "textHash": "7865000639b6de7b81432cfba4003d05f92065105b9d554946af58e6bea074c0"
+        },
+        {
+          "id": "fn321",
+          "reference": "fnref321",
+          "textHash": "14b94eb0bfdcd22740b0a4a6b2fa3e04c02ae6abd44287c0a7edca753c84fba8"
+        },
+        {
+          "id": "fn322",
+          "reference": "fnref322",
+          "textHash": "7865000639b6de7b81432cfba4003d05f92065105b9d554946af58e6bea074c0"
+        },
+        {
+          "id": "fn323",
+          "reference": "fnref323",
+          "textHash": "6c1274c1340a03a66663e2fdf9e42dab96edcb3d834f665c48c2d3c507aacf0b"
+        },
+        {
+          "id": "fn324",
+          "reference": "fnref324",
+          "textHash": "d5c2fe15a6166492bdc68f6315286a917d72f671437bd8d7bd92b579c065e980"
+        },
+        {
+          "id": "fn325",
+          "reference": "fnref325",
+          "textHash": "1f194ecc4884395d527a35905ddc36a3aca8991dded73a5300e6d01f814ffd5c"
+        },
+        {
+          "id": "fn326",
+          "reference": "fnref326",
+          "textHash": "6c1274c1340a03a66663e2fdf9e42dab96edcb3d834f665c48c2d3c507aacf0b"
+        },
+        {
+          "id": "fn327",
+          "reference": "fnref327",
+          "textHash": "33fcc6eb26e627c6e5ce319bedbafc61181441dd2d08d12a0a0edbf6f9bda684"
+        },
+        {
+          "id": "fn328",
+          "reference": "fnref328",
+          "textHash": "0af3b6ed30568504a995688cfcc8a9cc1e4da7176005ea99ef6bd0b8d5c7e7af"
+        }
+      ],
+      "diagrams": [
+        "cabin-explorer",
+        "cabin-air-route"
+      ],
+      "textHash": "cf4be6f8d98ecceb4d13be8d76b263f1bf51d9eda1396b8db59b9325e6cea405"
+    },
+    {
+      "id": "book__16-lighting-electrical-systems-and-security__index.md__lighting-electrical-systems-and-security",
+      "title": "Lighting, electrical systems and security",
+      "headings": [
+        {
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__stored-energy-starting-and-charging",
+          "title": "Stored energy, starting and charging"
+        },
+        {
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__a-circuit-needs-a-return-path",
+          "title": "A circuit needs a return path"
+        },
+        {
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__controllers-carry-decisions-as-well-as-current",
+          "title": "Controllers carry decisions as well as current"
+        },
+        {
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__halogen-bi-xenon-and-the-front-light-modules",
+          "title": "Halogen, bi-xenon and the front light modules"
+        },
+        {
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__rear-lamps-and-everyday-visibility",
+          "title": "Rear lamps and everyday visibility"
+        },
+        {
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__keys-locks-immobiliser-and-alarm",
+          "title": "Keys, locks, immobiliser and alarm"
+        },
+        {
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__parkassist-and-distance-sensing",
+          "title": "ParkAssist and distance sensing"
+        },
+        {
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__wipers-and-mirrors",
+          "title": "Wipers and mirrors"
+        },
+        {
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__changes-in-other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__the-s-spyder-and-black-edition",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__identification-and-ageing",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [
+        "b5b442fbfe9e2c4b6f932bdfcaad12d687ee1f77d6f9760c7fb49bc2d7570b23"
+      ],
+      "figures": [
+        {
+          "alt": "The front battery connects through a long positive feed to the rear starter and alternator; a protected branch supplies a front halogen lamp, while body and engine earth connections complete the circuit. Ignition and lighting controls have a separate request role.",
+          "width": null,
+          "style": null,
+          "captionHash": "b41ba000425ba5665c1c7c373f26d61ed847fbf71c3895e860f2cdc9e36dc87a"
+        },
+        {
+          "alt": "Starting uses stored battery energy to turn the starter and engine. Running reverses the energy relationship: the engine drives the alternator, which supplies electrical loads and can recharge the battery.",
+          "width": null,
+          "style": null,
+          "captionHash": "78dc5a49550a35697e831c025c3816e66c7e24deef12aa7bf47e0cc1e3a0af2a"
+        },
+        {
+          "alt": "An ideal 12-volt battery powers one 24-watt lamp through an intact fuse and a closed switch. The return path completes the circuit, giving 2 amperes. A second parallel lamp increases total current; an open fuse or return connection stops both lamps.",
+          "width": null,
+          "style": null,
+          "captionHash": "64b575790641414783c91a39617ad98d6feda270025a4a90e4dc887b9f5f064e"
+        },
+        {
+          "alt": "The standard front arrangement uses halogen headlamps and a separate fog-lamp and LED-position-light module. The optional arrangement adds bi-xenon road lighting, beam levelling and dynamic cornering, with dedicated LED daytime running lights below.",
+          "width": null,
+          "style": null,
+          "captionHash": "746b7f2ddf8cb6dd136f4ed3e2dbf5907eb0cf60033337ba66ec164f7799c3fc"
+        },
+        {
+          "alt": "A red Boxster has bi-xenon main headlamps above separate illuminated LED front modules.",
+          "width": null,
+          "style": null,
+          "captionHash": "73d78e3259607c6fa467e1c00f922ae7f68a46183f491596aabdfba7d5ce8426"
+        },
+        {
+          "alt": "The rear of a red Boxster S shows illuminated rear light signatures, one on each side of the luggage lid.",
+          "width": null,
+          "style": null,
+          "captionHash": "07c0f021e65b52c3fdfd519047bad24b8185af43f4664e6a9d20bb56977932b4"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn329",
+          "reference": "fnref329",
+          "textHash": "fa4c993fa3ade197c4ca22b9619e48b80158960f04eb9cf75adc5d28cfc9a020"
+        },
+        {
+          "id": "fn330",
+          "reference": "fnref330",
+          "textHash": "c2c5cb25e95b7b18e07798543ac8454a8ae83d8b2b5b1a35425703593f72034c"
+        },
+        {
+          "id": "fn331",
+          "reference": "fnref331",
+          "textHash": "7b4490a991112ab33052e59533c8a0e9558e22e9f4d0cedb8d81ebcccf4794e1"
+        },
+        {
+          "id": "fn332",
+          "reference": "fnref332",
+          "textHash": "67903e7742ba20a179a253a12800269358d03465d0a6e146cefa2e55bf1e4007"
+        },
+        {
+          "id": "fn333",
+          "reference": "fnref333",
+          "textHash": "fa4c993fa3ade197c4ca22b9619e48b80158960f04eb9cf75adc5d28cfc9a020"
+        },
+        {
+          "id": "fn334",
+          "reference": "fnref334",
+          "textHash": "7b4490a991112ab33052e59533c8a0e9558e22e9f4d0cedb8d81ebcccf4794e1"
+        },
+        {
+          "id": "fn335",
+          "reference": "fnref335",
+          "textHash": "5528348ffae95db0973a284cbc3934a843b33c23de34f6ab3bc7ea972aa33107"
+        },
+        {
+          "id": "fn336",
+          "reference": "fnref336",
+          "textHash": "56d4cf0f0ea61d40a6e410672491b7cbd4e0c1caca767b380db224ccad66af54"
+        },
+        {
+          "id": "fn337",
+          "reference": "fnref337",
+          "textHash": "20b72916b50dfb40c86cbdae5e685a2a107b0d1ad6c4fce7a74787b6ae85b632"
+        },
+        {
+          "id": "fn338",
+          "reference": "fnref338",
+          "textHash": "52d010a158122f1da2d0435919cd13a78ac19c7f8abfb9136b0853440b39e579"
+        },
+        {
+          "id": "fn339",
+          "reference": "fnref339",
+          "textHash": "c2c5cb25e95b7b18e07798543ac8454a8ae83d8b2b5b1a35425703593f72034c"
+        },
+        {
+          "id": "fn340",
+          "reference": "fnref340",
+          "textHash": "eb02b39116bb77ccd3514403ecdcd8898170982fd5736e924f573b93574d0ab7"
+        },
+        {
+          "id": "fn341",
+          "reference": "fnref341",
+          "textHash": "52d010a158122f1da2d0435919cd13a78ac19c7f8abfb9136b0853440b39e579"
+        },
+        {
+          "id": "fn342",
+          "reference": "fnref342",
+          "textHash": "b9bb50f5a03401312f104f736781fcaaf156774d012b40c12c3de842be3fd432"
+        },
+        {
+          "id": "fn343",
+          "reference": "fnref343",
+          "textHash": "52d010a158122f1da2d0435919cd13a78ac19c7f8abfb9136b0853440b39e579"
+        },
+        {
+          "id": "fn344",
+          "reference": "fnref344",
+          "textHash": "9144cd4185a21628546997bca3b76909188b36cf263c653227598a37d9b2e728"
+        },
+        {
+          "id": "fn345",
+          "reference": "fnref345",
+          "textHash": "1b45cbf77ff2d4b34b8353677ce85e07f6f3813c4ba594741cc247fdce57dd2c"
+        },
+        {
+          "id": "fn346",
+          "reference": "fnref346",
+          "textHash": "6e33422c8bfd3879ff1d30dcf063a65ae77f033fa45f484a61ebcf6ffd4089fa"
+        },
+        {
+          "id": "fn347",
+          "reference": "fnref347",
+          "textHash": "6e33422c8bfd3879ff1d30dcf063a65ae77f033fa45f484a61ebcf6ffd4089fa"
+        },
+        {
+          "id": "fn348",
+          "reference": "fnref348",
+          "textHash": "d338d54a56628af65159c8dd34e9ba7e7df878cb7672be84a60b86b2d03f0d0d"
+        },
+        {
+          "id": "fn349",
+          "reference": "fnref349",
+          "textHash": "ab32d6fb698560ff1cac8fdf9e6277aec201d04ded5de037b41286a0cf3c7506"
+        },
+        {
+          "id": "fn350",
+          "reference": "fnref350",
+          "textHash": "ab32d6fb698560ff1cac8fdf9e6277aec201d04ded5de037b41286a0cf3c7506"
+        },
+        {
+          "id": "fn351",
+          "reference": "fnref351",
+          "textHash": "7f9b56522418a41e4d72933a43b0c2aa589e92db3a90c77b3c527d802b09864c"
+        },
+        {
+          "id": "fn352",
+          "reference": "fnref352",
+          "textHash": "cb30dfac1ae91334e36ed2345e80b8c21780f6f32235d2fba13980b024d47d48"
+        },
+        {
+          "id": "fn353",
+          "reference": "fnref353",
+          "textHash": "beb7a32f801ef6e5d08de7e8ce07becfc8ee4bb309637fc3b63626cef98f80fa"
+        },
+        {
+          "id": "fn354",
+          "reference": "fnref354",
+          "textHash": "e54416c73d5ae812ffd54949e1e3810de68c80deb42877dea83e2ba4b5872eec"
+        },
+        {
+          "id": "fn355",
+          "reference": "fnref355",
+          "textHash": "c2c5cb25e95b7b18e07798543ac8454a8ae83d8b2b5b1a35425703593f72034c"
+        },
+        {
+          "id": "fn356",
+          "reference": "fnref356",
+          "textHash": "9144cd4185a21628546997bca3b76909188b36cf263c653227598a37d9b2e728"
+        },
+        {
+          "id": "fn357",
+          "reference": "fnref357",
+          "textHash": "c2c5cb25e95b7b18e07798543ac8454a8ae83d8b2b5b1a35425703593f72034c"
+        },
+        {
+          "id": "fn358",
+          "reference": "fnref358",
+          "textHash": "d338d54a56628af65159c8dd34e9ba7e7df878cb7672be84a60b86b2d03f0d0d"
+        },
+        {
+          "id": "fn359",
+          "reference": "fnref359",
+          "textHash": "a23ec3b08bbfa39dcd6456c9375c29d7e2c0823aa79d1f8a0f3fa77403c82620"
+        },
+        {
+          "id": "fn360",
+          "reference": "fnref360",
+          "textHash": "b2a2d23d9bd3f4275a4f35dac47dd5a4a2a31d09d3cb29c66d7df9ae0dff4a9e"
+        },
+        {
+          "id": "fn361",
+          "reference": "fnref361",
+          "textHash": "76a79f2a12e948d2378a1402dc23e088fd2d3043102c36fe800cdd7872eab220"
+        }
+      ],
+      "diagrams": [
+        "electrical-explorer",
+        "electrical-current-path"
+      ],
+      "textHash": "279321051b789e61a6a1e28fcecdbf07f1a8301488542f3838fc5f4b117847e1"
+    },
+    {
+      "id": "book__17-audio-navigation-and-communication__index.md__audio-navigation-and-communication",
+      "title": "Audio, navigation and communication",
+      "headings": [
+        {
+          "id": "book__17-audio-navigation-and-communication__index.md__from-stored-music-to-moving-air",
+          "title": "From stored music to moving air"
+        },
+        {
+          "id": "book__17-audio-navigation-and-communication__index.md__cdr-30-and-pcm-3.0",
+          "title": "CDR-30 and PCM 3.0"
+        },
+        {
+          "id": "book__17-audio-navigation-and-communication__index.md__the-sound-packages",
+          "title": "The sound packages"
+        },
+        {
+          "id": "book__17-audio-navigation-and-communication__index.md__external-players-and-telephone-equipment",
+          "title": "External players and telephone equipment"
+        },
+        {
+          "id": "book__17-audio-navigation-and-communication__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__17-audio-navigation-and-communication__index.md__changes-in-other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__17-audio-navigation-and-communication__index.md__the-s-spyder-and-black-edition",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__17-audio-navigation-and-communication__index.md__identification-and-ageing",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "alt": "The standard CDR-30 is in the centre console, with two tweeters on the dashboard and one woofer in each door. Schematic aerial reception and vehicle electrical power are shown separately; open speaker sections reveal the fixed magnet, voice coil and diaphragm.",
+          "width": null,
+          "style": null,
+          "captionHash": "d18dc48bb69a215a8b24bd2a84bc7e066ce6fc8edc1ee2504ece5da140ad64ae"
+        },
+        {
+          "alt": "An original schematic separates source selection, electrical amplification and the speaker’s conversion of current into movement.",
+          "width": null,
+          "style": null,
+          "captionHash": "4b248aca6bb8c3713899eb9a56b9a49d10412c888463aca5665985cc22f9af32"
+        },
+        {
+          "alt": "The CDR-30’s monochrome screen and surrounding physical controls in Porsche’s period photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "1b5e9150ccbcc2ad4abda6148a085a749e7bbb0869443702062e98a180826724"
+        },
+        {
+          "alt": "The PCM colour touchscreen and NAVI/MAP keys in Porsche’s period photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "7cb4093fd15fa23857e5f14c585079db942126e0ad11edbf5c5587aac31c297e"
+        },
+        {
+          "alt": "The initial example follows FM radio through CDR-30 and its output stages to the standard four speakers. Other sources require their corresponding interfaces, while the sound package determines the amplification route.",
+          "width": null,
+          "style": null,
+          "captionHash": "37fbe35a6c29e23d9fb4f9f6f3dc9a53596a6c909ca37ad88bd9ef26dcb95e16"
+        },
+        {
+          "alt": "Three telephone arrangements distinguish the device that actually connects to the mobile network: the mobile phone in HFP mode without an aerial-connected cradle, or the PCM telephone module with a direct SIM or compatible SAP connection.",
+          "width": null,
+          "style": null,
+          "captionHash": "25885a8b0d919e1a48b17675d6f124dee5d2a33c632fb758634733a212ea7acd"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn362",
+          "reference": "fnref362",
+          "textHash": "04847f9488406d4949d871585a73f877f46c4bffb51ef8b7ff0fd784d1563cd6"
+        },
+        {
+          "id": "fn363",
+          "reference": "fnref363",
+          "textHash": "ed346edb7e2be73eab43384dc738bf7d81b2abe025e915bb16e85454ee0a8268"
+        },
+        {
+          "id": "fn364",
+          "reference": "fnref364",
+          "textHash": "92e445686a508cb339ac2888c6c7c80211aa37112cac96814f9c7ac54f6ef9e3"
+        },
+        {
+          "id": "fn365",
+          "reference": "fnref365",
+          "textHash": "fdfff9d5872c237932fb754c0301a1233d5580b05d266f38a6af4276706a1f20"
+        },
+        {
+          "id": "fn366",
+          "reference": "fnref366",
+          "textHash": "e58f92d0b7a9c3a1b6f03c4d8b39d32bf9f5a15005a47048f97c8fdab5d4a685"
+        },
+        {
+          "id": "fn367",
+          "reference": "fnref367",
+          "textHash": "1f83b167ae419db465eb067bf00616d50128da50caa14488f65c41b6cddf183b"
+        },
+        {
+          "id": "fn368",
+          "reference": "fnref368",
+          "textHash": "81d65d075dc68a3fe19beadbb419289be677c958ff1ae6218c15d3bd4c9cbb2a"
+        },
+        {
+          "id": "fn369",
+          "reference": "fnref369",
+          "textHash": "0cb42715879d6ee700e43de3ca6fae3f148cdc325033b58ba41076b7dd67426d"
+        },
+        {
+          "id": "fn370",
+          "reference": "fnref370",
+          "textHash": "b8c02151c7e5d29798da0818fa6664da40faacb781e3743af625cf2182f57e5e"
+        },
+        {
+          "id": "fn371",
+          "reference": "fnref371",
+          "textHash": "3873535f38884b991fc3db18c55db71e199f9a9b3eecf9959b52ab326acc7e16"
+        },
+        {
+          "id": "fn372",
+          "reference": "fnref372",
+          "textHash": "82411385f74932e27a5a9175b7af729c8b932a13b3939bbbe31e6b447ba8c33a"
+        },
+        {
+          "id": "fn373",
+          "reference": "fnref373",
+          "textHash": "a6b7fbc9b0465114432f589c3e0125bb3c88e123404efed3a618f216f1d17dcc"
+        },
+        {
+          "id": "fn374",
+          "reference": "fnref374",
+          "textHash": "04847f9488406d4949d871585a73f877f46c4bffb51ef8b7ff0fd784d1563cd6"
+        },
+        {
+          "id": "fn375",
+          "reference": "fnref375",
+          "textHash": "70cb0ddb754577ee566b29db04be9ae15e8c211b9e56f789c2363a86db923a68"
+        },
+        {
+          "id": "fn376",
+          "reference": "fnref376",
+          "textHash": "75bf0569e893fe203b33a9e6ac85467582717eb3ac8e80ca72dda6d476ecf29a"
+        },
+        {
+          "id": "fn377",
+          "reference": "fnref377",
+          "textHash": "04847f9488406d4949d871585a73f877f46c4bffb51ef8b7ff0fd784d1563cd6"
+        },
+        {
+          "id": "fn378",
+          "reference": "fnref378",
+          "textHash": "07c4318df1004cc74ca533bfe52e50b063b1a039f75b5144d4c9f58c4d8a5428"
+        },
+        {
+          "id": "fn379",
+          "reference": "fnref379",
+          "textHash": "cf908bbab1c33e7c4c1559d1076b0d130cd37fafacaf93ee183623a9555e6067"
+        }
+      ],
+      "diagrams": [
+        "audio-explorer",
+        "audio-source-path"
+      ],
+      "textHash": "7ef3485629c91d7ea5ce5bbbf0cd619f9d37d6933bd301ef7ac9523d271c3ede"
+    },
+    {
+      "id": "book__18-occupant-protection-and-system-integration__index.md__occupant-protection-and-system-integration",
+      "title": "Occupant protection and system integration",
+      "headings": [
+        {
+          "id": "book__18-occupant-protection-and-system-integration__index.md__space-for-the-occupants-time-to-slow-them",
+          "title": "Space for the occupants, time to slow them"
+        },
+        {
+          "id": "book__18-occupant-protection-and-system-integration__index.md__three-belt-functions",
+          "title": "Three belt functions"
+        },
+        {
+          "id": "book__18-occupant-protection-and-system-integration__index.md__front-thorax-and-head-airbags",
+          "title": "Front, thorax and head airbags"
+        },
+        {
+          "id": "book__18-occupant-protection-and-system-integration__index.md__permanent-rollover-structure",
+          "title": "Permanent rollover structure"
+        },
+        {
+          "id": "book__18-occupant-protection-and-system-integration__index.md__one-bend-connects-the-chassis",
+          "title": "One bend connects the chassis"
+        },
+        {
+          "id": "book__18-occupant-protection-and-system-integration__index.md__requests-decisions-and-physical-action",
+          "title": "Requests, decisions and physical action"
+        },
+        {
+          "id": "book__18-occupant-protection-and-system-integration__index.md__options-on-the-2010-2.9",
+          "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__18-occupant-protection-and-system-integration__index.md__changes-in-other-2.9-model-years",
+          "title": "Changes in other 2.9 model years"
+        },
+        {
+          "id": "book__18-occupant-protection-and-system-integration__index.md__the-s-spyder-and-black-edition",
+          "title": "The S, Spyder and Black Edition"
+        },
+        {
+          "id": "book__18-occupant-protection-and-system-integration__index.md__identification-and-ageing",
+          "title": "Identification and ageing"
+        }
+      ],
+      "tables": [
+        "c8f9649dd6c219514be63041f01d88dd499251f3a6b413517d50b935ab7f05b0"
+      ],
+      "figures": [
+        {
+          "alt": "The passenger cell supports the seats, reinforced windscreen frame and two fixed rear bars. Three-point belts attach to the body and rear bars; six folded airbag modules occupy the steering wheel, passenger dashboard, outer seat bolsters and doors.",
+          "width": null,
+          "style": null,
+          "captionHash": "9bbf425d16e1b8224d76f2a6b5f0acc8abe5d4d5a81d1521d91c959364e32b6f"
+        },
+        {
+          "alt": "A schematic occupant with diagonal and lap belt paths connected to the passenger cell. Three boxes distinguish normal reel locking, removal of slack by the pretensioner and control of belt force by the limiter.",
+          "width": null,
+          "style": null,
+          "captionHash": "ef94c6b1bed7715f7ea799a4dcb4fd59490c6fcde40fd8a726d70e3610145db5"
+        },
+        {
+          "alt": "Porsche factory illustration of an open red 987.2 Boxster with its front and side airbags inflated, showing the different locations around the two seats.",
+          "width": null,
+          "style": null,
+          "captionHash": "467aba04a7238044bafd3e083ea7c286f4d3073f20825b5a975e7f54fd4e2896"
+        },
+        {
+          "alt": "An original schematic showing a reinforced windscreen frame at the front and two fixed steel rollover bars behind the seats, with upper belt anchorage points on the rear bars.",
+          "width": null,
+          "style": null,
+          "captionHash": "c5f92a0b82c3029f68edf6256439eb964bc52761efacfc1bb72c38306d914f8e"
+        },
+        {
+          "alt": "Acceleration in the standard manual car: pedal and engine information goes to DME, which controls throttle, injection and ignition. The driver’s clutch and gear selection carry torque through the manual transmission. Fixed structure remains present and the crash restraint controller assesses its own inputs.",
+          "width": null,
+          "style": null,
+          "captionHash": "4947751a0f700b00a99a9d454398122a64d4bfda003fb4126b65621151f8b4e5"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn380",
+          "reference": "fnref380",
+          "textHash": "f67a96ab171a1fde6c9381bb3b714cbe4866cea276199e2c10106cdbd48018b9"
+        },
+        {
+          "id": "fn381",
+          "reference": "fnref381",
+          "textHash": "f67a96ab171a1fde6c9381bb3b714cbe4866cea276199e2c10106cdbd48018b9"
+        },
+        {
+          "id": "fn382",
+          "reference": "fnref382",
+          "textHash": "8f1b9ca5ad5e8a41b80f898ebcf0e46bb0d261ae97e5ee333dabe11dcb4df471"
+        },
+        {
+          "id": "fn383",
+          "reference": "fnref383",
+          "textHash": "db845954b8f487e1f945d24a66f1745c7fd1c6587b263cec8a5d96f61ba3a1f5"
+        },
+        {
+          "id": "fn384",
+          "reference": "fnref384",
+          "textHash": "8f1b9ca5ad5e8a41b80f898ebcf0e46bb0d261ae97e5ee333dabe11dcb4df471"
+        },
+        {
+          "id": "fn385",
+          "reference": "fnref385",
+          "textHash": "f67a96ab171a1fde6c9381bb3b714cbe4866cea276199e2c10106cdbd48018b9"
+        },
+        {
+          "id": "fn386",
+          "reference": "fnref386",
+          "textHash": "594a075fb07cb153a01c2eb5cc4eecb7a4147d4c0462354dd3f5b6eaa56f875e"
+        },
+        {
+          "id": "fn387",
+          "reference": "fnref387",
+          "textHash": "e2885d7983f78317cdef84327a964e6eca8679f80fcad28ecc9eb214a64c4412"
+        },
+        {
+          "id": "fn388",
+          "reference": "fnref388",
+          "textHash": "04ed0124c4ad7b37bd6f89fdd9a2516e8b912d55c4345910ae25e754198bea88"
+        },
+        {
+          "id": "fn389",
+          "reference": "fnref389",
+          "textHash": "f67a96ab171a1fde6c9381bb3b714cbe4866cea276199e2c10106cdbd48018b9"
+        },
+        {
+          "id": "fn390",
+          "reference": "fnref390",
+          "textHash": "4a543ff08f86ace796484092be5369aa158b1fcf0077ec2e563a0ce5006df888"
+        },
+        {
+          "id": "fn391",
+          "reference": "fnref391",
+          "textHash": "5e6945a4a3a194143cd6851003f789aeaf6678e9b47cea3f717664e79efb1406"
+        },
+        {
+          "id": "fn392",
+          "reference": "fnref392",
+          "textHash": "9a636b7734c803ed9b37ee253744e585f4059e324767bca1d275f1faa3af0717"
+        },
+        {
+          "id": "fn393",
+          "reference": "fnref393",
+          "textHash": "5f0da9b7f97b19046de2513e0da0164d934c03cb774d478247ab43f63ed64c33"
+        },
+        {
+          "id": "fn394",
+          "reference": "fnref394",
+          "textHash": "9a636b7734c803ed9b37ee253744e585f4059e324767bca1d275f1faa3af0717"
+        },
+        {
+          "id": "fn395",
+          "reference": "fnref395",
+          "textHash": "5c1adcada1b8eb7033fbdbbe19735ae9e240db52976a98f70406ba629158ed3b"
+        },
+        {
+          "id": "fn396",
+          "reference": "fnref396",
+          "textHash": "eb368a1e5f90ef56bdf3d10808e13d8d8bf63c8d64d03bb71c1b2b446bf600cb"
+        },
+        {
+          "id": "fn397",
+          "reference": "fnref397",
+          "textHash": "5bbb0bdd6bb28b6765fece75148ad77e7fb6bda83458a4027b98ad7e01175de7"
+        },
+        {
+          "id": "fn398",
+          "reference": "fnref398",
+          "textHash": "e2885d7983f78317cdef84327a964e6eca8679f80fcad28ecc9eb214a64c4412"
+        }
+      ],
+      "diagrams": [
+        "protection-explorer",
+        "protection-system-scenarios"
+      ],
+      "textHash": "c8bcb634c79eea258026b291ced656d5b50f2370991d7fe7df767e5cf327cdc8"
+    },
+    {
+      "id": "book__19-reference-atlas-and-index__index.md__reference-atlas-and-index",
+      "title": "Reference atlas and index",
+      "headings": [
+        {
+          "id": "book__19-reference-atlas-and-index__index.md__annual-equipment-matrix",
+          "title": "Annual equipment matrix"
+        },
+        {
+          "id": "book__19-reference-atlas-and-index__index.md__dated-changes-within-and-around-the-reference-year",
+          "title": "Dated changes within and around the reference year"
+        },
+        {
+          "id": "book__19-reference-atlas-and-index__index.md__other-model-equipment-comparisons",
+          "title": "Other-model equipment comparisons"
+        },
+        {
+          "id": "book__19-reference-atlas-and-index__index.md__wheel-atlas",
+          "title": "Wheel atlas"
+        },
+        {
+          "id": "book__19-reference-atlas-and-index__index.md__seat-atlas",
+          "title": "Seat atlas"
+        },
+        {
+          "id": "book__19-reference-atlas-and-index__index.md__colours-and-trim",
+          "title": "Colours and trim"
+        },
+        {
+          "id": "book__19-reference-atlas-and-index__index.md__exterior-palette",
+          "title": "Exterior palette"
+        },
+        {
+          "id": "book__19-reference-atlas-and-index__index.md__fabric-roof-colours",
+          "title": "Fabric roof colours"
+        },
+        {
+          "id": "book__19-reference-atlas-and-index__index.md__interior-colours-and-materials",
+          "title": "Interior colours and materials"
+        },
+        {
+          "id": "book__19-reference-atlas-and-index__index.md__audio-capabilities",
+          "title": "Audio capabilities"
+        },
+        {
+          "id": "book__19-reference-atlas-and-index__index.md__option-code-index",
+          "title": "Option-code index"
+        },
+        {
+          "id": "book__19-reference-atlas-and-index__index.md__glossary",
+          "title": "Glossary"
+        }
+      ],
+      "tables": [
+        "c7c0dabc8e5b8f05728222791e9d5734d31035e31d5aa50de4e54000e3d0eae9",
+        "6864cc2c96dd7ff894c1af0845b1d1e1a57dc931a719bf46ef6d4320ff97a722",
+        "a0d0ebbd2efed21dec346448c743f568f1fcb2cde885fd2e5df9dec2273d3134",
+        "d504633988991f253f455063f63dd70ff997f3f5eea42422358135e7df84107f",
+        "52ab380e66cf3fd1224be55f4e898abbc71a333af2abcbea7515b599636e95ce",
+        "a7f41cc977d9251c4fdbf000a9a19081b0d296b46ec89eafeb80f280ec29c297",
+        "aa0ea508134ec367ea3e18acab1df77b368a8e169171d8f04cf72205b7584498",
+        "c9f4278ee9793cb77474da1c3d58269e531ec695c97e53444092f1da35b5ad0a"
+      ],
+      "figures": [
+        {
+          "alt": "Boxster III · 17-inch: catalogue wheel photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "e71d123dc7e33e74fdeea6b33bb1773b5f89286329c179009117d296cd3a293e"
+        },
+        {
+          "alt": "Cayman II · 17-inch: catalogue wheel photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "ea95538500ba68e59547e4fdf20c2d20ace68ed2d5569eea1a2d8e20ee89a88f"
+        },
+        {
+          "alt": "Cayman S II · 18-inch: catalogue wheel photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "6697e7c52ef8b0cde9f3450faa4bb92054ce12ff3d620281146e48d7fa1d7b66"
+        },
+        {
+          "alt": "Boxster S II · 18-inch: catalogue wheel photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "ca946406a21960f2ec6b5759d07501715ac26de1a9c6ee38940a0fe3742e9880"
+        },
+        {
+          "alt": "Carrera S II · 19-inch: catalogue wheel photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "21e716ea9356d392d6698d5d88f561cb671f0094e65e0b3bc6a989955b7988f4"
+        },
+        {
+          "alt": "Carrera Classic · 19-inch: catalogue wheel photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "c7710dc7c3db9ef343021dfd12bff306c522ceef165e7c7c5c531e5ca9d5a0a4"
+        },
+        {
+          "alt": "SportDesign · 19-inch: catalogue wheel photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "7b457db9337293459d56f947ba72d454e49dd43e50662591ee27d7e552dac331"
+        },
+        {
+          "alt": "Carrera Sport · 19-inch: catalogue wheel photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "4786831256e418381827f5f4a69008525278c015f69d1723c0935caf7ce463c0"
+        },
+        {
+          "alt": "911 Turbo · 19-inch: catalogue wheel photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "fd90b3b72d47c09b6ca54498dd5158ee000981de2a09054ab74175c7eeb37743"
+        },
+        {
+          "alt": "911 Turbo II · 19-inch: catalogue wheel photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "ab3fba245bae31d989eab6b1552046834f43fce3bc36356a3960cf77ead7ae8f"
+        },
+        {
+          "alt": "The baseline seat’s frame, cushion and runners, with separate fore/aft, height and backrest adjustments. Original schematic; it does not depict a particular leather colour.",
+          "width": null,
+          "style": null,
+          "captionHash": "2fb9b98cd8e874f3a2a248f5c5d6aafd162563c19be4ce5569099d64daa36800"
+        },
+        {
+          "alt": "Comfort seat · P15: catalogue seat photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "6905732ab8f9c6ef2b0ba7ec557040913a47b8f47e9fb3cce1cdaa6cd599234e"
+        },
+        {
+          "alt": "Adaptive sports seat · P01: catalogue seat photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "79a3414e68b44c2b8ee95e33ab095bef51d8a780f9fc0d556a5ea43db4d3a78d"
+        },
+        {
+          "alt": "Sports bucket seat · P03: catalogue seat photograph.",
+          "width": null,
+          "style": null,
+          "captionHash": "e0b8f0c601f57f09a14a0610558888d9e687e8cc5c4496ef7ff83341f89ee220"
+        },
+        {
+          "alt": "Black: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "ff2f6979f55c8a7a11c52c4185f51cf508713893302d3413f3eb32ad3ff3aef4"
+        },
+        {
+          "alt": "Guards Red: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "415ff9f81c0048adcfd194e98a6a852b14af4b8abfb77bb17eef00fe6e9a04d7"
+        },
+        {
+          "alt": "Carrara White: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "9730a7fee1449e1e6f06ba82f8579240146938c365eb6195b6709fec3ce42451"
+        },
+        {
+          "alt": "Speed Yellow: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "d4f5bf58d58805a634e49c27d193b9bf5d6da8e125bedce674d5001a3750014a"
+        },
+        {
+          "alt": "Basalt Black Metallic: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "b1e2878fbfbd76c93a7083fb01d0db3dd0c18f0913138bfac0ef1c42ce865c7d"
+        },
+        {
+          "alt": "Platinum Silver Metallic: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "88119d9f4449e29cff631a7fe86e9ce65ceeb98ae0be5489e771b3602bd70c29"
+        },
+        {
+          "alt": "Dark Blue Metallic: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "58ee5aa3f8da24569ae9979c001f7af655defbb4c45d2e8e7d5d378f083cf801"
+        },
+        {
+          "alt": "Ice Blue Metallic: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "395e85de0b3013efebb3928bbf0f25fa6413361ae164ea4d5d2ebd6249ca3608"
+        },
+        {
+          "alt": "Macadamia Metallic: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "25dbbe9ab058be5b0b2fd9d40bacbd13a08472436069f131e159721371546f9f"
+        },
+        {
+          "alt": "Meteor Grey Metallic: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "4a292e61d0d3af66481583b3800247ed6b8d487e93280f87284355d3bf08cfa7"
+        },
+        {
+          "alt": "Aqua Blue Metallic: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "6d1ab6c1f9a8c21c0f76affd70a1ec41c3c315ec4d3d884573a041f2581ca6c0"
+        },
+        {
+          "alt": "Porsche Racing Green Metallic: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "7301e7c692faf3447a8b00f47e6b6f6d8d01f11fd158410b2864446cadf92aec"
+        },
+        {
+          "alt": "Cream White: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "ede545250efadd38608989ddd5b7b6dc81cc8d7827e52b2608c3e22b52b8fcfd"
+        },
+        {
+          "alt": "GT Silver Metallic: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "a7fa5e3a35e14961e1a112655c76f78af5c8c2bd5ecbd88c8471a8aadc16962f"
+        },
+        {
+          "alt": "Amethyst Metallic: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "72ca358693ce0c671754b182fe8c7e23cb380a0d7e09f7e01f6aab5c0d419bda"
+        },
+        {
+          "alt": "Ruby Red Metallic: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "0609f1cf77f88b632e722c2ee2449274d58a4920d777d7acd11765cdeac1ae18"
+        },
+        {
+          "alt": "Black: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "c6cfe6e4f129a34671d10c1bbe158eff05197d388727e331951b0ec2637c194e"
+        },
+        {
+          "alt": "Stone Grey: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "f9c56cff57b51323eccf4880222dd4cabe11f4db2d67a6a81a8878afbf05a4d2"
+        },
+        {
+          "alt": "Metropole Blue: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "92c8147b5ca8d5e5595ce1748eb585944582bb64fceff1dae214d55f860f155e"
+        },
+        {
+          "alt": "Cocoa: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "527859c0ad13e24ca8c9b65edd36de55aaf1b66a5c4a1419865a5e77a9447184"
+        },
+        {
+          "alt": "Red: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "ba19e9c3d5f49882ddaafed4f286a8a81491150426d321179270e27e74a89097"
+        },
+        {
+          "alt": "Black: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "7892f70a2e2ce06f0f5e322e87165524236cf22d61f42f109501ea70abbafb3b"
+        },
+        {
+          "alt": "Stone Grey: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "b4c3fd5389d0b230de9d1af33f3c62d383527557e27ff2de7ebaf12c592ead8a"
+        },
+        {
+          "alt": "Sand Beige: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "28961d31db2f90a7be6278f316639728130c9234339a9f0ae879cb7866bdfcb0"
+        },
+        {
+          "alt": "Ocean Blue: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "ff7745aa6d720dd96123a4092060db3c6017398c414e0983a7088622f00fc551"
+        },
+        {
+          "alt": "Terracotta: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "28941a3ba1c0ea522f92521be872d2a4d9ee861e4ef3cc842450ef4acca1e070"
+        },
+        {
+          "alt": "Cocoa: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "08a450dafed13ec0afd5591bc397f5fb7f2d09c4d145115f8efe9fb67d612700"
+        },
+        {
+          "alt": "Black / Stone Grey: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "61544be2c7afa0702192518c3e2d2a7ae3053d0f46e87927ed341436a2ff9883"
+        },
+        {
+          "alt": "Dark Grey: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "d6726b25675a6d7169f816f9ddc76ae94238d36b5e49a7f730886aa2a734aedd"
+        },
+        {
+          "alt": "Natural Brown: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "d2762b3057c04ceae099623f8ec16ea2508bb74ada68ca413030fc90bc2cd115"
+        },
+        {
+          "alt": "Carrera Red: catalogue colour sample.",
+          "width": null,
+          "style": null,
+          "captionHash": "ca338c24876f5c345e77240f50ef3bf0196742f46fc88ef9ea15cfdb7e51f380"
+        }
+      ],
+      "notes": [
+        {
+          "id": "fn399",
+          "reference": "fnref399",
+          "textHash": "a1d89cda714379dc7533484cd4f120d58bbaace40a46757eae6fc578046fa733"
+        },
+        {
+          "id": "fn400",
+          "reference": "fnref400",
+          "textHash": "3552a428906335f6ba50c5225432d3fd4128da687639f8baa3c4359f9d8b2e7f"
+        },
+        {
+          "id": "fn401",
+          "reference": "fnref401",
+          "textHash": "8d73ac2293064f8b7d35776538d4011c8c6e9fc2c43a33f9bbe9d9c5dec7146a"
+        },
+        {
+          "id": "fn402",
+          "reference": "fnref402",
+          "textHash": "0d25e720f40aa258586fd5059c859fec5302bc5b8f778348c2b1609bb11cecbe"
+        },
+        {
+          "id": "fn403",
+          "reference": "fnref403",
+          "textHash": "c61945114e2c5a9886ce3807cdae00b805594c70abdb83dc738271e3198e8533"
+        },
+        {
+          "id": "fn404",
+          "reference": "fnref404",
+          "textHash": "3552a428906335f6ba50c5225432d3fd4128da687639f8baa3c4359f9d8b2e7f"
+        },
+        {
+          "id": "fn405",
+          "reference": "fnref405",
+          "textHash": "3552a428906335f6ba50c5225432d3fd4128da687639f8baa3c4359f9d8b2e7f"
+        },
+        {
+          "id": "fn406",
+          "reference": "fnref406",
+          "textHash": "3552a428906335f6ba50c5225432d3fd4128da687639f8baa3c4359f9d8b2e7f"
+        },
+        {
+          "id": "fn407",
+          "reference": "fnref407",
+          "textHash": "713411822c2fb56d5e503ab9992fbba780f24a02a9983f7b25aa353a66cfe059"
+        },
+        {
+          "id": "fn408",
+          "reference": "fnref408",
+          "textHash": "e7196e96ac1e1993edec8a6d0258412ec78c50b58d03bcfaeca136cc7f74eea5"
+        },
+        {
+          "id": "fn409",
+          "reference": "fnref409",
+          "textHash": "be720360c7d4332ef7ea672dd60ffca60366e2c053aa7d8c81324164e7f3de12"
+        }
+      ],
+      "diagrams": [],
+      "textHash": "1bc39b430711113aabdf62230ae9dbf1bd2cb057e3fe5c627e41fd867db63cd7"
+    }
+  ]
+}

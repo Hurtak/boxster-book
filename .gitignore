@@ -13,6 +13,7 @@ node_modules/
 __pycache__/
 *.py[cod]
 .cache/
+*.tsbuildinfo
 
 # Local machine files and logs
 .DS_Store

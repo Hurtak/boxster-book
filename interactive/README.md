@@ -5,8 +5,15 @@ The manuscript names a diagram and supplies a useful static illustration. The ch
 ## Files and responsibilities
 
 ```text
+src/
+  book/Diagram.tsx            # React wrapper, viewport lifecycle, retained state
+  book/Figure.tsx             # Asset resolution, image and caption
+  reader/                    # React chapter reader and navigation
+scripts/mdx/
+  inventory.ts               # Discover chapter/diagram IDs, validate links
+  compiler.ts                # Shared MDX rules for Node/browser exports
+  bundler.ts                 # Lazy Vite registry and portable esbuild export
 interactive/
-  runtime.js                  # Find diagrams, mount near viewport, retain state
   ui.js                       # Panels, labelled sliders and buttons
   styles.css                  # Responsive controls, static/print fallback
   svg.js                      # Responsive D3 SVG surface
@@ -22,7 +29,7 @@ interactive/
     prepare-model.js         # Batch trim geometry while preserving named parts
     geometry.js               # Geometry authoring primitives
 book/13-brakes-and-stability-systems/
-  index.md
+  index.mdx
   images/
     braking-chain.svg         # Standalone chapter illustration
   diagrams/
@@ -44,12 +51,13 @@ Use **D3** for a hydraulic circuit, force arrows, cutaway, graph or timeline. Us
 
 ## Add a diagram to a chapter
 
-Create `diagrams/unique-diagram-name/index.js` beside the chapter. Folder names are diagram IDs and must be unique across the book. Reference it in Pandoc Markdown:
+Create `diagrams/unique-diagram-name/index.js` beside the chapter. Folder names are diagram IDs and must be unique across the book. Reference it in MDX:
 
-```markdown
-::: {.book-diagram data-diagram="unique-diagram-name"}
-![An explanation that makes sense without interaction.](diagrams/unique-diagram-name/poster.svg)
-:::
+```mdx
+import { Diagram } from '../../src/book/components';
+import poster from './diagrams/unique-diagram-name/poster.svg';
+
+<Diagram id="unique-diagram-name" poster={poster} alt="An explanation that makes sense without interaction." />
 ```
 
 Export one function:
@@ -70,9 +78,9 @@ export function mount(host, { state, signal }) {
 }
 ```
 
-The build discovers chapter modules automatically; there is no central chapter registry to edit. Missing files, duplicate IDs and unknown Markdown references fail the build. Prefer the existing brake and energy examples when implementing a new diagram.
+The build discovers chapter modules automatically and generates the lazy registry. Missing files, duplicate IDs, unknown references and missing descriptive alternatives fail the build. Prefer the existing brake and energy examples when implementing a new diagram.
 
-`mount` may be asynchronous. `state` is the same plain object on subsequent mounts of that figure. `signal` is aborted when it leaves the area around the viewport; cancel subscriptions and dispose any owned resources. A returned cleanup function must be safe to call more than once. Only mutate the supplied host; the runtime owns the static fallback and outer figure.
+`mount` may be asynchronous. `state` is the same plain object on subsequent mounts of that figure. `signal` is aborted when it leaves the area around the viewport; cancel subscriptions and dispose any owned resources. A returned cleanup function must be safe to call more than once. Only mutate the supplied host; React owns the static fallback and outer figure. Keep browser access inside `mount`, since Node must be able to render the chapter without creating a drawing surface. Late asynchronous mounts must check the signal and release any resources they acquired. Development uses React Strict Mode, so repeated setup/teardown is expected.
 
 Keep the poster and alt text meaningful. A diagram must explain its main idea in print and without scripting. Native sliders support arrow keys, Home and End; preset buttons give keyboard access to the 3D tour. Explain selection in text as well as colour. Avoid automatic motion and make quantities, units and assumptions visible.
 
@@ -125,4 +133,4 @@ Run `npm run posters` after changing a procedural model or its configuration. It
 - `npm run build:web` produces `dist/web/book.html` with hashed code chunks and GLBs in `book-assets/`. Serve the directory over HTTP. Only diagrams near the viewport are mounted; their code and model assets load when needed.
 - `npm test` rebuilds both editions and exercises the real browser interfaces and shipped GLB.
 
-No CDN, framework or external model service is required at reading time. Add tests for new calculations or meaningful interaction contracts; retain browser checks for loading, fallbacks and a narrow reading column.
+React, D3 and Three.js are bundled locally; reading uses no CDN or external model service. Vite supplies the development server and HTTP builds. The portable export keeps esbuild for its IIFE/binary-model path, and the model preview/poster tools also still use esbuild. The former imperative reader and Pandoc builder are retired. Add tests for new calculations or meaningful interaction contracts; retain browser checks for loading, fallbacks and a narrow reading column.
