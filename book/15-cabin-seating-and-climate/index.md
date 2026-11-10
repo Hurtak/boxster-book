@@ -4,13 +4,25 @@ The seat fixes the driver's relationship to the pedals, steering wheel and instr
 
 The reference 2010 UK Boxster 2.9 has seats with manual fore-and-aft and height adjustment, electrically adjusted backrests and Alcantara seat centres. Air conditioning is standard; automatic climate control is optional. The switches and displays for these standard functions differ from the fully electric seat and automatic climate options below.[^baseline]
 
-Locate the seat supports and the concealed air unit before following their individual mechanisms. The body carries both systems; air and coolant connect only to the climate equipment.
-
 ::: {.book-diagram data-diagram="cabin-explorer"}
 ![A spatial cabin cutaway locates the seat runners, frame and upholstery between the axles, the blower and two heat exchangers ahead of the occupants, and the ducts and coolant pipes connected to the air unit. Structural links distinguish body support from airflow and coolant flow.](diagrams/cabin-explorer/poster.svg)
 :::
 
 ![Optional comfort seats with driver memory in a cabin fitted with PDK and other optional equipment. Photo: Porsche AG, *The Boxster* (UK, 01/10), pp. 70–71. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).](images/porsche-optioned-cabin.jpg){alt="Porsche's period photograph of a tan Boxster cabin, with the seats, steering wheel, dashboard vents and centre-console controls visible."}
+
+## Instruments and everyday controls
+
+The ordinary 2.9 has **black instrument faces**, with the analogue rev counter in the centre. A digital speed readout accompanies it; the left dial carries the analogue speedometer, trip and total distance. The on-board computer supplies selectable information such as range, average consumption and, when fitted, tyre pressures. PDK adds its selection/gear information. The S’s aluminium-coloured faces are a visual comparison, rather than the base specification.[^instruments]
+
+![Optioned S dashboard with PDK multifunction controls. Photo: Porsche AG, *The Boxster* (UK, 01/10), pp. 72–73. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=34).](images/porsche-dashboard-s.png){alt="The period Boxster S dashboard with aluminium-coloured instrument faces, an optional multifunction PDK steering wheel, PCM and automatic climate controls."}
+
+![A schematic dashboard map identifies the three-dial instrument cluster, steering-column controls, audio and climate panels, and the lower console’s roof and equipment-dependent mode controls. A separate key marks optional cruise and multifunction controls.](images/dashboard-controls.svg)
+
+Column controls put indicators/main beam, wipers and on-board-computer selection near the driver. Optional **cruise control, 454**, adds a separate stalk: it stores a chosen road speed and requests engine output to maintain it. The UK catalogue gives a 30–240 km/h operating range. Brake or clutch operation interrupts speed control; the reference system sets speed rather than following another vehicle’s distance.[^cruise]
+
+The standard sports steering wheel provides steering and its airbag. A multifunction wheel adds audio and, with the relevant equipment, telephone/navigation controls. PDK switches or paddles request gear changes; their [two control arrangements](../09-pdk-transmission/index.md#the-selector-and-steering-wheel-controls) remain distinct. A wheel’s appearance cannot establish every electronic function behind it.[^instruments]
+
+Lower in the centre console, the roof and fitted driving-mode switches command their respective systems; [the integration matrix](../18-occupant-protection-and-system-integration/index.md#options-on-the-2010-2.9) explains the equipment dependencies. Storage includes door and console compartments, a locking glovebox and retractable cupholders above it. The rear-bulkhead box shares its space with the optional BOSE installation.[^instruments]
 
 ## A seat is a support structure
 
@@ -89,11 +101,11 @@ The January 2010 UK catalogue offers these choices.[^option-codes]
 | Automatic climate control | 573 | Temperature and solar sensing; automatic cabin regulation |
 | Heated steering wheel | 345 | Requires heated seats; unavailable with the sports steering wheel with gearshift paddles |
 
-The ventilation row combines the full seat description with the abbreviated option-table conditions.[^seat-options]
+The ventilation row combines the full seat description with the abbreviated option-table conditions.[^seat-options] The [colour/trim atlas](../19-reference-atlas-and-index/index.md#colours-and-trim) separates upholstery colour, leather coverage and decorative finishes.
 
 ## Changes in other 2.9 model years
 
-The 2009 technical introduction documents seat ventilation as part of the facelift generation. The January 2010 UK catalogue establishes the reference combination of seats and climate choices. The sources inspected here do not establish a separate ordinary 2.9 seat or heater redesign for 2011 or 2012. Later service-catalogue coverage supports the general architecture, but is not a complete annual UK ordering history.[^years]
+Seat ventilation arrived with the facelift generation; the January 2010 UK catalogue establishes this chapter’s seat/climate choices.[^years] Later annual UK ordering and component entries are recorded in the [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix).
 
 ## The S, Spyder and Black Edition
 
@@ -134,3 +146,7 @@ Ageing separates airflow faults from temperature faults. A restricted filter or 
 [^spyder]: Porsche, *The Boxster Spyder*, UK edition 01/10, printed pp. 10–11, 32–35 and 38–39, [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=18). Seat-heating dependency is explicit in the option table.
 
 [^black]: Porsche, *Boxster S Black Edition Price List*, UK edition 03/2011, printed pp. 12–13 / PDF p. 7, [original price list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0). The scanned original was inspected visually.
+
+[^instruments]: Porsche, *The Boxster*, UK 01/10, printed pp. 72–73 and 76–77, [original PDF pp. 34 and 36](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=34): instrument colours, displays, wheel functions and cabin storage. Porsche MY2010 North American handbook, printed overview p. 10 and on-board computer pp. 130–146, corroborates control roles; regional dial scales and warning logic are not reproduced. Diagram groups controls and is not a literal left/right-hand-drive dashboard drawing.
+
+[^cruise]: Porsche, *The Boxster*, UK 01/10, printed p. 76 and option table p. 110, [original PDF](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=36): option 454, separate control stalk, 30–240 km/h. Porsche MY2010 North American handbook, printed pp. 84–85, [PDF pp. 86–87](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=86), supports cancellation by brake/clutch; its inconsistent mph parenthesis is not adopted.

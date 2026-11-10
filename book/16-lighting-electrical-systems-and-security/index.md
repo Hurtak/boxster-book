@@ -4,8 +4,6 @@ The Boxster's electrical system has two overlapping tasks. It delivers energy to
 
 The reference 2010 2.9 uses a conventional 12-volt system with a battery, a separate starter and an engine-driven alternator. Halogen headlamps are the starting specification; bi-xenon lighting is an option. These distinctions matter when identifying the equipment on a surviving car.[^supply][^lamps]
 
-Start with the distance between the front battery and the rear engine equipment. The 3D view separates the supply and return paths from the controls that request starting and lighting.
-
 ::: {.book-diagram data-diagram="electrical-explorer"}
 ![The front battery connects through a long positive feed to the rear starter and alternator; a protected branch supplies a front halogen lamp, while body and engine earth connections complete the circuit. Ignition and lighting controls have a separate request role.](diagrams/electrical-explorer/poster.svg)
 :::
@@ -78,6 +76,12 @@ Central locking operates the locks together. An alarm adds surveillance and a wa
 
 For the ordinary 2.9, the January 2010 catalogue lists alarm and interior surveillance as option **534**. It lists the S's exterior alarm as standard, with interior surveillance optional. Tracking-system preparation **674** is separate and specified in conjunction with the alarm system. The brochure describes wiring, a higher-capacity battery and a tilt sensor to support subsequent installation of the tracking system.[^security-options]
 
+## ParkAssist and distance sensing
+
+Optional **ParkAssist, 635**, uses ultrasonic sensors in the rear bumper. Selecting reverse enables the rear parking aid; reflected sound pulses let the system estimate distance to detected obstacles. As a detected obstacle gets closer, the warning intervals shorten. This is a distance warning for the driver, with steering and braking still under the driver’s control.[^parkassist]
+
+A pulse travels out and its echo travels back, so distance depends on half the sound’s round-trip travel. Small, angled or sound-absorbing objects may return a poor echo, and the sensing field has blind regions. Clean sensor faces and an audible warning are consequently part of useful operation; an absence of beeps cannot establish that the whole path is clear. The brochure establishes UK option availability, while the handbook explains the sensing limits.[^parkassist]
+
 ## Wipers and mirrors
 
 The standard windscreen wipers offer adjustable intermittent operation as well as continuous speeds. A motor and linkage sweep the blades across the glass; the blades' rubber edges displace water. The washer system supplies fluid through two heated, filtered nozzles. Clear glass depends on the condition of the blades and glass as well as the control system.[^wipers]
@@ -97,10 +101,11 @@ The electrical options chiefly change lighting performance, convenience or surve
 | 534 | Alarm system with interior surveillance for the ordinary Boxster |
 | 674 | Tracking-system preparation in conjunction with the alarm; tracker installation remains separate |
 | 608 | HomeLink programmable remote control for compatible external equipment |
+| 635 | Rear ultrasonic ParkAssist with acoustic distance warning |
 
 ## Changes in other 2.9 model years
 
-The 2009 technical introduction documents the facelift's new front modules, optional dynamic cornering and LED rear-light concept. The January 2010 UK catalogue retains those arrangements. The sources inspected do not establish a distinct annual redesign of the ordinary 2.9's electrical architecture for 2011 or 2012. They also do not justify treating every market's DRL programming as identical.[^lamps][^rear]
+The new front modules, optional dynamic cornering and LED rear-light concept belong to the 2009 introduction.[^lamps][^rear] The [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix) separates this documented arrangement from unresolved later UK equipment/programming changes.
 
 ## The S, Spyder and Black Edition
 
@@ -116,7 +121,7 @@ Identify the lamp units and their associated controls. Confirm levelling, corner
 
 With age, battery condition, cable connections, earths, water entry and previous accessory wiring can affect several systems together. [Roof, glass, seals and drainage](../14-roof-glass-seals-and-drainage/index.md) explains how water is meant to leave the car. A dry-looking cabin surface does not establish the condition of concealed connections.
 
-Porsche documents timed load shutdown and a remote-control standby change after prolonged parking. These behaviours help explain why a parked car is not electrically inert, but they are not a universal parasitic-current test specification. Diagnose the particular car's supply, operating state and fault information before attributing a symptom to a controller.[^standby]
+Porsche documents timed load shutdown and a remote-control standby change after prolonged parking. These behaviours help explain why a parked car is not electrically inert, but they are not a universal parasitic-current test specification. Record supply state and fault information alongside those timed behaviours.[^standby]
 
 [^supply]: Porsche, *The Boxster*, January 2010 UK edition, printed p. 39, [brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=17). General alternator mechanism: DENSO, [“Alternator troubleshooting”, 31 March 2022](https://www.denso-am.eu/news/alternator-troubleshooting), “Alternator overview”. Rectification: DENSO, [*Starters & Alternators Technical Manual*](https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf), “Rectification”. The 12 V system is confirmed by Porsche's manual, printed p. 255 (PDF p. 257). DENSO explains general mechanisms, not the Boxster's alternator rating or control calibration.
 
@@ -159,3 +164,5 @@ Porsche documents timed load shutdown and a remote-control standby change after 
 [^black]: Porsche Cars Great Britain, *Boxster S Black Edition — Price List*, Edition 03/2011, printed pp. 11–12 (PDF pp. 6–7), [original UK scan](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0). Read visually: the scan has no useful extracted text.
 
 [^standby]: Porsche owner's manual, printed p. 246 (PDF p. 248), [load switch-off and remote standby](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=248). These are source-dated operating behaviours, rather than a measured sleep-current limit for every car.
+
+[^parkassist]: Porsche, *The Boxster*, UK 01/10, printed p. 78 and option table p. 106, [original PDF pp. 37 and 49](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=37): rear sensors, reverse activation, acoustic warning and code 635. Porsche MY2010 North American handbook, printed pp. 70–71 / PDF pp. 72–73: four ultrasonic sensors, sensing limits and cleaning. General pulse/echo mechanism: [HELLA, Ultrasound-based parking aid](https://www.hella.com/techworld/en/technical/car-electronics-and-electrics/ultrasound-based-parking-aid-park-distance-control-pdc/); no modern automatic parking or sensor fusion assigned to 987.2.

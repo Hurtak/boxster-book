@@ -4,8 +4,6 @@ The manual drivetrain gives the driver two separate controls. The clutch pedal c
 
 The engine sits ahead of the gearbox in the rear power unit. Turning force passes from the crankshaft through the flywheel and clutch to the gearbox input shaft, through the selected gear pair and then through the final drive to the differential and rear driveshafts. The gearbox and final drive share the transaxle assembly, but perform different tasks. This chapter follows selection and interruption of the drive; [Differential, driveshafts and mounts](../10-differential-driveshafts-and-mounts/index.md) follows its distribution to the rear wheels.
 
-Start with their positions in the car, then separate the clutch stack and inspect the links between the cabin lever, release mechanism, gearbox and rear wheels.
-
 ::: {.book-diagram data-diagram="manual-explorer"}
 ![The manual transaxle sits behind the engine. The flywheel and dry clutch connect its longitudinal input, cables connect the cabin lever to selection, and the final drive connects sideways to the rear half-shafts.](diagrams/manual-explorer/poster.svg)
 :::
@@ -58,6 +56,11 @@ Reverse provides an additional reversing gear path so that the output turns in t
 
 A **3.667:1** first-gear ratio means the input makes about 3.667 revolutions for one revolution of that ratio's output. The final drive adds another reduction. Multiplying the two gives the total reduction between the engine and differential carrier, with the clutch fully engaged.
 
+Ignoring losses, a reduction multiplies torque by the same factor that it divides speed. First gives more wheel torque and less wheel speed than sixth at the same engine input. The explorer applies that relationship to the reference manual’s ratios.
+
+<details class="technical-detail">
+<summary>Manual ratios and one worked example</summary>
+
 | G87/10 selection | Gear ratio | Including 3.875 final drive |
 | --- | ---: | ---: |
 | First | 3.667 | 14.210 |
@@ -70,7 +73,9 @@ A **3.667:1** first-gear ratio means the input makes about 3.667 revolutions for
 
 *Porsche's 2010 technical-data sheet, basic Boxster manual column; totals calculated from its rounded ratios. The S and PDK columns describe different gearing.[^ratios]*
 
-Ignoring losses, a reduction multiplies torque by the same factor that it divides speed. With an illustrative **200 Nm at 3,000 rpm**, first gear gives about **2,842 Nm** after the final drive, turning the differential carrier at about **211 rpm**. In sixth, the same inputs give about **652 Nm** and **921 rpm**. Power is conserved in this ideal calculation: greater torque comes with less rotational speed.
+At an illustrative **200 Nm and 3,000 rpm**, first’s total reduction gives about **2,842 Nm** and **211 rpm** at the differential carrier. The torque is the total before distribution to the wheels. Greater torque comes with less rotational speed; the ideal calculation conserves power.
+
+</details>
 
 ::: {.book-diagram data-diagram="manual-ratio-explorer"}
 ![At an illustrative 3,000 engine rpm and 200 Nm, third gear's 1.407 ratio and 3.875 final drive give 550 wheel rpm, 69.3 km/h with a 2.10 metre circumference, and 1,090 Nm total after the final drive.](diagrams/manual-ratio-explorer/poster.svg)
@@ -78,21 +83,19 @@ Ignoring losses, a reduction multiplies torque by the same factor that it divide
 
 The interactive uses a fixed **2.10 m illustrative rolling circumference**, no clutch or tyre slip, equal rear-wheel speeds and no transmission losses. Wheel speed equals engine rpm divided by total reduction. Road speed follows by multiplying wheel revolutions per minute by circumference and converting minutes to hours. Its torque value is the **total after the final drive**, before distribution between the two wheels.
 
-At a fixed road speed, shifting from second to third changes engine speed by **1.407 ÷ 2.050**. A 6,000 rpm second-gear point therefore corresponds to about **4,118 rpm** in third. The diagram is a relationship calculator, not an acceleration prediction: real engine torque varies with speed and throttle, tyres deflect under load, and the car must overcome inertia and road resistance. [Steering, wheels and tyres](../12-steering-wheels-and-tyres/index.md) explains the tyre contribution.
+At fixed road speed, an upshift lowers the engine speed required by the new ratio. The diagram calculates that relationship rather than predicting acceleration: real engine torque varies with speed and throttle, tyres deflect under load, and the car must overcome inertia and road resistance. [Steering, wheels and tyres](../12-steering-wheels-and-tyres/index.md) explains the tyre contribution.
 
 ## Options on the 2010 2.9
 
 The major transmission alternative is seven-speed **PDK**, which controls two wet clutches and gear selection itself. Its mechanism and Sport Chrono functions are covered in [PDK transmission](../09-pdk-transmission/index.md).
 
-On the manual car, Sport Chrono changes [accelerator response](../06-air-fuel-ignition-and-engine-control/index.md#options-on-the-2010-2.9), while the driver retains control of clutch and gear selection. The six mechanical ratios remain the same.[^chrono]
+Sport Chrono leaves the manual’s six ratios and driver-operated clutch unchanged; its other effects are in the [integration matrix](../18-occupant-protection-and-system-integration/index.md#options-on-the-2010-2.9).[^chrono]
 
 A shorter-throw lever changes the movement needed at the driver's hand, rather than the road gearing. Porsche's contemporary **North American Exclusive Boxster** catalogue lists a short shifter as **XCZ** for Boxster and S. The separate 987 Tequipment catalogue describes the accessory mechanism and notes that cold shift action can be more restricted. Those establish genuine Porsche short-shifter equipment, but the January 2010 ordinary UK option table does not itself list XCZ. Exact UK factory-order availability for a particular build should therefore be checked against its dated order record; no percentage reduction is assigned here.[^short]
 
 ## Changes in other 2.9 model years
 
-The six-speed standard manual belongs to the **2009 facelift introduction**. The technical introduction records a revised housing and engine flange, a changed fifth ratio and the G87/10 designation for the basic models. Earlier five-speed basic Boxsters consequently make a poor source for this car's gearing.[^manual-id]
-
-The January 2010 UK brochure retains the six-speed manual. The more coarsely rounded 2012 US table corroborates broadly matching gearing; no separate 2011 or 2012 UK manual redesign is established.[^later]
+The 2009 introduction records the six-speed G87/10, revised housing/engine flange and a changed fifth ratio. Earlier five-speed base gearing therefore does not describe this car.[^manual-id] The January 2010 UK catalogue retains six speeds; the [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix) distinguishes later US gearing corroboration from unresolved UK revisions.[^later]
 
 ## The S, Spyder and Black Edition
 
@@ -104,7 +107,7 @@ The Spyder and Boxster S Black Edition retain a standard six-speed manual and op
 
 Use the installed G87 transmission identification to distinguish the gearbox from later changes to the lever or knob.
 
-Age can affect several different links in the chain. Friction-lining wear, contamination or loss of clamp load can allow slip. Release-travel problems can cause drag. Wear or damage in cables and their joints can affect selection before the fork or synchroniser is reached. A dual-mass flywheel can deteriorate in its damping mechanism while the driven plate still has usable lining. Describing the symptom precisely—slip under load, incomplete release, lost lever movement, or resistance in one selection—helps distinguish those possibilities. Wear depends on condition and use as well as mileage.[^ageing]
+Age can affect several different links in the chain. Friction-lining wear, contamination or loss of clamp load can allow slip. Release-travel problems can cause drag. Wear or damage in cables and their joints can affect selection before the fork or synchroniser is reached. A dual-mass flywheel can deteriorate in its damping mechanism while the driven plate still has usable lining. Useful distinctions are slip under load, incomplete release, lost lever movement and resistance in one selection.[^ageing]
 
 [^manual-id]: Porsche Cars North America, *2009 Technik Introduction — All Boxster/Cayman Models*, PNA 987 021 09, edition 2/09, printed Transmission pp. **103–104**, [publicly reproduced primary document](https://www.scribd.com/document/972719474/Boxster-2009); also [ManualsLib viewer p. 110](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=110). The introduction contains change descriptions, not a complete manual ratio table.
 

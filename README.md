@@ -1,8 +1,10 @@
 # Porsche Boxster 2.9 book
 
-The book uses the **2010 European/UK Boxster 987.2 2.9-litre** as its reference car. All 18 chapters are drafted: the family introduction, yearly timeline and specification lead into component explanations, options, documented changes and comparisons with the S, Spyder and Black Edition.
+The book uses the **2010 European/UK Boxster 987.2 2.9-litre** as its reference car. Its 18 main chapters lead from the family, yearly timeline and specification into component explanations, options and comparisons. A nineteenth reference section collects the annual equipment matrix, wheel/seat/colour atlases, audio capabilities, option-code index and glossary.
 
 The chapters combine original explanatory diagrams, interactive examples and locally stored period photographs and factory illustrations. Chapter-local research and image credits preserve the evidence behind them. The [editorial review](.agents/book-editorial-notes.md) explains the reading order and where shared explanations belong. The [diagram review](.agents/reviews/diagram-review.md) records the correctness, detail and responsive checks. The [text and source review](.agents/reviews/text-and-source-review.md) records the subsequent 18-chapter factual audit and its evidence limits. The [rendering verification](.agents/reviews/render-verification.md) records the desktop and phone release checks.
+
+The [coverage and consolidation review](.agents/reviews/coverage-and-consolidation.md) records the later mechanism additions, reference appendix, reduced repetition and validation of all 19 reading sections.
 
 [Read the online book](https://hurtak.github.io/boxster-book/). GitHub Actions builds and publishes the latest edition after each successful push to `main`.
 
@@ -18,6 +20,8 @@ book/
     index.md
   ...
   18-occupant-protection-and-system-integration/
+    index.md
+  19-reference-atlas-and-index/
     index.md
 ```
 
@@ -71,6 +75,14 @@ The [Pages workflow](.github/workflows/pages.yml) builds and tests the book on p
 `npm run build:pages` creates the web edition at `dist/site/index.html`, with relative asset URLs that work under the `/boxster-book/` project path. With `npm run serve`, preview it at <http://localhost:8000/site/>. Browser tests also serve this artifact under `/boxster-book/` to check code and 3D-model loading.
 
 The repository's Pages source is **GitHub Actions**. The deployment uses the `github-pages` environment and GitHub's built-in token; no personal access token or committed build output is needed. The `petrhurtak.com` repository supplies the existing build/deploy pattern and owns its custom domain. This project has its own Pages address and no `CNAME` file.
+
+## Reference material and optional detail
+
+The [reference appendix](book/19-reference-atlas-and-index/index.md) collects the annual evidence matrix and visual atlases. **U** means the annual UK evidence has not been established; it is distinct from unavailable equipment. The January 2010 palette preserves its advertised September-at-earliest and through-July qualifications.
+
+The component chapters include crankcase ventilation/oil separation, fuel delivery and vapour recovery, accessory and vacuum drives, cockpit instruments and ParkAssist. The tyre-grip interactive uses illustrative force units and a constant circular envelope; it is not a Porsche tyre calibration. Chapter 18 owns the full Sport Chrono equipment/function matrix.
+
+Wrap optional calculations in native `<details class="technical-detail">` with a `<summary>` title and blank lines around their Markdown content. The reader expands these and source sections for printing, restores the previous open states afterwards, and opens a disclosure when following a fragment or source backlink into it. Main mechanism explanations and all diagram fallbacks remain readable without scripting.
 
 ## Markdown conventions
 

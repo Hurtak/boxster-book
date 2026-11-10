@@ -78,3 +78,9 @@ Material corrections and clarifications:
 Variant scope was independently checked: Spyder **01/10 GB/UK**, printed **18–19 / PDF 8**, **28–31 / PDF 13–14** and **34–35 / PDF 16**, with colophon **PDF 23**; Black Edition **03/2011 UK** scan cover/colophon **PDF 1**, safety **printed 12–13 / PDF 7** and options **printed 16–17 / PDF 9**. The Black Edition scan was visually read from the existing cached original after Dropbox web retrieval failed and a bounded direct request could not resolve its host. Retained its verified safety equipment and optional PDK/PASM/Chrono Plus. Annual UK sensor/software revisions and exact hidden restraint internals remain unresolved; the chapter makes no claim to establish them.
 
 Local audit checks: chapter-only reference/footnote and XML validation, JavaScript parsing and whitespace validation are recorded in the temporary audit report. Earlier browser/build results above belong to the earlier implementation pass; this audit did not repeat the cancelled all-pages render sweep or run a full book build.
+
+## Coverage and consolidation — 10 November 2026
+
+### Integration and mode consolidation
+
+Added one bend/braking/drive example linking the existing suspension, steering, tyres, differential and PSM explanations. The tyre-force model remains owned by chapter12. A single full Sport Chrono matrix separates manual/PDK, PASM and PCM dependencies and retains the unchanged engine rating. Brake assistance/PSM OFF conditions link to chapter13 instead of duplicating its operating paragraph. Research in the existing UK01/10 pp.54–57 and chapter-local mechanism sources supports the retained functions.

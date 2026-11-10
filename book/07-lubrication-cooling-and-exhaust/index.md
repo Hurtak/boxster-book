@@ -2,8 +2,6 @@
 
 The 2010 Boxster 2.9 manages heat in three connected ways. Oil separates moving surfaces and carries heat away from them. Coolant collects heat from the engine and releases it through radiators at the front of the car. Exhaust gas carries another substantial share of the combustion heat through catalysts and silencers to the central outlet. The machinery that produces this heat is described in [engine construction and valve gear](../05-engine-construction-and-valve-gear/index.md); this chapter follows what leaves it.
 
-Start with their positions in the car. The explorer separates the long cooling circuit from the engine's oil system and the short, hot exhaust route around the rear power unit.
-
 ::: {.book-diagram data-diagram="fluids-explorer"}
 ![The rear engine, integrated oil reservoir and oil-to-coolant exchanger connect to a belt-driven coolant pump, front radiator pair through long pipes, and a rear expansion-tank branch. Separate exhaust assemblies and silencers lead to the 2.9's single central outlet.](diagrams/fluids-explorer/poster.svg)
 :::
@@ -23,6 +21,8 @@ Oil delivered under pressure reaches bearing surfaces and the oil-fed mechanisms
 The pressure pump varies its delivery to suit demand. The engine management uses speed, load, oil temperature and the expected change in engine speed to position a control valve. Hydraulic force moves one pump gear axially, changing its overlap with the fixed gear. Less overlap reduces delivery and the work needed to drive the pump. The controller can therefore provide the required supply without making the pump deliver its maximum volume throughout gentle running.[^fluid-demand]
 
 “Electronically controlled” describes the regulation: the crankshaft still provides the mechanical drive. The four scavenge sections retain their separate return function. These distinctions explain how a five-pump system can also be described as having a demand-controlled oil pump.
+
+The [crankcase-ventilation separator](../06-air-fuel-ignition-and-engine-control/index.md#crankcase-ventilation-and-oil-separation) recovers oil mist from blow-by before gases return to the intake. It serves a different flow from these liquid-oil pump circuits.
 
 ## Reading the oil level
 
@@ -90,7 +90,7 @@ Optional PDK brings a further oil-to-coolant exchanger for its clutch and hydrau
 
 ## Changes in other 2.9 model years
 
-The five-pump oil system, demand control and revised cooling arrived with the 2009 engine generation. The sports exhaust was advertised for **April 2009 at the earliest**, as recorded in [the launch timeline](../02-the-yearly-timeline/index.md#the-principal-revision-reaches-customers).[^fluid-years] The January 2010 brochure documents the reference arrangement; no later wholesale redesign of these systems on the 2.9 has been established.
+The five-pump system, demand control and revised cooling arrived with the 2009 engine generation. Sports exhaust was advertised for **April 2009 at the earliest**.[^fluid-years] See the [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix) for the dated evidence beyond this reference arrangement.
 
 ## The S, Spyder and Black Edition
 

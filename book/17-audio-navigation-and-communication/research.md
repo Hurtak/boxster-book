@@ -81,3 +81,9 @@ Independently read the full Porsche training text on [Scribd](https://www.scribd
 Scoped checks pass: 16 footnotes resolve, six local manuscript/image links exist, all chapter SVGs parse, all three chapter JS modules pass `node --check`, speaker counts agree arithmetically, and the scoped `git diff --check` passes. No full build/rendering sweep or Git staging/commit/push. **Regenerate `audio-explorer`** for its text change; generated posters were not hand-edited.
 
 Parent integration added the complete Porsche-authored training-text fallback and publication identity to the first manuscript training citation, preserving its exact printed-page locator and separate UK equipment evidence.
+
+## Coverage and consolidation — 10 November 2026
+
+### Audio consolidation
+
+Moved the reference-oriented speaker/amplifier counts and processing names into appendix Audio capabilities, retaining local mechanism explanations and sources. Simplified PCM telephone prose while preserving HFP/SAP cellular-role distinctions, the compatible-cradle qualification, handset restriction and the lack of an original music-streaming claim. CDR/PCM interface dependencies remain explicit and unchanged in the live figure.

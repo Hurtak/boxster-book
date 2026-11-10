@@ -110,3 +110,9 @@ Retained after independent primary checks: halogen/fog/LED-position versus P75 b
 Black Edition check: rendered/read the primary UK scan cover/colophon (PDF p. 1: Porsche Cars Great Britain, Edition 03/2011) and standard-equipment printed pp. 11–12 / PDF pp. 6–7. The stated standard lighting/mirrors/alarm are supported. The later appended Spyder wording in this scan is not used to identify these clearly headed Black Edition pages. Web access to Dropbox failed and a bounded direct download met a DNS failure; the identity-checked cached original was sufficient.
 
 Remaining scope limits: no annual 2011/2012 ordinary-2.9 equipment continuity or universal DRL coding is inferred; no exact harness routing, ratings, sleep-current limit or diagnosis is claimed. Training text is now accessible via Scribd, but its conflicting cornering activation thresholds are intentionally not reproduced. Local syntax/XML, image/footnote-reference, arithmetic and diff-whitespace checks passed; integrated builds remain parent-owned. The changed `electrical-explorer/model.js` needs parent poster regeneration.
+
+## Coverage and consolidation — 10 November 2026
+
+### ParkAssist addition
+
+Re-read UK01/10 printed78/106 for option635, rear sensors, reverse activation and acoustic warning. Handbook printed70–71 describes four ultrasonic sensors and sensing limits. HELLA’s ultrasound-based parking-aid article supplies pulse/echo principle only, not modern automatic steering/braking or sensor-fusion fitment. New section and option-table row distinguish the warning function from driver control.

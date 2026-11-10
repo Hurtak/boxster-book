@@ -4,8 +4,6 @@ The Boxster's body has to do several jobs in the same small space. It locates th
 
 [The opening chapter](../01-the-2010-boxster-2-9-in-the-987-2-family/index.md#a-roadster-arranged-around-its-engine) locates the major components. Here the useful question is how those spaces fit together, and which parts of the body connect them.
 
-Start with the complete car, then expose the lower shell and its front and rear connections. Selecting a region shows how it meets its neighbours; separating the regions makes those relationships easier to see.
-
 ::: {.book-diagram data-diagram="body-explorer"}
 ![The body shell in the car: a formed floor and centre tunnel join the sills below the doors, with bulkheads across the front and rear of the cabin and the reinforced windscreen frame rising ahead of the occupants.](diagrams/body-explorer/poster.svg)
 :::
@@ -80,13 +78,15 @@ Lift and drag are separate outcomes of pressure acting over the car. Reducing up
 
 ## Options on the 2010 2.9
 
+Exterior choices also included **model-designation deletion, 498**, and the **SportDesign styling package, XAL**. Paint and interior families are collected in the [colour/trim atlas](../19-reference-atlas-and-index/index.md#colours-and-trim). These catalogue appearance choices are separate from the shell’s load paths.[^body-options]
+
 The optional hardtop attaches above the existing roadster shell. Its construction, attachment and sealing belong to [roof equipment](../14-roof-glass-seals-and-drainage/index.md#choices-for-the-2010-2.9).[^hardtop]
 
 Options affecting ride height and wheel clearance are covered in [suspension](../11-suspension-and-wheel-geometry/index.md) and [steering, wheels and tyres](../12-steering-wheels-and-tyres/index.md).
 
 ## Changes in other 2.9 model years
 
-The 2.9 arrived with the facelift's revised front and rear treatment. Porsche's 2009 technical introduction describes its bodyshell technology as essentially the same as the 2005 model for bending and torsional rigidity and side-impact protection.[^facelift-body] That establishes the inherited structural concept at the facelift; it does not establish an unchanged annual body specification throughout the ordinary 987.2 period. No year-by-year change in steel specification, joining method or structural stiffness has been established. The [timeline](../02-the-yearly-timeline/index.md) sets out the supported range changes without making a registration date into a body-construction specification.
+The facelift revised the front and rear treatment while retaining the earlier 987’s broad structural concept. Porsche’s 2009 introduction describes essentially the same bending/torsional-rigidity and side-impact technology as the 2005 model.[^facelift-body] The [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix) separates that inherited concept from unresolved annual UK body revisions.
 
 ## The S, Spyder and Black Edition
 
@@ -129,3 +129,5 @@ Underneath, inspect whether panels and air guides are present and securely retai
 [^spyder-development]: Porsche Engineering, *Magazine 1/2010*, “Hats off! Boxster Spyder – The development of a Derivative”, printed p. 20, [original magazine, PDF p. 20](https://porschecarshistory.com/wp-content/old/Porsche_engineering/PE-01.2010.pdf#page=20).
 
 [^condition]: Porsche, MY2010 owner's manual, printed p. 3, [PDF p. 5](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=5).
+
+[^body-options]: Porsche, *The Boxster*, UK 01/10, printed p. 106, [original option table, PDF p. 49](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=49). Code 498 is a no-cost choice and XAL an optional exterior package; no quantified aerodynamic effect or structural change is inferred.

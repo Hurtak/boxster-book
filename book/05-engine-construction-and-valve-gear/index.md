@@ -4,8 +4,6 @@ The 2010 European Boxster 2.9 has a water-cooled, naturally aspirated flat-six m
 
 This engine belongs to the new generation introduced with the 2009 facelift. It is **port-injected**, even though the contemporary Boxster S uses direct injection. It also dispenses with the earlier engine's intermediate shaft. Those two facts can coexist: direct injection does not define whether an engine has the new timing-drive architecture.[^engine-id][^specification]
 
-Start with the engine's position in the car, then separate its major assemblies. Selecting a part shows how it connects to the surrounding mechanism; the cutaway exposes components that the real crankcase, heads and covers conceal.
-
 ::: {.book-diagram data-diagram="engine-explorer"}
 ![The flat-six sits behind the seats and ahead of the rear axle. Its two horizontal cylinder banks surround a longitudinal crankshaft; heads and four cams sit outside the banks, intake runners above and exhaust manifolds below.](diagrams/engine-explorer/poster.svg)
 :::
@@ -54,19 +52,18 @@ Real valves do not simply snap open at each stroke boundary. Opening takes time,
 
 ## Understanding the dimensions and output
 
-**Bore** is the cylinder's internal diameter; **stroke** is the distance the piston travels between its end positions. The 2.9's 89 mm bore exceeds its 77.5 mm stroke. Multiplying one cylinder's circular area by its stroke gives its swept volume. Multiplying by six gives the engine's displacement:[^dimensions]
+**Bore** is the cylinder's internal diameter; **stroke** is the distance the piston travels between its end positions. The 2.9's 89 mm bore exceeds its 77.5 mm stroke. Multiplying one cylinder's circular area by its stroke gives its swept volume. Multiplying by six gives the engine's displacement; the worked example below shows the calculation.[^dimensions]
 
-**6 × π/4 × 89² × 77.5 ÷ 1,000 ≈ 2,893 cm³.**
+The **11.5:1 compression ratio** compares the cylinder’s largest enclosed volume with its smallest. Torque is turning effect; power is the rate of doing work. At a higher speed the engine can produce more power even after torque starts to fall. The maximum-torque plateau occupies 4,400–6,000 rpm; [gearing](../08-manual-transmission-and-clutch/index.md#ratios-exchange-speed-for-torque) determines the resulting drive at the tyres.[^compression]
 
-This is the volume swept by the pistons, not the total space inside the engine. It excludes the small combustion-chamber volume remaining when a piston is nearest its head. The **11.5:1 compression ratio** compares the cylinder's largest enclosed volume with its smallest. Compression ratio is a geometric relationship; a compression test measures pressure under its own test conditions.[^compression]
+<details class="technical-detail">
+<summary>Worked examples: displacement and power</summary>
 
-**Torque** is the turning effect at the crankshaft. **Power** describes the rate at which the engine does work. For rotation, power equals torque multiplied by angular speed. Using rpm and Nm, the convenient conversion is:
+**6 × π/4 × 89² × 77.5 ÷ 1,000 ≈ 2,893 cm³.** This swept volume excludes the chamber space remaining at the head end of travel. Compression ratio is a volume relationship; a compression test measures pressure under its test conditions.
 
-**Power in kW = torque × rpm ÷ approximately 9,550.**
+**Power in kW = torque in Nm × rpm ÷ approximately 9,550.** At 290 Nm and 6,000 rpm the result is about 182 kW. At the separate 188 kW / 6,400 rpm peak, the relationship implies about 281 Nm. These are calculations from catalogue figures, not new dynamometer measurements.
 
-At the published 290 Nm and 6,000 rpm, that gives about **182 kW**. At the separate peak-power point of 188 kW and 6,400 rpm, the same relationship implies about **281 Nm**. These are calculations from the published figures, not additional dynamometer measurements. They explain why maximum power can occur after the maximum-torque plateau: the engine performs more cycles each second even while torque begins to fall.
-
-The 4,400–6,000 rpm range marks the maximum-torque plateau. [Transmission ratios](../08-manual-transmission-and-clutch/index.md#ratios-exchange-speed-for-torque) determine how that engine torque becomes force at the tyres.
+</details>
 
 ## Crankcase, crankshaft, rods and pistons
 
@@ -102,6 +99,16 @@ The new drive runs without the earlier **intermediate shaft** or its bearing arr
 
 It also distinguishes the internal timing chains from the external accessory belt. An accessory pulley and belt seen in a photograph do not identify a camshaft timing belt. The two drives have different purposes.
 
+## The external accessory drive
+
+A separate **double-sided six-rib poly-V belt** takes rotation from the crankshaft pulley to the alternator, steering pump, air-conditioning compressor and coolant pump. Its two ribbed faces allow the drive to reach the surrounding pulleys. This is the external accessory circuit; the camshafts retain their internal chain drive.[^accessory-drive]
+
+![A functional accessory-drive map connects the crankshaft pulley and common belt to four loads: alternator, hydraulic steering pump, A/C compressor and coolant pump. A hydraulic tensioner controls the belt.](images/accessory-drive.svg)
+
+The tensioner maintains belt loading while its damping limits flutter. Belt grip transmits torque at the pulley surfaces, so condition and tension affect several systems at once. An accessory's rotating shaft still needs its own control: the [clutchless A/C compressor](../15-cabin-seating-and-climate/index.md#two-heat-circuits-one-stream-of-cabin-air) can turn while delivering no useful cooling. A visible moving belt alone therefore does not establish the output of every driven unit.
+
+The **vacuum pump is camshaft-driven**, outside this belt circuit. Its assistance and control functions are explained with [the brake booster](../13-brakes-and-stability-systems/index.md#where-brake-assistance-comes-from).[^accessory-drive]
+
 ## VarioCam Plus: timing and lift
 
 VarioCam Plus is standard on the reference 2.9. It combines two inlet-side adjustments. **Timing** changes when the inlet valves open and close relative to crankshaft position. **Lift** changes how far they open. These are separate dimensions of the valve event.[^variocam]
@@ -122,20 +129,11 @@ The controller chooses a combination using operating conditions, including speed
 
 VarioCam Plus and the 188 kW engine are standard. The January 2010 UK catalogue offers no alternative bore, stroke, pistons or valve gear for the 2.9.[^options]
 
-Sport Chrono changes accelerator response and adds equipment-dependent driving functions, while leaving the published peak output unchanged. Its engine-control effects are covered in [Air, fuel, ignition and engine control](../06-air-fuel-ignition-and-engine-control/index.md). The optional sports exhaust is covered with [the exhaust system](../07-lubrication-cooling-and-exhaust/index.md).[^options]
+External options include [Sport Chrono’s engine-control functions](../06-air-fuel-ignition-and-engine-control/index.md#options-on-the-2010-2.9) and [sports exhaust](../07-lubrication-cooling-and-exhaust/index.md#options-on-the-2010-2.9); the internal reference engine remains the same.[^options]
 
 ## Changes in other 2.9 model years {#other-2.9-model-years}
 
-The 2009 introduction established the architecture described here. The January 2010 UK brochure retains the 2,893 cm³, 188 kW and 290 Nm specification. Porsche's later North American 2012 sheet also retains the 2.9's port injection, VarioCam Plus, 89 mm bore and 77.5 mm stroke.[^years]
-
-| Year | Relationship to the reference engine |
-| --- | --- |
-| 2009 | New 2.9 engine generation introduced; the technical introduction documents its construction. |
-| 2010 | Reference European/UK specification used throughout this chapter. |
-| 2011 | No separate internal redesign established by the sources inspected here. |
-| 2012 | Later US technical data corroborates the core specification; it does not establish every UK production detail. |
-
-The sources establish continuity of the main design; detailed annual UK production revisions remain incompletely documented. The [timeline](../02-the-yearly-timeline/index.md#identify-the-outgoing-car-before-reading-its-specification) distinguishes the outgoing 987.2 from its replacement.
+The 2009 introduction established this engine architecture. The January 2010 UK catalogue retains 2,893 cm³, 188 kW and 290 Nm.[^years] Later mechanical corroboration and unresolved UK internal revisions are collected in the [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix); the replacement 981 belongs to a different generation.
 
 ## The S, Spyder, Black Edition and Cayman
 
@@ -188,3 +186,5 @@ The installed type and serial details identify the engine. Porsche designates th
 [^s]: Porsche, *2009 Technik Introduction*, printed Engine pp. 4 and 16, [viewer p. 10](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=10) and [viewer p. 22](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=22); *The new Boxster*, UK launch edition, printed pp. 26–27 (S DFI) and 126–127 (technical data).
 
 [^special]: Porsche, *The Boxster Spyder*, January 2010 UK edition, printed pp. 24–26 and 41 (technical table; PDF p. 19), [original brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=19); Porsche Netherlands, [Boxster S Black Edition release, 2 February 2011](https://nieuws.porsche.nl/slechts-987-exemplaren-rijk-uitgeruste-boxster-s-black-edition/).
+
+[^accessory-drive]: Porsche, *2009 Technik Introduction*, PNA 987 021 09, 2/09, printed pp. 12–13 and 19, [Porsche-authored text](https://www.scribd.com/document/972719474/Boxster-2009): double-sided six-groove poly-V belt, hydraulic tensioner and exhaust-camshaft vacuum-pump drive. Driven-unit relationships: Porsche PET 987209, 19 July 2018, illustration 101-010, [PDF pp. 37–38](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=37). Functional drawing does not reproduce exact wrap angles or pulley positions.

@@ -78,7 +78,7 @@ Weight needs the same attention to definitions. The table gives 1,335 kg DIN and
 
 *Three reference points for the manual car. The EC allowance is a convention within its quoted unladen figure; the gross limit describes the permissible loaded vehicle. Diagram: author, using Porsche's technical table.*
 
-Permissible gross weight is a limit for the loaded vehicle, not another estimate of empty weight. Subtracting the manual's DIN figure from its gross figure gives 300 kg; subtracting EC gives 225 kg because the nominal driver and luggage are already counted. Those calculations use brochure values only. Real loading decisions require the individual car's actual specification and applicable vehicle and axle limits. Adding the same 75 kg allowance twice would confuse the comparison.
+Permissible gross weight limits the loaded vehicle. Loading decisions require the individual car's specification and applicable vehicle and axle limits; count the EC driver/luggage allowance only once.
 
 ## Factory options, grouped by purpose
 
@@ -99,7 +99,7 @@ These are selected January 2010 identifiers; the brochure directs buyers to a se
 
 ## Combinations matter
 
-Options are not independent boxes. **Sport Chrono Plus requires PCM**, adding its display and personalisation functions to the basic Sport Chrono concept. PDK unlocks Sport Chrono's Launch Control and special shift strategy; PCM and PDK are different prerequisites serving different functions. PASM remains a separate suspension choice. A dashboard stopwatch alone does not prove the presence of PDK, PCM or adaptive dampers.[^chrono]
+Options form equipment combinations. Sport Chrono Plus requires PCM; Launch Control requires PDK and Sport Chrono. PASM remains a separate choice. The [complete function matrix](../18-occupant-protection-and-system-integration/index.md#options-on-the-2010-2.9) separates those dependencies.[^chrono]
 
 The mechanical differential's January 2010 entry requires **18- or 19-inch wheels**. That means the standard 17-inch baseline cannot simply have this option added without another equipment change. The August 2008 launch catalogue planned availability from **May 2009 at the earliest, with manual transmission**. January 2010 omits that date and transmission qualifier; the omission alone does not establish PDK eligibility or the date of any change. [The differential chapter](../10-differential-driveshafts-and-mounts/index.md#changes-in-other-2.9-model-years) compares the two editions.[^differential]
 
@@ -108,6 +108,8 @@ The mechanical differential's January 2010 entry requires **18- or 19-inch wheel
 :::
 
 Seat ventilation has several prerequisites, detailed in [cabin, seating and climate](../15-cabin-seating-and-climate/index.md#options-on-the-2010-2.9). BOSE also uses the rear-bulkhead storage-box space. Read the full equipment description alongside the option code.[^comfort]
+
+The [option-code index](../19-reference-atlas-and-index/index.md#option-code-index) provides one lookup for the equipment named in this book. Its [wheel](../19-reference-atlas-and-index/index.md#wheel-atlas), [seat](../19-reference-atlas-and-index/index.md#seat-atlas) and [colour/trim atlases](../19-reference-atlas-and-index/index.md#colours-and-trim) show the choices alongside their catalogue scope.
 
 ## Reading an individual car's record
 

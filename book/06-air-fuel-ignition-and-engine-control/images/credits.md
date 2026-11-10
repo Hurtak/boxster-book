@@ -11,3 +11,7 @@
 - Use: retained locally for the user's personal reading. Original project MIT licence does not relicense this photograph.
 
 The air-path and injection-location SVGs, the mixture-feedback D3 view and its poster, and the intake 3D explorer and its poster are original project work, based on the mechanisms documented in `../research.md`. They reproduce no Porsche diagram geometry.
+
+## Coverage additions — 10 November 2026
+
+`fuel-supply-and-vapour.svg` and `crankcase-ventilation.svg`: original functional maps of separate liquid, vapour and breather/oil-return paths.

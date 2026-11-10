@@ -58,6 +58,12 @@ The Spyder and Black Edition pursue different aims despite sharing a peak-power 
 
 The **Cayman** is the related fixed-roof coupé. Shared technical material is useful where a source covers both cars, but their specifications and complete assemblies can differ.[^cayman] The [engine chapter](../05-engine-construction-and-valve-gear/index.md#the-s-spyder-black-edition-and-cayman) gives a specific example. Cayman photographs are labelled wherever they illustrate a shared detail.
 
+## Reading evidence and condition
+
+A build record identifies original equipment; physical inspection identifies what is fitted now. Service invoices can explain the difference. Likewise, a symptom describes behaviour rather than proving one failed part: record when it occurs, the operating conditions and the relevant measurements before choosing a remedy. Component chapters retain their particular identification marks and wear mechanisms.
+
+The [reference appendix](../19-reference-atlas-and-index/index.md) collects dated equipment comparisons, visual atlases, option codes and a glossary. Use the annual matrix to distinguish a documented carryover from an unverified entry; use the glossary when a term interrupts the explanation.
+
 ## Reading this book
 
 The chapters explain the ordinary **2010 European/UK 2.9** first, with the standard manual and optional PDK distinguished where necessary. Options and other derivatives follow the mechanism they change. [Reading an individual car's record](../03-the-2010-boxster-2-9-specification-and-options/index.md#reading-an-individual-cars-record) explains how to compare factory equipment, present components and service history. In the component chapters, identification and ageing focus on the features particular to that system.
@@ -68,7 +74,7 @@ Keep **announcement date, build date, model year and first registration** separa
 
 The original diagrams simplify shapes, routes and motions so that relationships remain visible. Treat them as explanatory schematics unless a dimension is explicitly sourced. Interactive controls let you isolate a change; they do not reproduce Porsche's complete control software or measured behaviour. Photographs supply real visual context, with the pictured variant and origin identified.
 
-The reading order moves from context to mechanisms: chapters 2–3 establish dates and equipment; 4–10 follow the body and powertrain; 11–13 explain the connection to the road; 14–17 cover the roof, cabin and electrical equipment. Chapter 18 brings the systems together around occupant protection. Cross-references also let you follow one component directly to its options, related models and ageing.
+The reading order moves from context to mechanisms: chapters 2–3 establish dates and equipment; 4–10 follow the body and powertrain; 11–13 explain the connection to the road; 14–17 cover the roof, cabin and electrical equipment. Chapter 18 brings the systems together around occupant protection; the reference appendix follows it. Cross-references also let you follow one component directly to its options, related models and ageing.
 
 [^baseline]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 8–10 and 126–127, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf). Its colophon identifies Edition 01/10; the website filename is not the publication date.
 

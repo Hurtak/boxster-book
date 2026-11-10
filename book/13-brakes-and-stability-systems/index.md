@@ -37,6 +37,16 @@ The Boxster has two hydraulic circuits, divided between the front and rear axles
 
 Pressure transmission depends on having the correct fluid in a sound, properly bled circuit. Liquid compresses very little under these conditions. Air or vapour compresses much more readily, using up pedal movement before the pads receive the expected clamping force.
 
+### Where brake assistance comes from
+
+The rear engine’s mechanical **vacuum pump** is driven by the exhaust camshaft on bank 4–6. It evacuates the brake-booster supply and serves other vacuum-operated functions. A long connection brings that low-pressure supply forward to the booster near the master cylinder. The pump is separate from the accessory-belt drive and from the hydraulic ABS/PSM pump.[^vacuum-source]
+
+![The exhaust camshaft drives a rear vacuum pump; a supply line and non-return valve serve the front booster. Pedal operation admits atmospheric pressure to one booster chamber so a pressure difference assists the pushrod into the hydraulic master cylinder.](images/booster-vacuum.svg)
+
+Inside a vacuum booster, a diaphragm separates pressure chambers. Applying the pedal operates valves so that atmospheric pressure acts on one side while the other retains reduced pressure. The resulting force helps the pushrod apply the master cylinder. A non-return valve helps retain the evacuated supply when the source pressure changes. Assistance reduces leg effort; the driver’s pedal still commands braking.[^booster-principle]
+
+The vacuum line carries air, while the master cylinder and brake pipes carry fluid. Losing vacuum assistance can make the pedal much harder without being the same failure as losing hydraulic fluid. Stored assistance is finite after the engine stops. [The mode table](#options-on-the-2010-2.9) distinguishes this ordinary booster from the additional hydraulic brake-assist function.
+
 ### What the four-piston caliper does
 
 A fixed caliper is mounted firmly around the disc, with pistons on both sides. When pressure rises, the pistons push the two pads against opposite faces of the rotating disc. The caliper body carries the reaction forces.
@@ -119,16 +129,7 @@ With **PSM OFF**, ABS and ABD remain available. Stability intervention returns d
 
 ## Changes in other 2.9 model years
 
-The important starting point is the 2009 facelift. The 2.9 adopted 318 mm front discs, replacing the smaller 298 mm front-disc specification of the preceding ordinary Boxster. The revised PSM added prefill and brake-assist functions. These changes were already part of the car used as this chapter's 2010 reference.[^introduction]
-
-| Model year | Relationship to the 2010 reference |
-| --- | --- |
-| 2009 | Introduced the facelift's larger ordinary-model front brakes and revised assistance functions. |
-| 2010 | The reference specification: 318 × 28 mm front and 299 × 20 mm rear iron discs. |
-| 2011 | The North American technical sheet retains 318/299 mm diameters and four-piston fixed calipers; this corroborates the broad design rather than every UK detail. |
-| 2012 | The North American sheet retains four-piston fixed calipers and gives rounded 12.5/11.8-inch diameters, without thicknesses. |
-
-These later US descriptions do not establish every UK running change. Match replacement components to the VIN and fitted equipment; detailed supplier, part-number and software changes are not resolved by these tables.[^later]
+The 2009 facelift enlarged the ordinary model’s front disc from **298 to 318 mm** and introduced PSM prefill/brake-assist functions. Both changes precede this chapter’s reference car.[^introduction] Later US diameter corroboration and unresolved UK running details are collected in the [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix).[^later]
 
 ## The S, Spyder and Black Edition {#where-else-the-system-appears}
 
@@ -169,10 +170,9 @@ Heat introduces another distinction. **Friction fade** concerns a loss of useful
 
 Brake fluid is hygroscopic: it absorbs moisture over time, lowering its boiling point. That makes fluid age relevant even when the pads remain thick. Fluid specification and replacement timing should follow the maintenance requirements for the car and its use.[^fluid]
 
-Seals and flexible hoses also deserve attention as the car ages. Leakage, restricted movement or a piston that fails to release properly can affect pressure or leave a pad dragging. Uneven wear is useful evidence of a problem, but it does not by itself identify which component caused it.
+Seals and flexible hoses also deserve attention as the car ages. Leakage, restricted movement or a piston that fails to release properly can affect pressure or leave a pad dragging. Compare wear on both pads and friction faces.
 
 The parking brake has separate shoes, cables and adjustment. Fresh rear disc pads therefore say little about its condition. Similarly, a wheel-speed signal fault can affect electronic assistance while leaving the visible discs and pads apparently sound. Mechanical braking hardware and electronic brake control need to be considered together.
-
 
 [^hardware]: Porsche Cars North America, *2009 Technik Introduction — All Boxster/Cayman Models*, PNA 987 021 09, edition 2/09, brake-system descriptions, printed p. 119 ([Porsche-authored text reproduced on Scribd](https://www.scribd.com/document/972719474/Boxster-2009)). This separates front and rear disc thicknesses. The UK catalogue independently confirms the diameters, caliper construction and colours: *The Boxster*, edition 01/10, printed pp. 22 and 61 (PDF pp. 9 and 28).
 
@@ -207,3 +207,7 @@ The parking brake has separate shoes, cables and adjustment. Fresh rear disc pad
 [^friction]: AP Racing, [“Pad Characteristics”](https://apracing.com/race-car/brake-pads/pad-characteristics), definitions of bite, fade, wear, noise and effective temperature range; general material behaviour, not a specification of the Boxster's original pad compound.
 
 [^fluid]: Porsche MY2010 North American handbook, printed p. 203 (PDF p. 205), moisture absorption and replacement according to the separate maintenance booklet. Ferodo, *Technical Tips — Vapour Lock No. 1*, explanation of fluid moisture absorption, boiling and compressibility. [Original technical leaflet](https://www.ferodo.com/content/dam/marketing/emea/ferodo/pdf/technicaltips/brakeefficiency/Technical-tip-Vapour-Lock_N1.pdf).
+
+[^vacuum-source]: Porsche, *2009 Technik Introduction*, printed Engine p. 19, [Porsche-authored text](https://www.scribd.com/document/972719474/Boxster-2009), mechanical rotary-vane pump driven by bank 4–6 exhaust camshaft, supplying brake booster and vacuum valves. Porsche PET 987209, illustrations 104-010 (pump) and 604-000/005 (booster/lines); later service architecture, not a production-breakpoint claim.
+
+[^booster-principle]: Porsche, *MY2010 Boxster/Boxster S Owner’s Manual*, WKD 987 021 10, North America, printed pp. 56–58, [original handbook](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=58), vacuum assistance with engine running and finite stored assistance. Generic diaphragm/pressure-difference mechanism: [Bosch, Vacuum brake booster, Operation principle](https://www.bosch-mobility.com/en/solutions/braking-systems/vacuum-brake-booster/); non-return connection: [ATE, SVB24 catalogue, printed p. 23](https://www.ate-brakes.com/media/5215/svb_special_brakes_katalog_web.pdf#page=25). These explain general mechanics, not this Porsche’s supplier or internal geometry.

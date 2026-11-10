@@ -4,8 +4,6 @@ The standard **2010 Boxster 2.9** has independent suspension with coil-over McPh
 
 The engineering problem is more demanding than making a car feel firm. A wheel needs freedom to follow a bump, yet its direction and inclination must remain controlled when the tyre also transmits braking, driving and cornering forces. Meanwhile, the occupants should experience much less movement than the wheel. Suspension reconciles those competing demands through geometry, springing, damping and carefully chosen flexibility.
 
-Start at the front-left wheel, then expose the strut and the links behind it. The translucent wheel makes it easier to distinguish wheel guidance, steering and the anti-roll connection before looking at each function in detail.
-
 ::: {.book-diagram data-diagram="suspension-explorer"}
 ![The front-left suspension is located in the car, then separated into its wheel, hub and carrier, coil-over strut, body mountings, lower arm, fore/aft guide, steering tie rod and anti-roll bar with drop link.](diagrams/suspension-explorer/poster.svg)
 :::
@@ -112,16 +110,7 @@ The [mechanical differential option](../10-differential-driveshafts-and-mounts/i
 
 ## Changes in other 2.9 model years {#other-2.9-model-years}
 
-The main documented revision precedes this chapter's reference car: the 2009 facelift retained the basic strut architecture but revised springs, dampers, anti-roll bars and their tuning. The technical introduction also describes changes to rear rebound stops and spring pads. Those changes already belong to the suspension encountered on a standard 2010 2.9.[^suspension-rear]
-
-| Model year | What the available evidence establishes |
-| --- | --- |
-| 2009 | Revised tuning within the existing front and rear strut architecture; PASM available with a 10 mm reduction. |
-| **2010** | **The reference passive chassis and the UK PASM option described above.** |
-| 2011 | Porsche's technical sheet continues to describe front and rear independent McPherson struts, aluminium arms and anti-roll bars. |
-| 2012 | The corresponding sheet retains that broad architecture for the ordinary 2.9. |
-
-Later North American technical sheets corroborate the layout. Detailed annual UK changes to alignment specifications, components and software have not been established.[^suspension-later]
+The 2009 facelift retained the strut architecture while revising springs, dampers, anti-roll bars and tuning, including rear rebound stops and spring pads.[^suspension-rear] Those changes precede the reference car. Later US layout corroboration and unresolved annual UK details appear in the [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix).[^suspension-later]
 
 ## The S, Spyder and Black Edition {#s-spyder-and-black-edition}
 
@@ -139,10 +128,9 @@ The **Boxster S Black Edition** has Spyder-design wheels with the ordinary chass
 
 Read the spring markings and damper identification. Porsche’s spring colour codes identify chassis version and spring tolerance together; they are more informative than the visible wheelarch gap, but are not a standalone model-year code.[^suspension-struts]
 
-Ageing can affect several functions at once. Damper leakage or internal wear can reduce control; a damaged spring can change support; deteriorated mounts, bushes or joint boots can admit movement, noise or contamination. Corrosion, broken travel stops and non-matching replacement components deserve attention independently of mileage. A knock over a bump does not identify one unique failed part.
+Ageing can affect several functions at once. Damper leakage or internal wear can reduce control; a damaged spring can change support; deteriorated mounts, bushes or joint boots can admit movement, noise or contamination. Corrosion, broken travel stops and non-matching replacement components deserve attention independently of mileage.
 
 Establish the fitted configuration and investigate play or damage before interpreting an alignment or choosing replacement components.
-
 
 [^suspension-layout]: Porsche, *The Boxster*, edition 01/10, UK publication WSLB1101000125, printed pp. 50–51 and 126–127: coil-over McPherson suspension, lateral arms, aluminium construction and technical layout. [Original catalogue PDF](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 

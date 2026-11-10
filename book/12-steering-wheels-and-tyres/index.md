@@ -4,8 +4,6 @@ The steering wheel begins a chain of mechanical movement that ends at two small 
 
 The 2010 Boxster 2.9 combines hydraulically assisted, variable-ratio steering with different wheel and tyre sizes at the front and rear. Its standard wheels are 17-inch Boxster III alloys. Larger catalogue alternatives change the rim, tyre width and sidewall together, rather than simply making the entire wheel-and-tyre assembly much taller.[^baseline]
 
-Start with the steering gear’s position in the car, then follow the column, track rods and hydraulic connections. Separating the front-left rim and tyre also reveals the bead seats that join them.
-
 ::: {.book-diagram data-diagram="steering-explorer"}
 ![The front steering rack joins the driver’s column and both front carriers, while long hydraulic paths reach the engine-driven pump behind the cabin. The separated front-left rim and tyre expose their bead-seat connection.](diagrams/steering-explorer/poster.svg)
 :::
@@ -67,13 +65,30 @@ A useful first physical approximation is that more load requires either more sup
 
 Pressure also changes how much the sidewall works. Underinflation increases flexing and heat, and can change wear and response. Pressure rises as the tyre warms during use. The appropriate reference is the car's specified **cold** pressure for its wheel/tyre combination and operating load, checked against the relevant label and handbook; there is no single pressure prescription for every 987 wheel or journey.[^pressure]
 
+## Slip and the shared grip budget
+
+A tyre can produce cornering force while its wheel points slightly across its actual travel direction. That angular difference is the **slip angle**: tread and casing deform through the contact patch. It does not mean the entire footprint is already sliding freely. Longitudinal slip instead compares the tyre’s circumferential motion with its progress over the road during braking or driving. Neither is the steering-wheel angle.[^grip-principles]
+
+![A tyre viewed from above points slightly to the left of its travel arrow. The angle between its wheel plane and travel direction is slip angle; a lateral force acts across its path.](images/tyre-slip-angle.svg)
+
+Braking or driving force and cornering force share a tyre-road limit. In a simple **friction-circle** picture, spending more of that capacity in one direction leaves less available in the other. A change in surface or wheel load changes the available limit. Real combined-slip behaviour is more complex than a circle and depends on compound, temperature, load and slip; the picture is a teaching envelope.[^grip-principles]
+
+::: {.book-diagram data-diagram="tyre-grip-budget"}
+![With an illustrative capacity of 100 units, demands of 60 longitudinal and 60 cornering units give a resultant of 84.9, within the circle. At 60 longitudinal units, at most 80 cornering units remain.](diagrams/tyre-grip-budget/poster.svg)
+:::
+
+The controls express **force demand**, rather than brake-pedal travel, steering angle or a Porsche calibration. The marker remains at the requested force, including when it exceeds the envelope; the model does not invent the resulting slide or allocate forces among the four wheels. [ABS and PSM](../13-brakes-and-stability-systems/index.md#abs-and-psm) manage braking and stability within the tyre’s available forces.
+
 ## Rolling radius, road speed and engine speed
 
-A nominal outer diameter can be estimated from the sidewall marking:
+A larger rim is generally paired with a shorter sidewall in the catalogue combinations. The complete assembly’s outer diameter consequently changes much less than the rim diameter. Actual rolling circumference also depends on the manufactured tyre, load, pressure, wear and operating conditions.
 
-**Diameter in mm = rim diameter in inches × 25.4 + 2 × width in mm × aspect ratio ÷ 100.**
+<details class="technical-detail">
+<summary>Calculating a nominal tyre diameter</summary>
 
-Multiplying by π estimates circumference. Divide distance travelled by that circumference to estimate wheel revolutions. This is a geometric teaching calculation: actual rolling circumference depends on the tyre's manufactured dimensions, load, pressure, wear and operating conditions. The loaded radius measured from the hub to the ground is not simply half the calculated diameter.
+**Diameter in mm = rim diameter in inches × 25.4 + 2 × width in mm × aspect ratio ÷ 100.** Multiplying by π estimates circumference. Divide travel per minute by circumference to estimate wheel rpm. The loaded radius from hub to road is not simply half this geometric diameter.
+
+</details>
 
 ::: {.book-diagram data-diagram="tyres-rolling-size"}
 ![Compare the rear standard 235/50 ZR17 with the period 265/40 ZR18 combination. Estimated diameters are 666.8 and 669.2 mm; at 60 mph the wheel speeds are approximately 768 and 765 rpm. The larger rim is mostly offset by a shorter sidewall.](diagrams/tyres-rolling-size/poster.svg)
@@ -83,7 +98,7 @@ The rear 17-to-18-inch comparison changes nominal diameter by only about **0.36 
 
 ## Options on the 2010 2.9
 
-The January 2010 UK catalogue offered an alternative 17-inch Cayman II design, two 18-inch designs and several 19-inch designs. The 18-inch choices were Boxster S II, code 408, and Cayman S II, code 409. The 19-inch choices included Carrera S II (419), Carrera Classic (405), SportDesign (407), Carrera Sport (XRR), 911 Turbo (404) and 911 Turbo II (421).[^uk-options]
+The January 2010 UK catalogue offered an alternative 17-inch Cayman II design, two 18-inch designs and several 19-inch designs. The [wheel atlas](../19-reference-atlas-and-index/index.md#wheel-atlas) shows each beside its name and option code.[^uk-options]
 
 Wheel choice also affected another factory option: this catalogue required 18- or 19-inch wheels with the [mechanically locking rear differential](../10-differential-driveshafts-and-mounts/index.md), code 220. Larger wheels alone do not show that the differential was fitted.[^wheel-dependency]
 
@@ -95,7 +110,7 @@ A shorter sidewall changes compliance and the way tyre deformation builds during
 
 ## Changes in other 2.9 model years
 
-The 2008 launch publication and January 2010 UK brochure agree on the 17-inch base combination and hydraulic variable-ratio steering. A North American 2012 Porsche specification sheet also lists the ordinary Boxster's 17-inch tyre sizes. These sources corroborate the principal arrangement at those dates, rather than providing a complete annual history of UK wheel designs, approvals or tyre suppliers. No distinct yearly steering mechanism change is established here.[^years]
+The launch and January 2010 UK catalogues agree on the base 17-inch combination and hydraulic variable-ratio steering.[^years] The [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix) collects later tyre-size corroboration without treating it as a complete UK wheel/approval history.
 
 ## The S, Spyder and Black Edition
 
@@ -109,7 +124,7 @@ The UK Black Edition includes black-painted 19-inch Boxster Spyder wheels. Its [
 
 Check the casting markings behind the spokes, tyre size, service description and manufacture date. These identify the fitted dimensions more reliably than the spoke pattern.
 
-Condition then becomes as important as original specification. Tyre hardening, damage, uneven wear, incorrect pressure and out-of-balance assemblies can change the steering's behaviour. Play in a track-rod joint and damage to a steering bellows concern different parts of the mechanism; fluid leakage concerns the hydraulic circuit. A vibration or pull therefore needs assessment across the wheel, tyre, linkage and geometry rather than being assigned to the rack from the symptom alone. Keeping these relationships separate makes both the original engineering and the ageing car easier to understand.[^condition]
+Condition then becomes as important as original specification. Tyre hardening, damage, uneven wear, incorrect pressure and out-of-balance assemblies can change the steering's behaviour. Play in a track-rod joint and damage to a steering bellows concern different parts of the mechanism; fluid leakage concerns the hydraulic circuit. Assess vibration or pulling across the fitted wheel, tyre, linkage and geometry.[^condition]
 
 [^baseline]: Porsche, *The Boxster*, UK edition 01/10, printed pp. 20–23, 52–53 and 126–127, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
@@ -148,3 +163,5 @@ Condition then becomes as important as original specification. Tyre hardening, d
 [^black]: Porsche, *Boxster S Black Edition Price List*, UK 03/2011, printed pp. 8–9 and 16–17, [original UK list](https://www.dropbox.com/scl/fi/gtavw6els2231u61qjomr/2011-987-Porsche-Boxster-Black-Edition-Price-List-UK.pdf?rlkey=7n0i52owbntdg7d17dfgyo7nw&dl=0).
 
 [^condition]: Porsche MY2010 owner manual, printed pp. 226–230 / PDF pp. 228–232, covers tyre damage, wear, balance, handling and ageing; printed pp. 232–233 covers sidewall and wheel identification. PET illustrations 403-000/001/003 distinguish joints, bellows and fluid-circuit components. These identify separate assessment areas, not a diagnosis from a symptom.
+
+[^grip-principles]: Michelin, *The Tyre: Grip*, ©2001, printed pp. 46–47 (slip angle) and 55–57 (combined grip/ABS), [original manufacturer publication, university-hosted PDF](https://docenti.ing.unipi.it/~a005973/Michelin_Tire_Grip.pdf). Inspected locally. Its example slip percentages and test curves are not Porsche calibration. The interactive uses a constant circular envelope and the geometric relation Fx² + Fy² ≤ capacity²; real tyre behaviour is not simulated.

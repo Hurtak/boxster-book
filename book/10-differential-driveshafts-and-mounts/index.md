@@ -4,8 +4,6 @@ The gearbox supplies one rotating output, but the Boxster has two driven rear wh
 
 These relationships apply to the reference 2010 2.9 with its standard six-speed manual, and to the optional seven-speed PDK. Their internal transmission arrangements differ; both must ultimately drive two independently suspended rear wheels.[^drive-layout]
 
-Start with the rear power unit in the complete car, then follow the drive sideways to the hubs. The cutaway keeps the supports visible so their connection to the body can be distinguished from the rotating drive path.
-
 ::: {.book-diagram data-diagram="drivetrain-explorer"}
 ![The engine lies ahead of the rear transaxle; an open differential connects through two booted CV shafts to bearing-supported rear hubs. A forward engine mount and two transmission supports carry the joined power unit.](diagrams/drivetrain-explorer/poster.svg)
 :::
@@ -90,9 +88,7 @@ The January 2010 UK catalogue offers the mechanical differential as **option 220
 
 ## Changes in other 2.9 model years
 
-The August 2008 launch brochure schedules option 220 for **May 2009 at the earliest**, with manual transmission and 18/19-inch wheels.[^option-launch] The January 2010 description retains the wheel condition but omits the manual-only qualifier. That establishes a wording change; the evidence does not date an eligibility change or the first delivery.
-
-No annual redesign of the 2.9’s differential, shafts or mounts is established. The later parts catalogue distinguishes gearbox-specific applications and replacements.[^pet-shafts]
+The launch catalogue advertised option 220 for **May 2009 at the earliest**, with manual transmission and 18/19-inch wheels.[^option-launch] January 2010 retains the wheel condition but omits the manual-only qualifier: a wording change that does not establish a new eligibility date. The [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix) retains that uncertainty alongside later service-parts evidence.[^pet-shafts]
 
 ## The S, Spyder and Black Edition
 
@@ -104,7 +100,7 @@ The **Spyder** has the mechanical locking differential as standard, integrated w
 
 Confirm the differential and shaft application against the installed transaxle. A hand-rotation test alone is inconclusive: brake drag and the condition of a plate differential can influence what a raised wheel does.
 
-During inspection, useful observations include grease thrown from a damaged boot, deterioration around mounts, fluid leakage at output seals, and whether a noise follows road speed, cornering load or a change between drive and overrun. A clonk can involve more than one clearance in the torque path. Those observations guide diagnosis; they do not identify a failed part on their own. Joint fasteners, hub retention and supported power-unit work require the correct workshop information for the installed components.
+During inspection, useful observations include grease thrown from a damaged boot, deterioration around mounts, fluid leakage at output seals, and whether a noise follows road speed, cornering load or a change between drive and overrun. A clonk can involve more than one clearance in the torque path. Joint fasteners, hub retention and supported power-unit work require the correct workshop information for the installed components.
 
 [^drive-layout]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 42–47 and 126–127, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf). See also the [manual transmission](../08-manual-transmission-and-clutch/index.md) and [PDK](../09-pdk-transmission/index.md) chapters.
 

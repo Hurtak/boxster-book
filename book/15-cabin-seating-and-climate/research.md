@@ -82,3 +82,9 @@ Node checks cover named parts, nonempty finite geometry/normals, finite offsets,
 - Source access limits: ManualsLib page failed in the web tool, but the complete original training text was available through Scribd; the Black Edition live Dropbox URL failed in the web tool and shell DNS, so its existing scan was inspected directly. Full annual ordinary2011/2012 UK orderability remains unestablished; current text is deliberately limited to inspected sources.
 
 Fresh local audit checks: all three chapter JS files pass `node --check`; all six manuscript image paths exist; all thirteen footnote identifiers have exactly one definition; all four current SVGs parse as XML; chapter-only `git diff --check` passes. No numeric specification or calculation changed. No full build, shared edits, staging or commits were performed.
+
+## Coverage and consolidation — 10 November 2026
+
+### Instrument/control addition
+
+Re-read original UK01/10 printed72–73 and76–77, plus handbook controls/BC sections and84–85 for cruise interruption. UK brochure establishes black base dial faces, S aluminium-coloured faces, optional multifunction controls, code454 separate cruise stalk and30–240km/h; handbook’s inconsistent mph parenthesis is not copied. Added an explicitly optioned-S dashboard photo from PDF34, extraction image0 and original functional control-map SVG. Map groups controls without asserting exact LHD/RHD geometry or a full switch inventory. Storage/BOSE shared-space distinction retained. Existing seating/HVAC mechanisms remain intact.

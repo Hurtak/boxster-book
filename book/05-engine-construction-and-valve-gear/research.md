@@ -59,3 +59,9 @@ Freshly checked the linked UK 01/10, UK 08/08, UK Spyder 01/10, PCNA 2010/2012 a
 Independent calculations give 2,892.83 cm³, 182.21 kW at 290 Nm/6,000 rpm and 280.51 Nm at 188 kW/6,400 rpm, confirming the chapter's rounded examples. No factual changes were needed in the JS/model text, static diagrams or generated posters. Existing limits remain: this is not a complete annual UK revision history, special-model parts inventory, interchangeability determination or condition diagnosis.
 
 Parent integration: added the accessible Porsche-authored training-text copy beside the precise ManualsLib locator, retaining the original printed-page reference and PCNA publication identity. Individual viewer requests can be blocked even when the original text remains accessible.
+
+## Coverage and consolidation — 10 November 2026
+
+### Accessory-drive addition
+
+The full Porsche-authored training text was read at printed12–13: double-sided six-groove poly-V belt, hydraulic tensioner and damping. Printed19 identifies the bank4–6 exhaust-cam vacuum-pump drive. PET101-010, PDF37–38, corroborates the alternator, steering-pump, compressor and water-pump pulleys. New `images/accessory-drive.svg` is a functional drive map, not exact pulley/wrap geometry. Worked displacement/power arithmetic is preserved in an optional disclosure; no engine rating changed.

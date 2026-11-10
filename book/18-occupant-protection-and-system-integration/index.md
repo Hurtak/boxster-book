@@ -4,8 +4,6 @@ A Boxster works as a whole because its parts share loads, information and respon
 
 The 2010 European/UK 2.9 has an open passenger compartment, yet its protection does not depend on the fabric hood becoming a structural roof. It combines a reinforced windscreen frame and permanent rear rollover bars with three-point belts, pretensioners, force limiters and six airbags. The detail matters: its side head airbags are in the **doors**, while its thorax airbags are in the **seats**.[^uk-restraints]
 
-Start with their positions around the two seats. The 3D view separates the fixed supports, belt routes and folded airbag modules; the control-system examples later in the chapter explain how decisions differ from physical structure.
-
 ::: {.book-diagram data-diagram="protection-explorer"}
 ![The passenger cell supports the seats, reinforced windscreen frame and two fixed rear bars. Three-point belts attach to the body and rear bars; six folded airbag modules occupy the steering wheel, passenger dashboard, outer seat bolsters and doors.](diagrams/protection-explorer/poster.svg)
 :::
@@ -52,6 +50,12 @@ At the front of the cockpit, a steel reinforcement is integrated into the windsc
 
 The soft top and its supporting bows provide weather enclosure. Opening or closing it does not assemble or withdraw the steel rollover structure. The fixed bars also explain why the wind deflector described in the [roof chapter](../14-roof-glass-seals-and-drainage/index.md) can use the space between and around them: the removable deflector is an aerodynamic accessory carried by an existing structure.
 
+## One bend connects the chassis
+
+Consider a 2010 2.9 approaching a bend under braking. Deceleration shifts wheel loading forwards while the tyres provide the forces that slow and turn the car. Springs, dampers, bushes and wheel geometry govern how those contact patches are supported; the driver turns the front carriers through the steering linkage. The [shared grip budget](../12-steering-wheels-and-tyres/index.md#slip-and-the-shared-grip-budget) explains why additional braking demand leaves less capacity for cornering in the simplified picture.
+
+As braking reduces and drive is applied, torque reaches the rear contact patches through the manual or PDK transmission, final drive, differential and joints. The outside rear wheel follows a longer path than the inside one, which the differential accommodates. PSM can request individual braking and engine-torque treatment if its observations call for correction. These are connected actions: a control request changes a mechanism’s output, and the tyres still have to produce the road forces. The example explains responsibilities without predicting an intervention for a particular bend.
+
 ## Requests, decisions and physical action
 
 Driving control has a different timescale and purpose from crash restraint. A useful way to follow it is through three questions: **what is observed, which controller makes the request, and what physical part acts?** Electrical messages carry information; the eventual force still comes from combustion, clutch friction, tyre contact or hydraulic pressure.
@@ -70,19 +74,22 @@ PSM adds another request source. Its motion information includes wheel speed, st
 
 ## Options on the 2010 2.9
 
-PSM and the ordinary restraints are standard. The options add control requests whose effects depend on the installed hardware:
+PSM and the ordinary restraints are standard. **Sport Chrono 639** and **Sport Chrono Plus 640** change equipment-dependent functions; neither increases the 2.9’s rated 188 kW / 255 PS. Plus requires PCM, while PDK and PASM remain separately ordered equipment.[^modes]
 
-- **PASM, 475:** its controller varies damper resistance within Normal or Sport. The [suspension chapter](../11-suspension-and-wheel-geometry/index.md#options-on-the-2010-2.9) explains the physical response.
-- **Sport Chrono, 639:** changes accelerator response and PSM strategy, plus PDK shift behaviour and the PASM programme when those systems are fitted. [PDK](../09-pdk-transmission/index.md#options-on-the-2010-2.9) covers its Sport Plus and Launch Control functions.
-- **Sport Chrono Plus, 640:** adds [PCM display and memory functions](../17-audio-navigation-and-communication/index.md#options-on-the-2010-2.9), and requires PCM.[^modes]
+| Function | Manual + Sport Chrono | PDK + Sport Chrono | Additional equipment |
+| --- | --- | --- | --- |
+| Sharper accelerator characteristic and harder limiter response in Sport | Yes | Yes | Engine-control change; [chapter 6](../06-air-fuel-ignition-and-engine-control/index.md#options-on-the-2010-2.9) |
+| Later PSM intervention threshold in Sport | Yes | Yes | Standard PSM; [chapter 13](../13-brakes-and-stability-systems/index.md#options-on-the-2010-2.9) retains OFF/reactivation conditions |
+| Performance-focused shift programme | Driver still selects gears | Yes | PDK; [chapter 9](../09-pdk-transmission/index.md#options-on-the-2010-2.9) |
+| Sport Plus and Launch Control | No | Yes | PDK and Sport Chrono |
+| PASM Sport programme request | If PASM fitted | If PASM fitted | Separate PASM 475; its button can select the damping programme independently |
+| PCM performance display and personal memory | Plus only | Plus only | PCM and Sport Chrono Plus 640 |
 
-The same mode button can therefore produce different physical responses in differently equipped cars. A control request needs the appropriate hardware: damper valves, throttle and injectors, transmission clutches or wheel brakes.
-
-The driving scenarios above assume normal modes with PSM switched on. The handbook says PSM OFF deactivates the additional braking functions, with emergency reactivation linked to PSM intervention. Porsche's training also specifies that SPORT with the optional Sport Chrono Package Plus disables the additional hydraulic brake assist. These conditions do not remove ABS or the ordinary vacuum brake booster.[^psm-control]
+The stopwatch identifies a visible part of the package, not every dependency. PASM varies damping; it does not change spring rate or raise/lower the body on demand. The [brake-mode conditions](../13-brakes-and-stability-systems/index.md#options-on-the-2010-2.9) distinguish ordinary vacuum assistance from the additional hydraulic brake assist and explain PSM OFF.[^psm-control]
 
 ## Changes in other 2.9 model years
 
-The 2009 launch and January 2010 UK brochures document the restraint layout described here. No later UK redesign has been established; annual sensor, component and software revisions remain incompletely documented.[^years]
+The launch and January 2010 UK catalogues document this restraint layout.[^years] Later UK sensor/component/software changes remain U in the [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix).
 
 ## The S, Spyder and Black Edition
 

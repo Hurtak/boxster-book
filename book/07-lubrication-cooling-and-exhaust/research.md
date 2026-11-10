@@ -65,3 +65,9 @@ All chapter prose, footnotes, image captions/alt text, credits, three static sch
 - **Bulletins:** the NHTSA-hosted Porsche 8/11 ENU1709, revised15 May 2012, pp. 1–3 confirms the oil-level confirmation-check explanation. Porsche Cayman 28/09 ENU2601,22 September 2009, introduction and steps 3–4, was retrieved in full by direct GET from CHARM (despite the web viewer404); the chapter now links that archive instead of the blog reproduction. Its Cayman-specific controls and installation details remain outside Boxster claims. Launch08/08 UK colophonPDF62 and printed p. 107/PDF50 confirm the prospective April2009-at-earliest wording.
 
 No annual continuity, centre-radiator configuration matrix, thermostat/fan setpoints, failure rate or service interval was inferred. The remaining access limit concerns the Manualslib mirror, with the training text independently available. Local footnote/link/XML checks, JavaScript parsing and a finite-geometry assembly check passed. `fluids-explorer/model.js` requires root-owned poster regeneration; its generated poster was not hand-edited.
+
+## Coverage and consolidation — 10 November 2026
+
+### Supporting-system cross-reference
+
+Added the connection to chapter6’s crankcase oil-mist separation, keeping it distinct from the five liquid-oil pump sections. Annual evidence is consolidated in the reference appendix; existing fluid-system facts and operating conditions are retained.

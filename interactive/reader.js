@@ -82,13 +82,14 @@ export function mountReader() {
 
   // Include every source in print, then restore the reader's disclosure choices.
   const notes = [...noteLists.values()].map((list) => list.parentElement);
+  const printDisclosures = [...notes, ...book.querySelectorAll('details.technical-detail')];
   let printStates = null;
   const setPrinting = (printing) => {
     if (printing && !printStates) {
-      printStates = notes.map((section) => section.open);
-      for (const section of notes) section.open = true;
+      printStates = printDisclosures.map((section) => section.open);
+      for (const section of printDisclosures) section.open = true;
     } else if (!printing && printStates) {
-      notes.forEach((section, index) => { section.open = printStates[index]; });
+      printDisclosures.forEach((section, index) => { section.open = printStates[index]; });
       printStates = null;
     }
   };
@@ -205,8 +206,9 @@ export function mountReader() {
     try { id = decodeURIComponent(location.hash.slice(1)); } catch { id = ''; }
     const target = document.getElementById(id);
     // Footnote and outline links must reveal their destination before scrolling.
-    const noteSection = target?.closest('details.chapter-notes');
-    if (noteSection) noteSection.open = true;
+    for (let disclosure = target?.closest('details'); disclosure; disclosure = disclosure.parentElement?.closest('details')) {
+      disclosure.open = true;
+    }
     const owner = target?.closest('section.level2');
     const next = id === 'book' ? active : chapters.find((chapter) => chapter.element === owner) ?? null;
     const changed = active !== next;

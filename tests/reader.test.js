@@ -9,6 +9,7 @@ import { pathToFileURL } from 'node:url';
 const root = resolve('dist');
 const portable = pathToFileURL(resolve(root, 'book.html')).href;
 const previews = resolve(root, 'previews');
+const chapterCount = (await readdir(resolve('book'))).filter(name => /^\d{2,}-/.test(name)).length;
 let browser, server, web, site;
 
 before(async () => {
@@ -214,7 +215,7 @@ test('reader navigation, sources and browser history preserve chapter context', 
     assert.equal(new URL(page.url()).hash, `#${referenceId}`);
     await page.getByRole('navigation', { name: 'Adjacent chapters' }).getByRole('link').first().click();
     await page.waitForFunction(() => document.querySelector('#book > .level2:not([hidden]) .chapter-meta')?.textContent.includes('Chapter 12 '));
-    assert.match(await chapter.locator('.chapter-meta').innerText(), /Chapter 12 of 18 · \d+ min read/);
+    assert.match(await chapter.locator('.chapter-meta').innerText(), new RegExp(`Chapter 12 of ${chapterCount} · \\d+ min read`));
     assert.doesNotMatch(await chapter.innerText(), /This chapter is planned/);
     await page.goBack();
     await page.waitForFunction((id) => !document.getElementById(id).closest('.level2').hidden, referenceId);
@@ -232,7 +233,7 @@ test('chapter sources start collapsed, toggle by keyboard and expand for printin
   try {
     await page.goto(portable);
     await page.locator('html.reader-enhanced').waitFor();
-    assert.equal(await page.locator('details.chapter-notes').count(), 18);
+    assert.equal(await page.locator('details.chapter-notes').count(), chapterCount);
     assert.equal(await page.locator('details.chapter-notes[open]').count(), 0);
     await page.getByRole('navigation', { name: 'Written chapters' }).getByRole('link', { name: 'Brakes and stability systems', exact: true }).click();
     const notes = page.locator('#book > .level2:not([hidden]) details.chapter-notes');
@@ -245,14 +246,14 @@ test('chapter sources start collapsed, toggle by keyboard and expand for printin
     assert.equal(await notes.locator('ol').isVisible(), false);
     await notes.screenshot({ path: resolve(previews, 'sources-collapsed-phone.png') });
     await page.emulateMedia({ media: 'print' });
-    await page.waitForFunction(() => document.querySelectorAll('details.chapter-notes[open]').length === 18);
+    await page.waitForFunction(expected => document.querySelectorAll('details.chapter-notes[open]').length === expected, chapterCount);
     for (const list of await page.locator('.chapter-notes ol').all()) assert.ok(await list.isVisible());
     await page.emulateMedia({ media: 'screen' });
     await page.waitForFunction(() => document.querySelectorAll('details.chapter-notes[open]').length === 0);
     await page.locator('#book > .level2:not([hidden]) .footnote-ref').first().click();
     await notes.locator('ol').waitFor({ state: 'visible' });
     await page.emulateMedia({ media: 'print' });
-    await page.waitForFunction(() => document.querySelectorAll('details.chapter-notes[open]').length === 18);
+    await page.waitForFunction(expected => document.querySelectorAll('details.chapter-notes[open]').length === expected, chapterCount);
     await page.emulateMedia({ media: 'screen' });
     await page.waitForFunction(() => document.querySelectorAll('details.chapter-notes[open]').length === 1);
     assert.ok(await notes.evaluate((element) => element.open), 'Printing must retain a section the reader had opened');
@@ -374,16 +375,16 @@ test('Pages index loads interactive code and models under the project URL', asyn
   } finally { await page.close(); }
 });
 
-test('all eighteen chapters have offline illustrations and chapter-local source links', async () => {
+test('every chapter and the reference appendix have offline illustrations and local source links', async () => {
   const context = await browser.newContext({ offline: true, viewport: { width: 390, height: 844 } });
   try {
     const page = await context.newPage();
     await page.goto(portable);
     const written = page.getByRole('navigation', { name: 'Written chapters' });
     await written.waitFor();
-    assert.equal(await written.getByRole('link').count(), 18);
+    assert.equal(await written.getByRole('link').count(), chapterCount);
     const titles = await written.getByRole('link').allTextContents();
-    assert.match(await page.locator('[data-draft-status]').innerText(), /All 18 chapters drafted/);
+    assert.match(await page.locator('[data-draft-status]').innerText(), new RegExp(`All ${chapterCount} chapters drafted`));
     await page.getByRole('link', { name: 'Start reading', exact: false }).click();
     await page.getByRole('heading', { level: 1, name: titles[0], exact: true }).waitFor();
     for (const title of titles) {
@@ -589,6 +590,81 @@ test('component tours locate, connect, separate and focus their parts while reta
       assert.deepEqual(errors, []);
     } finally { await page.close(); }
   }
+});
+
+test('the grip budget retains force requests beyond capacity and restores them after remounting', async () => {
+  const context = await browser.newContext({ offline: true, viewport: { width: 390, height: 844 } });
+  try {
+    const page = await context.newPage();
+    await page.goto(portable);
+    let figure = await ready(page, 'tyre-grip-budget');
+    await figure.getByRole('button', { name: 'Too much demand', exact: true }).click();
+    assert.equal(await figure.locator('.diagram-interactive').getAttribute('data-grip-within'), 'false');
+    assert.equal(await figure.getByRole('slider', { name: 'Cornering force demand', exact: true }).inputValue(), '90');
+    assert.match(await figure.locator('.diagram-explanation').innerText(), /exceeds the envelope/);
+    await figure.getByRole('button', { name: 'Reduced capacity', exact: true }).click();
+    assert.equal(await figure.locator('.diagram-interactive').getAttribute('data-grip-capacity'), '70');
+    assert.equal(await figure.locator('.diagram-interactive').getAttribute('data-grip-within'), 'false');
+    await page.evaluate(() => { location.hash = document.querySelector('#book > section.level2').id; });
+    await figure.locator('.diagram-stage svg').waitFor({ state: 'detached' });
+    figure = await ready(page, 'tyre-grip-budget');
+    assert.equal(await figure.getByRole('slider', { name: 'Available grip capacity', exact: true }).inputValue(), '70');
+    await figure.getByRole('button', { name: 'Straight braking', exact: true }).click();
+    assert.equal(await figure.locator('.diagram-interactive').getAttribute('data-grip-within'), 'true');
+    assert.equal(Number(await figure.locator('.diagram-interactive').getAttribute('data-grip-remaining')), 0);
+  } finally { await context.close(); }
+});
+
+test('the reference atlas is readable offline and optional calculations print without losing disclosure state', async () => {
+  const context = await browser.newContext({ offline: true, viewport: { width: 390, height: 844 } });
+  try {
+    const page = await context.newPage();
+    await page.goto(portable);
+    const written = page.getByRole('navigation', { name: 'Written chapters' });
+    await written.getByRole('link', { name: 'Reference atlas and index', exact: true }).click();
+    await page.getByRole('heading', { level: 1, name: 'Reference atlas and index', exact: true }).waitFor();
+    const chapter = page.locator('#book > .level2:not([hidden])');
+    assert.equal(await chapter.locator('.reference-atlas.wheels figure').count(), 10);
+    assert.equal(await chapter.locator('.reference-atlas.seats figure').count(), 3);
+    assert.equal(await chapter.locator('.reference-atlas.swatches figure').count(), 31);
+    for (const image of await chapter.locator('.reference-atlas img').all()) {
+      assert.ok(await image.evaluate(element => element.complete && element.naturalWidth > 0));
+      const bounds = await image.boundingBox();
+      assert.ok(bounds.width >= 100 && bounds.x >= 0 && bounds.x + bounds.width <= 390);
+    }
+    assert.match(await chapter.innerText(), /September 2010 at the earliest/);
+    assert.match(await chapter.innerText(), /U · annual UK component revisions/);
+    await chapter.getByRole('link', { name: 'PDK', exact: true }).first().click();
+    await page.getByRole('heading', { level: 1, name: 'PDK transmission', exact: true }).waitFor();
+    await page.locator('.book-name').click();
+    await written.getByRole('link', { name: 'Engine construction and valve gear', exact: true }).click();
+    const detail = page.locator('#book > .level2:not([hidden]) details.technical-detail');
+    assert.equal(await detail.evaluate(element => element.open), false);
+    await detail.locator('summary').focus();
+    await detail.locator('summary').press('Enter');
+    await page.emulateMedia({ media: 'print' });
+    await page.waitForFunction(() => [...document.querySelectorAll('details.technical-detail')].every(element => element.open));
+    for (const disclosure of await page.locator('details.technical-detail').all()) assert.ok(await disclosure.evaluate(element => element.open));
+    await page.emulateMedia({ media: 'screen' });
+    await page.waitForFunction(() => document.querySelectorAll('details.technical-detail[open]').length === 1);
+    assert.ok(await detail.evaluate(element => element.open), 'Keep the calculation the reader opened');
+    assert.equal(await page.locator('details.technical-detail[open]').count(), 1);
+    await page.locator('.book-name').click();
+    await written.getByRole('link', { name: 'Manual transmission and clutch', exact: true }).click();
+    await page.getByRole('heading', { level: 1, name: 'Manual transmission and clutch', exact: true }).waitFor();
+    const manualDetail = page.locator('#book > .level2:not([hidden]) details.technical-detail');
+    await manualDetail.locator('summary').click();
+    const reference = manualDetail.locator('.footnote-ref').first();
+    const referenceId = await reference.getAttribute('id');
+    const noteId = (await reference.getAttribute('href')).slice(1);
+    await reference.click();
+    await page.waitForURL(url => url.hash === `#${noteId}`);
+    await manualDetail.evaluate(element => { element.open = false; });
+    await page.locator(`[id="${noteId}"] a[href="#${referenceId}"]`).click();
+    await page.waitForFunction(id => document.getElementById(id).closest('details').open, referenceId);
+    assert.ok(await reference.isVisible(), 'A source backlink must reopen its optional calculation');
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+  } finally { await context.close(); }
 });
 
 test('engine feedback corrects the mixture without removing the leak, while cooling controls distinguish air and liquid flow', async () => {

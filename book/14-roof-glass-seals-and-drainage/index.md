@@ -4,8 +4,6 @@ The **2010 Boxster 2.9** has an electrically operated fabric roof with a manuall
 
 Three systems make this possible. The mechanism moves and supports the roof. The glass and seals close the openings around it. Channels, drip pans and drains give water a route out of the body. Understanding their separate jobs helps explain why a roof can move correctly yet leak, or remain dry while developing a window or linkage fault.
 
-Start with their positions around the cabin. The 3D view separates the closed roof's cloth, supporting frame and rigid rear glass from its drive and water-management components. The opening sequence appears later in this chapter.
-
 ::: {.book-diagram data-diagram="roof-explorer"}
 ![The ordinary roof sits above the cabin, with its motor, paired side gearboxes and stowage well behind the seats. A separated cutaway identifies the fixed header, manual front latch, supporting frame, fabric, rigid heated rear pane, drive paths, compartment cover and side drainage areas.](diagrams/roof-explorer/poster.svg)
 :::
@@ -112,16 +110,7 @@ The handbook states that cars delivered without a hardtop lack the inserts for i
 
 ## Changes in other 2.9 model years {#other-2.9-model-years}
 
-The documented drainage change below introduced additional filters. The table records their production introduction; earlier cars could receive a retrofit.[^drain-bulletin]
-
-| Period | Relationship to the 2010 reference |
-| --- | --- |
-| 2009-model launch brochure (08/08) | The ordinary facelift catalogue already describes the powered fabric roof, heated rear glass and 50 km/h operation. |
-| From 31 August 2009 | Additional rear drain filters introduced in production, with retrofit provision for earlier cars. |
-| 2010 | The dated UK catalogue establishes the reference roof and the colour, wind-deflector and hardtop choices above. |
-| 2011–2012 | The 2009–2012 parts catalogue covers the same broad ordinary-model drive arrangement; the sources checked do not establish a further redesign of it. |
-
-This is later service coverage, rather than a year-by-year record of the original installations. Annual UK changes to fabrics, colours and individual components have not been fully established.[^years]
+The ordinary launch catalogue already described the powered fabric roof, heated rear glass and 50 km/h operation.[^years] **From 31 August 2009**, additional rear-drain filters entered production, with a retrofit for earlier cars.[^drain-bulletin] The [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix) records this change and the limits of later annual UK colour/component evidence.
 
 ## The S, Spyder and Black Edition {#s-black-edition-and-spyder}
 

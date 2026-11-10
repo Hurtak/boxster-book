@@ -63,6 +63,10 @@ The Spyder changed the compromise. Its 235 kW / 320 PS 3.4-litre DFI engine acco
 
 Porsche Classic's later model summary heads the Spyder **2011**. Preserve that heading when describing that source, while retaining February 2010 as the date planned in the contemporary Dutch announcement. Neither the November 2009 announcement nor the January 2010 brochure makes the Spyder a European MY2009 or MY2010 car. A retrospective heading, a market-specific model year and a calendar launch date answer different questions.[^timeline-classic]
 
+The reference brochure also records a planned palette transition during calendar 2010. **Platinum Silver Metallic, Ice Blue Metallic and Amethyst Metallic** were advertised for **September 2010 at the earliest**; **Arctic Silver Metallic and Atlas Grey Metallic** were listed through **July 2010**. The brochure prints “Artic Silver”; the atlas uses the familiar Arctic spelling. These are catalogue qualifications, not confirmed first/last production dates or a complete model-year colour history.[^timeline-colours]
+
+The [annual equipment matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix) brings these details together with mechanical carryovers and later unresolved UK entries.
+
 ## 2011: a numbered S derivative
 
 The sources reviewed do not reconstruct a complete 2011 UK specification for the ordinary 2.9. Annual colour, price, software and option changes remain less completely documented.
@@ -122,3 +126,5 @@ Use the timeline to identify the generation and the dated equipment documents th
 [^timeline-981]: Porsche Netherlands, [“Porsche presenteert nieuwe Boxster”, 12 January 2012](https://nieuws.porsche.nl/porsche-presenteert-nieuwe-boxster/), new chassis, steering, engines and planned **14 April** Dutch dealer introduction. The precise day is market-specific and prospective in this source.
 
 [^timeline-drains]: Porsche, Technical Information **29/09 ENU 5393**, *Cabriolet Top Compartment Water Drains*, [workshop-archive reproduction](https://charm.li/Porsche/2011/Boxster%20%28987%29%20F6-2.9L/Repair%20and%20Diagnosis/Technical%20Service%20Bulletins/All%20Technical%20Service%20Bulletins/Body%20-%20Convertible%20Top%20Drain%20Information/), “Information” and “Date of Introduction” paragraphs: additional filters on cars manufactured on or after 31 August 2009, with retrofit provision for earlier cars.
+
+[^timeline-colours]: Porsche, *The Boxster*, UK edition 01/10, printed pp. 101–104, footnote on p. 101; [original PDF, p. 48](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=48). The three starred colours have the prospective 09/10-at-earliest qualifier; the text also lists Artic Silver Metallic and Atlas Grey Metallic up to 07/10.

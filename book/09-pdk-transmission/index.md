@@ -4,8 +4,6 @@ The reference 2010 Boxster 2.9 has a six-speed manual as standard. Its optional 
 
 PDK's distinctive feature is preparation. While one ratio carries drive, another can be ready on the other input shaft. The shift then transfers the engine's connection between the two paths. Understanding that separation between **selecting a gear** and **closing a clutch** explains much more than the number of gears alone.
 
-Begin with its position behind the engine, then inspect the nested clutch packs and the components that control and cool them. The electronic controller belongs to the rear luggage-compartment area, separate from the transmission's hydraulic block.
-
 ::: {.book-diagram data-diagram="pdk-explorer"}
 ![Optional PDK behind the engine connects its flywheel, nested K1 and K2 packs, concentric shafts and sample gearing to the rear final drive. Separate hydraulic, electronic and cooling components complete the system.](diagrams/pdk-explorer/poster.svg)
 :::
@@ -78,7 +76,7 @@ As with the [manual clutch](../08-manual-transmission-and-clutch/index.md#the-fl
 
 Porsche describes gears one to six as the performance ratios and states that maximum speed is reached in **sixth**. Seventh is longer, reducing engine speed at a given road speed. A longer ratio also reduces the torque multiplication available to overcome resistance, so the highest numbered gear need not deliver the highest speed.[^catalogue]
 
-The technical data give PDK sixth and seventh ratios as approximately **0.88:1** and **0.62:1**. Holding road speed and all downstream gearing constant, seventh would turn the engine at about **70%** of its sixth-gear speed: 0.62 ÷ 0.88. Thus an illustrative 3,000 rpm in sixth becomes roughly 2,110 rpm in seventh. This comparison uses rounded ratios and assumes fully engaged clutches; it is not a measured road-speed chart.[^ratios]
+With the published rounded sixth/seventh ratios of **0.88:1 and 0.62:1**, seventh needs about **70% of sixth’s engine speed** at the same road speed, assuming fully engaged clutches. The [manual ratio explorer](../08-manual-transmission-and-clutch/index.md#ratios-exchange-speed-for-torque) explains the underlying calculation.[^ratios]
 
 ## Options on the 2010 2.9
 
@@ -90,7 +88,7 @@ The optional paddle wheel is **840**. PASM and the mechanical differential are s
 
 ## Changes in other 2.9 model years
 
-PDK replaced Tiptronic S at the 2009 facelift. Paddle-wheel availability is documented by January 2010, and North American 2012 technical data retain the forward ratios. Exact UK paddle-wheel introduction, annual software revisions and detailed component changes remain unverified.[^years]
+PDK replaced Tiptronic S at the 2009 facelift. The optional paddle wheel is documented by the January 2010 UK catalogue. Later ratios and the limits of annual UK evidence are collected in the [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix).[^years]
 
 ## The S, Spyder and Black Edition
 
@@ -104,7 +102,7 @@ For the UK Black Edition, the March 2011 price list makes the SportDesign steeri
 
 Service records should identify which of the two oil circuits was serviced. An entry saying only “gearbox oil changed” leaves that unresolved; match the work to the installed transmission and the [separate fluid functions](#hydraulics-feedback-and-heat).
 
-Clutch friction surfaces, seals, bearings, hydraulic valves, sensors, wiring and the dual-mass flywheel all contribute to behaviour. A harsh change, delayed engagement, leak or warning is an observation to investigate, not an identification of one failed part. Temperature, operating conditions and stored diagnostic information help distinguish the possibilities. Porsche documents different warning and reduced-operation states; their precise response belongs to the applicable owner's manual.[^temperature]
+Clutch friction surfaces, seals, bearings, hydraulic valves, sensors, wiring and the dual-mass flywheel all contribute to behaviour. Record temperature and operating conditions alongside a harsh change, delayed engagement, leak or warning. Porsche documents different warning and reduced-operation states; their precise response belongs to the applicable owner's manual.[^temperature]
 
 The central relationship remains straightforward: the selected gear establishes a possible mechanical route, the clutch determines its connection to the engine, and the controller coordinates the handover. That is what lets this compact transmission combine ordinary automatic operation with a prepared, rapid change of ratio.
 

@@ -6,6 +6,25 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { kineticEnergy, sampleTimeline } from '../interactive/math.js';
 import { calculateManualRatio } from '../book/08-manual-transmission-and-clutch/diagrams/manual-ratio-explorer/index.js';
 import { differentialSpeeds, openDifferentialTorque } from '../book/10-differential-driveshafts-and-mounts/diagrams/drivetrain-open-differential/model.js';
+import { gripBudget } from '../book/12-steering-wheels-and-tyres/diagrams/tyre-grip-budget/index.js';
+
+test('the tyre force envelope shares capacity and distinguishes requests beyond the limit', () => {
+  assert.deepEqual(gripBudget(60, 80, 100), { resultant: 100, remainingLateral: 80, within: true });
+  assert.equal(gripBudget(60, 90, 100).within, false);
+  assert.equal(gripBudget(100, 0, 100).within, true);
+  assert.equal(gripBudget(120, 0, 100).remainingLateral, 0);
+  assert.equal(gripBudget(60, 60, 70).within, false);
+  let previous = Infinity;
+  for (let force = 0; force <= 120; force++) {
+    const result = gripBudget(force, 0, 100);
+    assert.ok(result.remainingLateral <= previous);
+    assert.ok(Number.isFinite(result.resultant + result.remainingLateral));
+    previous = result.remainingLateral;
+  }
+  for (const args of [[-1, 0, 100], [0, NaN, 100], [0, 0, 0], [0, 0, Infinity]]) {
+    assert.throws(() => gripBudget(...args), RangeError);
+  }
+});
 
 const config = JSON.parse(await readFile(new URL('../book/13-brakes-and-stability-systems/diagrams/brake-explorer/scene.json', import.meta.url), 'utf8'));
 

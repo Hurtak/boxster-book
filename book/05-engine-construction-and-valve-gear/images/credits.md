@@ -18,3 +18,7 @@ These two third-party photographs are retained locally for the user's personal i
 - **Local treatment:** Embedded JPEG extracted with Poppler `pdfimages -f 11 -l 11 -j`, image 001, 527 × 336. Image identity checked against the complete rendered spread; no added labels or changes. Visually inspected 10 November 2026.
 
 The chapter's SVG diagrams and interactive D3 graphics are original explanatory artwork created for the book. They are mechanically simplified and distinguish the 2010 2.9 baseline from the labelled comparison photograph.
+
+## Coverage additions — 10 November 2026
+
+`accessory-drive.svg`: original functional belt-drive map; exact pulley positions, wrap and diameters are not reproduced.

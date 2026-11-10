@@ -4,8 +4,6 @@ The Boxster’s entertainment system has three layers: a source supplies the pro
 
 For the 2010 UK 2.9, the starting point is the **CDR-30** radio/CD unit. Optional **Porsche Communication Management, PCM 3.0**, replaces that control centre and brings the UK catalogue’s navigation package. Sound Package Plus and BOSE are separate choices, available with either unit.[^uk-selection]
 
-Locate that standard system in the car before following the signal path. The view separates the centre-console unit, its internal output stages and the four dashboard/door speakers; selecting a driver reveals its magnet, coil and diaphragm.
-
 ::: {.book-diagram data-diagram="audio-explorer"}
 ![The standard CDR-30 is in the centre console, with two tweeters on the dashboard and one woofer in each door. Schematic aerial reception and vehicle electrical power are shown separately; open speaker sections reveal the fixed magnet, voice coil and diaphragm.](diagrams/audio-explorer/poster.svg)
 :::
@@ -48,7 +46,7 @@ This distinction matters in an older car: an operating receiver can locate the c
 
 *Select a source, head unit and sound package. AUX requires the optional interface; USB/iPod control requires PCM and its interface in the January 2010 UK specification. The specific DVD 5.1 example requires PCM and BOSE. An unavailable combination stops the programme path and explains the missing equipment.*
 
-BOSE also separates **recorded surround** from **processed surround**. With PCM, a suitable audio or video DVD can supply discrete 5.1 music: five main programme channels plus a low-frequency-effects channel. PCM’s integral single CD/DVD drive can do this; the optional six-disc changer is not required. For stereo sources, Centerpoint processing derives a surround presentation from two-channel material. SurroundStage distributes the resulting channels among the speakers. AudioPilot uses a cabin microphone to adapt playback to ambient noise; its purpose differs from the telephone microphone’s capture of speech.[^bose-processing] These functions change reproduction, not the original number of channels recorded on a CD.
+BOSE can process stereo into a surround presentation. With PCM, a suitable DVD can instead supply discrete 5.1 music through its integral drive; the optional changer is not required. Processing does not change the number of channels originally recorded. The [audio reference table](../19-reference-atlas-and-index/index.md#audio-capabilities) collects speaker counts, amplifier ratings and processing names.[^bose-processing]
 
 ## External players and telephone equipment
 
@@ -56,7 +54,7 @@ The centre-console storage compartment is the location to inspect for the option
 
 Bluetooth needs equally careful identification. **Mobile phone preparation**, **619**, or **618** with the mounting arrangement, supplies hands-free calling through the Hands-Free Profile, HFP. The mobile telephone remains the device connected to the cellular network; the car supplies the speech interface and basic call control. In Bluetooth-only operation the phone uses its own aerial; a compatible aerial-connected cradle can change that aerial path. This was offered with CDR-30 as well as PCM.[^hfp]
 
-The optional **telephone module for PCM**, **666**, adds a different capability: a GSM telephone within the car. It can use a SIM inserted into PCM, or compatible SIM Access Profile, SAP, communication with a mobile phone. In SAP operation the car uses the SIM information and its own radio/aerial path. The module can also work with HFP-only phones, in which case the phone retains the cellular connection. The optional cordless handset, **669**, belongs to this module and cannot handle calls made through HFP.[^telephone]
+The optional **PCM telephone module, 666**, puts a GSM telephone in the car. It uses a direct SIM or compatible **SIM Access Profile (SAP)** link and the car’s radio/aerial. In HFP mode, the phone retains that cellular role. Its optional handset, 669, cannot handle HFP calls. The [reference table](../19-reference-atlas-and-index/index.md#audio-capabilities) separates these original capabilities from present network/device compatibility.[^telephone]
 
 ![Three telephone arrangements distinguish the device that actually connects to the mobile network: the mobile phone in HFP mode without an aerial-connected cradle, or the PCM telephone module with a direct SIM or compatible SAP connection.](images/telephone-paths.svg)
 
@@ -68,11 +66,11 @@ Pairing establishes the Bluetooth link. Completing a call still requires compati
 
 PCM/navigation is **P23**; Sound Package Plus **490** and BOSE **680** work with either head unit. The integrated changers are **692** for CDR-30 and **693** for PCM. PCM-specific options include telephone module **666**, voice control **671** and electronic logbook **641**. The phone preparation and audio interface remain additional selections, with the different interface capabilities described above.[^uk-selection]
 
-Sport Chrono **Plus**, **640**, requires PCM. It adds the PCM performance display for lap-time evaluation and personal-memory functions to Sport Chrono’s vehicle functions. It is not a requirement for ordinary music or navigation. The [closing integration chapter](../18-occupant-protection-and-system-integration/index.md#options-on-the-2010-2.9) connects these display functions with the driving modes.[^chrono]
+Sport Chrono **Plus, 640**, adds PCM performance-display and personal-memory functions, as shown in the [integration matrix](../18-occupant-protection-and-system-integration/index.md#options-on-the-2010-2.9). Ordinary music/navigation does not require it.[^chrono]
 
 ## Changes in other 2.9 model years
 
-The UK launch brochure, published in August 2008 for the facelift’s arrival, already presents CDR-30, touchscreen PCM, the two sound upgrades and the different CDR/PCM external-audio interfaces. These functions belong to the 987.2 introduction.[^launch] A complete annual UK software, telephone-profile and device-compatibility history through 2012 remains unverified; identify the installed unit and software when those details matter.
+The launch catalogue already lists CDR-30, PCM, sound upgrades and the differing CDR/PCM external-audio interfaces.[^launch] See the [annual matrix](../19-reference-atlas-and-index/index.md#annual-equipment-matrix) for annual evidence; installed software and device compatibility remain individual identification questions.
 
 ## The S, Spyder and Black Edition
 
