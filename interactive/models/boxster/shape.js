@@ -5,7 +5,7 @@ import { profile } from './surfaces.js';
 // flank and under the sill. Ahead of `noseStart` and behind `tailStart` each
 // longitudinal line curves round in plan and closes on the centreline profile of
 // the nose or tail, so the bumpers are part of the same continuous surface.
-// Heights were read from a calibrated side photograph of a 987.
+// Section heights are visual approximations guided by the reference photographs.
 export const noseStart = 1.66,
   tailStart = -1.74;
 export const axles = [1.2075, -1.2075];
@@ -21,17 +21,9 @@ const centre = table([
   [0, 0.83],
   [0.7, 0.81],
   [0.95, 0.77],
-  [1.2, 0.718],
-  [1.45, 0.668],
-  [1.66, 0.632],
-]);
-// Half-width of the bonnet shut line, which runs along the inner flank of each wing.
-const bonnetEdge = table([
-  [0.75, 0.6],
-  [1.2, 0.585],
-  [1.6, 0.55],
-  [1.86, 0.47],
-  [1.97, 0.4],
+  [1.2, 0.742],
+  [1.45, 0.701],
+  [1.66, 0.66],
 ]);
 const crestX = table([
   [-1.74, 0.64],
@@ -152,10 +144,9 @@ export function section(z) {
     for (let i = 1; i <= counts[s]; i++) {
       const point = hermite(a, ta, b, tb, i / counts[s]);
       if (s === 0 && lid > 0) {
-        // Toward the nose the rise starts further in, so the headlamps sit on a smooth flank.
-        const knee = (bonnetEdge(z) - 0.05 - 0.035 * smooth(1.2, 1.66, z)) / p1[0];
-        const u = bonnetSpacing(i / counts[s], knee);
-        const y = p0[1] + (p1[1] - p0[1]) * bonnetRise(u, knee);
+        // One smooth crown runs from the bonnet centre to each wing crest.
+        const u = i / counts[s];
+        const y = p0[1] + (p1[1] - p0[1]) * Math.sin(Math.PI * u / 2) ** 2;
         point[0] = lerp(point[0], p1[0] * u, lid);
         point[1] = lerp(point[1], y, lid);
       }
@@ -165,36 +156,36 @@ export function section(z) {
   return points;
 }
 
-// Share of the centre-to-crest rise at a fraction u of the crest width. The lid
-// is nearly flat; from `knee`, just inside the shut line, the wing rises to its crest.
-function bonnetRise(u, knee, lid = 0.32) {
-  const t = Math.min(1, Math.max(0, (u - knee) / (1 - knee)));
-  return lid * Math.sin((Math.PI * u) / 2) ** 2 + (1 - lid) * t ** 3 * (t * (6 * t - 15) + 10);
-}
-// Spends 40% of the columns on the wing flank outside `knee`.
-function bonnetSpacing(v, knee, share = 0.6) {
-  return v <= share ? (v / share) * knee : knee + ((v - share) / (1 - share)) * (1 - knee);
+// Continue the lid's slope into a short rounded shoulder before the bumper
+// turns down. Without that shared tangent the loft forms a pointed corner at
+// its top centre, even when the two mirrored halves have matching normals.
+function roundLidCorner(rows, start, run, tau) {
+  const [,y,z]=rows[0];
+  const slope=(y-centre(start))/(z-start);
+  return [rows[0],[tau,y+slope*run,z+run],...rows.slice(1)];
 }
 
 // Centreline profiles [tau, y, z]; tau 0 is the bonnet or lid edge, 1 the underside.
-const noseProfile = [
-  [0, 0.595, 2.0],
-  [0.22, 0.52, 2.135],
-  [0.38, 0.44, 2.19],
-  [0.5, 0.37, 2.215],
-  [0.68, 0.26, 2.21],
-  [0.85, 0.16, 2.18],
-  [1, 0.125, 2.07],
-];
-const tailProfile = [
-  [0, 0.768, -1.965],
-  [0.18, 0.7, -2.015],
-  [0.34, 0.6, -2.07],
-  [0.5, 0.48, -2.105],
-  [0.7, 0.37, -2.115],
+const noseProfile = roundLidCorner([
+  [0, 0.605, 2.005],
+  [0.1, 0.565, 2.085],
+  [0.22, 0.48, 2.115],
+  [0.38, 0.415, 2.16],
+  [0.5, 0.35, 2.175],
+  [0.68, 0.26, 2.17],
+  [0.85, 0.16, 2.145],
+  [1, 0.125, 2.04],
+],noseStart,.035,.04);
+const tailProfile = roundLidCorner([
+  [0, 0.768, -1.985],
+  [0.1, 0.745, -2.052],
+  [0.18, 0.7, -2.077],
+  [0.34, 0.6, -2.102],
+  [0.5, 0.48, -2.12],
+  [0.7, 0.37, -2.125],
   [0.85, 0.235, -2.1],
   [1, 0.215, -1.97],
-];
+],tailStart,-.035,.035);
 const along = (rows, tau, column) =>
   profile(
     rows.map((row) => [row[0], row[column]]),
@@ -203,23 +194,26 @@ const along = (rows, tau, column) =>
 // Section index to centreline-profile position.
 function tauOf(i) {
   const stops = [0, 0.22, 0.5, 0.86, 1];
-  const s = marks.findIndex((mark, j) => i <= marks[j + 1]);
-  const t = (i - marks[s]) / (marks[s + 1] - marks[s]);
-  return stops[s] + (stops[s + 1] - stops[s]) * t;
+  const s=marks.findIndex((mark,j)=>i<=marks[j+1]);
+  const span=marks[s+1]-marks[s],t=(i-marks[s])/span;
+  const slope=j=>j===0||j===marks.length-1?0:(stops[j+1]-stops[j-1])/(marks[j+1]-marks[j-1]);
+  // Both top and underside meet their mirror with a horizontal tangent.
+  // A linear endpoint mapping leaves a V-shaped ridge along the lid centre.
+  return hermite([stops[s],0],[slope(s)*span,0],
+    [stops[s+1],0],[slope(s+1)*span,0],t)[0];
 }
 const lerp = (a, b, t) => a + (b - a) * t;
 const ramp = (rows, i) => profile(rows, i / (columns - 1));
 
-// Plan-view squareness and height easing per longitudinal line.
+// Rounded bumper corners in plan; the height blend below retains the side
+// profile's tangent instead of joining the bonnet to a second inflated shape.
 function endLine(i, isNose) {
   return isNose
     ? {
-        squareness: ramp([[0, 3.8], [0.3, 3.8], [0.6, 3.5], [1, 2.8]], i),
-        easing: ramp([[0, 1.6], [0.25, 1.0], [0.6, 1.1], [1, 1.2]], i),
+        squareness: ramp([[0, 3.1], [0.3, 3.1], [0.6, 3.0], [1, 2.8]], i),
       }
     : {
-        squareness: ramp([[0, 3.6], [0.3, 3.8], [0.6, 3.7], [1, 3.2]], i),
-        easing: ramp([[0, 2.6], [0.3, 1.8], [0.6, 1.3], [1, 1.3]], i),
+        squareness: ramp([[0, 3.2], [0.3, 3.3], [0.6, 3.2], [1, 2.8]], i),
       };
 }
 
@@ -230,19 +224,24 @@ export function endPoint(i, start, theta, isNose) {
   const yEnd = along(rows, tau, 1),
     zEnd = along(rows, tau, 2),
     z0 = isNose ? noseStart : tailStart;
-  const { squareness, easing } = endLine(i, isNose);
+  const { squareness } = endLine(i, isNose);
   const c = Math.cos(theta),
     s = Math.sin(theta);
   const w = Math.pow(Math.max(0, s), 2 / squareness);
   const x = x0 * Math.pow(Math.max(0, c), 2 / squareness);
-  let y = y0 + (yEnd - y0) * Math.pow(w, easing);
-  // The ducktail lid kicks up just ahead of its trailing edge.
-  if (!isNose && i < marks[1])
-    y += 0.014 * Math.sin(Math.PI * Math.min(1, w)) ** 2 * w * Math.cos((i / marks[1]) * Math.PI / 2);
+  const inside = section(z0 + (isNose ? -0.015 : 0.015))[i];
+  const slope = (y0 - inside[1]) / (isNose ? 0.015 : -0.015);
+  const tangent = slope * (zEnd - z0);
+  const y = (2*w**3-3*w*w+1)*y0 + (w**3-2*w*w+w)*tangent
+    + (-2*w**3+3*w*w)*yEnd + (w**3-w*w)*(yEnd-y0);
   return [x, y, z0 + (zEnd - z0) * w];
 }
 
-export const stations = { tail: 22, middle: 156, nose: 22 };
+export const stations = { tail: 48, middle: 156, nose: 48 };
+
+// Concentrate rows at both ends of the rounded caps. Uniform angular steps
+// become widely spaced, visibly straight facets near a superellipse's poles.
+const endAngle=t=>(.5-.5*Math.cos(Math.PI*t))*(Math.PI/2);
 
 // Rows of half-section points [x, y, z] from the tail tip to the nose tip.
 export function grid() {
@@ -250,7 +249,7 @@ export function grid() {
   const tailStartSection = section(tailStart),
     noseStartSection = section(noseStart);
   for (let k = stations.tail; k >= 1; k--) {
-    const theta = (k / stations.tail) * (Math.PI / 2);
+    const theta = endAngle(k / stations.tail);
     rows.push(tailStartSection.map((point, i) => endPoint(i, point, theta, false)));
   }
   for (let k = 0; k <= stations.middle; k++) {
@@ -258,8 +257,8 @@ export function grid() {
     rows.push(section(z).map(([x, y]) => [x, y, z]));
   }
   for (let k = 1; k <= stations.nose; k++) {
-    const theta = (k / stations.nose) * (Math.PI / 2);
-    rows.push(noseStartSection.map((point, i) => wingDrop(endPoint(i, point, theta, true))));
+    const theta = endAngle(k / stations.nose);
+    rows.push(noseStartSection.map((point, i) => endPoint(i, point, theta, true)));
   }
   return rows;
 }
@@ -268,13 +267,3 @@ const smooth = (a, b, t) => {
   const s = Math.min(1, Math.max(0, (t - a) / (b - a)));
   return s * s * (3 - 2 * s);
 };
-// Ahead of the lamps the wings fall below the bonnet, which ends at its shut
-// line, so the lamp glass faces forward and its lower edge meets the bumper at
-// about 0.48 m.
-function wingDrop([x, y, z]) {
-  // Across the bumper face the step widens into one rounded chin between the lamps.
-  const chin = smooth(1.84, 2.05, z);
-  const outside = smooth(-0.05 - 0.13 * chin, 0.1 + 0.03 * chin, x - bonnetEdge(z));
-  const drop = 0.1 * outside * smooth(1.7, 2.02, z) * smooth(0.38, 0.68, y);
-  return [x, y - drop, z];
-}

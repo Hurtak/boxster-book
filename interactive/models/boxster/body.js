@@ -44,6 +44,8 @@ const frontFrame = frame([0, 0, 0], [0, 0, 1]);
 const rearFrame = frame([0, 0, 0], [0, 0, -1]);
 const sideFrame = (side) => frame([0, 0, 0], [side, 0, 0]);
 const planFrame = frame([0, 0, 0], [0, 1, 0], new THREE.Vector3(0, 0, -1));
+const leftDiffuser = sdf.roundedBox(-.58,.245,.30,.052,.033);
+const rightDiffuser = sdf.roundedBox(.58,.245,.30,.052,.033);
 
 function regions(p, surface) {
   const list = [];
@@ -53,9 +55,9 @@ function regions(p, surface) {
       name: `headlamp-cover-${side}`,
       frame: lamp,
       sdf: headlampOutline(side),
-      applies: (q) => q.z > 1.45 && q.x * side > 0.3 && q.y > 0.45,
+      applies: (q) => q.z > 1.35 && q.x * side > 0.3 && q.y > 0.45,
       material: p.lens,
-      recess: { depth: 0.075, walls: p.chrome, floor: p.silver },
+      recess: { depth: 0.15, walls: p.chrome, floor: p.silver },
     });
     const tail = frame(
       [side * 0.7, 0.74, -1.85],
@@ -173,7 +175,7 @@ function regions(p, surface) {
     {
       name: 'rear-diffuser',
       frame: rearFrame,
-      sdf: (a, b) => b - 0.29,
+      sdf: (a, b) => Math.min(b-.2,leftDiffuser(a,b),rightDiffuser(a,b)),
       applies: (q) => q.z < -1.7,
       material: p.black,
     }
@@ -279,20 +281,20 @@ export function exterior(parent, p) {
     down,
     p.black
   );
-  // Rear lid with its ducktail trailing edge.
+  // Rear lid; the spoiler is omitted from this reference model.
   seam(
     surface,
     body,
     [
       [-0.6, -0.99],
       [-0.6, -1.4],
-      [-0.55, -1.75],
-      [-0.46, -1.93],
-      [-0.25, -1.975],
-      [0, -1.982],
-      [0.25, -1.975],
-      [0.46, -1.93],
-      [0.55, -1.75],
+      [-0.56, -1.73],
+      [-0.47, -1.88],
+      [-0.25, -1.94],
+      [0, -1.955],
+      [0.25, -1.94],
+      [0.47, -1.88],
+      [0.56, -1.73],
       [0.6, -1.4],
       [0.6, -0.99],
       [0, -0.99],
@@ -301,13 +303,6 @@ export function exterior(parent, p) {
     down,
     p.black
   );
-  // Ducktail lip: a fine highlight line just ahead of the trailing edge.
-  const lip = [];
-  for (let i = 0; i <= 40; i++) {
-    const x = -0.44 + (0.88 * i) / 40;
-    lip.push(surface.on(plan(x, -1.945 + 0.05 * (x / 0.56) ** 4), down, 0.004));
-  }
-  line3(body, lip, 0.006, p.paint);
   // Black engine-air grille across the front of the rear lid.
   const grille = surface.hit(plan(0, -1.05), down);
   const vent = group('rear-lid-grille', body, grille.point.toArray());

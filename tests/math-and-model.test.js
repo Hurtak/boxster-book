@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { Box3, Vector3 } from 'three';
+import { Box3, Vector3, Raycaster } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { kineticEnergy, sampleTimeline } from '../interactive/math.js';
 import { calculateManualRatio } from '../book/08-manual-transmission-and-clutch/diagrams/manual-ratio-explorer/index.js';
@@ -113,4 +113,32 @@ test('the photo-guided car keeps the complete book interface and valid detailed 
   assert.ok(tan&&tan.color.r>tan.color.g&&tan.color.g>tan.color.b);
   const dimensions=new Box3().setFromObject(scene).getSize(new Vector3());
   assert.ok(dimensions.x>1.8&&dimensions.x<2.2&&dimensions.y>1.1&&dimensions.y<1.4&&dimensions.z>4.2&&dimensions.z<4.7,JSON.stringify(dimensions));
+});
+
+test('the shipped car has smooth lid centrelines and proportioned mirrored lamps and seat hoops', async () => {
+  const source=await readFile(new URL('../interactive/models/reference-car.glb',import.meta.url));
+  const {scene}=await new GLTFLoader().parseAsync(source.buffer.slice(source.byteOffset,source.byteOffset+source.byteLength),'');
+  scene.updateMatrixWorld(true);
+  const shell=scene.getObjectByName('body-shell');
+  for(const [z,limit] of [[-1.93,.001],[1.95,.001],[-1.985,.0005],[2.005,.0005]]) {
+    const height=x=>{
+      const hit=new Raycaster(new Vector3(x,2,z),new Vector3(0,-1,0)).intersectObject(shell)[0];
+      assert.ok(hit,`Missing painted lid surface at ${x}, ${z}`);
+      return hit.point.y;
+    };
+    assert.ok(Math.abs(height(.02)-height(0))<limit,`A sharp centre ridge returned at z=${z}`);
+    assert.ok(Math.abs(height(.02)-height(-.02))<1e-6,`The lid is not mirrored at z=${z}`);
+  }
+  const left=new Box3().setFromObject(scene.getObjectByName('headlamp-cover-1'));
+  const right=new Box3().setFromObject(scene.getObjectByName('headlamp-cover--1'));
+  assert.ok(Math.abs(left.min.x+right.max.x)<1e-5&&Math.abs(left.max.x+right.min.x)<1e-5);
+  assert.ok(left.getSize(new Vector3()).distanceTo(right.getSize(new Vector3()))<1e-5);
+  const windscreen=new Box3().setFromObject(scene.getObjectByName('curved-windscreen'));
+  for(const side of [-1,1]) {
+    const seat=new Box3().setFromObject(scene.getObjectByName(side>0?'driver-seat':'passenger-seat'));
+    const hoop=new Box3().setFromObject(scene.getObjectByName(`roll-hoop-${side}`));
+    assert.ok(!hoop.isEmpty(),'The named hoop must retain its geometry after export batching');
+    assert.ok(hoop.max.y>seat.max.y&&hoop.max.y<windscreen.max.y+.015,'The hoop should closely follow the head restraint below the windscreen header');
+    assert.ok(hoop.getSize(new Vector3()).x<seat.getSize(new Vector3()).x,'A hoop should fit behind the seat shoulders');
+  }
 });

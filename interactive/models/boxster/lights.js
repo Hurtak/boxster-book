@@ -6,18 +6,19 @@ import { frame, sdf } from './shell.js';
 // 987.2 headlamp: an egg-shaped glass lying in the sloping nose of the wing,
 // the rounder end outboard and rearward.
 export function headlampFrame(surface, side) {
-  const hit = surface.hit([side * 0.6, 0.615, 3], [0, 0, -1]);
-  return frame(hit.point.toArray(), hit.normal.toArray());
+  const normal = new THREE.Vector3(side * 0.12, 0.66, 0.74).normalize();
+  const hit = surface.hit([side * 0.625, 0.68, 1.78], normal.clone().negate().toArray());
+  return frame(hit.point.toArray(), normal.toArray());
 }
 
 function lampPoints(side) {
-  const tilt = 0.5;
+  const tilt = 0.28;
   const axis = [side * Math.sin(tilt), Math.cos(tilt)];
   const across = [axis[1], -axis[0]];
   return Array.from({ length: 64 }, (_, i) => {
     const phi = (i / 64) * Math.PI * 2;
-    const u = 0.215 * Math.cos(phi),
-      v = 0.13 * Math.sin(phi) * (1 + 0.3 * Math.cos(phi));
+    const u = 0.25 * Math.cos(phi),
+      v = 0.127 * Math.sin(phi) * (1 + 0.2 * Math.cos(phi));
     return [axis[0] * u + across[0] * v, axis[1] * u + across[1] * v];
   });
 }
@@ -29,27 +30,31 @@ export function headlamp(parent, p, f, side, surface) {
   const at = (a, b, depth) => f.from(a, b, depth).toArray();
   const ring = lampPoints(side);
   const inward = n.clone().negate().toArray();
-  line3(root, ring.map(([a, b]) => surface.on(at(a, b, 0.3), inward, 0.002)), 0.005, p.black, true);
-  const tilt = 0.5;
+  line3(root, ring.map(([a, b]) => surface.on(at(a, b, 0.3), inward, 0.002)), 0.0035, p.black, true);
+  line3(root, ring.map(([a, b]) => surface.on(at(a*.978, b*.978, 0.3), inward, 0.003)), 0.0015, p.chrome, true);
+  const tilt = 0.28;
   const axis = [side * Math.sin(tilt), Math.cos(tilt)];
   const lamps = [
-    [0.07, 0.068, true],
-    [-0.085, 0.042, false],
+    [0.11, 0.074, true],
+    [-0.075, 0.052, false],
   ];
   for (const [offset, radius, main] of lamps) {
-    const unit = group(main ? 'main-beam' : 'projector', root, at(axis[0] * offset, axis[1] * offset, -0.04));
-    unit.lookAt(new THREE.Vector3(...at(axis[0] * offset, axis[1] * offset, 1)));
+    const hit=surface.hit(at(axis[0]*offset,axis[1]*offset,.3),inward);
+    const point=hit.point.clone().add(new THREE.Vector3(0,main?-.08:-.065,-.035)).toArray();
+    const unit = group(main ? 'projector' : 'high-beam-reflector', root, point);
+    // The optics aim along the road; only the outer cover follows the wing.
+    unit.lookAt(new THREE.Vector3(...point).add(new THREE.Vector3(side*.025,-.005,1)));
     mesh(unit, new THREE.CylinderGeometry(radius * 1.08, radius * 0.9, 0.05, 48, 1, true), p.chrome, [0, 0, -0.01], [Math.PI / 2, 0, 0]);
     mesh(unit, new THREE.TorusGeometry(radius, 0.005, 8, 48), p.chrome, [0, 0, 0.012]);
     mesh(unit, new THREE.CircleGeometry(radius * 0.92, 48), p.black, [0, 0, 0.004]);
     const glass = new THREE.MeshPhysicalMaterial({
-      color: main ? '#cfd8de' : '#1b2a35',
-      metalness: main ? 0.9 : 0.3,
+      color: main ? '#304451' : '#ccd4d9',
+      metalness: main ? 0.35 : 0.85,
       roughness: 0.1,
       clearcoat: 1,
     });
-    ellipsoid(unit, [radius * 0.62, radius * 0.62, radius * 0.35], glass, [0, 0, 0.01]);
-    if (main)
+    ellipsoid(unit, [radius * 0.76, radius * 0.76, radius * 0.3], glass, [0, 0, 0.01]);
+    if (!main)
       for (let i = 0; i < 12; i++) {
         const a = (i / 12) * Math.PI * 2;
         line3(unit, [
@@ -57,6 +62,14 @@ export function headlamp(parent, p, f, side, surface) {
           [Math.cos(a) * radius * 0.9, Math.sin(a) * radius * 0.9, 0.006],
         ], 0.0012, p.chrome);
       }
+  }
+  const across=[axis[1],-axis[0]];
+  for(const v of [-.172,-.157,-.142]) {
+    const strip=Array.from({length:25},(_,i)=>{
+      const u=(i/24*2-1)*.078;
+      return surface.on(at(axis[0]*v+across[0]*u,axis[1]*v+across[1]*u,.3),inward,-.025);
+    });
+    line3(root,strip,.0018,p.chrome);
   }
   return root;
 }

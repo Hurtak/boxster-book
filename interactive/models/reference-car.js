@@ -13,7 +13,7 @@ export function referenceCar() {
     reference: '2010 Boxster 2.9',
     paint: 'deep metallic green',
     interior: 'tan',
-    revision: 2,
+    revision: 3,
   };
   const p = palette();
   const body = exterior(car, p);

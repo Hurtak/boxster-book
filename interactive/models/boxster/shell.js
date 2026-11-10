@@ -26,7 +26,10 @@ function loft() {
         b = index(r + 1, c),
         d = index(r, c + 1),
         e = index(r + 1, c + 1);
-      triangles.push(a, b, d, d, b, e);
+      // Mirror the diagonal as well as the vertices. Otherwise interpolation
+      // across a curved quad subtly differs on the two sides of the car.
+      if(c<columns-1)triangles.push(a,b,e,a,e,d);
+      else triangles.push(a,b,d,d,b,e);
     }
   return { positions: new Float32Array(positions), triangles };
 }
@@ -129,7 +132,7 @@ export function buildShell(parent, base, defineRegions) {
       ray.far = 3;
       const result = ray.intersectObject(probeMesh)[0];
       if (!result) return null;
-      const n = result.face.normal.clone();
+      const n = (result.normal ?? result.face.normal).clone().normalize();
       if (n.dot(d) > 0) n.negate();
       return { point: result.point, normal: n };
     },
@@ -142,6 +145,7 @@ export function buildShell(parent, base, defineRegions) {
   };
   const regions = defineRegions(surface);
   const points = Array.from(positions);
+  const pointNormals = Array.from(probe.attributes.normal.array);
   let owner = new Array(triangles.length / 3).fill(-1);
   for (let r = 0; r < regions.length; r++) {
     const region = regions[r];
@@ -164,10 +168,11 @@ export function buildShell(parent, base, defineRegions) {
         if (within(pa.clone().lerp(pb, mid)) === inside[a]) lo = mid;
         else hi = mid;
       }
-      // Keep cut points off the corners to avoid needle triangles.
-      const t = Math.min(0.9, Math.max(0.1, (lo + hi) / 2));
+      const t = Math.min(1-1e-6, Math.max(1e-6, (lo + hi) / 2));
       const v = points.length / 3;
       points.push(...pa.lerp(pb, t).toArray());
+      const normal=vector(pointNormals,a).lerp(vector(pointNormals,b),t).normalize();
+      pointNormals.push(...normal.toArray());
       crossings.set(key, v);
       return v;
     };
@@ -196,11 +201,9 @@ export function buildShell(parent, base, defineRegions) {
     owner = owners;
   }
   positions = new Float32Array(points);
-  const full = new THREE.BufferGeometry();
-  full.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  full.setIndex(triangles);
-  full.computeVertexNormals();
-  const normals = full.attributes.normal.array;
+  // A cut changes topology, not the painted surface. Interpolate the original
+  // smooth normals so tiny cut triangles cannot dent the reflected highlights.
+  const normals = pointNormals;
   const emit = (name, faces, material, offset = null) => {
     if (!faces.length || !material) return;
     const used = new Map();
@@ -215,7 +218,10 @@ export function buildShell(parent, base, defineRegions) {
           const q = vector(positions, v);
           if (offset) q.add(offset);
           pos.push(q.x, q.y, q.z);
-          nor.push(normals[3 * v], normals[3 * v + 1], normals[3 * v + 2]);
+          const normal=vector(normals,v);
+          if(normal.lengthSq()<1e-12)normal.set(0,1,0);
+          else normal.normalize();
+          nor.push(...normal.toArray());
         }
         idx.push(used.get(v));
       }
