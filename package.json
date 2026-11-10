@@ -1,6 +1,7 @@
 {
   "name": "boxster-book",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "python3 scripts/build_book.py",

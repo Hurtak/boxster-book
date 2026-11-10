@@ -91,3 +91,7 @@ Run `npm test` to rebuild both editions and check the energy calculation, GLB co
 The reader uses the Achromatic ledger direction (seed `1652698549`), with a pale blue-grey ground and a centred paper sheet. The initially suggested icon rail was replaced with text navigation because the book has 18 named chapters. The contents list answers “Which chapter do I want to read?” and keeps the 2010 2.9 reference visible in the book heading. System fonts keep the output independent of font downloads.
 
 Chapters other than the brakes sample remain intentional manuscript placeholders. The brakes chapter includes original schematics and interactive diagrams; no photographs have been added. The text column is deliberately capped at 68 characters and centred for reading.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). Third-party dependencies retain their own licenses; their notices are included in the generated reading editions.
