@@ -30,7 +30,7 @@
   --focus: #174b3d;
   --ui: 'Source Sans 3', system-ui, sans-serif;
   --text: 'Source Serif 4', Georgia, serif;
-  --reading-size: 20px;
+  --reading-size: 18px;
   --bar: 72px;
   --sheet-padding: 48px;
   --frame: 32px;
@@ -939,7 +939,7 @@ body:has(.contents-dialog[open]) {
 }
 @media (max-width: 600px) {
   :root {
-    --reading-size: 18px;
+    --reading-size: 16px;
     --bar: 56px;
     --sheet-padding: 24px;
   }

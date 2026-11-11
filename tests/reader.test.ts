@@ -986,7 +986,7 @@ test('cover and chapter reflow from a small phone to a wide desktop, with bundle
       assert.equal(await page.getByRole('button', { name: /(?:Increase|Decrease) text size/ }).count(), 0);
       assert.equal(
         await page.locator('body').evaluate((element: Element) => parseFloat(getComputedStyle(element).fontSize)),
-        width <= 600 ? 18 : 20,
+        width <= 600 ? 16 : 18,
         'Legacy text-size preferences must not override the responsive reading size',
       );
       assert.ok(
