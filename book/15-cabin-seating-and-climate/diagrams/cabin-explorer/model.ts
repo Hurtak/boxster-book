@@ -196,6 +196,7 @@ export function createAssembly() {
     [0, 0.6, 0.84],
     [-0.38, 0.22, 0.26],
     'Outside air enters near the windscreen base and passes through a filter. The electric blower supplies airflow; recirculation changes the inlet source. PET identifies the cowl filter housing and separate blower. The second inlet represents cabin recirculation; the inlet door, cage and motor position are illustrative.',
+    [-0.155, -0.035, 0.062],
   );
   box(blower, [0.33, 0.03, 0.2], m.dark, [0.02, 0.13, 0.02]);
   for (let i = 0; i < 15; i++) box(blower, [0.015, 0.026, 0.18], m.tan, [-0.13 + i * 0.021, 0.15, 0.02]);
@@ -352,6 +353,7 @@ export function createAssembly() {
     [0.25, 0.59, 0.68],
     [0.48, -0.06, 0.32],
     'Pressure and suction connections cross the body separately from heater coolant and the condensate drain. Liquid refrigerant passes through the receiver-drier before the expansion valve; vapour returns towards the engine compressor. The front condensers and rear compressor lie beyond this cutaway. The drier removes moisture inside the refrigerant circuit, not from cabin air. These pipe bends and bracket positions are illustrative.',
+    [0.191, -0.09, 0.42],
   );
   // Connector ends meet the two valve pipes in the assembled position.
   tube(

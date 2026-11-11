@@ -2,9 +2,10 @@
   <title id="title">PDK control, separate oils and heat paths</title>
   <desc id="desc">Functional schematic for the optional seven-speed PDK. Dashed grey electrical commands travel from the separate electronic controller to the hydraulic block; transmission sensors send feedback back to the controller. Solid green arrows show hydraulic supply to two functions: pressure clamps the wet clutches and moves the gear selectors. The same special hydraulic fluid also cools the clutches. Dotted red arrows trace heat from clutch slip, carried by hydraulic fluid to the external oil-to-coolant exchanger, then into engine coolant without mixing the two liquids. A separate gear-oil circuit lubricates the gears and final drive and loses heat through the transmission housing. The two oils must not be mixed. Pipes, return paths and internal routing are omitted.</desc>
   <defs>
-    <marker id="signal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#526c5d" stroke-width="1.8" stroke-linejoin="round"/></marker>
-    <marker id="oil-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
-    <marker id="heat-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 9 5 1 9" fill="none" stroke="#a34e36" stroke-width="1.8" stroke-linejoin="round"/></marker>
+    <!-- Anchor at the painted tip: open arrowheads include the 0.9-unit round-join radius. -->
+    <marker id="signal-arrow" viewBox="0 0 10 10" refX="9.9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#526c5d" stroke-width="1.8" stroke-linejoin="round"/></marker>
+    <marker id="oil-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
+    <marker id="heat-arrow" viewBox="0 0 10 10" refX="9.9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 9 5 1 9" fill="none" stroke="#a34e36" stroke-width="1.8" stroke-linejoin="round"/></marker>
   </defs>
   <rect width="400" height="1280" fill="#fff"/>
   <g fill="#243c32">
@@ -20,8 +21,8 @@
     <text x="200" y="160" font-size="17">Separate from the hydraulic block</text>
   </g>
   <g fill="none" stroke="#526c5d" stroke-width="3" stroke-dasharray="8 5" marker-end="url(#signal-arrow)">
-    <path d="M117 177V245"/>
-    <path d="M310 245V177"/>
+    <path d="M117 177V250"/>
+    <path d="M310 250V177"/>
   </g>
   <g fill="#526159" text-anchor="middle" font-size="18" stroke="#fff" stroke-width="7" paint-order="stroke">
     <text x="117" y="217">Commands</text>
@@ -40,8 +41,8 @@
 
   <!-- These arrows identify hydraulic functions, not a complete oil circuit. -->
   <g fill="none" stroke="#176b53" stroke-width="4" marker-end="url(#oil-arrow)">
-    <path d="M117 358V400H105V432"/>
-    <path d="M117 400H295V432"/>
+    <path d="M117 358V400H105V439"/>
+    <path d="M117 400H295V439"/>
   </g>
   <text x="250" y="388" text-anchor="middle" fill="#176b53" font-size="18">Hydraulic fluid supply</text>
   <rect x="18" y="439" width="174" height="145" rx="5" fill="#e3eeea" stroke="#176b53" stroke-width="2"/>
@@ -59,7 +60,7 @@
   </g>
 
   <!-- Heat transfer is deliberately distinct from liquid routing. -->
-  <path d="M105 584V643" fill="none" stroke="#a34e36" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#heat-arrow)"/>
+  <path d="M105 584V653" fill="none" stroke="#a34e36" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#heat-arrow)"/>
   <g text-anchor="middle" fill="#a34e36" font-size="18">
     <text x="252" y="613">Clutch heat carried</text>
     <text x="252" y="637">in hydraulic fluid</text>
@@ -70,7 +71,7 @@
     <text x="200" y="709" font-size="21">heat exchanger</text>
     <text x="200" y="735" font-size="18">Oil and coolant stay separate</text>
   </g>
-  <path d="M105 751V807" fill="none" stroke="#a34e36" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#heat-arrow)"/>
+  <path d="M105 751V817" fill="none" stroke="#a34e36" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#heat-arrow)"/>
   <text x="249" y="788" text-anchor="middle" fill="#a34e36" font-size="18">Heat passes to coolant</text>
   <rect x="18" y="817" width="364" height="50" rx="5" fill="#edf0f7" stroke="#526b8c" stroke-width="2"/>
   <text x="200" y="849" text-anchor="middle" fill="#243c32" font-size="21">Engine coolant circuit</text>
@@ -82,7 +83,7 @@
     <text x="200" y="980" font-size="21">Gears + final drive</text>
     <text x="200" y="1008" font-size="18">Gear oil lubricates these parts</text>
   </g>
-  <path d="M105 1025V1083" fill="none" stroke="#a34e36" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#heat-arrow)"/>
+  <path d="M105 1025V1093" fill="none" stroke="#a34e36" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#heat-arrow)"/>
   <text x="249" y="1062" text-anchor="middle" fill="#a34e36" font-size="18">Gear heat</text>
   <rect x="18" y="1093" width="364" height="75" rx="5" fill="#edf0f7" stroke="#526b8c" stroke-width="2"/>
   <g fill="#243c32" text-anchor="middle">

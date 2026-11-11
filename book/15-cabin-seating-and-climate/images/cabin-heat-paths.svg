@@ -2,9 +2,9 @@
   <title id="cabin-heat-title">Separate coolant and refrigerant loops move cabin heat</title>
   <desc id="cabin-heat-desc">Functional schematic, not hose routing. Engine coolant carries heat to the heater core and returns cooler; heat crosses the core wall to warm cabin air. With air conditioning operating, low-pressure refrigerant vapour enters the engine-driven compressor. Work raises its pressure. Hot high-pressure vapour flows to the front condensers, rejects heat to outside air and condenses to liquid. A separate high-pressure receiver-drier stores liquid refrigerant, filters it and absorbs moisture inside the sealed refrigerant circuit. The expansion valve meters the liquid and drops its pressure, producing a low-pressure liquid and vapour mixture. In the evaporator, refrigerant absorbs heat from cabin air and evaporates, then returns as vapour to the compressor. Solid arrows show fluid flow; dashed arrows show heat or work. Neither fluid enters the cabin air. Heat rejected outside includes both cabin heat and compressor work.</desc>
   <defs>
-    <marker id="cabin-heat-warm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b64e2b"/></marker>
-    <marker id="cabin-heat-cool" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#2875a4"/></marker>
-    <marker id="cabin-heat-energy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#52665b"/></marker>
+    <marker id="cabin-heat-warm" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#b64e2b"/></marker>
+    <marker id="cabin-heat-cool" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#2875a4"/></marker>
+    <marker id="cabin-heat-energy" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#52665b"/></marker>
   </defs>
   <rect width="600" height="1530" fill="#fafbf9"/>
 
@@ -17,8 +17,8 @@
     <rect x="365" y="85" width="210" height="110" rx="8"/>
   </g>
   <g fill="none" stroke="#b64e2b" stroke-width="4" marker-end="url(#cabin-heat-warm)">
-    <path d="M205 115H359"/>
-    <path d="M365 170H211"/>
+    <path d="M205 115H364"/>
+    <path d="M365 170H206"/>
   </g>
   <g text-anchor="middle" fill="#263e34" font-size="27">
     <text x="115" y="130">Engine</text><text x="115" y="166">coolant</text>
@@ -26,7 +26,7 @@
     <text x="285" y="100" fill="#b64e2b">Hot supply</text>
     <text x="285" y="211" fill="#b64e2b">Cooler return</text>
   </g>
-  <path d="M470 195V258" fill="none" stroke="#52665b" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#cabin-heat-energy)"/>
+  <path d="M470 195V265" fill="none" stroke="#52665b" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#cabin-heat-energy)"/>
   <text x="490" y="240" fill="#52665b" font-size="27">Heat</text>
   <rect x="300" y="265" width="275" height="55" rx="8" fill="#f4e5dc"/>
   <text x="437" y="302" text-anchor="middle" fill="#b64e2b" font-size="27">Cabin air warms</text>
@@ -36,11 +36,11 @@
 
   <!-- Pressure changes occur inside the compressor and expansion valve. -->
   <g fill="none" stroke-width="4">
-    <path d="M215 570V644" stroke="#b64e2b" marker-end="url(#cabin-heat-warm)"/>
-    <path d="M215 755V834" stroke="#b64e2b" marker-end="url(#cabin-heat-warm)"/>
-    <path d="M215 930V1004" stroke="#b64e2b" marker-end="url(#cabin-heat-warm)"/>
-    <path d="M215 1110V1184" stroke="#2875a4" marker-end="url(#cabin-heat-cool)"/>
-    <path d="M377 1295V1340H25V495H174" stroke="#2875a4" marker-end="url(#cabin-heat-cool)"/>
+    <path d="M215 570V649" stroke="#b64e2b" marker-end="url(#cabin-heat-warm)"/>
+    <path d="M215 755V839" stroke="#b64e2b" marker-end="url(#cabin-heat-warm)"/>
+    <path d="M215 930V1009" stroke="#b64e2b" marker-end="url(#cabin-heat-warm)"/>
+    <path d="M215 1110V1189" stroke="#2875a4" marker-end="url(#cabin-heat-cool)"/>
+    <path d="M377 1295V1340H25V495H179" stroke="#2875a4" marker-end="url(#cabin-heat-cool)"/>
   </g>
   <g stroke-width="2">
     <rect x="180" y="480" width="395" height="90" rx="8" fill="#eef1ed" stroke="#52665b"/>
@@ -75,9 +75,9 @@
 
   <!-- Energy arrows are dashed so they cannot be mistaken for fluid pipes. -->
   <g fill="none" stroke="#52665b" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#cabin-heat-energy)">
-    <path d="M100 562H174"/>
+    <path d="M100 562H179"/>
     <path d="M180 733H75"/>
-    <path d="M75 1270H174"/>
+    <path d="M75 1270H179"/>
   </g>
   <g fill="#52665b" font-size="27">
     <text x="45" y="518">Engine</text><text x="45" y="553">work</text>

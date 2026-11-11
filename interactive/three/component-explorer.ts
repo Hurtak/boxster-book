@@ -3,6 +3,8 @@ import { clamp, sampleTimeline, segment } from '../math.ts';
 import { initializeState, type DiagramContext, type ExplorerConfig } from '../types';
 import { buttons, panel, slider } from '../ui.ts';
 import { installAssembly } from './installed-assembly.ts';
+import { surfaceAnchor } from './anchors';
+import { placeMarker } from './marker-layout';
 import { disposeObject, isRenderable, loadModel, opacity, scene3D } from './scene.ts';
 
 const stops = [
@@ -32,10 +34,6 @@ function isolateMaterials(root: THREE.Object3D<THREE.Object3DEventMap>) {
     object.castShadow = true;
     object.receiveShadow = true;
   });
-}
-
-function centre(object: THREE.Object3D<THREE.Object3DEventMap>) {
-  return new THREE.Box3().setFromObject(object).getCenter(new THREE.Vector3());
 }
 
 export function geometryCorners(root: THREE.Object3D<THREE.Object3DEventMap>) {
@@ -178,52 +176,43 @@ export async function mountExplorer(
       if (!view) return;
       model.updateMatrixWorld(true);
       const projected: { name: string; x: number; y: number }[] = [];
+      const width = stage.clientWidth,
+        height = stage.clientHeight;
+      const bounds = stage.getBoundingClientRect();
+      const title = callout.getBoundingClientRect();
+      const blocked = {
+        left: title.left - bounds.left,
+        top: title.top - bounds.top,
+        right: title.right - bounds.left,
+        bottom: title.bottom - bounds.top,
+      };
       for (const part of parts) {
-        const p = centre(part.object).project(view.camera);
-        const x = ((p.x + 1) * stage.clientWidth) / 2;
-        const y = ((1 - p.y) * stage.clientHeight) / 2;
+        const p = surfaceAnchor(part.object).project(view.camera);
+        const x = ((p.x + 1) * width) / 2;
+        const y = ((1 - p.y) * height) / 2;
         const visible =
-          state.progress >= 20 &&
-          p.z > -1 &&
-          p.z < 1 &&
-          x >= 14 &&
-          x <= stage.clientWidth - 14 &&
-          y >= 14 &&
-          y <= stage.clientHeight - 14;
+          state.progress >= 20 && p.z > -1 && p.z < 1 && x >= 14 && x <= width - 14 && y >= 14 && y <= height - 14;
         part.marker.hidden = !visible;
         part.leader.hidden = !visible;
         if (!visible) continue;
-        const offsets = [
-          [0, -24],
-          [-30, -16],
-          [30, -16],
-          [-34, 20],
-          [34, 20],
-          [0, 32],
-          [-55, -35],
-          [55, 35],
-          [-65, 12],
-          [65, -12],
-        ];
-        const offset = offsets.find(
-          ([dx, dy]) =>
-            x + dx >= 14 &&
-            x + dx <= stage.clientWidth - 14 &&
-            y + dy >= 18 &&
-            y + dy <= stage.clientHeight - 14 &&
-            projected.every((other) => Math.hypot(x + dx - other.x, y + dy - other.y) >= 28),
-        ) ?? [0, 0];
-        const [dx, dy] = offset;
-        part.marker.style.left = `${x + dx}px`;
-        part.marker.style.top = `${y + dy}px`;
+        const point = placeMarker({ x, y }, width, height, projected, blocked);
+        if (!point) {
+          part.marker.hidden = part.leader.hidden = true;
+          continue;
+        }
+        const dx = point.x - x,
+          dy = point.y - y;
+        part.marker.style.left = `${point.x}px`;
+        part.marker.style.top = `${point.y}px`;
         Object.assign(part.leader.style, {
           left: `${x}px`,
-          top: `${y}px`,
+          // Centre the one-pixel leader stroke on the projected surface point.
+          top: `${y - 0.5}px`,
           width: `${Math.hypot(dx, dy)}px`,
           transform: `rotate(${Math.atan2(dy, dx)}rad)`,
         });
         part.marker.classList.toggle('is-selected', part.object.name === state.part);
-        projected.push({ name: part.object.name, x: x + dx, y: y + dy });
+        projected.push({ name: part.object.name, ...point });
       }
       host.dataset.projectedParts = JSON.stringify(projected);
       const front = new THREE.Vector3(0, 0.2, 2.34).project(view.camera);
@@ -314,7 +303,10 @@ export async function mountExplorer(
       model.updateMatrixWorld(true);
       for (const link of links) {
         link.line.visible = state.showConnections && progress >= 20;
-        link.line.geometry.setFromPoints([centre(byName.get(link.from)!.object), centre(byName.get(link.to)!.object)]);
+        link.line.geometry.setFromPoints([
+          surfaceAnchor(byName.get(link.from)!.object),
+          surfaceAnchor(byName.get(link.to)!.object),
+        ]);
         link.line.computeLineDistances();
       }
       locator.visible = progress < 40;

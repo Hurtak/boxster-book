@@ -3,6 +3,7 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { frameBounds, geometryCorners } from '../interactive/three/component-explorer';
 import { disposeObject, loadModel } from '../interactive/three/scene';
 import { installAssembly } from '../interactive/three/installed-assembly';
+import { surfaceAnchor } from '../interactive/three/anchors';
 import reference from '../interactive/models/reference-car.glb';
 import type { ExplorerConfig } from '../interactive/types';
 interface PosterPart {
@@ -74,7 +75,7 @@ export function initializePosterRenderer(models: Record<string, PosterModel>) {
     rim.position.set(3, 3, -4);
     scene.add(rim);
     const centres = parts.map((part, i) => {
-      const point = new THREE.Box3().setFromObject(part).getCenter(new THREE.Vector3()).project(camera);
+      const point = surfaceAnchor(part).project(camera);
       return {
         number: i + 1,
         name: part.name,

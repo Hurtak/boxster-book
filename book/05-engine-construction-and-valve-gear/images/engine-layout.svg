@@ -2,7 +2,7 @@
 <title id="title">The Boxster 2.9 flat-six: layout and crank connection</title>
 <desc id="desc">A simplified plan viewed from above shows three cylinders in each staggered bank, one outer head per bank and two overhead camshafts per head. Each piston has a rod connected to its own crankpin. The plan projects all six crankpins onto the central shaft axis and does not depict crank phasing. A separate generic cross-section shows the piston pin, connecting rod, offset crankpin and crankshaft rotation axis. Camshafts are separated for clarity. Vehicle front and rear, valve positions, dimensions and actual crank angles are not assigned.</desc>
 <defs>
-  <marker id="layout-travel-arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto-start-reverse"><path d="M0 0 5 2.5 0 5z" fill="#526e5c"/></marker>
+  <marker id="layout-travel-arrow" markerWidth="5" markerHeight="5" refX="5" refY="2.5" orient="auto-start-reverse"><path d="M0 0 5 2.5 0 5z" fill="#526e5c"/></marker>
 </defs>
 <rect width="420" height="950" fill="#f5f3eb"/>
 <g font-family="sans-serif" fill="#243f33" text-anchor="middle">

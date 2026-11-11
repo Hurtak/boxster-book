@@ -17,9 +17,10 @@ export function part(
   position: readonly number[],
   explode: number[],
   description: string,
+  anchor?: readonly [number, number, number],
 ) {
   const object = group(name, root, position);
-  object.userData = { label, explode, description };
+  object.userData = { label, explode, description, ...(anchor ? { anchor: [...anchor] } : {}) };
   return object;
 }
 

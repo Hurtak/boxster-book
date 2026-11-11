@@ -140,6 +140,12 @@ Use the car's coordinate system: **+X left, +Y up, +Z front**, in metres. `creat
 
 The shared viewer handles the 0/30/65/100 stages, perspective framing at each screen width, numbered markers, part focus, connection visibility, native controls and resource cleanup. Part separation is calculated from original positions, so reversing the slider reassembles the same model. The chapter owns spatial relationships and factual limits; the renderer supplies no mechanical simulation. Models and controller descriptions distinguish the standard 2010 2.9 from options such as PDK.
 
+Numbered leaders and functional links use `three/anchors.ts` to find an actual mesh surface near each part's centre. The anchor is retained in local coordinates and follows the rigid part during separation; a hollow frame's empty bounding-box centre cannot become its target. Generated posters use the same surface anchors. Dashed connections identify component relationships; these points do not specify measured hardware ports or pipe routing.
+
+For a compound group whose long hose or bracket pulls its centre away from the named component, the optional seventh argument to `part()` is a preferred local `[x, y, z]` target. The helper projects that target onto the group's real triangles; it does not create a floating anchor at an arbitrary coordinate. Set this metadata while authoring the static assembly.
+
+Live number badges use `three/marker-layout.ts` to stay inside the canvas, clear of the current title and other badges. Moving a badge changes its leader's length, while the component surface endpoint stays fixed. A bounded grid search supplies space when the nearby offsets are occupied.
+
 ### Installed geometry and fit
 
 The detailed assembly is present in its installed position from the first frame. The surrounding car fades; the assembly stays still until separation starts at 65. Do not crossfade a rough car part into a differently shaped chapter part. `hideCarParts` names only the context nodes that the detailed assembly replaces, not unrelated trim or wheels that should remain on the whole car.

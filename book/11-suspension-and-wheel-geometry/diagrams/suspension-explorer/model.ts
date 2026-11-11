@@ -259,6 +259,7 @@ export function createAssembly() {
     [0, 0.3, 1.06],
     [0, -0.05, -0.3],
     'The steering rack moves the tie rod, which turns the carrier through its steering arm. The flexible gaiter protects the inner joint. This steering connection differs from the wheel-guiding lower arm and guide.',
+    [0.38, 0, 0],
   );
   cylinder(steering, 0.034, 0.55, m.dark, [-0.035, 0.01, 0]);
   cylinder(steering, 0.016, 0.3, m.metal, [0.38, 0, 0]);

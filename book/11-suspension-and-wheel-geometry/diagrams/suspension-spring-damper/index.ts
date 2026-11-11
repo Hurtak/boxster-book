@@ -154,7 +154,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       path(
         [
           [labelX + 18, 96],
-          [dx - 5, 96],
+          [dx - 2.5, 96],
         ],
         '#526159',
         1,
@@ -164,7 +164,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       path(
         [
           [labelX + 25, 183],
-          [dx - 24, pistonY],
+          [dx - 20, pistonY],
         ],
         '#526159',
         1,
@@ -173,7 +173,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       path(
         [
           [labelX + 30, 233],
-          [dx - 25, 228],
+          [dx - 22, cylinderBottom - 40],
         ],
         '#526159',
         1,
@@ -186,7 +186,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
         '#273e35',
         9,
       ).attr('data-part', 'lower-mounting');
-      text(width / 2, bottom + 24, 'Wheel / lower mounting');
+      text((sx + dx) / 2, bottom + 24, 'Wheel / lower mounting');
       arrow(sx - 34, 78, springForceN, '#a6552b')?.attr('data-part', 'spring-body-force');
       arrow(dx + 35, 78, damperBodyForceN, '#27627b')?.attr('data-part', 'damper-body-force');
       arrow(Math.min(width - 16, dx + 62), bottom, state.velocityMs, '#526159', true)?.attr(

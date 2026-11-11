@@ -3,7 +3,7 @@
 <desc id="desc">Two aligned, schematic wheel sections compare ET55 and ET45 at the same rim width. In both, positive offset is measured outwards from the rim centre plane to the same fixed hub mounting face. Nominal rim width is measured between the inner faces of the rim flanges, excluding their thickness. Reducing offset from positive 55 to positive 45 millimetres shifts the rim centre and both edges outwards by 10 millimetres; the mounting face stays fixed. The rim profiles are illustrative, not measured Porsche geometry or a fitment approval.</desc>
 <rect width="480" height="800" fill="#f5f5ee"/>
 <defs>
-  <marker id="offset-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#17654c"/></marker>
+  <marker id="offset-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#17654c"/></marker>
   <path id="rim-section" d="M45 166H63V180H347V166H365V197H45ZM45 280H63V266H347V280H365V249H45Z"/>
 </defs>
 <g fill="#233c31">

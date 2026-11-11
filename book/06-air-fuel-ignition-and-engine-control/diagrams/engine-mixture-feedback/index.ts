@@ -45,6 +45,11 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       const ink = '#203b2d';
       const signalColour = '#276950';
       const flowColour = '#ad622d';
+      const blockStrokeWidth = 1.5;
+      const arrowStrokeWidth = 2.5;
+      const sourceClearance = blockStrokeWidth / 2;
+      // A round chevron tip projects half its stroke beyond the path endpoint.
+      const targetClearance = (blockStrokeWidth + arrowStrokeWidth) / 2;
       const text = (x: number, y: number, content: string | number, size = 18, anchor = 'start', fill = ink) =>
         g
           .append('text')
@@ -59,7 +64,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           .attr('d', `M${points.map((p) => p.join(',')).join('L')}`)
           .attr('fill', 'none')
           .attr('stroke', colour)
-          .attr('stroke-width', 2.5)
+          .attr('stroke-width', arrowStrokeWidth)
           .attr('stroke-dasharray', dashed ? '5 4' : null);
         const end = points.at(-1)!;
         const before = points.at(-2)!;
@@ -72,9 +77,13 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           .attr('d', `M${head[0].join(',')}L${end.join(',')}L${head[1].join(',')}`)
           .attr('fill', 'none')
           .attr('stroke', colour)
-          .attr('stroke-width', 2.5);
+          .attr('stroke-width', arrowStrokeWidth)
+          .attr('stroke-linejoin', 'round');
       };
-      const boxWidth = (diagramWidth - 54) / 2;
+      const narrow = diagramWidth < 330;
+      const boxWidth = (diagramWidth - (narrow ? 32 : 54)) / 2;
+      const boxTitleSize = narrow ? 15.5 : 18;
+      const boxBodySize = narrow ? 14 : 16;
       const right = diagramWidth - boxWidth;
       const centreLeft = boxWidth / 2;
       const centreRight = right + boxWidth / 2;
@@ -87,9 +96,12 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           .attr('rx', 3)
           .attr('fill', '#fff')
           .attr('stroke', '#9aaba0')
-          .attr('stroke-width', 1.5);
+          .attr('stroke-width', blockStrokeWidth);
         lines.forEach((s: string | number, i: number) =>
-          text(x + boxWidth / 2, y + 25 + i * 25, s, i ? 16 : 18, 'middle').attr('font-weight', i ? 400 : 600),
+          text(x + boxWidth / 2, y + 25 + i * 25, s, i ? boxBodySize : boxTitleSize, 'middle').attr(
+            'font-weight',
+            i ? 400 : 600,
+          ),
         );
       };
       text(0, 23, 'A control loop, not a leak repair', 20).attr('font-weight', 600);
@@ -99,30 +111,30 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       box(0, 225, ['Wideband sensor', 'Reads exhaust λ', 'Before catalyst']);
       arrow(
         [
-          [boxWidth + 4, 96],
-          [right - 4, 96],
+          [boxWidth + sourceClearance, 96],
+          [right - targetClearance, 96],
         ],
         signalColour,
         true,
       );
       arrow(
         [
-          [centreRight, 145],
-          [centreRight, 219],
+          [centreRight, 141 + sourceClearance],
+          [centreRight, 225 - targetClearance],
         ],
         flowColour,
       );
       arrow(
         [
-          [right - 4, 270],
-          [boxWidth + 4, 270],
+          [right - sourceClearance, 270],
+          [boxWidth + targetClearance, 270],
         ],
         flowColour,
       );
       arrow(
         [
-          [centreLeft, 219],
-          [centreLeft, 145],
+          [centreLeft, 225 - sourceClearance],
+          [centreLeft, 141 + targetClearance],
         ],
         signalColour,
         true,
@@ -145,7 +157,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       arrow(
         [
           [centreRight, 346],
-          [centreRight, 320],
+          [centreRight, 315 + targetClearance],
         ],
         flowColour,
       );

@@ -2,7 +2,7 @@
   <title id="title">Camber, caster and toe use three different viewing directions</title>
   <desc id="desc">Three exaggerated angle diagrams. From the front, negative camber is the inward tilt of the wheel plane from a dashed vertical reference. From the side, positive caster is the rearward tilt of the steering axis from vertical; the tyre touches the ground and a separate arrow points forward to the right. From above, toe-in points the wheel fronts towards each other, with each wheel's angle marked against a dashed straight-ahead reference and forward pointing up. Orange arcs identify the angles. These are definitions, not Boxster alignment targets or measured geometry.</desc>
   <defs>
-    <marker id="alignment-forward" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <marker id="alignment-forward" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0L10 5L0 10Z" fill="#27627b"/>
     </marker>
   </defs>

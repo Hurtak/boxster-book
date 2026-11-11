@@ -2,7 +2,7 @@
   <title id="fluid-cooling-poster-title">Coolant circuit: warm-up example</title>
   <desc id="fluid-cooling-poster-desc">The belt-driven pump circulates coolant through the engine jackets and short bypass while the thermostat restricts the long route to the front radiator pair. Orange return coolant has not passed through the radiators. Dashed green arrows show air, separate from liquid circulation; fans are not requested in this example. The expansion tank is a side connection that accommodates volume changes and provides a rear filling and level-checking point. Functional schematic, not actual pipe geometry: the radiator pair is grouped, tank plumbing is simplified and auxiliary branches are omitted. Thermostat opening is progressive.</desc>
   <defs>
-    <marker id="fluid-cooling-poster-warm" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#b35e37"/></marker>
+    <marker id="fluid-cooling-poster-warm" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="#b35e37"/></marker>
     <marker id="fluid-cooling-poster-air" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M1 1L5 3.5L1 6" fill="none" stroke="#52715a" stroke-width="1.5"/></marker>
   </defs>
   <rect width="342" height="720" fill="#f7f7f2"/>
@@ -10,8 +10,8 @@
     <path d="M83 515H16V270" stroke="#b35e37"/>
     <path d="M16 270V105H83M259 105H326V325H259" stroke="#aab1aa" stroke-dasharray="6 5"/>
     <g stroke="#b35e37" marker-end="url(#fluid-cooling-poster-warm)">
-      <path d="M16 270H171V294"/><path d="M171 356V387"/>
-      <path d="M171 448V478"/><path d="M79 515H26"/>
+      <path d="M16 270H171V294"/><path d="M171 356V392"/>
+      <path d="M171 448V484"/><path d="M79 515H26"/>
     </g>
     <path d="M171 363H283V606H261" stroke="#7c897c" stroke-width="2"/>
   </g>

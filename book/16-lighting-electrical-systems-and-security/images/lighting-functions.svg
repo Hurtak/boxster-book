@@ -2,7 +2,7 @@
   <title id="title">MY2010 UK Boxster: standard and optional front-light functions</title>
   <desc id="desc">The standard main headlamps provide halogen dipped and main beams; the separate lower modules contain front fog lamps and LED position lights. Option P75 provides bi-xenon dipped and main beams, dynamic cornering, automatic beam-height adjustment and headlamp cleaning; the lower modules provide LED daytime running and position-light functions in place of front fog lamps. Horizontal and vertical arrows distinguish cornering from levelling, not beam patterns or measured lamp geometry. Detailed Porsche sources call the standard LEDs position lights; the brochure's broader daytime-running-light wording conflicts, and country-specific DRL operation is not inferred.</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#456653"/></marker>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#456653"/></marker>
   </defs>
   <rect width="600" height="1170" rx="12" fill="#f8faf7"/>
   <text x="300" y="40" text-anchor="middle" font-size="28" font-weight="700" fill="#243d32">MY2010 UK · front lights</text>

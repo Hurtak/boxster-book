@@ -189,6 +189,8 @@ export function createAssembly() {
     [0.13, 0.69, -0.73],
     [0.15, 0.63, 0],
     'The exchanger mounts on the oil-conducting housing, with a filter cup and insert underneath the adjoining part of that housing and a separate pressure sender. Heat crosses metal without mixing liquids. The exposed plate count and passages are illustrative.',
+    // Target the top exchanger plate rather than its long filler hose.
+    [0, 0.096, 0],
   );
   box(exchanger, [0.4, 0.045, 0.23], m.dark, [-0.055, -0.035, 0]);
   for (let i = 0; i < 6; i++) box(exchanger, [0.25, 0.012, 0.19], m.metal, [0, i * 0.018, 0]);

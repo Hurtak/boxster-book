@@ -2,7 +2,7 @@
   <title id="injection-title">Fuel enters before the inlet valve on the 2.9, inside the cylinder on the 3.4 S</title>
   <desc id="injection-desc">Two simplified cutaway sections show an inlet port, an open poppet valve, a cylinder and a piston. The 2.9 port injector sprays upstream of the valve; air and fuel then enter through its opening. The 3.4 S direct injector passes through the cylinder head and sprays into the combustion chamber, separately from the inlet air. Porsche's period system descriptions give approximately 4 bar for the 2.9 and 40 to 120 bar for the S high-pressure system. The sections are rotated and simplified, with one inlet valve shown; they do not reproduce actual geometry, spray pattern or injection timing.</desc>
   <defs>
-    <marker id="injection-air-arrow" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+    <marker id="injection-air-arrow" markerWidth="14" markerHeight="12" refX="14" refY="6" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0 0 14 6 0 12Z" fill="#276950"/>
     </marker>
     <g id="injection-section">
@@ -48,7 +48,7 @@
       <text x="26" y="123" font-size="26">Injector</text>
       <path d="M129 117H146L162 147" fill="none" stroke="#526159" stroke-width="2"/>
       <text x="26" y="338" font-size="26">Inlet port</text>
-      <path d="M151 330 181 281" fill="none" stroke="#526159" stroke-width="2"/>
+      <path d="M151 330 181 267" fill="none" stroke="#526159" stroke-width="2"/>
       <text x="26" y="388" font-size="26">Inlet valve</text>
       <path d="M161 380H213L322 322" fill="none" stroke="#526159" stroke-width="2"/>
       <text x="366" y="279" font-size="26">Cylinder</text>
@@ -81,7 +81,7 @@
       <text x="324" y="123" font-size="26">Injector</text>
       <path d="M425 117H444L466 148" fill="none" stroke="#526159" stroke-width="2"/>
       <text x="26" y="338" font-size="26">Inlet port</text>
-      <path d="M151 330 181 281" fill="none" stroke="#526159" stroke-width="2"/>
+      <path d="M151 330 181 267" fill="none" stroke="#526159" stroke-width="2"/>
       <text x="26" y="388" font-size="26">Inlet valve</text>
       <path d="M161 380H213L322 322" fill="none" stroke="#526159" stroke-width="2"/>
       <text x="365" y="321" font-size="26">Cylinder</text>

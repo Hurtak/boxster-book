@@ -28,8 +28,14 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
   const redraw = svgDiagram(
     stage,
     'Open differential: carrier and cross-pin carry the spider pinions, which mesh with both output side gears',
-    (svg, { width: w }) => {
+    (svg, { width: stageWidth }) => {
       svg.selectAll('*').remove();
+      // The 318-unit painted shaft span needs 12-unit side margins. Scale the whole
+      // figure together on the shared SVG surface's 280-unit minimum-width stage.
+      const w = Math.max(342, stageWidth);
+      const height = (580 * stageWidth) / w;
+      stage.style.height = `${height}px`;
+      svg.attr('viewBox', `0 0 ${w} 580`).attr('height', height);
       const ink = '#243e35',
         green = '#176b53',
         orange = '#9a4e22',

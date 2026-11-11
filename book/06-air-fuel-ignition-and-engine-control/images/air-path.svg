@@ -2,10 +2,10 @@
   <title id="air-title">The 2.9-litre intake path: air first, fuel at the ports</title>
   <desc id="air-desc">Functional flow, not physical hose routing. Incoming air passes through a cylindrical pleated filter, mass-air-flow sensor and electronic throttle. The resonance intake has connected passages and vacuum-operated tuning flaps, controlled through electrical change-over valves, and an air plenum for each cylinder bank. Three runners per bank lead to the inlet ports for three cylinders. One port injector per cylinder adds fuel there, before the charge passes the inlet valves into the cylinders. Green arrows show the direction of air and charge flow; amber arrows show fuel joining the air.</desc>
   <defs>
-    <marker id="air-arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+    <marker id="air-arrow" markerWidth="12" markerHeight="12" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0 0L12 6L0 12Z" fill="#276950"/>
     </marker>
-    <marker id="air-fuel-arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+    <marker id="air-fuel-arrow" markerWidth="12" markerHeight="12" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0 0L12 6L0 12Z" fill="#986121"/>
     </marker>
   </defs>
@@ -15,7 +15,7 @@
     <text x="300" y="74" font-size="26" fill="#52685b">2.9-litre port-injected engine</text>
 
     <text x="300" y="117" font-size="26" fill="#276950">Incoming air</text>
-    <path d="M300 126V146" fill="none" stroke="#276950" stroke-width="4" marker-end="url(#air-arrow)"/>
+    <path d="M300 126V152" fill="none" stroke="#276950" stroke-width="4" marker-end="url(#air-arrow)"/>
 
     <g fill="#fff" stroke="#276950" stroke-width="2">
       <rect x="100" y="152" width="400" height="76" rx="5"/>
@@ -29,9 +29,9 @@
     <text x="300" y="414" font-size="28" font-weight="600">Electronic throttle</text>
     <text x="300" y="445" font-size="26" fill="#52685b">Controls the air restriction</text>
     <g fill="none" stroke="#276950" stroke-width="4" marker-end="url(#air-arrow)">
-      <path d="M300 228V259"/>
-      <path d="M300 343V374"/>
-      <path d="M300 458V490"/>
+      <path d="M300 228V267"/>
+      <path d="M300 343V382"/>
+      <path d="M300 458V497"/>
     </g>
 
     <rect x="20" y="497" width="560" height="269" rx="5" fill="#dce8df" stroke="#276950" stroke-width="2"/>
@@ -39,8 +39,8 @@
     <text x="300" y="568" font-size="26">Vacuum-operated tuning flaps</text>
     <text x="300" y="602" font-size="26">Alter pressure waves between banks</text>
     <g fill="none" stroke="#276950" stroke-width="4" marker-end="url(#air-arrow)">
-      <path d="M300 619V636H150V650"/>
-      <path d="M300 636H450V650"/>
+      <path d="M300 619V636H150V657"/>
+      <path d="M300 636H450V657"/>
     </g>
     <g fill="#fff" stroke="#276950" stroke-width="2">
       <rect x="35" y="657" width="230" height="89" rx="5"/>
@@ -56,21 +56,21 @@
     </g>
 
     <g fill="none" stroke="#276950" stroke-width="4" marker-end="url(#air-arrow)">
-      <path d="M70 746V882"/><path d="M130 746V882"/><path d="M190 746V882"/>
-      <path d="M410 746V882"/><path d="M470 746V882"/><path d="M530 746V882"/>
+      <path d="M90 746V890"/><path d="M150 746V890"/><path d="M210 746V890"/>
+      <path d="M390 746V890"/><path d="M450 746V890"/><path d="M510 746V890"/>
     </g>
     <g fill="#f4f5ef">
-      <rect x="43" y="794" width="174" height="36"/>
-      <rect x="383" y="794" width="174" height="36"/>
+      <rect x="80" y="794" width="140" height="36"/>
+      <rect x="380" y="794" width="140" height="36"/>
     </g>
-    <text x="130" y="821" font-size="26" fill="#276950">3 runners</text>
-    <text x="470" y="821" font-size="26" fill="#276950">3 runners</text>
+    <text x="150" y="821" font-size="26" fill="#276950">3 runners</text>
+    <text x="450" y="821" font-size="26" fill="#276950">3 runners</text>
 
     <rect x="225" y="781" width="150" height="65" rx="5" fill="#f5e8d4" stroke="#986121" stroke-width="2"/>
     <text x="300" y="823" font-size="28" font-weight="600" fill="#80501b">Fuel</text>
     <g fill="none" stroke="#986121" stroke-width="4" marker-end="url(#air-fuel-arrow)">
-      <path d="M300 846V863H240V883"/>
-      <path d="M300 863H360V883"/>
+      <path d="M300 846V863H240V890"/>
+      <path d="M300 863H360V890"/>
     </g>
     <g fill="#fff" stroke="#276950" stroke-width="2">
       <rect x="35" y="890" width="230" height="94" rx="5"/>

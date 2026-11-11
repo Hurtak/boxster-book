@@ -2,10 +2,10 @@
   <title id="title">2010 2.9 timing chains: drive connections and slack control</title>
   <desc id="desc">The crankshaft directly drives two timing chains without an intermediate shaft. Each chain drives the inlet and exhaust camshafts of one cylinder bank. All four camshafts turn once for every two crankshaft turns. Arrows show drive connections, not chain routing or rotation direction. A separate, simplified chain-segment detail shows a guide rail and an oil-fed hydraulic tensioner pressing a tensioning rail against the chain. The camshaft drive has two hydraulic chain tensioners, one for each cam-drive chain. A separate third chain drives the oil pump and is not shown. Shapes, positions and sizes are schematic; no sprocket tooth counts or timing-setting positions are shown.</desc>
   <defs>
-    <marker id="drive-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <marker id="drive-arrow" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0 0 7 3.5 0 7Z" fill="#b07d38"/>
     </marker>
-    <marker id="tension-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+    <marker id="tension-arrow" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0 0 9 4.5 0 9Z" fill="#3c7592"/>
     </marker>
   </defs>
@@ -78,13 +78,13 @@
       <text x="124" y="674">Tensioning rail</text>
     </g>
     <g fill="none" stroke="#526f60" stroke-width="1.5">
-      <path d="M96 617V625"/>
-      <path d="M324 617V635"/>
+      <path d="M96 617V627"/>
+      <path d="M324 617V637"/>
       <path d="M198 667L234 650"/>
     </g>
     <rect x="288" y="710" width="44" height="26" rx="3" fill="#3c7592"/>
     <path d="M310 710V653" stroke="#3c7592" stroke-width="4" marker-end="url(#tension-arrow)"/>
-    <path d="M216 723H285" stroke="#3c7592" stroke-width="1.5"/>
+    <path d="M216 723H288" stroke="#3c7592" stroke-width="1.5"/>
     <g font-size="18" fill="#305f77">
       <text x="125" y="710">Oil-fed hydraulic</text>
       <text x="125" y="734">tensioner pushes rail</text>

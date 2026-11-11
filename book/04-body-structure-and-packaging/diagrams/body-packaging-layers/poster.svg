@@ -33,9 +33,9 @@
   <path d="M444 242Q551 237 652 269L650 276Q548 247 444 249Z" fill="#a9c4cf" stroke="#357694" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M437 242L437 253" fill="none" stroke="#f7f6f0" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
   <text x="332" y="81" text-anchor="middle" font-size="27" fill="#8a7e34">Roof-bay cover</text>
-  <path d="M332 94V182L356 237" fill="none" stroke="#8a7e34" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M332 94V182L356 235.315" fill="none" stroke="#8a7e34" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
   <text x="564" y="81" text-anchor="middle" font-size="27" fill="#357694">Rear boot lid</text>
-  <path d="M564 94V199L579 250" fill="none" stroke="#357694" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M564 94V199L579 250.846" fill="none" stroke="#357694" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M248 258Q324 247 429 257L424 310Q351 321 249 314L239 285Z" fill="#e5e2c8" stroke="#8a7e34" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M254 294Q281 283 302 293L326 301Q346 304 363 292L407 284L417 294Q388 311 357 309L309 308Q280 301 254 306Z" fill="#b7af7d" stroke="#8a7e34" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M260 293L295 300L339 300L396 289M264 307L300 312L356 312L405 299" fill="none" stroke="#6e653d" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
@@ -60,10 +60,10 @@
   <path d="M249 400H405L401 420H251ZM261 407H392M263 413H388M271 427H386" fill="#a5c0ac" stroke="#176b53" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M415 386L438 390L453 399H504L534 413L555 417L551 436H451L438 429H411Z" fill="#d3dcd1" stroke="#9daa9c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M438 397V426M451 403V430M466 406V432M480 408V433M496 410V433M510 413V434" fill="none" stroke="#afbcad" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-  <path d="M514 407V473" fill="none" stroke="#8e9e91" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 5"/>
+  <path d="M516 403V483" fill="none" stroke="#8e9e91" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 5"/>
   <text x="326" y="461" text-anchor="middle" font-size="26" fill="#176b53">Engine</text>
   <text x="326" y="489" text-anchor="middle" font-size="23" fill="#63736a">ahead of rear axle</text>
-  <text x="518" y="510" text-anchor="middle" font-size="24" fill="#63736a">Rear axle</text>
+  <text x="516" y="510" text-anchor="middle" font-size="24" fill="#63736a">Rear axle</text>
   <path d="M448 257Q550 253 647 283L651 321Q649 347 629 352L493 355Q470 351 464 330Z" fill="#dae8ed" stroke="#357694" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M458 265Q551 262 639 289L641 320Q639 337 623 342L494 346Q479 342 475 327" fill="none" stroke="#84a7b4" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M491 346L622 342M493 350L625 346" fill="none" stroke="#80a1aa" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
@@ -71,7 +71,7 @@
   <text x="556" y="338" text-anchor="middle" font-size="25" fill="#357694">130 L</text>
   <path d="M457 269L488 272L490 294L462 294Z" fill="#d5b99d" stroke="#a35d32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M469 285L480 286" fill="none" stroke="#785e42" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-  <path d="M488 282L688 300V541" fill="none" stroke="#a35d32" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 5"/>
+  <path d="M488.909 282H688V596.5H655.25" fill="none" stroke="#a35d32" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 5"/>
   <path d="M22 535H698" fill="none" stroke="#d1d8cc" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
   <text x="22" y="569" text-anchor="start" font-size="26" fill="#a35d32">Internal access · detail</text>
   <text x="445" y="569" text-anchor="start" font-size="26" fill="#a35d32">Boot service flap</text>
@@ -91,7 +91,7 @@
   <text x="247" y="615" text-anchor="start" font-size="25" fill="#253d32">Carpet</text>
   <text x="247" y="660" text-anchor="start" font-size="25" fill="#a35d32">Top cover</text>
   <text x="247" y="705" text-anchor="start" font-size="25" fill="#253d32">Seal</text>
-  <path d="M215 616H236M216 660H236M216 704H236" fill="none" stroke="#a35d32" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M201.5 606H236M203.875 651H236M199.174 696H236" fill="none" stroke="#a35d32" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M453 600Q454 590 466 589L645 593Q658 593 660 607L664 683L447 683Z" fill="#d3ddd0" stroke="#6b786c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M466 610Q468 603 478 604L633 606Q643 607 644 617L646 667H462Z" fill="#a9b9aa" stroke="#6b786c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
   <circle cx="505" cy="638" r="23" fill="#475c50" stroke="#304a3b" stroke-width="2"/>
@@ -101,6 +101,6 @@
   <path d="M494 635H510L514 640H504L501 647H496L493 640H489M498 630V635M589 638Q594 632 599 638T609 638M589 645Q594 639 599 645T609 645" fill="none" stroke="#edf2e6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M447 683L664 683L645 707L462 705Z" fill="#c4cdbd" stroke="#6b786c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M469 680V689M640 680V689M533 696H572" fill="none" stroke="#5c6d5b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-  <text x="557" y="739" text-anchor="middle" font-size="24" fill="#a35d32">Oil + coolant fillers</text>
+  <text x="555.5" y="739" text-anchor="middle" font-size="24" fill="#a35d32">Oil + coolant fillers</text>
   <text x="22" y="750" text-anchor="start" font-size="21" fill="#63736a">Layers separated only in detail</text>
 </svg>

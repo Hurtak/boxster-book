@@ -2,7 +2,7 @@
 <title id="title">Boxster mid-engine packaging and rear-wheel drive</title>
 <desc id="desc">Photo-guided side cutaway of the 2010 European/UK Boxster 987.2 2.9, facing left, with its roof lowered. Body length, wheelbase and nominal standard 17-inch wheel and tyre diameters share one scale. The long low nose, raked windscreen, shaped seat with integrated head restraint, fixed rear roll hoop and curved rear deck follow contemporary Porsche photographs. Front luggage is ahead of the two-seat cabin. The low flat-six engine sits immediately behind the seats, ahead of the rear axle; the manual transaxle extends rearwards below the rear luggage compartment. The body and rear wheel are transparent to reveal this arrangement. Internal outlines and installation positions are simplified, not factory CAD. A separate connection diagram traces torque from engine through gearbox, final drive and differential to both rear wheels.</desc>
 <defs>
-  <marker id="family-layout-torque" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
+  <marker id="family-layout-torque" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
   <linearGradient id="family-layout-body" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#dce6dd"/><stop offset="1" stop-color="#bdcfc1"/></linearGradient>
   <g id="family-layout-rim">
     <circle r="27.05" fill="#e5eae6" stroke="#6a7b72" stroke-width="1.5"/>
@@ -26,7 +26,7 @@
     <text x="436" y="130">Rear<tspan x="436" dy="31">luggage</tspan></text>
   </g>
   <g fill="none" stroke="#647d6a" stroke-width="1.8">
-    <path d="M126 171V286"/><path d="M294 143V209L357 250"/><path d="M530 171V287"/>
+    <path d="M126 171V288.40"/><path d="M294 143V209L357 250"/><path d="M530 171V289.15"/>
   </g>
 
   <!-- Body 544 units / wheelbase 302.57 units = UK 4342 / 2415 mm.
@@ -104,10 +104,10 @@
     <text x="165" y="435">Front axle</text><text x="467.57" y="435">Rear axle</text>
   </g>
   <g fill="none" stroke="#647d6a" stroke-width="1.8">
-    <path d="M409 355V398L354 450"/><path d="M522 354 551 403 520 450"/>
+    <path d="M409 354V398L354 450"/><path d="M522 349.76 551 403 520 450"/>
   </g>
   <g font-size="27" text-anchor="middle">
-    <text x="340" y="481">Engine</text><text x="503" y="481">Transaxle</text>
+    <text x="354" y="481">Engine</text><text x="520" y="481">Transaxle</text>
   </g>
   <text x="28" y="520" font-size="23" fill="#536c5d">Engine ahead of rear axle</text>
 
@@ -115,15 +115,15 @@
   <text x="28" y="580" font-size="28" font-weight="bold">Torque path · connections only</text>
   <rect x="28" y="605" width="158" height="63" rx="7" fill="#176b53"/>
   <text x="107" y="646" text-anchor="middle" font-size="28" fill="#fff">Engine</text>
-  <path d="M189 637H222" fill="none" stroke="#176b53" stroke-width="4" marker-end="url(#family-layout-torque)"/>
+  <path d="M186 636.5H232" fill="none" stroke="#176b53" stroke-width="4" marker-end="url(#family-layout-torque)"/>
   <rect x="233" y="605" width="339" height="119" rx="7" fill="#dce8de" stroke="#536c5d" stroke-width="2"/>
-  <text x="402" y="640" text-anchor="middle" font-size="28" font-weight="bold">Transaxle</text>
-  <text x="402" y="675" text-anchor="middle" font-size="26">Gearbox, final drive</text>
-  <text x="402" y="706" text-anchor="middle" font-size="26">and differential</text>
+  <text x="402.5" y="640" text-anchor="middle" font-size="28" font-weight="bold">Transaxle</text>
+  <text x="402.5" y="675" text-anchor="middle" font-size="26">Gearbox, final drive</text>
+  <text x="402.5" y="706" text-anchor="middle" font-size="26">and differential</text>
   <g fill="none" stroke="#176b53" stroke-width="4" marker-end="url(#family-layout-torque)">
-    <path d="M402 725V746H120V787"/><path d="M402 746H480V787"/>
+    <path d="M402.5 725V746H120V792"/><path d="M402.5 746H480V792"/>
   </g>
-  <text x="297" y="780" text-anchor="middle" font-size="26">Driveshafts</text>
+  <text x="300" y="780" text-anchor="middle" font-size="26">Driveshafts</text>
   <g font-size="27" text-anchor="middle"><text x="120" y="821">Rear wheel</text><text x="480" y="821">Rear wheel</text></g>
   <text x="28" y="851" font-size="21" fill="#536c5d">Body/rear wheel transparent · internals simplified</text>
 </g>

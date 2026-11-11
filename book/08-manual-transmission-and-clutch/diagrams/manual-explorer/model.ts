@@ -205,6 +205,7 @@ export function createAssembly() {
     [0.48, 0.43, 0.52],
     [0.18, 0.34, 0.1],
     'The pedal drives the master cylinder; a separate feed supplies brake-reservoir fluid and a pressure line reaches the slave. The pedal also has an assist spring. PET 702-000/008; LHD position and pipe paths are illustrative.',
+    [0, 0.1, 0.16],
   );
   beam(pedal, [0, 0.13, 0.08], [0, -0.12, -0.025], 0.012, m.metal);
   cylinder(pedal, 0.018, 0.08, m.dark, [0, 0.13, 0.08]);
@@ -298,6 +299,7 @@ export function createAssembly() {
     [0, 0, 0],
     [0, 0.25, 0.18],
     'The cabin lever sends cross-gate and fore-and-aft commands through two cables to the gearbox selector. Brackets retain the cable housings; the inner cables move. PET 701-000 items 1, 3, 25–26; routes and joints are schematic.',
+    [0, 0.656, -0.015],
   );
   manualGearLever(selector, palette());
   sphere(selector, 0.024, m.metal, [0, 0.57, -0.015]);

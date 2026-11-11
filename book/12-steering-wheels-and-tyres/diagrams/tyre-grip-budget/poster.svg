@@ -7,7 +7,7 @@
 <text x="300" y="90">↑ Longitudinal demand: 60</text>
 </g>
 <circle cx="300" cy="330" r="180" fill="#e0ebe4" stroke="#17654c" stroke-width="4"/>
-<path d="M90 330H520M300 540V120" fill="none" stroke="#64766d" stroke-width="2"/>
+<path d="M90 330H510M300 540V120" fill="none" stroke="#64766d" stroke-width="2"/>
 <path d="M300 222H408V330" fill="none" stroke="#17654c" stroke-width="3" stroke-dasharray="7 5"/>
 <path d="M300 330L408 222" stroke="#17654c" stroke-width="6"/>
 <circle cx="408" cy="222" r="8" fill="#17654c"/>

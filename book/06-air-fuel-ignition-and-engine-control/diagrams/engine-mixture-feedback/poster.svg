@@ -24,9 +24,9 @@
 <text x="455" y="354">Air + fuel burn</text>
 <text x="455" y="387">Exhaust leaves</text>
 </g>
-<g fill="none" stroke-width="3.5">
-<g stroke="#276950"><path d="M276 125H324M145 281V192" stroke-dasharray="7 6"/><path d="m312 118 12 7-12 7M138 204l7-12 7 12"/></g>
-<g stroke="#ad622d"><path d="M455 192V281M324 347H276M455 444V414"/><path d="m448 269 7 12 7-12M288 340l-12 7 12 7M448 426l7-12 7 12"/></g>
+<g fill="none" stroke-width="3.5" stroke-linejoin="round">
+<g stroke="#276950"><path d="M271 125H327.25M145 287V187.75" stroke-dasharray="7 6"/><path d="m315.25 118 12 7-12 7M138 199.75l7-12 7 12"/></g>
+<g stroke="#ad622d"><path d="M455 186V285.25M329 347H272.75M455 444V409.75"/><path d="m448 273.25 7 12 7-12M284.75 340l-12 7 12 7M448 421.75l7-12 7 12"/></g>
 </g>
 <rect x="80" y="216" width="130" height="39" fill="#f4f5ef"/><rect x="417" y="216" width="76" height="39" fill="#f4f5ef"/>
 <g text-anchor="middle" font-size="28">

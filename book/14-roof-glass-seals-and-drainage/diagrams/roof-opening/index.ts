@@ -187,11 +187,10 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       svg.selectAll('*').remove();
       const s = state.stage;
       const compact = w < 480;
-      stage.style.height = compact ? '420px' : '500px';
       const scale = Math.min(w / 680, 1);
       const offset = (w - 680 * scale) / 2;
       const top = 49;
-      const base = top + 285 * scale;
+      const base = top + 310 * scale;
       svg.attr('aria-label', `${stages[s][0]}: ordinary 2010 Boxster roof, functional side cutaway`);
       const text = (x: number, y: number, value: string | number, size = 14, anchor = 'start') =>
         svg
@@ -218,8 +217,10 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       );
       svg.append('g').attr('transform', `translate(${offset},${top}) scale(${scale})`).html(roofArtwork(s));
 
+      const [hx, hy] = headers[s];
       const badges = [
-        headers[s],
+        // Follow the travelling catch itself, below the front-frame locating nose.
+        [hx + (s === 0 ? 3 : -6), hy + (s === 0 ? 11 : 17)],
         s === 4 ? [451, 196] : s === 3 ? [472, 113] : s === 2 ? [410, 83] : [377, 91],
         s === 4 ? [470, 205] : s === 3 ? [477, 172] : s === 2 ? [469, 147] : [467, 151],
         s === 2 || s === 3 ? [531, 126] : [520, 180],
@@ -231,35 +232,35 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           [384, 62],
           [508, 125],
           [567, 157],
-          [555, 249],
+          [580, 304],
         ],
         [
           [294, 75],
           [384, 62],
           [508, 125],
           [567, 157],
-          [555, 249],
+          [580, 304],
         ],
         [
           [347, 54],
           [431, 53],
           [503, 147],
           [575, 101],
-          [555, 249],
+          [580, 304],
         ],
         [
           [410, 102],
           [483, 75],
           [515, 175],
           [575, 111],
-          [555, 249],
+          [580, 304],
         ],
         [
-          [412, 247],
+          [382, 304],
           [424, 159],
-          [492, 250],
+          [476, 304],
           [562, 154],
-          [555, 278],
+          [580, 304],
         ],
       ];
       badges.forEach(([x, y], i) => {
@@ -296,6 +297,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
         text(x, y, `${i + 1}  ${label}`, 14);
       });
       const driveTop = keyTop + (compact ? 5 : 3) * 24 + 15;
+      stage.style.height = `${Math.max(compact ? 420 : 500, Math.ceil(driveTop + 28))}px`;
       text(0, driveTop, '1 motor → 2 flexible drive shafts', 14);
       text(0, driveTop + 22, '→ left/right gearboxes → roof + cover', 14);
       explanation.textContent = stages[s][1];

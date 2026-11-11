@@ -6,7 +6,7 @@
       <rect width="10" height="10" fill="#dce0d8"/>
       <path d="M-2 2L2-2M0 10L10 0M8 12L12 8" fill="none" stroke="#788878" stroke-width="1.5"/>
     </pattern>
-    <marker id="fluid-heat-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <marker id="fluid-heat-arrow" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto">
       <path d="M0 0L7 3.5L0 7Z" fill="#8d5933"/>
     </marker>
   </defs>
@@ -28,7 +28,7 @@
     <text x="190" y="231" font-size="27">Hotter here</text>
     <text x="190" y="325" font-size="29" font-weight="700">Coolant channel</text>
     <text x="190" y="365" font-size="27">Cooler here</text>
-    <text x="447" y="181" font-size="28" font-weight="700" fill="#8d5933">Heat</text>
+    <text x="447.5" y="181" font-size="28" font-weight="700" fill="#8d5933">Heat</text>
     <g fill="none" stroke="#8d5933" stroke-width="5" marker-end="url(#fluid-heat-arrow)">
       <path d="M415 207V325"/>
       <path d="M480 207V325"/>

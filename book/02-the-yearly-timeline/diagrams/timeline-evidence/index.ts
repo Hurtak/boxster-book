@@ -160,8 +160,9 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
             .attr('height', 104)
             .attr('fill', state.mode === 'calendar' ? '#e1e8df' : '#ede0d0');
           const maxCharacters = Math.max(20, Math.floor((width - 38) / 10.5));
-          wrap(svg, date, 18, y + 28, maxCharacters).attr('font-weight', 700);
-          wrap(svg, title, 18, y + 64, maxCharacters);
+          const dateLabel = wrap(svg, date, 18, y + 28, maxCharacters).attr('font-weight', 700);
+          const titleY = y + 40 + dateLabel.selectAll('tspan').size() * 24;
+          wrap(svg, title, 18, titleY, maxCharacters);
         },
       );
       explanation.textContent = evidence[state.year as 2008 | 2009 | 2010 | 2011 | 2012].explanation;

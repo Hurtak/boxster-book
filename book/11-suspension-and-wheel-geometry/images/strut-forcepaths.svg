@@ -2,8 +2,8 @@
   <title id="title">Strut support and wheel location on the 2010 Boxster 2.9</title>
   <desc id="desc">A conceptual suspension corner, viewed across the car. The hub joins the wheel to its carrier; the carrier joins the lower arm and the structural strut, whose upper mount attaches to the body. The coil spring bears on upper and lower seats. Orange arrows trace the principal vertical support route from the tyre through the carrier and spring to the body. Blue arrows indicate a sideways tyre force and reactions through the lower arm and strut. A separate connection key shows the fore-and-aft guide joining the lower arm to the chassis, and a separate tie or toe link joining the carrier. At the front the steering rack moves the tie rod; at the rear the toe link guides wheel direction without a steering rack. Force paths interact; no exact geometry, load shares or force magnitudes are represented.</desc>
   <defs>
-    <marker id="vertical-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#a6552b"/></marker>
-    <marker id="location-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#27627b"/></marker>
+    <marker id="vertical-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#a6552b"/></marker>
+    <marker id="location-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#27627b"/></marker>
   </defs>
   <rect width="360" height="1110" fill="#faf8f1"/>
   <g font-family="Arial,sans-serif" fill="#273e35" font-size="18">
@@ -28,7 +28,7 @@
     <path d="M24 412H334" stroke="#82988d" stroke-width="2"/>
     <g fill="none" stroke="#82988d" stroke-width="1.5">
       <path d="M122 88L220 107"/>
-      <path d="M117 180H208"/>
+      <path d="M117 180H210"/>
       <path d="M145 230L219 239"/>
       <path d="M107 323L201 335"/>
       <path d="M125 354L129 374"/>
@@ -44,15 +44,15 @@
     <!-- Orange support route; blue wheel-guidance reactions. Arrows show
          one example direction, never relative force magnitudes. -->
     <g fill="none" stroke="#a6552b" stroke-width="3" marker-end="url(#vertical-arrow)">
-      <path d="M272 408V359"/>
-      <path d="M261 347H237L212 320L216 291"/>
-      <path d="M231 144L234 123"/>
+      <path d="M272 408V356.5"/>
+      <path d="M261 347H237L212 320L216.805 285.165"/>
+      <path d="M231 144L234 122"/>
     </g>
     <g fill="none" stroke="#27627b" stroke-width="3" marker-end="url(#location-arrow)">
-      <path d="M329 409H290"/>
-      <path d="M189 371L38 378"/>
+      <path d="M329 409H281"/>
+      <path d="M189 371L23.491 378.61"/>
       <path d="M214 309L218 279"/>
-      <path d="M244 142L247 122"/>
+      <path d="M244 142V122"/>
     </g>
     <text x="20" y="435" fill="#a6552b" font-weight="bold">↑ Vertical support</text>
     <text x="20" y="461" fill="#27627b" font-weight="bold">← Side force: routes to body</text>

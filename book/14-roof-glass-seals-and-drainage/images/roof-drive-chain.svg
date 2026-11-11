@@ -2,8 +2,8 @@
   <title id="t">One roof motor, two rotary drive paths</title>
   <desc id="d">One reversible electric motor turns two flexible rotary shafts inside their sleeves. Each shaft drives a side gearbox, whose output lever and jointed rods move the same roof frame and compartment cover. Curved arrows indicate rotation and lever sweep, not a cable being pulled along its length. Both sides must remain coordinated: unequal travel can twist the frame. Functional schematic only; positions, routing, linkage geometry and timing are not shown.</desc>
   <defs>
-    <marker id="rotation" markerWidth="6" markerHeight="6" refX="4.5" refY="3" orient="auto-start-reverse"><path d="M0 0 L6 3 L0 6 Z" fill="#315d4d"/></marker>
-    <marker id="sweep" markerWidth="6" markerHeight="6" refX="4.5" refY="3" orient="auto-start-reverse"><path d="M0 0 L6 3 L0 6 Z" fill="#a06a35"/></marker>
+    <marker id="rotation" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto-start-reverse"><path d="M0 0 L6 3 L0 6 Z" fill="#315d4d"/></marker>
+    <marker id="sweep" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto-start-reverse"><path d="M0 0 L6 3 L0 6 Z" fill="#a06a35"/></marker>
   </defs>
   <rect width="480" height="860" fill="#f3f5f0"/>
   <g font-family="sans-serif" fill="#263c34" text-anchor="middle">
@@ -42,8 +42,8 @@
       <path d="M113 408 V490 M367 408 V490" stroke="#315d4d" stroke-width="4"/>
       <path d="M113 490 L148 521 M367 490 L332 521" stroke="#a06a35" stroke-width="10"/>
       <path d="M148 521 L113 610 M332 521 L367 610" stroke="#a06a35" stroke-width="5"/>
-      <path d="M76 510 A42 42 0 0 0 105 532" stroke="#a06a35" stroke-width="3" marker-start="url(#sweep)" marker-end="url(#sweep)"/>
-      <path d="M404 510 A42 42 0 0 1 375 532" stroke="#a06a35" stroke-width="3" marker-start="url(#sweep)" marker-end="url(#sweep)"/>
+      <path d="M71 490 A42 42 0 0 0 113 532" stroke="#a06a35" stroke-width="3" marker-start="url(#sweep)" marker-end="url(#sweep)"/>
+      <path d="M409 490 A42 42 0 0 1 367 532" stroke="#a06a35" stroke-width="3" marker-start="url(#sweep)" marker-end="url(#sweep)"/>
     </g>
     <g fill="#f3f5f0" stroke="#a06a35" stroke-width="3">
       <circle cx="113" cy="490" r="9"/><circle cx="367" cy="490" r="9"/>

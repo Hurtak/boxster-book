@@ -15,7 +15,7 @@
       <path d="M49 0v29" stroke="#a29e84" stroke-width="5"/>
       <path d="M49 0v31" stroke="#243f33" stroke-width="1.5"/>
       <path d="M1 2l12 13" stroke="#86613b" stroke-width="6"/>
-      <path d="M-5 21H21v29m-5-7 5 7 5-7" fill="none" stroke="#306b95" stroke-width="3"/>
+      <path d="M-5 21H33v6l11 5v18m-5-7 5 7 5-7" fill="none" stroke="#306b95" stroke-width="3"/>
       <rect x="12" y="78" width="74" height="18" rx="2" fill="#a5b6ad" stroke="#243f33" stroke-width="2"/>
       <path d="M13 83h72" stroke="#243f33" stroke-width="1.5"/>
       <path d="M110 53v38m-5-7 5 7 5-7" fill="none" stroke="#566e60" stroke-width="3"/>
@@ -67,7 +67,7 @@
       <path d="M30 0v26m-10 0h20 M68 0v36m-10 0h20" fill="none" stroke="#243f33" stroke-width="3"/>
       <path d="M49 0v29" stroke="#a29e84" stroke-width="5"/>
       <path d="M49 0v31" stroke="#243f33" stroke-width="1.5"/>
-      <path d="M78 50V21h23m-7-5 7 5-7 5" fill="none" stroke="#6c6874" stroke-width="3"/>
+      <path d="M54 50V32l11-5v-6h36m-7-5 7 5-7 5" fill="none" stroke="#6c6874" stroke-width="3"/>
       <rect x="12" y="78" width="74" height="18" rx="2" fill="#a5b6ad" stroke="#243f33" stroke-width="2"/>
       <path d="M13 83h72" stroke="#243f33" stroke-width="1.5"/>
       <path d="M110 91V53m-5 7 5-7 5 7" fill="none" stroke="#566e60" stroke-width="3"/>

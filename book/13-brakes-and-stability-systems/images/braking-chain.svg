@@ -2,9 +2,9 @@
   <title id="title">From pedal force to brake torque, heat and road force</title>
   <desc id="description">Functional schematic of the Boxster's service brakes, showing one of four wheel brakes. Foot force is increased by pedal leverage and booster assistance. The master cylinder creates hydraulic pressure, passed through the ABS and PSM hydraulic unit to caliper pistons. Pads clamp the disc. Pad-disc friction creates opposing torque and heats the discs and pads, with heat then escaping to the air. The disc, hub, wheel and tyre rotate together; the road's force opposite the car's motion on the braking tyre slows the car, within available grip. Dashed blue arrows show wheel-speed feedback and control signals; steering angle, yaw rate and lateral acceleration also inform PSM. The schematic omits exact pipe routing, circuit division, engine-torque intervention and performance predictions.</desc>
   <defs>
-    <marker id="force-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#141414"/></marker>
-    <marker id="pressure-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#326b8c"/></marker>
-    <marker id="heat-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#a24d20"/></marker>
+    <marker id="force-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#141414"/></marker>
+    <marker id="pressure-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#326b8c"/></marker>
+    <marker id="heat-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#a24d20"/></marker>
   </defs>
   <rect width="480" height="1350" fill="#fff"/>
   <g fill="#f2f4f7">
@@ -18,20 +18,20 @@
   </g>
   <!-- Black links describe the force/torque chain; blue solid links are hydraulic. -->
   <g fill="none" stroke="#141414" stroke-width="2.5" marker-end="url(#force-arrow)">
-    <path d="M106 120 V156"/>
-    <path d="M106 598 V634"/>
-    <path d="M106 830 V866"/>
-    <path d="M106 1004 V1040"/>
+    <path d="M106 120 V158"/>
+    <path d="M106 598 V636"/>
+    <path d="M106 830 V868"/>
+    <path d="M106 1004 V1042"/>
   </g>
   <g fill="none" stroke="#326b8c" stroke-width="2.5" marker-end="url(#pressure-arrow)">
-    <path d="M106 268 V304"/>
-    <path d="M106 450 V486"/>
+    <path d="M106 268 V306"/>
+    <path d="M106 450 V488"/>
   </g>
   <!-- Signals are a feedback branch, not another stage in the hydraulic path. -->
   <rect x="32" y="1218" width="416" height="92" rx="6" fill="#eef4f7" stroke="#326b8c" stroke-width="1.5" stroke-dasharray="7 5"/>
   <g fill="none" stroke="#326b8c" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#pressure-arrow)">
-    <path d="M448 936 H466 V1250 H450"/>
-    <path d="M32 1250 H14 V378 H30"/>
+    <path d="M448 936 H466 V1250 H448"/>
+    <path d="M32 1250 H14 V378 H32"/>
   </g>
   <g fill="#141414" font-family="Arial, sans-serif" text-anchor="middle">
     <g font-size="26" font-weight="600">

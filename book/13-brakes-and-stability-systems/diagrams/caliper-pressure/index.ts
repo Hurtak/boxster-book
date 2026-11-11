@@ -48,9 +48,9 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       line(`M${cx - 124},${bottom} V${top} H${cx + 124} V${bottom}`, ink, 20).attr('stroke-linejoin', 'round');
       // The connection is functional, not a claimed drawing of Porsche's internal routing.
       line(`M${cx},48 V${top} M${cx - 124},247 V${top} H${cx + 124} V247`, colour, 5);
-      text(cx - 16, 22, 'One-piece', 'end');
-      text(cx - 16, 44, 'fixed body', 'end');
-      line(`M${cx - 82},51 V${top - 12}`);
+      text(cx - 52, 22, 'One-piece');
+      text(cx - 52, 44, 'fixed body');
+      line(`M${cx - 52},51 V${top - 10}`);
       text(cx + 12, 40, 'Fluid pressure p', 'start');
       text(cx + 12, 62, `${Math.round(pressure * 100)}% relative`, 'start');
 
@@ -108,7 +108,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           line(`M${housingEnd},${y - 19} H${housingOuter} V${y + 19} H${housingEnd}`, ink, 4);
           text(cx + side * (59 + gap), y + 40, i === 0 ? 'A₁' : 'A₂');
           if (pressure > 0) {
-            const tip = cx + side * (37 + gap);
+            const tip = padBack;
             const tail = tip + side * 40 * pressure;
             const arrowSize = 2 + 4 * pressure;
             line(`M${tail},${y} H${tip}`, forceColour, 1 + 3 * pressure);
@@ -126,10 +126,10 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       text(cx + 104, bottom + 28, '2 pistons');
       text(cx - 70, bottom + 51, 'Pad');
       text(cx + 70, bottom + 51, 'Pad');
-      line(`M${cx - 70},${bottom + 35} L${cx - 20 - gap},286`);
-      line(`M${cx + 70},${bottom + 35} L${cx + 20 + gap},286`);
+      line(`M${cx - 70},${bottom + 35} L${cx - 19.5 - gap},288`);
+      line(`M${cx + 70},${bottom + 35} L${cx + 19.5 + gap},288`);
       text(cx, bottom + 76, 'Ventilated disc');
-      line(`M${cx},${bottom + 18} V${bottom + 57}`);
+      line(`M${cx},${bottom + 57} V${bottom + 32} L${cx - 8},${bottom + 16}`);
       text(cx, height - 28, 'Each pad: F = p(A₁ + A₂)');
       text(cx, height - 6, pressure === 0 ? 'Released: gaps exaggerated' : 'Arrows: inward piston force');
       explanation.textContent =

@@ -204,6 +204,7 @@ export function createAssembly() {
     [0, 0.3, 0],
     [-0.3, -0.08, 0],
     'Battery positive feeds a power distributor with fuse elements, distinct from the footwell fuse carrier. A long cable reaches the covered engine connection point and starter/alternator wire set. Distributor position, link count and cable route are schematic.',
+    [0.16, 0.24, 0.963],
   );
   tube(
     positive,

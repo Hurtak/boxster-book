@@ -95,7 +95,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
         text(12, y + 18, String(gear), 18);
         text(width - 2, y + 18, item.speedKmh.toFixed(1), 18, 'end', selected ? '#1d5038' : '#4c6155');
       }
-      text(mid, 631, 'Ideal gearing, not a top-speed forecast', 18);
+      text(mid, 631, 'Ideal gearing, not a top-speed forecast', width < 320 ? 16 : 18);
       explanation.textContent = `Gear ${state.gear}: ${state.rpm.toLocaleString('en-GB')} engine rpm ÷ (${manualRatios[state.gear - 1].toFixed(3)} × 3.875) = ${whole(result.wheelRpm)} wheel rpm. Road speed = wheel rpm × 2.10 m × 60 ÷ 1,000 = ${result.speedKmh.toFixed(1)} km/h. Total torque = ${state.torqueNm} Nm × ${result.reduction.toFixed(3)} = ${whole(result.axleTorqueNm)} Nm. Power in kW = torque × rpm × 2π ÷ 60,000: both engine input and total wheel output give ${powerKw.toFixed(1)} kW here. Change rpm to move all bars on the fixed 0–300 km/h scale; change torque to alter output torque and power without changing speed.`;
       Object.assign(host.dataset, {
         manualGear: String(state.gear),

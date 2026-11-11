@@ -2,8 +2,8 @@
   <title id="brake-explorer-title">2010 Boxster 2.9 front brake in context</title>
   <desc id="brake-explorer-desc">A schematic master cylinder connects hydraulically to all four wheel brakes. An exploded front assembly shows the hub, disc and wheel on one axis; they rotate together and are secured by wheel bolts. A separate stationary cover plate sits behind the disc. The standard front friction ring is 318 millimetres in diameter and 28 millimetres thick, with cross-drilled faces and internal ventilation. A caliper cutaway shows two pistons on each side pushing two pads towards opposite disc faces. The black aluminium monobloc fixed caliper stays attached to the wheel carrier. Pad retaining hardware, electrical pad-wear lead and hydraulic pipe and hose are distinct neighbouring parts. Pipe routes, hydraulic circuits, the ABS/PSM unit, bolt pattern, clearances and component shapes are simplified. This is not a service sequence.</desc>
   <defs>
-    <marker id="brake-force" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#9d3e2c"/></marker>
-    <marker id="brake-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#526159"/></marker>
+    <marker id="brake-force" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#9d3e2c"/></marker>
+    <marker id="brake-axis" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#526159"/></marker>
   </defs>
   <rect width="600" height="1550" fill="#f1f3f2"/>
   <g fill="#1c2823">

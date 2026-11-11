@@ -2,8 +2,8 @@
   <title id="t">CV-joint movement and the rotating wheel hub</title>
   <desc id="d">Three functional schematics. First, inner and outer CV joints transmit drive while changing angle as the wheel moves; the dashed shaft is an alternate position. Second, a separate generic joint envelope shows axial sliding, called plunge, without showing or assigning Porsche joint internals or the plunge location. Third, a section separates the splined drive through the rotating hub from the wheel bearing and non-rotating carrier. The bearing inner ring turns with the hub, while its outer ring stays with the carrier. Shapes, movement and bearing elements are symbolic, not measured car geometry.</desc>
   <defs>
-    <marker id="cv-motion" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#9a4e22"/></marker>
-    <marker id="cv-drive" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
+    <marker id="cv-motion" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#9a4e22"/></marker>
+    <marker id="cv-drive" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
   </defs>
   <rect width="600" height="1490" fill="#fff"/>
 
@@ -24,7 +24,7 @@
   <path d="M235 170H375" stroke="#176b53" stroke-width="4" marker-end="url(#cv-drive)"/>
   <text x="24" y="264" font-size="27">Transaxle</text>
   <text x="272" y="359" font-size="27">Wheel end</text>
-  <path d="M430 348 535 321" stroke="#7c8e7e" stroke-width="2" fill="none"/>
+  <path d="M430 348 545 315" stroke="#7c8e7e" stroke-width="2" fill="none"/>
   <text x="24" y="409" font-size="27">Dashed: another suspension position.</text>
   <path d="M24 441H576" stroke="#d7dfd5" stroke-width="2"/>
 
@@ -69,8 +69,8 @@
   <path d="M92 1158 126 1123" stroke="#243e35" stroke-width="2"/>
   <text x="24" y="1232" font-size="27">Splines</text>
   <path d="M133 1223H200V1118" stroke="#243e35" stroke-width="2" fill="none"/>
-  <text x="430" y="1268" font-size="27" text-anchor="middle">Hub flange</text>
-  <path d="M430 1240V1195" stroke="#243e35" stroke-width="2"/>
+  <text x="426.5" y="1268" font-size="27" text-anchor="middle">Hub flange</text>
+  <path d="M426.5 1240V1195" stroke="#243e35" stroke-width="2"/>
 
   <text x="24" y="1310" font-size="27">Hub + inner bearing ring rotate together.</text>
   <text x="24" y="1349" font-size="27">Outer ring stays with the carrier.</text>

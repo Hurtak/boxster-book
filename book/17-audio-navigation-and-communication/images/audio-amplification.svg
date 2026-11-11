@@ -2,10 +2,10 @@
   <title id="title">From programme information to moving air</title>
   <desc id="desc">Dashed arrows carry programme information from the source through the head unit to the amplifier. A separate orange arrow supplies DC energy from the vehicle battery and charging system. The amplifier uses that energy to drive changing current through a loudspeaker voice coil. In a fixed magnetic field, the current produces a reversing force, moving the coil and attached cone in and out and making air-pressure variations. A stereo programme has two channels; each can feed several drivers. This is a functional schematic with a generic speaker section, not Porsche wiring or factory speaker construction.</desc>
   <defs>
-    <marker id="information-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#53675d"/></marker>
-    <marker id="power-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a4602f"/></marker>
-    <marker id="drive-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
-    <marker id="motion-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#203e33"/></marker>
+    <marker id="information-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#53675d"/></marker>
+    <marker id="power-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a4602f"/></marker>
+    <marker id="drive-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
+    <marker id="motion-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#203e33"/></marker>
   </defs>
   <rect width="600" height="1170" fill="#f4f3ec"/>
   <g fill="#203e33">
@@ -31,15 +31,15 @@
     <text x="450" y="368" font-size="27">output stage</text>
   </g>
   <g fill="none" stroke="#53675d" stroke-width="4" stroke-dasharray="9 7" marker-end="url(#information-arrow)">
-    <path d="M250 159H319"/>
-    <path d="M450 208V278"/>
+    <path d="M250 159H330"/>
+    <path d="M450 208V290"/>
   </g>
   <text x="30" y="251" font-size="26" fill="#53675d">Dashed: audio information</text>
-  <path d="M250 348H318" fill="none" stroke="#a4602f" stroke-width="6" marker-end="url(#power-arrow)"/>
+  <path d="M250 348H330" fill="none" stroke="#a4602f" stroke-width="6" marker-end="url(#power-arrow)"/>
   <text x="30" y="444" font-size="26" fill="#a4602f">Orange: DC supply energy</text>
   <text x="30" y="489" font-size="27" fill="#203e33">The amplifier uses this energy</text>
   <text x="30" y="523" font-size="27" fill="#203e33">to drive changing coil current.</text>
-  <path d="M550 406V574" fill="none" stroke="#176b53" stroke-width="6" marker-end="url(#drive-arrow)"/>
+  <path d="M550 406V596" fill="none" stroke="#176b53" stroke-width="6" marker-end="url(#drive-arrow)"/>
   <text x="30" y="559" font-size="23" fill="#53675d">Output stage may be inside the head unit.</text>
 
   <rect x="20" y="596" width="560" height="392" rx="7" fill="#fff" stroke="#72887b" stroke-width="2"/>
@@ -65,10 +65,10 @@
   <path d="M253 695H337" fill="none" stroke="#203e33" stroke-width="3" marker-start="url(#motion-arrow)" marker-end="url(#motion-arrow)"/>
   <g font-size="26" fill="#203e33">
     <text x="40" y="706">Voice coil</text>
-    <path d="M153 702 180 746" fill="none" stroke="#53675d" stroke-width="2"/>
+    <path d="M153 702 177 754" fill="none" stroke="#53675d" stroke-width="2"/>
     <text x="387" y="706">Sound</text>
     <text x="45" y="884">Fixed magnet</text>
-    <path d="M127 857V842" fill="none" stroke="#53675d" stroke-width="2"/>
+    <path d="M127 857V840" fill="none" stroke="#53675d" stroke-width="2"/>
     <text x="285" y="895">Cone: in / out</text>
     <path d="M335 870 338 850" fill="none" stroke="#53675d" stroke-width="2"/>
     <text x="40" y="938">Coil current + fixed magnetic field</text>

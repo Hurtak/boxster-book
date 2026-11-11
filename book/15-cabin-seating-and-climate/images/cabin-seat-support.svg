@@ -2,8 +2,8 @@
   <title id="cabin-seat-title">Standard Boxster seat: support and adjustment</title>
   <desc id="cabin-seat-desc">Simplified side view of the MY2010 UK standard seat. Foam and trim spread seated weight over the cushion suspension and frame, which are supported through the runners and their attachments to the body floor. The integrated head restraint has no separate adjustment. Manual fore-and-aft adjustment releases the runner lock; manual height adjustment moves the seat above the runners; an electric switch changes backrest angle about its lower pivot. Geometry and travel are illustrative.</desc>
   <defs>
-    <marker id="cabin-seat-motion" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#27684d"/></marker>
-    <marker id="cabin-seat-load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#9b6137"/></marker>
+    <marker id="cabin-seat-motion" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#27684d"/></marker>
+    <marker id="cabin-seat-load" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#9b6137"/></marker>
     <pattern id="cabin-seat-floor" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M0 12 12 0" stroke="#a8b6ae" stroke-width="2"/></pattern>
   </defs>
   <rect width="480" height="1190" fill="#fafbf9"/>
@@ -34,9 +34,9 @@
     <path d="M226 191 H187 L153 215"/>
     <path d="M258 305 H193 L169 320"/>
     <path d="M121 366 H138 L149 405"/>
-    <path d="M153 479 H163 L216 488"/>
+    <path d="M153 469 H163 L241 480"/>
     <path d="M152 526 H162 L182 506"/>
-    <path d="M129 575 H157"/>
+    <path d="M129 575 H145 L159 571.5"/>
     <path d="M339 637 V617"/>
   </g>
   <g font-size="22" fill="#263e34">
@@ -49,16 +49,16 @@
     <text x="32" y="481">suspension</text>
     <text x="32" y="533">Base frame</text>
     <text x="32" y="583">Runners</text>
-    <text x="280" y="661">Body floor</text>
+    <text x="339" y="661" text-anchor="middle">Body floor</text>
   </g>
-  <text x="226" y="378" font-size="22" fill="#9b6137">Seated weight</text>
+  <text x="283" y="378" text-anchor="middle" font-size="22" fill="#9b6137">Seated weight</text>
   <g fill="none" stroke="#9b6137" stroke-width="4" marker-end="url(#cabin-seat-load)">
-    <path d="M283 393 V447"/>
-    <path d="M283 482 V505"/>
-    <path d="M205 522 V546"/>
-    <path d="M352 522 V546"/>
-    <path d="M181 581 V605"/>
-    <path d="M383 581 V605"/>
+    <path d="M283 393 V454"/>
+    <path d="M283 482 V501.5"/>
+    <path d="M205 522 V547"/>
+    <path d="M352 522 V547"/>
+    <path d="M181 581 V603.5"/>
+    <path d="M383 581 V603.5"/>
   </g>
   <text x="32" y="682" font-size="18" fill="#52665b">Orange arrows: simplified weight-support path.</text>
 
@@ -83,8 +83,8 @@
   </g>
   <path d="M43 844 H140" fill="none" stroke="#27684d" stroke-width="4" marker-start="url(#cabin-seat-motion)" marker-end="url(#cabin-seat-motion)"/>
   <path d="M37 903 V945" fill="none" stroke="#27684d" stroke-width="4" marker-start="url(#cabin-seat-motion)" marker-end="url(#cabin-seat-motion)"/>
-  <path d="M50 1021 A58 58 0 0 1 110 1010" fill="none" stroke="#27684d" stroke-width="4" marker-start="url(#cabin-seat-motion)" marker-end="url(#cabin-seat-motion)"/>
-  <path d="M52 1018 88 1064 109 1012" fill="none" stroke="#a8b6ae" stroke-width="2" stroke-dasharray="4 5"/>
+  <path d="M49.593 1020.539 A58 58 0 0 1 109.883 1010.287" fill="none" stroke="#27684d" stroke-width="4" marker-start="url(#cabin-seat-motion)" marker-end="url(#cabin-seat-motion)"/>
+  <path d="M49.593 1020.539 88 1064 109.883 1010.287" fill="none" stroke="#a8b6ae" stroke-width="2" stroke-dasharray="4 5"/>
   <circle cx="88" cy="1064" r="6" fill="#fff" stroke="#263e34" stroke-width="3"/>
   <g fill="#52665b" font-size="19">
     <text x="24" y="1140">Functional side view; shapes and travel illustrative.</text>

@@ -219,6 +219,7 @@ export function createAssembly() {
     [0, 0.3, 0.25],
     [0, -0.18, 0],
     'PET 403-001 separates the long pressure/return sections, flexible engine-end sections, holders and a pump-to-heat-exchanger return connection. Orange denotes pressure supply and blue return. The heat exchanger is omitted; line bends and locations are schematic, and UK right-hand-drive listings differ.',
+    [0.18, -0.015, 0.15],
   );
   tube(
     lines,

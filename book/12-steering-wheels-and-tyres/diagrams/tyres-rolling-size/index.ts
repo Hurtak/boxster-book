@@ -56,7 +56,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
         y: number,
         value: string | number,
         colour: string = '#243a32',
-        size = width < 440 ? 16 : 20,
+        size = width < 330 ? 14 : width < 440 ? 16 : 20,
       ) =>
         svg
           .append('text')
@@ -115,8 +115,19 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           .attr('stroke', colour)
           .attr('stroke-width', 2);
         // Dimension circles are the nominal bead-seat and tyre diameters, not a rim-flange drawing.
-        dimension(cx - outerRadius - 8, cy - outerRadius, cx - outerRadius - 8, cy + outerRadius, colour);
-        label(cx - outerRadius - 20, cy + 5, 'D', colour, 16);
+        const diameterX = cx - outerRadius - 8;
+        for (const y of [cy - outerRadius, cy + outerRadius])
+          svg
+            .append('line')
+            .attr('x1', diameterX - 4)
+            .attr('y1', y)
+            .attr('x2', cx)
+            .attr('y2', y)
+            .attr('stroke', colour)
+            .attr('stroke-width', 1)
+            .attr('opacity', 0.55);
+        dimension(diameterX, cy - outerRadius, diameterX, cy + outerRadius, colour);
+        label(diameterX - 8, cy + 5, 'D', colour, 16);
         dimension(cx - rimRadius, cy, cx + rimRadius, cy, colour);
         label(cx, cy - 8, 'd', colour, 16);
         dimension(cx, cy - outerRadius, cx, cy - rimRadius, '#ffffff');

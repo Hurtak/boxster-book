@@ -212,6 +212,7 @@ export function createAssembly() {
       [side * 0.56, 0.797, 0.62],
       [side * 0.17, 0.27, 0.02],
       'One of the standard pair of dashboard high-range speakers, retained by two clips in PET 911-005 items 1–2. Its small diaphragm moves air at high frequencies; the enlarged open section explains the coil and magnet, not exact factory construction.',
+      [0, 0.03068, 0], // Existing dome apex after the driver turns towards +Y.
     );
     const tweeterUnit = driver(tweeter, 0.034, m, true);
     tweeterUnit.rotation.x = -Math.PI / 2;
@@ -227,6 +228,8 @@ export function createAssembly() {
     wooferUnit.rotation.y = (-side * Math.PI) / 2;
   }
 
+  const onGlass = (u: number, v: number) => windscreenPoint(u, v).map((n, axis) => n + (axis === 1 ? 0.002 : 0));
+  const ampAt = onGlass(0.15, 0.05);
   const aerial = part(
     root,
     'windscreen-aerial',
@@ -234,9 +237,9 @@ export function createAssembly() {
     [0, 0, 0],
     [0, 0.28, 0.14],
     'The aerial receives the broadcast; its signal amplifier and connection feed CDR-30 (PET 911-000 item 13 and radio cable). This reception amplifier does not drive the speakers. The windscreen pattern, amplifier position and cable route are schematic; GPS and telephone use distinct optional aerial hardware.',
+    [ampAt[0], ampAt[1] + 0.012, ampAt[2]], // Amplifier cylinder surface, clear of its glazing context.
   );
   windscreenGlass(aerial, { glass: m.glass });
-  const onGlass = (u: number, v: number) => windscreenPoint(u, v).map((n, axis) => n + (axis === 1 ? 0.002 : 0));
   const pattern = [
     [0.15, 0.12],
     [0.2, 0.88],
@@ -258,7 +261,6 @@ export function createAssembly() {
       m.warm,
     );
   }
-  const ampAt = onGlass(0.15, 0.05);
   const receptionAmp = cylinder(aerial, 0.012, 0.078, m.metal, ampAt, [0, 0, Math.PI / 2]);
   receptionAmp.name = 'radio-aerial-signal-amplifier';
   box(aerial, [0.05, 0.005, 0.025], m.dark, [ampAt[0], ampAt[1] - 0.015, ampAt[2]]);
@@ -271,6 +273,7 @@ export function createAssembly() {
     [0, 0.66, 1.1],
     [-0.14, 0.08, 0.2],
     'The battery-backed vehicle supply powers the head unit and its output stages. Earth connections complete the electrical circuit. The visible supply and return paths explain connectivity, not the fuse locations or harness route.',
+    [0, 0, -0.09], // Existing case face; the long illustrative feed wire must not pull the target away.
   );
   box(power, [0.28, 0.15, 0.18], m.black);
   box(power, [0.29, 0.018, 0.19], m.dark, [0, 0.082, 0]);

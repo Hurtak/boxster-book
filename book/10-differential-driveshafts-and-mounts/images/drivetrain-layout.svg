@@ -2,7 +2,7 @@
   <title id="t">Mid-engine layout, rear drive path and power-unit supports</title>
   <desc id="d">Functional plan view, with the front of the car at the top. The longitudinal engine is ahead of the rear wheel centre line. Behind it, the transaxle contains the gearbox, final drive and differential. Green arrows show the torque sequence: engine through the gearbox, then final drive and differential, then two half-shafts to the rear wheels. These arrows are not an internal shaft-routing drawing. Three numbered amber compliant supports connect the power-unit housings to the surrounding structure: one forward engine support and two transmission supports. They carry weight and react housing torque, separately from the rotating drive path. Positions and proportions are schematic, not measured mount coordinates.</desc>
   <defs>
-    <marker id="drive-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+    <marker id="drive-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
       <path d="M0 0L10 5L0 10Z" fill="#176b53"/>
     </marker>
   </defs>
@@ -40,10 +40,10 @@
   <rect x="190" y="474" width="180" height="60" rx="10" fill="#dfe9df" stroke="#738e7d" stroke-width="2"/>
   <text x="280" y="513" text-anchor="middle" font-size="26">Gearbox</text>
   <g fill="none" stroke="#176b53" stroke-width="5" marker-end="url(#drive-arrow)">
-    <path d="M280 270V297H383V504H372"/>
-    <path d="M280 474V438"/>
-    <path d="M190 392H76"/>
-    <path d="M370 392H484"/>
+    <path d="M280 270V297H383V504H370"/>
+    <path d="M280 474V434"/>
+    <path d="M190 392H70"/>
+    <path d="M370 392H490"/>
   </g>
 
   <!-- The amber links join housings to structure; they are not drive shafts. -->

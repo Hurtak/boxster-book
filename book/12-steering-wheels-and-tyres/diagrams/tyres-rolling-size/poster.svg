@@ -9,6 +9,10 @@
 <!-- Inner circles are nominal bead-seat diameters, not the outside of rim flanges. -->
 <circle cx="150" cy="185" r="90.018" fill="#333b38"/><circle cx="450" cy="185" r="90.342" fill="#333b38"/>
 <circle cx="150" cy="185" r="58.293" fill="#e8eae5" stroke="#65716b" stroke-width="2"/><circle cx="450" cy="185" r="61.722" fill="#e8eae5" stroke="#17654c" stroke-width="2"/>
+<g fill="none" stroke-width="1" opacity=".55">
+<path d="M45.982 94.982H150M45.982 275.018H150" stroke="#65716b"/>
+<path d="M345.658 94.658H450M345.658 275.342H450" stroke="#17654c"/>
+</g>
 <g fill="none" stroke-width="2">
 <path d="M51.982 94.982V275.018M45.982 94.982H57.982M45.982 275.018H57.982M91.707 185H208.293M91.707 179V191M208.293 179V191" stroke="#65716b"/>
 <path d="M351.658 94.658V275.342M345.658 94.658H357.658M345.658 275.342H357.658M388.278 185H511.722M388.278 179V191M511.722 179V191" stroke="#17654c"/>

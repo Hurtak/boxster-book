@@ -180,6 +180,7 @@ export function createAssembly() {
     [0, 0.48, -1.17],
     [0.37, 0.12, 0.08],
     'Outer wet clutch K1 couples the engine to inner shaft 1. That path serves gears 1, 3, 5 and 7 plus reverse. Hydraulic pressure clamps the discs; their drawn count and spacing are schematic.',
+    [0, 0.135, 0.0525],
   );
   ring(k1, 0.105, 0.17, 0.105, [0, 0, 0], m.dark);
   for (let i = 0; i < 6; i++) ring(k1, 0.108, 0.155, 0.009, [0, 0, -0.043 + i * 0.016], i % 2 ? m.metal : m.warm);
@@ -201,6 +202,7 @@ export function createAssembly() {
     [0, 0.48, -1.17],
     [-0.37, 0.12, -0.03],
     'Inner wet clutch K2 couples the engine to hollow outer shaft 2, which surrounds shaft 1 and serves gears 2, 4 and 6. The two input shafts share a centreline but can turn at different speeds.',
+    [0, 0.075, 0.051],
   );
   ring(k2, 0.044, 0.1, 0.102, [0, 0, 0], m.green);
   for (let i = 0; i < 6; i++) ring(k2, 0.046, 0.091, 0.009, [0, 0, -0.043 + i * 0.016], i % 2 ? m.metal : m.warm);
@@ -343,6 +345,7 @@ export function createAssembly() {
     [0, 0.52, 0.005],
     [-0.3, 0.14, 0.15],
     'The cabin selector sends drive requests electronically. Its separate mechanical cable operates the parking-lock mechanism at the gearbox. It does not directly select each forward gear; the cable route is illustrative.',
+    [0, 0.18, 0.0075],
   );
   box(selector, [0.11, 0.07, 0.19], m.dark);
   beam(selector, [0, 0.025, 0], [0, 0.17, -0.02], 0.012, m.metal);

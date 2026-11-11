@@ -178,6 +178,7 @@
 }
 .diagram-callout {
   position: absolute;
+  z-index: 2;
   top: 12px;
   left: 12px;
   max-width: calc(100% - 24px);

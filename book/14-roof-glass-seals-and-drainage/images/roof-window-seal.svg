@@ -2,7 +2,7 @@
   <title id="t">Frameless door glass drops before the door opens</title>
   <desc id="d">Three functional end sections of the 2010 Boxster 2.9 with its roof closed. First, raised glass engages the resilient roof seal. Pulling the door handle lets the motor and cable regulator lower the glass into the still-closed door. A downward arrow and a dashed former glass position show this short drop. With the upper edge below the seal, the door swings out with the glass; the arrow shows its local outward motion to the right, not a hinge path. Closing the door lets the glass rise again. Window lowering for roof operation is a separate event. Seal profile, drop and outward movement are exaggerated, with no measured geometry or adjustment dimensions.</desc>
   <defs>
-    <marker id="motion" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#315d4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="motion" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#315d4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
     <g id="fixed-roof" stroke-linecap="round" stroke-linejoin="round">
       <path d="M50 0 H222" fill="none" stroke="#315d4d" stroke-width="18"/>
       <path d="M136 13 H181 Q196 13 196 29 V43 Q196 56 181 56 H177" fill="none" stroke="#b28049" stroke-width="13"/>
@@ -20,10 +20,10 @@
       <path d="M172 39 V139" stroke="#78a7b8" stroke-width="10" stroke-linecap="round"/>
       <path d="M100 127 H227 V157 H100Z" fill="#dce5dc" stroke="#315d4d" stroke-width="3"/>
       <g fill="none" stroke="#6b7c72" stroke-width="2">
-        <path d="M225 0 H253"/>
-        <path d="M202 33 H240 L253 48"/>
-        <path d="M180 90 H253"/>
-        <path d="M230 142 H253"/>
+        <path d="M231 0 H253"/>
+        <path d="M202.5 33 H240 L253 48"/>
+        <path d="M177 90 H253"/>
+        <path d="M228.5 142 H253"/>
       </g>
       <g font-size="22">
         <text x="267" y="8">Roof edge</text>
@@ -40,14 +40,14 @@
       <path d="M172 39 V79" stroke="#78a7b8" stroke-width="5" stroke-dasharray="6 6" opacity=".65"/>
       <path d="M172 82 V139" stroke="#78a7b8" stroke-width="10" stroke-linecap="round"/>
       <path d="M100 127 H227 V157 H100Z" fill="#dce5dc" stroke="#315d4d" stroke-width="3"/>
-      <path d="M131 42 V84" fill="none" stroke="#315d4d" stroke-width="4" marker-end="url(#motion)"/>
+      <path d="M131 39 V82" fill="none" stroke="#315d4d" stroke-width="4" marker-end="url(#motion)"/>
       <g fill="none" stroke="#6b7c72" stroke-width="2">
-        <path d="M201 69 H253"/>
-        <path d="M230 142 H253"/>
+        <path d="M177 69.75 H253"/>
+        <path d="M228.5 142 H253"/>
       </g>
       <g font-size="22">
         <text x="267" y="33">Glass down</text>
-        <text x="267" y="77">Clearance</text>
+        <text x="267" y="77.75">Clearance</text>
         <text x="267" y="150">Door still shut</text>
       </g>
     </g>
@@ -63,11 +63,11 @@
       </g>
       <path d="M223 82 V139" stroke="#78a7b8" stroke-width="10" stroke-linecap="round"/>
       <path d="M151 127 H278 V157 H151Z" fill="#dce5dc" stroke="#315d4d" stroke-width="3"/>
-      <path d="M232 83 H253" fill="none" stroke="#6b7c72" stroke-width="2"/>
+      <path d="M228 83 H253" fill="none" stroke="#6b7c72" stroke-width="2"/>
       <path d="M131 181 H244" fill="none" stroke="#315d4d" stroke-width="4" marker-end="url(#motion)"/>
       <g font-size="22">
-        <text x="267" y="63">Glass below</text>
-        <text x="267" y="91">the seal</text>
+        <text x="267" y="77">Glass below</text>
+        <text x="267" y="105">the seal</text>
         <text x="267" y="189">Outwards</text>
       </g>
     </g>

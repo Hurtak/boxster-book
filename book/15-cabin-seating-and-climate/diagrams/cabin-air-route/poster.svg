@@ -2,8 +2,8 @@
   <title id="cabin-route-title">Cabin air route: fresh-air cooling example</title>
   <desc id="cabin-route-desc">Fresh outside air passes through the inlet filter, inlet flap, blower and evaporator. Air bypasses the heater core, reaches the mixing area and is directed to the face vents. Recirculation, heater and other outlets are dashed as unselected. A/C cooling depends on refrigerant output; drying needs condensation. Arrows represent air, not coolant or refrigerant.</desc>
   <defs>
-    <marker id="cabin-route-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#263e34"/></marker>
-    <marker id="cabin-route-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#2875a4"/></marker>
+    <marker id="cabin-route-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#263e34"/></marker>
+    <marker id="cabin-route-blue" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#2875a4"/></marker>
   </defs>
   <rect width="600" height="1200" fill="#fafbf9"/>
   <g fill="#edf2ef" stroke="#263e34" stroke-width="2">

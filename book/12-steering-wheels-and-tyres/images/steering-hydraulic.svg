@@ -5,13 +5,13 @@
        Generic valve/power-cylinder principle: Bosch Hydraulic Power Steering — Rack and Pinion.
        Deliberately separated functional views, not an installation or service drawing. -->
   <defs>
-    <marker id="s23-mechanical-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+    <marker id="s23-mechanical-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
       <path d="M0 0L10 5L0 10Z" fill="#233c31"/>
     </marker>
-    <marker id="s23-pressure-arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="15" markerHeight="15" orient="auto" markerUnits="userSpaceOnUse">
+    <marker id="s23-pressure-arrow" viewBox="0 0 12 12" refX="12" refY="6" markerWidth="15" markerHeight="15" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0 0L12 6L0 12Z" fill="#17654c"/>
     </marker>
-    <marker id="s23-return-arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="15" markerHeight="15" orient="auto" markerUnits="userSpaceOnUse">
+    <marker id="s23-return-arrow" viewBox="0 0 12 12" refX="12" refY="6" markerWidth="15" markerHeight="15" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0 0L12 6L0 12Z" fill="#277c84"/>
     </marker>
   </defs>
@@ -34,8 +34,8 @@
     <rect x="50" y="401" width="42" height="90" rx="9" fill="#38443d" stroke-width="3" transform="rotate(-18 71 446)"/>
     <rect x="510" y="401" width="42" height="90" rx="9" fill="#38443d" stroke-width="3" transform="rotate(-18 531 446)"/>
     <path d="M236 353H366" stroke-width="3" marker-end="url(#s23-mechanical-arrow)"/>
-    <path d="M218 431L145 397L92 351M382 431L455 397L508 351" stroke="#67796b" stroke-width="2"/>
-    <path d="M222 238H274M342 280H334" stroke="#67796b" stroke-width="2"/>
+    <path d="M218 431L145 397L75 366.5M382 431L455 397L525 366.5" stroke="#67796b" stroke-width="2"/>
+    <path d="M222 238H278M342 283H331M338 199H320L300 190" stroke="#67796b" stroke-width="2"/>
   </g>
   <g fill="#233c31" font-size="26">
     <text x="348" y="206">Column</text>
@@ -55,19 +55,19 @@
   </g>
   <!-- Solid green: pressure supply in this state. Dashed teal: feed/return. -->
   <g fill="none" stroke-linejoin="round" stroke-linecap="round">
-    <path d="M234 761H366" stroke="#277c84" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#s23-return-arrow)"/>
     <rect x="44" y="720" width="190" height="87" rx="9" fill="#e0e5dc" stroke="#53665b" stroke-width="3"/>
     <rect x="366" y="720" width="190" height="87" rx="9" fill="#dcece6" stroke="#17654c" stroke-width="3"/>
-    <path d="M460 807V830H470V920H420" stroke="#17654c" stroke-width="5" marker-end="url(#s23-pressure-arrow)"/>
-    <path d="M180 920H130V807" stroke="#277c84" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#s23-return-arrow)"/>
     <rect x="180" y="880" width="240" height="92" rx="9" fill="#e0e5dc" stroke="#53665b" stroke-width="3"/>
-    <path d="M230 972V1003H180V1060" stroke="#17654c" stroke-width="5" marker-end="url(#s23-pressure-arrow)"/>
-    <path d="M430 1060V1003H370V972" stroke="#277c84" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#s23-return-arrow)"/>
     <rect x="86" y="1060" width="428" height="124" rx="7" fill="#e0e5dc" stroke="#53665b" stroke-width="3"/>
     <path d="M94 1062H296V1182H94Q88 1182 88 1176V1068Q88 1062 94 1062Z" fill="#dcece6" stroke="none"/>
+    <path d="M234 761H366" stroke="#277c84" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#s23-return-arrow)"/>
+    <path d="M460 807V830H470V920H420" stroke="#17654c" stroke-width="5" marker-end="url(#s23-pressure-arrow)"/>
+    <path d="M180 920H130V807" stroke="#277c84" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#s23-return-arrow)"/>
+    <path d="M230 972V1003H180V1060" stroke="#17654c" stroke-width="5" marker-end="url(#s23-pressure-arrow)"/>
+    <path d="M430 1060V1003H370V972" stroke="#277c84" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#s23-return-arrow)"/>
     <path d="M48 1153H552" stroke="#233c31" stroke-width="12"/>
     <rect x="296" y="1061" width="18" height="122" fill="#17654c" stroke="#233c31" stroke-width="2"/>
-    <path d="M305 1044V1055" stroke="#67796b" stroke-width="2"/>
+    <path d="M305 1044V1061" stroke="#67796b" stroke-width="2"/>
     <path d="M190 1225H410" stroke="#17654c" stroke-width="5" marker-end="url(#s23-pressure-arrow)"/>
   </g>
   <g font-size="26" text-anchor="middle">
@@ -78,7 +78,7 @@
       <text x="300" y="742">Feed</text>
       <text x="300" y="918">Control valve</text>
       <text x="300" y="952" font-size="24">responds to effort</text>
-      <text x="300" y="1037">Piston</text>
+      <text x="305" y="1037">Piston</text>
     </g>
     <text x="532" y="860" fill="#17654c">Supply</text>
     <text x="68" y="860" fill="#277c84">Return</text>

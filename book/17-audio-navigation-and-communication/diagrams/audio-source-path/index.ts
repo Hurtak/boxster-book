@@ -114,8 +114,20 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
         .text(
           `${sourceLabels[state.source as 'radio' | 'cd' | 'aux' | 'usb' | 'dvd']} through ${route.pcm ? 'PCM 3.0' : 'CDR-30'} and ${soundLabels[state.sound as 'standard' | 'plus' | 'bose']}. ${route.missing || 'Programme information controls an amplifier powered by the vehicle; its output current moves the speakers to make sound.'}`,
         );
-      const text = (x: number, y: number, label: string, size = 19, colour: string = ink, anchor = 'middle') =>
-        svg
+      const fitText = (node: SVGTextElement | null, size: number, available: number) => {
+        const measured = node?.getComputedTextLength() ?? 0;
+        if (node && measured > available) node.setAttribute('font-size', String((size * available) / measured));
+      };
+      const text = (
+        x: number,
+        y: number,
+        label: string,
+        size = 19,
+        colour: string = ink,
+        anchor = 'middle',
+        available = anchor === 'middle' ? width - 24 : width - x - 12,
+      ) => {
+        const labelText = svg
           .append('text')
           .attr('x', x)
           .attr('y', y)
@@ -123,6 +135,9 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           .attr('font-size', size)
           .attr('fill', colour)
           .text(label);
+        fitText(labelText.node(), size, available);
+        return labelText;
+      };
       const card = (y: number, h: number, lines: (string | number)[], enabled = true, fill = '#fff') => {
         const group = svg.append('g').attr('opacity', enabled ? 1 : 0.52);
         group
@@ -144,7 +159,10 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
             .attr('font-size', i ? 17 : 21)
             .attr('fill', ink)
             .attr('font-weight', i ? 400 : 600)
-            .text(line),
+            .text(line)
+            .each(function () {
+              fitText(this, i ? 17 : 21, width - 48);
+            }),
         );
         return group;
       };
@@ -178,6 +196,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
             17,
             enabled ? colour : rust,
             'start',
+            width - 49 - (state.source === 'usb' && sourceActive ? 42 : 12),
           ),
         );
       };
@@ -192,12 +211,12 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
                 ? 'CDR-30 cannot read DVDs'
                 : 'Interface 870 not fitted',
           ];
-      down(120, 164, inputLabels, sourceActive);
+      down(114, 174, inputLabels, sourceActive);
       if (state.source === 'usb' && sourceActive) {
         // A functional return-command path, without assigning an unverified device transport.
         svg
           .append('path')
-          .attr('d', `M${width - 27},164v-40m-5,6l5,-6l5,6`)
+          .attr('d', `M${width - 27},174V114m-5,6l5,-6l5,6`)
           .attr('stroke', green)
           .attr('stroke-width', 2)
           .attr('fill', 'none');
@@ -211,22 +230,23 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
         ],
         sourceActive,
       );
-      down(257, 301, route.blockedAt === 'amplifier' ? ['Needs BOSE for discrete 5.1'] : [route.signal], active);
+      down(250, 312, route.blockedAt === 'amplifier' ? ['Needs BOSE for discrete 5.1'] : [route.signal], active);
       const amp = card(312, 119, route.amplifier, active, '#faf7ef');
       // Supply energy and programme information are different inputs to amplification.
       amp.append('text').attr('x', 29).attr('y', 405).attr('font-size', 17).attr('fill', power).text('Vehicle power');
       const gainX = Math.max(205, width - 78);
       amp
         .append('path')
-        .attr('d', `M155,399H${gainX - 8}m-6,-4l6,4l-6,4M${gainX},384l27,15l-27,15Z`)
+        .attr('d', `M155,399H${gainX}m-6,-4l6,4l-6,4M${gainX},384l27,15l-27,15Z`)
         .attr('fill', 'none')
         .attr('stroke', power)
         .attr('stroke-width', 2);
-      down(439, 479, ['Speaker-driving current'], active, power, true);
+      down(431, 490, ['Speaker-driving current'], active, power, true);
       card(490, route.speakers.length > 2 ? 98 : 84, route.speakers, active);
       // Generic loudspeaker symbol and outgoing pressure waves; no mounting geometry.
       const speakerY = 615;
-      svg
+      const sound = svg.append('g');
+      sound
         .append('path')
         .attr(
           'd',
@@ -236,8 +256,18 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
         .attr('stroke-width', 2)
         .attr('fill', 'none')
         .attr('opacity', active ? 1 : 0.52);
-      text(centre + 59, speakerY - 2, 'Cone motion', 18, active ? ink : '#72887b');
-      text(centre + 59, speakerY + 21, '→ sound waves', 18, active ? ink : '#72887b');
+      ['Cone motion', '→ sound waves'].forEach((label, i) =>
+        sound
+          .append('text')
+          .attr('x', centre + 59)
+          .attr('y', speakerY - 2 + i * 23)
+          .attr('text-anchor', 'middle')
+          .attr('font-size', 18)
+          .attr('fill', active ? ink : '#72887b')
+          .text(label),
+      );
+      const soundBounds = sound.node()!.getBBox();
+      sound.attr('transform', `translate(${centre - soundBounds.x - soundBounds.width / 2},0)`);
       const details =
         state.sound === 'bose'
           ? `${route.pcm ? 'PCM sends programme data over MOST to the' : 'The selected programme feeds the'} digital BOSE amplifier. Its output stages supply speaker-driving current; eleven speakers do not imply eleven programme channels.`

@@ -2,9 +2,9 @@
   <title id="title">Who makes the cellular connection?</title>
   <desc id="desc">Three original optional telephone arrangements for the 2010 UK Boxster. The HFP example omits an aerial-connected cradle: the phone keeps its SIM, cellular radio and aerial, while Bluetooth carries speech and basic call control between phone and car. A compatible cradle can instead connect the phone to an external aerial. With a SIM inserted into PCM, the telephone module uses that SIM and its own GSM radio through the car aerial. With SAP, a compatible phone keeps the SIM but gives the module remote access to its subscriber credentials over Bluetooth; the module again uses its GSM radio and the car aerial, while the phone's cellular aerial is off. Green two-way arrows show the cellular path; dashed blue arrows show the Bluetooth link. These are functional relationships, not wiring or present compatibility claims.</desc>
   <defs>
-    <marker id="cell-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.5" markerHeight="3.5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
-    <marker id="bt-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#366a81"/></marker>
-    <marker id="sim-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#946b36"/></marker>
+    <marker id="cell-arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="3.5" markerHeight="3.5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
+    <marker id="bt-arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#366a81"/></marker>
+    <marker id="sim-arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#946b36"/></marker>
   </defs>
   <rect width="600" height="1448" fill="#f4f3ec"/>
   <g fill="#203e33">
@@ -35,10 +35,10 @@
     <text x="453" y="305">call controls</text>
   </g>
   <g fill="none" stroke="#176b53" stroke-width="3" marker-start="url(#cell-arr)" marker-end="url(#cell-arr)">
-    <path d="M169 323V354"/>
-    <path d="M169 412V443"/>
+    <path d="M169 321V356"/>
+    <path d="M169 410V445"/>
   </g>
-  <path d="M304 266H340" fill="none" stroke="#366a81" stroke-width="3" stroke-dasharray="5 4" marker-start="url(#bt-arr)" marker-end="url(#bt-arr)"/>
+  <path d="M294 266H350" fill="none" stroke="#366a81" stroke-width="3" stroke-dasharray="5 4" marker-start="url(#bt-arr)" marker-end="url(#bt-arr)"/>
   <g font-size="26" text-anchor="middle">
     <text x="453" y="361" fill="#366a81" font-weight="bold">Bluetooth HFP</text>
     <text x="453" y="393" fill="#366a81">voice + basic</text>
@@ -71,10 +71,10 @@
     <text x="453" y="904">call control.</text>
   </g>
   <g fill="none" stroke="#176b53" stroke-width="3" marker-start="url(#cell-arr)" marker-end="url(#cell-arr)">
-    <path d="M169 718V749"/>
-    <path d="M169 807V838"/>
+    <path d="M169 716V751"/>
+    <path d="M169 805V840"/>
   </g>
-  <path d="M304 676H340" fill="none" stroke="#946b36" stroke-width="3" marker-start="url(#sim-arr)" marker-end="url(#sim-arr)"/>
+  <path d="M294 676H350" fill="none" stroke="#946b36" stroke-width="3" marker-start="url(#sim-arr)" marker-end="url(#sim-arr)"/>
   <g fill="#946b36" font-size="26" text-anchor="middle">
     <text x="453" y="756">Subscriber</text>
     <text x="453" y="788">credentials</text>
@@ -103,10 +103,10 @@
     <text x="453" y="1297">off in SAP.</text>
   </g>
   <g fill="none" stroke="#176b53" stroke-width="3" marker-start="url(#cell-arr)" marker-end="url(#cell-arr)">
-    <path d="M169 1128V1159"/>
-    <path d="M169 1217V1248"/>
+    <path d="M169 1126V1161"/>
+    <path d="M169 1215V1250"/>
   </g>
-  <path d="M304 1086H340" fill="none" stroke="#366a81" stroke-width="3" stroke-dasharray="5 4" marker-start="url(#bt-arr)" marker-end="url(#bt-arr)"/>
+  <path d="M294 1086H350" fill="none" stroke="#366a81" stroke-width="3" stroke-dasharray="5 4" marker-start="url(#bt-arr)" marker-end="url(#bt-arr)"/>
   <g fill="#366a81" font-size="26" text-anchor="middle">
     <text x="453" y="1166" font-weight="bold">Bluetooth SAP</text>
     <text x="453" y="1198">SIM access</text>

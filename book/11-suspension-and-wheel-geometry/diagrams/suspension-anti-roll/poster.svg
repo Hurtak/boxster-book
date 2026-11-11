@@ -20,11 +20,11 @@
   </g>
   <path d="M91 190H101M252 190H262" stroke="#a6552b" stroke-width="7" stroke-linecap="round"/>
   <text x="180" y="172">Torsion section</text>
-  <path d="M180 176V183" stroke="#82988d" stroke-width="1.5"/>
+  <path d="M180 176V186" stroke="#82988d" stroke-width="1.5"/>
   <text x="180" y="244">Lever arms</text>
-  <path d="M134 239L65 216M226 239L293 220" stroke="#82988d" stroke-width="1.5" fill="none"/>
+  <path d="M134 239L60.5 212.5M226 239L298 225" stroke="#82988d" stroke-width="1.5" fill="none"/>
   <text x="180" y="290">Drop links</text>
-  <path d="M137 296H80M223 296H305" stroke="#82988d" stroke-width="1.5"/>
+  <path d="M137 296L73 270M223 296L312 295" stroke="#82988d" stroke-width="1.5"/>
   <g fill="#273e35"><rect x="58" y="290" width="30" height="50" rx="7"/><rect x="297" y="315" width="30" height="50" rx="7"/></g>
   <g fill="#faf8f1"><circle cx="73" cy="305" r="5"/><circle cx="312" cy="330" r="5"/></g>
   <path d="M43 296V334M38 327L43 334L48 327M341 354V316M336 323L341 316L346 323" fill="none" stroke="#a6552b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>

@@ -179,6 +179,7 @@ export function createAssembly() {
     [0, 0, 0],
     [0, 0.1, 0.4],
     'The fixed metal windscreen frame provides the roof’s front contact and latch receiver. Glass and trim are omitted so the header and its relationship to the front roof edge remain visible.',
+    [0, 1.16, 0.12],
   );
   windscreenFrame(header, palette());
   box(header, [0.065, 0.022, 0.035], m.metal, [0, 1.16, 0.12]);

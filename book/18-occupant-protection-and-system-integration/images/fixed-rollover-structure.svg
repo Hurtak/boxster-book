@@ -2,7 +2,7 @@
   <title id="title">Permanent rollover structure around the Boxster's two seats</title>
   <desc id="desc">The 2010 European and UK Boxster 987.2 2.9 has a reinforced windscreen frame in front of its seats and a fixed, joined steel rollover frame behind them. In the side cutaway, the front of the car is to the left. Blue glazing is separate from the green reinforced frame; the full reclining seat back includes its head restraint. The across-car view looks rearwards: two low, rounded hoops follow the seat-back profiles, meet through a shaped central connection and extend into splayed outer mounting webs and feet. The seat backs are in front of this structure, concealing parts of it. Orange upper belt guides are separate fittings attached to the outer sides of the rear frame. Grey body supports, simplified openings and mounting positions give context, not repair dimensions. Trim, hood and wind deflector are omitted. The bars do not pop up. The source-guided profiles are approximate and predict neither rollover clearance nor a crash outcome.</desc>
   <defs>
-    <marker id="front-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth">
+    <marker id="front-arrow" markerWidth="7" markerHeight="7" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
       <path d="M0 0L7 3.5L0 7Z" fill="#536f61"/>
     </marker>
     <g id="front-seat" fill="#cbd2ca" stroke="#809184" stroke-width="2.5" stroke-linejoin="round">
@@ -54,8 +54,8 @@
     <path d="M280 436H352" stroke="#819487" stroke-width="5"/>
     <path d="M280 440V445M349 440V445" stroke="#819487" stroke-width="4"/>
 
-    <text x="26" y="317" font-size="25" fill="#306b95">Glass</text>
-    <path d="M101 310L204 309" fill="none" stroke="#899e92" stroke-width="2.5"/>
+    <text x="278" y="317" font-size="25" fill="#306b95">Glass</text>
+    <path d="M272 303L232 270" fill="none" stroke="#899e92" stroke-width="2.5"/>
     <text x="300" y="484" text-anchor="middle" font-size="24" fill="#173f32">Full seat back with integral head restraint</text>
     <path d="M371 459L365 399" fill="none" stroke="#899e92" stroke-width="2.5"/>
     <text x="300" y="518" text-anchor="middle" font-size="23" fill="#536f61">Frame and rear assembly attach to the body</text>

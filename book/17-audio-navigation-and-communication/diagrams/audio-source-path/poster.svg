@@ -2,8 +2,8 @@
   <title id="title">The standard CDR-30 radio programme and power path</title>
   <desc id="desc">Aerial radio information reaches the CDR-30 tuner, which selects the programme and volume. Its internal output stages use vehicle electrical power to supply speaker-driving current to two dashboard tweeters and two door woofers. Cone movement produces pressure waves. This is a functional schematic, not cable routing. Optional interface 870 adds AUX to CDR-30; PCM with its interface also supports compatible USB and period iPod devices. Sound packages change amplification separately.</desc>
   <defs>
-    <marker id="audio-source-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
-    <marker id="audio-source-power" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#966827"/></marker>
+    <marker id="audio-source-arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
+    <marker id="audio-source-power" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#966827"/></marker>
   </defs>
   <rect width="360" height="727" fill="#f4f3ec"/>
   <g fill="#203e33" text-anchor="middle">
@@ -31,13 +31,15 @@
       <text x="180" y="605">+ 2 door woofers</text>
     </g>
   </g>
-  <g fill="none" stroke="#176b53" stroke-width="2" marker-end="url(#audio-source-arr)"><path d="M31 158V201"/><path d="M31 294V337"/></g>
+  <g fill="none" stroke="#176b53" stroke-width="2" marker-end="url(#audio-source-arr)"><path d="M31 151V211"/><path d="M31 287V349"/></g>
   <g font-size="18" fill="#176b53"><text x="50" y="185">Radio signal to tuner</text><text x="50" y="321">Internal audio signal</text></g>
   <text x="29" y="442" font-size="18" fill="#966827">Vehicle power</text>
-  <g fill="none" stroke="#966827" stroke-width="2"><path d="M163 436H273m-6-4 6 4-6 4M282 421l27 15-27 15Z"/></g>
-  <path d="M31 476V516" fill="none" stroke="#966827" stroke-width="4" marker-end="url(#audio-source-power)"/>
+  <g fill="none" stroke="#966827" stroke-width="2"><path d="M163 436H282m-6-4 6 4-6 4M282 421l27 15-27 15Z"/></g>
+  <path d="M31 468V527" fill="none" stroke="#966827" stroke-width="4" marker-end="url(#audio-source-power)"/>
   <text x="50" y="503" font-size="18" fill="#966827">Speaker-driving current</text>
-  <path d="M122 645h10l15-10v34l-15-10h-10ZM159 640q12 12 0 24M167 632q20 20 0 40" fill="none" stroke="#176b53" stroke-width="2"/>
-  <g fill="#203e33" font-size="18" text-anchor="middle"><text x="239" y="650">Cone motion</text><text x="239" y="673">→ sound waves</text></g>
+  <g transform="translate(-32 0)">
+    <path d="M122 645h10l15-10v34l-15-10h-10ZM159 640q12 12 0 24M167 632q20 20 0 40" fill="none" stroke="#176b53" stroke-width="2"/>
+    <g fill="#203e33" font-size="18" text-anchor="middle"><text x="239" y="650">Cone motion</text><text x="239" y="673">→ sound waves</text></g>
+  </g>
   <text x="180" y="709" font-size="16" text-anchor="middle" fill="#53675d">Functional paths · MY2010 UK Boxster 2.9</text>
 </svg>

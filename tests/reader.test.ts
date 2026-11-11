@@ -1146,6 +1146,41 @@ test('cross-chapter explanations navigate to the owning section and every book f
     }
   }
 });
+test('wheel dimension arrowheads terminate exactly at their dimension endpoints', async () => {
+  const page = await browser.newPage();
+  try {
+    await page.setContent(await readFile(resolve('book/12-steering-wheels-and-tyres/images/wheel-offset.svg'), 'utf8'));
+    const measurements = await page.evaluate(() =>
+      [...document.querySelectorAll<SVGPathElement>('path[marker-start][marker-end]')].map((path) => {
+        const id = path.getAttribute('marker-end')!.match(/#([^)'"\s]+)/)![1];
+        const marker = document.querySelector<SVGMarkerElement>(`marker[id="${id}"]`)!;
+        const shape = marker.querySelector<SVGPathElement>('path')!.getBBox();
+        const scale =
+          (marker.markerWidth.baseVal.value / marker.viewBox.baseVal.width) *
+          parseFloat(getComputedStyle(path).strokeWidth);
+        const dx = (shape.x + shape.width - marker.refX.baseVal.value) * scale;
+        const dy = (shape.y + shape.height / 2 - marker.refY.baseVal.value) * scale;
+        const start = path.getPointAtLength(0);
+        const end = path.getPointAtLength(path.getTotalLength());
+        return {
+          start: [start.x - dx, start.y + dy],
+          end: [end.x + dx, end.y + dy],
+          expectedStart: [start.x, start.y],
+          expectedEnd: [end.x, end.y],
+          orientation: marker.getAttribute('orient'),
+        };
+      }),
+    );
+    assert.equal(measurements.length, 4, 'Cover both offset and rim-width dimensions in both sections');
+    for (const measurement of measurements) {
+      assert.equal(measurement.orientation, 'auto-start-reverse');
+      assert.deepEqual(measurement.start, measurement.expectedStart, 'The start tip must touch its extension line');
+      assert.deepEqual(measurement.end, measurement.expectedEnd, 'The end tip must touch its extension line');
+    }
+  } finally {
+    await page.close();
+  }
+});
 test('every static SVG has an accessible explanation and keeps its labels within a phone-sized canvas', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
@@ -1212,7 +1247,7 @@ test('family and option comparisons keep the 2.9 baseline while changing the sel
   }
 });
 test('every interactive illustration responds to native controls and fits phone, tablet and desktop canvases', async () => {
-  for (const width of [390, 768, 1440]) {
+  for (const width of [320, 390, 768, 1440]) {
     const page = await browser.newPage({ viewport: { width, height: 844 } });
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
@@ -1261,15 +1296,19 @@ test('every interactive illustration responds to native controls and fits phone,
           await checkLabels();
         }
         for (const select of await figure.getByRole('combobox').all()) {
-          const value = (await select.locator('option').last().getAttribute('value'))!;
-          await select.selectOption(value);
-          assert.equal(await select.inputValue(), value);
-          await checkLabels();
+          for (const option of await select.locator('option').all()) {
+            const value = (await option.getAttribute('value'))!;
+            await select.selectOption(value);
+            assert.equal(await select.inputValue(), value);
+            await checkLabels();
+          }
         }
         for (const checkbox of await figure.getByRole('checkbox').all()) {
           await checkbox.check();
           assert.ok(await checkbox.isChecked());
+          await checkLabels();
           await checkbox.uncheck();
+          await checkLabels();
         }
         const buttons = figure.locator('.diagram-interactive').getByRole('button');
         for (const button of await buttons.all()) {
@@ -1296,7 +1335,10 @@ test('every interactive illustration responds to native controls and fits phone,
           `${name} overflows the ${width}px viewport`,
         );
         await figure.screenshot({
-          path: resolve(previews, `all-${name}-${width === 390 ? 'phone' : width === 768 ? 'tablet' : 'desktop'}.png`),
+          path: resolve(
+            previews,
+            `all-${name}-${width === 320 ? 'small-phone' : width === 390 ? 'phone' : width === 768 ? 'tablet' : 'desktop'}.png`,
+          ),
           style: '.viewer-bar, .skip-link { visibility: hidden !important; }',
         });
       }

@@ -102,7 +102,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
         .attr('stroke', fuseOpen ? fault : back)
         .attr('stroke-width', 2);
       wire(
-        fuseOpen ? `M${fuse - 13} 86H${fuse - 6}M${fuse + 6} 86H${fuse + 13}` : `M${fuse - 14} 86H${fuse + 14}`,
+        fuseOpen ? `M${fuse - 19} 86H${fuse - 6}M${fuse + 6} 86H${fuse + 19}` : `M${fuse - 19} 86H${fuse + 19}`,
         fuseOpen ? fault : feed,
       );
       wire(

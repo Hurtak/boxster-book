@@ -155,9 +155,9 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       );
       path('M437 242L437 253', '#f7f6f0', 4);
       text(332, 81, 'Roof-bay cover', activeRoof ? roof : muted, 27);
-      path('M332 94V182L356 237', tone(activeRoof, roof), 1.8);
+      path('M332 94V182L356 235.315', tone(activeRoof, roof), 1.8);
       text(564, 81, 'Rear boot lid', activeBoot ? boot : muted, 27);
-      path('M564 94V199L579 250', tone(activeBoot, boot), 1.8);
+      path('M564 94V199L579 250.846', tone(activeBoot, boot), 1.8);
 
       // Fabric and bow stack stays in a low well, above the closely fitted access layers.
       path(
@@ -217,10 +217,10 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       );
       path('M415 386L438 390L453 399H504L534 413L555 417L551 436H451L438 429H411Z', '#9daa9c', 2, '#d3dcd1');
       path('M438 397V426M451 403V430M466 406V432M480 408V433M496 410V433M510 413V434', '#afbcad', 2);
-      path('M514 407V473', '#8e9e91', 1.5, 'none', '4 5');
+      path('M516 403V483', '#8e9e91', 1.5, 'none', '4 5');
       text(326, 461, 'Engine', activeAccess ? engine : muted, 26);
       text(326, 489, 'ahead of rear axle', muted, 23);
-      text(518, 510, 'Rear axle', muted, 24);
+      text(516, 510, 'Rear axle', muted, 24);
 
       // The rear boot has a carpeted, shaped floor; it is a distinct volume aft of the roof well.
       path(
@@ -240,7 +240,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       // Right-front filler hatch is projected into this centre cut; the inset gives its face view.
       path('M457 269L488 272L490 294L462 294Z', tone(activeAccess, service), 2, activeAccess ? '#d5b99d' : '#d3d8cb');
       path('M469 285L480 286', tone(activeAccess, '#785e42'), 2);
-      path('M488 282L688 300V541', tone(activeAccess, service), 1.5, 'none', '4 5');
+      path('M488.909 282H688V596.5H655.25', tone(activeAccess, service), 1.5, 'none', '4 5');
 
       path('M22 535H698', '#d1d8cc', 1.5);
       text(22, 569, 'Internal access · detail', activeAccess ? service : muted, 26, 'start');
@@ -288,7 +288,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       text(247, 615, 'Carpet', activeAccess ? ink : muted, 25, 'start');
       text(247, 660, 'Top cover', activeAccess ? service : muted, 25, 'start');
       text(247, 705, 'Seal', activeAccess ? ink : muted, 25, 'start');
-      path('M215 616H236M216 660H236M216 704H236', tone(activeAccess, service), 1.5);
+      path('M201.5 606H236M203.875 651H236M199.174 696H236', tone(activeAccess, service), 1.5);
 
       // PET 807-001 and the handbook show a recessed filler cup and a bottom-hinged flap.
       path(
@@ -323,7 +323,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       );
       path('M447 683L664 683L645 707L462 705Z', tone(activeAccess, '#6b786c'), 2, activeAccess ? '#c4cdbd' : '#d7dece');
       path('M469 680V689M640 680V689M533 696H572', tone(activeAccess, '#5c6d5b'), 3);
-      text(557, 739, 'Oil + coolant fillers', activeAccess ? service : muted, 24);
+      text(555.5, 739, 'Oil + coolant fillers', activeAccess ? service : muted, 24);
       text(22, 750, 'Layers separated only in detail', muted, 21, 'start');
       explanation.textContent = chosen.text;
       row

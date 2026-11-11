@@ -21,11 +21,11 @@
       <text x="310" y="187">Manifold +</text><text x="310" y="213">one converter</text>
     </g>
     <g fill="none" stroke="#79735e" stroke-width="5" marker-end="url(#fluid-exhaust-arrow)">
-      <path d="M110 220V235"/><path d="M310 220V235"/>
-      <path d="M110 301V323"/><path d="M310 301V323"/>
-      <path d="M110 379V407"/><path d="M310 379V407"/>
-      <path d="M110 473V501"/><path d="M310 473V501"/>
-      <path d="M110 557V623"/><path d="M310 557V623"/>
+      <path d="M110 220V238"/><path d="M310 220V238"/>
+      <path d="M110 301V326"/><path d="M310 301V326"/>
+      <path d="M110 379V410"/><path d="M310 379V410"/>
+      <path d="M110 473V504"/><path d="M310 473V504"/>
+      <path d="M110 557V627"/><path d="M310 557V627"/>
     </g>
     <g fill="#e0ece4" stroke="#236148" stroke-width="2">
       <rect x="38" y="241" width="144" height="58" rx="8"/>
@@ -55,8 +55,8 @@
     <g font-size="18"><text x="110" y="686">reduces sound</text><text x="310" y="686">reduces sound</text></g>
     <text x="210" y="808" font-size="20">mix both banks</text>
     <g fill="none" stroke="#79735e" stroke-width="5" marker-end="url(#fluid-exhaust-arrow)">
-      <path d="M110 702V742"/><path d="M310 702V742"/>
-      <path d="M210 825V865"/>
+      <path d="M110 702V746"/><path d="M310 702V746"/>
+      <path d="M210 825V869"/>
     </g>
     <text x="210" y="898" font-size="21" font-weight="700">Single central outlet</text>
     <text x="210" y="923" font-size="18">at the centre of the rear</text>

@@ -2,7 +2,7 @@
   <title id="title">One dry clutch plate: clamping, release and pedal actuation</title>
   <desc id="desc">Functional axial half-sections, with the engine on the left. With the pedal up, a diaphragm spring clamps the two linings of one driven disc between the flywheel and pressure plate. The disc web joins a hub splined to the separate gearbox input shaft. With the pedal down, the release bearing moves towards the engine, the spring rocks about its cover fulcrum, and the pressure plate lifts away. The single disc remains intact. Below, the brake-fluid reservoir supplies the master cylinder. A pedal moves its piston; hydraulic pressure moves a separate slave piston, whose rod turns a pivoted lever and pushes the bearing into the spring. Arrows in the sections show axial force or movement, not rotational drive. Component shapes, lever positions and released gaps are explanatory, not measured Boxster geometry.</desc>
   <defs>
-    <marker id="clutch-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#286449"/></marker>
+    <marker id="clutch-arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#286449"/></marker>
   </defs>
   <rect width="600" height="1640" fill="#f1f4ef"/>
   <g fill="#243d32">
@@ -16,7 +16,7 @@
     </g>
   </g>
   <g fill="none" stroke="#8da195" stroke-width="2">
-    <path d="M100 203 135 243"/><path d="M231 222 191 269"/><path d="M410 223 235 251"/>
+    <path d="M100 203 135 240"/><path d="M231 222 191 260"/><path d="M410 223 235 263"/>
   </g>
   <!-- Engine-side assembly and input shaft are separate coaxial components. -->
   <g stroke="#243d32" stroke-width="2">
@@ -44,8 +44,8 @@
     <text x="25" y="502">Crankshaft</text>
     <text x="253" y="502">Hub + input shaft</text>
   </g>
-  <g fill="none" stroke="#8da195" stroke-width="2"><path d="M89 477V457"/><path d="M284 477 218 460"/></g>
-  <path d="M306 357H254" stroke="#286449" stroke-width="4" marker-end="url(#clutch-arrow)"/>
+  <g fill="none" stroke="#8da195" stroke-width="2"><path d="M89 477V456"/><path d="M284 477 218 463"/></g>
+  <path d="M306 357H250" stroke="#286449" stroke-width="4" marker-end="url(#clutch-arrow)"/>
   <text x="280" y="400" font-size="25" fill="#286449" text-anchor="middle">Clamp force</text>
   <g fill="#243d32" font-size="28">
     <text x="24" y="550">Drive: flywheel → friction faces</text>
@@ -78,11 +78,11 @@
     <text x="24" y="1022">Plate lifts</text>
     <text x="305" y="1022">Release bearing</text>
   </g>
-  <path d="M365 837 320 813" fill="none" stroke="#8da195" stroke-width="2"/>
+  <path d="M365 837 323 803" fill="none" stroke="#8da195" stroke-width="2"/>
   <g fill="none" stroke="#286449" stroke-width="4" marker-end="url(#clutch-arrow)">
-    <path d="M254 890H291"/><path d="M458 901H398"/>
+    <path d="M254 890H291"/><path d="M458 901H392"/>
   </g>
-  <g fill="none" stroke="#8da195" stroke-width="2"><path d="M137 998 253 875"/><path d="M401 997 378 930"/></g>
+  <g fill="none" stroke="#8da195" stroke-width="2"><path d="M137 998 253 868"/><path d="M401 997 378 924"/></g>
   <text x="24" y="1070" font-size="27" fill="#243d32">Spring rocks; dashed = pedal-up shape.</text>
   <text x="24" y="1108" font-size="26" fill="#4c6155">Flywheel and input can turn at different speeds.</text>
   <path d="M24 1140H576" stroke="#bbc8bc" stroke-width="2"/>
@@ -109,7 +109,7 @@
     <path d="M239 1419 270 1455 239 1491" stroke-width="5"/>
   </g>
   <g fill="#243d32" font-size="28">
-    <text x="130" y="1346" font-size="25">Master cylinder</text>
+    <text x="223.5" y="1346" font-size="25" text-anchor="middle">Master cylinder</text>
     <text x="396" y="1457">Slave</text><text x="396" y="1489">cylinder</text>
     <text x="24" y="1415">Pedal</text>
     <text x="24" y="1480">Bearing</text>
@@ -118,9 +118,9 @@
   <text x="243" y="1235" text-anchor="middle" font-size="23" fill="#243d32">Reservoir</text>
   <text x="325" y="1274" font-size="26" fill="#286449">Fluid pressure</text>
   <g fill="none" stroke="#286449" stroke-width="4" marker-end="url(#clutch-arrow)">
-    <path d="M27 1343H72"/><path d="M364 1434H311"/>
+    <path d="M27 1343H95.2"/><path d="M345 1455H298"/>
   </g>
-  <path d="M124 1472 265 1457" stroke="#8da195" stroke-width="2" fill="none"/>
+  <path d="M132 1472 239 1505 284 1471" stroke="#8da195" stroke-width="2" fill="none"/>
   <g font-size="23" fill="#4c6155">
     <text x="24" y="1576">Arrows: axial force / movement, not rotation.</text>
     <text x="24" y="1609">Schematic · release gaps and motion enlarged.</text>

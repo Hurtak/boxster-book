@@ -2,8 +2,8 @@
 <title id="title">Constant mesh: friction matches speed, dog teeth lock the gear</title>
 <desc id="desc">Generic axial section of a two-ratio gearbox, with gear B selected. Both upper gears are fixed to the input shaft and remain meshed with lower gears A and B. The lower gears ride on bearings around the output shaft. Gear A remains free to rotate relative to that shaft. Gear B's dog teeth are engaged by a sleeve that stays splined to a hub fixed to the output shaft. Green arrows trace engine-driving torque through gear B, the sleeve and hub, then into the output shaft. An enlarged half-section shows the separate friction cone, blocker ring and dog teeth. Cone friction matches gear and hub speeds; the blocker delays engagement until speeds match, then the sleeve passes the ring and engages the dog teeth. The section is functional, not the G87/10's actual shaft layout, cone count, dimensions or tooth counts.</desc>
 <defs>
-  <marker id="s16-torque" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#286449"/></marker>
-  <marker id="s16-shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#bb774b"/></marker>
+  <marker id="s16-torque" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#286449"/></marker>
+  <marker id="s16-shift" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#bb774b"/></marker>
   <pattern id="s16-spline" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M0 3H12M0 9H12" stroke="#4c6155" stroke-width="2"/></pattern>
 </defs>
 <rect width="600" height="1490" fill="#f1f4ef"/>
@@ -13,7 +13,7 @@
   <text x="24" y="136" font-size="26">Input shaft: both gears fixed</text>
 </g>
 <!-- Axial sections: the different radii illustrate two ratios, not Porsche dimensions. -->
-<path d="M160 147V184M440 147V164" fill="none" stroke="#4c6155" stroke-width="2"/>
+<path d="M160 147V190M440 147V170" fill="none" stroke="#4c6155" stroke-width="2"/>
 <path d="M40 250H560M40 410H560" stroke="#8da195" stroke-width="20"/>
 <!-- Upper gears are positively connected to their shaft. -->
 <g fill="#b5c3b8" stroke="#243d32" stroke-width="3">
@@ -44,10 +44,10 @@
 <path d="M278 385H303M278 435H303" stroke="#243d32" stroke-width="4"/>
 <!-- These arrows are a power-path trace, not shaft rotation or axial force. -->
 <g fill="none" stroke="#286449" stroke-width="7" stroke-linejoin="round" marker-end="url(#s16-torque)">
-  <path d="M42 250H439"/>
+  <path d="M42 250H440"/>
   <path d="M440 263V355"/>
   <path d="M440 370V394H397V381H281V410"/>
-  <path d="M316 410H557"/>
+  <path d="M316 410H560"/>
 </g>
 <g fill="#243d32" font-size="26" text-anchor="middle">
   <text x="160" y="350">A</text><text x="485" y="365">B</text>
@@ -61,8 +61,8 @@
   <text x="24" y="610">H: hub splined to the output shaft.</text>
   <text x="24" y="648">S: sleeve slides on hub to lock gear B.</text>
 </g>
-<path d="M281 444V463M348 455V463" fill="none" stroke="#4c6155" stroke-width="2"/>
-<g fill="#243d32" font-size="26" text-anchor="middle"><text x="281" y="491">H</text><text x="348" y="491">S</text></g>
+<path d="M260 440V463M348 452V463" fill="none" stroke="#4c6155" stroke-width="2"/>
+<g fill="#243d32" font-size="26" text-anchor="middle"><text x="260" y="491">H</text><text x="348" y="491">S</text></g>
 <path d="M24 689H66" stroke="#286449" stroke-width="6" marker-end="url(#s16-torque)"/>
 <text x="82" y="697" fill="#286449" font-size="26">Engine drive → final drive</text>
 <path d="M24 727H576" stroke="#bbc8bc" stroke-width="2"/>
@@ -87,7 +87,7 @@
 <path d="M334 914L347 926V942L384 949L335 960L323 953V926Z" fill="#d5b477" stroke="#243d32" stroke-width="3"/>
 <path d="M335 960L384 949" stroke="#9c5832" stroke-width="5"/>
 <rect x="467" y="1019" width="36" height="8" rx="4" fill="#f1f4ef" stroke="#4c6155" stroke-width="2"/>
-<text x="124" y="991" fill="#243d32" font-size="26">Hub</text>
+<text x="162" y="991" fill="#243d32" font-size="26" text-anchor="middle">Hub</text>
 <g fill="none" stroke="#4c6155" stroke-width="2">
   <path d="M333 951L287 1080H230"/><path d="M409 963V1080H440"/>
 </g>

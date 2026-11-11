@@ -16,8 +16,8 @@
       <path d="M88 102 L99 106" stroke="#b28049" stroke-width="6" stroke-linecap="round"/>
       <path d="M270 109 L273 125 M314 110 L312 127 M331 114 h27" fill="none" stroke="#182f27" stroke-width="1.5"/>
     </g>
-    <text x="217" y="102" text-anchor="middle">Roof fabric</text><text x="456" y="103" text-anchor="end" font-size="21" font-weight="600">Front →</text><path d="M214 108 V122" stroke="#81978b" stroke-width="1.5"/>
-    <text x="35" y="134">Cover</text><path d="M65 139 L101 173" stroke="#81978b" stroke-width="1.5"/>
+    <text x="217" y="102" text-anchor="middle">Roof fabric</text><text x="456" y="103" text-anchor="end" font-size="21" font-weight="600">Front →</text><path d="M217 108 V122" stroke="#81978b" stroke-width="1.5"/>
+    <text x="35" y="134">Cover</text><path d="M65 139 L99.325 170.7625" stroke="#81978b" stroke-width="1.5"/>
     <text x="37" y="234">Seal at joint</text><path d="M122 214 L133 172" stroke="#a67f4e" stroke-width="2"/>
     <text x="279" y="234">Side pan below</text><path d="M305 214 L169 187" stroke="#9f743d" stroke-width="2"/>
     <path d="M24 255 H456" stroke="#c6d1c6"/>
@@ -44,8 +44,8 @@
       <path d="M188 746 V770 Q188 778 183 788 M206 746 V770 Q206 778 201 788" stroke="#41584a" stroke-width="3" fill="none"/>
       <path d="M173 734 Q197 725 221 734" stroke="#58764c" stroke-width="6" fill="none"/>
       <path d="M181 730 v8 m8 -9 v8 m8 -10 v9 m8 -8 v8 m8 -6 v7" stroke="#274734" stroke-width="2" fill="none"/>
-      <path d="M70 653 V697 m-7 -11 l7 11 l7 -11" stroke="#22779e" stroke-width="4" fill="none"/><path d="M197 734 V769 Q197 787 192 805 m-7 -11 l7 11 l7 -11" stroke="#22779e" stroke-width="4" fill="none"/>
-      <path d="M309 771 L211 747" stroke="#81978b" stroke-width="1.5" fill="none"/>
+      <path d="M70 653 V697 m-7 -11 l7 11 l7 -11" stroke="#22779e" stroke-width="4" fill="none"/><path d="M197 734 V769 Q197 787 192 805 M188.2 792.527 L192 805 L201.689 796.274" stroke="#22779e" stroke-width="4" fill="none"/>
+      <path d="M309 771 L213 734" stroke="#81978b" stroke-width="1.5" fill="none"/>
       <text x="456" y="775" text-anchor="end">Through filter<tspan x="456" dy="27">and opening</tspan></text>
       <text x="24" y="826" fill="#22779e" font-weight="600">Discharge outside</text>
     <path d="M24 847 H456" stroke="#c6d1c6"/>
@@ -57,7 +57,7 @@
       <path d="M173 1019 Q197 1010 221 1019" stroke="#58764c" stroke-width="6" fill="none"/>
       <path d="M181 1015 v8 m8 -9 v8 m8 -10 v9 m8 -8 v8 m8 -6 v7" stroke="#274734" stroke-width="2" fill="none"/>
       <path d="M70 938 V982 m-7 -11 l7 11 l7 -11" stroke="#22779e" stroke-width="4" fill="none"/><path d="M189 1027 l16 12 m-16 0 l16 -12 M326 973 H359 Q378 973 378 992 V1036 m-7 -11 l7 11 l7 -11" stroke="#a14f39" stroke-width="4" fill="none"/>
-      <path d="M309 1056 L211 1032" stroke="#81978b" stroke-width="1.5" fill="none"/>
+      <path d="M309 1056 L197 1033" stroke="#81978b" stroke-width="1.5" fill="none"/>
       <text x="456" y="1060" text-anchor="end">Debris blocks<tspan x="456" dy="27">the opening</tspan></text>
       <text x="24" y="1111" fill="#a14f39" font-weight="600">Possible interior spill</text>
     <text x="24" y="1150" font-size="21">Seals and drainage do separate jobs.</text>

@@ -7,7 +7,7 @@
   <path d="M154 86H253" fill="none" stroke="#a96b24" stroke-width="3.5" stroke-linejoin="round" />
   <path d="M291 86H320V292" fill="none" stroke="#a96b24" stroke-width="3.5" stroke-linejoin="round" />
   <rect x="116" y="76" width="38" height="20" rx="3" fill="#f1f5ef" stroke="#39765b" stroke-width="2" />
-  <path d="M121 86H149" fill="none" stroke="#a96b24" stroke-width="3.5" stroke-linejoin="round" />
+  <path d="M116 86H154" fill="none" stroke="#a96b24" stroke-width="3.5" stroke-linejoin="round" />
   <path d="M253 86H291" fill="none" stroke="#a96b24" stroke-width="3.5" stroke-linejoin="round" />
   <circle cx="253" cy="86" r="3" fill="#39765b" />
   <circle cx="291" cy="86" r="3" fill="#39765b" />

@@ -68,9 +68,16 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           .attr('stroke-width', sw)
           .attr('stroke-linecap', 'round')
           .attr('stroke-linejoin', 'round');
-      const arrow = (d: string, x: number, y: number, colour = blue) => {
+      const arrow = (d: string, x: number, y: number, colour = blue, direction: readonly [number, number] = [0, 1]) => {
+        const length = Math.hypot(...direction),
+          dx = direction[0] / length,
+          dy = direction[1] / length;
         path(d, colour, 3);
-        path(`M${x - 5},${y - 8} L${x},${y} L${x + 5},${y - 8}`, colour, 3);
+        path(
+          `M${x - dx * 8 - dy * 5},${y - dy * 8 + dx * 5} L${x},${y} L${x - dx * 8 + dy * 5},${y - dy * 8 - dx * 5}`,
+          colour,
+          3,
+        );
       };
       const wide = w >= 620;
       const panelW = wide ? (w - 48) / 2 : w - 24;
@@ -108,9 +115,9 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       <path d="M270 109 L273 125 M314 110 L312 127 M331 114 h27" fill="none" stroke="#182f27" stroke-width="1.5"/>
     `);
       text(cx + carWidth * 0.47, 55, 'Roof fabric', { anchor: 'middle', size: 15 });
-      path(`M${cx + carWidth * 0.44},60 V${carY + 40 * carScale}`, soft, 1);
+      path(`M${cx + carWidth * 0.47},60 V${carY + 40 * carScale}`, soft, 1);
       text(cx + carWidth * 0.07, 75, 'Cover', { size: 15 });
-      path(`M${cx + carWidth * 0.1},80 L${cx + 57 * carScale},${carY + 106 * carScale}`, soft, 1);
+      path(`M${cx + carWidth * 0.1},80 L${cx + 54.5 * carScale},${carY + 103.25 * carScale}`, soft, 1);
       text(cx + carWidth * 0.15, 174, 'Seal at joint', { size: 15 });
       path(`M${cx + carWidth * 0.23},158 L${cx + 94 * carScale},${carY + 104 * carScale}`, '#a67f4e', 1.5);
       text(cx + carWidth * 0.54, 174, 'Side pan below', { size: 15 });
@@ -150,7 +157,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       path(`M${panX + 96},${panY + 17} L${panX + 322 * panScale},${panY + 23 * panScale}`, soft, 1);
       text(panX, panY + 170 * panScale + 35, 'Shaped rim', { size: 15 });
       path(
-        `M${panX + 100 * panScale},${panY + 170 * panScale + 24} L${panX + 100 * panScale},${panY + 140 * panScale}`,
+        `M${panX + 100 * panScale},${panY + 170 * panScale + 15} L${panX + 100 * panScale},${panY + 140 * panScale}`,
         soft,
         1,
       );
@@ -214,6 +221,8 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           `M${outlet},${sy + 112} V${sy + 146} Q${outlet},${sy + 162} ${outlet - 5},${sy + 178}`,
           outlet - 5,
           sy + 178,
+          blue,
+          [-5, 16],
         );
       if (overflow)
         arrow(
@@ -226,7 +235,11 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
         anchor: 'end',
         size: 15,
       });
-      path(`M${sx + sw * 0.65},${sy + 147} L${outlet + 14},${sy + 123}`, soft, 1);
+      path(
+        `M${sx + sw * 0.65},${sy + 147} L${outlet + (state.blocked ? 0 : 16)},${sy + (state.blocked ? 124 : 108)}`,
+        soft,
+        1,
+      );
       text(
         sx + 3,
         sy + 202,

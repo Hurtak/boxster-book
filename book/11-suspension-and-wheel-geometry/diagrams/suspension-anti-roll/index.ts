@@ -140,7 +140,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       path(
         [
           [centreX, 115],
-          [centreX, 121],
+          [centreX, barY - 4.5],
         ],
         '#82988d',
         1.5,
@@ -172,7 +172,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       path(
         [
           [centreX - 44, 180],
-          [(leftX + leftTip[0]) / 2 + 5, (barY + leftTip[1]) / 2],
+          [(leftX + leftTip[0]) / 2, (barY + leftTip[1]) / 2],
         ],
         '#82988d',
         1.5,
@@ -180,7 +180,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       path(
         [
           [centreX + 44, 180],
-          [(rightX + rightTip[0]) / 2 - 5, (barY + rightTip[1]) / 2],
+          [(rightX + rightTip[0]) / 2, (barY + rightTip[1]) / 2],
         ],
         '#82988d',
         1.5,
@@ -189,7 +189,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       path(
         [
           [centreX - 42, 238],
-          [leftTip[0] + 7, 238],
+          [leftTip[0], leftTip[1] + 35],
         ],
         '#82988d',
         1.5,
@@ -197,7 +197,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       path(
         [
           [centreX + 42, 238],
-          [rightTip[0] - 7, 238],
+          [rightTip[0], rightTip[1] + 35],
         ],
         '#82988d',
         1.5,

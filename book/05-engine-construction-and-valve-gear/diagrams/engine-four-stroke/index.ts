@@ -188,20 +188,20 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
         arrow(
           [
             [cx - 91, 130],
-            [cx - 44, 130],
-            [cx - 44, 144],
-            [cx - 51, 155],
-            [cx - 51, 169],
+            [cx - 30, 130],
+            [cx - 30, 144],
+            [cx - 21, 148],
+            [cx - 21, 169],
           ],
           '#306b95',
         );
       if (exhaustOpen && !atDeadCentre)
         arrow(
           [
-            [cx + 51, 169],
-            [cx + 51, 155],
-            [cx + 44, 144],
-            [cx + 44, 130],
+            [cx + 21, 169],
+            [cx + 21, 148],
+            [cx + 30, 144],
+            [cx + 30, 130],
             [cx + 91, 130],
           ],
           '#6c6874',
@@ -256,19 +256,19 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       label(cx - 69, 219, 'Cylinder', 12, 'end');
       line(cx - 65, 215, cx - 57, 215, '#718b81', 1);
       label(cx + 68, pistonY + 4, 'Piston', 12, 'start');
-      line(cx + 54, pistonY, cx + 64, pistonY, '#718b81', 1);
+      line(cx + 52, pistonY, cx + 64, pistonY, '#718b81', 1);
       label(cx - 45, 303, 'Rod', 12, 'end');
       line(cx - 41, 299, (cx + pinX) / 2, (pistonY + pinY) / 2, '#718b81', 1);
       label(cx + 59, 354, 'Crank', 12, 'start');
-      line(cx + 42, 350, cx + 55, 350, '#718b81', 1);
+      line((cx + pinX) / 2, (crankY + pinY) / 2, cx + 55, 350, '#718b81', 1);
       if (!atDeadCentre) {
         const movingDown = stroke === 0 || stroke === 2;
         const fromY = pistonY + (movingDown ? -24 : 25);
         const toY = pistonY + (movingDown ? 25 : -24);
         arrow(
           [
-            [cx + 62, fromY],
-            [cx + 62, toY],
+            [cx + 112, fromY],
+            [cx + 112, toY],
           ],
           '#566e60',
         );

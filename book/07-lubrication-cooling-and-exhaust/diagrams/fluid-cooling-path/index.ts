@@ -71,7 +71,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           .attr('id', `fluid-cooling-${name}`)
           .attr('markerWidth', 6)
           .attr('markerHeight', 6)
-          .attr('refX', 5)
+          .attr('refX', 6)
           .attr('refY', 3)
           .attr('orient', 'auto')
           .append('path')
@@ -156,7 +156,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       box(cx - 88, 294, 176, 62, selected.radiator ? '#d5e8ef' : '#f2ddb9', '#526455');
       text(cx, 320, 'Thermostat', 20, 600);
       text(cx, 343, selected.radiator ? 'Radiator route open' : 'Radiator restricted', 16);
-      line(`M${cx} 356V387`, returning, selected.radiator ? 'cool' : 'warm');
+      line(`M${cx} 356V392`, returning, selected.radiator ? 'cool' : 'warm');
 
       // Neutral, unarrowed tank connection: it is not a compulsory series route.
       line(`M${cx} 363H${cx + 112}V606H${cx + 90}`, '#7c897c', null, false, 2);
@@ -164,7 +164,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       box(cx - 88, 392, 176, 56, '#e0ebdf', '#236148');
       text(cx, 414, 'Coolant pump', 20, 600);
       text(cx, 441, 'Belt driven', 17);
-      line(`M${cx} 448V478`, returning, selected.radiator ? 'cool' : 'warm');
+      line(`M${cx} 448V484`, returning, selected.radiator ? 'cool' : 'warm');
       box(cx - 88, 484, 176, 62, '#e0ebdf', '#236148');
       text(cx, 508, 'Engine jackets', 20, 600);
       text(cx, 535, 'Heat enters coolant', 17);
