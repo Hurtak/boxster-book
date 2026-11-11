@@ -34,26 +34,6 @@ export function BookApp({
             Boxster 2.9 <span>2010 · 987.2</span>
           </a>
           <div className="reader-tools">
-            <div className="type-controls enhanced-only" role="group" aria-label="Reading text size">
-              <button
-                type="button"
-                data-text-size="-1"
-                aria-label="Decrease text size"
-                disabled={reader.size !== undefined && reader.size <= 17}
-                onClick={() => reader.changeSize(-1)}
-              >
-                A−
-              </button>
-              <button
-                type="button"
-                data-text-size="1"
-                aria-label="Increase text size"
-                disabled={reader.size !== undefined && reader.size >= 24}
-                onClick={() => reader.changeSize(1)}
-              >
-                A+
-              </button>
-            </div>
             <PrintBook className="print-toolbar" />
             <button
               className="contents-toggle enhanced-only"

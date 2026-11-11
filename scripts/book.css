@@ -161,8 +161,7 @@ button:disabled {
   font-size: 16px;
   font-weight: 400;
 }
-.reader-tools,
-.reader-enhanced .type-controls {
+.reader-tools {
   display: flex;
   align-items: center;
   gap: 4px;

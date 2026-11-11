@@ -17,7 +17,6 @@ export function htmlDocument(markup: string, css: string, script: string, notice
   root.dataset.readerPending='true';
   if(!location.hash||location.hash==='#title')root.dataset.view='cover';
   history.scrollRestoration='manual';
-  try{var size=Number(localStorage.getItem('boxster-reading-size'));if(size>=17&&size<=24)root.style.setProperty('--reading-size',size+'px');}catch(e){}
   function fallback(event){
     if(event&&event.target!==window&&event.target.tagName!=='SCRIPT')return;
     if(!root.classList.contains('reader-enhanced')){

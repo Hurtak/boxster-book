@@ -914,22 +914,6 @@ test('phone contents traps focus, closes with Escape and opens the chosen chapte
     await dialog.waitFor({ state: 'hidden' });
     await page.getByRole('heading', { level: 1, name: 'Brakes and stability systems' }).waitFor();
     assert.equal(await page.locator('.book-sidebar nav').count(), 1);
-    const before = await page
-      .locator('#book > section.level2:not([hidden]) > p:not(.chapter-meta)')
-      .first()
-      .evaluate((element: Element) => parseFloat(getComputedStyle(element).fontSize));
-    await page.getByRole('button', { name: 'Increase text size' }).click();
-    const after = await page
-      .locator('#book > section.level2:not([hidden]) > p:not(.chapter-meta)')
-      .first()
-      .evaluate((element: Element) => parseFloat(getComputedStyle(element).fontSize));
-    assert.equal(after, before + 1);
-    await page.reload();
-    await page.locator('html.reader-enhanced').waitFor();
-    assert.equal(
-      await page.locator('body').evaluate((element: Element) => parseFloat(getComputedStyle(element).fontSize)),
-      after,
-    );
   } finally {
     await page.close();
   }
@@ -989,7 +973,8 @@ test('cover and chapter reflow from a small phone to a wide desktop, with bundle
   try {
     await context.addInitScript(() => {
       try {
-        localStorage.removeItem('boxster-reading-size');
+        // Old reader preferences must not override the responsive typography.
+        localStorage.setItem('boxster-reading-size', '24');
       } catch {}
     });
     const page = await context.newPage();
@@ -998,6 +983,12 @@ test('cover and chapter reflow from a small phone to a wide desktop, with bundle
       (await page.goto(preview))!;
       await page.locator('html.reader-enhanced').waitFor();
       await page.evaluate(() => document.fonts.ready);
+      assert.equal(await page.getByRole('button', { name: /(?:Increase|Decrease) text size/ }).count(), 0);
+      assert.equal(
+        await page.locator('body').evaluate((element: Element) => parseFloat(getComputedStyle(element).fontSize)),
+        width <= 600 ? 18 : 20,
+        'Legacy text-size preferences must not override the responsive reading size',
+      );
       assert.ok(
         await page.evaluate(
           () => document.fonts.check('20px "Source Serif 4"') && document.fonts.check('16px "Source Sans 3"'),
@@ -1016,11 +1007,6 @@ test('cover and chapter reflow from a small phone to a wide desktop, with bundle
       assert.ok(
         await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
         `Chapter overflows at ${width}px`,
-      );
-      await page.getByRole('button', { name: 'Increase text size' }).click();
-      assert.ok(
-        await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
-        `Larger text overflows at ${width}px`,
       );
       if (width === 320 || width === 768) {
         for (const name of ['brake-explorer', 'caliper-pressure', 'braking-energy']) {

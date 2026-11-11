@@ -7,7 +7,6 @@ export function useReader(chapters: Chapter[]) {
   const [section, setSection] = useState(''),
     [progress, setProgress] = useState(0),
     [place, setPlace] = useState('');
-  const [size, setSize] = useState<number>();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [route, setRoute] = useState(0);
   const initial = useRef(true),
@@ -37,10 +36,8 @@ export function useReader(chapters: Chapter[]) {
     try {
       // oxlint-disable-next-line react/set-state-in-effect -- Read browser preferences after deterministic SSR hydration.
       setPlace(localStorage.getItem('boxster-reading-place') ?? '');
-      const value = Number(localStorage.getItem('boxster-reading-size'));
-      setSize(value >= 17 && value <= 24 ? value : parseFloat(getComputedStyle(document.body).fontSize));
     } catch {
-      setSize(parseFloat(getComputedStyle(document.body).fontSize));
+      /* optional reading place */
     }
     addEventListener('hashchange', locationChanged);
     locationChanged();
@@ -106,19 +103,6 @@ export function useReader(chapters: Chapter[]) {
         sidebar.scrollTop += (row.previousElementSibling ?? row).getBoundingClientRect().top - box.top - heading;
     }
   }, [enhanced, active]);
-
-  useLayoutEffect(() => {
-    if (size !== undefined) document.documentElement.style.setProperty('--reading-size', `${size}px`);
-  }, [size]);
-  const changeSize = (delta: number) => {
-    const value = Math.max(17, Math.min(24, (size ?? 20) + delta));
-    setSize(value);
-    try {
-      localStorage.setItem('boxster-reading-size', String(value));
-    } catch {
-      /* optional preference */
-    }
-  };
 
   useEffect(() => {
     if (!enhanced || !active) return;
@@ -207,8 +191,6 @@ export function useReader(chapters: Chapter[]) {
     section,
     progress,
     place,
-    size,
-    changeSize,
     dialogOpen,
     setDialogOpen,
   };
