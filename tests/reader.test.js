@@ -54,6 +54,74 @@ async function ready(page, name) {
   return figure;
 }
 
+test('readers can switch between posters and live diagrams without losing their controls', async () => {
+  for (const [url, width] of [[portable, 390], [web, 1440], [site, 390]]) {
+    const context = await browser.newContext({ offline: url === portable, viewport: { width, height: 844 } });
+    try {
+      const page = await context.newPage();
+      await page.goto(url);
+      for (const id of ['body-explorer', 'caliper-pressure']) {
+        const figure = await ready(page, id);
+        const choice = figure.getByRole('group', { name: 'Diagram view' });
+        assert.equal(await choice.count(), 1, 'Every interactive diagram offers its static poster');
+        const slider = figure.getByRole('slider').first();
+        await slider.focus(); await slider.press('End');
+        const value = await slider.inputValue();
+        const chapter = await figure.evaluate(element => element.closest('section.level2').id);
+        const poster = choice.getByRole('button', { name: 'Static diagram', exact: true });
+        await poster.focus(); await poster.press('Enter');
+        await figure.locator('.diagram-static img').waitFor({ state: 'visible' });
+        assert.equal(await poster.getAttribute('aria-pressed'), 'true');
+        assert.equal(await figure.locator('.diagram-interactive').evaluate(element => element.childElementCount), 0);
+        assert.equal(await figure.locator('.diagram-loading').isVisible(), false);
+        await page.emulateMedia({ media: 'print' });
+        assert.equal(await choice.isVisible(), false);
+        assert.equal(await figure.locator('.diagram-static img').isVisible(), true);
+        await page.emulateMedia({ media: 'screen' });
+        await page.evaluate(() => { location.hash = 'title'; });
+        await page.locator('#title').waitFor({ state: 'visible' });
+        await page.evaluate(chapter => { location.hash = chapter; }, chapter);
+        await figure.waitFor({ state: 'visible' });
+        await figure.scrollIntoViewIfNeeded();
+        assert.equal(await poster.getAttribute('aria-pressed'), 'true', 'Poster choice survives chapter navigation');
+        assert.equal(await figure.locator('.diagram-interactive').evaluate(element => element.childElementCount), 0);
+        if (id === 'body-explorer') await page.screenshot({ path: resolve(previews, `poster-choice-${width}.png`) });
+        await choice.getByRole('button', { name: 'Interactive', exact: true }).click();
+        await ready(page, id);
+        assert.equal(await figure.getByRole('slider').first().inputValue(), value, 'Switching views retains diagram state');
+        assert.equal(await figure.locator('.diagram-static img').isVisible(), false);
+      }
+    } finally { await context.close(); }
+  }
+});
+
+test('the static poster is available while a car model is still downloading', async () => {
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  let release;
+  const gate = new Promise(resolve => { release = resolve; });
+  let requested;
+  const modelRequested = new Promise(resolve => { requested = resolve; });
+  try {
+    await page.route('**/*.glb', async route => { requested(); await gate; await route.continue(); });
+    await page.goto(web);
+    const figure = page.locator('[data-diagram="body-explorer"]');
+    await figure.evaluate(element => { location.hash = element.closest('section.level2').id; });
+    await figure.waitFor({ state: 'visible' });
+    await figure.scrollIntoViewIfNeeded();
+    const poster = figure.getByRole('button', { name: 'Static diagram', exact: true });
+    assert.equal(await poster.count(), 1);
+    await modelRequested;
+    await poster.click();
+    await figure.locator('.diagram-static img').waitFor({ state: 'visible' });
+    assert.equal(await figure.getAttribute('aria-busy'), 'false');
+    const response = page.waitForResponse(response => response.url().endsWith('.glb'));
+    release(); await (await response).finished();
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    assert.equal(await figure.locator('canvas').count(), 0, 'A late model download must not replace the chosen poster');
+    assert.equal(await poster.getAttribute('aria-pressed'), 'true');
+  } finally { release(); await page.close(); }
+});
+
 test('a slow chapter reload does not flash the cover before the reader hydrates', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   let release;
@@ -253,6 +321,7 @@ test('static diagrams remain readable without JavaScript or WebGL', async () => 
       assert.equal(await figure.locator('img').isVisible(), true);
       assert.ok(await figure.locator('img').evaluate((element) => element.complete && element.naturalWidth > 0));
       assert.equal(await figure.locator('canvas').count(), 0);
+      assert.equal(await figure.locator('.diagram-view-controls').count(), 0);
     }
   } finally { await context.close(); }
   const page = await browser.newPage();
@@ -712,7 +781,7 @@ test('every interactive illustration responds to native controls and fits phone,
           assert.ok(await checkbox.isChecked());
           await checkbox.uncheck();
         }
-        const buttons = figure.getByRole('button');
+        const buttons = figure.locator('.diagram-interactive').getByRole('button');
         for (const button of await buttons.all()) {
           await button.click();
           await checkLabels();

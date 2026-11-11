@@ -10,6 +10,9 @@
 .book-diagram .diagram-interactive { background: var(--ground); padding: 24px; }
 .book-diagram:not(.diagram-ready) .diagram-interactive { position: absolute; inset: 0 0 auto; visibility: hidden; pointer-events: none; width: 100%; }
 .book-diagram .diagram-static[hidden] { display: none; }
+.diagram-view-controls { display: none; }
+.reader-enhanced .diagram-view-controls { display: flex; gap: 8px; position: relative; z-index: 2; padding: 12px 24px; background: var(--ground); border-bottom: 1px solid #d3dbd6; }
+.book-diagram.diagram-poster { min-height: 0; }
 .diagram-loading { display: none; }
 .reader-enhanced .book-diagram:is([data-diagram-status="loading"], [data-diagram-status="suspended"]) .diagram-loading { display: grid; position: absolute; inset: 0; place-items: center; background: var(--ground); color: var(--muted); font: 16px/1.5 var(--ui); }
 .diagram-loading::after { content: "Loading interactive diagram…"; }
@@ -62,6 +65,7 @@
   .book-diagram { margin-inline: calc(-1 * var(--sheet-padding)); }
   .book-diagram .diagram-interactive { padding: 20px var(--sheet-padding); }
   #book .book-diagram > figure { padding: 20px var(--sheet-padding); }
+  .reader-enhanced .diagram-view-controls { padding-inline: var(--sheet-padding); }
   .diagram-notice { padding-inline: var(--sheet-padding); }
   .diagram-stage { height: 300px; }
   .diagram-stage-3d { height: 300px; }
@@ -74,6 +78,6 @@
 }
 @media print {
   .book-diagram { min-height: 0; margin-inline: 0; }
-  .book-diagram .diagram-interactive, .diagram-notice, .diagram-loading { display: none !important; }
+  .book-diagram .diagram-interactive, .diagram-notice, .diagram-loading, .diagram-view-controls { display: none !important; }
   .book-diagram .diagram-static { display: block !important; }
 }
