@@ -60,6 +60,8 @@ export function Diagram({ id, poster, alt }: DiagramProps) {
           // Reserve synchronously before imperative children are removed. Waiting
           // for React's next commit lets scroll anchoring move the reading page.
           element.style.setProperty('--diagram-reserved-height', `${measuredHeight}px`);
+          // A cancelled remount still has a usable reserved layout for navigation.
+          element.dataset.layoutReady = 'true';
           element.classList.add('diagram-suspended');
           setReserved(measuredHeight);
           setStatus('suspended');

@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type MouseEvent } from 'react';
 import type { Chapter } from '../book/types';
 
 export function useReader(chapters: Chapter[]) {
@@ -13,9 +13,10 @@ export function useReader(chapters: Chapter[]) {
     currentId = useRef<string | null>(null);
   const active = chapters.find((c) => c.id === activeId);
   const destination = useRef('');
+  const scrollBehavior = useRef<ScrollBehavior>('auto');
 
-  useLayoutEffect(() => {
-    const locationChanged = () => {
+  const locationChanged = useCallback(
+    (behavior: ScrollBehavior = 'auto') => {
       let id = '';
       try {
         id = decodeURIComponent(location.hash.slice(1));
@@ -23,6 +24,7 @@ export function useReader(chapters: Chapter[]) {
         /* malformed fragment */
       }
       destination.current = id;
+      scrollBehavior.current = behavior;
       const owner = document.getElementById(id)?.closest('section.level2')?.id;
       const next = id === 'book' ? currentId.current : chapters.some((c) => c.id === owner) ? owner! : null;
       if (next !== currentId.current || !document.documentElement.classList.contains('reader-enhanced'))
@@ -32,17 +34,41 @@ export function useReader(chapters: Chapter[]) {
       setDialogOpen(false);
       setEnhanced(true);
       setRoute((value) => value + 1);
-    };
+    },
+    [chapters],
+  );
+
+  const navigateFromMenu = (event: MouseEvent<HTMLElement>) => {
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.altKey ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.shiftKey ||
+      !(event.target instanceof Element)
+    )
+      return;
+    const link = event.target.closest<HTMLAnchorElement>('a[href^="#"]');
+    if (!link || link.hasAttribute('download') || (link.target && link.target !== '_self')) return;
+    event.preventDefault();
+    // Avoid the browser's immediate fragment jump; scroll after the reader settles.
+    if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+    locationChanged(matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth');
+  };
+
+  useLayoutEffect(() => {
+    const onHashChange = () => locationChanged();
     try {
       // oxlint-disable-next-line react/set-state-in-effect -- Read browser preferences after deterministic SSR hydration.
       setPlace(localStorage.getItem('boxster-reading-place') ?? '');
     } catch {
       /* optional reading place */
     }
-    addEventListener('hashchange', locationChanged);
+    addEventListener('hashchange', onHashChange);
     locationChanged();
-    return () => removeEventListener('hashchange', locationChanged);
-  }, [chapters]);
+    return () => removeEventListener('hashchange', onHashChange);
+  }, [locationChanged]);
 
   // Settle fonts and lightweight panel layouts before the final anchor scroll.
   // The reading sheet stays hidden until then; superseded routes cannot scroll
@@ -51,7 +77,8 @@ export function useReader(chapters: Chapter[]) {
     if (!enhanced) return;
     let cancelled = false;
     const id = destination.current,
-      target = document.getElementById(id);
+      target = document.getElementById(id),
+      behavior = initial.current ? 'auto' : scrollBehavior.current;
     for (let node = target?.closest('details'); node; node = node.parentElement?.closest('details')) node.open = true;
     const owner = target?.closest('section.level2');
     const diagrams = [...document.querySelectorAll<HTMLElement>('#book > section.level2:not([hidden]) [data-diagram]')];
@@ -69,9 +96,9 @@ export function useReader(chapters: Chapter[]) {
       if (owner && target) {
         focus =
           target === owner ? owner.firstElementChild : target.matches('details') ? target.firstElementChild : target;
-        focus?.scrollIntoView({ block: 'start' });
+        focus?.scrollIntoView({ block: 'start', behavior });
       } else if (!id || id === 'title') {
-        scrollTo(0, 0);
+        scrollTo({ top: 0, left: 0, behavior });
         if (!initial.current) focus = document.querySelector('#title>:first-child');
       } else if (id === 'book') focus = document.getElementById('book');
       delete document.documentElement.dataset.readerPending;
@@ -193,5 +220,6 @@ export function useReader(chapters: Chapter[]) {
     place,
     dialogOpen,
     setDialogOpen,
+    navigateFromMenu,
   };
 }

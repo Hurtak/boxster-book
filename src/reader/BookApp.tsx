@@ -22,7 +22,14 @@ export function BookApp({
   const drafted = chapters.filter((c) => !c.planned),
     first = drafted[0];
   const continued = chapters.find((c) => c.id === reader.place || c.headings.some((h) => h.id === reader.place));
-  const navigation = <ChapterNavigation chapters={chapters} active={active} section={reader.section} />;
+  const navigation = (
+    <ChapterNavigation
+      chapters={chapters}
+      active={active}
+      section={reader.section}
+      onNavigate={reader.navigateFromMenu}
+    />
+  );
   return (
     <Assets.Provider value={assets}>
       <ImageSizes.Provider value={assetSizes}>
@@ -110,7 +117,7 @@ export function BookApp({
                 hidden={!enhanced || !drafted.length}
               >
                 <h2>{drafted.length === chapters.length ? 'Contents' : 'Available chapters'}</h2>
-                <nav aria-label="Written chapters">
+                <nav aria-label="Written chapters" onClick={reader.navigateFromMenu}>
                   <ol>
                     {drafted.map((c) => (
                       <li
@@ -139,7 +146,7 @@ export function BookApp({
           </main>
           <aside className="chapter-outline enhanced-only" aria-label="Reading guide" hidden={!active}>
             <h2>In this chapter</h2>
-            <nav aria-label="Chapter sections">
+            <nav aria-label="Chapter sections" onClick={reader.navigateFromMenu}>
               {active &&
                 sectionsFor(active).map((s) => (
                   <a key={s.id} href={'#' + s.id} aria-current={reader.section === s.id ? 'location' : undefined}>

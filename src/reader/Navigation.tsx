@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type MouseEventHandler } from 'react';
 import type { Chapter } from '../book/types';
 import { PrintBook } from './PrintBook';
 
@@ -12,13 +12,15 @@ export function ChapterNavigation({
   chapters,
   active,
   section,
+  onNavigate,
 }: {
   chapters: Chapter[];
   active?: Chapter;
   section: string;
+  onNavigate: MouseEventHandler<HTMLElement>;
 }) {
   return (
-    <nav aria-label="Book chapters">
+    <nav aria-label="Book chapters" onClick={onNavigate}>
       <ul>
         {chapters.map((chapter) => (
           <li key={chapter.id}>

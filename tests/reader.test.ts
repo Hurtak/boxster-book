@@ -1,5 +1,6 @@
 declare global {
   interface Window {
+    __menuScroll?: number[];
     __bookPrint?: {
       title: string;
       notes: number;
@@ -138,6 +139,34 @@ test('readers can switch between posters and live diagrams without losing their 
     } finally {
       await context.close();
     }
+  }
+});
+test('chapter re-entry survives suspending a reserved diagram before its live view remounts', async () => {
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  try {
+    await page.goto(preview);
+    const figure = await ready(page, 'engine-timing-lift');
+    const chapter = await figure.evaluate((element) => element.closest('section.level2')!.id);
+    await page.locator('.book-name').click();
+    await page.locator('#title').waitFor({ state: 'visible' });
+    await figure.locator('.diagram-stage').waitFor({ state: 'detached' });
+    await page.evaluate((chapter) => {
+      const suspend = (event: Event) => {
+        const element = event.target;
+        if (!(element instanceof HTMLElement) || element.dataset.diagram !== 'engine-timing-lift') return;
+        document.removeEventListener('diagram-prepare', suspend, true);
+        // Cancel between activation and the cached module's asynchronous mount.
+        queueMicrotask(() => element.dispatchEvent(new Event('diagram-suspend')));
+      };
+      document.addEventListener('diagram-prepare', suspend, true);
+      location.hash = chapter;
+    }, chapter);
+    await figure.waitFor({ state: 'visible', timeout: 5000 });
+    assert.equal(await figure.getAttribute('data-layout-ready'), 'true');
+    await ready(page, 'engine-timing-lift');
+    assert.equal(await figure.getByRole('slider').count(), 1);
+  } finally {
+    await page.close();
   }
 });
 test('the static poster is available while a car model is still downloading', async () => {
@@ -653,6 +682,80 @@ test('every diagram and model loads at local and project-prefixed URLs', async (
       assert.deepEqual(errors, [], edition);
     } finally {
       await page.close();
+    }
+  }
+});
+test('chapter menus scroll smoothly after layout, respect reduced motion and retain history', async () => {
+  const chapter = 'book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems';
+  for (const width of [390, 1024, 1440]) {
+    for (const reducedMotion of ['no-preference', 'reduce'] as const) {
+      const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion });
+      try {
+        await page.goto(site + '#' + chapter);
+        await page.locator('html.reader-enhanced').waitFor();
+        await page.waitForFunction(() => !document.documentElement.hasAttribute('data-reader-pending'));
+        const openMenu = async () => {
+          if (width === 390) {
+            await page.getByRole('button', { name: 'Contents', exact: true }).click();
+            return page.getByRole('dialog', { name: 'Contents', exact: true });
+          }
+          return page.locator(width === 1440 ? '.chapter-outline' : '.book-sidebar');
+        };
+        const link = (await openMenu()).getByRole('link', { name: 'ABS and PSM', exact: true });
+        const fragment = (await link.getAttribute('href'))!;
+        const start = await page.evaluate(() => {
+          window.__menuScroll = [scrollY];
+          addEventListener('scroll', () => window.__menuScroll!.push(scrollY));
+          return scrollY;
+        });
+        if (width === 1440) {
+          await link.focus();
+          await link.press('Enter');
+        } else await link.click();
+        await page.waitForURL((url) => url.hash === fragment);
+        await page.waitForFunction((id) => {
+          const target = document.getElementById(id)!;
+          return (
+            Math.abs(
+              target.getBoundingClientRect().top -
+                parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop),
+            ) < 2
+          );
+        }, fragment.slice(1));
+        const { end, samples, focused } = await page.evaluate(() => ({
+          end: scrollY,
+          samples: window.__menuScroll!,
+          focused: document.activeElement?.id,
+        }));
+        assert.equal(focused, fragment.slice(1));
+        assert.ok(Math.abs(end - start) > 500, 'The destination must require a substantial page scroll');
+        const intermediate = samples.filter((y) => y > Math.min(start, end) + 2 && y < Math.max(start, end) - 2);
+        if (reducedMotion === 'reduce')
+          assert.equal(intermediate.length, 0, 'Reduced motion jumps directly to the destination');
+        else assert.ok(intermediate.length > 1, 'Menu navigation must visibly traverse intermediate scroll positions');
+        assert.equal(await page.locator('dialog[open]').count(), 0);
+
+        await page.goBack();
+        await page.waitForURL((url) => url.hash === '#' + chapter);
+        await page.waitForFunction(() => document.activeElement?.tagName === 'H1');
+        await page.waitForFunction(() => scrollY < 100);
+
+        await page.evaluate(() => scrollTo(0, 800));
+        if (width === 390) await page.getByRole('button', { name: 'Contents', exact: true }).click();
+        const contents = width === 390 ? page.locator('.contents-dialog') : page.locator('.book-sidebar');
+        await contents.getByRole('link', { name: 'Steering, wheels and tyres', exact: true }).click();
+        await page.getByRole('heading', { level: 1, name: 'Steering, wheels and tyres', exact: true }).waitFor();
+        await page.waitForFunction(
+          () => !document.documentElement.hasAttribute('data-reader-pending') && scrollY < 100,
+        );
+        assert.equal(await page.locator('dialog[open]').count(), 0);
+        assert.equal(
+          (await page.locator('.book-sidebar [aria-current="page"]').textContent())?.trim(),
+          'Steering, wheels and tyres',
+        );
+      } finally {
+        await page.close();
+      }
     }
   }
 });
@@ -1271,9 +1374,12 @@ test('every interactive illustration responds to native controls and fits phone,
         assert.ok(name, 'Every interactive figure has a diagram ID');
         const figure = await ready(page, name);
         const checkLabels = async () => {
-          const clipped = await figure.evaluate((element) => {
+          const clipped = await figure.evaluate(async (element) => {
             const svg = element.querySelector<SVGSVGElement>('.diagram-stage svg')!;
             if (!svg) return [];
+            // Controls can resize the stage; allow its ResizeObserver and redraw to finish.
+            await new Promise(requestAnimationFrame);
+            await new Promise(requestAnimationFrame);
             const bounds = svg.getBoundingClientRect();
             return [...svg.querySelectorAll<HTMLElement>('text')]
               .filter((text) => {
@@ -1475,9 +1581,11 @@ test('the reference atlas and optional calculations print without losing disclos
     await page.locator('.book-name').click();
     await written.getByRole('link', { name: 'Engine construction and valve gear', exact: true }).click();
     const detail = page.locator('#book > .level2:not([hidden]) details.technical-detail');
+    await detail.waitFor({ state: 'visible' });
     assert.equal(await detail.evaluate((element: HTMLDetailsElement) => element.open), false);
     await detail.locator('summary').focus();
     await detail.locator('summary').press('Enter');
+    assert.ok(await detail.evaluate((element: HTMLDetailsElement) => element.open));
     await page.emulateMedia({ media: 'print' });
     await page.waitForFunction(() =>
       [...document.querySelectorAll<HTMLDetailsElement>('details.technical-detail')].every(
