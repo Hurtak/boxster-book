@@ -13,7 +13,7 @@ export function referenceCar() {
     reference: '2010 Boxster 2.9',
     paint: 'deep metallic green',
     interior: 'tan',
-    revision: 3,
+    revision: 4,
   };
   const p = palette();
   const body = exterior(car, p);
@@ -24,8 +24,9 @@ export function referenceCar() {
   for (const z of [-1.2075, 1.2075]) {
     box(chassis, [1.42, 0.045, 0.08], p.silver, [0, 0.31, z]);
     for (const side of [-1, 1]) {
-      const hub = group('wheel-brake', chassis, [side * 0.76, 0.329, z]);
-      cylinder(hub, 0.153, 0.023, p.silver);
+      const hub = group(`brake-${z > 0 ? 'f' : 'r'}${side > 0 ? 'l' : 'r'}`, chassis, [side * 0.76, 0.329, z]);
+      hub.userData.carPart = true;
+      cylinder(hub, z > 0 ? .159 : .1495, z > 0 ? .028 : .024, p.silver);
       box(hub, [0.065, 0.14, 0.055], p.black, [0, 0, 0.13]);
       tube(
         chassis,

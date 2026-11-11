@@ -3,6 +3,11 @@ import {
   assembly, part, materials, box, cylinder, tube, beam, mesh, group,
 } from '../../../../interactive/three/component-geometry.js';
 
+import { windscreenFrame } from '../../../../interactive/models/boxster/windscreen.js';
+import { seat, hoopOutline, hoopDepth } from '../../../../interactive/models/boxster/seats.js';
+import { steeringWheel } from '../../../../interactive/models/boxster/cabin.js';
+import { palette } from '../../../../interactive/models/boxster/surfaces.js';
+
 export const config = {
   id: 'protection-explorer',
   title: 'From the car to occupant protection',
@@ -11,7 +16,7 @@ export const config = {
   assembled: 'The seats locate the occupants within the fixed structure. Upper belt guides attach to the joined rear-bar assembly; outer lower anchors attach to the body and inboard buckles mount to the seats. Airbag modules occupy separate front, seat and door positions.',
   exploded: 'The display separates structural, belt and module groups to reveal their locations. The offsets are not deployment motion or a removal sequence; the rear bars remain fixed members and all six bags stay stowed.',
   focus: 'belt-system',
-  hideCarParts: ['interior', 'chassis'],
+  hideCarParts: ['driver-seat', 'passenger-seat', 'seat-belt-1', 'seat-belt--1', 'roll-hoop-1', 'roll-hoop--1', 'windscreen-frame', 'tan-steering-wheel', 'steering-column-context', 'chassis'],
   direction: [1.3, 1.05, 1.65],
   note: 'The pictured front-module layout is left-hand drive; UK right-hand-drive positions are reversed. Housings, connectors and mount positions are schematic; trim is cut away. No crash, deployment threshold, belt load or rollover clearance is predicted. The rear bars have no pop-up movement.',
   connections: [
@@ -63,42 +68,35 @@ export function createAssembly() {
   for (const z of [-0.63, -0.2, 0.24, 0.7]) box(cell, [1.4, 0.055, 0.075], p.green, [0, 0.04, z]);
   box(cell, [1.3, 0.06, 0.12], p.dark, [0, 0.42, 0.63]);
 
-  const frame = part(root, 'windscreen-frame', 'Reinforced windscreen frame', [0, 0.6, 0.85], [0, 0.25, 0.42], 'A steel reinforcement is integrated into the windscreen frame. Glass and decorative trim are omitted so the fixed metal support can be distinguished from the fabric-roof frame.');
-  tube(frame, [[-0.68, 0, 0], [-0.63, 0.23, -0.14], [-0.55, 0.52, -0.36], [0, 0.57, -0.4], [0.55, 0.52, -0.36], [0.63, 0.23, -0.14], [0.68, 0, 0]], 0.028, p.green);
-  beam(frame, [-0.68, 0, 0], [0.68, 0, 0], 0.026, p.green);
+  const frame = part(root, 'windscreen-frame', 'Reinforced windscreen frame', [0, 0, 0], [0, 0.25, 0.42], 'A steel reinforcement is integrated into the windscreen frame. The shared outer envelope locates this fixed support. Its internal reinforcement and trim layers are not separately sectioned; the glass stays with the fading car context.');
+  windscreenFrame(frame, palette());
 
-  const bars = part(root, 'rear-bars', 'Fixed rear bars', [0, 0.55, -0.51], [0, 0.3, -0.4], 'The two high-strength steel hoops and their cross-member form one fixed roll-bar assembly, bolted to the body behind the seats. Upper belt guides and retractor supports attach to its outer sides. It is separate from decorative covers and has no sensor-triggered extension.');
-  beam(bars, [-0.68, 0, 0], [0.68, 0, 0], 0.026, p.green);
+  const bars = part(root, 'rear-bars', 'Fixed rear bars', [0, 0, 0], [0, 0.3, -0.4], 'The two high-strength steel hoops and their cross-member form one fixed roll-bar assembly, bolted to the body behind the seats. Upper belt guides and retractor supports attach to its outer sides. It is separate from decorative covers and has no sensor-triggered extension.');
+  beam(bars, [-.56, .65, -.61], [.56, .65, -.61], .026, p.green);
   for (const side of [-1, 1]) {
-    const x = side * 0.37;
-    tube(bars, [[x - 0.2, 0, 0], [x - 0.2, 0.47, 0], [x - 0.14, 0.57, 0], [x + 0.14, 0.57, 0], [x + 0.2, 0.47, 0], [x + 0.2, 0, 0]], 0.027, p.green);
-    for (const dx of [-0.2, 0.2]) box(bars, [0.09, 0.04, 0.1], p.metal, [x + dx, 0, 0]);
-    // Outer mounting web and guide bracket echo PET 812-000, not a repair joint map.
-    box(bars, [0.035, 0.25, 0.1], p.green, [side * 0.57, 0.08, 0]);
-    box(bars, [0.07, 0.075, 0.025], p.metal, [side * 0.57, 0.47, 0.015]);
-    cylinder(bars, 0.027, 0.03, p.warm, [side * 0.57, 0.47, 0], [Math.PI / 2, 0, 0]);
+    const x = side * .345;
+    tube(bars, hoopOutline.map(([dx, y]) => [x + dx, y, hoopDepth(y)]), .018, p.green);
+    for (const dx of [-.192, .192]) {
+      beam(bars, [x + dx, .65, -.61], [x + dx, .745, hoopDepth(.745)], .018, p.green);
+      box(bars, [.09, .04, .1], p.metal, [x + dx, .65, -.61]);
+    }
+    box(bars, [.035, .25, .1], p.green, [side * .537, .78, -.615]);
+    box(bars, [.07, .075, .025], p.metal, [side * .537, 1.005, -.639]);
+    cylinder(bars, .027, .03, p.warm, [side * .537, 1.005, -.639], [Math.PI / 2, 0, 0]);
   }
 
-  const seats = part(root, 'seats', 'Seats and runners', [0, 0.33, -0.04], [0, 0.04, 0.36], 'Seat frames and runners support and position both occupants. Their backrests carry the thorax airbag modules; cushion, backrest and floor relationships determine where the belts lie relative to the body.');
+  const seats = part(root, 'seats', 'Seats and runners', [0, 0, 0], [0, 0.04, 0.36], 'Seat frames and runners support and position both occupants. Their backrests carry the thorax airbag modules; cushion, backrest and floor relationships determine where the belts lie relative to the body.');
   for (const side of [-1, 1]) {
-    const x = side * 0.36;
-    for (const dx of [-0.15, 0.15]) box(seats, [0.035, 0.035, 0.5], p.dark, [x + dx, 0, 0.02]);
-    box(seats, [0.4, 0.035, 0.45], p.metal, [x, 0.045, 0.01]);
-    box(seats, [0.4, 0.11, 0.42], p.tan, [x, 0.12, 0.04]);
-    box(seats, [0.38, 0.49, 0.11], p.tan, [x, 0.41, -0.17], [-0.13, 0, 0]);
-    box(seats, [0.24, 0.16, 0.1], p.tan, [x, 0.72, -0.22], [-0.13, 0, 0]);
-    for (const dx of [-0.2, 0.2]) box(seats, [0.045, 0.43, 0.12], p.tan, [x + dx, 0.39, -0.15], [-0.13, 0, 0]);
-    cylinder(seats, 0.026, 0.035, p.dark, [x + side * 0.19, 0.15, -0.17]);
-    beam(seats, [x - 0.16, 0.06, -0.19], [x - 0.16, 0.58, -0.25], 0.015, p.dark);
-    beam(seats, [x + 0.16, 0.06, -0.19], [x + 0.16, 0.58, -0.25], 0.015, p.dark);
+    seat(seats, palette(), side, { belt: false });
+    for (const dx of [-.145, .145]) box(seats, [.035, .035, .5], p.dark, [side * .345 + dx, .31, -.115]);
   }
 
   const belts = part(root, 'belt-system', 'Three-point belts', [0, 0, 0], [0, 0.23, 0.08], 'Each belt runs from its retractor through the rear-bar upper guide, diagonally to a seat-mounted inner buckle and across the pelvis to the lower outer body anchorage. The separate latch stalk follows the seat. Pretensioning and force limiting are functions of the restraint system; their hidden internals are not modelled.');
   for (const side of [-1, 1]) {
-    const upper = [side * 0.57, 1.02, -0.51];
-    const buckle = [side * 0.145, 0.54, 0.1];
-    const outer = [side * 0.59, 0.53, 0.13];
-    const lower = [side * 0.65, 0.38, -0.4];
+    const upper = [side * .537, 1.005, -.639];
+    const buckle = [side * .107, .48, -.25];
+    const outer = [side * .56, .49, -.1];
+    const lower = [side * .60, .45, -.65];
     ribbon(belts, lower, upper, p.dark);
     ribbon(belts, upper, buckle, p.dark);
     ribbon(belts, buckle, outer, p.dark);
@@ -112,25 +110,22 @@ export function createAssembly() {
     cylinder(belts, 0.02, 0.016, p.warm, upper, [Math.PI / 2, 0, 0]);
   }
 
-  const fronts = part(root, 'front-modules', 'Two front modules', [0, 0.77, 0.5], [0, 0.2, 0.66], 'The steering-wheel centre carries one front airbag, with the steering contact unit behind it. A bracket on the dashboard support carries the passenger module. This left-hand-drive schematic reverses the two positions relative to a UK right-hand-drive car. Both packs stay folded; separation is not deployment.');
-  beam(fronts, [0.36, 0.03, -0.07], [0.36, -0.07, 0.23], 0.024, p.dark);
-  mesh(fronts, new THREE.TorusGeometry(0.064, 0.017, 8, 28), p.black, [0.36, -0.005, 0.045], [0.2, 0, 0]);
-  mesh(fronts, new THREE.TorusGeometry(0.135, 0.018, 12, 40), p.dark, [0.36, 0.03, -0.07], [0.2, 0, 0]);
-  for (const end of [[0.235, 0.03, -0.07], [0.485, 0.03, -0.07], [0.36, -0.095, -0.045]]) beam(fronts, [0.36, 0.03, -0.07], end, 0.013, p.metal);
-  cylinder(fronts, 0.068, 0.065, p.dark, [0.36, 0.03, -0.07], [Math.PI / 2 + 0.2, 0, 0]);
-  foldedModule(fronts, p.tan, p.metal, [0.36, 0.035, -0.03], [0.1, 0.08, 0.04]);
-  foldedModule(fronts, p.tan, p.metal, [-0.35, 0, 0.08], [0.26, 0.13, 0.11]);
-  for (const x of [-0.44, -0.26]) {
-    beam(fronts, [x, -0.065, 0.08], [x, -0.17, 0.13], 0.012, p.metal);
-    cylinder(fronts, 0.011, 0.025, p.dark, [x, -0.065, 0.08]);
+  const fronts = part(root, 'front-modules', 'Two front modules', [0, 0, 0], [0, 0.2, 0.66], 'The steering-wheel centre carries one front airbag, with the steering contact unit behind it. A bracket on the dashboard support carries the passenger module. This left-hand-drive schematic reverses the two positions relative to a UK right-hand-drive car. Both packs stay folded; separation is not deployment.');
+  steeringWheel(fronts, palette());
+  mesh(fronts, new THREE.TorusGeometry(.064, .017, 8, 28), p.black, [.345, .805, .235], [-.28, 0, 0]);
+  foldedModule(fronts, p.tan, p.metal, [.345, .795, .19], [.1, .08, .04]);
+  foldedModule(fronts, p.tan, p.metal, [-.35, .76, .46], [.26, .13, .11]);
+  for (const x of [-.44, -.26]) {
+    beam(fronts, [x, .695, .46], [x, .60, .51], .012, p.metal);
+    cylinder(fronts, .011, .025, p.dark, [x, .695, .46]);
   }
-  box(fronts, [0.3, 0.02, 0.06], p.metal, [-0.35, -0.17, 0.13]);
+  box(fronts, [.3, .02, .06], p.metal, [-.35, .60, .51]);
 
-  const thorax = part(root, 'seat-modules', 'Two thorax modules', [0, 0.73, -0.19], [0, 0.47, -0.06], 'Each thorax airbag is a separate module with a carrier and fasteners on the outer backrest frame, beneath the bolster covering. A dedicated seat wire set supplies its electrical connection. The compact packs remain folded. Sports bucket seats use their own module variants; this view shows ordinary seats.');
+  const thorax = part(root, 'seat-modules', 'Two thorax modules', [0, .77, -.397], [0, 0.47, -0.06], 'Each thorax airbag is a separate module with a carrier and fasteners on the outer backrest frame, beneath the bolster covering. A dedicated seat wire set supplies its electrical connection. The compact packs remain folded. Sports bucket seats use their own module variants; this view shows ordinary seats.');
   for (const side of [-1, 1]) {
-    foldedModule(thorax, p.tan, p.metal, [side * 0.565, 0, 0], [0.065, 0.22, 0.075]);
-    box(thorax, [0.025, 0.27, 0.045], p.dark, [side * 0.59, 0, -0.055]);
-    for (const y of [-0.09, 0.09]) cylinder(thorax, 0.011, 0.03, p.metal, [side * 0.585, y, -0.035], [Math.PI / 2, 0, 0]);
+    foldedModule(thorax, p.tan, p.metal, [side * .535, 0, 0], [0.065, 0.22, 0.075]);
+    box(thorax, [0.025, 0.27, 0.045], p.dark, [side * .55, 0, -.015]);
+    for (const y of [-0.09, 0.09]) cylinder(thorax, 0.011, 0.03, p.metal, [side * .55, y, -0.035], [Math.PI / 2, 0, 0]);
   }
 
   const heads = part(root, 'door-modules', 'Two door head modules', [0, 0.65, 0.1], [0, 0.28, 0], 'A separate head airbag is carried in each door. Together with the two seat-thorax bags, these four modules are the airbag part of POSIP; the doors also have side-impact protection elements. This view cuts away the door trim; it does not substitute roof curtains or predict which side deploys.');

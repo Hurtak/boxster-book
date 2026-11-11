@@ -108,7 +108,7 @@ The brake example maps a single 0–100 slider onto four authored stops:
 | Position | Explanation |
 | --- | --- |
 | 0 | Complete car, locating the selected front-left wheel |
-| 30 | Body lifted away; schematic hydraulic connections exposed |
+| 30 | Body fades in place; schematic hydraulic connections exposed |
 | 65 | Camera at the wheel, surrounding car hidden |
 | 100 | Assembly separated along per-part offsets |
 
@@ -123,6 +123,16 @@ Chapters 4–18 have a car-to-component tour. Brakes retain their dedicated GLB 
 Use the car's coordinate system: **+X left, +Y up, +Z front**, in metres. `createAssembly()` returns a group whose named direct children are selectable parts. The shared `part()` helper records each part's label, explanation, installed position and illustrative separation offset. Put meaningful geometry inside that group. The `config` supplies the title, four stage explanations, focus part and named connections; connection kinds distinguish mechanical, fluid, air, electrical, signal and structural relationships.
 
 The shared viewer handles the 0/30/65/100 stages, perspective framing at each screen width, numbered markers, part focus, connection visibility, native controls and resource cleanup. Part separation is calculated from original positions, so reversing the slider reassembles the same model. The chapter owns spatial relationships and factual limits; the renderer supplies no mechanical simulation. Models and controller descriptions distinguish the standard 2010 2.9 from options such as PDK.
+
+### Installed geometry and fit
+
+The detailed assembly is present in its installed position from the first frame. The surrounding car fades; the assembly stays still until separation starts at 65. Do not crossfade a rough car part into a differently shaped chapter part. `hideCarParts` names only the context nodes that the detailed assembly replaces, not unrelated trim or wheels that should remain on the whole car.
+
+Use shared factories in `interactive/models/boxster/` for visible frames, glazing, seats, controls and wheels. For surfaces fitted to compound-curved openings, `config.reuseCarParts` maps a selectable part to named nodes in the shipped car. `installAssembly` transfers those actual nodes while preserving world transforms, replaces the authored placeholder, and validates every name before mutation. An optional `finishInstallation(model)` adds internal explanatory detail. The poster renderer applies the same installation step; camera bounds are measured after fitting.
+
+Mark replaceable car groups with `userData.carPart = true`. GLB preparation batches their trim within that group rather than flattening it into the outer body or interior. Keep node names unique, including left/right suffixes. After changing these factories, run `npm run model:generate` before rendering posters. The dedicated brake viewer also removes its duplicate context wheel and brake before displaying the installed detailed assembly.
+
+The [assembly fit review](models/boxster/assembly-fit-review.md) records decisions for all fifteen tours. `tests/installed-assemblies.test.js` checks shared surfaces vertex by vertex, exported replacement names, transferred world geometry, the front mount's bonnet clearance, and the brake wheel's axle position. Matching the authored car does not make these educational models factory CAD or establish real fitting dimensions.
 
 Run `npm run model:posters` after changing a procedural model or its configuration. It uses local Chrome (or `BROWSER_EXECUTABLE_PATH`) to render each exploded assembly and writes its `poster.svg`, including an embedded PNG, a vehicle location map, vector part labels and a summary. Render one model with `npm run model:posters -- engine-explorer`. The normal book build uses those checked-in posters and needs no browser for rendering them. Interactive fallbacks remain beside their module; standalone chapter illustrations and photographs belong in `images/`.
 

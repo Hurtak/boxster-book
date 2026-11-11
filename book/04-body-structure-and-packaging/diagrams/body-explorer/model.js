@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import { assembly, part, materials, box, mesh, tube, beam } from '../../../../interactive/three/component-geometry.js';
 
+import { windscreenFrame } from '../../../../interactive/models/boxster/windscreen.js';
+import { palette } from '../../../../interactive/models/boxster/surfaces.js';
+
 export const config = {
   id: 'body-explorer',
   title: 'From the car to the body shell',
@@ -9,7 +12,7 @@ export const config = {
   assembled: 'The formed floor and raised tunnel connect the sills. A seat-support frame sits on each side of the tunnel. The front bulkhead and rear cabin wall complete the cabin boundaries; a small removable cover closes a service opening in the rear wall.',
   exploded: 'The floor, tunnel, reinforced sills, seat supports and bulkheads are joined body regions. The separate rear-wall access cover is a service part. Offsets distinguish these relationships without specifying cuts, joints or removal order.',
   focus: 'floor',
-  hideCarParts: ['chassis', 'interior'],
+  hideCarParts: ['chassis', 'windscreen-frame'],
   direction: [1.2, 1.05, 1.5],
   note: 'PET-backed assembly identities; shapes and positions are illustrative. Glazing, trim, outer closures and roof mechanism are omitted. The rear-wall service cover is shown separately. No seam map, cutting sequence or structural performance prediction.',
   connections: [
@@ -129,9 +132,7 @@ export function createAssembly() {
   for (const side of [-1, 1]) {
     beam(service, [side * .16, .07, .025], [side * .13, .27, .025], .012, m.green);
   }
-  const frame = part(root, 'windscreen-frame', 'Windscreen frame', [0, .605, .875], [0, .38, .1], 'The windscreen frame contains a reinforced steel element and continues into the front cabin structure. This is the metal frame: glass and decorative trim are omitted. It is not a folding roof bow.');
-  tube(frame, [[-.69, 0, 0], [-.66, .14, -.09], [-.59, .47, -.36], [-.53, .55, -.4], [0, .57, -.42], [.53, .55, -.4], [.59, .47, -.36], [.66, .14, -.09], [.69, 0, 0]], .028, m.green);
-  beam(frame, [-.69, 0, 0], [.69, 0, 0], .026, m.green);
-  for (const side of [-1, 1]) box(frame, [.08, .09, .07], m.metal, [side * .66, .015, -.015]);
+  const frame = part(root, 'windscreen-frame', 'Windscreen frame', [0, 0, 0], [0, .38, .1], 'The windscreen frame contains a reinforced steel element and continues into the front cabin structure. Its outer shape is shared with the car; the internal steel reinforcement is not separately sectioned. Glass stays with the fading car context. This is not a folding roof bow.');
+  windscreenFrame(frame, palette());
   return root;
 }

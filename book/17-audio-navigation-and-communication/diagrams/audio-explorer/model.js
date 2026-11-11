@@ -3,6 +3,9 @@ import {
   assembly, part, materials, group, box, cylinder, annulus, mesh, beam, tube,
 } from '../../../../interactive/three/component-geometry.js';
 
+import { radioUnit } from '../../../../interactive/models/boxster/radio.js';
+import { windscreenPoint, windscreenGlass } from '../../../../interactive/models/boxster/windscreen.js';
+
 export const config = {
   id: 'audio-explorer',
   title: 'From the car to the audio system',
@@ -11,7 +14,7 @@ export const config = {
   assembled: 'The source drive, tuner, controls and output stages belong to one head-unit installation. The four speakers remain in their dashboard and door positions; the electrical supply provides the energy that moves their diaphragms.',
   exploded: 'The head-unit case and internal output board separate, while the speakers move clear of their mounting regions. Their open sections reveal magnet, voice coil and diaphragm relationships; these are display offsets, not a removal order.',
   focus: 'head-unit',
-  hideCarParts: ['interior'],
+  hideCarParts: ['radio-unit', 'curved-windscreen'],
   direction: [1.45, .95, -1.25],
   note: 'Standard four-speaker CDR-30 layout; PCM, separate sound-package amplifiers and telephone options are omitted. PET 911-000/911-005 establishes the aerial amplifier, driver variants and mountings. Driver sections, antenna pattern, circuit boards, geometry and wire routes are illustrative.',
   connections: [
@@ -74,26 +77,13 @@ function driver(parent, radius, m, tweeter = false) {
 export function createAssembly() {
   const root = assembly('standard-audio');
   const m = materials();
-  const head = part(root, 'head-unit', 'CDR-30 head unit', [0, .68, .58], [0, .12, -.28],
+  const head = part(root, 'head-unit', 'CDR-30 head unit', [0, 0, 0], [0, .12, -.28],
     'The centre-console unit contains radio reception, the single CD drive, source selection and volume controls. The partial case exposes the source electronics; the optional six-disc changer and PCM are not shown.');
-  box(head, [.205, .012, .175], m.metal, [0, -.065, 0]);
-  box(head, [.012, .13, .175], m.metal, [-.097, 0, 0]);
-  box(head, [.205, .13, .012], m.metal, [0, 0, .083]);
-  box(head, [.215, .145, .014], m.black, [0, 0, -.088]);
-  box(head, [.13, .066, .003], m.blue, [0, .012, -.097]).name = 'monochrome-screen';
-  for (const x of [-.085, .085]) {
-    cylinder(head, .015, .012, m.dark, [x, -.045, -.101], [Math.PI / 2, 0, 0]);
-    cylinder(head, .011, .013, m.metal, [x, -.045, -.104], [Math.PI / 2, 0, 0]);
-    for (const y of [-.016, .002, .02, .038]) box(head, [.022, .009, .006], m.dark, [x, y, -.099]);
-  }
-  box(head, [.15, .004, .005], m.metal, [0, .059, -.098]).name = 'cd-slot';
-  box(head, [.16, .006, .135], m.dark, [0, .016, .005]).name = 'single-disc-drive';
-  const disc = annulus(head, .055, .008, .002, m.metal, [0, .021, .008]);
-  disc.rotation.set(-Math.PI / 2, 0, 0);
-  for (let i = 0; i < 6; i++) box(head, [.012, .014, .03], m.dark, [-.062 + i * .025, -.042, .045]);
+  radioUnit(head, m);
 
-  const output = part(root, 'output-stages', 'Internal output stages', [0, .637, .59], [.27, -.15, 0],
+  const output = part(root, 'output-stages', 'Internal output stages', [0, .660, .338], [.27, -.15, 0],
     'Two 25-watt output stages inside the head unit provide speaker-driving current. They use vehicle electrical energy under the programme signal’s control; this standard system has no separate BOSE or Sound Package Plus amplifier.');
+  output.rotation.x = -.2;
   box(output, [.17, .006, .13], m.green);
   for (const x of [-.047, .047]) {
     box(output, [.037, .017, .028], m.black, [x, .012, .012]);
@@ -104,33 +94,41 @@ export function createAssembly() {
 
   for (const side of [-1, 1]) {
     const left = side > 0;
-    const tweeter = part(root, left ? 'left-tweeter' : 'right-tweeter', left ? 'Left dash tweeter' : 'Right dash tweeter', [side * .56, .79, .73], [side * .17, .27, .02],
+    const tweeter = part(root, left ? 'left-tweeter' : 'right-tweeter', left ? 'Left dash tweeter' : 'Right dash tweeter', [side * .56, .797, .62], [side * .17, .27, .02],
       'One of the standard pair of dashboard high-range speakers, retained by two clips in PET 911-005 items 1–2. Its small diaphragm moves air at high frequencies; the enlarged open section explains the coil and magnet, not exact factory construction.');
     const tweeterUnit = driver(tweeter, .034, m, true);
     tweeterUnit.rotation.x = -Math.PI / 2;
-    const woofer = part(root, left ? 'left-woofer' : 'right-woofer', left ? 'Left door woofer' : 'Right door woofer', [side * .735, .455, .24], [side * .32, -.08, -.1],
+    const woofer = part(root, left ? 'left-woofer' : 'right-woofer', left ? 'Left door woofer' : 'Right door woofer', [side * .654, .50, .05], [side * .32, -.08, -.1],
       'One of the standard pair of door low-range speakers. PET 911-005 items 7–8 distinguishes the standard bass-driver housing from Plus/BOSE variants and lists four mounting bolts per housing. The coil/magnet cutaway and mounting geometry are illustrative.');
     const wooferUnit = driver(woofer, .087, m);
     wooferUnit.rotation.y = -side * Math.PI / 2;
   }
 
-  const aerial = part(root, 'windscreen-aerial', 'Radio aerial and amplifier', [0, .995, .67], [0, .28, .14],
+  const aerial = part(root, 'windscreen-aerial', 'Radio aerial and amplifier', [0, 0, 0], [0, .28, .14],
     'The aerial receives the broadcast; its signal amplifier and connection feed CDR-30 (PET 911-000 item 13 and radio cable). This reception amplifier does not drive the speakers. The windscreen pattern, amplifier position and cable route are schematic; GPS and telephone use distinct optional aerial hardware.');
-  box(aerial, [1.16, .008, .43], m.glass, [0, 0, 0], [1.05, 0, 0]);
-  const points = [[-.5, -.145, .083], [-.4, .125, -.071], [-.13, .15, -.086], [0, -.125, .072], [.13, .15, -.086], [.4, .125, -.071], [.5, -.145, .083]];
-  for (let i = 1; i < points.length; i++) beam(aerial, points[i - 1], points[i], .002, m.warm);
-  const receptionAmp = cylinder(aerial, .012, .078, m.metal, [-.48, -.147, .085], [0, 0, Math.PI / 2]);
+  windscreenGlass(aerial, { glass: m.glass });
+  const onGlass = (u, v) => windscreenPoint(u, v).map((n, axis) => n + (axis === 1 ? .002 : 0));
+  const pattern = [[.15, .12], [.2, .88], [.4, .90], [.5, .14], [.6, .90], [.8, .88], [.85, .12]];
+  for (let i = 1; i < pattern.length; i++) {
+    const [a, b] = [pattern[i - 1], pattern[i]];
+    tube(aerial, Array.from({ length: 31 }, (_, j) => {
+      const t = j / 30;
+      return onGlass(a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t);
+    }), .002, m.warm);
+  }
+  const ampAt = onGlass(.15, .05);
+  const receptionAmp = cylinder(aerial, .012, .078, m.metal, ampAt, [0, 0, Math.PI / 2]);
   receptionAmp.name = 'radio-aerial-signal-amplifier';
-  box(aerial, [.05, .005, .025], m.dark, [-.48, -.162, .085]);
-  tube(aerial, [[-.44, -.147, .085], [-.42, -.18, .1], [-.36, -.2, .12]], .003, m.black);
+  box(aerial, [.05, .005, .025], m.dark, [ampAt[0], ampAt[1] - .015, ampAt[2]]);
+  tube(aerial, [ampAt, [ampAt[0], .80, .68], [ampAt[0], .75, .60]], .003, m.black);
 
-  const power = part(root, 'vehicle-supply', 'Vehicle supply and earth', [0, .59, 1.1], [-.14, .08, .2],
+  const power = part(root, 'vehicle-supply', 'Vehicle supply and earth', [0, .66, 1.1], [-.14, .08, .2],
     'The battery-backed vehicle supply powers the head unit and its output stages. Earth connections complete the electrical circuit. The visible supply and return paths explain connectivity, not the fuse locations or harness route.');
   box(power, [.28, .15, .18], m.black);
   box(power, [.29, .018, .19], m.dark, [0, .082, 0]);
   cylinder(power, .011, .02, m.red, [-.095, .1, 0], [0, 0, 0]);
   cylinder(power, .011, .02, m.blue, [.095, .1, 0], [0, 0, 0]);
-  tube(power, [[-.095, .11, 0], [-.16, .05, -.1], [-.14, -.02, -.32], [0, .05, -.45]], .004, m.warm);
+  tube(power, [[-.095, .11, 0], [-.16, .05, -.1], [-.14, -.02, -.32], [0, .04, -.78]], .004, m.warm);
   tube(power, [[.095, .11, 0], [.16, .02, -.1], [.18, -.12, -.2]], .004, m.blue);
   ring(power, .014, .007, .005, m.metal, [.18, -.12, -.2]);
   return root;

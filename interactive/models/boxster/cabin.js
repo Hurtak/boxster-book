@@ -1,7 +1,9 @@
 import * as THREE from 'three';
 import { group, mesh, cylinder } from '../geometry.js';
 import { rounded, ellipsoid, line3, patch } from './surfaces.js';
+import { radioUnit } from './radio.js';
 import {seat,rollHoop} from './seats.js';
+import { windscreenPoint, windscreenFrame, windscreenGlass } from './windscreen.js';
 
 function instruments(parent, p) {
   patch(
@@ -63,6 +65,21 @@ function instruments(parent, p) {
       new THREE.MeshStandardMaterial({ color: '#bd3e2e' })
     );
   }
+  steeringWheel(parent, p);
+  const column = group('steering-column-context', parent);
+  column.userData.carPart = true;
+  line3(
+    column,
+    [
+      [0.37, 0.73, 0.45],
+      [0.34, 0.75, 0.24],
+    ],
+    0.022,
+    p.black
+  );
+}
+
+export function steeringWheel(parent, p) {
   const steering = group('tan-steering-wheel', parent, [0.345, 0.795, 0.197]);
   steering.rotation.x = -0.28;
   mesh(steering, new THREE.TorusGeometry(0.143, 0.016, 12, 80), p.tan);
@@ -87,47 +104,24 @@ function instruments(parent, p) {
     }),
     [0, 0, -0.034]
   );
-  line3(
-    parent,
-    [
-      [0.37, 0.73, 0.45],
-      [0.34, 0.75, 0.24],
-    ],
-    0.022,
-    p.black
-  );
+  steering.userData.carPart = true;
+  return steering;
+}
+
+export function manualGearLever(parent, p) {
+  const lever = group('gear-lever', parent);
+  lever.userData.carPart = true;
+  rounded(lever, [0.145, 0.035, 0.18], p.black, [0, 0.572, -0.017], 0.023);
+  ellipsoid(lever, [0.045, 0.045, 0.055], p.tan, [0, 0.6, -0.015]);
+  cylinder(lever, 0.009, 0.083, p.chrome, [0, 0.656, -0.015], [0, 0, 0]);
+  ellipsoid(lever, [0.027, 0.029, 0.035], p.tan, [0, 0.696, -0.015]);
+  return lever;
 }
 
 export function windscreen(body, p) {
-  const sample = (u, v) => {
-    const t = u * 2 - 1;
-    return [
-      t * (0.727 - 0.078 * v),
-      0.84 + 0.335 * v - 0.02 * t * t,
-      0.64 - 0.52 * v + 0.06 * t * t,
-    ];
-  };
-  patch(body, 'curved-windscreen', sample, 72, 32, p.glass);
-  for (const v of [0, 1]) {
-    const edge = Array.from({ length: 61 }, (_, i) => sample(i / 60, v));
-    line3(body, edge, 0.026, p.paint);
-    line3(
-      body,
-      edge.map(([x, y, z]) => [x, y - 0.007, z - 0.004]),
-      0.009,
-      p.black
-    );
-  }
-  for (const u of [0, 1]) {
-    const edge = Array.from({ length: 41 }, (_, i) => sample(u, i / 40));
-    line3(body, edge, 0.027, p.paint);
-    line3(
-      body,
-      edge.map(([x, y, z]) => [x + (u === 0 ? 0.009 : -0.009), y, z]),
-      0.008,
-      p.black
-    );
-  }
+  const sample = windscreenPoint;
+  windscreenGlass(body, p);
+  windscreenFrame(body, p);
   for (const [x, length] of [
     [-0.43, 0.43],
     [0.11, 0.42],
@@ -277,39 +271,11 @@ export function cabin(parent, p) {
       );
   }
   const console = group('centre-console', interior, [0, 0.66, 0.275]);
+  console.userData.carPart = true;
   console.rotation.x = -0.2;
   rounded(console, [0.218, 0.27, 0.065], p.tan, [0, 0, 0], 0.025);
-  rounded(console, [0.177, 0.111, 0.006], p.black, [0, 0.04, -0.037], 0.006);
-  rounded(
-    console,
-    [0.126, 0.071, 0.002],
-    new THREE.MeshStandardMaterial({ color: '#11292b', roughness: 0.25 }),
-    [0, 0.046, -0.042],
-    0.002
-  );
-  for (const x of [-0.079, 0.079])
-    for (const y of [0.079, -0.039])
-      cylinder(
-        console,
-        0.009,
-        0.012,
-        p.silver,
-        [x, y, -0.045],
-        [Math.PI / 2, 0, 0]
-      );
-  for (let row = 0; row < 3; row++)
-    for (let col = 0; col < 5; col++)
-      rounded(
-        console,
-        [0.022, 0.009, 0.005],
-        p.black,
-        [-0.056 + col * 0.028, -0.046 - row * 0.02, -0.038],
-        0.002
-      );
-  rounded(interior, [0.145, 0.035, 0.18], p.black, [0, 0.572, -0.017], 0.023);
-  ellipsoid(interior, [0.045, 0.045, 0.055], p.tan, [0, 0.6, -0.015]);
-  cylinder(interior, 0.009, 0.083, p.chrome, [0, 0.656, -0.015], [0, 0, 0]);
-  ellipsoid(interior, [0.027, 0.029, 0.035], p.tan, [0, 0.696, -0.015]);
+  radioUnit(interior, { metal: p.silver, dark: p.black, black: p.black, blue: new THREE.MeshStandardMaterial({color:'#11292b', roughness:.25}) });
+  manualGearLever(interior, p);
   rounded(interior, [0.13, 0.045, 0.21], p.tan, [0, 0.596, -0.36], 0.024);
   instruments(interior, p);
   return interior;

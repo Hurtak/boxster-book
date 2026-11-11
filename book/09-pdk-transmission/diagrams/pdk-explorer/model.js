@@ -9,7 +9,7 @@ export const config = {
   assembled: 'K1 is the outer pack but drives the inner shaft; K2 is the inner pack and drives the hollow outer shaft. The cutaways reveal that relationship without reconstructing the complete gearbox.',
   exploded: 'Separated groups expose the packs, shafts and sample gears, the housing and sump, and separate control and cooling parts. The selector cable serves the mechanical parking lock. Offsets are not a removal sequence.',
   focus: 'k1-odd',
-  hideCarParts: ['gearbox'],
+  hideCarParts: ['gearbox', 'gear-lever'],
   direction: [1.25, .85, 1.6],
   note: 'Optional CG200 PDK. Housing cutaways, counts, pipe/cable routes and positions are illustrative. Two oil volumes stay separate. PET identifies external assemblies; training establishes the internal clutch paths.',
   connections: [
@@ -136,12 +136,12 @@ export function createAssembly() {
   for (const z of [-.35, .11]) box(housing, [.42, .045, .018], m.metal, [0, -.231, z]);
   for (const x of [-.19, .19]) for (const z of [-.31, -.17, -.03, .08]) cylinder(housing, .009, .014, m.warm, [x, -.26, z], [0, 0, 0]);
 
-  const selector = part(root, 'selector', 'Selector and parking cable', [0, .58, -.15], [-.3, .14, .15], 'The cabin selector sends drive requests electronically. Its separate mechanical cable operates the parking-lock mechanism at the gearbox. It does not directly select each forward gear; the cable route is illustrative.');
+  const selector = part(root, 'selector', 'Selector and parking cable', [0, .52, .005], [-.3, .14, .15], 'The cabin selector sends drive requests electronically. Its separate mechanical cable operates the parking-lock mechanism at the gearbox. It does not directly select each forward gear; the cable route is illustrative.');
   box(selector, [.11, .07, .19], m.dark);
   beam(selector, [0, .025, 0], [0, .17, -.02], .012, m.metal);
   box(selector, [.04, .055, .055], m.black, [0, .18, -.02]);
-  tube(selector, [[.04, -.02, -.08], [.16, -.11, -.35], [.18, -.12, -.8], [.19, -.1, -1.16]], .007, m.black);
-  beam(selector, [.19, -.1, -1.16], [.19, -.1, -1.25], .004, m.metal);
-  box(selector, [.045, .02, .07], m.warm, [.19, -.1, -1.25]);
+  tube(selector, [[.04, -.02, -.08], [.16, -.05, -.505], [.18, -.06, -.955], [.19, -.04, -1.315]], .007, m.black);
+  beam(selector, [.19, -.04, -1.315], [.19, -.04, -1.405], .004, m.metal);
+  box(selector, [.045, .02, .07], m.warm, [.19, -.04, -1.405]);
   return root;
 }

@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import { assembly, part, materials, box, cylinder, annulus, mesh, tube, beam, sphere, coil, gear, group } from '../../../../interactive/three/component-geometry.js';
 
+import { manualGearLever } from '../../../../interactive/models/boxster/cabin.js';
+import { palette } from '../../../../interactive/models/boxster/surfaces.js';
+
 export const config = {
   id: 'manual-explorer',
   title: 'From the car to the manual gearbox',
@@ -9,7 +12,7 @@ export const config = {
   assembled: 'The clutch and gearbox input share a longitudinal axis. The final drive belongs to the same transaxle and connects to the rear half-shafts. The open housing exposes representative gear pairs.',
   exploded: 'Separation reveals one driven plate, pressure assembly, bearing/guide sleeve and the pedal-to-slave circuit. The synchroniser is lifted from one example gear path; offsets are not working travel or dismantling order.',
   focus: 'clutch',
-  hideCarParts: ['gearbox', 'chassis'],
+  hideCarParts: ['gearbox', 'chassis', 'gear-lever'],
   direction: [1.3, .9, -1.6],
   note: 'G87/10 concept checked against PET 102-000, 301-000/005, 302-000/005, 501-005, 701-000 and 702-000/008. Two pairs are not a six-ratio shaft plan. Geometry/routing and the LHD pedal location are illustrative; UK/RHD feed pipes differ. No S-model X-Tend is assigned.',
   connections: [
@@ -122,15 +125,13 @@ export function createAssembly() {
   beam(synchroniser, [-.055, .085, -.002], [.055, .085, -.002], .009, m.green);
   beam(synchroniser, [0, .085, -.15], [0, .085, .15], .009, m.metal);
 
-  const selector = part(root, 'selector', 'Lever and cables', [0, .48, .12], [0, .25, .18], 'The cabin lever sends cross-gate and fore-and-aft commands through two cables to the gearbox selector. Brackets retain the cable housings; the inner cables move. PET 701-000 items 1, 3, 25–26; routes and joints are schematic.');
-  box(selector, [.13, .025, .17], m.dark, [0, 0, 0]);
-  beam(selector, [0, 0, 0], [0, .15, .035], .014, m.metal);
-  sphere(selector, .03, m.tan, [0, .17, .04], [1, 1.3, 1]);
-  sphere(selector, .024, m.metal, [0, .01, 0]);
+  const selector = part(root, 'selector', 'Lever and cables', [0, 0, 0], [0, .25, .18], 'The cabin lever sends cross-gate and fore-and-aft commands through two cables to the gearbox selector. Brackets retain the cable housings; the inner cables move. PET 701-000 items 1, 3, 25–26; routes and joints are schematic.');
+  manualGearLever(selector, palette());
+  sphere(selector, .024, m.metal, [0, .57, -.015]);
   for (const x of [-.034, .034]) {
-    tube(selector, [[x, -.01, -.06], [x, -.11, -.3], [x + .03, -.14, -.9], [.17 + x, .075, -1.65]], .008, m.black);
-    cylinder(selector, .014, .055, m.metal, [.17 + x, .075, -1.65], zAxis);
-    box(selector, [.036, .012, .045], m.green, [.17 + x, .057, -1.65]);
+    tube(selector, [[x, .56, -.075], [x, .37, -.18], [x + .03, .34, -.78], [.17 + x, .555, -1.53]], .008, m.black);
+    cylinder(selector, .014, .055, m.metal, [.17 + x, .555, -1.53], zAxis);
+    box(selector, [.036, .012, .045], m.green, [.17 + x, .537, -1.53]);
   }
 
   const final = part(root, 'final-drive', 'Final drive and shafts', [0, .329, -1.2075], [0, -.23, -.13], 'The transaxle final drive turns longitudinal input into drive for the rear differential and half-shafts. The two shafts reach rotating hubs; their articulated joints accommodate suspension movement.');

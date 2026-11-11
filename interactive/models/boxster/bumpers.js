@@ -89,11 +89,13 @@ export function frontDetails(parent, p, surface) {
   const led = new THREE.MeshStandardMaterial({ color: '#f4f8ff', emissive: '#9aa6b8', roughness: 0.3 });
   for (const side of [-1, 1]) {
     slats(parent, p, surface, frontIntakeOutline(side), [0.343, 0.303, 0.263]);
+    const details = group(`lower-light-details-${side}`, parent);
+    details.userData.carPart = true;
     // Daytime-running LED strip in the outer lamp section, then the indicator divider.
     const strip = [];
     for (let i = 0; i <= 12; i++) strip.push(surface.on([side * (0.54 + (0.2 * i) / 12), 0.408 - 0.004 * (i / 12), 3], ahead, -0.014));
-    line3(parent, strip, 0.0045, led);
-    line3(parent, [[0.52, 0.43], [0.52, 0.372]].map(([x, y]) => surface.on([side * x, y, 3], ahead, -0.006)), 0.0018, p.chrome);
+    line3(details, strip, 0.0045, led);
+    line3(details, [[0.52, 0.43], [0.52, 0.372]].map(([x, y]) => surface.on([side * x, y, 3], ahead, -0.006)), 0.0018, p.chrome);
   }
   slats(parent, p, surface, centreIntakeOutline(), [0.27, 0.244]);
   // Lip along the bottom of the bumper face, with its shadow line beneath.
@@ -109,8 +111,10 @@ export function frontDetails(parent, p, surface) {
 export function rearDetails(parent, p, surface) {
   plate(parent, p, mount(parent, 'rear-registration', surface.hit([0, 0.49, -3], behind), -0.022));
   const centre = surface.hit([0, 0.29, -3], behind).point;
+  const outlets = group('exhaust-outlets', parent);
+  outlets.userData.carPart = true;
   for (const x of [-0.058, 0.058]) {
-    const pipe = group('exhaust-tip', parent, [x, 0.288, centre.z + 0.005]);
+    const pipe = group(`exhaust-tip-${x}`, outlets, [x, 0.288, centre.z + 0.005]);
     mesh(pipe, new THREE.CylinderGeometry(0.047, 0.044, 0.14, 48, 1, true), p.chrome, [0, 0, 0.04], [Math.PI / 2, 0, 0]);
     mesh(pipe, new THREE.CylinderGeometry(0.04, 0.04, 0.12, 48, 1, true), p.black, [0, 0, 0.05], [Math.PI / 2, 0, 0]);
     mesh(pipe, new THREE.TorusGeometry(0.0435, 0.0045, 8, 48), p.chrome, [0, 0, -0.03]);

@@ -231,6 +231,8 @@ function sideDetails(body, p, surface, side) {
   marker.lookAt(repeater.point.clone().add(repeater.normal));
   rounded(marker, [0.17, 0.026, 0.012], p.chrome, [0, 0, 0], 0.012);
   rounded(marker, [0.16, 0.02, 0.014], p.lens, [0, 0, 0.004], 0.009);
+  const inlet = group(`side-inlet-details-${side}`, body);
+  inlet.userData.carPart = true;
   // Five slats across the side intake.
   for (let i = 0; i < 5; i++) {
     const y = 0.405 + i * 0.047;
@@ -238,7 +240,7 @@ function sideDetails(body, p, surface, side) {
       z1 = -0.72 + (0.628 - y) * 0.62 + 0.01;
     const a = surface.on(onSide(z0, y), [-side, 0, 0], -0.02),
       b = surface.on(onSide(z1, y), [-side, 0, 0], -0.02);
-    line3(body, [a, b], 0.0065, p.silver);
+    line3(inlet, [a, b], 0.0065, p.silver);
   }
   // Mirror on the door top; stalk, painted shell and a dark glass face.
   const mirror = group(`mirror-${side}`, body, [side * 0.84, 0.875, 0.44]);

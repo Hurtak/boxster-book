@@ -1,3 +1,4 @@
+import { Vector3 } from 'three';
 import {
   assembly, part, materials, box, cylinder, tube, annulus, beam, sphere,
 } from '../../../../interactive/three/component-geometry.js';
@@ -11,6 +12,13 @@ export const config = {
   exploded: 'The intake, fuel-metering and ignition parts separate for inspection. The offsets expose their relationships; they do not show operating travel or a removal sequence.',
   focus: 'plenum-runners',
   hideCarParts: ['engine'],
+  reuseCarParts: { 'left-inlet': ['side-inlet-details-1', 'side-intake-1-walls'] },
+  finishInstallation(model) {
+    const inlet = model.getObjectByName('left-inlet'), p = materials();
+    model.updateMatrixWorld(true);
+    const points = [[.815, .52, -.58], [.72, .60, -.63], [.61, .64, -.715]];
+    tube(inlet, points.map(point => inlet.worldToLocal(new Vector3(...point)).toArray()), .055, p.dark);
+  },
   direction: [1.3, 1.1, 1.6],
   note: 'The 2.9 port-injection system is shown. The cylindrical filter, air-guide sleeve, vacuum units and connected fuel pipes follow factory parts drawings; their dimensions and routing remain schematic. Controller position and separation distances are approximate. The front-tank feed, exhaust feedback and other sensors are omitted; no S-model high-pressure injection hardware is fitted here.',
   connections: [
@@ -49,9 +57,9 @@ export function createAssembly() {
       [Math.cos(angle) * 0.07, Math.sin(angle) * 0.07, 0], [0, 0, angle]);
   }
   for (const z of [-0.16, 0.16]) annulus(cleaner, 0.077, 0.044, 0.014, p.dark, [0, 0, z]).rotation.set(0, 0, 0);
-  tube(cleaner, [[-0.1, 0.015, 0.15], [-0.18, 0.07, 0.18], [-0.22, 0.11, 0.18]], 0.055, p.black);
+  tube(cleaner, [[-0.1, 0.015, 0.15], [-0.18, -.02, 0.18], [-0.22, .02, 0.18]], 0.055, p.black);
 
-  const maf = part(root, 'maf', 'Air-mass sensor', [0.34, 0.75, -0.75], [0.27, 0.45, 0.12],
+  const maf = part(root, 'maf', 'Air-mass sensor', [0.34, 0.66, -0.75], [0.27, 0.45, 0.12],
     'A hot-film sensor measures incoming air mass and sends an electrical signal to the DME. Its measuring tube connects to the airbox through a seal and to the throttle through a flexible air guide with clamps.');
   annulus(maf, 0.074, 0.056, 0.16, p.dark);
   tube(maf, [[-0.08, 0, 0], [-0.145, 0, 0], [-0.205, 0, 0]], 0.056, p.black);
@@ -61,7 +69,7 @@ export function createAssembly() {
   box(maf, [0.012, 0.085, 0.012], p.metal, [0, 0.015, 0]);
   box(maf, [0.035, 0.025, 0.035], p.blue, [0.01, 0.105, 0]);
 
-  const throttle = part(root, 'throttle', 'Electronic throttle', [0.09, 0.75, -0.75], [-0.12, 0.51, 0.3],
+  const throttle = part(root, 'throttle', 'Electronic throttle', [0.09, 0.66, -0.75], [-0.12, 0.51, 0.3],
     'An electric actuator turns the butterfly, changing the restriction to incoming air. Throttle position is controlled and monitored; it is not a mechanical extension of the accelerator pedal.');
   annulus(throttle, 0.083, 0.063, 0.09, p.metal);
   cylinder(throttle, 0.061, 0.007, p.warm, [0, 0, 0], [0, 0.55, Math.PI / 2]);
@@ -69,7 +77,7 @@ export function createAssembly() {
   box(throttle, [0.065, 0.07, 0.085], p.black, [0, 0.098, 0.018]);
   box(throttle, [0.035, 0.025, 0.035], p.blue, [0, 0.14, 0.018]);
 
-  const plenums = part(root, 'plenum-runners', 'Plenums + runners', [0, 0.76, -0.85], [-0.08, 0.39, -0.12],
+  const plenums = part(root, 'plenum-runners', 'Plenums + runners', [0, 0.67, -0.85], [-0.08, 0.39, -0.12],
     'Three runners serve each cylinder bank. Rubber sleeves and clamps join the bank distributors to the centre tube. Two vacuum units, controlled through change-over valves, operate the tuning flaps. Their positions, hose paths and flap angles are illustrative.');
   for (const side of [-1, 1]) {
     sphere(plenums, 0.135, p.dark, [side * 0.27, 0.035, 0], [0.86, 0.65, 1.95]);
@@ -93,7 +101,7 @@ export function createAssembly() {
     tube(plenums, [[0.13, 0.09, z - 0.04], [0.105, 0.13, z - 0.07], [0.07, 0.10, z - 0.065]], 0.005, p.black);
   }
 
-  const injectors = part(root, 'ports-injectors', 'Ports + injectors', [0, 0.62, -0.85], [-0.35, 0.11, -0.2],
+  const injectors = part(root, 'ports-injectors', 'Ports + injectors', [0, 0.56, -0.85], [-0.35, 0.11, -0.2],
     'One connected fuel collection-pipe assembly supplies all six EV14 port injectors. Each injector has a retaining clip and seals at its fuel-pipe and inlet-port ends. The pipes and feed stub are schematic; the 2.9 has no engine-driven DFI high-pressure pump.');
   tube(injectors, [[-0.47, 0.08, -0.26], [-0.30, 0.14, -0.30], [0.30, 0.14, -0.30], [0.47, 0.08, -0.26]], 0.013, p.warm);
   tube(injectors, [[0.47, 0.08, 0.26], [0.52, 0.08, 0.31], [0.52, -0.06, 0.38]], 0.012, p.warm);

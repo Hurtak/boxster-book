@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { assembly, part, materials, mesh, box, cylinder, tube, annulus, beam, sphere, coil } from '../../../../interactive/three/component-geometry.js';
 
+import { roadWheel } from '../../../../interactive/models/boxster/wheel.js';
+
 export const config = {
   id: 'suspension-explorer',
   title: 'From the car to the front suspension',
@@ -10,6 +12,7 @@ export const config = {
   exploded: 'Separating the groups reveals the spring seats, protective bellows and auxiliary stop around the damper rod, plus the thrust bearing below the body mount. The hub and its speed sensor stay with the carrier group. These offsets do not show a service sequence.',
   focus: 'coilover',
   hideCarParts: ['chassis', 'wheel-fl'],
+  ghostParts: ['wheel'],
   direction: [1.8, .8, 1.1],
   note: 'Passive front chassis; PASM is optional. Geometry, joint centres, wheel style and fasteners are illustrative. Body-reference pieces are not a removable assembly; no alignment or load values are prescribed.',
   connections: [
@@ -42,19 +45,7 @@ export function createAssembly() {
   const root = assembly('front-left-suspension');
   const m = materials();
   const wheel = part(root, 'wheel', 'Wheel and tyre', [.76, .329, 1.2075], [.43, 0, 0], 'The wheel bolts to the hub and turns with it. Its tyre transmits road forces. The translucent teaching wheel exposes the suspension; its style and dimensions are not a fitment specification.');
-  const tyre = m.black.clone();
-  tyre.transparent = true; tyre.opacity = .16; tyre.depthWrite = false;
-  annulus(wheel, .329, .216, .2, tyre);
-  for (const side of [-1, 1]) {
-    annulus(wheel, .219, .202, .013, m.metal, [side * .09, 0, 0]);
-    const bead = mesh(wheel, new THREE.TorusGeometry(.31, .008, 8, 64), m.black, [side * .09, 0, 0], [0, Math.PI / 2, 0]);
-    bead.name = 'tyre-edge';
-  }
-  annulus(wheel, .055, .026, .018, m.metal, [.055, 0, 0]);
-  for (let i = 0; i < 5; i++) {
-    const a = i * Math.PI * 2 / 5;
-    beam(wheel, [.055, Math.cos(a) * .048, Math.sin(a) * .048], [.09, Math.cos(a) * .203, Math.sin(a) * .203], .012, m.metal);
-  }
+  roadWheel(wheel, 'road-wheel', [0, 0, 0], m.metal);
 
   const carrier = part(root, 'carrier', 'Hub and carrier', [.73, .329, 1.2075], [.16, -.08, -.1], 'The hub rotates in its bearing, while the carrier follows suspension and steering movement. A central retaining bolt and nut secure the front hub; no driveshaft drives it. The small wheel-speed sensor is fixed to the carrier. Separate ears connect the carrier to the strut, lower-arm ball joint and steering tie rod.');
   annulus(carrier, .077, .041, .055, m.dark, [-.015, 0, 0]);
@@ -80,7 +71,7 @@ export function createAssembly() {
   joint(carrier, [-.08, -.029, -.1475], m, .017);
 
   const strut = part(root, 'coilover', 'Spring and strut', [.69, .43, 1.2075], [.14, .17, .16], 'The coil spring sits between seats around the hydraulic damper. Protective bellows and a compressible auxiliary stop surround the rod; a thrust bearing below the top mount permits steering rotation. The structural strut also guides the carrier. This shows the passive chassis, with no electronic damping actuator.');
-  const axis = [-.12, .5, -.0575];
+  const axis = [-.12, .29, -.0575];
   const at = t => axis.map(v => v * t);
   beam(strut, at(0), at(.64), .026, m.dark);
   beam(strut, at(.55), at(1), .013, m.metal);
@@ -94,7 +85,7 @@ export function createAssembly() {
   cylinderAlong(strut, at(.91), .056, .016, m.metal, axis).name = 'front-thrust-bearing';
   beam(strut, [-.03, .08, -.0075], [-.03, .08, -.03], .013, m.metal);
 
-  const body = part(root, 'body-mounts', 'Body and mountings', [.57, .93, 1.15], [0, .35, -.18], 'The top mount connects the strut to the body tower. The front crossmember supports the lower-arm bushes and rack; the separate guide reaches a forward body mounting. Anti-roll-bar bushes also join the front structure. These separated reference pieces locate that common support; their shapes are schematic.');
+  const body = part(root, 'body-mounts', 'Body and mountings', [.57, .72, 1.15], [0, .35, -.18], 'The top mount connects the strut to the body tower. The front crossmember supports the lower-arm bushes and rack; the separate guide reaches a forward body mounting. Anti-roll-bar bushes also join the front structure. These separated reference pieces locate that common support; their shapes are schematic.');
   cylinder(body, .081, .028, m.green, [0, .025, 0], [0, 0, 0]);
   cylinder(body, .052, .035, m.black, [0, .004, 0], [0, 0, 0]);
   cylinder(body, .018, .043, m.metal, [0, .032, 0], [0, 0, 0]);
@@ -103,13 +94,13 @@ export function createAssembly() {
     cylinder(body, .006, .032, m.metal, [Math.cos(angle) * .065, .038, Math.sin(angle) * .065], [0, 0, 0]);
   }
   box(body, [.25, .025, .2], m.green, [0, .047, 0]);
-  box(body, [.78, .045, .09], m.green, [-.39, -.67, .07]);
-  box(body, [.78, .035, .08], m.green, [-.39, -.65, .26]);
-  for (const x of [-.28, -.86]) box(body, [.09, .07, .09], m.green, [x, -.63, -.095]);
-  box(body, [.09, .07, .1], m.green, [-.34, -.63, .47]);
+  box(body, [.78, .045, .09], m.green, [-.39, -.46, .07]);
+  box(body, [.78, .035, .08], m.green, [-.39, -.44, .26]);
+  for (const x of [-.28, -.86]) box(body, [.09, .07, .09], m.green, [x, -.42, -.095]);
+  box(body, [.09, .07, .1], m.green, [-.34, -.42, .47]);
   for (const x of [-.22, -.92]) {
-    cylinder(body, .03, .065, m.black, [x, -.64, .26]);
-    box(body, [.08, .02, .07], m.metal, [x, -.67, .26]);
+    cylinder(body, .03, .065, m.black, [x, -.43, .26]);
+    box(body, [.08, .02, .07], m.metal, [x, -.46, .26]);
   }
 
   const arm = part(root, 'lower-arm', 'Lower control arm', [.41, .26, 1.22], [.04, -.22, 0], 'The lower arm joins the carrier through an outer ball joint and the structure through an inboard bush. A separate guide attaches farther along it to control fore/aft movement.');

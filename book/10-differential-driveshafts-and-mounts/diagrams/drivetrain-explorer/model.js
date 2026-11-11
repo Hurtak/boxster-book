@@ -9,7 +9,7 @@ export const config = {
   assembled: 'The differential is inside the transaxle. Each inner CV joint bolts to an output flange; the outer splines and nut secure the hub. Output seals retain gearbox lubricant, while joint boots retain grease.',
   exploded: 'The cutaway case, differential, shafts and hubs separate to reveal the drive path and its supports. These offsets illustrate relationships, not a removal order or suspension movement.',
   focus: 'differential',
-  hideCarParts: ['engine', 'gearbox', 'chassis', 'wheel-rl', 'wheel-rr'],
+  hideCarParts: ['engine', 'gearbox', 'chassis'],
   direction: [1.4, .95, 1.35],
   note: 'Manual baseline with a generic open differential. Gear teeth, bearing sections, mount shapes and positions are illustrative; the PDK has different internals and supports.',
   connections: [

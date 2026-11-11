@@ -9,7 +9,7 @@ export const config = {
   assembled: 'The oil pan and oil-to-coolant exchanger belong to the engine assembly. The coolant pump serves the engine and front radiators; the expansion tank is a side branch, not the series return path.',
   exploded: 'The separated groups reveal three distinct systems: oil supply and collection, coolant circulation, and exhaust treatment. Connections are functional; the offsets do not describe a removal sequence.',
   focus: 'engine-jackets',
-  hideCarParts: ['engine', 'hydraulics'],
+  hideCarParts: ['engine', 'exhaust-outlets'],
   direction: [1.2, 1.2, 1.5],
   note: 'Factory plates guide assembly identities and attachments; sizes, routing, pump internals and all offsets remain illustrative. Front pair shown; centre radiator, PDK cooler, heater branch and sports-exhaust actuators omitted.',
   connections: [
@@ -77,7 +77,7 @@ export function createAssembly() {
   cylinder(exchanger, .017, .05, m.green, [-.22, -.025, .13], zAxis);
   cylinder(exchanger, .024, .08, m.blue, [.1, .025, .13], zAxis);
   cylinder(exchanger, .021, .07, m.warm, [-.06, -.025, -.13], zAxis);
-  tube(exchanger, [[-.1, -.015, -.1], [-.4, .13, -.4], [-.55, .2, -.89]], .018, m.black);
+  tube(exchanger, [[-.1, -.015, -.1], [-.4, .01, -.4], [-.55, .08, -.89]], .018, m.black);
 
   const pump = part(root, 'coolant-pump', 'Pump and thermostat', [.37, .49, -.44], [.44, .05, .36], 'The pulley drives a separate coolant pump. A distinct thermostat insert sits in its own neighbouring housing, connected by water guides and pipes. The exposed impeller and spring explain those different jobs; vane count, spring form and routing are schematic.');
   cylinder(pump, .09, .1, m.metal, [0, 0, 0], zAxis);
@@ -129,7 +129,7 @@ export function createAssembly() {
     for (const z of [-.7, .75]) cylinder(pipes, .03, .1, m.black, [side * .3, 0, z], zAxis);
   }
 
-  const tank = part(root, 'expansion-tank', 'Tank and service caps', [-.43, .75, -1.42], [-.4, .38, -.12], 'The moulded expansion tank has a bleed valve, level switch and several hose connections. A separate rear service cup carries distinct oil and coolant filler caps; a hose links its coolant neck to the tank. Vent lines and the expansion branch do not carry all radiator return flow. Shapes and hose endpoints are schematic.');
+  const tank = part(root, 'expansion-tank', 'Tank and service caps', [-.43, .63, -1.42], [-.4, .38, -.12], 'The moulded expansion tank has a bleed valve, level switch and several hose connections. A separate rear service cup carries distinct oil and coolant filler caps; a hose links its coolant neck to the tank. Vent lines and the expansion branch do not carry all radiator return flow. Shapes and hose endpoints are schematic.');
   for (const x of [-.065, 0, .065]) cylinder(tank, .052, .18, m.metal, [x, -.015, 0], [0, 0, 0]);
   box(tank, [.22, .04, .12], m.metal, [0, .09, 0]);
   cylinder(tank, .036, .035, m.blue, [.025, .125, .01], [0, 0, 0]);
@@ -187,6 +187,7 @@ export function createAssembly() {
   outletHole.lineTo(-.071, .019);
   outletHole.quadraticCurveTo(-.069, .028, -.061, .028);
   outletShape.holes.push(outletHole);
-  mesh(exhaust, new THREE.ExtrudeGeometry(outletShape, { depth: .11, bevelEnabled: false, curveSegments: 8 }), m.metal, [0, -.015, -.785]);
+  mesh(exhaust, new THREE.ExtrudeGeometry(outletShape, { depth: .11, bevelEnabled: false, curveSegments: 8 }), m.metal, [0, .048, -.9294]).name = 'standard-2-9-outlet';
+  tube(exhaust, [[0, -.015, -.63], [0, .048, -.82], [0, .048, -.87]], .027, m.metal);
   return root;
 }

@@ -27,12 +27,20 @@ import * as THREE from 'three';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
 import {frameBounds,geometryCorners} from ${JSON.stringify(join(root, 'interactive/three/component-explorer.js'))};
 import {disposeObject} from ${JSON.stringify(join(root, 'interactive/three/scene.js'))};
+import {loadModel} from ${JSON.stringify(join(root, 'interactive/three/scene.js'))};
+import {installAssembly} from ${JSON.stringify(join(root, 'interactive/three/installed-assembly.js'))};
+import reference from ${JSON.stringify(join(root, 'interactive/models/reference-car.glb'))};
 ${imports}
 const models = {${models.map((m, i) => `${JSON.stringify(m.id)}:{config:c${i},create:m${i}}`).join(',')}};
-window.renderPoster = id => {
+window.renderPoster = async id => {
   const {config,create}=models[id];
   const scene=new THREE.Scene();scene.background=new THREE.Color('#f2f4f7');
   const model=create();scene.add(model);
+  let car, disposeReplaced;
+  if(config.reuseCarParts) {
+    car=await loadModel(reference,new AbortController().signal,'');
+    disposeReplaced=installAssembly(car,config,model);
+  }
   const parts=model.children.filter(p=>p.userData.label);
   const installed=new THREE.Box3().setFromObject(model.getObjectByName(config.focus)).getCenter(new THREE.Vector3());
   for(const p of parts)p.position.add(new THREE.Vector3(...p.userData.explode));
@@ -53,10 +61,10 @@ window.renderPoster = id => {
   });
   renderer.render(scene,camera);
   const image=renderer.domElement.toDataURL('image/png');
-  disposeObject(scene);environment.dispose();renderer.dispose();renderer.forceContextLoss();
+  disposeObject(scene);if(car)disposeObject(car);disposeReplaced?.();environment.dispose();renderer.dispose();renderer.forceContextLoss();
   return {config,parts:centres,installed:installed.toArray(),image};
 };`;
-const result = await build({ stdin: { contents: entry, resolveDir: root }, bundle: true, write: false, platform: 'browser', format: 'iife', target: 'es2022' });
+const result = await build({ stdin: { contents: entry, resolveDir: root }, bundle: true, write: false, platform: 'browser', format: 'iife', target: 'es2022', loader: { '.glb': 'binary' } });
 await writeFile(join(temporary, 'fixture.html'), `<meta charset="utf-8"><script>${result.outputFiles[0].text.replaceAll('</script', '<\\/script')}</script>`);
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const wrap = (text, length) => {

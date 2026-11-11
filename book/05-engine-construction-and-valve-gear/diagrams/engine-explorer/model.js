@@ -123,5 +123,6 @@ export function createAssembly() {
   }
   tube(intake, [[-0.22, 0.29, 0.11], [0, 0.32, 0.11], [0.22, 0.29, 0.11]], 0.042, p.black);
   cylinder(intake, 0.048, 0.11, p.metal, [0, 0.32, 0.19], [Math.PI / 2, 0, 0]);
+  intake.scale.y = .82;
   return root;
 }

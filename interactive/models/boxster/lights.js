@@ -26,6 +26,7 @@ export const headlampOutline = (side) => sdf.polygon(lampPoints(side), 128);
 
 export function headlamp(parent, p, f, side, surface) {
   const root = group(`headlamp-${side}`, parent);
+  root.userData.carPart = true;
   const n = f.n.clone();
   const at = (a, b, depth) => f.from(a, b, depth).toArray();
   const ring = lampPoints(side);
@@ -41,7 +42,7 @@ export function headlamp(parent, p, f, side, surface) {
   for (const [offset, radius, main] of lamps) {
     const hit=surface.hit(at(axis[0]*offset,axis[1]*offset,.3),inward);
     const point=hit.point.clone().add(new THREE.Vector3(0,main?-.08:-.065,-.035)).toArray();
-    const unit = group(main ? 'projector' : 'high-beam-reflector', root, point);
+    const unit = group(`${main ? 'projector' : 'high-beam-reflector'}-${side}`, root, point);
     // The optics aim along the road; only the outer cover follows the wing.
     unit.lookAt(new THREE.Vector3(...point).add(new THREE.Vector3(side*.025,-.005,1)));
     mesh(unit, new THREE.CylinderGeometry(radius * 1.08, radius * 0.9, 0.05, 48, 1, true), p.chrome, [0, 0, -0.01], [Math.PI / 2, 0, 0]);

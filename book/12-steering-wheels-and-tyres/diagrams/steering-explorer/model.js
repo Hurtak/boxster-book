@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import { assembly, part, materials, group, box, cylinder, annulus, mesh, beam, tube, sphere } from '../../../../interactive/three/component-geometry.js';
 
+import { steeringWheel } from '../../../../interactive/models/boxster/cabin.js';
+import { palette } from '../../../../interactive/models/boxster/surfaces.js';
+
 export const config = {
   id: 'steering-explorer',
   title: 'From the car to the steering',
@@ -9,7 +12,7 @@ export const config = {
   assembled: 'The rack, joints and steering arms form a continuous mechanical connection. Supply and return lines add hydraulic assistance; the wheel rotates in its carrier while the carrier sets its direction.',
   exploded: 'The display separates steering, assistance and the front-left rolling assembly. Rim and tyre move apart to expose their bead-seat relationship; these offsets are not steering movement or a removal sequence.',
   focus: 'rack',
-  hideCarParts: ['chassis', 'wheel-fl'],
+  hideCarParts: ['chassis', 'wheel-fl', 'tan-steering-wheel', 'steering-column-context'],
   direction: [1.35, 1, 1.25],
   note: 'Factory parts relationships: PET 403-000/001/003/005, 401-005 and 601-000. Rack cutaway, belt segment and fluid paths are schematic. Standard front size: 7J×17, ET55, 205/55 ZR17 tyre. Cooler, brakes, suspension arms and optional TPM are omitted; small fittings and tread are illustrative.',
   connections: [
@@ -22,16 +25,6 @@ export const config = {
     { from: 'rim', to: 'tyre', label: 'Tyre beads seat against the rim', kind: 'structure' },
   ],
 };
-
-function steeringWheel(parent, surface) {
-  const wheel = group('steering-wheel-form', parent);
-  wheel.rotation.x = -.4;
-  mesh(wheel, new THREE.TorusGeometry(.174, .018, 12, 48), surface);
-  cylinder(wheel, .057, .05, surface, [0, 0, 0], [Math.PI / 2, 0, 0]);
-  for (const angle of [-Math.PI / 6, Math.PI * 7 / 6, Math.PI / 2]) {
-    beam(wheel, [Math.cos(angle) * .045, Math.sin(angle) * .045, 0], [Math.cos(angle) * .16, Math.sin(angle) * .16, 0], .018, surface);
-  }
-}
 
 function ballJoint(parent, position, surface, black) {
   sphere(parent, .022, surface, position);
@@ -68,15 +61,14 @@ function frontLink(root, side, m) {
 export function createAssembly() {
   const root = assembly('steering-and-front-wheel');
   const m = materials();
-  const column = part(root, 'column', 'Wheel and column', [.43, .88, .47], [.2, .32, -.1], 'The driver turns a shaft through the steering column and articulated intermediate shaft. PET 403-005 items 1/2 identify the standard manual-car assembly; 403-004 treats optional PDK wheel controls separately. This left-hand-drive illustration reaches the pinion mechanically; the column is not an electric-assistance unit.');
-  steeringWheel(column, m.black);
-  beam(column, [0, 0, .035], [-.05, -.32, .37], .018, m.metal);
-  beam(column, [-.05, -.32, .37], [-.23, -.52, .66], .015, m.metal);
-  for (const position of [[-.05, -.32, .37], [-.23, -.52, .66]]) {
-    sphere(column, .025, m.dark, position);
-    box(column, [.04, .025, .045], m.metal, position);
+  const column = part(root, 'column', 'Wheel and column', [0, 0, 0], [.2, .32, -.1], 'The driver turns a shaft through the steering column and articulated intermediate shaft. PET 403-005 items 1/2 identify the standard manual-car assembly; 403-004 treats optional PDK wheel controls separately. This left-hand-drive illustration reaches the pinion mechanically; the column is not an electric-assistance unit.');
+  steeringWheel(column, palette());
+  const joints = [[.345, .795, .225], [.30, .58, .62], [.2, .375, 1.155]];
+  for (let i = 1; i < joints.length; i++) {
+    beam(column, joints[i - 1], joints[i], .018, m.metal);
+    sphere(column, .025, m.dark, joints[i]);
   }
-  box(column, [.08, .06, .13], m.dark, [-.025, -.16, .19], [-.6, 0, 0]);
+  box(column, [.08, .06, .13], m.dark, [.32, .64, .48], [-.6, 0, 0]);
 
   const rack = part(root, 'rack', 'Rack and assistance', [0, .33, 1.19], [0, -.12, .36], 'The pinion converts column rotation into transverse rack travel. A fluid-pressure difference across the rack piston supplies assistance. The open half casing exposes that principle rather than Porsche’s exact internal machining.');
   cylinder(rack, .018, .87, m.metal);
@@ -94,7 +86,7 @@ export function createAssembly() {
     tube(rack, [[x, .07, -.025], [x, .08, -.06], [.2, .075, -.08]], .006, m.warm);
   }
 
-  const pump = part(root, 'pump', 'Pump and reservoir', [.25, .65, -.58], [.32, .2, -.25], 'An engine-driven belt turns the hydraulic pump. The reservoir mounts directly above it, with a cover and sealed connection; PET 403-003 identifies these separately from the pulley and support. Pressure and return lines connect the rear power unit to the front steering gear. The belt shown is only a drive indication.');
+  const pump = part(root, 'pump', 'Pump and reservoir', [.25, .60, -.58], [.32, .2, -.25], 'An engine-driven belt turns the hydraulic pump. The reservoir mounts directly above it, with a cover and sealed connection; PET 403-003 identifies these separately from the pulley and support. Pressure and return lines connect the rear power unit to the front steering gear. The belt shown is only a drive indication.');
   cylinder(pump, .055, .11, m.metal, [0, 0, 0], [Math.PI / 2, 0, 0]);
   cylinder(pump, .075, .018, m.black, [0, 0, .073], [Math.PI / 2, 0, 0]);
   for (const z of [.064, .069, .074, .079]) cylinder(pump, .076, .002, m.dark, [0, 0, z], [Math.PI / 2, 0, 0]);
@@ -108,8 +100,8 @@ export function createAssembly() {
   tube(pump, [[.067, .03, .083], [.05, -.1, .083], [.03, -.18, .083]], .009, m.black);
 
   const lines = part(root, 'hydraulic-lines', 'Supply and return', [0, .3, .25], [0, -.18, 0], 'PET 403-001 separates the long pressure/return sections, flexible engine-end sections, holders and a pump-to-heat-exchanger return connection. Orange denotes pressure supply and blue return. The heat exchanger is omitted; line bends and locations are schematic, and UK right-hand-drive listings differ.');
-  tube(lines, [[.25, .35, -.83], [.2, .08, -.6], [.18, -.015, -.3], [.18, -.015, .6], [.24, .05, .9], [.25, .1, .915]], .012, m.warm);
-  tube(lines, [[-.2, .1, .915], [-.12, .035, .7], [-.12, -.015, -.3], [-.12, .03, -.65], [.14, .2, -.84], [.25, .39, -.83]], .012, m.blue);
+  tube(lines, [[.182, .33, -.747], [.2, .08, -.6], [.18, -.015, -.3], [.18, -.015, .6], [.24, .05, .9], [.25, .1, .915]], .012, m.warm);
+  tube(lines, [[-.2, .1, .915], [-.12, .035, .7], [-.12, -.015, -.3], [-.12, .03, -.65], [.14, .2, -.84], [.317, .33, -.747]], .012, m.blue);
   for (const z of [-.3, .1, .5]) for (const x of [-.12, .18]) cylinder(lines, .017, .035, m.metal, [x, -.015, z], [Math.PI / 2, 0, 0]);
 
   frontLink(root, 1, m);

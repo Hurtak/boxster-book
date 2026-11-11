@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import { assembly, part, materials, box, mesh, cylinder, tube, beam, sphere } from '../../../../interactive/three/component-geometry.js';
 
+import { seat } from '../../../../interactive/models/boxster/seats.js';
+import { palette } from '../../../../interactive/models/boxster/surfaces.js';
+
 export const config = {
   id: 'cabin-explorer',
   title: 'From the car to the cabin',
@@ -9,7 +12,7 @@ export const config = {
   assembled: 'The seat and air unit have separate jobs and share body support. The cutaway exposes the two heat exchangers: refrigerant cools the evaporator, while engine coolant warms the heater. Separate refrigerant connections and a receiver-drier sit outside the cabin-air passages.',
   exploded: 'The support, upholstery, blower, exchangers, ducts and refrigerant connections separate to expose their relationships. These display offsets are not adjustment travel, airflow paths or a removal sequence.',
   focus: 'seat-frame',
-  hideCarParts: ['interior', 'chassis'],
+  hideCarParts: ['driver-seat', 'chassis'],
   direction: [1.25, .85, 1.45],
   note: 'Standard seat adjustment: manual fore/aft and height, electric recline. PET 817-006/008 and 813-000/001/005/010/020/025 identify the assemblies. Seat shapes, air-unit sections, duct and pipe routes are simplified; no cooling performance or bracket coordinates are specified.',
   connections: [
@@ -25,17 +28,6 @@ export const config = {
     { from: 'body-supports', to: 'outlet-ducts', label: 'The dashboard region locates the outlet ducts', kind: 'structure' },
   ],
 };
-
-function roundedPad(parent, dimensions, surface, position, rotation = [0, 0, 0]) {
-  const [width, height, depth] = dimensions;
-  const shape = new THREE.Shape();
-  const x = width / 2 - .022, z = depth / 2 - .022;
-  shape.moveTo(-x, -z); shape.lineTo(x, -z); shape.lineTo(x, z); shape.lineTo(-x, z); shape.closePath();
-  const geometry = new THREE.ExtrudeGeometry(shape, { depth: height - .04, bevelEnabled: true, bevelSegments: 3, steps: 1, bevelSize: .022, bevelThickness: .02 });
-  geometry.rotateX(-Math.PI / 2);
-  geometry.translate(0, -(height - .04) / 2, 0);
-  return mesh(parent, geometry, surface, position, rotation);
-}
 
 function exchanger(parent, width, height, surface) {
   for (const y of [-height / 2, height / 2]) box(parent, [width + .025, .025, .07], surface, [0, y, 0]);
@@ -59,7 +51,7 @@ export function createAssembly() {
     box(supports, [.065, .08, .07], m.metal, [side * .23, .38, .61]);
   }
 
-  const frame = part(root, 'seat-frame', 'Seat runners and frame', [.37, .34, -.015], [.44, 0, -.12], 'Two runners lock the seat to its chosen fore/aft position. Pivoting height links carry the spring-supported base frame; the height lever is manual. A separate motor drives backrest recline. The backrest frame and spring grille support its padding and integrated head restraint. Link geometry is illustrative.');
+  const frame = part(root, 'seat-frame', 'Seat runners and frame', [.345, .285, -.115], [.44, 0, -.12], 'Two runners lock the seat to its chosen fore/aft position. Pivoting height links carry the spring-supported base frame; the height lever is manual. A separate motor drives backrest recline. The backrest frame and spring grille support its padding and integrated head restraint. Link geometry is illustrative.');
   for (const x of [-.145, .145]) {
     box(frame, [.035, .035, .5], m.metal, [x, 0, .01]);
     box(frame, [.026, .027, .4], m.dark, [x, .031, .01]);
@@ -82,16 +74,10 @@ export function createAssembly() {
   beam(frame, [.19, .06, -.04], [.23, .09, .12], .008, m.black);
   box(frame, [.022, .017, .08], m.black, [.23, .09, .14]);
 
-  const upholstery = part(root, 'seat-upholstery', 'Cushion and backrest', [.37, .49, -.015], [.36, .35, -.1], 'Shaped foam and upholstery spread support across the cushion and backrest. The head restraint is integrated into the backrest. The centre panels represent the standard Alcantara upholstery; colour alone does not identify the material or prove seat ventilation.');
-  roundedPad(upholstery, [.43, .09, .49], m.tan, [0, 0, .015]);
-  roundedPad(upholstery, [.29, .045, .37], m.dark, [0, .045, .025]);
-  for (const side of [-1, 1]) roundedPad(upholstery, [.09, .11, .43], m.tan, [side * .182, .04, .015]);
-  roundedPad(upholstery, [.43, .13, .58], m.tan, [0, .32, -.235], [Math.PI / 2 - .13, 0, 0]);
-  roundedPad(upholstery, [.285, .04, .43], m.dark, [0, .31, -.16], [Math.PI / 2 - .13, 0, 0]);
-  for (const side of [-1, 1]) sphere(upholstery, .09, m.tan, [side * .176, .31, -.19], [.65, 2.75, .9]);
-  sphere(upholstery, .1, m.tan, [0, .64, -.295], [1.15, 1.5, .65]);
+  const upholstery = part(root, 'seat-upholstery', 'Cushion and backrest', [0, 0, 0], [.36, .35, -.1], 'Shaped foam and upholstery spread support across the cushion and backrest. The head restraint is integrated into the backrest. The tan surfaces follow the shared car model; they do not identify an upholstery material or prove seat ventilation. The chapter explains standard trim choices.');
+  seat(upholstery, palette(), 1, { belt: false });
 
-  const blower = part(root, 'inlet-blower', 'Inlet, filter and blower', [0, .73, .84], [-.38, .22, .26], 'Outside air enters near the windscreen base and passes through a filter. The electric blower supplies airflow; recirculation changes the inlet source. PET identifies the cowl filter housing and separate blower. The second inlet represents cabin recirculation; the inlet door, cage and motor position are illustrative.');
+  const blower = part(root, 'inlet-blower', 'Inlet, filter and blower', [0, .60, .84], [-.38, .22, .26], 'Outside air enters near the windscreen base and passes through a filter. The electric blower supplies airflow; recirculation changes the inlet source. PET identifies the cowl filter housing and separate blower. The second inlet represents cabin recirculation; the inlet door, cage and motor position are illustrative.');
   box(blower, [.33, .03, .2], m.dark, [.02, .13, .02]);
   for (let i = 0; i < 15; i++) box(blower, [.015, .026, .18], m.tan, [-.13 + i * .021, .15, .02]);
   box(blower, [.19, .025, .25], m.black, [-.1, .015, -.04]);
@@ -105,15 +91,15 @@ export function createAssembly() {
     box(blower, [.13, .012, .025], m.metal, [-.22, -.035 + Math.cos(angle) * .09, -.03 + Math.sin(angle) * .09], [angle, 0, 0]);
   }
   cylinder(blower, .04, .055, m.black, [-.315, -.035, -.03]);
-  tube(blower, [[-.17, .025, -.04], [-.09, -.005, -.1], [0, -.055, -.15]], .044, m.blue);
+  tube(blower, [[-.17, .025, -.04], [-.09, -.005, -.1], [0, -.03, -.15]], .044, m.blue);
 
-  const evap = part(root, 'evaporator', 'Evaporator and valve', [0, .65, .65], [.42, .15, .18], 'Refrigerant evaporates inside this exchanger, absorbing heat from the air. Condensation can remove moisture. The expansion valve meters refrigerant; condensed water has a separate drain.');
+  const evap = part(root, 'evaporator', 'Evaporator and valve', [0, .57, .65], [.42, .15, .18], 'Refrigerant evaporates inside this exchanger, absorbing heat from the air. Condensation can remove moisture. The expansion valve meters refrigerant; condensed water has a separate drain.');
   exchanger(evap, .32, .25, m.metal);
   box(evap, [.065, .045, .045], m.warm, [.16, .16, .01]);
   for (const [x, surface] of [[.145, m.warm], [.18, m.blue]]) tube(evap, [[x, .16, .01], [x, .16, .08], [x + .07, .15, .12]], .007, surface);
   tube(evap, [[.02, -.13, -.01], [.02, -.2, 0], [.04, -.34, -.015]], .009, m.black);
 
-  const heater = part(root, 'heater-bypass', 'Heater and bypass', [0, .65, .46], [-.28, .2, -.12], 'Engine coolant supplies heat inside the heater core. A parallel bypass lets air avoid that core; a temperature-flap motor changes the heating contribution. Coolant remains separate from cabin air and refrigerant.');
+  const heater = part(root, 'heater-bypass', 'Heater and bypass', [0, .57, .46], [-.28, .2, -.12], 'Engine coolant supplies heat inside the heater core. A parallel bypass lets air avoid that core; a temperature-flap motor changes the heating contribution. Coolant remains separate from cabin air and refrigerant.');
   const core = new THREE.Group(); core.position.x = .08; heater.add(core);
   exchanger(core, .18, .22, m.warm);
   for (const x of [.065, .11]) tube(heater, [[x, .12, 0], [x, .2, .02], [x + .04, .2, .1]], .009, m.warm);
@@ -123,17 +109,17 @@ export function createAssembly() {
   box(heater, [.055, .045, .025], m.black, [-.26, -.055, -.035]);
   beam(heater, [-.25, -.055, -.035], [-.145, -.055, -.035], .005, m.metal);
 
-  const ducts = part(root, 'outlet-ducts', 'Outlet ducts', [0, .8, .37], [0, .44, .2], 'Distribution flaps apportion air among the face vents, footwells and windscreen; combined delivery is possible. These destinations share the same air unit; the tube shapes are functional connections, not factory duct routing.');
-  box(ducts, [.34, .1, .12], m.dark, [0, -.01, .005]);
+  const ducts = part(root, 'outlet-ducts', 'Outlet ducts', [0, 0, 0], [0, .44, .2], 'Distribution flaps apportion air among the face vents, footwells and windscreen; combined delivery is possible. These destinations share the same air unit; the tube shapes are functional connections, not factory duct routing.');
+  box(ducts, [.34, .1, .12], m.dark, [0, .65, .405]);
   for (const side of [-1, 1]) {
-    tube(ducts, [[side * .08, 0, 0], [side * .23, .04, .02], [side * .47, .035, .03], [side * .52, .025, -.035]], .035, m.blue);
-    box(ducts, [.075, .055, .035], m.dark, [side * .52, .025, -.055]);
-    tube(ducts, [[side * .08, .02, .04], [side * .17, .14, .14], [side * .24, .2, .28]], .027, m.blue);
-    box(ducts, [.2, .025, .04], m.dark, [side * .24, .2, .29]);
-    tube(ducts, [[side * .08, -.025, -.005], [side * .17, -.2, .025], [side * .28, -.4, .045]], .028, m.blue);
+    tube(ducts, [[side * .08, .67, .40], [side * .23, .74, .39], [side * .47, .76, .35], [side * .575, .76, .307]], .030, m.blue);
+    tube(ducts, [[side * .04, .68, .40], [side * .066, .76, .35], [side * .066, .816, .307]], .028, m.blue);
+    tube(ducts, [[side * .08, .68, .445], [side * .17, .75, .55], [side * .24, .81, .64]], .020, m.blue);
+    box(ducts, [.2, .015, .04], m.dark, [side * .24, .81, .65]);
+    tube(ducts, [[side * .08, .625, .395], [side * .17, .50, .395], [side * .28, .40, .415]], .028, m.blue);
   }
 
-  const refrigerant = part(root, 'refrigerant-connections', 'Refrigerant pipes and drier', [.25, .67, .68], [.48, -.06, .32], 'Pressure and suction connections cross the body separately from heater coolant and the condensate drain. Liquid refrigerant passes through the receiver-drier before the expansion valve; vapour returns towards the engine compressor. The front condensers and rear compressor lie beyond this cutaway. The drier removes moisture inside the refrigerant circuit, not from cabin air. These pipe bends and bracket positions are illustrative.');
+  const refrigerant = part(root, 'refrigerant-connections', 'Refrigerant pipes and drier', [.25, .59, .68], [.48, -.06, .32], 'Pressure and suction connections cross the body separately from heater coolant and the condensate drain. Liquid refrigerant passes through the receiver-drier before the expansion valve; vapour returns towards the engine compressor. The front condensers and rear compressor lie beyond this cutaway. The drier removes moisture inside the refrigerant circuit, not from cabin air. These pipe bends and bracket positions are illustrative.');
   // Connector ends meet the two valve pipes in the assembled position.
   tube(refrigerant, [[-.035, .13, .09], [-.035, .13, .2], [.13, -.01, .31], [.16, -.01, .42]], .007, m.warm);
   cylinder(refrigerant, .031, .13, m.metal, [.16, -.075, .42], [0, 0, 0]);
@@ -145,7 +131,7 @@ export function createAssembly() {
 
   const coolant = part(root, 'coolant-pipes', 'Heater coolant pipes', [.16, .31, -.15], [0, -.15, -.22], 'A supply and return connect the front heater to the rear engine cooling circuit. The warmer supply gives up heat in the core, and coolant returns to the engine; neither pipe carries cabin air. Flexible hoses join the pipes at the front heater, and grommets seal their body passage.');
   for (const [offset, surface] of [[0, m.warm], [.045, m.blue]]) {
-    tube(coolant, [[offset, .14, -.65], [offset, 0, -.45], [offset, -.01, .1], [offset, 0, .48], [offset, .31, .63], [offset - .055, .54, .71]], .011, surface);
+    tube(coolant, [[offset, .14, -.65], [offset, 0, -.45], [offset, -.01, .1], [offset, 0, .48], [offset, .31, .63], [offset - .055, .46, .71]], .011, surface);
     for (const z of [-.3, .12, .38]) cylinder(coolant, .014, .018, m.dark, [offset, 0, z], [Math.PI / 2, 0, 0]);
   }
   return root;

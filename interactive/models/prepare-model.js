@@ -8,11 +8,18 @@ import {
 // All current meshes use solid materials, so UVs do not need to be shipped.
 export function prepareModel(root) {
   root.updateMatrixWorld(true);
-  for (const subsystem of root.children) {
+  const subsystems = [...root.children];
+  root.traverse(object => {
+    if (object.userData.carPart && !subsystems.includes(object)) subsystems.push(object);
+  });
+  for (const subsystem of subsystems) {
     const inverse = new THREE.Matrix4().copy(subsystem.matrixWorld).invert();
     const batches = new Map(),
       remove = [];
     subsystem.traverse((object) => {
+      // Keep replaceable installed assemblies intact, including their trim.
+      for (let parent = object; parent && parent !== subsystem; parent = parent.parent)
+        if (parent.userData.carPart) return;
       if (
         !object.isMesh ||
         object.isInstancedMesh ||

@@ -17,8 +17,9 @@ const backFront = (x,y) => {
   return backCentre(y)+(.062+bolster)*round;
 };
 
-export function seat(parent,p,side) {
+export function seat(parent,p,side,{belt=true}={}) {
   const root=group(side>0?'driver-seat':'passenger-seat',parent,[side*.345,0,0]);
+  root.userData.carPart = true;
   rounded(root,[.435,.095,.47],p.tan,[0,.425,-.115],.04).name='seat-cushion';
   rounded(root,[.302,.04,.365],p.insert,[0,.471,-.09],.018).name='seat-cushion-insert';
   for(const x of [-.185,.185])ellipsoid(root,[.045,.061,.214],p.tan,[x,.476,-.12]).name=`seat-cushion-bolster-${x}`;
@@ -56,19 +57,27 @@ export function seat(parent,p,side) {
     dots.setMatrixAt(row*11+col,matrix);
   }
   root.add(dots);
-  line3(root,[[side*.218,1.005,-.604],[side*.24,.79,-.42],[side*.21,.49,-.29]],.009,p.black);
-  rounded(root,[.034,.05,.025],p.black,[-side*.238,.48,-.25],.007);
-  rounded(root,[.025,.012,.025],new THREE.MeshStandardMaterial({color:'#8e1720'}),[-side*.238,.508,-.25],.002);
+  if (belt) {
+    const restraint = group(`seat-belt-${side}`, parent, [side * .345, 0, 0]);
+    restraint.userData.carPart = true;
+    line3(restraint,[[side*.218,1.005,-.604],[side*.24,.79,-.42],[side*.21,.49,-.29]],.009,p.black);
+    rounded(restraint,[.034,.05,.025],p.black,[-side*.238,.48,-.25],.007);
+    rounded(restraint,[.025,.012,.025],new THREE.MeshStandardMaterial({color:'#8e1720'}),[-side*.238,.508,-.25],.002);
+  }
   return root;
 }
+
+export const hoopOutline = [[-.192,.745],[-.181,.90],[-.151,1.033],[-.109,1.099],
+  [0,1.126],[.109,1.099],[.151,1.033],[.181,.90],[.192,.745]];
+export const hoopDepth = y => -.612-(y-.745)*.105;
 
 // Flattened, slightly rearward leaning hoops closely follow the head restraints.
 // The reference rear photograph has a silver rear face and tan front trim.
 export function rollHoop(parent,p,side) {
   const root=group(`roll-hoop-${side}`,parent,[side*.345,0,0]);
-  const outline=[[-.192,.745],[-.181,.90],[-.151,1.033],[-.109,1.099],
-    [0,1.126],[.109,1.099],[.151,1.033],[.181,.90],[.192,.745]];
-  const zAt=y=>-.612-(y-.745)*.105;
+  root.userData.carPart = true;
+  const outline = hoopOutline;
+  const zAt = hoopDepth;
   const path=new THREE.CatmullRomCurve3(outline.map(([x,y])=>new THREE.Vector3(x,y,zAt(y))),false,'centripetal');
   // A flattened oval section gives a smooth crown without a faceted tube.
   const band=new THREE.Shape();band.absellipse(0,0,.026,.018,0,Math.PI*2,false,0);

@@ -4,6 +4,7 @@ import assembly from './brake.glb';
 import config from './scene.json';
 import { panel, slider, buttons } from '../../../../interactive/ui.js';
 import { scene3D, loadModel, opacity, disposeObject } from '../../../../interactive/three/scene.js';
+import { installAssembly } from '../../../../interactive/three/installed-assembly.js';
 import { sampleTimeline, segment } from '../../../../interactive/math.js';
 
 export async function mount(host, { state, signal, whenVisible }) {
@@ -49,7 +50,8 @@ export async function mount(host, { state, signal, whenVisible }) {
   catch (error) { disposeObject(car); disposeObject(brake); throw error; }
   view.scene.add(car, brake);
   brake.position.set(0.76, 0.329, 1.2075);
-  car.getObjectByName('wheel-fl').visible = false;
+  const disposeReplaced = installAssembly(car, { id: 'brake-explorer', hideCarParts: ['wheel-fl', 'brake-fl'] });
+  signal.addEventListener('abort', disposeReplaced, { once: true });
   const body = car.getObjectByName('body');
   const faded = ['chassis', 'interior', 'engine', 'gearbox', 'wheel-fr', 'wheel-rl', 'wheel-rr'].map((name) => car.getObjectByName(name));
   const lines = car.getObjectByName('hydraulics');
@@ -79,7 +81,6 @@ export async function mount(host, { state, signal, whenVisible }) {
   paint = () => {
     const p = state.progress;
     const pose = sampleTimeline(p, config.camera);
-    body.position.y = segment(p, 0, 30) * 0.75;
     opacity(body, 1 - segment(p, 5, 52));
     faded.forEach((object) => opacity(object, 1 - segment(p, 35, 65)));
     opacity(lines, 1 - segment(p, 35, 60));
@@ -117,5 +118,5 @@ export async function mount(host, { state, signal, whenVisible }) {
     view.render();
   };
   update();
-  return view.dispose;
+  return () => { view.dispose(); disposeReplaced(); };
 }

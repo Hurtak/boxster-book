@@ -11,7 +11,17 @@ export const config = {
   assembled: 'The starter pinion engages the flywheel drive for cranking. The running engine drives the alternator by belt. The lamp branch has circuit protection; its return connection is as necessary as its feed.',
   exploded: 'The separated groups expose terminals, the starter drive, alternator windings and pulley, lamp reflector and protected branch. Offsets and cutaways explain relationships, not a removal or electrical testing procedure.',
   focus: 'battery',
-  hideCarParts: ['hydraulics'],
+  hideCarParts: [],
+  reuseCarParts: { headlamp: ['headlamp-1', 'headlamp-cover-1', 'headlamp-cover-1-walls', 'front-lamp-1', 'front-lamp-1-walls', 'lower-light-details-1'] },
+  finishInstallation(model) {
+    const m = materials(), lamp = model.getObjectByName('headlamp');
+    for (const name of ['projector-1', 'high-beam-reflector-1']) {
+      const optic = lamp.getObjectByName(name);
+      cylinder(optic, .011, .035, m.black, [0, 0, -.045], [Math.PI / 2, 0, 0]);
+      sphere(optic, .015, m.glass, [0, 0, -.02], [.7, .7, 1.3]);
+      tube(optic, [[-.003, 0, -.006], [0, .003, -.004], [.003, 0, -.006]], .0012, m.warm);
+    }
+  },
   direction: [1.15, 0.9, 1.65],
   note: 'Standard halogen, left-hand-drive layout. UK right-hand-drive controls, fuse carrier and cables differ. Harness routes, distributor mounting, fuse count and lamp/internal geometry are illustrative; no pinouts or ratings are supplied.',
   connections: [

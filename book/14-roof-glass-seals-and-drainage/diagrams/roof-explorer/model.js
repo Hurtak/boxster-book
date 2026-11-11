@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import { assembly, part, materials, box, cylinder, tube, beam, sphere, mesh, annulus } from '../../../../interactive/three/component-geometry.js';
 
+import { windscreenFrame, windscreenPoint } from '../../../../interactive/models/boxster/windscreen.js';
+import { palette } from '../../../../interactive/models/boxster/surfaces.js';
+
 export const config = {
   id: 'roof-explorer',
   title: 'From the car to the folding roof',
@@ -9,7 +12,7 @@ export const config = {
   assembled: 'This closed-roof cutaway places the supporting frame below the cloth, the rear glass in its aperture, and the drive beside the stowage well. The separate opening diagram explains their movement.',
   exploded: 'The cloth, frame, glass, seals, drive and collection areas separate for identification. This is a spatial breakdown, not a roof-opening position or a removal sequence. The rear glass remains one rigid pane.',
   focus: 'roof-frame',
-  hideCarParts: ['interior'],
+  hideCarParts: ['windscreen-frame'],
   direction: [1.25, 0.9, 1.45],
   note: 'Ordinary powered roof, not the Spyder sunshield. Frame sections, bow count, pivots, hidden routing and all separations are illustrative. The frame is shown closed; the glass does not fold.',
   connections: [
@@ -34,18 +37,22 @@ function panel(parent, vertices, surface) {
   return mesh(parent, geometry, surface);
 }
 
+function roofSurface(u, t) {
+  const front = windscreenPoint(u, 1), halfWidth = .649 - t * .119;
+  const edgeHeight = 1.155 + Math.sin(t * Math.PI) * .055 + t * .05;
+  return [(u * 2 - 1) * halfWidth, (1 - t) * (front[1] + .024) + t * edgeHeight + Math.sin(u * Math.PI) * .04 * t, (1 - t) * front[2] - t * .62];
+}
+
 function clothSurface(parent, surface) {
   // A curved upper sheet, open rear aperture, and side quarters. Counts and
   // seams are schematic; the mesh never animates a false folding-glass motion.
   const vertices = [], indices = [];
   const rows = 10, columns = 20;
   for (let row = 0; row <= rows; row++) {
-    const t = row / rows, z = 0.52 - t * 1.14;
-    const edgeHeight = 1.18 + Math.sin(t * Math.PI) * 0.075 - t * 0.015;
-    const halfWidth = 0.585 - t * 0.055;
+    const t = row / rows;
     for (let column = 0; column <= columns; column++) {
       const u = column / columns;
-      vertices.push((u * 2 - 1) * halfWidth, edgeHeight + Math.sin(u * Math.PI) * 0.065, z);
+      vertices.push(...roofSurface(u, t));
       if (row < rows && column < columns) {
         const a = row * (columns + 1) + column;
         indices.push(a, a + 1, a + columns + 2, a, a + columns + 2, a + columns + 1);
@@ -69,30 +76,27 @@ export function createAssembly() {
   const fabric = new THREE.MeshStandardMaterial({ color: '#353b3d', roughness: .95, side: THREE.DoubleSide });
   const lining = new THREE.MeshStandardMaterial({ color: '#b5aa96', roughness: .95, side: THREE.DoubleSide });
   const header = part(root, 'header', 'Windscreen header', [0, 0, 0], [0, .1, .4], 'The fixed metal windscreen frame provides the roof’s front contact and latch receiver. Glass and trim are omitted so the header and its relationship to the front roof edge remain visible.');
-  tube(header, [[-.69, .62, .91], [-.63, .94, .7], [-.57, 1.18, .53], [0, 1.22, .52], [.57, 1.18, .53], [.63, .94, .7], [.69, .62, .91]], .027, m.green);
-  beam(header, [-.69, .62, .91], [.69, .62, .91], .023, m.green);
-  box(header, [.065, .022, .035], m.metal, [0, 1.19, .535]);
-  for (const side of [-1, 1]) box(header, [.075, .11, .09], m.green, [side * .66, .64, .88]);
+  windscreenFrame(header, palette());
+  box(header, [.065, .022, .035], m.metal, [0, 1.16, .12]);
 
   const frame = part(root, 'roof-frame', 'Frame and front latch', [0, 0, 0], [0, .3, 0], 'Articulated side members and bows support the roof. A manual catch and paired centring journals travel with its front edge: the journals locate it at the fixed header and the catch retains it. Bow count and joint geometry are illustrative.');
   for (const side of [-1, 1]) {
-    const points = [[side * .585, 1.16, .51], [side * .57, 1.22, .08], [side * .55, 1.18, -.4], [side * .52, .98, -.77], [side * .56, .76, -.87]];
+    const edge = t => roofSurface(side > 0 ? 1 : 0, t).map((n, axis) => n - (axis === 1 ? .024 : 0));
+    const points = [edge(0), edge(.45), edge(.85), [side * .52, .98, -.77], [side * .56, .76, -.87]];
     for (let i = 0; i < points.length - 1; i++) beam(frame, points[i], points[i + 1], .018, m.metal);
     for (const point of points.slice(1, -1)) cylinder(frame, .028, .035, m.warm, point);
   }
-  for (const [z, y, width] of [[.51, 1.16, .585], [.06, 1.22, .57], [-.49, 1.17, .54]]) {
-    tube(frame, [[-width, y, z], [-width * .6, y + .045, z], [0, y + .06, z], [width * .6, y + .045, z], [width, y, z]], .016, m.metal);
-  }
-  box(frame, [.15, .022, .04], m.dark, [0, 1.158, .49]);
-  cylinder(frame, .015, .13, m.metal, [0, 1.15, .49]);
-  beam(frame, [0, 1.15, .49], [0, 1.12, .42], .012, m.black);
-  tube(frame, [[0, 1.155, .5], [0, 1.17, .55], [0, 1.185, .55], [0, 1.185, .535]], .008, m.warm);
-  for (const side of [-1, 1]) beam(frame, [side * .45, 1.16, .49], [side * .45, 1.16, .55], .012, m.warm);
+  for (const t of [0, .45, .85]) tube(frame, Array.from({ length: 61 }, (_, i) => roofSurface(i / 60, t).map((n, axis) => n - (axis === 1 ? .022 : 0))), .016, m.metal);
+  box(frame, [.15, .022, .04], m.dark, [0, 1.17, .115]);
+  cylinder(frame, .015, .13, m.metal, [0, 1.15, .115]);
+  beam(frame, [0, 1.15, .115], [0, 1.12, .045], .012, m.black);
+  tube(frame, [[0, 1.155, .10], [0, 1.17, .14], [0, 1.185, .14], [0, 1.185, .12]], .008, m.warm);
+  for (const side of [-1, 1]) beam(frame, [side * .45, 1.166, .115], [side * .45, 1.166, .15], .012, m.warm);
 
   const covering = part(root, 'covering', 'Fabric and lining', [0, 0, 0], [0, .68, .04], 'The outer covering and moulded headliner are separate parts. Tension wires guide the cloth edges; these do not rotate like the motor’s drive shafts. The rear opening accommodates a rigid pane. Cloth edges, wire paths and seams are simplified.');
   clothSurface(covering, fabric);
-  panel(covering, [[-.49, 1.17, .45], [.49, 1.17, .45], [.46, 1.2, -.49], [-.46, 1.2, -.49]], lining);
-  for (const side of [-1, 1]) tube(covering, [[side * .59, 1.185, .5], [side * .575, 1.25, .08], [side * .535, 1.205, -.62], [side * .53, .845, -1]], .007, m.black);
+  panel(covering, [[-.49, 1.17, .10], [.49, 1.17, .10], [.46, 1.2, -.49], [-.46, 1.2, -.49]], lining);
+  for (const side of [-1, 1]) tube(covering, [...Array.from({ length: 31 }, (_, i) => roofSurface(side > 0 ? 1 : 0, i / 30)), [side * .53, .845, -1]], .005, m.black);
 
   const glass = part(root, 'rear-glass', 'Rigid heated rear glass', [0, 0, 0], [0, .17, -.44], 'The rear window stays one rigid pane while the surrounding roof folds. Its separate heating loom supplies resistance elements, independently of the roof motor. Element pattern and the short wire shown are illustrative, not factory wiring or routing.');
   const glassPoint = (x, t) => [x, 1.205 - t * .36, -.62 - t * .38 - .003];
@@ -159,9 +163,9 @@ export function createAssembly() {
   }
 
   const seals = part(root, 'roof-seals', 'Roof and compartment seals', [0, 0, 0], [.25, .18, .22], 'Separate roof-frame, B-pillar and roof-arch seals meet neighbouring surfaces; retaining strips hold them to the frame. The stowage box has its own seal. Contact paths are schematic, with no seal profile, adjustment dimension or concealed drainage route implied.');
-  tube(seals, [[-.585, 1.145, .51], [0, 1.205, .51], [.585, 1.145, .51]], .013, m.black);
+  tube(seals, Array.from({ length: 61 }, (_, i) => windscreenPoint(i / 60, 1).map((n, axis) => n - (axis === 1 ? .008 : 0))), .013, m.black);
   for (const side of [-1, 1]) {
-    tube(seals, [[side * .585, 1.145, .51], [side * .57, 1.205, .08], [side * .55, 1.165, -.4]], .012, m.black);
+    tube(seals, Array.from({ length: 31 }, (_, i) => roofSurface(side > 0 ? 1 : 0, i / 30 * .85).map((n, axis) => n - (axis === 1 ? .034 : 0))), .012, m.black);
     tube(seals, [[side * .55, 1.165, -.4], [side * .52, .98, -.77], [side * .56, .8, -.87]], .016, m.black);
   }
   tube(seals, [[-.56, .82, -.87], [-.3, .83, -1.01], [0, .83, -1.05], [.3, .83, -1.01], [.56, .82, -.87]], .012, m.black);

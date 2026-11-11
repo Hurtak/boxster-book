@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { panel, slider, buttons } from '../ui.js';
 import { sampleTimeline, segment, clamp } from '../math.js';
 import { loadModel, scene3D, disposeObject, opacity } from './scene.js';
+import { installAssembly } from './installed-assembly.js';
 
 const stops = [
   { value: 0, label: 'Whole car' }, { value: 30, label: 'Connections' },
@@ -62,12 +63,11 @@ export async function mountExplorer(host, { state, signal, whenVisible }, { refe
   state.progress = clamp((state.progress ?? 0) / 100) * 100;
   state.part ??= config.focus;
   state.showConnections ??= true;
-  let car, model, view, locator;
+  let car, model, view, locator, disposeReplaced = () => {};
   let links = [];
   try {
     model = createAssembly();
     const parts = model.children.filter(object => object.userData.label).map((object, i) => {
-      isolateMaterials(object);
       return { object, number: i + 1, initial: object.position.clone(), ...object.userData };
     });
     const byName = new Map(parts.map(part => [part.object.name, part]));
@@ -136,13 +136,7 @@ export async function mountExplorer(host, { state, signal, whenVisible }, { refe
       orient.style.top = `${(1 - front.y) * stage.clientHeight / 2}px`;
     };
     let update = () => {};
-    const assembledBox = new THREE.Box3().setFromObject(model);
-    const assembledCorners = geometryCorners(model);
-    for (const part of parts) part.object.position.copy(part.initial).add(new THREE.Vector3(...part.explode));
-    const explodedBox = new THREE.Box3().setFromObject(model);
-    const explodedCorners = geometryCorners(model);
-    for (const part of parts) part.object.position.copy(part.initial);
-    let carBox, carCorners, contextBox;
+    let assembledBox, assembledCorners, explodedBox, explodedCorners, carBox, carCorners, contextBox;
     const focusBox = new THREE.Box3().setFromObject(byName.get(config.focus).object);
     locator = new THREE.Box3Helper(focusBox, '#327cc3');
     locator.material.depthTest = false;
@@ -173,17 +167,19 @@ export async function mountExplorer(host, { state, signal, whenVisible }, { refe
       if(!car || !view)return;
       const contextOpacity = 1 - segment(progress, 0, 55);
       for (const subsystem of car.children) {
-        const replaced = config.hideCarParts?.includes(subsystem.name);
-        opacity(subsystem, replaced ? 1 - segment(progress, 0, 18) : contextOpacity * (1 - segment(progress, 10, 30) * 0.82));
+        opacity(subsystem, contextOpacity * (1 - segment(progress, 10, 30) * 0.82));
       }
       for (const part of parts) {
         part.object.position.copy(part.initial).addScaledVector(new THREE.Vector3(...part.explode), exploded);
         const chosen = part === selected;
-        opacity(part.object, segment(progress, 2, 18) * (state.focusPart && !chosen ? 0.18 : 1));
+        const ghost = config.ghostParts?.includes(part.object.name) && !state.focusPart
+          ? 1 - segment(progress, 10, 45) * .84 : 1;
+        opacity(part.object, ghost * (state.focusPart && !chosen ? 0.18 : 1));
         part.object.traverse(object => {
           for (const material of [object.material].flat().filter(Boolean)) {
-            material.emissive?.set(chosen ? '#124879' : '#000000');
-            if (material.emissive) material.emissiveIntensity = chosen ? 0.65 : 0;
+            const highlight = chosen && progress >= 20;
+            material.emissive?.set(highlight ? '#124879' : '#000000');
+            if (material.emissive) material.emissiveIntensity = highlight ? 0.65 : 0;
           }
         });
       }
@@ -235,18 +231,29 @@ export async function mountExplorer(host, { state, signal, whenVisible }, { refe
     await whenVisible;
     signal.throwIfAborted();
     car = await loadModel(reference, signal, base);
+    disposeReplaced = installAssembly(car, config, model);
+    parts.forEach(part => isolateMaterials(part.object));
+    signal.addEventListener('abort', disposeReplaced, { once: true });
+    assembledBox = new THREE.Box3().setFromObject(model);
+    assembledCorners = geometryCorners(model);
+    locator.box.setFromObject(byName.get(config.focus).object);
+    for (const part of parts) part.object.position.copy(part.initial).add(new THREE.Vector3(...part.explode));
+    explodedBox = new THREE.Box3().setFromObject(model);
+    explodedCorners = geometryCorners(model);
+    for (const part of parts) part.object.position.copy(part.initial);
     view = scene3D(stage, { signal, onRender: projectMarkers, onResize: () => update() });
     view.controls.maxDistance = 20;
     view.renderer.domElement.setAttribute('aria-label', `${config.title}. ${config.location}`);
     view.scene.add(car, model);
     view.scene.add(locator);
     links.forEach(link=>view.scene.add(link.line));
-    carBox = new THREE.Box3().setFromObject(car);
-    carCorners = geometryCorners(car);
+    carBox = new THREE.Box3().setFromObject(car).union(assembledBox);
+    carCorners = [...geometryCorners(car), ...assembledCorners];
     contextBox = carBox.clone().union(assembledBox);
     update();
-    return view.dispose;
+    return () => { view.dispose(); disposeReplaced(); };
   } catch (error) {
+    disposeReplaced();
     if (view) view.dispose();
     else { if(car)disposeObject(car); if(model)disposeObject(model); if(locator)disposeObject(locator); links.forEach(link=>disposeObject(link.line)); }
     throw error;
