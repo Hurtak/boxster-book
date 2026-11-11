@@ -206,20 +206,12 @@ button:disabled {
   border-color: var(--focus);
   background: var(--ground);
 }
-.reader-enhanced .print-toolbar {
-  display: none;
-}
 .print-dialog {
   width: 100%;
   margin-bottom: 20px;
 }
 .print-notice {
   font: 16px/1.5 var(--ui);
-}
-@media (min-width: 1000px) {
-  .reader-enhanced .print-toolbar {
-    display: block;
-  }
 }
 .reading-bar {
   position: absolute;

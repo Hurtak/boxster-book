@@ -34,7 +34,6 @@ export function BookApp({
             Boxster 2.9 <span>2010 · 987.2</span>
           </a>
           <div className="reader-tools">
-            <PrintBook className="print-toolbar" />
             <button
               className="contents-toggle enhanced-only"
               type="button"

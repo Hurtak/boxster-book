@@ -75,7 +75,7 @@ The shared configuration is [vite.config.ts](vite.config.ts). Formatting leaves 
 
 ## Print or save the whole book as PDF
 
-Open the deployed book or the local build preview, then choose **Print whole book** on the cover or desktop toolbar. On a phone, the same action is at the top of **Contents**. The button waits for the book's images and fonts before opening the browser's print dialog. The browser's normal Print command also works.
+Open the deployed book or the local build preview, then choose **Print whole book** on the cover. On a phone, the same action is at the top of **Contents**. The button waits for the book's images and fonts before opening the browser's print dialog. The browser's normal Print command also works.
 
 Choose **Save as PDF** and **All pages**. Print preview includes the cover, contents, all 19 chapters, notes and sources, optional explanations and every static diagram poster, regardless of the chapter or diagram view currently selected. Each chapter starts on a new page; A4 margins, page numbers and repeated table headings are supplied by the print stylesheet. Turn off the browser's own headers and footers to avoid duplicating its page numbers and URL. Closing the print dialog restores the reader's disclosure states and chapter view.
 

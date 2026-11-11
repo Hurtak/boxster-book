@@ -773,7 +773,7 @@ test('chapter sources start collapsed, toggle by keyboard and expand for printin
     await page.close();
   }
 });
-test('Print whole book prepares every image and opens printing from desktop and phone readers', async () => {
+test('Print whole book prepares every image from the cover and phone contents', async () => {
   for (const width of [390, 1440]) {
     const page = await browser.newPage({ viewport: { width, height: 900 } });
     try {
@@ -791,8 +791,18 @@ test('Print whole book prepares every image and opens printing from desktop and 
           dispatchEvent(new Event('afterprint'));
         };
       });
-      (await page.goto(site + '#book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems'))!;
-      await page.getByRole('heading', { level: 1, name: 'Brakes and stability systems', exact: true }).waitFor();
+      await page.goto(
+        site +
+          (width < 1000 ? '#book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems' : '#title'),
+      );
+      await page
+        .getByRole('heading', {
+          level: 1,
+          name: width < 1000 ? 'Brakes and stability systems' : 'Porsche Boxster 2.9',
+          exact: true,
+        })
+        .waitFor();
+      assert.equal(await page.locator('.viewer-bar').getByRole('button', { name: 'Print whole book' }).count(), 0);
       const title = await page.title(),
         hash = new URL(page.url()).hash;
       if (width < 1000) await page.getByRole('button', { name: 'Contents', exact: true }).click();
