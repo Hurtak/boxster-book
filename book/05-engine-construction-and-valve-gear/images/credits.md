@@ -28,3 +28,23 @@ The chapter's SVG diagrams and interactive D3 graphics are original explanatory 
 The 29 full-page PNGs in [part-reference](../part-reference/README.md) reproduce selected Porsche-authored PET 987209/P33 pages, catalogue snapshot 19 July 2018, retrieved 10 November 2026. They retain the entire page, factory callouts, plate identifiers, dates and footers; longest edge 1,800 pixels, no compositing or part substitution. Exact per-file PDF page/plate/application and source hash are in the reference index. Copyright remains Porsche's; these are not original/MIT-licensed book drawings.
 
 `timing-drive.svg` now explicitly separates the two cam-drive chains and their two hydraulic tensioners from the third, omitted oil-pump chain (PET 103-015). `accessory-drive.svg` now identifies the crank pulley's torsional vibration damper (102-000 item 16). Both remain original functional schematics. The engine explorer's additional ring/bearing/gasket/tappet/spring/adjuster/sprocket/catalyst details are simplified original geometry informed by PET 102-000/005, 103-000/005/010 and 202-000, not extracted factory CAD. See [complete visual verification](../part-reference/verification.md).
+
+## Component illustrations in the manuscript — 12 November 2026
+
+Porsche AG, **PET 987209**, model life **2009–2012**, catalogue P33, snapshot **19 July 2018**; [Porsche-authored catalogue, independent archive](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). Source PDF SHA-256: `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`. These are later service-catalogue illustrations, not a dated 2010 UK order guide. © Porsche AG; the repository’s MIT licence does not relicense them.
+
+The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`, keeping native resolution. Page furniture and, where recorded below, the boxed vehicle-locator inset were omitted. White margins were trimmed and a 20-pixel white border added. No numbered component was redrawn, reshaped or generatively altered. Crop coordinates refer to the native bitmap before border padding. Original full-page references remain unchanged.
+
+### `pet-crankshaft-and-rods.png`
+
+- **Source:** PET **102-000**, [PDF p. 39](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=39); [archived full page](../part-reference/pet-102-000-p039.png).
+- **Extraction:** PDF image object **143 0**, native **2007 × 3127**; crop `[0, 169, 2007, 3018]`. Locator inset omitted at `[0, 0, 672, 506]`. Result **2047 × 2889** pixels.
+- **Applicability and limits:** 102-000 is shared by engine applications A120/A121. One representative rod is shown, not the engine's complete rod count. The plate does not establish bearing clearances or an exact 2.9 flywheel specification.
+- **Local image SHA-256:** `d19674d0400262f09e670f405252997cb9adcf05494b2a8179e8cce44b2403ce`.
+
+### `pet-piston-and-rings.png`
+
+- **Source:** PET **102-005**, [PDF p. 42](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=42); [archived full page](../part-reference/pet-102-005-p042.png).
+- **Extraction:** PDF image object **154 0**, native **2067 × 2660**; crop `[120, 830, 1988, 2491]`. Locator inset omitted at `[9, 3, 680, 513]`. Result **1908 × 1701** pixels.
+- **Applicability and limits:** 102-005 has separate A120/A121 piston applications. Its representative crown must not be treated as an exact 2.9 crown profile. Ring pack 2 has three rings; item 3 is the pin-retaining clip.
+- **Local image SHA-256:** `75855264d73160cc9c6a22ee45153a537d9d573e4120226d5d090712af1faeec`.

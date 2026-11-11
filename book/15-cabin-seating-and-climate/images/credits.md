@@ -30,3 +30,23 @@ The three standalone explanatory SVGs, D3 airflow diagram and 3D cabin model are
 The **67 full-page PNGs** in [part-reference](../part-reference/README.md) are Porsche AG factory catalogue excerpts, **PET987209 / P33,19 July2018**, covering29 drawing plates with selected application tables. Each is an unaltered Poppler rendering at1800px maximum dimension, retaining catalogue headers, numbered callouts, date and page identity. Exact original PDF pages, plate IDs, relevant items, source URL/hash and application limits are listed beside the files. These factory pages remain Porsche copyright and are distinct from the original schematic SVG/model artwork.
 
 The original **cabin-heat-paths.svg** now includes the factory-listed receiver-drier on the high-pressure liquid side. It remains a functional explanatory drawing, not a traced factory hose map. The **cabin-explorer** model gains a local refrigerant-pipe/drier group and clearer seat/inlet support detail; its shapes, pipe routes, fin/spring counts, colours and separation offsets remain illustrative. Its generated fallback is regenerated centrally by the parent integration task.
+
+## Component illustrations in the manuscript — 12 November 2026
+
+Porsche AG, **PET 987209**, model life **2009–2012**, catalogue P33, snapshot **19 July 2018**; [Porsche-authored catalogue, independent archive](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). Source PDF SHA-256: `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`. These are later service-catalogue illustrations, not a dated 2010 UK order guide. © Porsche AG; the repository’s MIT licence does not relicense them.
+
+The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`, keeping native resolution. Page furniture and, where recorded below, the boxed vehicle-locator inset were omitted. White margins were trimmed and a 20-pixel white border added. No numbered component was redrawn, reshaped or generatively altered. Crop coordinates refer to the native bitmap before border padding. Original full-page references remain unchanged.
+
+### `pet-climate-unit.png`
+
+- **Source:** PET **813-005**, [PDF p. 429](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=429); [archived full page](../part-reference/pet-813-005-p429.png).
+- **Extraction:** PDF image object **1563 0**, native **2034 × 3136**; crop `[67, 567, 1993, 2960]`. Locator inset omitted at `[0, 2, 672, 513]`. Result **1966 × 2433** pixels.
+- **Applicability and limits:** 813-005 distinguishes LHD/RHD, manual PR572, automatic PR573 and other climate applications. Item 1 is supplied with evaporator but without heater core 2. Different motors/controls on the shared plate must not all be assigned to a standard UK car.
+- **Local image SHA-256:** `ee40adf72e855b60b5152cd043e3ce32cac181a3d1ca7665e2d2c647d750f42e`.
+
+### `pet-seat-frame.png`
+
+- **Source:** PET **817-008**, [PDF p. 457](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=457); [archived full page](../part-reference/pet-817-008-p457.png).
+- **Extraction:** PDF image object **1667 0**, native **2038 × 2665**; crop `[10, 597, 1986, 2458]`. Locator inset omitted at `[0, 0, 669, 507]`. Result **2016 × 1901** pixels.
+- **Applicability and limits:** 817-008 contains manual and electric frames, handed variants, optional ventilation and ISOFIX-related bracket 7/fasteners 8. Alternative trims/switches are not all baseline equipment; the illustration is not a complete backrest or airbag assembly.
+- **Local image SHA-256:** `30f5259d752d9e9745887c18416d18d4a343fd49caf497bc42ebc0a367297e45`.

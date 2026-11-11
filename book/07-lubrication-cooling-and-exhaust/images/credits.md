@@ -23,3 +23,16 @@ The chapter's schematic SVGs, D3 interactive and 3D component explorer are origi
 The chapter now preserves 32 complete original PET pages across 14 plates, with all numbered callouts and original headers/footers retained. These are **Porsche AG factory illustrations and text**, separately hosted original documents, not book-created MIT artwork. Source: *Boxster 2009–2012 PET*, **987209/P33, snapshot 19 July 2018**, [original PDF](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). Retrieved/reopened 10 November 2026; full PDF SHA-256 `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`.
 
 Poppler converted each full page to a 1,800-pixel-longest-edge PNG without crop, compositing, redrawing or callout removal. The [local register](../part-reference/README.md) lists each file, original page, plate, item IDs and engine/equipment qualifiers. [Verification](../part-reference/verification.md) distinguishes factory-backed identity/attachment from the original schematics and illustrative 3D geometry. Copyright remains Porsche's.
+
+## Component illustrations in the manuscript — 12 November 2026
+
+Porsche AG, **PET 987209**, model life **2009–2012**, catalogue P33, snapshot **19 July 2018**; [Porsche-authored catalogue, independent archive](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). Source PDF SHA-256: `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`. These are later service-catalogue illustrations, not a dated 2010 UK order guide. © Porsche AG; the repository’s MIT licence does not relicense them.
+
+The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`, keeping native resolution. Page furniture and, where recorded below, the boxed vehicle-locator inset were omitted. White margins were trimmed and a 20-pixel white border added. No numbered component was redrawn, reshaped or generatively altered. Crop coordinates refer to the native bitmap before border padding. Original full-page references remain unchanged.
+
+### `pet-oil-filter-and-cooler.png`
+
+- **Source:** PET **104-005**, [PDF p. 60](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=60); [archived full page](../part-reference/pet-104-005-p060.png).
+- **Extraction:** PDF image object **222 0**, native **2015 × 3071**; crop `[0, 174, 2015, 3064]`. Locator inset omitted at `[0, 0, 661, 497]`. Result **2055 × 2930** pixels.
+- **Applicability and limits:** 104-005 identifies housing 1, filter cup/set 9, insert 11, exchanger 12 and separator 15. The drawing is shared engine-family service evidence, not exact operating fluid routing or an original part-suffix guarantee.
+- **Local image SHA-256:** `132c9920bac072d9b0cac341479a060cfc1ce9f1f71db34aacd2be2342595194`.

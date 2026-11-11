@@ -8,6 +8,7 @@ import illustration5 from "./images/rear-axle-boxster-s.jpg";
 import illustration6 from "./images/strut-forcepaths.svg";
 import illustration7 from "./images/alignment-views.svg";
 import illustration8 from "./images/spyder-cornering.jpg";
+import frontStrutParts from "./images/pet-front-strut.png";
 
 # Suspension and wheel geometry
 
@@ -76,6 +77,12 @@ Without sufficient damping, stored spring energy would keep exchanging with the 
 Damper force depends on movement, particularly piston velocity. That is the speed at which the damper changes length, not the car's road speed. A slow-moving car meeting a sharp edge can produce rapid damper movement. A fast car crossing a gentle undulation may produce a much slower stroke. “High-speed damping” is therefore an easily misunderstood phrase.
 
 Porsche describes the ordinary spring struts as coil springs combined with double-tube gas-filled dampers. The gas charge helps the hydraulic unit operate consistently; the metal coil spring remains the principal element supporting the car. The parts drawings distinguish its seats and isolators from the protective bellows and compressible auxiliary stop around the damper rod. The bellows protects the rod; the auxiliary stop helps manage loading near the end of compression travel.[^suspension-struts]
+
+<Figure src={frontStrutParts} alt="Front strut separated into damper, coil spring, protective bellows, auxiliary stop, bearing and upper mount, with optional PASM electronics beside it." width="520px">
+
+The front strut separates into damper (1), upper mount (3), coil spring (7), bellows (8), auxiliary stop (9) and bearing (11). The controller (14) and body-acceleration sensor (16) belong to optional PASM; they are not standard passive-strut equipment. Factory drawing: Porsche AG, [PET 402-000, PDF p. 133](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=133).
+
+</Figure>
 
 <Diagram id="suspension-spring-damper" poster={illustration1} alt={"Two springs with equal compression carry equal additional spring force. A stationary ideal damper produces no force; a moving damper resists its motion. Position and velocity can therefore change independently."} />
 

@@ -5,6 +5,7 @@ import illustration2 from "./images/audio-amplification.svg";
 import illustration3 from "./images/cdr-30-period.jpg";
 import illustration4 from "./images/pcm-3-period.jpg";
 import illustration5 from "./images/telephone-paths.svg";
+import speakerParts from "./images/pet-speaker-families.png";
 
 # Audio, navigation and communication
 
@@ -57,6 +58,12 @@ This distinction matters in an older car: an operating receiver can locate the c
 **Sound Package Plus**, option **490**, is the analogue amplified upgrade. Porsche’s training material describes it as fully active: the channels are driven through the separate amplifier rather than retaining the head unit’s power-driver stages. The UK brochure specifies seven speakers and 185 W total output. These occupy the two dashboard tweeter positions, a dashboard centre position, and a midrange and bass position in each door. The bass drivers differ from the standard parts.[^sound-plus] The useful change is a system of additional drivers, amplification and tuning matched to the cabin, rather than a different source menu.
 
 **BOSE**, option **680**, uses eleven speakers in the Boxster, including a centre speaker and an active subwoofer, with a seven-channel digital amplifier rated at 385 W. Its rear subwoofer enclosure sits behind the occupants; the catalogue treats it as one replacement assembly, not one individual speaker. BOSE also has its own dashboard and door driver variants.[^bose-hardware] Porsche’s PCM architecture drawing distinguishes an analogue amplifier connection from a digital-amplifier path labelled **MOST**. MOST is the multimedia data connection in this architecture; the speaker-driving current is still produced by the amplifier.[^pcm-architecture] The diagram below abstracts these routes rather than supplying wiring, connector positions or a complete network topology.
+
+<Figure src={speakerParts} alt="Catalogue drawing comparing a dashboard tweeter and centre driver, door midrange and bass drivers, and the wide rear BOSE subwoofer enclosure." width="520px">
+
+Dashboard tweeter (1), centre driver (3), door midrange (5), door bass unit (7) and rear BOSE enclosure (9). These are component families across different sound packages. The centre and midrange drivers, and BOSE rear unit, are absent from the standard four-speaker system. Factory drawing: Porsche AG, [PET 911-005, PDF p. 579](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=579).
+
+</Figure>
 
 <Diagram id="audio-source-path" poster={illustration1} alt={"The initial example follows FM radio through CDR-30 and its output stages to the standard four speakers. Other sources require their corresponding interfaces, while the sound package determines the amplification route."} />
 

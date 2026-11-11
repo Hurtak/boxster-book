@@ -17,3 +17,16 @@ The original vector diagrams `clutch-actuation.svg`, `constant-mesh-and-synchron
 The **20 full-page PNGs** in `../part-reference/` are unaltered raster renders of Porsche's *PET, Boxster 2009–2012, type 987*, model 987209, catalogue P33, revision **19 July 2018**, retrieved **10 November 2026**. They preserve the original drawings, numbered callouts, parts/application tables and page furniture. [Source PDF](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf); exact pages, plates, applicability and SHA-256 are in [the reference manifest](../part-reference/README.md).
 
 Copyright © Dr. Ing. h.c. F. Porsche AG. These factory drawings and tables retain Porsche's rights and are **not covered by the repository's MIT licence**. The public host is an independent archive, not the drawing's author. No factory page is recoloured, annotated, cropped or represented as book-original art. The original clutch diagram and car-to-component assembly use these pages for component identity and connections; operating principles remain attributed separately.
+
+## Component illustrations in the manuscript — 12 November 2026
+
+Porsche AG, **PET 987209**, model life **2009–2012**, catalogue P33, snapshot **19 July 2018**; [Porsche-authored catalogue, independent archive](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). Source PDF SHA-256: `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`. These are later service-catalogue illustrations, not a dated 2010 UK order guide. © Porsche AG; the repository’s MIT licence does not relicense them.
+
+The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`, keeping native resolution. Page furniture and, where recorded below, the boxed vehicle-locator inset were omitted. White margins were trimmed and a 20-pixel white border added. No numbered component was redrawn, reshaped or generatively altered. Crop coordinates refer to the native bitmap before border padding. Original full-page references remain unchanged.
+
+### `pet-manual-clutch.png`
+
+- **Source:** PET **301-000**, [PDF p. 109](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=109); [archived full page](../part-reference/pet-301-000-p109.png).
+- **Extraction:** PDF image object **411 0**, native **2028 × 2675**; crop `[22, 630, 2025, 2616]`. Locator inset omitted at `[0, 0, 672, 506]`. Result **2043 × 2026** pixels.
+- **Applicability and limits:** 301-000 lists G87/10 and G87/40 parts separately. The representative pressure assembly must not be used to assign the S-only X-Tend feature to the reference 2.9. Items 3/4/5 identify the separate lever, bearing and guide.
+- **Local image SHA-256:** `9cc5dc46aeab55227268cd10ce2e43cdb74268515326529083aea49b3ae8d3e8`.

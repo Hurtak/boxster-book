@@ -12,3 +12,16 @@ Original source: Porsche AG, *The Boxster*, January 2010 UK edition, **WSLB11010
 The chapter's explanatory SVGs, D3 interaction and 3D explorer are original author-created schematics. They are separate from the credited Porsche images.
 
 The seventeen real factory catalogue page renders in [`../part-reference/`](../part-reference/README.md) are also Porsche material, not author-created schematics. Their source is PET 987209, model life 2009–2012, snapshot 19 July 2018 / P33; that folder records the exact PDF URL/hash, pages, plates, callouts, application lists and limits. Full pages were rendered unchanged to PNG at 1,800 pixels on the long edge; numbered callouts and provenance remain visible. Original Porsche rights remain and the repository's MIT licence does not transfer them. The factory parts audit separately records which exterior identities are drawing-backed and which internal arrangements rely on original training documents.
+
+## Component illustrations in the manuscript — 12 November 2026
+
+Porsche AG, **PET 987209**, model life **2009–2012**, catalogue P33, snapshot **19 July 2018**; [Porsche-authored catalogue, independent archive](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). Source PDF SHA-256: `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`. These are later service-catalogue illustrations, not a dated 2010 UK order guide. © Porsche AG; the repository’s MIT licence does not relicense them.
+
+The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`, keeping native resolution. Page furniture and, where recorded below, the boxed vehicle-locator inset were omitted. White margins were trimmed and a 20-pixel white border added. No numbered component was redrawn, reshaped or generatively altered. Crop coordinates refer to the native bitmap before border padding. Original full-page references remain unchanged.
+
+### `pet-pdk-hydraulic-unit.png`
+
+- **Source:** PET **320-005**, [PDF p. 121](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=121); [archived full page](../part-reference/pet-320-005-p121.png).
+- **Extraction:** PDF image object **459 0**, native **1998 × 3071**; crop `[0, 12, 1998, 2890]`. Locator inset omitted at `[0, 0, 661, 501]`. Result **2038 × 2918** pixels.
+- **Applicability and limits:** 320-005 is PDK housing/hydraulic hardware. It is optional equipment, not the baseline manual gearbox. Hydraulic unit 11 is not the separate electronic PDK controller; exploded separation does not show removal order.
+- **Local image SHA-256:** `7261d6508a747ba5b47e8a212aefc3d78ad0a1d3821637536d6a38591e934a7e`.

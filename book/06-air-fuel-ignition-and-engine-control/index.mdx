@@ -6,6 +6,8 @@ import illustration3 from "./images/injection-location.svg";
 import illustration4 from "./images/fuel-supply-and-vapour.svg";
 import illustration5 from "./images/crankcase-ventilation.svg";
 import illustration6 from "./images/sport-chrono-stopwatch.jpg";
+import airCleanerParts from "./images/pet-air-cleaner.png";
+import injectorParts from "./images/pet-port-injectors.png";
 
 # Air, fuel, ignition and engine control
 
@@ -29,6 +31,12 @@ Schematic flow from air filter through MAF and throttle to the resonance intake 
 
 The intake manifold also exploits the pressure waves created by the engine's intermittent breathing. Its connected passages and switchable flaps change the behaviour of the air columns as speed changes. Rubber sleeves and clamps join the two bank distributors to the centre tube; two vacuum units operate the flaps through electrically controlled change-over valves. Porsche's 2.9 training account specifies a distribution-pipe flap opening above 3,800 rpm and a tuning flap above 5,500 rpm; both are vacuum-closed at idle. It also identifies a redesigned upper resonance chamber that suppresses unwanted high-speed resonance noise. These are distinct from the main throttle: the throttle meters the driver's requested load, while these flaps alter the intake system's tuning.[^intake]
 
+<Figure src={airCleanerParts} alt="Exploded air-cleaner housing with a cylindrical filter element, removable cover, airflow meter and flexible outlet duct." width="540px">
+
+The cylindrical filter element (8) enters the shaped air-cleaner housing through cover (3) and is secured by retainer (9). The airflow meter (14) and flexible duct (16) continue the route towards the engine. Factory drawing: Porsche AG, [PET 106-000, PDF p. 85](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=85).
+
+</Figure>
+
 ## The accelerator asks for torque
 
 An electronic accelerator measures pedal movement and sends a signal to the engine controller. The driver's foot therefore supplies an input to a calculation, rather than pulling a cable to a fixed throttle angle. The controller turns the request into a suitable air charge and coordinates the fuel and spark needed to burn it. Bosch's description of this principle explicitly treats the pedal signal as a request for torque.[^pedal]
@@ -42,6 +50,12 @@ This arrangement gives other systems a route to influence engine output. Idle co
 The fuel tank sits in the front part of the car, separate from the rear engine. Its electric delivery pump supplies filtered, pressure-regulated petrol through the long feed to the engine’s fuel distribution pipes. A level sender reports tank contents; it does not measure delivery pressure. Porsche’s parts catalogue distinguishes the 2.9 pump application from the S.[^fuel-supply] A connected fuel-pipe assembly supplies both banks. Retaining clips secure its six injectors, with seals at their fuel-pipe and inlet-port ends; the injectors meter the supply into the individual cylinders’ inlet ports. In a port-injected system, electrical opening periods determine how much fuel each injector delivers, with the controller accounting for the operating conditions. *Sequential multipoint injection* means that the individual cylinders' injectors are operated in an appropriate sequence, rather than feeding one shared carburettor.[^port-principle][^later]
 
 For this 2.9, Porsche specifies port injectors with eight fine outlet holes, supplied at approximately **4 bar**. Their mounting openings are in the flange area of the individual intake ports. Fuel is therefore sprayed upstream of the inlet valve and becomes part of the charge that passes into the cylinder.[^injectors]
+
+<Figure src={injectorParts} alt="Factory drawing of the 2.9 intake with linked fuel rails above both banks and one injector separated to show its clips and seals." width="540px">
+
+The 2.9’s connected fuel rails (1) supply the port injectors (6). Clips (7) retain the injectors, with seals (8, 9) at their connections. The drawing places them beside the intake ports, rather than inside the combustion chambers. Factory drawing: Porsche AG, [PET 107-007, PDF p. 90](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=90).
+
+</Figure>
 
 <Figure src={illustration3} alt={"Port injection places the fuel spray before the inlet valve; the 3.4 DFI comparison places it in the cylinder."}>
 

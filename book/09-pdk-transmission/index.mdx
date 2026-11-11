@@ -5,6 +5,7 @@ import illustration2 from "./images/pdk-factory-cutaway.jpg";
 import illustration3 from "./images/pdk-concentric-inputs.svg";
 import illustration4 from "./images/pdk-paddle-wheel.jpg";
 import illustration5 from "./images/pdk-oil-control.svg";
+import pdkHydraulicParts from "./images/pet-pdk-hydraulic-unit.png";
 
 # PDK transmission
 
@@ -79,6 +80,12 @@ A steering-wheel request can temporarily override D. In M, the controller still 
 The **mechatronic control system** combines electronic decisions with hydraulic force. The hydraulic block in the transmission's sump area directs fluid to clutch circuits and gear-selection actuators. Electrically operated valves turn the controller's commands into changes of pressure or flow. Pressure determines how firmly a clutch is clamped; actuator movement determines which engagement sleeve is selected.
 
 The factory parts drawing places this hydraulic unit above a separate bolted oil sump. The surrounding transmission housing joins the engine, carries the gearing and final drive, and has left and right support brackets. The final drive's short and long output flanges connect to the rear driveshafts; they are distinct parts, despite appearing as a simple symmetrical pair in a functional diagram.[^hydraulics]
+
+<Figure src={pdkHydraulicParts} alt="PDK transmission housing above a separated hydraulic control block and bolted oil sump, with output flanges beside the housing." width="520px">
+
+In the optional PDK, hydraulic unit (11) sits above the removable oil sump (7). The larger housing supports the transmission and final drive. This valve-and-actuator hardware is separate from the electronic controller in the luggage-compartment area. Factory drawing: Porsche AG, [PET 320-005, PDF p. 121](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=121).
+
+</Figure>
 
 Feedback closes the loop. Input-speed sensing tells the system how the two clutch paths are turning; selector-position sensing establishes where the gear-selection mechanism has moved. Pressure and temperature information help it manage clutch operation and protection. The electronic PDK controller is a separate unit in the rear-right luggage-compartment area, connected to other controllers through CAN. It receives driver demand and vehicle-state information, including accelerator and brake signals. “Mechatronic” describes the cooperation of these parts, rather than requiring the electronic controller to sit inside the hydraulic block.[^control]
 

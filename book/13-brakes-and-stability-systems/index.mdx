@@ -4,6 +4,8 @@ import illustration1 from "./diagrams/caliper-pressure/poster.svg";
 import illustration2 from "./diagrams/braking-energy/poster.svg";
 import illustration3 from "./images/braking-chain.svg";
 import illustration4 from "./images/booster-vacuum.svg";
+import frontBrakeParts from "./images/pet-front-brake.png";
+import parkingBrakeParts from "./images/pet-parking-brake-shoes.png";
 
 # Brakes and stability systems
 
@@ -64,6 +66,12 @@ The vacuum line carries air, while the master cylinder and brake pipes carry flu
 
 A fixed caliper is mounted firmly around the disc, with pistons on both sides. When pressure rises, the pistons push the two pads against opposite faces of the rotating disc. The caliper body carries the reaction forces.
 
+<Figure src={frontBrakeParts} alt="Exploded front disc brake with disc, backing cover, caliper, pads, wear-indicator lead and pad-retaining hardware." width="520px">
+
+Disc (1), cover (3), caliper (5), pads (6) and wear lead (7) are separate items. This shared plate includes other brake variants: the external connecting tube (10) is listed for PCCB, rather than the standard 2.9 iron-disc installation. Factory drawing: Porsche AG, [PET 602-000, PDF p. 200](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=200).
+
+</Figure>
+
 *Monobloc* describes a body made as one main piece. Its stiffness helps limit the deformation that would otherwise absorb fluid movement and soften the relationship between pressure and clamping force. Four pistons describe the arrangement of the actuators; braking performance also depends on their area, the pads, disc geometry, cooling and tyres.[^calipers]
 
 The pads contain the friction material. Their formulation influences how readily the brakes bite, how friction changes with temperature, and how much noise, dust and wear they produce.[^friction] As the lining wears, the pistons rest progressively farther out to maintain the small working clearance. The fluid level in the reservoir can consequently fall slightly during normal pad wear. Pad-wear indicator leads are electrical connections, separate from both the hydraulic hoses and the wheel-speed sensors used by ABS/PSM.[^handbook]
@@ -123,6 +131,12 @@ These functions should also be understood separately from hill-start assistance.
 ### The parking brake has its own job
 
 The hand lever pulls separate left and right cables leading to the rear wheels. Expanding mechanisms press dedicated parking-brake shoes against drum surfaces inside the rear disc assemblies. Springs and an adjuster belong to this shoe mechanism, separate from the hydraulic caliper and its pads. This lets the car remain held without maintaining hydraulic pressure at the ordinary disc-brake pads.[^parking]
+
+<Figure src={parkingBrakeParts} alt="Two curved parking-brake shoes separated from their adjuster, return and retaining springs, and expanding mechanism." width="560px">
+
+The parking brake uses curved shoes (1), an adjuster (2), springs (4–6) and an expanding mechanism (11). These parts work inside the rear disc’s drum section; they are separate from the hydraulic caliper’s disc pads. Factory drawing: Porsche AG, [PET 603-005, PDF p. 207](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=207).
+
+</Figure>
 
 The handbrake, [PDK parking lock](../09-pdk-transmission/index.mdx#the-selector-and-steering-wheel-controls) and temporary hill hold are three separate ways of restraining movement. Each has its own mechanism and operating conditions.
 

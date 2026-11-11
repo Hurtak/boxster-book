@@ -31,3 +31,16 @@ The new seat-support pair, inner sill webs and rear-wall service cover in the bo
 - The live packaging view and matching poster use a photo-guided rear section, shallow roof stowage and shaped luggage/access parts. Only the detail inset separates the engine-cover layers. The [reference record](../part-reference/body-packaging-layers-refinement/README.md) credits the roof-sequence and service-cup excerpts and identifies the PET parts used.
 
 These remain original explanatory drawings. The retained factory excerpts keep their original rights; internal installation contours, section placement and flow arrows are not factory CAD or measured analysis.
+
+## Component illustrations in the manuscript — 12 November 2026
+
+Porsche AG, **PET 987209**, model life **2009–2012**, catalogue P33, snapshot **19 July 2018**; [Porsche-authored catalogue, independent archive](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). Source PDF SHA-256: `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`. These are later service-catalogue illustrations, not a dated 2010 UK order guide. © Porsche AG; the repository’s MIT licence does not relicense them.
+
+The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`, keeping native resolution. Page furniture and, where recorded below, the boxed vehicle-locator inset were omitted. White margins were trimmed and a 20-pixel white border added. No numbered component was redrawn, reshaped or generatively altered. Crop coordinates refer to the native bitmap before border padding. Original full-page references remain unchanged.
+
+### `pet-engine-access.png`
+
+- **Source:** PET **807-005**, [PDF p. 306](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=306); [archived full page](../part-reference/pet-807-005-p306.png).
+- **Extraction:** PDF image object **1136 0**, native **2067 × 2785**; crop `[129, 466, 2013, 2655]`. Locator inset omitted at `[5, 4, 681, 515]`. Result **1924 × 2229** pixels.
+- **Applicability and limits:** 807-005 separates upper engine cover 5, seal 7 and top trim 1 from rear-wall cover 10 and trim 11/12. It does not show the exterior roof-compartment lid or a workshop removal sequence.
+- **Local image SHA-256:** `a3b4435554a7b502c8ee2c12a43c668153722c721bedc59dd9fb00e9e0e59210`.

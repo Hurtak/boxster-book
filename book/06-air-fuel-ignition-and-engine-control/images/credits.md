@@ -21,3 +21,23 @@ The air-path and injection-location SVGs, the mixture-feedback D3 view and its p
 The unaltered full-page factory renderings are retained separately in [`../part-reference/`](../part-reference/README.md), with every filename, original PDF page/plate, relevant callouts, applicability, source URL, catalogue identity/date and SHA-256 recorded there. They are Porsche-authored PET illustrations, © Porsche; independently hosted originals and local renderings receive no project MIT licence. They are supporting reference evidence rather than artwork redrawn into these SVGs.
 
 The original `air-path.svg` now names the factory-documented cylindrical element and vacuum-operated tuning flaps. The original `intake-explorer` geometry is corrected to a cylindrical filter and gains clamped air guide/manifold joints, two vacuum units/change-over valves, connected bank fuel pipes, injector clips and seals. These are project-authored educational shapes informed by PET 106-000/107-007/107-010, not traced factory CAD or dimensional reproductions. Its generated poster is refreshed by parent integration after the model change. Existing functional-flow SVGs, injection comparison and mixture-feedback view retain their original schematic limits.
+
+## Component illustrations in the manuscript — 12 November 2026
+
+Porsche AG, **PET 987209**, model life **2009–2012**, catalogue P33, snapshot **19 July 2018**; [Porsche-authored catalogue, independent archive](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). Source PDF SHA-256: `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`. These are later service-catalogue illustrations, not a dated 2010 UK order guide. © Porsche AG; the repository’s MIT licence does not relicense them.
+
+The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`, keeping native resolution. Page furniture and, where recorded below, the boxed vehicle-locator inset were omitted. White margins were trimmed and a 20-pixel white border added. No numbered component was redrawn, reshaped or generatively altered. Crop coordinates refer to the native bitmap before border padding. Original full-page references remain unchanged.
+
+### `pet-air-cleaner.png`
+
+- **Source:** PET **106-000**, [PDF p. 85](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=85); [archived full page](../part-reference/pet-106-000-p85.png).
+- **Extraction:** PDF image object **317 0**, native **2055 × 3118**; crop `[4, 587, 2055, 3095]`. Locator inset omitted at `[0, 2, 672, 513]`. Result **2091 × 2548** pixels.
+- **Applicability and limits:** 106-000 identifies cover 3, element 8, retainer 9, airflow meter 14 and duct 16. Installed duct bends and component dimensions are not measured from the exploded spacing.
+- **Local image SHA-256:** `3a24f127fa6fbdd0e7d08dfdb544e7609a83004d0f40290c92e004729bd77c06`.
+
+### `pet-port-injectors.png`
+
+- **Source:** PET **107-007**, [PDF p. 90](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=90); [archived full page](../part-reference/pet-107-007-p90.png).
+- **Extraction:** PDF image object **336 0**, native **2056 × 2759**; crop `[39, 510, 2037, 2759]`. Locator inset omitted at `[5, 5, 681, 517]`. Result **2038 × 2289** pixels.
+- **Applicability and limits:** 107-007 is the A120 2.9 injection-valve/fuel-collection-pipe plate. Injector 6, clips 7 and seals 8/9 are the port-injection assembly; this is not the S engine's high-pressure DFI equipment.
+- **Local image SHA-256:** `885f502f4048b4d4a8a6804c36074c3ed8aa34fa9b385d00de105d44c631e12f`.

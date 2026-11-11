@@ -25,3 +25,14 @@ The chapter also retains fifteen Porsche-authored factory exploded-view plates a
 - The drainage view and poster now distinguish the formed side pan, mesh filter, outlet pipe and compartment seal, with separate location and enlarged section views. The [drainage reference record](../part-reference/roof-drainage-refinement/provenance.md) credits the factory bulletin illustration and component photographs and identifies the PET callouts. Its section and clear/blocked water levels explain the functions rather than reconstructing concealed routing or drain capacity.
 
 The redrawn SVGs remain original project artwork. New factory/reference excerpts retain their source rights, as recorded beside each file.
+
+## Component illustrations in the manuscript — 12 November 2026
+
+
+### `roof-water-collecting-tray.png`
+
+- **Source/credit:** Sierra Madre Collection, [left water-collecting tray product photograph](https://sierramadrecollection.com/products/water-collecting-tray-left-boxster-2005-2012), [original image](https://sierramadrecollection.com/cdn/shop/files/Water-Collecting-Tray-Left-Boxster-2005-2012-1.png?v=1759363309). Rights remain with the original rightsholder, outside the repository’s MIT licence.
+- **Archived provenance:** [source and verification record](../part-reference/roof-drainage-refinement/provenance.md); [unaltered 1000 × 1000 original](../part-reference/roof-drainage-refinement/98756180501-component-photo.png), saved 11 November 2026. Part identity is separately corroborated by PET 812-000.
+- **Treatment:** white-background crop `[73, 329, 963, 709]` only, without rescaling or retouching, giving **890 × 380** pixels. Product page did not reopen during this pass; the image and its archived provenance were inspected locally.
+- **Applicability and limits:** Photograph identifies the ordinary-model left tray 98756180501, corroborated by PET 812-000. No seller material, stock, universal-fitment or installation claim is adopted. No particular visible hole is asserted to be the drain outlet.
+- **Local image SHA-256:** `9988e81f3615f03478daccc330a6bff2a4eaf2bd3b0f04089e3da725b829864d`.

@@ -22,3 +22,16 @@ Original chapter SVGs (`audio-amplification.svg`, `telephone-paths.svg`, and `di
 ## Factory parts-reference excerpts
 
 The twelve complete PNG pages in [`../part-reference/`](../part-reference/README.md) reproduce Porsche-authored **PET 987209**, **19 July 2018**, plates **911-000, 911-005 and 911-010**. The reference README records source URL, PDF hash, page numbers, applicability and the visual audit. Poppler rasterisation preserves the complete original pages and callouts, without cropping or generative alteration. Copyright remains Porsche's; these factory pages are not author-created MIT artwork. The original explanatory schematics and explorer remain approximate teaching diagrams, rather than traced factory drawings.
+
+## Component illustrations in the manuscript — 12 November 2026
+
+Porsche AG, **PET 987209**, model life **2009–2012**, catalogue P33, snapshot **19 July 2018**; [Porsche-authored catalogue, independent archive](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). Source PDF SHA-256: `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`. These are later service-catalogue illustrations, not a dated 2010 UK order guide. © Porsche AG; the repository’s MIT licence does not relicense them.
+
+The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`, keeping native resolution. Page furniture and, where recorded below, the boxed vehicle-locator inset were omitted. White margins were trimmed and a 20-pixel white border added. No numbered component was redrawn, reshaped or generatively altered. Crop coordinates refer to the native bitmap before border padding. Original full-page references remain unchanged.
+
+### `pet-speaker-families.png`
+
+- **Source:** PET **911-005**, [PDF p. 579](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=579); [archived full page](../part-reference/pet-911-005-p579.png).
+- **Extraction:** PDF image object **2115 0**, native **2067 × 3061**; crop `[131, 201, 1990, 3035]`. Locator inset omitted at `[8, 5, 679, 515]`. Result **1899 × 2874** pixels.
+- **Applicability and limits:** 911-005 lists separate PR441/490/680 applications. Item 9 is the complete BOSE rear subwoofer enclosure, not one driver or a standard four-speaker-system part. No physical driver dimensions or amplifier-channel mapping is inferred.
+- **Local image SHA-256:** `2647ab76f388bfff71548c13085240b77e44c9a7fc222b369e3c93e717a0853d`.

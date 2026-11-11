@@ -126,7 +126,7 @@
         }
       ],
       "diagrams": ["family-variant-selector"],
-      "textHash": "77767173153093f5295a53e61ce0db976e7e4f119ceae5722b068b1a1b4df7b6"
+      "textHash": "6e97d3e55bde059c77e4905eddde54a3aa8fa80b8afba16a49529454764b7c61"
     },
     {
       "id": "book__02-the-yearly-timeline__index.md__the-yearly-timeline",
@@ -528,6 +528,12 @@
           "captionHash": "0614b02c8aded8448a4d8ec0f27f460ece642048948b47ebf39adca896c1ff0c"
         },
         {
+          "alt": "Factory exploded drawing separating the upper engine cover and its perimeter seal from the carpet, rear-wall access cover and surrounding trim.",
+          "width": "540",
+          "style": null,
+          "captionHash": "41f4c1aeae193871168b40a28533a0a07b97cfbce80af6c9484386a7c442497a"
+        },
+        {
           "alt": "A red Boxster S with the front and rear luggage lids raised together, showing that the folded roof and two luggage openings occupy separate regions.",
           "width": null,
           "style": null,
@@ -618,7 +624,7 @@
         }
       ],
       "diagrams": ["body-explorer", "body-packaging-layers"],
-      "textHash": "3963457a95ec61b887f898ecdf63e1e93b65df2be7e88b58c7fb0e0bef390dc7"
+      "textHash": "1afa323fab15e02b5275d77c4243d75d6312e5681a6d3328edfe3b78246d03c7"
     },
     {
       "id": "book__05-engine-construction-and-valve-gear__index.md__engine-construction-and-valve-gear",
@@ -702,6 +708,18 @@
           "width": null,
           "style": null,
           "captionHash": "4493b78361097a2b65a4ff566fd4d1fef3c785b437a68c7f4a8127974ebce59b"
+        },
+        {
+          "alt": "Exploded crankshaft drawing with a separate connecting rod and cap, bearing shells, end seals, flywheel and pulley.",
+          "width": "520",
+          "style": null,
+          "captionHash": "f3978547fd376ecb2b8e745bd568fa74bf6d76c3fddb84280ac67282a26a0e87"
+        },
+        {
+          "alt": "Exploded piston group showing three separate rings, a hollow piston pin and two retaining clips.",
+          "width": "580",
+          "style": null,
+          "captionHash": "cf4fb6a58249805992e8e91cddfc214f7f484310e8fac6140756cb3a89f0a23b"
         },
         {
           "alt": "A connection schematic shows the crankshaft driving two chains and four camshafts, with guide rails and oil-fed hydraulic tensioners. There is no intermediate shaft between crankshaft and camshafts.",
@@ -861,7 +879,7 @@
         }
       ],
       "diagrams": ["engine-explorer", "engine-four-stroke", "engine-timing-lift"],
-      "textHash": "29d84a47c2b26fc77f750fbbbf8ab1e77d6c69aa198cc48099d80dfa6a58ff44"
+      "textHash": "abe714502823406669e3e9746fb34c93218bcc3166aad1305dbfd9ed9d24973f"
     },
     {
       "id": "book__06-air-fuel-ignition-and-engine-control__index.md__air-fuel-ignition-and-engine-control",
@@ -933,6 +951,18 @@
           "width": null,
           "style": null,
           "captionHash": "1d2b0ff00540e7accf4cd7d9adaff20c662e9468031977b13583ba5833a7eb1d"
+        },
+        {
+          "alt": "Exploded air-cleaner housing with a cylindrical filter element, removable cover, airflow meter and flexible outlet duct.",
+          "width": "540",
+          "style": null,
+          "captionHash": "5bad02b2101fd37cabea36d98a7ccdead3b3307baa9cd23e74d8779d0f701853"
+        },
+        {
+          "alt": "Factory drawing of the 2.9 intake with linked fuel rails above both banks and one injector separated to show its clips and seals.",
+          "width": "540",
+          "style": null,
+          "captionHash": "7def72c90254291f47f08bfac4ff0786f3138807d5e7c9878952a8f1defc9ec1"
         },
         {
           "alt": "Port injection places the fuel spray before the inlet valve; the 3.4 DFI comparison places it in the cylinder.",
@@ -1168,7 +1198,7 @@
         }
       ],
       "diagrams": ["intake-explorer", "engine-mixture-feedback"],
-      "textHash": "161624c609390ba6c9059b99b392b9038fad0079ba56ac2612fe106337c9905c"
+      "textHash": "7cc34d44ca6188ee2f7586f4a524be5fafbdad1f1b0c32defd0b65fc375124d6"
     },
     {
       "id": "book__07-lubrication-cooling-and-exhaust__index.md__lubrication-cooling-and-exhaust",
@@ -1242,6 +1272,12 @@
           "width": null,
           "style": null,
           "captionHash": "c939ec440acfe84aec7ada162bda3cf9cdcc468e502c61657639b6dff4224387"
+        },
+        {
+          "alt": "Exploded oil-conducting housing with the filter insert and cup below, heat exchanger above, and separate oil separator.",
+          "width": "520",
+          "style": null,
+          "captionHash": "4fd5b2f668d5b7dc54e8348df6064ac8c0217c7e966a16ce7ffd9ddfae33ba1f"
         },
         {
           "alt": "Each bank has two catalyst bricks within one manifold/converter assembly, with an oxygen sensor before the first brick and another between the bricks. The schematic shows gas-treatment sequence and connected silencers.",
@@ -1364,7 +1400,7 @@
         }
       ],
       "diagrams": ["fluids-explorer", "fluid-cooling-path"],
-      "textHash": "543673384941ff3177212e42142f8c4b6d37bdd70232716b92e8b7d974d0cff7"
+      "textHash": "954b5d373eb964f7db3fde5d25807bbb214c6ee0e23b3de642e5718860857c35"
     },
     {
       "id": "book__08-manual-transmission-and-clutch__index.md__manual-transmission-and-clutch",
@@ -1416,6 +1452,12 @@
           "width": null,
           "style": null,
           "captionHash": "5022587eba4ea08dff8b7a697f8990b0671241ab81897ed50459ba221457e749"
+        },
+        {
+          "alt": "Clutch exploded drawing separating the pressure assembly and driven plate from the release lever, bearing and guide sleeve.",
+          "width": "560",
+          "style": null,
+          "captionHash": "2c130a247332e484dc9b3634be082df76b55434da5a61884951ea89867d70245"
         },
         {
           "alt": "Porsche's period close-up of the six-speed manual gear lever in a tan centre console.",
@@ -1539,7 +1581,7 @@
         }
       ],
       "diagrams": ["manual-explorer", "manual-ratio-explorer"],
-      "textHash": "973203d30cbca7e390c19a1f8889fc28d845acd12d1d15db82cc43402f3fd2b3"
+      "textHash": "aaed2e9de8e5eb2ff8014f775b1fd466e5c69505225fb6fc84046aaeb1dfdd40"
     },
     {
       "id": "book__09-pdk-transmission__index.md__pdk-transmission",
@@ -1613,6 +1655,12 @@
           "width": null,
           "style": null,
           "captionHash": "c22d401534c1a22d943db0ff18914061af6cbd56c516191b82f5fe550f4c4a76"
+        },
+        {
+          "alt": "PDK transmission housing above a separated hydraulic control block and bolted oil sump, with output flanges beside the housing.",
+          "width": "520",
+          "style": null,
+          "captionHash": "2e0d81be084490855fc56f1f5a59fe40c93e0ec6635efeba2a8a5f399e9c2fc2"
         },
         {
           "alt": "PDK control and oil functions: an electronic controller commands hydraulic clutch and selector operation; clutch heat reaches an oil-to-coolant exchanger, while separate gear oil lubricates the gears and final drive and loses heat through the housing.",
@@ -1729,7 +1777,7 @@
         }
       ],
       "diagrams": ["pdk-explorer", "pdk-power-path"],
-      "textHash": "b92213f3d9fb2fffa1b3382e1d293d1bf66f687fd2b3db7c984cf402bd233823"
+      "textHash": "7c785c77dd947b04bf81de6a992c56fa52ab6a5bdfff3f2c20eb52abb7fa5477"
     },
     {
       "id": "book__10-differential-driveshafts-and-mounts__index.md__differential-driveshafts-and-mounts",
@@ -1987,6 +2035,12 @@
           "captionHash": "e40684fc62533c3ea76be6417a59557a1792cea061b08d3cbc4245460e636f94"
         },
         {
+          "alt": "Front strut separated into damper, coil spring, protective bellows, auxiliary stop, bearing and upper mount, with optional PASM electronics beside it.",
+          "width": "520",
+          "style": null,
+          "captionHash": "45ad1e6e0c3ce182bb7ad58a26c8cdc5b5ef052dbd035dfedbe063dd89da6d8d"
+        },
+        {
           "alt": "Two springs with equal compression carry equal additional spring force. A stationary ideal damper produces no force; a moving damper resists its motion. Position and velocity can therefore change independently.",
           "width": null,
           "style": null,
@@ -2094,7 +2148,7 @@
         }
       ],
       "diagrams": ["suspension-explorer", "suspension-spring-damper", "suspension-anti-roll"],
-      "textHash": "a7fc6050abcea46c09e454aa1d55a6ad9d0a873c0b36538379bd8609279e51af"
+      "textHash": "58f219468a6f53afa470265f6c533a1d3393a5f6169a9457046b0feb4a0e75a1"
     },
     {
       "id": "book__12-steering-wheels-and-tyres__index.md__steering-wheels-and-tyres",
@@ -2152,6 +2206,12 @@
           "width": null,
           "style": null,
           "captionHash": "92d34c950b15da6118d9d625318f0700b3ee7127ccb2b40923767c1df7374b1d"
+        },
+        {
+          "alt": "Steering gear with a protective bellows, separate inner joint, locknut and outer ball-jointed track rod arranged along its end.",
+          "width": "620",
+          "style": null,
+          "captionHash": "4b75fb9e55953dde9a609038fdc3a52b306660692df6d843fa5badd0c6f06751"
         },
         {
           "alt": "The steering shaft turns a pinion; the rack slides sideways and moves two track rods, which turn the front carriers. An engine-driven pump supplies hydraulic assistance to the rack housing.",
@@ -2314,7 +2374,7 @@
         }
       ],
       "diagrams": ["steering-explorer", "tyre-grip-budget", "tyres-rolling-size"],
-      "textHash": "9ec2d10513b98162d38570770120a9abdf8f08d5cbcb6d46e9722709ddea6abf"
+      "textHash": "25f2fdcca7a8a6308b1d28ca89107516f8a6329550744b3e234ad58841a53194"
     },
     {
       "id": "book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems",
@@ -2421,6 +2481,12 @@
           "captionHash": "7d9cbacef489e80027c767556cc3c67a13359dc9f66b7a6a48c6bde14b21a8ad"
         },
         {
+          "alt": "Exploded front disc brake with disc, backing cover, caliper, pads, wear-indicator lead and pad-retaining hardware.",
+          "width": "520",
+          "style": null,
+          "captionHash": "5935b1d8a312718de0e8bdc9ff13bbc6d5bcaa62bf70f149a9c8f21e281fdd0b"
+        },
+        {
           "alt": "A simplified fixed-caliper cutaway: two pistons on each side press two pads towards opposite faces of the brake disc.",
           "width": null,
           "style": null,
@@ -2431,6 +2497,12 @@
           "width": null,
           "style": null,
           "captionHash": "5670f60ffb4ec4d092921e743dee744eb889c1e57e5150f4db12e4cc10d13c50"
+        },
+        {
+          "alt": "Two curved parking-brake shoes separated from their adjuster, return and retaining springs, and expanding mechanism.",
+          "width": "560",
+          "style": null,
+          "captionHash": "304ef3d7e10ae958a3cf4b026ba862cdd0c7bc198a8d05127a5369e2f8f9b84d"
         }
       ],
       "notes": [
@@ -2586,7 +2658,7 @@
         }
       ],
       "diagrams": ["brake-explorer", "caliper-pressure", "braking-energy"],
-      "textHash": "347a7a27865f2bd0a887827bd373181252b0c8a41a41b32b7853f27a7aca183a"
+      "textHash": "ee7b91af6d6d8541b62227afd7fbf237a916eec3aee973a7e9cc0b0d2b51e8ca"
     },
     {
       "id": "book__14-roof-glass-seals-and-drainage__index.md__roof-glass-seals-and-drainage",
@@ -2686,6 +2758,12 @@
           "width": null,
           "style": null,
           "captionHash": "5b9ffdb84f63053888433f893b554d62284b8f2c29895a53310d8770755f6c08"
+        },
+        {
+          "alt": "Photograph of the left water-collecting tray, a shallow black moulded pan with a long contoured edge and several mounting and outlet features.",
+          "width": "650",
+          "style": null,
+          "captionHash": "17d0f7f0f552e80e34bce2f0c753274573dc19c56ec6773b95b675c6f79403a9"
         },
         {
           "alt": "With an intact upper seal, a clear drip-pan outlet lets water leave the body; blocking the same outlet lets water accumulate and eventually overflow.",
@@ -2840,7 +2918,7 @@
         }
       ],
       "diagrams": ["roof-explorer", "roof-opening", "roof-drainage"],
-      "textHash": "f0a29d1735faede4613b62054c62614459d3030b7620d66c2dd280d2e6180467"
+      "textHash": "2b0936c8fd20516e4adbe426a2a34d25dcba06cb934388847342f97f22eef762"
     },
     {
       "id": "book__15-cabin-seating-and-climate__index.md__cabin-seating-and-climate",
@@ -2914,6 +2992,12 @@
           "captionHash": "fc8c8ee2c8d7a68c8bba898a09a18d9c73c89f5638c8af1fcaed5bf0b333e191"
         },
         {
+          "alt": "Exposed seat base frame and runners with the manual height lever, alternative side trims, switches and an optional child-seat bracket separated around it.",
+          "width": "580",
+          "style": null,
+          "captionHash": "0a4a80632e83744b0fd0b90007b72bbc4eed51d6f614f83cdfc46eda4b6e80b6"
+        },
+        {
           "alt": "A seat schematic separates its supporting frame, cushion and runners, and shows that fore-and-aft travel, height and backrest angle change different parts of the driving position.",
           "width": null,
           "style": null,
@@ -2930,6 +3014,12 @@
           "width": null,
           "style": null,
           "captionHash": "65a8c692babaeaabd1702c9879b8ab025d4761649433e30cf164164e94e7e7e9"
+        },
+        {
+          "alt": "Air-conditioning casing with a separate heater core, expansion valve, blower, flap motors and wiring arranged around it.",
+          "width": "540",
+          "style": null,
+          "captionHash": "a2e676694b889bf114fb703113028426383df94bf75efc7951b058dfc90d9e96"
         },
         {
           "alt": "With fresh air selected, the blower moves air through an evaporator with A/C enabled, around the heater and towards the face vents. Recirculation changes the source; heater contribution changes heat addition; outlet selection changes the destination.",
@@ -3066,7 +3156,7 @@
         }
       ],
       "diagrams": ["cabin-explorer", "cabin-air-route"],
-      "textHash": "a1b0a0d5ddcc207d10e05523bf8d25fc17773e4a106b08553b1f0d2d61968398"
+      "textHash": "ccf96a8c1ca5f0c4752c371d0d85c5d5aea338731d05b2f7ef31aad336c21b14"
     },
     {
       "id": "book__16-lighting-electrical-systems-and-security__index.md__lighting-electrical-systems-and-security",
@@ -3140,6 +3230,12 @@
           "width": null,
           "style": null,
           "captionHash": "64b575790641414783c91a39617ad98d6feda270025a4a90e4dc887b9f5f064e"
+        },
+        {
+          "alt": "Halogen headlamp assembly with H7 and H9 bulbs, indicator bulb, covers and carrier separated; the lower front light and side repeater appear below.",
+          "width": "540",
+          "style": null,
+          "captionHash": "025955a69d4f47abf3e619b33ce1b1716575d810fa5faacc1d14c9db8649a10e"
         },
         {
           "alt": "The standard front arrangement uses halogen headlamps and a separate fog-lamp and LED-position-light module. The optional arrangement adds bi-xenon road lighting, beam levelling and dynamic cornering, with dedicated LED daytime running lights below.",
@@ -3328,7 +3424,7 @@
         }
       ],
       "diagrams": ["electrical-explorer", "electrical-current-path"],
-      "textHash": "d893f2b70694b5309f17cfd7e5cec0a150dc9a8b47e779279914d0c15e334b64"
+      "textHash": "bfa08fba4da355f492f8d39876f1d75b7ebec0d39a2152eee3993a45a7916698"
     },
     {
       "id": "book__17-audio-navigation-and-communication__index.md__audio-navigation-and-communication",
@@ -3392,6 +3488,12 @@
           "width": null,
           "style": null,
           "captionHash": "7cb4093fd15fa23857e5f14c585079db942126e0ad11edbf5c5587aac31c297e"
+        },
+        {
+          "alt": "Catalogue drawing comparing a dashboard tweeter and centre driver, door midrange and bass drivers, and the wide rear BOSE subwoofer enclosure.",
+          "width": "520",
+          "style": null,
+          "captionHash": "4dced0a72096b9bb2ba8af51fceee2dcc91357e9110784ad09d2e1f66a730b93"
         },
         {
           "alt": "The initial example follows FM radio through CDR-30 and its output stages to the standard four speakers. Other sources require their corresponding interfaces, while the sound package determines the amplification route.",
@@ -3499,7 +3601,7 @@
         }
       ],
       "diagrams": ["audio-explorer", "audio-source-path"],
-      "textHash": "ef9fd3c55623ee1de6199b0f93d5a90afe060e362984b16cce13863c7cb6c8e5"
+      "textHash": "04c352570f074cf763bd9cb6f0dec3eba9fbe24d07bf4bf71994cc7b9e499da5"
     },
     {
       "id": "book__18-occupant-protection-and-system-integration__index.md__occupant-protection-and-system-integration",
@@ -3571,6 +3673,12 @@
           "width": null,
           "style": null,
           "captionHash": "c5f92a0b82c3029f68edf6256439eb964bc52761efacfc1bb72c38306d914f8e"
+        },
+        {
+          "alt": "Joined rear rollover hoops and cross-member with a belt and retractor, buckle, and neighbouring roof drip pan and drain pipe separated below.",
+          "width": "520",
+          "style": null,
+          "captionHash": "363300eb3c7894231c07371509dca9618c9e687d32c338e131301bd47b683f4d"
         },
         {
           "alt": "Acceleration in the standard manual car: pedal and engine information goes to DME, which controls throttle, injection and ignition. The driver's clutch and gear selection carry torque through the manual transmission. Fixed structure remains present and the crash restraint controller assesses its own inputs.",
@@ -3677,7 +3785,7 @@
         }
       ],
       "diagrams": ["protection-explorer", "protection-system-scenarios"],
-      "textHash": "af46dd027e0ea766d9e727819c6145cbba1351f7c31a8203353c5e48af7c2605"
+      "textHash": "92df45bbc292378407b6d0ceba4b63122cb6058e9933351ce024c831be58f769"
     },
     {
       "id": "book__19-reference-atlas-and-index__index.md__reference-atlas-and-index",
