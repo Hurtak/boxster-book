@@ -60,6 +60,17 @@ export function palette() {
       clearcoat: 1,
       side: THREE.DoubleSide,
     }),
+    headlampGlass: new THREE.MeshPhysicalMaterial({
+      name: 'Clear polycarbonate headlamp cover',
+      color: '#f5f8fa',
+      metalness: 0,
+      roughness: 0.025,
+      transmission: 0.99,
+      thickness: 0.0035,
+      ior: 1.5,
+      clearcoat: 0.1,
+      clearcoatRoughness: 0.025,
+    }),
     glass: new THREE.MeshPhysicalMaterial({
       name: 'Windscreen glass',
       color: '#d8e3dd',
@@ -96,6 +107,7 @@ export function palette() {
     }),
   };
   for (const surface of Object.values(surfaces)) surface.side = THREE.DoubleSide;
+  surfaces.headlampGlass.side = THREE.FrontSide;
   return surfaces;
 }
 

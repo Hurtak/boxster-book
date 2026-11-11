@@ -59,8 +59,10 @@ function regions(p: Palette, surface: ShellSurface) {
       frame: lamp,
       sdf: headlampOutline(side),
       applies: (q: { z: number; x: number; y: number }) => q.z > 1.35 && q.x * side > 0.3 && q.y > 0.45,
-      material: p.lens,
-      recess: { depth: 0.15, walls: p.chrome, floor: p.silver },
+      // The lamp factory supplies the curved, closed cover in this opening.
+      material: null,
+      // The road-facing reflector bowls need clearance below the sloping cover.
+      recess: { depth: 0.245, walls: p.black, floor: p.black },
     });
     const tail = frame([side * 0.7, 0.74, -1.85], [side * 0.55, 0.3, -0.8]);
     const tailOutline = outline(tail, tailLampOutline(side));

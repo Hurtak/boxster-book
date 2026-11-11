@@ -32,6 +32,7 @@ export const config: ExplorerConfig = {
       'headlamp-1',
       'headlamp-cover-1',
       'headlamp-cover-1-walls',
+      'headlamp-cover-1-floor',
       'front-lamp-1',
       'front-lamp-1-walls',
       'lower-light-details-1',

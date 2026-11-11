@@ -5,8 +5,7 @@ import { frame, sdf } from './shell.ts';
 import type { Palette } from './surfaces';
 import { ellipsoid, line3 } from './surfaces.ts';
 
-// 987.2 headlamp: an egg-shaped glass lying in the sloping nose of the wing,
-// the rounder end outboard and rearward.
+// 987.2 headlamp: a rounded triangular cover following the sloping wing.
 export function headlampFrame(surface: ShellSurface, side: number) {
   const normal = new THREE.Vector3(side * 0.12, 0.66, 0.74).normalize();
   const hit = surface.requireHit([side * 0.625, 0.68, 1.78], normal.clone().negate().toArray());
@@ -17,26 +16,110 @@ function lampPoints(side: number) {
   const tilt = 0.28;
   const axis = [side * Math.sin(tilt), Math.cos(tilt)];
   const across = [axis[1], -axis[0]];
-  return Array.from({ length: 64 }, (_, i) => {
-    const phi = (i / 64) * Math.PI * 2;
-    const u = 0.25 * Math.cos(phi),
-      v = 0.127 * Math.sin(phi) * (1 + 0.2 * Math.cos(phi));
-    return [axis[0] * u + across[0] * v, axis[1] * u + across[1] * v];
-  });
+  // Rounded triangular 987.2 perimeter: a fuller leading end and a tapered
+  // outboard/rear end. Cover, seal and wing cutout share these photo-guided points.
+  return [
+    [0, 0.245],
+    [-0.057, 0.236],
+    [-0.103, 0.19],
+    [-0.127, 0.105],
+    [-0.133, 0],
+    [-0.12, -0.11],
+    [-0.081, -0.2],
+    [-0.015, -0.247],
+    [0.055, -0.242],
+    [0.116, -0.19],
+    [0.14, -0.09],
+    [0.135, 0.025],
+    [0.105, 0.14],
+    [0.06, 0.22],
+  ].map(([u, v]) => [axis[0] * v + across[0] * side * u, axis[1] * v + across[1] * side * u]);
 }
 export const headlampOutline = (side: number) => sdf.polygon(lampPoints(side), 128);
 
+function lampBoundary(side: number) {
+  return new THREE.CatmullRomCurve3(
+    lampPoints(side).map(([a, b]) => new THREE.Vector3(a, b, 0)),
+    true,
+    'centripetal',
+  )
+    .getPoints(128)
+    .slice(0, -1);
+}
+
+function headlampCover(parent: THREE.Object3D, p: Palette, f: SurfaceFrame, side: number, surface: ShellSurface) {
+  // Use the same sampled outline as the shell cutout. Both surfaces meet the
+  // same wing; only the interior of the clear cover rises above it.
+  const ring = lampBoundary(side);
+  if (side < 0) ring.reverse();
+  const rings = 16,
+    count = ring.length;
+  const positions: number[] = [];
+  const project = (a: number, b: number, lift: number) =>
+    surface.requireHit(f.from(a, b, 0.3).toArray(), f.n.clone().negate().toArray()).point.addScaledVector(f.n, lift);
+  const centre = project(0, 0, 0.0135);
+  positions.push(...centre.toArray());
+  for (let r = 1; r <= rings; r++) {
+    const radius = r / rings;
+    for (const point of ring) {
+      const lift = 0.0015 + 0.012 * (1 - radius * radius) ** 2;
+      positions.push(...project(point.x * radius, point.y * radius, lift).toArray());
+    }
+  }
+  const frontCount = positions.length / 3;
+  for (let i = 0; i < frontCount; i++) {
+    positions.push(
+      ...new THREE.Vector3()
+        .fromArray(positions, i * 3)
+        .addScaledVector(f.n, -0.0035)
+        .toArray(),
+    );
+  }
+  const index = (r: number, i: number) => 1 + (r - 1) * count + (i % count);
+  const triangles: number[] = [];
+  for (let i = 0; i < count; i++) triangles.push(0, index(1, i), index(1, i + 1));
+  for (let r = 1; r < rings; r++) {
+    for (let i = 0; i < count; i++) {
+      const a = index(r, i),
+        b = index(r + 1, i),
+        c = index(r + 1, i + 1),
+        d = index(r, i + 1);
+      triangles.push(a, b, c, a, c, d);
+    }
+  }
+  const frontTriangles = triangles.slice();
+  for (let i = 0; i < frontTriangles.length; i += 3) {
+    triangles.push(
+      frontCount + frontTriangles[i],
+      frontCount + frontTriangles[i + 2],
+      frontCount + frontTriangles[i + 1],
+    );
+  }
+  for (let i = 0; i < count; i++) {
+    const a = index(rings, i),
+      b = index(rings, i + 1);
+    triangles.push(a, a + frontCount, b + frontCount, a, b + frontCount, b);
+  }
+  const geometry = new THREE.BufferGeometry();
+  geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  geometry.setIndex(triangles);
+  geometry.computeVertexNormals();
+  const cover = mesh(parent, geometry, p.headlampGlass);
+  cover.name = `headlamp-cover-${side}`;
+}
+
 export function headlamp(parent: THREE.Object3D, p: Palette, f: SurfaceFrame, side: number, surface: ShellSurface) {
+  headlampCover(parent, p, f, side, surface);
   const root = group(`headlamp-${side}`, parent);
   root.userData.carPart = true;
   const n = f.n.clone();
   const at = (a: number, b: number, depth: number) => f.from(a, b, depth).toArray();
-  const ring = lampPoints(side);
+  const ring = lampBoundary(side).map((point) => [point.x, point.y]);
   const inward = n.clone().negate().toArray();
   line3(
     root,
     ring.map(([a, b]) => surface.on(at(a, b, 0.3), inward, 0.002)),
-    0.0035,
+    0.0045,
     p.black,
     true,
   );
@@ -58,26 +141,35 @@ export function headlamp(parent: THREE.Object3D, p: Palette, f: SurfaceFrame, si
     const point = hit.point
       .clone()
       .add(new THREE.Vector3(0, main ? -0.08 : -0.065, -0.035))
+      .addScaledVector(n, main ? -0.025 : 0)
       .toArray();
     const unit = group(`${main ? 'projector' : 'high-beam-reflector'}-${side}`, root, point);
     // The optics aim along the road; only the outer cover follows the wing.
     unit.lookAt(new THREE.Vector3(...point).add(new THREE.Vector3(side * 0.025, -0.005, 1)));
-    mesh(
-      unit,
-      new THREE.CylinderGeometry(radius * 1.08, radius * 0.9, 0.05, 48, 1, true),
-      p.chrome,
-      [0, 0, -0.01],
-      [Math.PI / 2, 0, 0],
-    );
+    // Reflector bowls flare behind the round optical units, rather than
+    // leaving bare rings standing in a deep, featureless cavity.
+    const bowl = [
+      [0.8, 0.006],
+      [0.9, -0.02],
+      [1.03, -0.043],
+      [1.22, -0.032],
+      [1.34, -0.008],
+      [1.35, 0.007],
+    ].map(([r, z]) => new THREE.Vector2(radius * r, z));
+    mesh(unit, new THREE.LatheGeometry(bowl, 64), p.silver, [0, 0, 0], [Math.PI / 2, 0, 0]).name =
+      `headlamp-reflector-${main ? 'main' : 'high'}-${side}`;
     mesh(unit, new THREE.TorusGeometry(radius, 0.005, 8, 48), p.chrome, [0, 0, 0.012]);
     mesh(unit, new THREE.CircleGeometry(radius * 0.92, 48), p.black, [0, 0, 0.004]);
+    mesh(unit, new THREE.RingGeometry(radius * 0.64, radius * 0.92, 48), p.silver, [0, 0, 0.007]);
+    mesh(unit, new THREE.TorusGeometry(radius * 0.65, 0.002, 8, 48), p.chrome, [0, 0, 0.009]);
     const glass = new THREE.MeshPhysicalMaterial({
-      color: main ? '#304451' : '#ccd4d9',
-      metalness: main ? 0.35 : 0.85,
-      roughness: 0.1,
+      color: main ? '#33434b' : '#a1adb5',
+      metalness: main ? 0.1 : 0.7,
+      roughness: 0.065,
       clearcoat: 1,
     });
-    ellipsoid(unit, [radius * 0.76, radius * 0.76, radius * 0.3], glass, [0, 0, 0.01]);
+    ellipsoid(unit, [radius * 0.62, radius * 0.62, radius * (main ? 0.18 : 0.12)], glass, [0, 0, 0.01]).name =
+      `headlamp-optic-${main ? 'main' : 'high'}-${side}`;
     if (!main)
       for (let i = 0; i < 12; i++) {
         const a = (i / 12) * Math.PI * 2;
@@ -93,12 +185,31 @@ export function headlamp(parent: THREE.Object3D, p: Palette, f: SurfaceFrame, si
       }
   }
   const across = [axis[1], -axis[0]];
-  for (const v of [-0.172, -0.157, -0.142]) {
-    const strip = Array.from({ length: 25 }, (_, i) => {
-      const u = ((i / 24) * 2 - 1) * 0.078;
-      return surface.on(at(axis[0] * v + across[0] * u, axis[1] * v + across[1] * u, 0.3), inward, -0.025);
-    });
-    line3(root, strip, 0.0018, p.chrome);
+  const indicatorPoint = (u: number, v: number) =>
+    surface.on(
+      at(
+        axis[0] * (-0.185 + v) + across[0] * side * (0.04 + u),
+        axis[1] * (-0.185 + v) + across[1] * side * (0.04 + u),
+        0.3,
+      ),
+      inward,
+      -0.028,
+    );
+  const panel = new THREE.PlaneGeometry(0.1, 0.026, 12, 4);
+  const vertices = panel.getAttribute('position');
+  for (let i = 0; i < vertices.count; i++)
+    vertices.setXYZ(i, ...(indicatorPoint(vertices.getX(i), vertices.getY(i)) as [number, number, number]));
+  panel.computeVertexNormals();
+  mesh(root, panel, p.silver).name = `headlamp-indicator-${side}`;
+  // Fine flutes in the rectangular lower indicator field, behind the cover.
+  for (let i = 0; i <= 12; i++) {
+    const u = -0.048 + (i / 12) * 0.096;
+    line3(
+      root,
+      [-0.011, 0, 0.011].map((v) => indicatorPoint(u, v)),
+      0.00065,
+      p.chrome,
+    );
   }
   return root;
 }
