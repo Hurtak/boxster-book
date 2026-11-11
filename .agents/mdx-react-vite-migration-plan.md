@@ -2,6 +2,8 @@
 
 Status: implemented and validated locally, 10 November 2026. This plan replaces the earlier Markdown-it proposal and records the migration requirements. See the [implementation and validation review](reviews/mdx-migration.md) for the result and measured limits.
 
+**Output-contract update, 11 November 2026:** the user's subsequent instruction replaces the three export contracts below with one Pages build: `npm run build` produces `dist/site/index.html` and adjacent assets; `npm run build:preview` previews it. The portable exporter and separate web/Pages commands are retired. Whole-book PDF export uses the browser's Print command or the reader's Print whole book action. The historical migration requirements below remain a record; [README](../README.md#build-and-preview) defines the current build and print interface. Manuscript preservation, stable links, useful static/print output, hydration and lazy interactive resources still apply.
+
 ## Target
 
 Replace the Python/Pandoc build with **MDX + React + TypeScript + Vite**, using Node for build-time rendering and export assembly. Convert chapter entry files from `index.md` to `index.mdx`, retaining their numbered folders, prose, research, images and diagram assets.

@@ -4,16 +4,14 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "node --import tsx scripts/build.ts",
-    "build:web": "node --import tsx scripts/build.ts --format web --output dist/web/book.html",
-    "build:pages": "node --import tsx scripts/build.ts --format web --output dist/site/index.html",
-    "models": "node scripts/generate-models.mjs",
-    "posters": "node scripts/render-component-posters.mjs",
-    "preview:model": "npm run models && node scripts/preview-model.mjs",
-    "serve": "node --import tsx scripts/serve.ts",
-    "test": "node --import tsx --test tests/*.test.js tests/*.test.ts",
-    "validate": "npm run typecheck && npm run build && npm run build:web && npm run build:pages && npm test",
     "dev": "node --import tsx scripts/dev.ts",
+    "build": "node --import tsx scripts/build.ts",
+    "build:preview": "node --import tsx scripts/serve.ts",
+    "model:generate": "node scripts/generate-models.mjs",
+    "model:posters": "node scripts/render-component-posters.mjs",
+    "model:preview": "npm run model:generate && node scripts/preview-model.mjs",
+    "test": "node --import tsx --test tests/*.test.js tests/*.test.ts",
+    "validate": "npm run typecheck && npm run build && npm test",
     "typecheck": "tsc --noEmit"
   },
   "engines": {
@@ -26,7 +24,6 @@
     "three": "0.187.0"
   },
   "devDependencies": {
-    "@mdx-js/esbuild": "3.1.1",
     "@mdx-js/mdx": "3.1.1",
     "@mdx-js/rollup": "3.1.1",
     "@types/mdx": "2.0.14",

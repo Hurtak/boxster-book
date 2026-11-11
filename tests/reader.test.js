@@ -4,14 +4,12 @@ import { chromium } from 'playwright-core';
 import { createServer } from 'node:http';
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
-import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 
 const root = resolve('dist');
-const portable = pathToFileURL(resolve(root, 'book.html')).href;
 const previews = resolve(root, 'previews');
 const chapterCount = (await readdir(resolve('book'))).filter(name => /^\d{2,}-/.test(name)).length;
-let browser, server, web, site;
+let browser, server, preview, site;
 
 before(async () => {
   await mkdir(previews, { recursive: true });
@@ -28,7 +26,7 @@ before(async () => {
     } catch { response.writeHead(404).end(); }
   });
   await new Promise((done) => server.listen(0, '127.0.0.1', done));
-  web = `http://127.0.0.1:${server.address().port}/web/book.html`;
+  preview = `http://127.0.0.1:${server.address().port}/site/`;
   site = `http://127.0.0.1:${server.address().port}/boxster-book/`;
   browser = await chromium.launch({
     ...(process.env.BROWSER_EXECUTABLE_PATH ? { executablePath: process.env.BROWSER_EXECUTABLE_PATH } : { channel: 'chrome' }),
@@ -55,8 +53,8 @@ async function ready(page, name) {
 }
 
 test('readers can switch between posters and live diagrams without losing their controls', async () => {
-  for (const [url, width] of [[portable, 390], [web, 1440], [site, 390]]) {
-    const context = await browser.newContext({ offline: url === portable, viewport: { width, height: 844 } });
+  for (const [url, width] of [[preview, 390], [site, 1440]]) {
+    const context = await browser.newContext({ viewport: { width, height: 844 } });
     try {
       const page = await context.newPage();
       await page.goto(url);
@@ -103,7 +101,7 @@ test('the static poster is available while a car model is still downloading', as
   const modelRequested = new Promise(resolve => { requested = resolve; });
   try {
     await page.route('**/*.glb', async route => { requested(); await gate; await route.continue(); });
-    await page.goto(web);
+    await page.goto(preview);
     const figure = page.locator('[data-diagram="body-explorer"]');
     await figure.evaluate(element => { location.hash = element.closest('section.level2').id; });
     await figure.waitFor({ state: 'visible' });
@@ -129,7 +127,7 @@ test('a slow chapter reload does not flash the cover before the reader hydrates'
   try {
     await page.route('**/reader-*.js', async route => { await gate; await route.continue(); });
     const id = 'book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems';
-    await page.goto(web + '#' + id, { waitUntil: 'commit' });
+    await page.goto(preview + '#' + id, { waitUntil: 'commit' });
     await page.locator('#title').waitFor({state:'attached'});
     assert.equal(await page.locator('#title').isVisible(), false, 'The cover must stay hidden while a chapter is loading');
     await page.screenshot({path:resolve(previews,'reader-loading-phone.png')});
@@ -148,7 +146,7 @@ test('car diagrams reserve their complete panels before models arrive on phones 
   const gate = new Promise(resolve => { release = resolve; });
   try {
     await page.route('**/*.glb', async route => { await gate; await route.continue(); });
-    await page.goto(web);
+    await page.goto(preview);
     await page.locator('html.reader-enhanced').waitFor();
     const figure = page.locator(`[data-diagram="${id}"]`);
     await figure.evaluate(element => { location.hash = element.closest('section.level2').id; });
@@ -172,7 +170,7 @@ test('car diagrams reserve their complete panels before models arrive on phones 
 test('prerendered images reserve their intrinsic aspect ratio before decoding', async () => {
   const page = await browser.newPage();
   try {
-    await page.goto(web);
+    await page.goto(preview);
     const missing = await page.locator('#book img').evaluateAll(elements => elements.filter(image => !image.hasAttribute('width') || !image.hasAttribute('height')).map(image => image.alt));
     assert.equal(missing.length, 0, `${missing.length} images have no intrinsic reservation; first: ${missing[0]}`);
     // SVGs with only a viewBox can report the browser's 300×150 natural-size
@@ -187,7 +185,7 @@ test('a delayed chapter photograph does not move the text when it decodes', asyn
   let release;const gate=new Promise(resolve=>{release=resolve;});
   try{
     await page.route('**/media/**',async route=>{await gate;await route.continue();});
-    await page.goto(web,{waitUntil:'domcontentloaded'});
+    await page.goto(preview,{waitUntil:'domcontentloaded'});
     const chapter=page.locator('#book > section.level2').first();
     await chapter.evaluate(element=>{location.hash=element.id;});
     await chapter.waitFor({state:'visible'});
@@ -208,19 +206,19 @@ test('a failed reader script still leaves a readable static book',async()=>{
   const page=await browser.newPage();
   try{
     await page.route('**/reader-*.js',route=>route.abort());
-    await page.goto(web);
+    await page.goto(preview);
     await page.locator('#book > section.level2').first().waitFor({state:'visible'});
     assert.equal(await page.locator('#reader-loading').isVisible(),false);
   }finally{await page.close();}
 });
 
-test('portable HTML works offline; keyboard and part controls survive leaving the page section', async () => {
-  const context = await browser.newContext({ offline: true, viewport: { width: 1440, height: 1100 } });
+test('keyboard and part controls survive leaving the page section', async () => {
+  const context = await browser.newContext({ viewport: { width: 1440, height: 1100 } });
   try {
     const page = await context.newPage();
     const errors = [];
     page.on('pageerror', (error) => errors.push(error.message));
-    await page.goto(portable);
+    await page.goto(preview);
     const figure = await ready(page, 'brake-explorer');
     assert.equal(await figure.locator('canvas').count(), 1);
     await figure.screenshot({ path: resolve(previews, 'whole-car.png') });
@@ -254,7 +252,7 @@ test('portable HTML works offline; keyboard and part controls survive leaving th
 test('D3 diagrams explain pressure and the fourfold energy increase at twice the speed', async () => {
   const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } });
   try {
-    await page.goto(portable);
+    await page.goto(preview);
     const caliper = await ready(page, 'caliper-pressure');
     await caliper.getByRole('slider', { name: 'Relative hydraulic pressure' }).fill('100');
     assert.equal(Number(await caliper.locator('.diagram-interactive').getAttribute('data-relative-pressure')), 1);
@@ -287,13 +285,13 @@ test('D3 diagrams explain pressure and the fourfold energy increase at twice the
   } finally { await page.close(); }
 });
 
-test('web edition loads models on approach and reads correctly at a phone width', async () => {
+test('preview edition loads models on approach and reads correctly at a phone width', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
   try {
     const models = [], errors = [];
     page.on('request', (request) => { if (request.url().endsWith('.glb')) models.push(request.url()); });
     page.on('pageerror', (error) => errors.push(error.message));
-    await page.goto(web);
+    await page.goto(preview);
     await page.waitForLoadState('networkidle');
     assert.equal(models.length, 0, 'Models should not load at the start of the book');
     const figure = await ready(page, 'brake-explorer');
@@ -316,7 +314,7 @@ test('static diagrams remain readable without JavaScript or WebGL', async () => 
   const context = await browser.newContext({ javaScriptEnabled: false });
   try {
     const page = await context.newPage();
-    await page.goto(portable);
+    await page.goto(preview);
     for (const figure of await page.locator('[data-diagram]').all()) {
       assert.equal(await figure.locator('img').isVisible(), true);
       assert.ok(await figure.locator('img').evaluate((element) => element.complete && element.naturalWidth > 0));
@@ -332,7 +330,7 @@ test('static diagrams remain readable without JavaScript or WebGL', async () => 
         return /webgl/.test(kind) ? null : original.call(this, kind, ...args);
       };
     });
-    await page.goto(portable);
+    await page.goto(preview);
     const figure = page.locator('[data-diagram="brake-explorer"]');
     await page.locator('html.reader-enhanced').waitFor();
     await figure.evaluate((element) => { location.hash = element.closest('section.level2').id; });
@@ -345,14 +343,14 @@ test('static diagrams remain readable without JavaScript or WebGL', async () => 
   } finally { await page.close(); }
 });
 
-test('all prerendered editions preserve the manuscript, tables, figures and published note links', async () => {
+test('the prerendered book preserves the manuscript, tables, figures and published note links at both URL mounts', async () => {
   const baseline = JSON.parse(await readFile(resolve('tests/fixtures/manuscript-baseline.json'), 'utf8'));
   const normal = value => value.normalize('NFKC').replace(/[’‘]/g, "'").replace(/[“”]/g, '"').replace(/[^\p{L}\p{N}]/gu, '');
   const hash = value => createHash('sha256').update(normal(value)).digest('hex');
   const context = await browser.newContext({ javaScriptEnabled: false });
   try {
     const page = await context.newPage();
-    for (const edition of [portable, web, site]) {
+    for (const edition of [preview, site]) {
       await page.goto(edition);
       await page.locator('#book img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
       const actual = await page.evaluate(() => {
@@ -383,8 +381,8 @@ test('all prerendered editions preserve the manuscript, tables, figures and publ
   } finally { await context.close(); }
 });
 
-test('all editions hydrate without warnings, missing assets or premature model downloads', async () => {
-  for (const edition of [portable, web, site]) {
+test('the book hydrates without warnings, missing assets or premature model downloads at both URL mounts', async () => {
+  for (const edition of [preview, site]) {
     const page = await browser.newPage(), errors = [], models = [];
     try {
       page.on('pageerror', error => errors.push(error.message));
@@ -406,8 +404,8 @@ test('all editions hydrate without warnings, missing assets or premature model d
   }
 });
 
-test('every diagram module and model loads through both HTTP export registries', async () => {
-  for (const [edition,width] of [[web,390],[site,1440]]) {
+test('every diagram and model loads at local and project-prefixed URLs', async () => {
+  for (const [edition,width] of [[preview,390],[site,1440]]) {
     const page = await browser.newPage({viewport:{width,height:1000}}), errors=[];
     try {
       page.on('pageerror',error=>errors.push(error.message));
@@ -476,7 +474,7 @@ test('reader navigation, sources and browser history preserve chapter context', 
 test('chapter sources start collapsed, toggle by keyboard and expand for printing without losing their state', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
-    await page.goto(portable);
+    await page.goto(preview);
     await page.locator('html.reader-enhanced').waitFor();
     assert.equal(await page.locator('details.chapter-notes').count(), chapterCount);
     assert.equal(await page.locator('details.chapter-notes[open]').count(), 0);
@@ -504,6 +502,81 @@ test('chapter sources start collapsed, toggle by keyboard and expand for printin
     assert.ok(await notes.evaluate((element) => element.open), 'Printing must retain a section the reader had opened');
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
   } finally { await page.close(); }
+});
+
+test('Print whole book prepares every image and opens printing from desktop and phone readers', async () => {
+  for (const width of [390, 1440]) {
+    const page=await browser.newPage({viewport:{width,height:900}});
+    try{
+      await page.addInitScript(()=>{
+        window.print=()=>{
+          dispatchEvent(new Event('beforeprint'));
+          window.__bookPrint={
+            title:document.title,
+            notes:document.querySelectorAll('details.chapter-notes[open]').length,
+            images:[...document.querySelectorAll('#book img')].every(image=>image.complete&&image.naturalWidth>0),
+            dialog:!!document.querySelector('dialog[open]'),
+          };
+          dispatchEvent(new Event('afterprint'));
+        };
+      });
+      await page.goto(site+'#book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems');
+      await page.getByRole('heading',{level:1,name:'Brakes and stability systems',exact:true}).waitFor();
+      const title=await page.title(),hash=new URL(page.url()).hash;
+      if(width<1000)await page.getByRole('button',{name:'Contents',exact:true}).click();
+      await page.getByRole('button',{name:'Print whole book',exact:true}).filter({visible:true}).click();
+      await page.waitForFunction(()=>window.__bookPrint);
+      const printed=await page.evaluate(()=>window.__bookPrint);
+      assert.equal(printed.title,'Porsche Boxster 2.9 — Complete book');
+      assert.equal(printed.notes,chapterCount);
+      assert.equal(printed.images,true);
+      assert.equal(printed.dialog,false);
+      assert.equal(await page.title(),title);
+      assert.equal(new URL(page.url()).hash,hash);
+      assert.equal(await page.locator('details.chapter-notes[open]').count(),0);
+    }finally{await page.close();}
+  }
+});
+
+test('browser PDF export includes the cover, contents, every chapter, sources and static diagrams', async () => {
+  const measurements=[];
+  for(const javaScriptEnabled of [true,false]){
+    const context=await browser.newContext({javaScriptEnabled,viewport:{width:794,height:1123}});
+    try{
+      const page=await context.newPage();
+      await page.goto(site+'#book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems');
+      if(javaScriptEnabled)await page.getByRole('heading',{level:1,name:'Brakes and stability systems',exact:true}).waitFor();
+      await page.evaluate(()=>document.fonts.ready);
+      await page.locator('#book img').evaluateAll(images=>Promise.all(images.map(image=>image.decode())));
+      const before=javaScriptEnabled?await page.locator('details.chapter-notes, details.technical-detail').evaluateAll(nodes=>nodes.map(node=>node.open)):[];
+      await page.emulateMedia({media:'print'});
+      assert.equal(await page.locator('#title').isVisible(),true);
+      assert.equal(await page.locator('.available-chapters').isVisible(),true);
+      for(const chapter of await page.locator('#book > section.level2').all())assert.equal(await chapter.isVisible(),true);
+      for(const notes of await page.locator('.chapter-notes ol, .technical-detail > :not(summary)').all())assert.equal(await notes.isVisible(),true);
+      for(const image of await page.locator('.diagram-static img').all())assert.equal(await image.isVisible(),true);
+      assert.equal(await page.locator('.viewer-bar').isVisible(),false);
+      assert.equal(await page.locator('.diagram-view-controls:visible').count(),0);
+      const clipped=await page.locator('#book table').evaluateAll(tables=>tables.filter(table=>{
+        const bounds=table.getBoundingClientRect(),book=document.getElementById('book').getBoundingClientRect();
+        return bounds.right>book.right+1||bounds.left<book.left-1;
+      }).map(table=>table.textContent.slice(0,100)));
+      assert.deepEqual(clipped,[],'Printed tables must fit the page width');
+      const path=resolve(previews,javaScriptEnabled?'whole-book.pdf':'whole-book-no-js.pdf');
+      const pdf=await page.pdf({path,preferCSSPageSize:true,printBackground:true,tagged:true,outline:true});
+      const bytes=pdf.toString('latin1'),pages=(bytes.match(/\/Type\s*\/Page\b/g)||[]).length;
+      assert.ok(pages>chapterCount,`The full book needs more than ${chapterCount} printed pages; got ${pages}`);
+      assert.match(bytes,/\/Outlines\b/);
+      assert.match(bytes,/\/StructTreeRoot\b/);
+      measurements.push({javaScriptEnabled,pages,chapters:chapterCount,path});
+      await page.emulateMedia({media:'screen'});
+      if(javaScriptEnabled){
+        assert.deepEqual(await page.locator('details.chapter-notes, details.technical-detail').evaluateAll(nodes=>nodes.map(node=>node.open)),before);
+        assert.equal(await page.locator('#book > section.level2:visible').count(),1);
+      }
+    }finally{await context.close();}
+  }
+  await writeFile(resolve(previews,'whole-book-print.json'),JSON.stringify(measurements,null,2));
 });
 
 test('phone contents traps focus, closes with Escape and opens the chosen chapter', async () => {
@@ -540,7 +613,7 @@ test('phone contents traps focus, closes with Escape and opens the chosen chapte
 test('chapters number their own notes, list their sections in the contents and offer a way back in', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
-    await page.goto(portable);
+    await page.goto(preview);
     await page.locator('html.reader-enhanced').waitFor();
     assert.equal(await page.locator('[data-continue-reading]').isVisible(), false);
     await page.getByRole('navigation', { name: 'Written chapters' }).getByRole('link', { name: 'Brakes and stability systems', exact: true }).click();
@@ -569,17 +642,17 @@ test('chapters number their own notes, list their sections in the contents and o
   } finally { await page.close(); }
 });
 
-test('cover and chapter reflow from a small phone to a wide desktop, with offline fonts', async () => {
-  const context = await browser.newContext({ offline: true });
+test('cover and chapter reflow from a small phone to a wide desktop, with bundled fonts', async () => {
+  const context = await browser.newContext({});
   try {
     await context.addInitScript(() => { try { localStorage.removeItem('boxster-reading-size'); } catch {} });
     const page = await context.newPage();
     for (const width of [320, 390, 600, 768, 1024, 1280, 1440, 1920]) {
       await page.setViewportSize({ width, height: 900 });
-      await page.goto(portable);
+      await page.goto(preview);
       await page.locator('html.reader-enhanced').waitFor();
       await page.evaluate(() => document.fonts.ready);
-      assert.ok(await page.evaluate(() => document.fonts.check('20px "Source Serif 4"') && document.fonts.check('16px "Source Sans 3"')), 'Bundled reading fonts should work offline');
+      assert.ok(await page.evaluate(() => document.fonts.check('20px "Source Serif 4"') && document.fonts.check('16px "Source Sans 3"')), 'Reading fonts must be bundled with the book');
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `Cover overflows at ${width}px`);
       await page.getByRole('navigation', { name: 'Written chapters' }).getByRole('link', { name: 'Brakes and stability systems', exact: true }).click();
       await page.locator('#book > section.level2:not([hidden])').waitFor();
@@ -621,11 +694,11 @@ test('Pages index loads interactive code and models under the project URL', asyn
   } finally { await page.close(); }
 });
 
-test('every chapter and the reference appendix have offline illustrations and local source links', async () => {
-  const context = await browser.newContext({ offline: true, viewport: { width: 390, height: 844 } });
+test('every chapter and the reference appendix have locally served illustrations and local source links', async () => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
   try {
     const page = await context.newPage();
-    await page.goto(portable);
+    await page.goto(preview);
     const written = page.getByRole('navigation', { name: 'Written chapters' });
     await written.waitFor();
     assert.equal(await written.getByRole('link').count(), chapterCount);
@@ -640,7 +713,7 @@ test('every chapter and the reference appendix have offline illustrations and lo
       await chapter.locator('h1').waitFor({state:'visible'});
       assert.equal(await chapter.locator('h1').innerText(), title);
       assert.doesNotMatch(await chapter.locator('.chapter-meta').innerText(), /Planned/);
-      const photos = chapter.locator('img[src^="data:image/jpeg"], img[src^="data:image/png"], img[src^="data:image/webp"]');
+      const photos = chapter.locator('img[data-book-asset$=".jpg"], img[data-book-asset$=".jpeg"], img[data-book-asset$=".png"], img[data-book-asset$=".webp"]');
       if (title !== 'Brakes and stability systems') assert.ok(await photos.count() >= 1, `${title} needs a real photograph`);
       assert.ok(await chapter.locator('figure').count() >= 3, `${title} needs explanatory illustrations`);
       let hasLargeImage = false;
@@ -662,7 +735,7 @@ test('every chapter and the reference appendix have offline illustrations and lo
 });
 
 test('cross-chapter explanations navigate to the owning section and every book fragment resolves', async () => {
-  for (const edition of [portable, site]) {
+  for (const edition of [preview, site]) {
     const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
     try {
       await page.goto(edition);
@@ -717,7 +790,7 @@ test('every static SVG has an accessible explanation and keeps its labels within
 test('family and option comparisons keep the 2.9 baseline while changing the selected configuration', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
-    await page.goto(portable);
+    await page.goto(preview);
     const family = await ready(page, 'family-variant-selector');
     assert.equal(await family.locator('.diagram-interactive').getAttribute('data-family-power-ps'), '255');
     await family.getByRole('button', { name: 'S', exact: true }).click();
@@ -742,7 +815,7 @@ test('every interactive illustration responds to native controls and fits phone,
     const errors = [];
     page.on('pageerror', (error) => errors.push(error.message));
     try {
-      await page.goto(portable);
+      await page.goto(preview);
       const names = await page.locator('[data-diagram]').evaluateAll((figures) => figures.map((figure) => figure.dataset.diagram));
       assert.ok(names.length >= 24, 'The completed manuscript should retain its interactive illustrations');
       for (const name of names) {
@@ -807,7 +880,7 @@ test('component tours locate, connect, separate and focus their parts while reta
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
     try {
-      await page.goto(portable);
+      await page.goto(preview);
       for (const name of names) {
         const figure = await ready(page, name);
         assert.equal(await figure.locator('canvas').count(), 1);
@@ -840,10 +913,10 @@ test('component tours locate, connect, separate and focus their parts while reta
 });
 
 test('the grip budget retains force requests beyond capacity and restores them after remounting', async () => {
-  const context = await browser.newContext({ offline: true, viewport: { width: 390, height: 844 } });
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
   try {
     const page = await context.newPage();
-    await page.goto(portable);
+    await page.goto(preview);
     let figure = await ready(page, 'tyre-grip-budget');
     await figure.getByRole('button', { name: 'Too much demand', exact: true }).click();
     assert.equal(await figure.locator('.diagram-interactive').getAttribute('data-grip-within'), 'false');
@@ -862,11 +935,11 @@ test('the grip budget retains force requests beyond capacity and restores them a
   } finally { await context.close(); }
 });
 
-test('the reference atlas is readable offline and optional calculations print without losing disclosure state', async () => {
-  const context = await browser.newContext({ offline: true, viewport: { width: 390, height: 844 } });
+test('the reference atlas and optional calculations print without losing disclosure state', async () => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
   try {
     const page = await context.newPage();
-    await page.goto(portable);
+    await page.goto(preview);
     const written = page.getByRole('navigation', { name: 'Written chapters' });
     await written.getByRole('link', { name: 'Reference atlas and index', exact: true }).click();
     await page.getByRole('heading', { level: 1, name: 'Reference atlas and index', exact: true }).waitFor();
@@ -917,7 +990,7 @@ test('the reference atlas is readable offline and optional calculations print wi
 test('engine feedback corrects the mixture without removing the leak, while cooling controls distinguish air and liquid flow', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
-    await page.goto(portable);
+    await page.goto(preview);
     const mixture = await ready(page, 'engine-mixture-feedback');
     await mixture.getByRole('slider', { name: 'Additional unmetered air', exact: true }).fill('10');
     await mixture.getByRole('slider', { name: 'Feedback correction step', exact: true }).fill('1');
@@ -942,7 +1015,7 @@ test('engine feedback corrects the mixture without removing the leak, while cool
 test('PDK selection prepares an unloaded path and transfers drive through controlled clutch states', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
-    await page.goto(portable);
+    await page.goto(preview);
     const pdk = await ready(page, 'pdk-power-path');
     const model = pdk.locator('.diagram-interactive');
     const stage = pdk.getByRole('slider', { name: 'Shift stage', exact: true });
@@ -969,7 +1042,7 @@ test('PDK selection prepares an unloaded path and transfers drive through contro
 test('open differential displays fractional output speeds and respects the weaker tyre torque limit', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
-    await page.goto(portable);
+    await page.goto(preview);
     const figure = await ready(page, 'drivetrain-open-differential');
     const model = figure.locator('.diagram-interactive');
     await figure.getByRole('slider', { name: 'Carrier speed', exact: true }).fill('50');
@@ -991,7 +1064,7 @@ test('open differential displays fractional output speeds and respects the weake
 test('cabin demisting combines the air controls and electrical loads require a complete circuit', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
-    await page.goto(portable);
+    await page.goto(preview);
     const cabin = await ready(page, 'cabin-air-route');
     await cabin.getByRole('button', { name: 'Demisting principle', exact: true }).click();
     const air = cabin.locator('.diagram-interactive');
@@ -1018,7 +1091,7 @@ test('cabin demisting combines the air controls and electrical loads require a c
 test('audio routes enforce their equipment dependencies and system scenarios preserve separate responsibilities', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
-    await page.goto(portable);
+    await page.goto(preview);
     const audio = await ready(page, 'audio-source-path');
     const path = audio.locator('.diagram-interactive');
     assert.equal(await path.getAttribute('data-audio-available'), 'true');
@@ -1047,7 +1120,7 @@ test('audio routes enforce their equipment dependencies and system scenarios pre
 test('suspension illustrations distinguish damping velocity from spring deflection and anti-roll twist', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
-    await page.goto(portable);
+    await page.goto(preview);
     const spring = await ready(page, 'suspension-spring-damper');
     await spring.getByRole('slider', { name: 'Extra spring compression', exact: true }).fill('20');
     const velocity = spring.getByRole('slider', { name: 'Compression velocity', exact: true });
@@ -1077,10 +1150,10 @@ test('suspension illustrations distinguish damping velocity from spring deflecti
 });
 
 test('engine illustrations connect the four strokes, half-speed cams and separate timing/lift changes', async () => {
-  const context = await browser.newContext({ offline: true, viewport: { width: 390, height: 844 } });
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
   try {
     const page = await context.newPage();
-    await page.goto(portable);
+    await page.goto(preview);
     const cycle = await ready(page, 'engine-four-stroke');
     const angle = cycle.getByRole('slider', { name: 'Crankshaft angle', exact: true });
     for (const [degrees, stroke] of [[90, 'intake'], [270, 'compression'], [450, 'power'], [630, 'exhaust']]) {
@@ -1120,7 +1193,7 @@ test('engine illustrations connect the four strokes, half-speed cams and separat
 test('roof illustrations separate opening sequence from drainage and retain clear/blocked states', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
-    await page.goto(portable);
+    await page.goto(preview);
     const opening = await ready(page, 'roof-opening');
     const stage = opening.getByRole('slider', { name: 'Opening stage', exact: true });
     const roof = opening.locator('.diagram-interactive');

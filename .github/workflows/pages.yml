@@ -33,7 +33,7 @@ jobs:
           import { appendFileSync } from 'node:fs';
           appendFileSync(process.env.GITHUB_ENV, `BROWSER_EXECUTABLE_PATH=${chromium.executablePath()}\n`);
           JS
-      - name: Validate types, editions and tests
+      - name: Validate types, Pages build and tests
         run: npm run validate
       - name: Include project license
         run: cp LICENSE dist/site/LICENSE

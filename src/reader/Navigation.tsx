@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import type { Chapter } from '../book/types';
+import { PrintBook } from './PrintBook';
 
 export function sectionsFor(chapter: Chapter) {
   return [...chapter.headings.filter(h=>h.depth===2),...(chapter.noteCount ? [{id:chapter.id+'--notes',title:'Notes and sources',depth:2}] : [])];
@@ -21,6 +22,7 @@ export function ContentsDialog({children,open,onClose}: {children:React.ReactNod
   return <dialog ref={dialog} className="contents-dialog" aria-labelledby="dialog-title" data-ui="" onClose={onClose}
     onClick={e=>{if((e.target as HTMLElement).closest('a') || (e.target===e.currentTarget && e.clientX<e.currentTarget.getBoundingClientRect().left))onClose();}}>
     <div className="dialog-header"><h2 id="dialog-title">Contents</h2><button type="button" data-close-contents onClick={onClose}>Close</button></div>
+    <PrintBook className="print-dialog" onPrepare={onClose}/>
     <div className="dialog-navigation">{children}</div><p className="edition-note">Europe &amp; UK · 2010 2.9-litre baseline</p>
   </dialog>;
 }

@@ -110,15 +110,17 @@ export function useReader(chapters: Chapter[]) {
   useEffect(() => {
     const media = matchMedia('print');
     let saved: [HTMLDetailsElement,boolean][]|null = null;
+    let title='';
     const change = (value: boolean) => {
       if (value && !saved) {
+        title=document.title;document.title='Porsche Boxster 2.9 — Complete book';
         saved=[...document.querySelectorAll<HTMLDetailsElement>('details.chapter-notes, details.technical-detail')].map(e=>[e,e.open]);
         saved.forEach(([e])=>{e.open=true;});
-      } else if (!value && saved) { saved.forEach(([e,open])=>{e.open=open;}); saved=null; }
+      } else if (!value && saved) { saved.forEach(([e,open])=>{e.open=open;}); saved=null;document.title=title; }
     };
     const before=()=>change(true),after=()=>change(false),event=(e:MediaQueryListEvent)=>change(e.matches);
     addEventListener('beforeprint',before);addEventListener('afterprint',after);media.addEventListener('change',event);change(media.matches);
-    return () => { removeEventListener('beforeprint',before);removeEventListener('afterprint',after);media.removeEventListener('change',event);if(saved)saved.forEach(([e,open])=>{e.open=open;}); };
+    return () => { removeEventListener('beforeprint',before);removeEventListener('afterprint',after);media.removeEventListener('change',event);if(saved){saved.forEach(([e,open])=>{e.open=open;});document.title=title;} };
   }, []);
   return {enhanced,active,section,progress,place,size,changeSize,dialogOpen,setDialogOpen};
 }

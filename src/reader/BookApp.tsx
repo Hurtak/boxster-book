@@ -5,6 +5,7 @@ import { BookImage } from '../book/Figure';
 import { ChapterView } from './ChapterView';
 import { ChapterNavigation, ContentsDialog, Pagination, sectionsFor } from './Navigation';
 import { useReader } from './useReader';
+import { PrintBook } from './PrintBook';
 import cover from '../../assets/book-cover.png';
 
 export function BookApp({chapters,assets,assetSizes={}}: {chapters:Chapter[];assets:AssetMap;assetSizes?:AssetSizes}) {
@@ -19,7 +20,7 @@ export function BookApp({chapters,assets,assetSizes={}}: {chapters:Chapter[];ass
       <div className="reader-tools"><div className="type-controls enhanced-only" role="group" aria-label="Reading text size">
         <button type="button" data-text-size="-1" aria-label="Decrease text size" disabled={reader.size!==undefined && reader.size<=17} onClick={()=>reader.changeSize(-1)}>A−</button>
         <button type="button" data-text-size="1" aria-label="Increase text size" disabled={reader.size!==undefined && reader.size>=24} onClick={()=>reader.changeSize(1)}>A+</button>
-      </div><button className="contents-toggle enhanced-only" type="button" aria-haspopup="dialog" onClick={()=>reader.setDialogOpen(true)}>Contents</button>
+      </div><PrintBook className="print-toolbar"/><button className="contents-toggle enhanced-only" type="button" aria-haspopup="dialog" onClick={()=>reader.setDialogOpen(true)}>Contents</button>
       <a className="static-contents" href="#contents">Contents</a></div>
       <div className="reading-bar enhanced-only" aria-hidden="true"><span style={{transform:`scaleX(${reader.progress})`}}/></div>
     </header>
@@ -32,7 +33,7 @@ export function BookApp({chapters,assets,assetSizes={}}: {chapters:Chapter[];ass
           <figure className="cover-illustration"><BookImage src={cover} alt="Dark green Porsche Boxster with tan seats and the roof open, photographed from a low front three-quarter angle against a blue sky" width={1440}/></figure>
           <div className="cover-intro"><p>Understand the car, one system at a time. Start with the 2010 2.9-litre Boxster, then compare its options, other model years and the S, Spyder and Black Edition.</p>
             <div className="cover-actions"><a className="start-reading" href={first ? '#'+first.id : '#title'} data-start-reading hidden={!first}>Start reading <span aria-hidden="true">→</span></a>
-              <a className="continue-reading" href={'#'+reader.place} data-continue-reading hidden={!continued || (continued===first && reader.place===first.id)}><span>Continue reading</span>{continued && `Chapter ${continued.number}: ${continued.title}`}</a></div>
+              <a className="continue-reading" href={'#'+reader.place} data-continue-reading hidden={!continued || (continued===first && reader.place===first.id)}><span>Continue reading</span>{continued && `Chapter ${continued.number}: ${continued.title}`}</a><PrintBook/></div>
             <p className="manuscript-note" data-draft-status>{enhanced ? drafted.length===chapters.length ? `All ${chapters.length} chapters drafted, with illustrations and source notes.` : `${drafted.length} of ${chapters.length} chapters drafted. Other chapters are planned.` : 'An illustrated draft with chapter source notes.'}</p>
           </div>
           <section className="available-chapters enhanced-only" data-written-chapters hidden={!enhanced || !drafted.length}>

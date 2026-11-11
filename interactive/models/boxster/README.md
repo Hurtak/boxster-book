@@ -20,7 +20,7 @@ The full car retains the named `body`, `interior`, `chassis`, `engine`, `gearbox
 
 ## Review and regenerate
 
-Run `npm run preview:model`, then `npm run serve`, and open <http://localhost:8000/model-preview/>. Compare front, rear, side, low-front, cabin and head-on views. Drag to orbit and scroll to zoom. Run `npm test` after editing; it checks the shipped GLB's named subsystems, material colours, finite geometry, size and integration with the book.
+Run `npm run model:preview`, then `npm run build:preview`, and open <http://localhost:8000/model-preview/>. Compare front, rear, side, low-front, cabin and head-on views. Drag to orbit and scroll to zoom. Run `npm test` after editing; it checks the shipped GLB's named subsystems, material colours, finite geometry, size and integration with the book.
 
 ## Revision 3 reference choices
 

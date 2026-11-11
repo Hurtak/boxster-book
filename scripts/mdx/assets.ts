@@ -63,8 +63,8 @@ export async function collectAssets(book:BookInventory):Promise<Map<string,Asset
   }
   return assets;
 }
-export function assetUrls(assets:Map<string,Asset>,prefix?:string):AssetMap{
-  return Object.fromEntries([...assets.values()].map(a=>[a.key,prefix ? prefix+a.name : dataUrl(a.file,a.bytes)]));
+export function assetUrls(assets:Map<string,Asset>,prefix:string):AssetMap{
+  return Object.fromEntries([...assets.values()].map(a=>[a.key,prefix+a.name]));
 }
 export async function inlineCss(css:string,folder:string):Promise<string>{
   if(/@import\s/.test(css))throw Error('Unresolved CSS @import in export; imports must be bundled locally');

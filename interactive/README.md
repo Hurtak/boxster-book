@@ -12,7 +12,7 @@ src/
 scripts/mdx/
   inventory.ts               # Discover chapter/diagram IDs, validate links
   compiler.ts                # Shared MDX rules for Node/browser exports
-  bundler.ts                 # Lazy Vite registry and portable esbuild export
+  bundler.ts                 # Lazy Vite diagram registry and asset manifest
 interactive/
   ui.js                       # Panels, labelled sliders and buttons
   styles.css                  # Responsive controls, static/print fallback
@@ -101,7 +101,7 @@ const assembly = await loadModel(model, signal, import.meta.url);
 // Add to a shared scene3D surface; return its dispose function.
 ```
 
-`import.meta.url` matters in the web build: a model URL is relative to its generated JavaScript chunk. The portable build instead passes embedded model bytes. Keep the model and its loader within the chapter module so the web edition can load them on demand.
+`import.meta.url` resolves a model URL relative to its generated JavaScript chunk. Keep the model and its loader within the chapter module so the Pages build can load them on demand.
 
 The brake example maps a single 0–100 slider onto four authored stops:
 
@@ -114,7 +114,7 @@ The brake example maps a single 0–100 slider onto four authored stops:
 
 Camera poses interpolate smoothly between stops. Node transformations use the slider's absolute value, so scrubbing backwards reassembles the same scene without accumulating movement. Part buttons then focus a selected component; moving the main slider returns to the guided view. Named nodes separate the wheel, disc, pads, complete monobloc caliper, pistons and hub. The caliper body never splits into fictional halves.
 
-The renderer uses demand-based frames, a capped pixel ratio, a generated studio reflection environment, self-shadowing and disposable WebGL surfaces. Reflections supply the green paint and glass finish without adding a photographic background. A 32 MiB cache of recently used model bytes avoids repeated downloads, while each mounted scene gets its own parsed objects. Larger assets still load, but are not retained in this cache. The portable edition also retains its embedded bundle. Component chapters reuse the same reference car and supply their own assembly and explanation. The approximate geometry must not be treated as CAD or a workshop disassembly sequence.
+The renderer uses demand-based frames, a capped pixel ratio, a generated studio reflection environment, self-shadowing and disposable WebGL surfaces. Reflections supply the green paint and glass finish without adding a photographic background. A 32 MiB cache of recently used model bytes avoids repeated downloads, while each mounted scene gets its own parsed objects. Larger assets still load, but are not retained in this cache. Component chapters reuse the same reference car and supply their own assembly and explanation. The approximate geometry must not be treated as CAD or a workshop disassembly sequence.
 
 ## Chapter component explorers
 
@@ -124,16 +124,16 @@ Use the car's coordinate system: **+X left, +Y up, +Z front**, in metres. `creat
 
 The shared viewer handles the 0/30/65/100 stages, perspective framing at each screen width, numbered markers, part focus, connection visibility, native controls and resource cleanup. Part separation is calculated from original positions, so reversing the slider reassembles the same model. The chapter owns spatial relationships and factual limits; the renderer supplies no mechanical simulation. Models and controller descriptions distinguish the standard 2010 2.9 from options such as PDK.
 
-Run `npm run posters` after changing a procedural model or its configuration. It uses local Chrome (or `BROWSER_EXECUTABLE_PATH`) to render each exploded assembly and writes its `poster.svg`, including an embedded PNG, a vehicle location map, vector part labels and a summary. Render one model with `npm run posters -- engine-explorer`. The normal book build uses those checked-in posters and needs no browser for rendering them. Interactive fallbacks remain beside their module; standalone chapter illustrations and photographs belong in `images/`.
+Run `npm run model:posters` after changing a procedural model or its configuration. It uses local Chrome (or `BROWSER_EXECUTABLE_PATH`) to render each exploded assembly and writes its `poster.svg`, including an embedded PNG, a vehicle location map, vector part labels and a summary. Render one model with `npm run model:posters -- engine-explorer`. The normal book build uses those checked-in posters and needs no browser for rendering them. Interactive fallbacks remain beside their module; standalone chapter illustrations and photographs belong in `images/`.
 
 ## Build and delivery
 
-- `npm run models` regenerates the two sample GLBs. Regenerate only when changing their geometry sources.
-- `npm run posters` regenerates the fourteen procedural component illustrations from their chapter models.
-- `npm run preview:model` regenerates the models and builds a full-size inspection viewer at `dist/model-preview/`. Serve `dist/` with `npm run serve`; its camera presets support front, rear, side and cabin comparisons.
-- `npm run build` makes one portable offline HTML file. All interactive code and models are embedded, so its size grows with the whole book.
-- `npm run build:web` produces `dist/web/book.html` with hashed code chunks and GLBs in `book-assets/`. Serve the directory over HTTP. Only diagrams near the viewport are mounted; their code and model assets load when needed.
-- `npm test` runs the tests against already-built editions, exercising the real browser interfaces and shipped GLB.
-- `npm run validate` checks TypeScript, rebuilds the portable, web and Pages editions, then runs all tests. CI uses this command.
+- `npm run model:generate` regenerates the two sample GLBs. Regenerate only when changing their geometry sources.
+- `npm run model:posters` regenerates the fourteen procedural component illustrations from their chapter models.
+- `npm run model:preview` regenerates the models and builds a full-size inspection viewer at `dist/model-preview/`. Serve `dist/` with `npm run build:preview`; its camera presets support front, rear, side and cabin comparisons.
+- `npm run build` produces the sole Pages edition at `dist/site/index.html` with hashed chunks, images and GLBs in `index-assets/`. Preview it with `npm run build:preview` at `/site/`. Only diagrams near the viewport are mounted; their code and model assets load when needed.
+- The reader’s Print whole book action exports all chapters through the browser, using every static poster. There is no separate PDF build.
+- `npm test` runs the tests against the existing Pages build, exercising the real browser interfaces and shipped GLB.
+- `npm run validate` checks TypeScript, builds the Pages edition, then runs all tests. CI uses this command.
 
-React, D3 and Three.js are bundled locally; reading uses no CDN or external model service. Vite supplies the development server and HTTP builds. The portable export keeps esbuild for its IIFE/binary-model path, and the model preview/poster tools also still use esbuild. The former imperative reader and Pandoc builder are retired. Add tests for new calculations or meaningful interaction contracts; retain browser checks for loading, fallbacks and a narrow reading column.
+React, D3 and Three.js are bundled locally; reading uses no CDN or external model service. Vite supplies the development server and HTTP builds. The model preview and poster authoring tools still use esbuild; the book itself uses Vite. The former imperative reader and Pandoc builder are retired. Add tests for new calculations or meaningful interaction contracts; retain browser checks for loading, fallbacks and a narrow reading column.

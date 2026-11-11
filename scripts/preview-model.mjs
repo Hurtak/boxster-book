@@ -56,4 +56,4 @@ button[aria-pressed=true]{background:#141414;color:white}#stage{height:calc(100v
 <button data-view="front">Front</button><button data-view="rear">Rear</button><button data-view="side">Side</button><button data-view="low">Low front</button><button data-view="cabin">Cabin</button><button data-view="headOn">Head on</button>
 </nav></header><main id="stage"></main><script type="module" src="viewer.js"></script></html>`
 );
-console.log('Model inspection: serve dist/ and open /model-preview/');
+console.log('Model inspection: run npm run build:preview and open /model-preview/');

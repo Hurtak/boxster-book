@@ -90,7 +90,7 @@ test('a failed book build leaves the previously successful export intact',async(
     assert.ok(!(await readdir(folder)).some(n=>n.startsWith('.book-build-')));
   });
 });
-test('portable assets embed nested local resources and reject unresolved network dependencies',async()=>{
+test('book assets embed nested local resources and reject unresolved network dependencies',async()=>{
   await fixture({'photo.png':'image bytes','nested.svg':'<svg xmlns="http://www.w3.org/2000/svg"><image href="photo.png" /></svg>','remote.svg':'<svg><image href="https://example.com/image.png" /></svg>','circular.svg':'<svg><image href="circular.svg" /></svg>'},async folder=>{
     assert.match((await resourceBytes(resolve(folder,'nested.svg'))).toString(),/data:image\/png;base64/);
     assert.match(await inlineCss('body{background:url("photo.png")}',folder),/data:image\/png;base64/);
