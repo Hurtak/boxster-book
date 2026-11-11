@@ -165,7 +165,7 @@ export function rearDetails(parent: THREE.Object3D, p: Palette, surface: ShellSu
   }
 }
 
-// The photographed registration is modelled as geometry; no photograph/background is baked in.
+// Registration lettering is modelled as geometry; no photograph/background is baked in.
 function plate(parent: THREE.Object3D, p: Palette, root: THREE.Object3D<THREE.Object3DEventMap>) {
   rounded(root, [0.538, 0.12, 0.009], p.black, [0, 0, 0], 0.009);
   rounded(root, [0.516, 0.108, 0.006], p.white, [0, 0, 0.006], 0.006);
@@ -198,22 +198,15 @@ function plate(parent: THREE.Object3D, p: Palette, root: THREE.Object3D<THREE.Ob
         [0.8, 0],
       ],
     ],
-    T: [
+    1: [
       [
-        [0, 1],
-        [0.8, 1],
-      ],
-      [
+        [0.15, 0.8],
         [0.4, 1],
         [0.4, 0],
       ],
-    ],
-    Z: [
       [
-        [0, 1],
-        [0.8, 1],
-        [0, 0],
-        [0.8, 0],
+        [0.05, 0],
+        [0.75, 0],
       ],
     ],
     8: [
@@ -246,16 +239,18 @@ function plate(parent: THREE.Object3D, p: Palette, root: THREE.Object3D<THREE.Ob
         [0.15, 0],
       ],
     ],
-    5: [
+    9: [
       [
-        [0.78, 1],
-        [0, 1],
-        [0, 0.54],
-        [0.63, 0.54],
-        [0.78, 0.4],
-        [0.78, 0.12],
+        [0.78, 0.5],
+        [0.15, 0.5],
+        [0, 0.62],
+        [0, 0.87],
+        [0.15, 1],
+        [0.64, 1],
+        [0.78, 0.87],
+        [0.78, 0.16],
         [0.64, 0],
-        [0, 0],
+        [0.1, 0],
       ],
     ],
     7: [
@@ -266,10 +261,10 @@ function plate(parent: THREE.Object3D, p: Palette, root: THREE.Object3D<THREE.Ob
       ],
     ],
   };
-  const characters = '2TZ8057';
+  const characters = '98722010';
   for (let i = 0; i < characters.length; i++)
     for (const stroke of glyphs[characters[i]]) {
-      const x = -0.184 + i * 0.06 + (i >= 3 ? 0.015 : 0);
+      const x = -0.184 + i * 0.0515 + (i >= 3 ? 0.015 : 0);
       // Straight stroke segments preserve the narrow registration-letter proportions.
       for (let j = 0; j < stroke.length - 1; j++) {
         const a = new THREE.Vector3(x + stroke[j][0] * 0.044, -0.035 + stroke[j][1] * 0.071, 0.013);
