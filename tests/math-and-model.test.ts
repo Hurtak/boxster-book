@@ -171,6 +171,31 @@ test('the photo-guided car keeps the complete book interface and valid detailed 
     JSON.stringify(dimensions),
   );
 });
+test('the upper front bumper has a convex painted face without a recessed ring above the plate', async () => {
+  const source = await readFile(new URL('../interactive/models/reference-car.glb', import.meta.url));
+  const { scene } = await new GLTFLoader().parseAsync(
+    source.buffer.slice(source.byteOffset, source.byteOffset + source.byteLength),
+    '',
+  );
+  scene.updateMatrixWorld(true);
+  const shell = modelPart(scene, 'body-shell');
+  const depth = (x: number, y: number) => {
+    const hit = new Raycaster(new Vector3(x, y, 3), new Vector3(0, 0, -1)).intersectObject(shell)[0];
+    assert.ok(hit, `Missing painted front-bumper surface at ${x}, ${y}`);
+    return hit.point.z;
+  };
+  // The photos show a continuous convex panel between the bonnet and plate.
+  // A reverse vertical curve here makes the studio reflection form a dented ring.
+  for (const x of [-0.3, -0.15, 0, 0.15, 0.3]) {
+    for (const y of [0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58]) {
+      const indentation = (depth(x, y - 0.01) + depth(x, y + 0.01)) / 2 - depth(x, y);
+      assert.ok(
+        indentation < 0.0001,
+        `Concave bumper at x=${x}, y=${y}: ${(indentation * 1000).toFixed(3)} mm behind its neighbours`,
+      );
+    }
+  }
+});
 test('the shipped car has smooth lid centrelines and proportioned mirrored lamps and seat hoops', async () => {
   const source = await readFile(new URL('../interactive/models/reference-car.glb', import.meta.url));
   const { scene } = await new GLTFLoader().parseAsync(

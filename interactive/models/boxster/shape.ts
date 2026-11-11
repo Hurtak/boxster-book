@@ -167,7 +167,9 @@ const noseProfile = roundLidCorner(
   [
     [0, 0.605, 2.005],
     [0.1, 0.565, 2.085],
-    [0.22, 0.48, 2.115],
+    // Keep this panel convex: recessing the station creates an S-bend whose
+    // reflected highlight closes into a dented ring above the number plate.
+    [0.22, 0.48, 2.14],
     [0.38, 0.415, 2.16],
     [0.5, 0.35, 2.175],
     [0.68, 0.26, 2.17],
