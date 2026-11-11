@@ -1,74 +1,123 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 990" role="img" aria-labelledby="title desc" font-family="sans-serif">
-  <title id="title">Permanent rollover structure around two side-by-side seats</title>
-  <desc id="desc">For the MY2010 Boxster 987.2, a side schematic locates the steel-reinforced metal windscreen frame ahead of a seat and a fixed high-strength steel rear bar behind it. Glass is separate from the reinforced frame. A transverse view looking rearwards shows the two rear bars and two seats side by side, with the bars continuing into the body structure and the upper belt anchorages attached to them. Grey seats and headrests are distinct from the green steel structure; trim covers and the hood are omitted. Connections and belt anchorage positions are schematic, not mounting coordinates. The structure is permanently present, with no pop-up extension. Neither view predicts rollover clearance, structural loads or a crash outcome.</desc>
-  <rect width="600" height="990" rx="14" fill="#f5f7f2"/>
-  <g fill="#173f32">
-    <text x="24" y="42" font-size="30" font-weight="bold">Permanent rollover structure</text>
-    <text x="24" y="77" font-size="24" fill="#536f61">MY2010 Boxster 987.2 · no pop-up bars</text>
-  </g>
-  <path d="M24 98H576 M24 482H576" stroke="#cbd7ce" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1190" role="img" aria-labelledby="title desc" font-family="sans-serif">
+  <title id="title">Permanent rollover structure around the Boxster's two seats</title>
+  <desc id="desc">The 2010 European and UK Boxster 987.2 2.9 has a reinforced windscreen frame in front of its seats and a fixed, joined steel rollover frame behind them. In the side cutaway, the front of the car is to the left. Blue glazing is separate from the green reinforced frame; the full reclining seat back includes its head restraint. The across-car view looks rearwards: two low, rounded hoops follow the seat-back profiles, meet through a shaped central connection and extend into splayed outer mounting webs and feet. The seat backs are in front of this structure, concealing parts of it. Orange upper belt guides are separate fittings attached to the outer sides of the rear frame. Grey body supports, simplified openings and mounting positions give context, not repair dimensions. Trim, hood and wind deflector are omitted. The bars do not pop up. The source-guided profiles are approximate and predict neither rollover clearance nor a crash outcome.</desc>
+  <defs>
+    <marker id="front-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L7 3.5L0 7Z" fill="#536f61"/>
+    </marker>
+    <g id="front-seat" fill="#cbd2ca" stroke="#809184" stroke-width="2.5" stroke-linejoin="round">
+      <!-- The head restraint is the continuous upper part of the backrest. -->
+      <path d="M124 913V817Q124 776 147 747Q160 732 161 701Q161 675 189 675Q215 675 219 700L222 722Q223 735 233 747Q258 775 260 817V913Z"/>
+      <path d="M163 741Q189 729 218 742L232 830Q233 849 217 852H162Q147 850 149 832Z" fill="#b7c3b8" stroke="#92a294" stroke-width="2"/>
+      <path d="M167 730Q190 724 214 732M147 764Q134 817 145 894M233 764Q250 817 240 894" fill="none" stroke="#96a599" stroke-width="2"/>
+      <path d="M128 898Q190 886 252 898L264 916Q268 932 249 932H132Q114 932 119 917Z" fill="#b7c3b8"/>
+      <path d="M145 908Q190 901 237 908M137 943H247" fill="none" stroke="#819487" stroke-width="4"/>
+    </g>
+  </defs>
+  <rect width="600" height="1190" rx="14" fill="#f5f7f2"/>
+  <text x="24" y="42" font-size="30" font-weight="bold" fill="#173f32">Permanent rollover structure</text>
+  <text x="24" y="77" font-size="24" fill="#536f61">2010 Boxster 2.9 · fixed steel protection</text>
+  <path d="M24 99H576M24 535H576" stroke="#cbd7ce" stroke-width="2"/>
 
-  <!-- One lateral position only: the second seat/bar is beside it, not behind it. -->
-  <text x="24" y="131" font-size="24" fill="#536f61">SIDE · one seat and one bar shown</text>
-  <g font-size="27" fill="#173f32">
-    <text x="24" y="172">Reinforced metal</text>
-    <text x="24" y="204">windscreen frame</text>
-    <text x="353" y="172">High-strength</text>
-    <text x="353" y="204">fixed steel bar</text>
-  </g>
-  <g fill="none" stroke="#899e92" stroke-width="2.5">
-    <path d="M190 215L234 240"/>
-    <path d="M438 214L422 259"/>
+  <g id="side-cutaway">
+    <text x="24" y="134" font-size="24" fill="#536f61">SIDE CUTAWAY · one seat shown</text>
+    <g font-size="25" fill="#173f32">
+      <text x="24" y="178">Reinforced frame</text>
+      <text x="371" y="178">Fixed rear frame</text>
+    </g>
+    <g fill="none" stroke="#899e92" stroke-width="2.5">
+      <path d="M201 188L244 238M456 188L426 250"/>
+    </g>
+    <text x="76" y="228" text-anchor="middle" font-size="23" fill="#536f61">Front</text>
+    <path d="M111 246H45" fill="none" stroke="#536f61" stroke-width="2.5" marker-end="url(#front-arrow)"/>
+
+    <!-- A cropped cabin, with the near door removed to reveal the full seat. -->
+    <path d="M39 376Q88 359 151 354L169 350L203 360H239M448 350Q495 347 554 371" fill="none" stroke="#a9b9ad" stroke-width="3"/>
+    <path d="M42 424Q128 412 176 416H439L458 403L554 418V452H42Z" fill="#e1e8df" stroke="#9bae9d" stroke-width="2.5"/>
+    <path d="M84 443H530M435 350V439" fill="none" stroke="#9bae9d" stroke-width="8"/>
+    <path d="M172 355Q204 347 239 361L232 378H182Z" fill="#dce4db" stroke="#a9b9ad" stroke-width="2"/>
+
+    <!-- The glass adjoins the raked metal frame; it is not structural steel. -->
+    <path d="M176 349L249 248L241 245L166 349Z" fill="#bed8e2" stroke="#79a8bc" stroke-width="2"/>
+    <path d="M157 439L164 361L238 246Q246 233 259 235L269 238" fill="none" stroke="#1d6550" stroke-width="13" stroke-linejoin="round"/>
+    <path d="M166 357L240 246" fill="none" stroke="#5b947b" stroke-width="3"/>
+
+    <!-- Side projection of the fixed rear assembly and its splayed lower support. -->
+    <path d="M443 437L424 355L418 271Q417 251 426 250Q435 251 435 270L441 350" fill="none" stroke="#1d6550" stroke-width="14" stroke-linejoin="round"/>
+    <path d="M425 353L419 426H441Z" fill="#77a18a" stroke="#1d6550" stroke-width="2.5"/>
+    <path d="M420 435H452" stroke="#1d6550" stroke-width="7"/>
+
+    <!-- Ordinary seat: a full back, integral head restraint, cushion and runners. -->
+    <path d="M329 415Q344 378 355 343L373 275Q376 257 387 260Q398 261 398 275L391 317Q381 360 365 410L357 427Z" fill="#cbd2ca" stroke="#809184" stroke-width="2.5"/>
+    <path d="M347 404L365 348L382 282" fill="none" stroke="#9bab9b" stroke-width="7" stroke-linecap="round"/>
+    <path d="M274 405Q308 397 342 405L357 413L351 429H276Q266 427 267 418Z" fill="#b7c3b8" stroke="#809184" stroke-width="2.5"/>
+    <path d="M280 436H352" stroke="#819487" stroke-width="5"/>
+    <path d="M280 440V445M349 440V445" stroke="#819487" stroke-width="4"/>
+
+    <text x="26" y="317" font-size="25" fill="#306b95">Glass</text>
+    <path d="M101 310L204 309" fill="none" stroke="#899e92" stroke-width="2.5"/>
+    <text x="300" y="484" text-anchor="middle" font-size="24" fill="#173f32">Full seat back with integral head restraint</text>
+    <path d="M371 459L365 399" fill="none" stroke="#899e92" stroke-width="2.5"/>
+    <text x="300" y="518" text-anchor="middle" font-size="23" fill="#536f61">Frame and rear assembly attach to the body</text>
   </g>
 
-  <!-- Body and supports are conceptual continuities, without fastener geometry. -->
-  <path d="M42 407V380L113 352H177L190 367H458L484 353L553 374V407Z" fill="#e0e9e1" stroke="#739181" stroke-width="3"/>
-  <path d="M64 400H535" stroke="#739181" stroke-width="12"/>
-  <path d="M171 401L177 354L238 238H260" fill="none" stroke="#1d6550" stroke-width="15" stroke-linejoin="round"/>
-  <path d="M189 347L245 253" stroke="#93bdcf" stroke-width="9"/>
-  <path d="M421 400L416 277Q415 258 427 258" fill="none" stroke="#1d6550" stroke-width="17" stroke-linecap="round"/>
-  <path d="M307 354L346 351L333 308" fill="none" stroke="#a6b7a9" stroke-width="22" stroke-linejoin="round" stroke-linecap="round"/>
-  <rect x="316" y="271" width="33" height="42" rx="12" fill="#a6b7a9"/>
-  <text x="25" y="303" font-size="27" fill="#306b95">Glass</text>
-  <path d="M105 297L211 309" fill="none" stroke="#899e92" stroke-width="2.5"/>
-  <text x="25" y="451" font-size="27" fill="#173f32">Frame and bars connect to the body</text>
-  <g fill="none" stroke="#899e92" stroke-width="2.5">
-    <path d="M173 423V406 M422 423V409"/>
-  </g>
-  <text x="493" y="338" text-anchor="middle" font-size="24" fill="#536f61">← Front</text>
+  <g id="rearward-view">
+    <text x="24" y="573" font-size="24" fill="#536f61">ACROSS THE CAR · looking rearwards</text>
+    <text x="300" y="612" text-anchor="middle" font-size="25" fill="#173f32">Two shaped hoops in one joined frame</text>
 
-  <!-- Transverse view resolves the side-by-side occupant/bar arrangement. -->
-  <text x="24" y="522" font-size="24" fill="#536f61">ACROSS THE CAR · looking rearwards</text>
-  <text x="300" y="559" text-anchor="middle" font-size="27" fill="#173f32">Two seats and bars, side by side</text>
-  <text x="300" y="603" text-anchor="middle" font-size="26" fill="#173f32">Upper belt anchorages on the bars</text>
-  <path d="M74 786V764Q74 751 88 751H512Q526 751 526 764V811H74Z" fill="#e0e9e1" stroke="#739181" stroke-width="3"/>
-  <path d="M93 792H507" stroke="#739181" stroke-width="14"/>
-  <g stroke="#1d6550" stroke-width="17" fill="none" stroke-linejoin="round">
-    <path d="M113 795V670Q113 635 148 635H212Q247 635 247 670V795"/>
-    <path d="M353 795V670Q353 635 388 635H452Q487 635 487 670V795"/>
+    <!-- The factory drawing's broad outer supports and feet sit below the trim. -->
+    <path d="M54 933L81 908H519L546 933V961H54Z" fill="#e1e8df" stroke="#9bae9d" stroke-width="2.5"/>
+    <g fill="#77a18a" stroke="#1d6550" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M120 778L83 899H151L136 819Z"/>
+      <path d="M480 778L517 899H449L464 819Z"/>
+    </g>
+    <g fill="#f5f7f2" stroke="#487f67" stroke-width="2">
+      <path d="M103 855Q106 849 112 850L131 853Q136 854 136 860Q136 866 130 866L108 864Q101 863 103 855Z"/>
+      <path d="M497 855Q494 849 488 850L469 853Q464 854 464 860Q464 866 470 866L492 864Q499 863 497 855Z"/>
+    </g>
+    <g fill="none" stroke="#1d6550" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M70 932Q82 861 108 796L124 747L130 708Q135 674 158 663Q184 651 205 660Q238 670 246 700L254 734Q257 744 272 748L289 754Q300 758 311 754L328 748Q343 744 346 734L354 700Q362 670 395 660Q416 651 442 663Q465 674 470 708L476 747L492 796Q518 861 530 932" stroke-width="17"/>
+      <path d="M132 737Q192 741 254 760M346 760Q408 741 468 737M124 752L153 902M476 752L447 902" stroke-width="10"/>
+      <path d="M59 935H85M141 905H164M515 935H541M436 905H459" stroke-width="7"/>
+    </g>
+
+    <!-- Seats are in front of the structure and correctly hide its inner regions. -->
+    <use href="#front-seat"/>
+    <use href="#front-seat" transform="translate(216 0)"/>
+
+    <!-- Separate upper belt-guide fittings, not enlargements of the steel hoop. -->
+    <g fill="#f2dfb9" stroke="#a66c32" stroke-width="3" stroke-linejoin="round">
+      <path d="M105 753Q98 752 96 760L94 771Q94 778 101 779L114 781Q121 781 123 773L125 762Q126 756 118 755Z"/>
+      <path d="M495 753Q502 752 504 760L506 771Q506 778 499 779L486 781Q479 781 477 773L475 762Q474 756 482 755Z"/>
+    </g>
+    <g fill="none" stroke="#a66c32" stroke-width="3" stroke-linecap="round">
+      <path d="M102 766L117 769M498 766L483 769M107 781L105 807M493 781L495 807"/>
+    </g>
+    <g stroke="#f5f7f2" stroke-width="2" font-size="19" font-weight="bold" text-anchor="middle">
+      <circle cx="83" cy="746" r="15" fill="#a66c32"/>
+      <circle cx="68" cy="854" r="15" fill="#1d6550"/>
+      <g fill="#fff" stroke="none">
+        <text x="83" y="753">1</text>
+        <text x="68" y="861">2</text>
+      </g>
+    </g>
+    <path d="M94 755L102 761M82 856L99 861" fill="none" stroke="#899e92" stroke-width="2"/>
+    <text x="300" y="997" text-anchor="middle" font-size="23" fill="#536f61">Seats sit in front of the rear steel assembly</text>
   </g>
-  <g fill="#a6b7a9" stroke="#7b9283" stroke-width="2">
-    <rect x="154" y="680" width="52" height="54" rx="15"/>
-    <path d="M131 783V753Q131 729 155 729H205Q229 729 229 753V783Z"/>
-    <rect x="394" y="680" width="52" height="54" rx="15"/>
-    <path d="M371 783V753Q371 729 395 729H445Q469 729 469 753V783Z"/>
+
+  <g font-size="24" fill="#173f32">
+    <circle cx="40" cy="1034" r="15" fill="#a66c32"/>
+    <circle cx="40" cy="1073" r="15" fill="#1d6550"/>
+    <g fill="#fff" font-size="19" font-weight="bold" text-anchor="middle">
+      <text x="40" y="1041">1</text>
+      <text x="40" y="1080">2</text>
+    </g>
+    <text x="68" y="1042">Upper belt guides attached to the frame</text>
+    <text x="68" y="1081">Outer mounting webs and feet</text>
   </g>
-  <g fill="#ae7039" stroke="#f5f7f2" stroke-width="3">
-    <circle cx="113" cy="698" r="10"/>
-    <circle cx="487" cy="698" r="10"/>
-  </g>
-  <g fill="none" stroke="#899e92" stroke-width="2.5">
-    <path d="M101 614L93 654L109 687"/>
-    <path d="M499 614L507 654L491 687"/>
-  </g>
-  <g font-size="27" fill="#173f32">
-    <rect x="25" y="840" width="28" height="19" rx="4" fill="#a6b7a9"/>
-    <text x="68" y="861">Seats and headrests</text>
-    <path d="M26 889H53" stroke="#1d6550" stroke-width="12"/>
-    <text x="68" y="899">Steel structure; trim omitted</text>
-  </g>
+  <path d="M24 1104H576" stroke="#cbd7ce" stroke-width="2"/>
   <g font-size="22" fill="#536f61" text-anchor="middle">
-    <text x="300" y="945">Connections and belt anchors schematic.</text>
-    <text x="300" y="975">No loads or rollover clearance predicted.</text>
+    <text x="300" y="1141">Trim and hood omitted · profiles approximate</text>
+    <text x="300" y="1173">No rollover clearance or crash outcome predicted</text>
   </g>
 </svg>

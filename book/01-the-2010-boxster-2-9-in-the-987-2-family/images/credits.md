@@ -23,3 +23,7 @@ The following are genuine Porsche period photographs extracted from the original
 ## Factory parts-reference excerpts
 
 The sixteen full-page PNGs in [`../part-reference/`](../part-reference/README.md) are Porsche-authored PET drawings and application tables, catalogue **987209 / P33**, snapshot **19 July 2018**. They were rendered without cropping or alteration from the [independently hosted factory PDF](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). The reference README records every file, original PDF page, plate, item and applicability limit, together with the PDF hash. Porsche retains the original copyright; these excerpts are not MIT-licensed book artwork. They support the assembly audit rather than replacing dated sales publications or the book's explanatory schematics.
+
+## `family-layout.svg` proportion review
+
+The original book artwork was redrawn on **11 November 2026** using the UK brochure's body length, wheelbase and standard 2.9 tyre sizes, contemporary Porsche profile photographs and PET drive-unit drawings. The [refinement record](../part-reference/family-layout-refinement/provenance.md) identifies the source pages, comparison-model photographs, retained excerpts and limits of the internal cutaway. Those reference excerpts retain Porsche's rights; the redrawn explanatory SVG is original project artwork.

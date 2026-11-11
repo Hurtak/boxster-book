@@ -1,72 +1,130 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="865" viewBox="0 0 600 865" role="img" aria-labelledby="title desc">
 <title id="title">Boxster mid-engine packaging and rear-wheel drive</title>
-<desc id="desc">Schematic side view of an open two-seat roadster facing left. Front luggage is ahead of the cabin; the engine is behind the seats and ahead of the rear axle. The transaxle is behind the engine, below the rear luggage area. Dashed lines locate the front and rear axles. A separate functional diagram shows engine torque passing through the transaxle, which combines the gearbox, final drive and differential, then through two driveshafts to the rear wheels. Component shapes, positions and routes are illustrative, not to scale.</desc>
+<desc id="desc">Photo-guided side cutaway of the 2010 European/UK Boxster 987.2 2.9, facing left, with its roof lowered. Body length, wheelbase and nominal standard 17-inch wheel and tyre diameters share one scale. The long low nose, raked windscreen, shaped seat with integrated head restraint, fixed rear roll hoop and curved rear deck follow contemporary Porsche photographs. Front luggage is ahead of the two-seat cabin. The low flat-six engine sits immediately behind the seats, ahead of the rear axle; the manual transaxle extends rearwards below the rear luggage compartment. The body and rear wheel are transparent to reveal this arrangement. Internal outlines and installation positions are simplified, not factory CAD. A separate connection diagram traces torque from engine through gearbox, final drive and differential to both rear wheels.</desc>
 <defs>
   <marker id="family-layout-torque" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#176b53"/></marker>
+  <linearGradient id="family-layout-body" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#dce6dd"/><stop offset="1" stop-color="#bdcfc1"/></linearGradient>
+  <g id="family-layout-rim">
+    <circle r="27.05" fill="#e5eae6" stroke="#6a7b72" stroke-width="1.5"/>
+    <circle r="22.8" fill="#76877d"/>
+    <circle r="17.3" fill="#b1beb5" stroke="#899b90" stroke-width="1"/>
+    <g fill="#e5eae6" stroke="#b6c2b9" stroke-width=".5">
+      <path id="family-layout-spoke" d="M-4-5-5.5-23-2-25-1-6ZM1-6 2-25 5.5-23 4-5Z"/>
+      <use href="#family-layout-spoke" transform="rotate(72)"/><use href="#family-layout-spoke" transform="rotate(144)"/><use href="#family-layout-spoke" transform="rotate(216)"/><use href="#family-layout-spoke" transform="rotate(288)"/>
+    </g>
+    <circle r="6.5" fill="#d3ddd5" stroke="#6a7b72"/>
+    <g fill="#64796b"><circle cy="-4.6" r=".9"/><circle cx="4.4" cy="-1.4" r=".9"/><circle cx="2.7" cy="3.7" r=".9"/><circle cx="-2.7" cy="3.7" r=".9"/><circle cx="-4.4" cy="-1.4" r=".9"/></g>
+  </g>
 </defs>
 <rect width="600" height="865" rx="10" fill="#f4f7f3"/>
 <g font-family="sans-serif" fill="#263d34">
   <text x="28" y="43" font-size="30" font-weight="bold">Mid-engine, rear-wheel drive</text>
-  <text x="28" y="80" font-size="25">Side view · front ←</text>
-
+  <text x="28" y="80" font-size="25">2010 2.9 manual · front ←</text>
   <g font-size="27">
     <text x="29" y="130">Front<tspan x="29" dy="31">luggage</tspan></text>
-    <text x="204" y="130">Two seats</text>
-    <text x="431" y="130">Rear<tspan x="431" dy="31">luggage</tspan></text>
+    <text x="215" y="130">Two seats</text>
+    <text x="436" y="130">Rear<tspan x="436" dy="31">luggage</tspan></text>
   </g>
-  <g fill="none" stroke="#647d6a" stroke-width="2">
-    <path d="M105 171V259"/>
-    <path d="M264 141V225"/>
-    <path d="M519 171V249"/>
+  <g fill="none" stroke="#647d6a" stroke-width="1.8">
+    <path d="M126 171V286"/><path d="M294 143V209L357 250"/><path d="M530 171V287"/>
   </g>
 
-  <!-- Low bonnet, raked screen, open cockpit and rear deck: no roof over the seats. -->
-  <path d="M26 315 31 282Q39 259 79 251L180 240 205 231 285 231Q313 239 333 240L500 242Q549 247 571 279L576 315Z" fill="#d4dfd5" stroke="#3c5e4d" stroke-width="3"/>
-  <path d="M181 240 222 178 232 178" fill="none" stroke="#3c5e4d" stroke-width="5" stroke-linecap="round"/>
-  <path d="M233 235 242 252M244 241 252 233" fill="none" stroke="#536c5d" stroke-width="5" stroke-linecap="round"/>
-  <path d="M274 215 280 263 255 263" fill="none" stroke="#536c5d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M293 235V216Q293 203 305 203T317 216V237" fill="none" stroke="#536c5d" stroke-width="5"/>
-  <path d="M203 281H288L298 244" fill="none" stroke="#a4b6a8" stroke-width="2"/>
-  <g>
-    <circle cx="112" cy="320" r="37" fill="#263d34"/><circle cx="112" cy="320" r="21" fill="#a4b6a8"/>
-    <circle cx="470" cy="320" r="37" fill="#263d34"/><circle cx="470" cy="320" r="21" fill="#a4b6a8"/>
+  <!-- Body 544 units / wheelbase 302.57 units = UK 4342 / 2415 mm.
+       Axle placement within the overhangs and the open profile are photo-guided.
+       Nominal 205/55 R17 and 235/50 R17 tyre diameters; not loaded radii. -->
+  <path d="M28 333C28 321 39 313 48 306C67 293 90 286 116 280C141 273 163 272 183 275L236 280C284 282 334 283 365 278C383 271 403 267 428 269C477 269 512 274 540 288C558 296 568 306 571 321L572 346Q568 358 554 362L513.57 366V347A46 46 0 0 0 421.57 347V366H210V347A45 45 0 0 0 120 347V366L57 359Q35 354 29 345Z" fill="url(#family-layout-body)" fill-opacity=".72" stroke="#3c5e4d" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Luggage cavities follow the brochure's front well and shallow rear space. -->
+  <path d="M78 295Q119 285 198 288L211 303 200 332H97L82 322Z" fill="#a8c3b1" fill-opacity=".75" stroke="#6d907b" stroke-width="1.5"/>
+  <path d="M88 297Q132 291 198 294M95 319H202" fill="none" stroke="#e1ebe3" stroke-width="2"/>
+  <path d="M485 282Q521 283 550 297L548 315 492 313 483 302Z" fill="#a8c3b1" fill-opacity=".8" stroke="#6d907b" stroke-width="1.5"/>
+  <path d="M492 289Q521 290 544 300" fill="none" stroke="#e1ebe3" stroke-width="2"/>
+  <!-- Open cockpit: one side projection of the two side-by-side seats/hoops. -->
+  <path d="M234 279 284 226Q289 223 295 227L244 280Z" fill="#c7dedc" stroke="#3c5e4d" stroke-width="2.2"/>
+  <path d="M284 226 299 228M235 280 247 281" fill="none" stroke="#3c5e4d" stroke-width="4" stroke-linecap="round"/>
+  <path d="M247 283Q269 279 287 289L294 304 248 300Z" fill="#8c9e90" stroke="#536c5d" stroke-width="1.5"/>
+  <ellipse cx="284" cy="293" rx="5.5" ry="12" transform="rotate(31 284 293)" fill="none" stroke="#3c5143" stroke-width="3"/>
+  <path d="M289 300 299 313" stroke="#3c5143" stroke-width="3"/>
+  <path d="M312 342Q309 337 315 333L338 329 353 282 355 254Q354 244 362 242Q373 240 375 250L374 272 364 315 359 338Q356 348 344 348Z" fill="#a4afa2" stroke="#536c5d" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M359 253Q366 250 370 254L367 269 360 270ZM351 284 342 321M317 337 343 339 356 328" fill="none" stroke="#dce4d9" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M316 352H356M324 348V352M350 348V352" fill="none" stroke="#64776a" stroke-width="2"/>
+  <path d="M379 276 379 252Q378 240 387 239Q397 240 397 252V275" fill="none" stroke="#536c5d" stroke-width="5" stroke-linecap="round"/>
+  <path d="M383 273V253Q382 245 387 245Q392 245 392 253V272" fill="none" stroke="#dde6dd" stroke-width="1.5"/>
+  <path d="M397 277Q413 272 435 276" fill="none" stroke="#536c5d" stroke-width="2.2"/>
+  <!-- Flat-six silhouette: low head/bank, sump, intake and front accessory face.
+       Case contours/ribs are assembly cues, not an internal section or exact fit. -->
+  <g stroke="#176b53" stroke-linejoin="round">
+    <path d="M386 310 393 305H435L445 316V341L436 351H395L385 342Z" fill="#347e62" stroke-width="1.8"/>
+    <path d="M396 345H434L431 354H400Z" fill="#246b50" stroke-width="1.5"/>
+    <path d="M391 315H436V337H391Z" fill="#5d987b" stroke-width="1.5"/>
+    <path d="M396 318V334M410 318V334M424 318V334M394 337H434" fill="none" stroke="#bad2bf" stroke-width="1.5"/>
+    <path d="M394 307V297Q402 291 409 298V306M412 306V297Q420 291 427 298V306M430 308V300Q435 296 439 303V313" fill="none" stroke="#347e62" stroke-width="6"/>
+    <path d="M398 296H428" stroke="#176b53" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="386" cy="331" rx="4" ry="10" fill="#a4bca9" stroke-width="1.7"/>
+    <circle cx="385" cy="332" r="2" fill="#176b53"/>
   </g>
-  <rect x="61" y="264" width="109" height="29" rx="5" fill="#91b6a3" stroke="#647d6a" stroke-width="2"/>
-  <rect x="319" y="269" width="100" height="44" rx="6" fill="#176b53"/>
-  <text x="369" y="299" text-anchor="middle" font-size="27" fill="#fff">Engine</text>
-  <rect x="419" y="278" width="95" height="31" rx="5" fill="#dce8de" stroke="#536c5d" stroke-width="2"/>
-  <rect x="486" y="251" width="62" height="19" rx="4" fill="#91b6a3" stroke="#647d6a" stroke-width="2"/>
-  <text x="447" y="211" text-anchor="middle" font-size="27">Transaxle</text>
-  <path d="M447 221V277" fill="none" stroke="#647d6a" stroke-width="2"/>
-
-  <g fill="none" stroke="#829888" stroke-width="2" stroke-dasharray="6 5">
-    <path d="M112 358V411M470 358V411"/>
+  <!-- Manual transaxle: flared engine joint, side output/differential region,
+       tapering ribbed gearbox case to the rear; reference PET 302-000. -->
+  <g stroke="#536c5d" stroke-linejoin="round">
+    <path d="M446 310Q454 307 462 315L471 319 489 318 515 326 529 335 527 348 510 354 476 354 464 348Q453 352 446 346Z" fill="#d3ddd1" stroke-width="1.8"/>
+    <path d="M451 313V345M458 316V346M475 322 472 349M486 322 483 351M497 326 494 352M508 330 505 351M519 334 516 348" fill="none" stroke="#9aaf9f" stroke-width="1.3"/>
+    <path d="M461 324Q469 318 476 326V342Q469 350 461 342Z" fill="#b6c8b8" stroke-width="1.5"/>
+    <ellipse cx="468" cy="334" rx="6" ry="8" fill="#8ba18e" stroke-width="1.2"/>
+  </g>
+  <!-- Retain body identification details over the transparent cutaway. -->
+  <g fill="none" stroke="#6c8774" stroke-width="1.5" opacity=".75">
+    <path d="M237 283 239 343Q239 355 251 356H373Q384 356 386 344L393 283"/>
+    <path d="M251 286H337M341 291h13M219 361H415M69 302Q109 279 181 280L228 283"/>
+    <path d="M402 292 423 290 416 326Q413 332 407 327L397 299Z"/>
+    <path d="M402 300 420 298M404 308 418 306M407 316 416 314"/>
+    <path d="M479 277Q521 281 547 296M525 280 553 290"/>
+  </g>
+  <path d="M252 278 249 271Q251 266 260 266L269 270 270 276Z" fill="#a0b6a4" stroke="#536c5d" stroke-width="1.5"/>
+  <path d="M54 303Q58 296 69 293L86 288Q83 299 73 308L59 311Z" fill="#dfe8df" stroke="#647d6a" stroke-width="1.4"/>
+  <path d="M59 303 76 295" stroke="#a4b7a7" stroke-width="2"/>
+  <path d="M32 327 47 322 45 342 32 341Z" fill="#61796a"/>
+  <path d="M33 329 46 327M33 335 45 333" stroke="#b7c8bc" stroke-width="1.5"/>
+  <path d="M548 295 565 305 568 315 549 309Z" fill="#9eada1" stroke="#647d6a" stroke-width="1.3"/>
+  <path d="M555 344 570 340" stroke="#738c7a" stroke-width="2"/>
+  <!-- Near front wheel opaque; rear wheel deliberately transparent for the cutaway. -->
+  <g transform="translate(165 347)">
+    <circle r="41.18" fill="#34483b" stroke="#263d34" stroke-width="1.5"/>
+    <circle r="36.8" fill="none" stroke="#596b5e" stroke-width="1.2"/>
+    <use href="#family-layout-rim"/>
+  </g>
+  <g transform="translate(467.57 347)" opacity=".32">
+    <circle r="41.77" fill="#617467" stroke="#263d34" stroke-width="1.5"/>
+    <circle r="37.4" fill="none" stroke="#536c5d" stroke-width="1.2"/>
+    <use href="#family-layout-rim"/>
+  </g>
+  <path d="M29 390H571" stroke="#c4d2c5" stroke-width="1.5"/>
+  <g fill="none" stroke="#829888" stroke-width="1.8" stroke-dasharray="5 4">
+    <path d="M165 389V409M467.57 389V409"/>
+  </g>
+  <g font-size="26" text-anchor="middle">
+    <text x="165" y="435">Front axle</text><text x="467.57" y="435">Rear axle</text>
+  </g>
+  <g fill="none" stroke="#647d6a" stroke-width="1.8">
+    <path d="M409 355V398L354 450"/><path d="M522 354 551 403 520 450"/>
   </g>
   <g font-size="27" text-anchor="middle">
-    <text x="112" y="441">Front axle</text>
-    <text x="470" y="441">Rear axle</text>
+    <text x="340" y="481">Engine</text><text x="503" y="481">Transaxle</text>
   </g>
-  <path d="M112 457V469H470V457" fill="none" stroke="#647d6a" stroke-width="2"/>
-  <text x="291" y="506" text-anchor="middle" font-size="27">Engine between the axles</text>
+  <text x="28" y="520" font-size="23" fill="#536c5d">Engine ahead of rear axle</text>
 
-  <path d="M28 534H572" stroke="#c4d2c5" stroke-width="2"/>
-  <text x="28" y="576" font-size="28" font-weight="bold">Torque path · connections only</text>
-  <rect x="28" y="602" width="158" height="63" rx="7" fill="#176b53"/>
-  <text x="107" y="643" text-anchor="middle" font-size="28" fill="#fff">Engine</text>
-  <path d="M189 634H222" fill="none" stroke="#176b53" stroke-width="4" marker-end="url(#family-layout-torque)"/>
-  <rect x="233" y="602" width="339" height="119" rx="7" fill="#dce8de" stroke="#536c5d" stroke-width="2"/>
-  <text x="402" y="637" text-anchor="middle" font-size="28" font-weight="bold">Transaxle</text>
-  <text x="402" y="672" text-anchor="middle" font-size="26">Gearbox, final drive</text>
-  <text x="402" y="703" text-anchor="middle" font-size="26">and differential</text>
+  <path d="M28 543H572" stroke="#c4d2c5" stroke-width="2"/>
+  <text x="28" y="580" font-size="28" font-weight="bold">Torque path · connections only</text>
+  <rect x="28" y="605" width="158" height="63" rx="7" fill="#176b53"/>
+  <text x="107" y="646" text-anchor="middle" font-size="28" fill="#fff">Engine</text>
+  <path d="M189 637H222" fill="none" stroke="#176b53" stroke-width="4" marker-end="url(#family-layout-torque)"/>
+  <rect x="233" y="605" width="339" height="119" rx="7" fill="#dce8de" stroke="#536c5d" stroke-width="2"/>
+  <text x="402" y="640" text-anchor="middle" font-size="28" font-weight="bold">Transaxle</text>
+  <text x="402" y="675" text-anchor="middle" font-size="26">Gearbox, final drive</text>
+  <text x="402" y="706" text-anchor="middle" font-size="26">and differential</text>
   <g fill="none" stroke="#176b53" stroke-width="4" marker-end="url(#family-layout-torque)">
-    <path d="M402 722V744H120V786"/>
-    <path d="M402 744H480V786"/>
+    <path d="M402 725V746H120V787"/><path d="M402 746H480V787"/>
   </g>
-  <text x="297" y="778" text-anchor="middle" font-size="26">Driveshafts</text>
-  <g font-size="27" text-anchor="middle">
-    <text x="120" y="820">Rear wheel</text>
-    <text x="480" y="820">Rear wheel</text>
-  </g>
-  <text x="28" y="850" font-size="22" fill="#536c5d">Schematic · shapes and spacing not to scale</text>
+  <text x="297" y="780" text-anchor="middle" font-size="26">Driveshafts</text>
+  <g font-size="27" text-anchor="middle"><text x="120" y="821">Rear wheel</text><text x="480" y="821">Rear wheel</text></g>
+  <text x="28" y="851" font-size="21" fill="#536c5d">Body/rear wheel transparent · internals simplified</text>
 </g>
 </svg>

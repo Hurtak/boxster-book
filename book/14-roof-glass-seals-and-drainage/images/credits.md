@@ -18,3 +18,10 @@ The ordinary-model photos are small original brochure assets (344–527 pixels w
 
 
 The chapter also retains fifteen Porsche-authored factory exploded-view plates and their parts/application lists as 31 full-page PNGs under [part-reference/](../part-reference/README.md). These are unaltered 1800-pixel-maximum Poppler rasterisations of *PET 987209*, P33, 19 July 2018, retrieved 10 November 2026, with source, hash, original page, plate, callout and applicability recorded in that manifest. They retain the original Porsche/source rights and are not this book's MIT-licensed diagrams. They support component identification, not CAD geometry or workshop sequencing.
+
+## Diagram proportion review — 11 November 2026
+
+- The opening sequence and matching poster were redrawn around the UK body, wheelbase and standard tyre proportions, with photo-guided roof, seat, screen and compartment-cover profiles. The [opening reference record](../part-reference/roof-opening-refinement/provenance.md) identifies the brochure photographs and PET frame, latch, seal and drive components. All five explanatory poses retain one rigid rear pane; intermediate positions are not measured kinematics.
+- The drainage view and poster now distinguish the formed side pan, mesh filter, outlet pipe and compartment seal, with separate location and enlarged section views. The [drainage reference record](../part-reference/roof-drainage-refinement/provenance.md) credits the factory bulletin illustration and component photographs and identifies the PET callouts. Its section and clear/blocked water levels explain the functions rather than reconstructing concealed routing or drain capacity.
+
+The redrawn SVGs remain original project artwork. New factory/reference excerpts retain their source rights, as recorded beside each file.

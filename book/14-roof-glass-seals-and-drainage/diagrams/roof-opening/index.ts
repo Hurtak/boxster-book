@@ -26,66 +26,145 @@ const stages = [
 ] as const;
 
 const headers = [
-  [278, 100],
-  [278, 100],
-  [315, 69],
-  [451, 124],
-  [448, 216],
+  [313, 103],
+  [313, 103],
+  [365, 83],
+  [437, 122],
+  [437, 198],
 ];
 
-// Functional side cutaway, not a reconstruction of Porsche linkage geometry.
-// The same artwork is used when producing the static poster.
+// The 624-unit envelope uses the UK 01/10 brochure's 4342 mm length,
+// 2415 mm wheelbase and 1292 mm height. Tyre envelopes are nominal 205/55 R17
+// and 235/50 R17. Photos guide the contour; PET identifies the parts.
+// The five hand-authored snapshots are not a calibrated linkage simulation.
+// The same artwork is used to produce the static poster.
 export function roofArtwork(position: number) {
   const roofs = [
-    'M278 100 Q356 65 428 98 L510 192 L493 195 L417 115 Q355 85 280 115 Z',
-    'M278 100 Q356 65 428 98 L510 192 L493 195 L417 115 Q355 85 280 115 Z',
-    'M315 69 Q394 34 455 94 L509 187 L493 193 L443 110 Q390 56 320 84 Z',
-    'M451 124 L425 70 Q459 77 504 103 L466 161 L523 194 L508 204 L446 165 L484 108 L447 91 L466 119 Z',
-    'M444 209 Q461 201 477 208 L491 205 L508 211 L542 207 L556 222 L538 235 L512 230 L485 235 L464 228 L448 231 Z',
+    'M312 102 C337 88 371 86 401 91 C429 97 446 117 461 144 L493 178 L480 182 L450 153 C431 124 421 116 404 111 C378 102 345 101 316 112 Z',
+    'M312 102 C337 88 371 86 401 91 C429 97 446 117 461 144 L493 178 L480 182 L450 153 C431 124 421 116 404 111 C378 102 345 101 316 112 Z',
+    'M364 82 C387 73 412 77 434 93 C450 106 460 126 469 148 L493 176 L481 183 L458 155 C444 126 437 116 423 106 C405 94 387 91 368 94 Z',
+    'M433 117 Q456 106 480 108 L497 119 L466 160 L498 181 L489 190 L454 165 L483 123 Q459 118 439 130 Z',
+    'M431 195 Q451 189 469 195 L496 192 L510 199 L502 214 L476 218 L450 212 L434 216 Z',
   ];
   const frames = [
-    'M280 114 L355 106 L417 116 L438 204 M385 111 L438 204 L493 191',
-    'M280 114 L355 106 L417 116 L438 204 M385 111 L438 204 L493 191',
-    'M320 83 L389 88 L437 129 L438 204 M410 107 L438 204 L493 188',
-    'M459 123 L438 88 L490 108 L453 164 L438 204 M453 164 L513 196',
-    'M448 216 L479 225 L505 214 L539 226 M455 230 L490 216 L548 230',
+    'M317 112 L362 108 Q392 108 414 124 L428 155 L439 190 M414 124 L423 156 L439 190 L481 179',
+    'M317 112 L362 108 Q392 108 414 124 L428 155 L439 190 M414 124 L423 156 L439 190 L481 179',
+    'M369 94 L404 95 L433 116 L448 154 L439 190 M433 116 L428 154 L439 190 L482 179',
+    'M439 129 L482 119 L460 160 L439 190 M460 160 L489 184 M482 119 L475 143 L439 190',
+    'M437 199 L478 213 L501 198 M440 215 L472 196 L502 213',
+  ];
+  const linings = [
+    'M320 108 Q369 96 403 107 Q430 116 454 150',
+    'M320 108 Q369 96 403 107 Q430 116 454 150',
+    'M371 90 Q404 84 431 104 Q449 121 463 151',
+    'M440 124 Q463 113 488 119 L460 161 L491 183',
+    'M436 202 Q453 196 471 203 L499 199 M440 211 L473 207 L499 212',
   ];
   const panes = [
-    [472, 148, 59],
-    [472, 148, 59],
-    [478, 147, 54],
-    [493, 177, 24],
-    [504, 220, 0],
+    [467, 151, 48],
+    [467, 151, 48],
+    [469, 147, 53],
+    [477, 172, 24],
+    [470, 205, 0],
+  ];
+  const joints = [
+    [
+      [362, 108],
+      [414, 124],
+      [428, 155],
+      [439, 190],
+    ],
+    [
+      [362, 108],
+      [414, 124],
+      [428, 155],
+      [439, 190],
+    ],
+    [
+      [404, 95],
+      [433, 116],
+      [448, 154],
+      [439, 190],
+    ],
+    [
+      [482, 119],
+      [460, 160],
+      [475, 143],
+      [439, 190],
+    ],
+    [
+      [478, 213],
+      [501, 198],
+      [472, 196],
+      [439, 209],
+    ],
   ];
   const [gx, gy, angle] = panes[position];
   const [hx, hy] = headers[position];
   const clear = position === 2 || position === 3;
+  const wheel = (x: number, radius: number) => `
+    <g transform="translate(${x} ${274 - radius})">
+      <circle r="${radius}" fill="#526159" stroke="#354d41" stroke-width="2"/>
+      <circle r="31" fill="#d8ded7" stroke="#7c9184" stroke-width="2"/>
+      <circle r="25" fill="#b8c7bd" stroke="#8ca394"/>
+      ${[0, 72, 144, 216, 288].map((rotation) => `<path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(${rotation})" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/>`).join('')}
+      <circle r="7" fill="#90a397" stroke="#637b70"/>
+      <circle r="2.4" fill="#edf0e9"/>
+    </g>`;
   return `
     <g stroke-linecap="round" stroke-linejoin="round">
-      <!-- Fixed reference structure: the body is cut away over the roof well. -->
-      <path d="M26 221 Q46 203 105 196 L207 190 L247 199 L421 199 L429 190 L573 190 Q623 190 651 218 L651 247 L28 247 Z" fill="#dfe7df" stroke="#637b70" stroke-width="3"/>
-      <path d="M205 191 L278 100 L286 104 L220 193" fill="#b9d7dc" stroke="#5b7e86" stroke-width="3"/>
-      <path d="M269 102 L287 102" stroke="#315d4d" stroke-width="6"/>
-      <path d="M253 201 L259 237 H405 V201" fill="none" stroke="#a0b0a5" stroke-width="2"/>
-      <path d="M337 202 L332 164 Q331 150 344 150 L353 153 L365 202 M329 204 H373" fill="#c9ad8d" stroke="#96744d" stroke-width="4"/>
-      <path d="M394 198 V164 Q394 143 405 143 Q416 143 416 164 V199" fill="none" stroke="#71837b" stroke-width="7"/>
-      <path d="M430 198 L442 240 L564 240 L574 198" fill="#f3f5f0" stroke="#70877a" stroke-width="2"/>
-      <path d="M449 241 H558" stroke="#bbc9bf" stroke-width="4"/>
-      <g fill="#f3f5f0" stroke="#637b70" stroke-width="3"><circle cx="133" cy="246" r="32"/><circle cx="587" cy="246" r="32"/></g>
-      <g fill="#bac6bd"><circle cx="133" cy="246" r="18"/><circle cx="587" cy="246" r="18"/></g>
-      <path d="M243 ${position === 0 ? 192 : 200} L281 ${position === 0 ? 119 : 148} L389 ${position === 0 ? 119 : 148} L414 ${position === 0 ? 191 : 200} Z" fill="#b9d7dc" fill-opacity=".35" stroke="#8cabb1" stroke-width="2"/>
-      ${clear ? '<path d="M426 193 Q495 187 570 193" fill="none" stroke="#a5b7a9" stroke-width="3" stroke-dasharray="7 6"/>' : ''}
-      <!-- The pale body cutaway makes the stowed package visible below the lid. -->
+      <path d="M37 275 H640" stroke="#cbd5ca" stroke-width="1.5"/>
+      ${wheel(160, 47.23)}${wheel(507.1, 47.91)}
+      <!-- Ordinary 987.2 body, with wheel arches and a section above the well. -->
+      <path d="M26 225 Q28 210 58 203 L105 185 Q128 172 157 172 Q183 171 206 181 L254 178 L420 179 Q440 173 464 173 Q499 165 549 177 L604 190 Q635 201 650 219 V245 Q644 253 620 254 H555 V227 C555 201 534 180 507 180 C480 180 458 201 458 227 V254 H209 V227 C209 200 187 178 160 178 C133 178 111 200 111 227 V254 H42 Q26 252 26 244 Z" fill="#dfe7df" stroke="#637b70" stroke-width="2.5"/>
+      <path d="M56 204 Q83 194 109 192 M34 230 L89 225 M39 240 L89 237 M570 190 L624 206 M617 212 L641 221 M565 242 H630" fill="none" stroke="#a0b2a5" stroke-width="1.8"/>
+      <path d="M76 199 Q88 187 108 183 L117 187 L106 196 Z" fill="#eaf0e9" stroke="#8ca394" stroke-width="1.4"/>
+      <path d="M622 202 L640 213 L639 219 L619 211 Z" fill="#b29b89" opacity=".6"/>
+      <path d="M244 181 L255 242 Q320 249 404 243 L421 182 M229 251 H445" fill="none" stroke="#a0b2a5" stroke-width="1.6"/>
+      <path d="M425 205 Q431 197 445 197 L447 215 L431 226 Z M431 205 L442 204 M433 211 L442 210 M435 217 L442 215" fill="#bbcbbf" stroke="#8da493" stroke-width="1.4"/>
+      <path d="M386 188 H404" stroke="#849b8b" stroke-width="3"/>
+      <!-- Fixed raked windscreen, dashboard, seat shell and roll-over bar. -->
+      <path d="M236 178 L311 99 Q315 97 320 102 L250 179 Z" fill="#b9d7dc" fill-opacity=".65" stroke="#5b7e86" stroke-width="2"/>
+      <path d="M239 177 L312 103" fill="none" stroke="#315d4d" stroke-width="4"/>
+      <path d="M308 102 L320 103" stroke="#273f35" stroke-width="5"/>
+      <path d="M248 179 Q276 174 299 187 L308 211 L266 209" fill="#bdc9bc" stroke="#839a8a" stroke-width="1.6"/>
+      <path d="M304 190 L321 201 M310 181 L299 201" stroke="#7e9286" stroke-width="3"/>
+      <path d="M381 147 L375 132 Q374 124 385 123 L393 125 Q398 128 397 137 L395 148 L405 197 Q408 207 399 211 L354 216 Q341 218 340 208 L344 200 L378 198 L368 159 Q367 151 381 147 Z" fill="#c9ad8d" stroke="#96744d" stroke-width="2"/>
+      <path d="M379 150 Q384 146 391 149 L397 194 Q392 202 382 201 M349 207 L390 206 M379 130 Q386 128 392 132 M351 220 H401" fill="none" stroke="#ad8d68" stroke-width="1.6"/>
+      <path d="M410 179 L411 144 Q412 127 423 127 Q435 129 435 145 L434 179" fill="none" stroke="#71837b" stroke-width="8"/>
+      <path d="M411 174 L413 145 Q414 131 423 131 Q431 132 432 145 L431 174" fill="none" stroke="#b8c4b9" stroke-width="2"/>
+      <path d="M250 178 ${position === 0 ? 'L315 111 Q371 102 408 124 L423 178' : 'L294 140 Q359 131 407 145 L418 178'} Z" fill="#b9d7dc" fill-opacity=".22" stroke="#8cabb1" stroke-width="1.4"/>
+      <path d="M277 170 Q282 161 293 161 L307 167 L302 174 L282 175 Z" fill="#b9cabc" stroke="#789282" stroke-width="1.4"/>
+      <!-- Centreline cutaway: the near-side skin is omitted over the compartment. -->
+      <path d="M426 184 L433 226 Q463 234 505 224 L516 185" fill="#f3f5f0" stroke="#9aaa9b" stroke-width="1.6" stroke-dasharray="4 4"/>
+      <path d="M438 225 Q466 231 500 224" fill="none" stroke="#c4cfc1" stroke-width="3"/>
+      <path d="M428 183 Q477 177 537 182" fill="none" stroke="#b2c3b2" stroke-width="2" ${clear ? 'stroke-dasharray="5 5"' : ''}/>
+      <!-- One side gearbox/output lever is exposed; the opposite drive is behind it. -->
+      <path d="M430 201 L439 198 L447 205 L445 216 L434 219 L428 212 Z" fill="#a4b0a0" stroke="#637b70" stroke-width="1.6"/>
+      <circle cx="437" cy="208" r="5" fill="#d5ddcc" stroke="#637b70" stroke-width="1.4"/>
+      <path d="M437 208 L451 191 L440 190" fill="none" stroke="#a56d34" stroke-width="3.5"/>
+      <path d="${clear ? 'M451 191 L504 157 L526 136 M443 210 Q464 183 504 157' : 'M451 191 L477 183 L519 181 M443 210 Q469 192 501 184'}" fill="none" stroke="#9e8e72" stroke-width="2.4"/>
+      <g fill="#f3f5f0" stroke="#806c4c" stroke-width="1.2"><circle cx="451" cy="191" r="2.5"/><circle cx="437" cy="208" r="2"/></g>
       <path d="${roofs[position]}" fill="#526a61" stroke="#273f35" stroke-width="3"/>
-      <path d="${frames[position]}" fill="none" stroke="#c39b64" stroke-width="5"/>
+      <path d="${linings[position]}" fill="none" stroke="#c4c9b3" stroke-width="2"/>
+      <path d="${frames[position]}" fill="none" stroke="#c39b64" stroke-width="3.5"/>
+      ${joints[position].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/>`).join('')}
+      ${position < 2 ? '<path d="M365 89 L362 101 M405 93 L401 104 M424 103 L419 113 M427 151 L432 178" stroke="#879b88" stroke-width="1.5" fill="none"/><path d="M319 115 Q368 105 409 127 L423 160" stroke="#273f35" stroke-width="2" fill="none"/>' : ''}
       <g transform="translate(${gx} ${gy}) rotate(${angle})">
-        <rect x="-34" y="-8" width="68" height="16" rx="3" fill="#b5d8de" stroke="#477b88" stroke-width="3"/>
-        <path d="M-26 -3 H26 M-26 3 H26" stroke="#6f9fa9" stroke-width="1.5"/>
+        <!-- A rigid pane seen nearly edge-on, retained as one piece in every pose. -->
+        <rect x="-31" y="-4" width="62" height="8" rx="2" fill="#b5d8de" stroke="#3a6065" stroke-width="2.5"/>
+        <path d="M-26 -1 H26 M-26 1.5 H26" stroke="#6f9fa9" stroke-width=".8"/>
       </g>
-      <path d="${clear ? 'M520 111 Q585 110 650 139 L646 150 Q582 126 515 124 Z' : 'M425 190 Q493 184 573 190 L570 200 Q493 194 428 200 Z'}" fill="#789b80" stroke="#315d4d" stroke-width="3"/>
-      <path d="M${hx} ${hy + 12} l${position === 0 ? '6 4 v7 h-7' : '-9 11 h-6'}" fill="none" stroke="#a56d34" stroke-width="4"/>
-      ${position === 2 ? '<path d="M336 47 Q393 12 435 48 M424 36 L435 48 L419 50" fill="none" stroke="#a56d34" stroke-width="3"/>' : ''}
-      ${position === 3 ? '<path d="M378 78 Q397 166 428 185 M415 174 L428 185 L429 169" fill="none" stroke="#a56d34" stroke-width="3"/>' : ''}
+      <!-- The raised cover stays local to its own compartment, ahead of the rear boot. -->
+      <path d="${clear ? 'M492 162 Q514 131 540 101 Q546 100 550 106 L552 111 Q528 144 502 170 Z' : 'M424 178 Q471 172 536 179 L540 184 Q481 179 425 185 Z'}" fill="#789b80" stroke="#315d4d" stroke-width="2.5"/>
+      <path d="${clear ? 'M501 162 Q526 130 547 109' : 'M431 181 Q480 176 533 181'}" fill="none" stroke="#bed0b9" stroke-width="1.4"/>
+      <path d="M548 180 Q575 182 606 193" fill="none" stroke="#9bae9f" stroke-width="1.4"/>
+      <!-- Fixed receiver, travelling manual catch and front-frame locating nose. -->
+      <path d="M309 108 L311 115 L318 115" fill="none" stroke="#637b70" stroke-width="2"/>
+      <path d="M${hx} ${hy + 8} l${position === 0 ? '3 3 v4 h-5' : '-6 9 h-6 l-2 -3'}" fill="none" stroke="#a56d34" stroke-width="2.7"/>
+      ${position > 1 ? `<path d="M${hx} ${hy + 3} l-4 -2" stroke="#c7b28d" stroke-width="2.5"/>` : ''}
+      ${position === 2 ? '<path d="M328 79 Q342 55 370 59 M360 54 L370 59 L361 66" fill="none" stroke="#a56d34" stroke-width="2"/>' : ''}
+      ${position === 3 ? '<path d="M402 110 Q401 151 420 169 M411 164 L420 169 L421 159" fill="none" stroke="#a56d34" stroke-width="2"/>' : ''}
     </g>`;
 }
 
@@ -96,7 +175,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
     title: 'From a closed roof to an open roadster',
     description:
       'Follow the fabric roof, its rigid rear glass and the moving compartment cover. The body is cut away to reveal the stowed package.',
-    note: 'Ordinary MY2010 2.9 roof. Cutaway and stages are schematic; real movements overlap. Use the handbook for operation. The Spyder roof differs.',
+    note: 'Ordinary MY2010 2.9 roof. Photo-guided cutaway; pivots, folds and intermediate poses are illustrative. Real movements overlap. Use the handbook for operation. The Spyder roof differs.',
   });
   stage.style.height = host.clientWidth < 540 ? '420px' : '500px';
   explanation.setAttribute('aria-live', 'polite');
@@ -141,42 +220,53 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
 
       const badges = [
         headers[s],
-        s === 4 ? [465, 215] : s === 3 ? [442, 90] : s === 2 ? [385, 61] : [370, 83],
-        s === 4 ? [514, 222] : s === 3 ? [505, 170] : [484, 147],
-        s === 2 || s === 3 ? [603, 135] : [549, 191],
-        [549, 244],
+        s === 4 ? [451, 196] : s === 3 ? [472, 113] : s === 2 ? [410, 83] : [377, 91],
+        s === 4 ? [470, 205] : s === 3 ? [477, 172] : s === 2 ? [469, 147] : [467, 151],
+        s === 2 || s === 3 ? [531, 126] : [520, 180],
+        [473, 227],
+      ];
+      const markerPositions = [
+        [
+          [294, 75],
+          [384, 62],
+          [508, 125],
+          [567, 157],
+          [555, 249],
+        ],
+        [
+          [294, 75],
+          [384, 62],
+          [508, 125],
+          [567, 157],
+          [555, 249],
+        ],
+        [
+          [347, 54],
+          [431, 53],
+          [503, 147],
+          [575, 101],
+          [555, 249],
+        ],
+        [
+          [410, 102],
+          [483, 75],
+          [515, 175],
+          [575, 111],
+          [555, 249],
+        ],
+        [
+          [412, 247],
+          [424, 159],
+          [492, 250],
+          [562, 154],
+          [555, 278],
+        ],
       ];
       badges.forEach(([x, y], i) => {
         // Numeric keys keep full-size labels away from moving geometry on phones.
-        const marker =
-          s === 4
-            ? [
-                [416, 266],
-                [465, 178],
-                [507, 271],
-                [549, 163],
-                [572, 286],
-              ][i]
-            : [x, y];
+        const marker = markerPositions[s][i];
         const bx = offset + marker[0] * scale;
-        const by =
-          top +
-          marker[1] * scale +
-          (s === 4
-            ? 0
-            : i === 0 && s === 3
-              ? 10
-              : compact
-                ? i === 2
-                  ? 11
-                  : i === 4
-                    ? 7
-                    : -9
-                : i === 2
-                  ? 18
-                  : i === 4
-                    ? 9
-                    : -14);
+        const by = top + marker[1] * scale;
         svg
           .append('path')
           .attr('d', `M${offset + x * scale} ${top + y * scale} L${bx} ${by}`)

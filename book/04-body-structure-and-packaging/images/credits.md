@@ -24,3 +24,10 @@ The load-path and airflow SVGs, the D3 packaging-layer view and the 3D body-shel
 The **46 full-page PNGs** in [`../part-reference/`](../part-reference/README.md) reproduce selected original Porsche PET **987209**, **P33**, **19 July 2018** pages for chapter research. The source/edition/hash, each original page/plate, callouts and applicability are recorded in that directory's README. The drawings were rasterised at 1800 pixels on the longest side without cropping, recolouring or changing their numbered callouts. Porsche retains copyright; these are not original MIT-licensed artwork or factory CAD. All 20 drawing pages were visually inspected against their parts lists on 10 November 2026.
 
 The new seat-support pair, inner sill webs and rear-wall service cover in the body explorer, right-side fan symbol in the airflow map, and top-cover seal in the packaging view are original educational geometry. PET confirms their identities and neighbouring assemblies; their shapes, offsets, dimensions and symbolic fan blades remain illustrative. Full figure-by-figure coverage is in [`verification.md`](../part-reference/verification.md).
+
+## Diagram proportion review — 11 November 2026
+
+- The airflow map now uses the UK body, wheelbase and tyre proportions, separate front cooling modules, a moulded airbox and a distinct right-side ventilation duct/fan. Its [reference record](../part-reference/body-airflow-refinement/provenance.md) identifies the factory body photographs, PET component plates and primary training page supporting the airflow direction.
+- The live packaging view and matching poster use a photo-guided rear section, shallow roof stowage and shaped luggage/access parts. Only the detail inset separates the engine-cover layers. The [reference record](../part-reference/body-packaging-layers-refinement/README.md) credits the roof-sequence and service-cup excerpts and identifies the PET parts used.
+
+These remain original explanatory drawings. The retained factory excerpts keep their original rights; internal installation contours, section placement and flow arrows are not factory CAD or measured analysis.

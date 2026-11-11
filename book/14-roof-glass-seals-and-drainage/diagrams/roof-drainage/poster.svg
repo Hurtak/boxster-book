@@ -1,41 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 900" role="img" aria-labelledby="t d">
-  <title id="t">Sealing and drainage do different jobs</title>
-  <desc id="d">Two functional sections compare the same intact roof seal. Water on the wet side reaches a side drip pan. A clear opening and pipe let water leave the body; debris at the opening retains water, which can overflow towards the interior. Shapes, water levels and spill paths are illustrative, not measured capacities or hose routing.</desc>
-  <rect width="480" height="900" fill="#f3f5f0"/>
-  <g font-family="'Source Sans 3', sans-serif" fill="#263c34" font-size="22">
-    <text x="24" y="37" font-size="27" font-weight="600">Give water an escape route</text>
-    <text x="24" y="69">One side · functional section</text>
-    <text x="24" y="112" font-size="24" font-weight="600">1  Clear outlet</text>
-    <text x="74" y="151">Roof fabric</text>
-    <text x="325" y="151">Intact seal</text>
-    <path d="M44 210 L287 174 M314 174 H449" stroke="#315d4d" stroke-width="10" fill="none" stroke-linecap="round"/>
-    <rect x="285" y="165" width="31" height="18" rx="8" fill="#b28049"/>
-    <path d="M352 157 L305 162" stroke="#7f9890" stroke-width="2" fill="none"/>
-    <path d="M227 173 L59 198 Q44 201 44 220 V234 M44 265 V295 m-6 -10 l6 10 l6 -10" stroke="#22779e" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="71" y="255" fill="#22779e">Runoff reaches pan</text>
-    <path d="M33 355 H302 V369 H33Z" fill="#7fb8d0" opacity=".7"/>
-    <path d="M30 279 V372 H134 V428 M154 428 V372 H305 V279" stroke="#455b50" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <text x="74" y="315" font-weight="600">Side drip pan</text>
-    <text x="342" y="320" fill="#a14f39">Interior</text>
-    <path d="M144 357 V439 m-7 -10 l7 10 l7 -10" stroke="#22779e" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="181" y="408">Drain opening<tspan x="181" dy="27">and pipe</tspan></text>
-    <text x="67" y="470">Outside body</text>
-    <text x="24" y="526" font-size="24" font-weight="600">2  Blocked outlet</text>
-    <text x="74" y="565">Roof fabric</text>
-    <text x="325" y="565">Intact seal</text>
-    <path d="M44 624 L287 588 M314 588 H449" stroke="#315d4d" stroke-width="10" fill="none" stroke-linecap="round"/>
-    <rect x="285" y="579" width="31" height="18" rx="8" fill="#b28049"/>
-    <path d="M352 571 L305 576" stroke="#7f9890" stroke-width="2" fill="none"/>
-    <path d="M227 587 L59 612 Q44 615 44 634 V648 M44 679 V709 m-6 -10 l6 10 l6 -10" stroke="#22779e" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="71" y="669" fill="#22779e">Runoff reaches pan</text>
-    <path d="M33 693 H302 V783 H33Z" fill="#7fb8d0" opacity=".7"/>
-    <path d="M30 693 V786 H134 V831 M154 831 V786 H305 V693" stroke="#455b50" stroke-width="5" fill="none" stroke-linecap="round"/>
-    <text x="74" y="729" font-weight="600">Side drip pan</text>
-    <text x="65" y="759">Water at rim</text>
-    <path d="M132 778 l24 17 m-24 0 l24 -17 M291 693 H314 Q332 693 332 712 V806 m-7 -10 l7 10 l7 -10" stroke="#a14f39" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="350" y="713" fill="#a14f39">Possible<tspan x="350" dy="27">overflow</tspan></text>
-    <text x="350" y="795" fill="#a14f39">Interior</text>
-    <text x="178" y="819">Debris blocks<tspan x="178" dy="27">the opening</tspan></text>
-    <text x="24" y="886" font-size="21">Illustrative levels · no capacity or routing scale</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 1210" role="img" aria-labelledby="t d">
+  <title id="t">A shaped side pan gives water an escape route</title>
+  <desc id="d">An ordinary powered-roof Boxster upper-body side crop, with the front pointing right, locates the side pan behind the seats, below the roof and cover joint. The enlarged part has an asymmetric scalloped rim, rising wing, mesh filter over a drain opening and a short drain pipe. Two enlarged sections compare discharge through a clear opening with debris beneath the filter and possible interior overflow. The seals, separate drain plates and compartment hoses have distinct jobs. Section depth, levels and spill point are illustrative, not capacity or concealed routing.</desc>
+  <rect width="480" height="1210" fill="#f3f5f0"/>
+  <g font-family="'Source Sans 3', sans-serif" fill="#263c34" font-size="22" stroke-linecap="round" stroke-linejoin="round">
+    <text x="24" y="40" font-size="28" font-weight="600">Give water an escape route</text>
+    <text x="24" y="74">Upper-body crop · ordinary roof</text>
+    <g transform="translate(53,83) scale(.85)">
+      <path d="M18 107 Q52 103 77 101 C96 97 102 64 128 49 C154 33 206 31 237 42 Q266 56 295 99 L411 110 L427 128 L14 128 Z" fill="#315d4d" stroke="#263c34" stroke-width="2"/>
+      <path d="M77 101 C96 97 102 64 128 49 C154 33 206 31 237 42 Q266 56 295 99 L263 102 Q249 73 228 65 C203 53 169 54 151 65 Q133 78 131 104 Z" fill="#3e4641" stroke="#263c34" stroke-width="2"/>
+      <path d="M141 102 Q144 76 163 67 C181 58 208 58 228 68 Q244 80 257 102 Z" fill="#c7d8d3" stroke="#8ba99e" stroke-width="1.5"/>
+      <path d="M228 68 L260 101 L282 101 L244 53 Z" fill="#93b5af" opacity=".7"/>
+      <path d="M191 100 V83 Q195 72 201 80 L206 102 M164 102 V83 Q168 73 172 83 V102" fill="#b6936a" stroke="#7f6b50" stroke-width="3"/>
+      <path d="M21 106 Q57 102 83 103 L119 109" fill="none" stroke="#9fb3a5" stroke-width="4"/>
+      <path d="M99 114 Q114 108 133 111 L159 116 L156 128 L118 131 L103 125 Z" fill="#e1c591" stroke="#9f743d" stroke-width="2"/>
+      <path d="M88 102 L99 106" stroke="#b28049" stroke-width="6" stroke-linecap="round"/>
+      <path d="M270 109 L273 125 M314 110 L312 127 M331 114 h27" fill="none" stroke="#182f27" stroke-width="1.5"/>
+    </g>
+    <text x="217" y="102" text-anchor="middle">Roof fabric</text><text x="456" y="103" text-anchor="end" font-size="21" font-weight="600">Front →</text><path d="M214 108 V122" stroke="#81978b" stroke-width="1.5"/>
+    <text x="35" y="134">Cover</text><path d="M65 139 L101 173" stroke="#81978b" stroke-width="1.5"/>
+    <text x="37" y="234">Seal at joint</text><path d="M122 214 L133 172" stroke="#a67f4e" stroke-width="2"/>
+    <text x="279" y="234">Side pan below</text><path d="M305 214 L169 187" stroke="#9f743d" stroke-width="2"/>
+    <path d="M24 255 H456" stroke="#c6d1c6"/>
+    <text x="24" y="288" font-size="25" font-weight="600">The formed collection part</text>
+    <g transform="translate(51,306) scale(.88)">
+      <path d="M20 119 Q15 87 36 79 L55 79 Q61 92 85 90 L94 76 L145 73 Q164 69 174 57 Q208 53 235 60 L239 79 Q249 78 250 60 Q285 58 302 44 Q316 30 321 14 Q345 23 367 15 L381 32 Q367 48 370 61 Q394 85 405 65 Q415 48 418 57 L416 106 Q405 133 375 141 L330 143 Q308 138 296 148 L272 165 Q235 180 206 165 L185 160 Q153 157 141 148 L67 142 Q40 136 30 127 Z" fill="#46534c" stroke="#263c34" stroke-width="3"/>
+      <path d="M29 118 L49 103 Q62 111 88 107 L104 93 L151 90 L182 105 L199 134 L237 139 L270 126 Q301 110 318 83 L343 43 L369 38 M91 109 L104 133 M153 92 L161 139 M277 129 Q331 134 392 96" fill="none" stroke="#8d9b90" stroke-width="2"/>
+      <path d="M39 124 Q106 151 172 146 L205 156 Q235 171 265 156 L293 141 Q326 132 373 135" fill="none" stroke="#1f322a" stroke-width="5"/>
+      <ellipse cx="107" cy="83" rx="5" ry="3" fill="#e5e9df"/><ellipse cx="158" cy="83" rx="5" ry="3" fill="#e5e9df"/>
+      <path d="M219 119 L250 99 Q258 98 264 107 L263 120 L230 140 L218 133 Z" fill="#b3c1ad" stroke="#233e32" stroke-width="2"/>
+      <path d="M239 164 L239 179 Q239 185 244 186 L239 209 Q231 232 232 249" stroke="#253d31" stroke-width="12" fill="none"/>
+      <path d="M239 164 L239 179 Q239 185 244 186 L239 209 Q231 232 232 249" stroke="#a3b0a0" stroke-width="7" fill="none"/>
+      <path d="M224 237 l16 6 m-16 0 l16 6" stroke="#f3f5f0" stroke-width="3" fill="none"/>
+    <path d="M221 121 l8 9" stroke="#3f5b49" stroke-width="1.2"/><path d="M226 118 l8 9" stroke="#3f5b49" stroke-width="1.2"/><path d="M231 115 l8 9" stroke="#3f5b49" stroke-width="1.2"/><path d="M236 112 l8 9" stroke="#3f5b49" stroke-width="1.2"/><path d="M241 109 l8 9" stroke="#3f5b49" stroke-width="1.2"/><path d="M246 106 l8 9" stroke="#3f5b49" stroke-width="1.2"/><path d="M251 103 l8 9" stroke="#3f5b49" stroke-width="1.2"/><path d="M220 121 l35 -21" stroke="#3f5b49" stroke-width="1.2"/><path d="M222 125 l35 -21" stroke="#3f5b49" stroke-width="1.2"/><path d="M224 129 l35 -21" stroke="#3f5b49" stroke-width="1.2"/><path d="M226 133 l35 -21" stroke="#3f5b49" stroke-width="1.2"/></g>
+    <text x="24" y="340">Raised wing</text><path d="M150 334 L334 326" stroke="#81978b" stroke-width="1.5"/>
+    <text x="24" y="494">Shaped rim</text><path d="M139 476 L139 429" stroke="#81978b" stroke-width="1.5"/>
+    <text x="320" y="470">Mesh filter<tspan x="320" dy="27">over opening</tspan></text><path d="M327 447 L264 416" stroke="#81978b" stroke-width="1.5"/>
+    <text x="320" y="538">Drain pipe</text><path d="M312 530 L256 514" stroke="#81978b" stroke-width="1.5"/>
+    <path d="M24 561 H456" stroke="#c6d1c6"/>
+    <text x="24" y="599" font-size="25" font-weight="600">1  Clear outlet</text>
+    <text x="24" y="629" fill="#22779e">Wet side</text><text x="456" y="629" text-anchor="end" fill="#a14f39">Interior</text>
+      <path d="M351 653 V799" stroke="#c9c4b4" stroke-dasharray="4 6" fill="none"/><path d="M34 739 H335 L310 747 H73 Z" fill="#78b6d1" opacity=".7"/>
+      <path d="M32 686 Q44 740 72 746 H188 M206 746 L308 740 Q329 732 339 688" stroke="#41584a" stroke-width="6" fill="none"/>
+      <path d="M188 746 V770 Q188 778 183 788 M206 746 V770 Q206 778 201 788" stroke="#41584a" stroke-width="3" fill="none"/>
+      <path d="M173 734 Q197 725 221 734" stroke="#58764c" stroke-width="6" fill="none"/>
+      <path d="M181 730 v8 m8 -9 v8 m8 -10 v9 m8 -8 v8 m8 -6 v7" stroke="#274734" stroke-width="2" fill="none"/>
+      <path d="M70 653 V697 m-7 -11 l7 11 l7 -11" stroke="#22779e" stroke-width="4" fill="none"/><path d="M197 734 V769 Q197 787 192 805 m-7 -11 l7 11 l7 -11" stroke="#22779e" stroke-width="4" fill="none"/>
+      <path d="M309 771 L211 747" stroke="#81978b" stroke-width="1.5" fill="none"/>
+      <text x="456" y="775" text-anchor="end">Through filter<tspan x="456" dy="27">and opening</tspan></text>
+      <text x="24" y="826" fill="#22779e" font-weight="600">Discharge outside</text>
+    <path d="M24 847 H456" stroke="#c6d1c6"/>
+    <text x="24" y="884" font-size="25" font-weight="600">2  Blocked outlet · high water</text>
+    <text x="24" y="914" fill="#22779e">Wet side</text><text x="456" y="914" text-anchor="end" fill="#a14f39">Interior</text>
+      <path d="M351 938 V1084" stroke="#c9c4b4" stroke-dasharray="4 6" fill="none"/><path d="M39 973 H336 L316 1025 L205 1031 H73 Q49 1024 39 973Z" fill="#78b6d1" opacity=".7"/>
+      <path d="M32 971 Q44 1025 72 1031 H188 M206 1031 L308 1025 Q329 1017 339 973" stroke="#41584a" stroke-width="6" fill="none"/>
+      <path d="M188 1031 V1055 Q188 1063 183 1073 M206 1031 V1055 Q206 1063 201 1073" stroke="#41584a" stroke-width="3" fill="none"/>
+      <path d="M173 1019 Q197 1010 221 1019" stroke="#58764c" stroke-width="6" fill="none"/>
+      <path d="M181 1015 v8 m8 -9 v8 m8 -10 v9 m8 -8 v8 m8 -6 v7" stroke="#274734" stroke-width="2" fill="none"/>
+      <path d="M70 938 V982 m-7 -11 l7 11 l7 -11" stroke="#22779e" stroke-width="4" fill="none"/><path d="M189 1027 l16 12 m-16 0 l16 -12 M326 973 H359 Q378 973 378 992 V1036 m-7 -11 l7 11 l7 -11" stroke="#a14f39" stroke-width="4" fill="none"/>
+      <path d="M309 1056 L211 1032" stroke="#81978b" stroke-width="1.5" fill="none"/>
+      <text x="456" y="1060" text-anchor="end">Debris blocks<tspan x="456" dy="27">the opening</tspan></text>
+      <text x="24" y="1111" fill="#a14f39" font-weight="600">Possible interior spill</text>
+    <text x="24" y="1150" font-size="21">Seals and drainage do separate jobs.</text>
+    <text x="24" y="1177" font-size="21">Enlarged depth and levels illustrative.</text>
+    <text x="24" y="1201" font-size="19">No capacity scale or hidden pipe route.</text>
   </g>
 </svg>

@@ -1,124 +1,301 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 1130" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1490" role="img" aria-labelledby="t d">
 <title id="t">How the ordinary Boxster roof folds behind the seats</title>
-<desc id="d">A functional side cutaway of the MY2010 Boxster 2.9 roof. The front header is released manually. The powered frame and compartment cover move in overlapping stages. The heated rear glass stays rigid while the fabric and articulated frame fold into a well behind the seats. The cover closes above the stowed roof. Pale bodywork is a fixed reference and cut away over the well. Intermediate geometry is illustrative.</desc>
-<rect width="480" height="1130" fill="#f3f5f0"/>
+<desc id="d">Four proportioned side cutaways show the closed, clearance, folding and stowed snapshots of the ordinary MY2010 Boxster 2.9 powered roof. The manual catch travels with the front frame. Fabric and lining fold around articulated supports while the rear glass remains a single rigid pane. The separate compartment cover rises locally behind the roll-over bar and closes over the folded package. The rear luggage lid stays fixed. The near-side body is cut away over the roof well. Pivots, cloth folds and intermediate poses are illustrative; real movements overlap.</desc>
+<rect width="680" height="1490" fill="#f3f5f0"/>
 <g font-family="sans-serif" fill="#263c34">
-<text x="20" y="34" font-size="27" font-weight="bold">Where the roof goes</text>
-<text x="20" y="63" font-size="20">MY2010 2.9 · ordinary powered fabric roof</text>
-<g transform="translate(0 85)"><text x="20" y="23" font-size="21" font-weight="600">Closed · header latched</text><g transform="translate(15 22) scale(0.66)">
+<text x="25" y="39" font-size="30" font-weight="bold">Where the roof goes</text>
+<text x="25" y="68" font-size="21">MY2010 2.9 · ordinary powered fabric roof</text>
+<g transform="translate(0 88)"><text x="25" y="21" font-size="23" font-weight="600">Closed · header latched</text><text x="652" y="21" text-anchor="end" font-size="17">Front ←</text><g transform="translate(5 12) scale(.97)">
     <g stroke-linecap="round" stroke-linejoin="round">
-      <!-- Fixed reference structure: the body is cut away over the roof well. -->
-      <path d="M26 221 Q46 203 105 196 L207 190 L247 199 L421 199 L429 190 L573 190 Q623 190 651 218 L651 247 L28 247 Z" fill="#dfe7df" stroke="#637b70" stroke-width="3"/>
-      <path d="M205 191 L278 100 L286 104 L220 193" fill="#b9d7dc" stroke="#5b7e86" stroke-width="3"/>
-      <path d="M269 102 L287 102" stroke="#315d4d" stroke-width="6"/>
-      <path d="M253 201 L259 237 H405 V201" fill="none" stroke="#a0b0a5" stroke-width="2"/>
-      <path d="M337 202 L332 164 Q331 150 344 150 L353 153 L365 202 M329 204 H373" fill="#c9ad8d" stroke="#96744d" stroke-width="4"/>
-      <path d="M394 198 V164 Q394 143 405 143 Q416 143 416 164 V199" fill="none" stroke="#71837b" stroke-width="7"/>
-      <path d="M430 198 L442 240 L564 240 L574 198" fill="#f3f5f0" stroke="#70877a" stroke-width="2"/>
-      <path d="M449 241 H558" stroke="#bbc9bf" stroke-width="4"/>
-      <g fill="#f3f5f0" stroke="#637b70" stroke-width="3"><circle cx="133" cy="246" r="32"/><circle cx="587" cy="246" r="32"/></g>
-      <g fill="#bac6bd"><circle cx="133" cy="246" r="18"/><circle cx="587" cy="246" r="18"/></g>
-      <path d="M243 192 L281 119 L389 119 L414 191 Z" fill="#b9d7dc" fill-opacity=".35" stroke="#8cabb1" stroke-width="2"/>
+      <path d="M37 275 H640" stroke="#cbd5ca" stroke-width="1.5"/>
 
-      <!-- The pale body cutaway makes the stowed package visible below the lid. -->
-      <path d="M278 100 Q356 65 428 98 L510 192 L493 195 L417 115 Q355 85 280 115 Z" fill="#526a61" stroke="#273f35" stroke-width="3"/>
-      <path d="M280 114 L355 106 L417 116 L438 204 M385 111 L438 204 L493 191" fill="none" stroke="#c39b64" stroke-width="5"/>
-      <g transform="translate(472 148) rotate(59)">
-        <rect x="-34" y="-8" width="68" height="16" rx="3" fill="#b5d8de" stroke="#477b88" stroke-width="3"/>
-        <path d="M-26 -3 H26 M-26 3 H26" stroke="#6f9fa9" stroke-width="1.5"/>
+    <g transform="translate(160 226.77)">
+      <circle r="47.23" fill="#526159" stroke="#354d41" stroke-width="2"/>
+      <circle r="31" fill="#d8ded7" stroke="#7c9184" stroke-width="2"/>
+      <circle r="25" fill="#b8c7bd" stroke="#8ca394"/>
+      <path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(0)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(72)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(144)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(216)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(288)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/>
+      <circle r="7" fill="#90a397" stroke="#637b70"/>
+      <circle r="2.4" fill="#edf0e9"/>
+    </g>
+    <g transform="translate(507.1 226.09)">
+      <circle r="47.91" fill="#526159" stroke="#354d41" stroke-width="2"/>
+      <circle r="31" fill="#d8ded7" stroke="#7c9184" stroke-width="2"/>
+      <circle r="25" fill="#b8c7bd" stroke="#8ca394"/>
+      <path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(0)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(72)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(144)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(216)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(288)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/>
+      <circle r="7" fill="#90a397" stroke="#637b70"/>
+      <circle r="2.4" fill="#edf0e9"/>
+    </g>
+      <!-- Ordinary 987.2 body, with wheel arches and a section above the well. -->
+      <path d="M26 225 Q28 210 58 203 L105 185 Q128 172 157 172 Q183 171 206 181 L254 178 L420 179 Q440 173 464 173 Q499 165 549 177 L604 190 Q635 201 650 219 V245 Q644 253 620 254 H555 V227 C555 201 534 180 507 180 C480 180 458 201 458 227 V254 H209 V227 C209 200 187 178 160 178 C133 178 111 200 111 227 V254 H42 Q26 252 26 244 Z" fill="#dfe7df" stroke="#637b70" stroke-width="2.5"/>
+      <path d="M56 204 Q83 194 109 192 M34 230 L89 225 M39 240 L89 237 M570 190 L624 206 M617 212 L641 221 M565 242 H630" fill="none" stroke="#a0b2a5" stroke-width="1.8"/>
+      <path d="M76 199 Q88 187 108 183 L117 187 L106 196 Z" fill="#eaf0e9" stroke="#8ca394" stroke-width="1.4"/>
+      <path d="M622 202 L640 213 L639 219 L619 211 Z" fill="#b29b89" opacity=".6"/>
+      <path d="M244 181 L255 242 Q320 249 404 243 L421 182 M229 251 H445" fill="none" stroke="#a0b2a5" stroke-width="1.6"/>
+      <path d="M425 205 Q431 197 445 197 L447 215 L431 226 Z M431 205 L442 204 M433 211 L442 210 M435 217 L442 215" fill="#bbcbbf" stroke="#8da493" stroke-width="1.4"/>
+      <path d="M386 188 H404" stroke="#849b8b" stroke-width="3"/>
+      <!-- Fixed raked windscreen, dashboard, seat shell and roll-over bar. -->
+      <path d="M236 178 L311 99 Q315 97 320 102 L250 179 Z" fill="#b9d7dc" fill-opacity=".65" stroke="#5b7e86" stroke-width="2"/>
+      <path d="M239 177 L312 103" fill="none" stroke="#315d4d" stroke-width="4"/>
+      <path d="M308 102 L320 103" stroke="#273f35" stroke-width="5"/>
+      <path d="M248 179 Q276 174 299 187 L308 211 L266 209" fill="#bdc9bc" stroke="#839a8a" stroke-width="1.6"/>
+      <path d="M304 190 L321 201 M310 181 L299 201" stroke="#7e9286" stroke-width="3"/>
+      <path d="M381 147 L375 132 Q374 124 385 123 L393 125 Q398 128 397 137 L395 148 L405 197 Q408 207 399 211 L354 216 Q341 218 340 208 L344 200 L378 198 L368 159 Q367 151 381 147 Z" fill="#c9ad8d" stroke="#96744d" stroke-width="2"/>
+      <path d="M379 150 Q384 146 391 149 L397 194 Q392 202 382 201 M349 207 L390 206 M379 130 Q386 128 392 132 M351 220 H401" fill="none" stroke="#ad8d68" stroke-width="1.6"/>
+      <path d="M410 179 L411 144 Q412 127 423 127 Q435 129 435 145 L434 179" fill="none" stroke="#71837b" stroke-width="8"/>
+      <path d="M411 174 L413 145 Q414 131 423 131 Q431 132 432 145 L431 174" fill="none" stroke="#b8c4b9" stroke-width="2"/>
+      <path d="M250 178 L315 111 Q371 102 408 124 L423 178 Z" fill="#b9d7dc" fill-opacity=".22" stroke="#8cabb1" stroke-width="1.4"/>
+      <path d="M277 170 Q282 161 293 161 L307 167 L302 174 L282 175 Z" fill="#b9cabc" stroke="#789282" stroke-width="1.4"/>
+      <!-- Centreline cutaway: the near-side skin is omitted over the compartment. -->
+      <path d="M426 184 L433 226 Q463 234 505 224 L516 185" fill="#f3f5f0" stroke="#9aaa9b" stroke-width="1.6" stroke-dasharray="4 4"/>
+      <path d="M438 225 Q466 231 500 224" fill="none" stroke="#c4cfc1" stroke-width="3"/>
+      <path d="M428 183 Q477 177 537 182" fill="none" stroke="#b2c3b2" stroke-width="2" />
+      <!-- One side gearbox/output lever is exposed; the opposite drive is behind it. -->
+      <path d="M430 201 L439 198 L447 205 L445 216 L434 219 L428 212 Z" fill="#a4b0a0" stroke="#637b70" stroke-width="1.6"/>
+      <circle cx="437" cy="208" r="5" fill="#d5ddcc" stroke="#637b70" stroke-width="1.4"/>
+      <path d="M437 208 L451 191 L440 190" fill="none" stroke="#a56d34" stroke-width="3.5"/>
+      <path d="M451 191 L477 183 L519 181 M443 210 Q469 192 501 184" fill="none" stroke="#9e8e72" stroke-width="2.4"/>
+      <g fill="#f3f5f0" stroke="#806c4c" stroke-width="1.2"><circle cx="451" cy="191" r="2.5"/><circle cx="437" cy="208" r="2"/></g>
+      <path d="M312 102 C337 88 371 86 401 91 C429 97 446 117 461 144 L493 178 L480 182 L450 153 C431 124 421 116 404 111 C378 102 345 101 316 112 Z" fill="#526a61" stroke="#273f35" stroke-width="3"/>
+      <path d="M320 108 Q369 96 403 107 Q430 116 454 150" fill="none" stroke="#c4c9b3" stroke-width="2"/>
+      <path d="M317 112 L362 108 Q392 108 414 124 L428 155 L439 190 M414 124 L423 156 L439 190 L481 179" fill="none" stroke="#c39b64" stroke-width="3.5"/>
+      <circle cx="362" cy="108" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/><circle cx="414" cy="124" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/><circle cx="428" cy="155" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/><circle cx="439" cy="190" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/>
+      <path d="M365 89 L362 101 M405 93 L401 104 M424 103 L419 113 M427 151 L432 178" stroke="#879b88" stroke-width="1.5" fill="none"/><path d="M319 115 Q368 105 409 127 L423 160" stroke="#273f35" stroke-width="2" fill="none"/>
+      <g transform="translate(467 151) rotate(48)">
+        <!-- A rigid pane seen nearly edge-on, retained as one piece in every pose. -->
+        <rect x="-31" y="-4" width="62" height="8" rx="2" fill="#b5d8de" stroke="#3a6065" stroke-width="2.5"/>
+        <path d="M-26 -1 H26 M-26 1.5 H26" stroke="#6f9fa9" stroke-width=".8"/>
       </g>
-      <path d="M425 190 Q493 184 573 190 L570 200 Q493 194 428 200 Z" fill="#789b80" stroke="#315d4d" stroke-width="3"/>
-      <path d="M278 112 l6 4 v7 h-7" fill="none" stroke="#a56d34" stroke-width="4"/>
+      <!-- The raised cover stays local to its own compartment, ahead of the rear boot. -->
+      <path d="M424 178 Q471 172 536 179 L540 184 Q481 179 425 185 Z" fill="#789b80" stroke="#315d4d" stroke-width="2.5"/>
+      <path d="M431 181 Q480 176 533 181" fill="none" stroke="#bed0b9" stroke-width="1.4"/>
+      <path d="M548 180 Q575 182 606 193" fill="none" stroke="#9bae9f" stroke-width="1.4"/>
+      <!-- Fixed receiver, travelling manual catch and front-frame locating nose. -->
+      <path d="M309 108 L311 115 L318 115" fill="none" stroke="#637b70" stroke-width="2"/>
+      <path d="M313 111 l3 3 v4 h-5" fill="none" stroke="#a56d34" stroke-width="2.7"/>
 
 
-    </g></g><g transform="translate(0 22)"><path d="M198.48000000000002 66 L186.6 46.2" fill="none" stroke="#637b70"/><circle cx="186.6" cy="46.2" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="186.6" y="51.2" text-anchor="middle" font-size="16">1</text><path d="M259.20000000000005 54.78 L262.5 31.020000000000003" fill="none" stroke="#637b70"/><circle cx="262.5" cy="31.020000000000003" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="262.5" y="36.02" text-anchor="middle" font-size="16">2</text><path d="M334.44 97.02000000000001 L337.74 109.56" fill="none" stroke="#637b70"/><circle cx="337.74" cy="109.56" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="337.74" y="114.56" text-anchor="middle" font-size="16">3</text><path d="M377.34000000000003 126.06 L385.26 105.60000000000001" fill="none" stroke="#637b70"/><circle cx="385.26" cy="105.60000000000001" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="385.26" y="110.60000000000001" text-anchor="middle" font-size="16">4</text><path d="M377.34000000000003 161.04000000000002 L380.64000000000004 184.8" fill="none" stroke="#637b70"/><circle cx="380.64000000000004" cy="184.8" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="380.64000000000004" y="189.8" text-anchor="middle" font-size="16">5</text></g></g>
-<g transform="translate(0 285)"><text x="20" y="23" font-size="21" font-weight="600">Powered travel · cover clears</text><g transform="translate(15 22) scale(0.66)">
+
+    </g><path d="M313 103 L294 66" fill="none" stroke="#637b70" stroke-width="1.2"/><circle cx="294" cy="66" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="294" y="70" text-anchor="middle" font-size="13">1</text><path d="M377 91 L384 59" fill="none" stroke="#637b70" stroke-width="1.2"/><circle cx="384" cy="59" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="384" y="63" text-anchor="middle" font-size="13">2</text><path d="M467 151 L509 128" fill="none" stroke="#637b70" stroke-width="1.2"/><circle cx="509" cy="128" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="509" y="132" text-anchor="middle" font-size="13">3</text><path d="M520 180 L567 157" fill="none" stroke="#637b70" stroke-width="1.2"/><circle cx="567" cy="157" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="567" y="161" text-anchor="middle" font-size="13">4</text><path d="M473 227 L555 249" fill="none" stroke="#637b70" stroke-width="1.2"/><circle cx="555" cy="249" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="555" y="253" text-anchor="middle" font-size="13">5</text></g></g>
+<g transform="translate(0 384)"><text x="25" y="21" font-size="23" font-weight="600">Clearance · cover raised</text><text x="652" y="21" text-anchor="end" font-size="17">Front ←</text><g transform="translate(5 12) scale(.97)">
     <g stroke-linecap="round" stroke-linejoin="round">
-      <!-- Fixed reference structure: the body is cut away over the roof well. -->
-      <path d="M26 221 Q46 203 105 196 L207 190 L247 199 L421 199 L429 190 L573 190 Q623 190 651 218 L651 247 L28 247 Z" fill="#dfe7df" stroke="#637b70" stroke-width="3"/>
-      <path d="M205 191 L278 100 L286 104 L220 193" fill="#b9d7dc" stroke="#5b7e86" stroke-width="3"/>
-      <path d="M269 102 L287 102" stroke="#315d4d" stroke-width="6"/>
-      <path d="M253 201 L259 237 H405 V201" fill="none" stroke="#a0b0a5" stroke-width="2"/>
-      <path d="M337 202 L332 164 Q331 150 344 150 L353 153 L365 202 M329 204 H373" fill="#c9ad8d" stroke="#96744d" stroke-width="4"/>
-      <path d="M394 198 V164 Q394 143 405 143 Q416 143 416 164 V199" fill="none" stroke="#71837b" stroke-width="7"/>
-      <path d="M430 198 L442 240 L564 240 L574 198" fill="#f3f5f0" stroke="#70877a" stroke-width="2"/>
-      <path d="M449 241 H558" stroke="#bbc9bf" stroke-width="4"/>
-      <g fill="#f3f5f0" stroke="#637b70" stroke-width="3"><circle cx="133" cy="246" r="32"/><circle cx="587" cy="246" r="32"/></g>
-      <g fill="#bac6bd"><circle cx="133" cy="246" r="18"/><circle cx="587" cy="246" r="18"/></g>
-      <path d="M243 200 L281 148 L389 148 L414 200 Z" fill="#b9d7dc" fill-opacity=".35" stroke="#8cabb1" stroke-width="2"/>
-      <path d="M426 193 Q495 187 570 193" fill="none" stroke="#a5b7a9" stroke-width="3" stroke-dasharray="7 6"/>
-      <!-- The pale body cutaway makes the stowed package visible below the lid. -->
-      <path d="M315 69 Q394 34 455 94 L509 187 L493 193 L443 110 Q390 56 320 84 Z" fill="#526a61" stroke="#273f35" stroke-width="3"/>
-      <path d="M320 83 L389 88 L437 129 L438 204 M410 107 L438 204 L493 188" fill="none" stroke="#c39b64" stroke-width="5"/>
-      <g transform="translate(478 147) rotate(54)">
-        <rect x="-34" y="-8" width="68" height="16" rx="3" fill="#b5d8de" stroke="#477b88" stroke-width="3"/>
-        <path d="M-26 -3 H26 M-26 3 H26" stroke="#6f9fa9" stroke-width="1.5"/>
+      <path d="M37 275 H640" stroke="#cbd5ca" stroke-width="1.5"/>
+
+    <g transform="translate(160 226.77)">
+      <circle r="47.23" fill="#526159" stroke="#354d41" stroke-width="2"/>
+      <circle r="31" fill="#d8ded7" stroke="#7c9184" stroke-width="2"/>
+      <circle r="25" fill="#b8c7bd" stroke="#8ca394"/>
+      <path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(0)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(72)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(144)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(216)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(288)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/>
+      <circle r="7" fill="#90a397" stroke="#637b70"/>
+      <circle r="2.4" fill="#edf0e9"/>
+    </g>
+    <g transform="translate(507.1 226.09)">
+      <circle r="47.91" fill="#526159" stroke="#354d41" stroke-width="2"/>
+      <circle r="31" fill="#d8ded7" stroke="#7c9184" stroke-width="2"/>
+      <circle r="25" fill="#b8c7bd" stroke="#8ca394"/>
+      <path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(0)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(72)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(144)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(216)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(288)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/>
+      <circle r="7" fill="#90a397" stroke="#637b70"/>
+      <circle r="2.4" fill="#edf0e9"/>
+    </g>
+      <!-- Ordinary 987.2 body, with wheel arches and a section above the well. -->
+      <path d="M26 225 Q28 210 58 203 L105 185 Q128 172 157 172 Q183 171 206 181 L254 178 L420 179 Q440 173 464 173 Q499 165 549 177 L604 190 Q635 201 650 219 V245 Q644 253 620 254 H555 V227 C555 201 534 180 507 180 C480 180 458 201 458 227 V254 H209 V227 C209 200 187 178 160 178 C133 178 111 200 111 227 V254 H42 Q26 252 26 244 Z" fill="#dfe7df" stroke="#637b70" stroke-width="2.5"/>
+      <path d="M56 204 Q83 194 109 192 M34 230 L89 225 M39 240 L89 237 M570 190 L624 206 M617 212 L641 221 M565 242 H630" fill="none" stroke="#a0b2a5" stroke-width="1.8"/>
+      <path d="M76 199 Q88 187 108 183 L117 187 L106 196 Z" fill="#eaf0e9" stroke="#8ca394" stroke-width="1.4"/>
+      <path d="M622 202 L640 213 L639 219 L619 211 Z" fill="#b29b89" opacity=".6"/>
+      <path d="M244 181 L255 242 Q320 249 404 243 L421 182 M229 251 H445" fill="none" stroke="#a0b2a5" stroke-width="1.6"/>
+      <path d="M425 205 Q431 197 445 197 L447 215 L431 226 Z M431 205 L442 204 M433 211 L442 210 M435 217 L442 215" fill="#bbcbbf" stroke="#8da493" stroke-width="1.4"/>
+      <path d="M386 188 H404" stroke="#849b8b" stroke-width="3"/>
+      <!-- Fixed raked windscreen, dashboard, seat shell and roll-over bar. -->
+      <path d="M236 178 L311 99 Q315 97 320 102 L250 179 Z" fill="#b9d7dc" fill-opacity=".65" stroke="#5b7e86" stroke-width="2"/>
+      <path d="M239 177 L312 103" fill="none" stroke="#315d4d" stroke-width="4"/>
+      <path d="M308 102 L320 103" stroke="#273f35" stroke-width="5"/>
+      <path d="M248 179 Q276 174 299 187 L308 211 L266 209" fill="#bdc9bc" stroke="#839a8a" stroke-width="1.6"/>
+      <path d="M304 190 L321 201 M310 181 L299 201" stroke="#7e9286" stroke-width="3"/>
+      <path d="M381 147 L375 132 Q374 124 385 123 L393 125 Q398 128 397 137 L395 148 L405 197 Q408 207 399 211 L354 216 Q341 218 340 208 L344 200 L378 198 L368 159 Q367 151 381 147 Z" fill="#c9ad8d" stroke="#96744d" stroke-width="2"/>
+      <path d="M379 150 Q384 146 391 149 L397 194 Q392 202 382 201 M349 207 L390 206 M379 130 Q386 128 392 132 M351 220 H401" fill="none" stroke="#ad8d68" stroke-width="1.6"/>
+      <path d="M410 179 L411 144 Q412 127 423 127 Q435 129 435 145 L434 179" fill="none" stroke="#71837b" stroke-width="8"/>
+      <path d="M411 174 L413 145 Q414 131 423 131 Q431 132 432 145 L431 174" fill="none" stroke="#b8c4b9" stroke-width="2"/>
+      <path d="M250 178 L294 140 Q359 131 407 145 L418 178 Z" fill="#b9d7dc" fill-opacity=".22" stroke="#8cabb1" stroke-width="1.4"/>
+      <path d="M277 170 Q282 161 293 161 L307 167 L302 174 L282 175 Z" fill="#b9cabc" stroke="#789282" stroke-width="1.4"/>
+      <!-- Centreline cutaway: the near-side skin is omitted over the compartment. -->
+      <path d="M426 184 L433 226 Q463 234 505 224 L516 185" fill="#f3f5f0" stroke="#9aaa9b" stroke-width="1.6" stroke-dasharray="4 4"/>
+      <path d="M438 225 Q466 231 500 224" fill="none" stroke="#c4cfc1" stroke-width="3"/>
+      <path d="M428 183 Q477 177 537 182" fill="none" stroke="#b2c3b2" stroke-width="2" stroke-dasharray="5 5"/>
+      <!-- One side gearbox/output lever is exposed; the opposite drive is behind it. -->
+      <path d="M430 201 L439 198 L447 205 L445 216 L434 219 L428 212 Z" fill="#a4b0a0" stroke="#637b70" stroke-width="1.6"/>
+      <circle cx="437" cy="208" r="5" fill="#d5ddcc" stroke="#637b70" stroke-width="1.4"/>
+      <path d="M437 208 L451 191 L440 190" fill="none" stroke="#a56d34" stroke-width="3.5"/>
+      <path d="M451 191 L504 157 L526 136 M443 210 Q464 183 504 157" fill="none" stroke="#9e8e72" stroke-width="2.4"/>
+      <g fill="#f3f5f0" stroke="#806c4c" stroke-width="1.2"><circle cx="451" cy="191" r="2.5"/><circle cx="437" cy="208" r="2"/></g>
+      <path d="M364 82 C387 73 412 77 434 93 C450 106 460 126 469 148 L493 176 L481 183 L458 155 C444 126 437 116 423 106 C405 94 387 91 368 94 Z" fill="#526a61" stroke="#273f35" stroke-width="3"/>
+      <path d="M371 90 Q404 84 431 104 Q449 121 463 151" fill="none" stroke="#c4c9b3" stroke-width="2"/>
+      <path d="M369 94 L404 95 L433 116 L448 154 L439 190 M433 116 L428 154 L439 190 L482 179" fill="none" stroke="#c39b64" stroke-width="3.5"/>
+      <circle cx="404" cy="95" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/><circle cx="433" cy="116" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/><circle cx="448" cy="154" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/><circle cx="439" cy="190" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/>
+
+      <g transform="translate(469 147) rotate(53)">
+        <!-- A rigid pane seen nearly edge-on, retained as one piece in every pose. -->
+        <rect x="-31" y="-4" width="62" height="8" rx="2" fill="#b5d8de" stroke="#3a6065" stroke-width="2.5"/>
+        <path d="M-26 -1 H26 M-26 1.5 H26" stroke="#6f9fa9" stroke-width=".8"/>
       </g>
-      <path d="M520 111 Q585 110 650 139 L646 150 Q582 126 515 124 Z" fill="#789b80" stroke="#315d4d" stroke-width="3"/>
-      <path d="M315 81 l-9 11 h-6" fill="none" stroke="#a56d34" stroke-width="4"/>
-      <path d="M336 47 Q393 12 435 48 M424 36 L435 48 L419 50" fill="none" stroke="#a56d34" stroke-width="3"/>
+      <!-- The raised cover stays local to its own compartment, ahead of the rear boot. -->
+      <path d="M492 162 Q514 131 540 101 Q546 100 550 106 L552 111 Q528 144 502 170 Z" fill="#789b80" stroke="#315d4d" stroke-width="2.5"/>
+      <path d="M501 162 Q526 130 547 109" fill="none" stroke="#bed0b9" stroke-width="1.4"/>
+      <path d="M548 180 Q575 182 606 193" fill="none" stroke="#9bae9f" stroke-width="1.4"/>
+      <!-- Fixed receiver, travelling manual catch and front-frame locating nose. -->
+      <path d="M309 108 L311 115 L318 115" fill="none" stroke="#637b70" stroke-width="2"/>
+      <path d="M365 91 l-6 9 h-6 l-2 -3" fill="none" stroke="#a56d34" stroke-width="2.7"/>
+      <path d="M365 86 l-4 -2" stroke="#c7b28d" stroke-width="2.5"/>
+      <path d="M328 79 Q342 55 370 59 M360 54 L370 59 L361 66" fill="none" stroke="#a56d34" stroke-width="2"/>
 
     </g></g></g>
-<g transform="translate(0 485)"><text x="20" y="23" font-size="21" font-weight="600">Frame folds · glass stays rigid</text><g transform="translate(15 22) scale(0.66)">
+<g transform="translate(0 680)"><text x="25" y="21" font-size="23" font-weight="600">Folding · glass stays rigid</text><text x="652" y="21" text-anchor="end" font-size="17">Front ←</text><g transform="translate(5 12) scale(.97)">
     <g stroke-linecap="round" stroke-linejoin="round">
-      <!-- Fixed reference structure: the body is cut away over the roof well. -->
-      <path d="M26 221 Q46 203 105 196 L207 190 L247 199 L421 199 L429 190 L573 190 Q623 190 651 218 L651 247 L28 247 Z" fill="#dfe7df" stroke="#637b70" stroke-width="3"/>
-      <path d="M205 191 L278 100 L286 104 L220 193" fill="#b9d7dc" stroke="#5b7e86" stroke-width="3"/>
-      <path d="M269 102 L287 102" stroke="#315d4d" stroke-width="6"/>
-      <path d="M253 201 L259 237 H405 V201" fill="none" stroke="#a0b0a5" stroke-width="2"/>
-      <path d="M337 202 L332 164 Q331 150 344 150 L353 153 L365 202 M329 204 H373" fill="#c9ad8d" stroke="#96744d" stroke-width="4"/>
-      <path d="M394 198 V164 Q394 143 405 143 Q416 143 416 164 V199" fill="none" stroke="#71837b" stroke-width="7"/>
-      <path d="M430 198 L442 240 L564 240 L574 198" fill="#f3f5f0" stroke="#70877a" stroke-width="2"/>
-      <path d="M449 241 H558" stroke="#bbc9bf" stroke-width="4"/>
-      <g fill="#f3f5f0" stroke="#637b70" stroke-width="3"><circle cx="133" cy="246" r="32"/><circle cx="587" cy="246" r="32"/></g>
-      <g fill="#bac6bd"><circle cx="133" cy="246" r="18"/><circle cx="587" cy="246" r="18"/></g>
-      <path d="M243 200 L281 148 L389 148 L414 200 Z" fill="#b9d7dc" fill-opacity=".35" stroke="#8cabb1" stroke-width="2"/>
-      <path d="M426 193 Q495 187 570 193" fill="none" stroke="#a5b7a9" stroke-width="3" stroke-dasharray="7 6"/>
-      <!-- The pale body cutaway makes the stowed package visible below the lid. -->
-      <path d="M451 124 L425 70 Q459 77 504 103 L466 161 L523 194 L508 204 L446 165 L484 108 L447 91 L466 119 Z" fill="#526a61" stroke="#273f35" stroke-width="3"/>
-      <path d="M459 123 L438 88 L490 108 L453 164 L438 204 M453 164 L513 196" fill="none" stroke="#c39b64" stroke-width="5"/>
-      <g transform="translate(493 177) rotate(24)">
-        <rect x="-34" y="-8" width="68" height="16" rx="3" fill="#b5d8de" stroke="#477b88" stroke-width="3"/>
-        <path d="M-26 -3 H26 M-26 3 H26" stroke="#6f9fa9" stroke-width="1.5"/>
-      </g>
-      <path d="M520 111 Q585 110 650 139 L646 150 Q582 126 515 124 Z" fill="#789b80" stroke="#315d4d" stroke-width="3"/>
-      <path d="M451 136 l-9 11 h-6" fill="none" stroke="#a56d34" stroke-width="4"/>
+      <path d="M37 275 H640" stroke="#cbd5ca" stroke-width="1.5"/>
 
-      <path d="M378 78 Q397 166 428 185 M415 174 L428 185 L429 169" fill="none" stroke="#a56d34" stroke-width="3"/>
+    <g transform="translate(160 226.77)">
+      <circle r="47.23" fill="#526159" stroke="#354d41" stroke-width="2"/>
+      <circle r="31" fill="#d8ded7" stroke="#7c9184" stroke-width="2"/>
+      <circle r="25" fill="#b8c7bd" stroke="#8ca394"/>
+      <path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(0)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(72)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(144)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(216)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(288)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/>
+      <circle r="7" fill="#90a397" stroke="#637b70"/>
+      <circle r="2.4" fill="#edf0e9"/>
+    </g>
+    <g transform="translate(507.1 226.09)">
+      <circle r="47.91" fill="#526159" stroke="#354d41" stroke-width="2"/>
+      <circle r="31" fill="#d8ded7" stroke="#7c9184" stroke-width="2"/>
+      <circle r="25" fill="#b8c7bd" stroke="#8ca394"/>
+      <path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(0)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(72)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(144)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(216)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(288)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/>
+      <circle r="7" fill="#90a397" stroke="#637b70"/>
+      <circle r="2.4" fill="#edf0e9"/>
+    </g>
+      <!-- Ordinary 987.2 body, with wheel arches and a section above the well. -->
+      <path d="M26 225 Q28 210 58 203 L105 185 Q128 172 157 172 Q183 171 206 181 L254 178 L420 179 Q440 173 464 173 Q499 165 549 177 L604 190 Q635 201 650 219 V245 Q644 253 620 254 H555 V227 C555 201 534 180 507 180 C480 180 458 201 458 227 V254 H209 V227 C209 200 187 178 160 178 C133 178 111 200 111 227 V254 H42 Q26 252 26 244 Z" fill="#dfe7df" stroke="#637b70" stroke-width="2.5"/>
+      <path d="M56 204 Q83 194 109 192 M34 230 L89 225 M39 240 L89 237 M570 190 L624 206 M617 212 L641 221 M565 242 H630" fill="none" stroke="#a0b2a5" stroke-width="1.8"/>
+      <path d="M76 199 Q88 187 108 183 L117 187 L106 196 Z" fill="#eaf0e9" stroke="#8ca394" stroke-width="1.4"/>
+      <path d="M622 202 L640 213 L639 219 L619 211 Z" fill="#b29b89" opacity=".6"/>
+      <path d="M244 181 L255 242 Q320 249 404 243 L421 182 M229 251 H445" fill="none" stroke="#a0b2a5" stroke-width="1.6"/>
+      <path d="M425 205 Q431 197 445 197 L447 215 L431 226 Z M431 205 L442 204 M433 211 L442 210 M435 217 L442 215" fill="#bbcbbf" stroke="#8da493" stroke-width="1.4"/>
+      <path d="M386 188 H404" stroke="#849b8b" stroke-width="3"/>
+      <!-- Fixed raked windscreen, dashboard, seat shell and roll-over bar. -->
+      <path d="M236 178 L311 99 Q315 97 320 102 L250 179 Z" fill="#b9d7dc" fill-opacity=".65" stroke="#5b7e86" stroke-width="2"/>
+      <path d="M239 177 L312 103" fill="none" stroke="#315d4d" stroke-width="4"/>
+      <path d="M308 102 L320 103" stroke="#273f35" stroke-width="5"/>
+      <path d="M248 179 Q276 174 299 187 L308 211 L266 209" fill="#bdc9bc" stroke="#839a8a" stroke-width="1.6"/>
+      <path d="M304 190 L321 201 M310 181 L299 201" stroke="#7e9286" stroke-width="3"/>
+      <path d="M381 147 L375 132 Q374 124 385 123 L393 125 Q398 128 397 137 L395 148 L405 197 Q408 207 399 211 L354 216 Q341 218 340 208 L344 200 L378 198 L368 159 Q367 151 381 147 Z" fill="#c9ad8d" stroke="#96744d" stroke-width="2"/>
+      <path d="M379 150 Q384 146 391 149 L397 194 Q392 202 382 201 M349 207 L390 206 M379 130 Q386 128 392 132 M351 220 H401" fill="none" stroke="#ad8d68" stroke-width="1.6"/>
+      <path d="M410 179 L411 144 Q412 127 423 127 Q435 129 435 145 L434 179" fill="none" stroke="#71837b" stroke-width="8"/>
+      <path d="M411 174 L413 145 Q414 131 423 131 Q431 132 432 145 L431 174" fill="none" stroke="#b8c4b9" stroke-width="2"/>
+      <path d="M250 178 L294 140 Q359 131 407 145 L418 178 Z" fill="#b9d7dc" fill-opacity=".22" stroke="#8cabb1" stroke-width="1.4"/>
+      <path d="M277 170 Q282 161 293 161 L307 167 L302 174 L282 175 Z" fill="#b9cabc" stroke="#789282" stroke-width="1.4"/>
+      <!-- Centreline cutaway: the near-side skin is omitted over the compartment. -->
+      <path d="M426 184 L433 226 Q463 234 505 224 L516 185" fill="#f3f5f0" stroke="#9aaa9b" stroke-width="1.6" stroke-dasharray="4 4"/>
+      <path d="M438 225 Q466 231 500 224" fill="none" stroke="#c4cfc1" stroke-width="3"/>
+      <path d="M428 183 Q477 177 537 182" fill="none" stroke="#b2c3b2" stroke-width="2" stroke-dasharray="5 5"/>
+      <!-- One side gearbox/output lever is exposed; the opposite drive is behind it. -->
+      <path d="M430 201 L439 198 L447 205 L445 216 L434 219 L428 212 Z" fill="#a4b0a0" stroke="#637b70" stroke-width="1.6"/>
+      <circle cx="437" cy="208" r="5" fill="#d5ddcc" stroke="#637b70" stroke-width="1.4"/>
+      <path d="M437 208 L451 191 L440 190" fill="none" stroke="#a56d34" stroke-width="3.5"/>
+      <path d="M451 191 L504 157 L526 136 M443 210 Q464 183 504 157" fill="none" stroke="#9e8e72" stroke-width="2.4"/>
+      <g fill="#f3f5f0" stroke="#806c4c" stroke-width="1.2"><circle cx="451" cy="191" r="2.5"/><circle cx="437" cy="208" r="2"/></g>
+      <path d="M433 117 Q456 106 480 108 L497 119 L466 160 L498 181 L489 190 L454 165 L483 123 Q459 118 439 130 Z" fill="#526a61" stroke="#273f35" stroke-width="3"/>
+      <path d="M440 124 Q463 113 488 119 L460 161 L491 183" fill="none" stroke="#c4c9b3" stroke-width="2"/>
+      <path d="M439 129 L482 119 L460 160 L439 190 M460 160 L489 184 M482 119 L475 143 L439 190" fill="none" stroke="#c39b64" stroke-width="3.5"/>
+      <circle cx="482" cy="119" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/><circle cx="460" cy="160" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/><circle cx="475" cy="143" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/><circle cx="439" cy="190" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/>
+
+      <g transform="translate(477 172) rotate(24)">
+        <!-- A rigid pane seen nearly edge-on, retained as one piece in every pose. -->
+        <rect x="-31" y="-4" width="62" height="8" rx="2" fill="#b5d8de" stroke="#3a6065" stroke-width="2.5"/>
+        <path d="M-26 -1 H26 M-26 1.5 H26" stroke="#6f9fa9" stroke-width=".8"/>
+      </g>
+      <!-- The raised cover stays local to its own compartment, ahead of the rear boot. -->
+      <path d="M492 162 Q514 131 540 101 Q546 100 550 106 L552 111 Q528 144 502 170 Z" fill="#789b80" stroke="#315d4d" stroke-width="2.5"/>
+      <path d="M501 162 Q526 130 547 109" fill="none" stroke="#bed0b9" stroke-width="1.4"/>
+      <path d="M548 180 Q575 182 606 193" fill="none" stroke="#9bae9f" stroke-width="1.4"/>
+      <!-- Fixed receiver, travelling manual catch and front-frame locating nose. -->
+      <path d="M309 108 L311 115 L318 115" fill="none" stroke="#637b70" stroke-width="2"/>
+      <path d="M437 130 l-6 9 h-6 l-2 -3" fill="none" stroke="#a56d34" stroke-width="2.7"/>
+      <path d="M437 125 l-4 -2" stroke="#c7b28d" stroke-width="2.5"/>
+
+      <path d="M402 110 Q401 151 420 169 M411 164 L420 169 L421 159" fill="none" stroke="#a56d34" stroke-width="2"/>
     </g></g></g>
-<g transform="translate(0 685)"><text x="20" y="23" font-size="21" font-weight="600">Stowed · roof beneath cover</text><g transform="translate(15 22) scale(0.66)">
+<g transform="translate(0 976)"><text x="25" y="21" font-size="23" font-weight="600">Stowed · roof beneath cover</text><text x="652" y="21" text-anchor="end" font-size="17">Front ←</text><g transform="translate(5 12) scale(.97)">
     <g stroke-linecap="round" stroke-linejoin="round">
-      <!-- Fixed reference structure: the body is cut away over the roof well. -->
-      <path d="M26 221 Q46 203 105 196 L207 190 L247 199 L421 199 L429 190 L573 190 Q623 190 651 218 L651 247 L28 247 Z" fill="#dfe7df" stroke="#637b70" stroke-width="3"/>
-      <path d="M205 191 L278 100 L286 104 L220 193" fill="#b9d7dc" stroke="#5b7e86" stroke-width="3"/>
-      <path d="M269 102 L287 102" stroke="#315d4d" stroke-width="6"/>
-      <path d="M253 201 L259 237 H405 V201" fill="none" stroke="#a0b0a5" stroke-width="2"/>
-      <path d="M337 202 L332 164 Q331 150 344 150 L353 153 L365 202 M329 204 H373" fill="#c9ad8d" stroke="#96744d" stroke-width="4"/>
-      <path d="M394 198 V164 Q394 143 405 143 Q416 143 416 164 V199" fill="none" stroke="#71837b" stroke-width="7"/>
-      <path d="M430 198 L442 240 L564 240 L574 198" fill="#f3f5f0" stroke="#70877a" stroke-width="2"/>
-      <path d="M449 241 H558" stroke="#bbc9bf" stroke-width="4"/>
-      <g fill="#f3f5f0" stroke="#637b70" stroke-width="3"><circle cx="133" cy="246" r="32"/><circle cx="587" cy="246" r="32"/></g>
-      <g fill="#bac6bd"><circle cx="133" cy="246" r="18"/><circle cx="587" cy="246" r="18"/></g>
-      <path d="M243 200 L281 148 L389 148 L414 200 Z" fill="#b9d7dc" fill-opacity=".35" stroke="#8cabb1" stroke-width="2"/>
+      <path d="M37 275 H640" stroke="#cbd5ca" stroke-width="1.5"/>
 
-      <!-- The pale body cutaway makes the stowed package visible below the lid. -->
-      <path d="M444 209 Q461 201 477 208 L491 205 L508 211 L542 207 L556 222 L538 235 L512 230 L485 235 L464 228 L448 231 Z" fill="#526a61" stroke="#273f35" stroke-width="3"/>
-      <path d="M448 216 L479 225 L505 214 L539 226 M455 230 L490 216 L548 230" fill="none" stroke="#c39b64" stroke-width="5"/>
-      <g transform="translate(504 220) rotate(0)">
-        <rect x="-34" y="-8" width="68" height="16" rx="3" fill="#b5d8de" stroke="#477b88" stroke-width="3"/>
-        <path d="M-26 -3 H26 M-26 3 H26" stroke="#6f9fa9" stroke-width="1.5"/>
+    <g transform="translate(160 226.77)">
+      <circle r="47.23" fill="#526159" stroke="#354d41" stroke-width="2"/>
+      <circle r="31" fill="#d8ded7" stroke="#7c9184" stroke-width="2"/>
+      <circle r="25" fill="#b8c7bd" stroke="#8ca394"/>
+      <path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(0)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(72)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(144)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(216)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(288)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/>
+      <circle r="7" fill="#90a397" stroke="#637b70"/>
+      <circle r="2.4" fill="#edf0e9"/>
+    </g>
+    <g transform="translate(507.1 226.09)">
+      <circle r="47.91" fill="#526159" stroke="#354d41" stroke-width="2"/>
+      <circle r="31" fill="#d8ded7" stroke="#7c9184" stroke-width="2"/>
+      <circle r="25" fill="#b8c7bd" stroke="#8ca394"/>
+      <path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(0)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(72)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(144)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(216)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/><path d="M-3 6 L-5 29 L3 29 L5 7 Z" transform="rotate(288)" fill="#edf0e9" stroke="#7c9184" stroke-width="1"/>
+      <circle r="7" fill="#90a397" stroke="#637b70"/>
+      <circle r="2.4" fill="#edf0e9"/>
+    </g>
+      <!-- Ordinary 987.2 body, with wheel arches and a section above the well. -->
+      <path d="M26 225 Q28 210 58 203 L105 185 Q128 172 157 172 Q183 171 206 181 L254 178 L420 179 Q440 173 464 173 Q499 165 549 177 L604 190 Q635 201 650 219 V245 Q644 253 620 254 H555 V227 C555 201 534 180 507 180 C480 180 458 201 458 227 V254 H209 V227 C209 200 187 178 160 178 C133 178 111 200 111 227 V254 H42 Q26 252 26 244 Z" fill="#dfe7df" stroke="#637b70" stroke-width="2.5"/>
+      <path d="M56 204 Q83 194 109 192 M34 230 L89 225 M39 240 L89 237 M570 190 L624 206 M617 212 L641 221 M565 242 H630" fill="none" stroke="#a0b2a5" stroke-width="1.8"/>
+      <path d="M76 199 Q88 187 108 183 L117 187 L106 196 Z" fill="#eaf0e9" stroke="#8ca394" stroke-width="1.4"/>
+      <path d="M622 202 L640 213 L639 219 L619 211 Z" fill="#b29b89" opacity=".6"/>
+      <path d="M244 181 L255 242 Q320 249 404 243 L421 182 M229 251 H445" fill="none" stroke="#a0b2a5" stroke-width="1.6"/>
+      <path d="M425 205 Q431 197 445 197 L447 215 L431 226 Z M431 205 L442 204 M433 211 L442 210 M435 217 L442 215" fill="#bbcbbf" stroke="#8da493" stroke-width="1.4"/>
+      <path d="M386 188 H404" stroke="#849b8b" stroke-width="3"/>
+      <!-- Fixed raked windscreen, dashboard, seat shell and roll-over bar. -->
+      <path d="M236 178 L311 99 Q315 97 320 102 L250 179 Z" fill="#b9d7dc" fill-opacity=".65" stroke="#5b7e86" stroke-width="2"/>
+      <path d="M239 177 L312 103" fill="none" stroke="#315d4d" stroke-width="4"/>
+      <path d="M308 102 L320 103" stroke="#273f35" stroke-width="5"/>
+      <path d="M248 179 Q276 174 299 187 L308 211 L266 209" fill="#bdc9bc" stroke="#839a8a" stroke-width="1.6"/>
+      <path d="M304 190 L321 201 M310 181 L299 201" stroke="#7e9286" stroke-width="3"/>
+      <path d="M381 147 L375 132 Q374 124 385 123 L393 125 Q398 128 397 137 L395 148 L405 197 Q408 207 399 211 L354 216 Q341 218 340 208 L344 200 L378 198 L368 159 Q367 151 381 147 Z" fill="#c9ad8d" stroke="#96744d" stroke-width="2"/>
+      <path d="M379 150 Q384 146 391 149 L397 194 Q392 202 382 201 M349 207 L390 206 M379 130 Q386 128 392 132 M351 220 H401" fill="none" stroke="#ad8d68" stroke-width="1.6"/>
+      <path d="M410 179 L411 144 Q412 127 423 127 Q435 129 435 145 L434 179" fill="none" stroke="#71837b" stroke-width="8"/>
+      <path d="M411 174 L413 145 Q414 131 423 131 Q431 132 432 145 L431 174" fill="none" stroke="#b8c4b9" stroke-width="2"/>
+      <path d="M250 178 L294 140 Q359 131 407 145 L418 178 Z" fill="#b9d7dc" fill-opacity=".22" stroke="#8cabb1" stroke-width="1.4"/>
+      <path d="M277 170 Q282 161 293 161 L307 167 L302 174 L282 175 Z" fill="#b9cabc" stroke="#789282" stroke-width="1.4"/>
+      <!-- Centreline cutaway: the near-side skin is omitted over the compartment. -->
+      <path d="M426 184 L433 226 Q463 234 505 224 L516 185" fill="#f3f5f0" stroke="#9aaa9b" stroke-width="1.6" stroke-dasharray="4 4"/>
+      <path d="M438 225 Q466 231 500 224" fill="none" stroke="#c4cfc1" stroke-width="3"/>
+      <path d="M428 183 Q477 177 537 182" fill="none" stroke="#b2c3b2" stroke-width="2" />
+      <!-- One side gearbox/output lever is exposed; the opposite drive is behind it. -->
+      <path d="M430 201 L439 198 L447 205 L445 216 L434 219 L428 212 Z" fill="#a4b0a0" stroke="#637b70" stroke-width="1.6"/>
+      <circle cx="437" cy="208" r="5" fill="#d5ddcc" stroke="#637b70" stroke-width="1.4"/>
+      <path d="M437 208 L451 191 L440 190" fill="none" stroke="#a56d34" stroke-width="3.5"/>
+      <path d="M451 191 L477 183 L519 181 M443 210 Q469 192 501 184" fill="none" stroke="#9e8e72" stroke-width="2.4"/>
+      <g fill="#f3f5f0" stroke="#806c4c" stroke-width="1.2"><circle cx="451" cy="191" r="2.5"/><circle cx="437" cy="208" r="2"/></g>
+      <path d="M431 195 Q451 189 469 195 L496 192 L510 199 L502 214 L476 218 L450 212 L434 216 Z" fill="#526a61" stroke="#273f35" stroke-width="3"/>
+      <path d="M436 202 Q453 196 471 203 L499 199 M440 211 L473 207 L499 212" fill="none" stroke="#c4c9b3" stroke-width="2"/>
+      <path d="M437 199 L478 213 L501 198 M440 215 L472 196 L502 213" fill="none" stroke="#c39b64" stroke-width="3.5"/>
+      <circle cx="478" cy="213" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/><circle cx="501" cy="198" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/><circle cx="472" cy="196" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/><circle cx="439" cy="209" r="2.5" fill="#e3d4b8" stroke="#806c4c" stroke-width="1.2"/>
+
+      <g transform="translate(470 205) rotate(0)">
+        <!-- A rigid pane seen nearly edge-on, retained as one piece in every pose. -->
+        <rect x="-31" y="-4" width="62" height="8" rx="2" fill="#b5d8de" stroke="#3a6065" stroke-width="2.5"/>
+        <path d="M-26 -1 H26 M-26 1.5 H26" stroke="#6f9fa9" stroke-width=".8"/>
       </g>
-      <path d="M425 190 Q493 184 573 190 L570 200 Q493 194 428 200 Z" fill="#789b80" stroke="#315d4d" stroke-width="3"/>
-      <path d="M448 228 l-9 11 h-6" fill="none" stroke="#a56d34" stroke-width="4"/>
+      <!-- The raised cover stays local to its own compartment, ahead of the rear boot. -->
+      <path d="M424 178 Q471 172 536 179 L540 184 Q481 179 425 185 Z" fill="#789b80" stroke="#315d4d" stroke-width="2.5"/>
+      <path d="M431 181 Q480 176 533 181" fill="none" stroke="#bed0b9" stroke-width="1.4"/>
+      <path d="M548 180 Q575 182 606 193" fill="none" stroke="#9bae9f" stroke-width="1.4"/>
+      <!-- Fixed receiver, travelling manual catch and front-frame locating nose. -->
+      <path d="M309 108 L311 115 L318 115" fill="none" stroke="#637b70" stroke-width="2"/>
+      <path d="M437 206 l-6 9 h-6 l-2 -3" fill="none" stroke="#a56d34" stroke-width="2.7"/>
+      <path d="M437 201 l-4 -2" stroke="#c7b28d" stroke-width="2.5"/>
 
 
-    </g></g><g transform="translate(0 22)"><path d="M354.24 146.52 L350.28000000000003 180.84" fill="none" stroke="#637b70"/><circle cx="350.28000000000003" cy="180.84" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="350.28000000000003" y="185.84" text-anchor="middle" font-size="16">3</text><path d="M377.34000000000003 126.06 L384.6 104.94000000000001" fill="none" stroke="#637b70"/><circle cx="384.6" cy="104.94000000000001" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="384.6" y="109.94000000000001" text-anchor="middle" font-size="16">4</text><path d="M377.34000000000003 161.04000000000002 L397.8 189.42000000000002" fill="none" stroke="#637b70"/><circle cx="397.8" cy="189.42000000000002" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="397.8" y="194.42000000000002" text-anchor="middle" font-size="16">5</text></g></g>
-<text x="20" y="925" font-size="19">1  Manual latch travels with the roof</text>
-<text x="20" y="948" font-size="19">2  Fabric and articulated supporting frame</text>
-<text x="20" y="971" font-size="19">3  Heated rear glass: one rigid pane</text>
-<text x="20" y="994" font-size="19">4  Moving roof-compartment cover</text>
-<text x="20" y="1017" font-size="19">5  Stowage well behind the occupants</text>
-<text x="20" y="1061" font-size="20">1 motor → 2 flexible drive shafts</text>
-<text x="20" y="1086" font-size="20">→ left/right gearboxes → roof + cover</text>
-<text x="20" y="1114" font-size="18">Schematic cutaway; real movements overlap.</text>
+    </g><path d="M437 198 L412 247" fill="none" stroke="#637b70" stroke-width="1.2"/><circle cx="412" cy="247" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="412" y="251" text-anchor="middle" font-size="13">1</text><path d="M451 196 L424 159" fill="none" stroke="#637b70" stroke-width="1.2"/><circle cx="424" cy="159" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="424" y="163" text-anchor="middle" font-size="13">2</text><path d="M470 205 L492 250" fill="none" stroke="#637b70" stroke-width="1.2"/><circle cx="492" cy="250" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="492" y="254" text-anchor="middle" font-size="13">3</text><path d="M520 180 L562 154" fill="none" stroke="#637b70" stroke-width="1.2"/><circle cx="562" cy="154" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="562" y="158" text-anchor="middle" font-size="13">4</text><path d="M473 227 L555 278" fill="none" stroke="#637b70" stroke-width="1.2"/><circle cx="555" cy="278" r="11" fill="#f3f5f0" stroke="#315d4d" stroke-width="1.5"/><text x="555" y="282" text-anchor="middle" font-size="13">5</text></g></g>
+<text x="25" y="1294" font-size="19">1  Travelling manual latch</text>
+<text x="350" y="1294" font-size="19">2  Fabric, lining and frame</text>
+<text x="25" y="1323" font-size="19">3  One rigid heated pane</text>
+<text x="350" y="1323" font-size="19">4  Compartment cover</text>
+<text x="25" y="1352" font-size="19">5  Roof well behind the seats · neither boot is used</text>
+<text x="25" y="1391" font-size="20">1 motor → 2 flexible rotary shafts → left/right gearboxes</text>
+<text x="25" y="1421" font-size="19">Jointed rods and levers move the roof and its cover together.</text>
+<text x="25" y="1455" font-size="18">Photo-guided cutaway; illustrative poses and pivots.</text>
+<text x="25" y="1479" font-size="18">Real movements overlap. Use the handbook for operation.</text>
 </g></svg>

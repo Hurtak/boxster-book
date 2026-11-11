@@ -13,3 +13,7 @@ The belt, fixed-rollover and scenario diagrams are original explanatory artwork 
 ## Factory parts-reference excerpts
 
 Twenty-five unaltered full-page Porsche PET 987209/P33 renderings, dated 19 July 2018, are saved in [part-reference](../part-reference/README.md). Exact source, hash, PDF page/plate, applicability and rights are recorded there. © Porsche AG; these are factory drawings/applicability lists, not MIT-licensed project artwork. They informed the belt's seat-mounted buckle, joined rear-bar assembly and separate module-support/inflator details; original explanatory geometry remains schematic rather than factory CAD.
+
+## `fixed-rollover-structure.svg` proportion review
+
+The original diagram was redrawn on **11 November 2026** using the joined rear-frame and seat drawings, the windscreen reinforcement plate and contemporary Porsche seat, body and wind-deflector photographs. It now distinguishes the integrated seat head restraints, shaped connected rear frame, outer mounting webs and separate belt guides. The [refinement record](../part-reference/fixed-rollover-structure-refinement/provenance.md) identifies each PET callout and credits four compact original brochure excerpts. Those excerpts retain Porsche's rights. The explanatory profiles do not establish mounting dimensions or rollover/crash performance.

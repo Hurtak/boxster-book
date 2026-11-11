@@ -1,0 +1,31 @@
+# Roof-drainage figure refinement
+
+Scope: `diagrams/roof-drainage/index.ts` and `poster.svg`, ordinary **2010 European/UK Boxster 987.2 2.9 powered roof**. Prepared 11 November 2026. The six-speed manual / optional PDK distinction does not change this drawing.
+
+## Evidence actually inspected
+
+| Source | Exact evidence and its use |
+| --- | --- |
+| Porsche AG, *PET 987209*, P33, 19 July 2018, **812-000**, original PDF **418–420** | Visually inspected the actual [drawing, p. 418](../pet-812-000-p418.png), separately from [p. 419](../pet-812-000-p419.png) and [p. 420](../pet-812-000-p420.png). Item **12** is the formed side pan: asymmetric scallops, shallow basin, raised wing and local apertures. Ordinary left/right pans **987 561 805/806 01** differ from Spyder rows. Item **13** is a separate curved drain pipe **987 561 733/734 00**; **24** is the filter **987 561 487 00**, quantity two. The illustrated drain connection informs the short pipe excerpt. |
+| Same PET, **811-012**, PDF **410–411** | Inspected [drawing p. 410](../pet-811-012-p410.png) and [table p. 411](../pet-811-012-p411.png). Item **25** is a long, flanged **water drain plate**, right **987 561 762 01**, left **987 561 761 01**. It is not the side pan and is not drawn as its wall or filter. |
+| Same PET, **811-013**, PDF **412–413** | Inspected [drawing p. 412](../pet-811-013-p412.png) and [table p. 413](../pet-811-013-p413.png). Item **9**, **987 514 211 00**, is the compartment seal; item **10**, **986 514 241 00**, is a separate water drainage hose, quantity two. Item **5** is the cover seal. None is silently joined into the side-pan pipe. |
+| Porsche TI **29/09 ENU 5393**, *Cabriolet Top Compartment Water Drains* | Original Porsche-authored [bulletin reproduced by CHARM](https://charm.li/Porsche/2011/Boxster%20%28987%29%20F6-2.9L/Repair%20and%20Diagnosis/Technical%20Service%20Bulletins/All%20Technical%20Service%20Bulletins/Body%20-%20Convertible%20Top%20Drain%20Information/). Visually inspected its original [Figure 1 excerpt](porsche-ti-29-09-figure-1.jpg): bare opening followed by broad mesh filter over it, beside the mechanism and compartment trim. This is a workshop line illustration, not a photograph. Text corroborates debris entering the compartment, obstruction/ingress, the **31 August 2009** filter introduction and continued cleaning. |
+| Direct component photograph, Sierra Madre Collection | [987 561 805 01 product photograph](https://sierramadrecollection.com/cdn/shop/files/Water-Collecting-Tray-Left-Boxster-2005-2012-1.png?v=1759363309), linked from its [2005–2012 left-tray page](https://sierramadrecollection.com/products/water-collecting-tray-left-boxster-2005-2012); [local unchanged image](98756180501-component-photo.png). Used as first-hand visual evidence of the part's scalloped rim and rising wing, checked against PET. Seller fitment, material and availability claims are not adopted. |
+| Porsche UK brochure 01/10, printed **80–81**, PDF **38** | Existing chapter [closed-roof photograph](../../images/ordinary-roof-closed.jpg), [folding photograph](../../images/ordinary-roof-folding.jpg) and [credits](../../images/credits.md), checked for the recognisable ordinary roof/cover relationship. [Original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=38). The silhouette and highlighted hidden-pan location remain approximate. |
+
+[Original PET PDF](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=418); original PDF identity and hash are in the [existing source manifest](../README.md). The actual PET picture, rather than the neighbouring list alone, supplied shape evidence.
+
+## Drawing decisions and limits
+
+The location view replaces detached fabric/seal strokes. It is explicitly labelled as an upper-body crop with the front pointing right. Both the reference-guided location silhouette and pan retain their intrinsic aspect ratio at every viewport: a single uniform scale and translation fit each drawing, and external labels/leaders adapt separately. The poster uses the same geometry with uniform scales as well. The enlarged part replaces the rectangular bucket with the visible shallow, contoured pan profile, filter and curved pipe. A separate enlarged section retains the clear/blocked teaching comparison, wet/interior sides and possible spill. Section depth and water levels are deliberately enlarged. The filter is drawn at the opening, not as another reservoir. The short pipe ends at a break; an arrow explains discharge without mapping concealed routing. Other plates, seals and hoses retain their separate identities.
+
+The result is reference-guided illustration, not dimensioned CAD, a workshop procedure or a hydraulic model. Exact section contours, installed coordinates, seal compression, downstream route, water capacity and spill threshold remain unestablished. The slider retains the existing illustrative snapshots and the 65/100 graphic threshold; neither is a Porsche measurement. Production date, rather than a registration year, governs the filter change.
+
+## Retrieval and rights
+
+The TI image was retrieved successfully **11 November 2026** from [its direct source URL without a trailing slash](https://charm.li/images/IMP63Q313/euro472/514514469). The page reader returned 404 and direct HTML returned 502; the text was compared with the live search-index rendering and the complete HTML recovered on 10 November in `/tmp/boxster-drain-ti-live.html`. The parts-panel image timed out. Those limits do not alter the Figure 1 or PET evidence inspected above. No full source PDF is duplicated here.
+
+The two retained images are unchanged source excerpts, not this book's original art, and retain their respective original rights; they are not relicensed under the repository's MIT licence. All existing PET PNGs are linked rather than copied.
+
+- `porsche-ti-29-09-figure-1.jpg`: SHA-256 `14f72938823a46041bf0ea22fd47a51aedb8298bc066fc287dc554a622217fc2`.
+- `98756180501-component-photo.png`: SHA-256 `7ba4703b35416f9cfba21e6b46a40a1aaf91e7f1e54dddf2a46753470ed0f3c7`.
