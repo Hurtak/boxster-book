@@ -261,10 +261,10 @@ function plate(parent: THREE.Object3D, p: Palette, root: THREE.Object3D<THREE.Ob
       ],
     ],
   };
-  const characters = '98722010';
+  const characters = '9872010';
   for (let i = 0; i < characters.length; i++)
     for (const stroke of glyphs[characters[i]]) {
-      const x = -0.184 + i * 0.0515 + (i >= 3 ? 0.015 : 0);
+      const x = -0.184 + i * 0.06 + (i >= 3 ? 0.015 : 0);
       // Straight stroke segments preserve the narrow registration-letter proportions.
       for (let j = 0; j < stroke.length - 1; j++) {
         const a = new THREE.Vector3(x + stroke[j][0] * 0.044, -0.035 + stroke[j][1] * 0.071, 0.013);
