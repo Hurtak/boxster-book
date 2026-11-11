@@ -137,11 +137,6 @@ export function BookApp({
               />
             ))}
             <Pagination chapters={chapters} active={active} />
-            <footer className="book-footer">
-              An independent guide. Europe &amp; UK specifications.
-              <br />
-              <a href="#title">Back to the book</a>
-            </footer>
           </main>
           <aside className="chapter-outline enhanced-only" aria-label="Reading guide" hidden={!active}>
             <h2>In this chapter</h2>
