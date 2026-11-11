@@ -163,11 +163,6 @@ export async function mountExplorer(
     const callout = document.createElement('div');
     callout.className = 'diagram-callout';
     stage.append(callout);
-    const orient = document.createElement('span');
-    orient.className = 'component-front';
-    orient.textContent = 'Front';
-    orient.setAttribute('aria-hidden', 'true');
-    stage.append(orient);
     const relationship = document.createElement('p');
     relationship.className = 'diagram-connections';
     explanation.after(relationship);
@@ -215,10 +210,6 @@ export async function mountExplorer(
         projected.push({ name: part.object.name, ...point });
       }
       host.dataset.projectedParts = JSON.stringify(projected);
-      const front = new THREE.Vector3(0, 0.2, 2.34).project(view.camera);
-      orient.hidden = state.progress >= 35 || Math.abs(front.x) > 0.9 || Math.abs(front.y) > 0.9;
-      orient.style.left = `${((front.x + 1) * stage.clientWidth) / 2}px`;
-      orient.style.top = `${((1 - front.y) * stage.clientHeight) / 2}px`;
     };
     let update = () => {};
     let assembledBox: THREE.Box3,

@@ -219,7 +219,6 @@
   font: 600 14px/1 var(--ui);
 }
 .component-marker[hidden],
-.component-front[hidden],
 .component-marker-leader[hidden] {
   display: none;
 }
@@ -231,13 +230,6 @@
 } /* taste-skill-ignore: Functional leader connecting a part number to its 3D component. */
 .component-marker.is-selected {
   background: #2165a6;
-}
-.component-front {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  color: var(--ink);
-  font: 600 14px/1 var(--ui);
-  pointer-events: none;
 }
 .component-part-number {
   opacity: 0.8;
