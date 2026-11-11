@@ -125,9 +125,7 @@
           "textHash": "6c2cfe513460d6ab64aa0b57a2f1af54006f7881424dd9a9a51f5ee43fe67f20"
         }
       ],
-      "diagrams": [
-        "family-variant-selector"
-      ],
+      "diagrams": ["family-variant-selector"],
       "textHash": "77767173153093f5295a53e61ce0db976e7e4f119ceae5722b068b1a1b4df7b6"
     },
     {
@@ -163,9 +161,7 @@
           "title": "Reading an individual car’s history"
         }
       ],
-      "tables": [
-        "08a4c73f98d349abb7b216d31c95b618cf49e0e6e9634fbecfe12cf95ea13ed8"
-      ],
+      "tables": ["08a4c73f98d349abb7b216d31c95b618cf49e0e6e9634fbecfe12cf95ea13ed8"],
       "figures": [
         {
           "alt": "Announcement, market availability, model year, build date and registration describe different events. The first two concern a product range; the last two concern an individual car.",
@@ -295,9 +291,7 @@
           "textHash": "31f92a4229e96eed1b782c49196084689625da99f2de27f8d556294e0c400545"
         }
       ],
-      "diagrams": [
-        "timeline-evidence"
-      ],
+      "diagrams": ["timeline-evidence"],
       "textHash": "5ca5549f6a8c3c06251b69e07d2b6aa2ed837bac5d38550f9b0e7c9ca3d35b7d"
     },
     {
@@ -463,10 +457,7 @@
           "textHash": "2a0e50a98588f94b052f2f44eddffb7c1f53e1269a7cade5879ef3ce6817bc0b"
         }
       ],
-      "diagrams": [
-        "specification-gearbox-comparison",
-        "specification-option-links"
-      ],
+      "diagrams": ["specification-gearbox-comparison", "specification-option-links"],
       "textHash": "1c97495ac53c34000b1a285a89b5aed1ec5a468b3d67092cf4d5ce42dfbd5e35"
     },
     {
@@ -626,10 +617,7 @@
           "textHash": "fbbafd265a4962919591d9c0f91813bb240df7a107524bb34f03e579d9b0d4fd"
         }
       ],
-      "diagrams": [
-        "body-explorer",
-        "body-packaging-layers"
-      ],
+      "diagrams": ["body-explorer", "body-packaging-layers"],
       "textHash": "3963457a95ec61b887f898ecdf63e1e93b65df2be7e88b58c7fb0e0bef390dc7"
     },
     {
@@ -689,9 +677,7 @@
           "title": "Identification and ageing"
         }
       ],
-      "tables": [
-        "fda8f9b0432178202ea47047737dcdf27c599a6e75e65d03e09afbe0771b27df"
-      ],
+      "tables": ["fda8f9b0432178202ea47047737dcdf27c599a6e75e65d03e09afbe0771b27df"],
       "figures": [
         {
           "alt": "The flat-six sits behind the seats and ahead of the rear axle. Its two horizontal cylinder banks surround a longitudinal crankshaft; heads and four cams sit outside the banks, intake runners above and exhaust manifolds below.",
@@ -874,11 +860,7 @@
           "textHash": "84f18095313c65d699680e612be88e543f4ebd25602a9b810051390bf293db11"
         }
       ],
-      "diagrams": [
-        "engine-explorer",
-        "engine-four-stroke",
-        "engine-timing-lift"
-      ],
+      "diagrams": ["engine-explorer", "engine-four-stroke", "engine-timing-lift"],
       "textHash": "29d84a47c2b26fc77f750fbbbf8ab1e77d6c69aa198cc48099d80dfa6a58ff44"
     },
     {
@@ -938,9 +920,7 @@
           "title": "Identification and ageing"
         }
       ],
-      "tables": [
-        "d69e4cb15f846899e87d1b8e2d2bb05edc1a860340dd807a4c8ee9e6658e6f68"
-      ],
+      "tables": ["d69e4cb15f846899e87d1b8e2d2bb05edc1a860340dd807a4c8ee9e6658e6f68"],
       "figures": [
         {
           "alt": "The left side inlet feeds the air cleaner, air-mass sensor and throttle above the rear-mounted engine. Two-bank runners lead to six port injectors; the DME separately controls the throttle, injectors and six coil-and-plug units.",
@@ -1187,10 +1167,7 @@
           "textHash": "18811000e769dbfaf3b29f755c4c7726144f7f3b5e62442ccdfae436bfc2a8d5"
         }
       ],
-      "diagrams": [
-        "intake-explorer",
-        "engine-mixture-feedback"
-      ],
+      "diagrams": ["intake-explorer", "engine-mixture-feedback"],
       "textHash": "161624c609390ba6c9059b99b392b9038fad0079ba56ac2612fe106337c9905c"
     },
     {
@@ -1386,10 +1363,7 @@
           "textHash": "76d63adf41fec94887a81f00346d7c5bfe273c35ef635b5b7004967e252aaeba"
         }
       ],
-      "diagrams": [
-        "fluids-explorer",
-        "fluid-cooling-path"
-      ],
+      "diagrams": ["fluids-explorer", "fluid-cooling-path"],
       "textHash": "543673384941ff3177212e42142f8c4b6d37bdd70232716b92e8b7d974d0cff7"
     },
     {
@@ -1429,9 +1403,7 @@
           "title": "Identification and ageing"
         }
       ],
-      "tables": [
-        "fc33d8b0e080da94a609013dade613ed2330648ffb942ba6c3e7831dbe794722"
-      ],
+      "tables": ["fc33d8b0e080da94a609013dade613ed2330648ffb942ba6c3e7831dbe794722"],
       "figures": [
         {
           "alt": "The manual transaxle sits behind the engine. The flywheel and dry clutch connect its longitudinal input, cables connect the cabin lever to selection, and the final drive connects sideways to the rear half-shafts.",
@@ -1566,10 +1538,7 @@
           "textHash": "741bb3466ebec4d55b68c954a03ba8cc248a5048de86156395fc5799986c9e52"
         }
       ],
-      "diagrams": [
-        "manual-explorer",
-        "manual-ratio-explorer"
-      ],
+      "diagrams": ["manual-explorer", "manual-ratio-explorer"],
       "textHash": "973203d30cbca7e390c19a1f8889fc28d845acd12d1d15db82cc43402f3fd2b3"
     },
     {
@@ -1613,9 +1582,7 @@
           "title": "Identification and ageing"
         }
       ],
-      "tables": [
-        "8e65fa0efad74f0cff39ef7039bfea65a36ac9d2d8c0bfa5c19581eba5d342bb"
-      ],
+      "tables": ["8e65fa0efad74f0cff39ef7039bfea65a36ac9d2d8c0bfa5c19581eba5d342bb"],
       "figures": [
         {
           "alt": "Optional PDK behind the engine connects its flywheel, nested K1 and K2 packs, concentric shafts and sample gearing to the rear final drive. The cutaway housing, bolted sump, support brackets, separate controller, heat exchanger and selector cable locate its connections to the car.",
@@ -1761,10 +1728,7 @@
           "textHash": "505dbbc316c7e52fd03544369ccea3dd262afd1baa9e6a65145313c2e528f68c"
         }
       ],
-      "diagrams": [
-        "pdk-explorer",
-        "pdk-power-path"
-      ],
+      "diagrams": ["pdk-explorer", "pdk-power-path"],
       "textHash": "b92213f3d9fb2fffa1b3382e1d293d1bf66f687fd2b3db7c984cf402bd233823"
     },
     {
@@ -1938,10 +1902,7 @@
           "textHash": "bc21624d4ff6f0d9b7377678915dcb6b2df9f67938f15c5eac39f1e4089d1785"
         }
       ],
-      "diagrams": [
-        "drivetrain-explorer",
-        "drivetrain-open-differential"
-      ],
+      "diagrams": ["drivetrain-explorer", "drivetrain-open-differential"],
       "textHash": "b6dd9b1b781b4cea99a2b1cc2e5bd2eff63360224f272c0dd5a433cc0f56f9c7"
     },
     {
@@ -2132,11 +2093,7 @@
           "textHash": "9c77051f929adc7d40cd8ab06c32d71e1d2d95ab87693698dbe0a9f1a5a5f7cd"
         }
       ],
-      "diagrams": [
-        "suspension-explorer",
-        "suspension-spring-damper",
-        "suspension-anti-roll"
-      ],
+      "diagrams": ["suspension-explorer", "suspension-spring-damper", "suspension-anti-roll"],
       "textHash": "a7fc6050abcea46c09e454aa1d55a6ad9d0a873c0b36538379bd8609279e51af"
     },
     {
@@ -2188,9 +2145,7 @@
           "title": "Identification and ageing"
         }
       ],
-      "tables": [
-        "baf204f219b74a8e8f19acdc9b17ba962461e1c588648ddc1ffd74f6dc4b69c4"
-      ],
+      "tables": ["baf204f219b74a8e8f19acdc9b17ba962461e1c588648ddc1ffd74f6dc4b69c4"],
       "figures": [
         {
           "alt": "The front steering rack joins the driver’s column and both front carriers, while long hydraulic paths reach the engine-driven pump behind the cabin. The separated front-left rim and tyre expose their bead-seat connection.",
@@ -2358,11 +2313,7 @@
           "textHash": "b43c3268773c8396ea2a16013d8c195e3e69400d77cdd78d9b9c933fb5468101"
         }
       ],
-      "diagrams": [
-        "steering-explorer",
-        "tyre-grip-budget",
-        "tyres-rolling-size"
-      ],
+      "diagrams": ["steering-explorer", "tyre-grip-budget", "tyres-rolling-size"],
       "textHash": "9ec2d10513b98162d38570770120a9abdf8f08d5cbcb6d46e9722709ddea6abf"
     },
     {
@@ -2634,11 +2585,7 @@
           "textHash": "35e1519f4b444cd762a79702b9a0c3b3ae4d50e90abc0c3c13ef6b8ffdf39b92"
         }
       ],
-      "diagrams": [
-        "brake-explorer",
-        "caliper-pressure",
-        "braking-energy"
-      ],
+      "diagrams": ["brake-explorer", "caliper-pressure", "braking-energy"],
       "textHash": "347a7a27865f2bd0a887827bd373181252b0c8a41a41b32b7853f27a7aca183a"
     },
     {
@@ -2702,9 +2649,7 @@
           "title": "Identification and ageing"
         }
       ],
-      "tables": [
-        "b8cd11c1b31ec8667fdcfe7d8635ddd0b3e312ac3dc659bf7761675202d6ca30"
-      ],
+      "tables": ["b8cd11c1b31ec8667fdcfe7d8635ddd0b3e312ac3dc659bf7761675202d6ca30"],
       "figures": [
         {
           "alt": "The ordinary roof sits above the cabin, with its motor, paired side gearboxes and stowage well behind the seats. A separated cutaway identifies the fixed header, manual front latch and centring journals, supporting frame, fabric and tension wires, rigid heated rear pane, drive paths, compartment cover, separate roof seals and side drainage areas with filters.",
@@ -2894,11 +2839,7 @@
           "textHash": "c4b22aff0055a7f6978e4b5eebcb6c2323da97f85a6f01d672bb2870c8a950fe"
         }
       ],
-      "diagrams": [
-        "roof-explorer",
-        "roof-opening",
-        "roof-drainage"
-      ],
+      "diagrams": ["roof-explorer", "roof-opening", "roof-drainage"],
       "textHash": "f0a29d1735faede4613b62054c62614459d3030b7620d66c2dd280d2e6180467"
     },
     {
@@ -2946,9 +2887,7 @@
           "title": "Identification and ageing"
         }
       ],
-      "tables": [
-        "a4d0c9243ff8dd9d6d9e71a76164a2969ca58f69c88eeb0ec12dd7bcc25288b4"
-      ],
+      "tables": ["a4d0c9243ff8dd9d6d9e71a76164a2969ca58f69c88eeb0ec12dd7bcc25288b4"],
       "figures": [
         {
           "alt": "A spatial cabin cutaway locates the seat runners, frame and upholstery between the axles, the blower and two heat exchangers ahead of the occupants, and the ducts and coolant pipes connected to the air unit. Structural links distinguish body support from airflow and coolant flow.",
@@ -3126,10 +3065,7 @@
           "textHash": "0af3b6ed30568504a995688cfcc8a9cc1e4da7176005ea99ef6bd0b8d5c7e7af"
         }
       ],
-      "diagrams": [
-        "cabin-explorer",
-        "cabin-air-route"
-      ],
+      "diagrams": ["cabin-explorer", "cabin-air-route"],
       "textHash": "a1b0a0d5ddcc207d10e05523bf8d25fc17773e4a106b08553b1f0d2d61968398"
     },
     {
@@ -3185,9 +3121,7 @@
           "title": "Identification and ageing"
         }
       ],
-      "tables": [
-        "b5b442fbfe9e2c4b6f932bdfcaad12d687ee1f77d6f9760c7fb49bc2d7570b23"
-      ],
+      "tables": ["b5b442fbfe9e2c4b6f932bdfcaad12d687ee1f77d6f9760c7fb49bc2d7570b23"],
       "figures": [
         {
           "alt": "The front battery connects through a long positive feed to the rear starter and alternator; a protected branch supplies a front halogen lamp, while body and engine earth connections complete the circuit. Ignition and lighting controls have a separate request role.",
@@ -3393,10 +3327,7 @@
           "textHash": "76a79f2a12e948d2378a1402dc23e088fd2d3043102c36fe800cdd7872eab220"
         }
       ],
-      "diagrams": [
-        "electrical-explorer",
-        "electrical-current-path"
-      ],
+      "diagrams": ["electrical-explorer", "electrical-current-path"],
       "textHash": "d893f2b70694b5309f17cfd7e5cec0a150dc9a8b47e779279914d0c15e334b64"
     },
     {
@@ -3567,10 +3498,7 @@
           "textHash": "cf908bbab1c33e7c4c1559d1076b0d130cd37fafacaf93ee183623a9555e6067"
         }
       ],
-      "diagrams": [
-        "audio-explorer",
-        "audio-source-path"
-      ],
+      "diagrams": ["audio-explorer", "audio-source-path"],
       "textHash": "ef9fd3c55623ee1de6199b0f93d5a90afe060e362984b16cce13863c7cb6c8e5"
     },
     {
@@ -3618,9 +3546,7 @@
           "title": "Identification and ageing"
         }
       ],
-      "tables": [
-        "c8f9649dd6c219514be63041f01d88dd499251f3a6b413517d50b935ab7f05b0"
-      ],
+      "tables": ["c8f9649dd6c219514be63041f01d88dd499251f3a6b413517d50b935ab7f05b0"],
       "figures": [
         {
           "alt": "The passenger cell supports the seats, reinforced windscreen frame and two fixed rear bars. Three-point belts attach to the body and rear bars; six folded airbag modules occupy the steering wheel, passenger dashboard, outer seat bolsters and doors.",
@@ -3750,10 +3676,7 @@
           "textHash": "46649cd63f06e786842ae42350cff5b9c837f910860e0587923806a67edeb22b"
         }
       ],
-      "diagrams": [
-        "protection-explorer",
-        "protection-system-scenarios"
-      ],
+      "diagrams": ["protection-explorer", "protection-system-scenarios"],
       "textHash": "af46dd027e0ea766d9e727819c6145cbba1351f7c31a8203353c5e48af7c2605"
     },
     {

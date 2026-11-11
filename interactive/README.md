@@ -14,36 +14,36 @@ scripts/mdx/
   compiler.ts                # Shared MDX rules for Node/browser exports
   bundler.ts                 # Lazy Vite diagram registry and asset manifest
 interactive/
-  ui.js                       # Panels, labelled sliders and buttons
+  ui.ts                       # Panels, labelled sliders and buttons
   styles.css                  # Responsive controls, static/print fallback
-  svg.js                      # Responsive D3 SVG surface
-  math.js                     # Units, energy calculation, camera interpolation
-  diagrams/energy.js          # Reusable speed–energy diagram
-  three/scene.js              # GLB loading, lighting, orbiting and disposal
-  three/component-explorer.js # Shared car-to-assembly tour, focus and connections
-  three/component-geometry.js # Geometry primitives for chapter-owned assemblies
+  svg.ts                      # Responsive D3 SVG surface
+  math.ts                     # Units, energy calculation, camera interpolation
+  diagrams/energy.ts          # Reusable speed–energy diagram
+  three/scene.ts              # GLB loading, lighting, orbiting and disposal
+  three/component-explorer.ts # Shared car-to-assembly tour, focus and connections
+  three/component-geometry.ts # Geometry primitives for chapter-owned assemblies
   models/
     reference-car.glb         # Shared car for later component chapters
-    reference-car.js          # Assemble the photo-guided car and named subsystems
+    reference-car.ts          # Assemble the photo-guided car and named subsystems
     boxster/                 # Curved shell, lamps, bumpers, tan cabin and wheels
-    prepare-model.js         # Batch trim geometry while preserving named parts
-    geometry.js               # Geometry authoring primitives
+    prepare-model.ts         # Batch trim geometry while preserving named parts
+    geometry.ts               # Geometry authoring primitives
 book/13-brakes-and-stability-systems/
   index.mdx
   images/
     braking-chain.svg         # Standalone chapter illustration
   diagrams/
     brake-explorer/
-      index.js                # Chapter behaviour and connection to shared code
+      index.ts                # Chapter behaviour and connection to shared code
       scene.json              # Camera stops, part names, offsets and explanation
       brake.glb               # Local 3D asset, in metres
-      model.js                # Editable geometry source for this sample
+      model.ts                # Editable geometry source for this sample
       poster.svg              # Static explanation
     caliper-pressure/
-      index.js
+      index.ts
       poster.svg
     braking-energy/
-      index.js                # Configuration for the shared energy diagram
+      index.ts                # Configuration for the shared energy diagram
       poster.svg
 ```
 
@@ -51,7 +51,7 @@ Use **D3** for a hydraulic circuit, force arrows, cutaway, graph or timeline. Us
 
 ## Add a diagram to a chapter
 
-Create `diagrams/unique-diagram-name/index.js` beside the chapter. Folder names are diagram IDs and must be unique across the book. Reference it in MDX:
+Create `diagrams/unique-diagram-name/index.ts` beside the chapter. Folder names are diagram IDs and must be unique across the book. Reference it in MDX:
 
 ```mdx
 import { Diagram } from '../../src/book/components';
@@ -62,21 +62,37 @@ import poster from './diagrams/unique-diagram-name/poster.svg';
 
 Export one function:
 
-```js
-import { panel, slider } from '../../../../interactive/ui.js';
+```ts
+import { panel, slider } from '../../../../interactive/ui.ts';
+import { initializeState, type DiagramContext } from '../../../../interactive/types';
 
-export function mount(host, { state, signal }) {
-  state.value ??= 0;
+export function mount(host: HTMLElement, { state: saved, signal }: DiagramContext) {
+  const state = initializeState(saved, { value: 0 });
   const { stage, controls, explanation } = panel(host, {
     title: 'What this diagram explains',
     description: 'What the reader can change and observe.',
     note: 'What is simplified, illustrative or measured.',
   });
-  // Draw into stage, update the explanation and keep values in state.
+  const draw = () => {
+    stage.textContent = String(state.value);
+    explanation.textContent = `Illustrative setting: ${state.value}`;
+  };
+  slider(controls, {
+    label: 'Setting',
+    value: state.value,
+    signal,
+    onChange(value) {
+      state.value = value;
+      draw();
+    },
+  });
+  draw();
   // Bind listeners with { signal }, or remove them in the returned cleanup.
   // Return a cleanup function when owning resources beyond DOM nodes.
 }
 ```
+
+Diagram modules and shared geometry are TypeScript, checked in strict mode alongside the reader, build scripts and tests. Use `DiagramContext` and `initializeState` to validate retained state primitives at the storage boundary; keep subject-specific range and option checks in the chapter.
 
 The build discovers chapter modules automatically and generates the lazy registry. Missing files, duplicate IDs, unknown references and missing descriptive alternatives fail the build. Prefer the existing brake and energy examples when implementing a new diagram.
 
@@ -92,9 +108,9 @@ Use a self-contained **GLB**, with embedded resources, metres as units and meani
 
 Import models normally and resolve them through the shared loader:
 
-```js
+```ts
 import model from './assembly.glb';
-import { loadModel, scene3D } from '../../../../interactive/three/scene.js';
+import { loadModel, scene3D } from '../../../../interactive/three/scene.ts';
 
 // Inside async mount:
 const assembly = await loadModel(model, signal, import.meta.url);
@@ -105,12 +121,12 @@ const assembly = await loadModel(model, signal, import.meta.url);
 
 The brake example maps a single 0–100 slider onto four authored stops:
 
-| Position | Explanation |
-| --- | --- |
-| 0 | Complete car, locating the selected front-left wheel |
-| 30 | Body fades in place; schematic hydraulic connections exposed |
-| 65 | Camera at the wheel, surrounding car hidden |
-| 100 | Assembly separated along per-part offsets |
+| Position | Explanation                                                  |
+| -------- | ------------------------------------------------------------ |
+| 0        | Complete car, locating the selected front-left wheel         |
+| 30       | Body fades in place; schematic hydraulic connections exposed |
+| 65       | Camera at the wheel, surrounding car hidden                  |
+| 100      | Assembly separated along per-part offsets                    |
 
 Camera poses interpolate smoothly between stops. Node transformations use the slider's absolute value, so scrubbing backwards reassembles the same scene without accumulating movement. Part buttons then focus a selected component; moving the main slider returns to the guided view. Named nodes separate the wheel, disc, pads, complete monobloc caliper, pistons and hub. The caliper body never splits into fictional halves.
 
@@ -118,7 +134,7 @@ The renderer uses demand-based frames, a capped pixel ratio, a generated studio 
 
 ## Chapter component explorers
 
-Chapters 4–18 have a car-to-component tour. Brakes retain their dedicated GLB assembly; the other fourteen chapters define procedural geometry in `diagrams/<subject>-explorer/model.js`. Each module exports `config` and `createAssembly()`, and a small `index.js` passes these and the shared reference car to `mountExplorer`.
+Chapters 4–18 have a car-to-component tour. Brakes retain their dedicated GLB assembly; the other fourteen chapters define procedural geometry in `diagrams/<subject>-explorer/model.ts`. Each module exports `config` and `createAssembly()`, and a small `index.ts` passes these and the shared reference car to `mountExplorer`.
 
 Use the car's coordinate system: **+X left, +Y up, +Z front**, in metres. `createAssembly()` returns a group whose named direct children are selectable parts. The shared `part()` helper records each part's label, explanation, installed position and illustrative separation offset. Put meaningful geometry inside that group. The `config` supplies the title, four stage explanations, focus part and named connections; connection kinds distinguish mechanical, fluid, air, electrical, signal and structural relationships.
 
@@ -132,7 +148,7 @@ Use shared factories in `interactive/models/boxster/` for visible frames, glazin
 
 Mark replaceable car groups with `userData.carPart = true`. GLB preparation batches their trim within that group rather than flattening it into the outer body or interior. Keep node names unique, including left/right suffixes. After changing these factories, run `npm run model:generate` before rendering posters. The dedicated brake viewer also removes its duplicate context wheel and brake before displaying the installed detailed assembly.
 
-The [assembly fit review](models/boxster/assembly-fit-review.md) records decisions for all fifteen tours. `tests/installed-assemblies.test.js` checks shared surfaces vertex by vertex, exported replacement names, transferred world geometry, the front mount's bonnet clearance, and the brake wheel's axle position. Matching the authored car does not make these educational models factory CAD or establish real fitting dimensions.
+The [assembly fit review](models/boxster/assembly-fit-review.md) records decisions for all fifteen tours. `tests/installed-assemblies.test.ts` checks shared surfaces vertex by vertex, exported replacement names, transferred world geometry, the front mount's bonnet clearance, and the brake wheel's axle position. Matching the authored car does not make these educational models factory CAD or establish real fitting dimensions.
 
 Run `npm run model:posters` after changing a procedural model or its configuration. It uses local Chrome (or `BROWSER_EXECUTABLE_PATH`) to render each exploded assembly and writes its `poster.svg`, including an embedded PNG, a vehicle location map, vector part labels and a summary. Render one model with `npm run model:posters -- engine-explorer`. The normal book build uses those checked-in posters and needs no browser for rendering them. Interactive fallbacks remain beside their module; standalone chapter illustrations and photographs belong in `images/`.
 
@@ -144,6 +160,6 @@ Run `npm run model:posters` after changing a procedural model or its configurati
 - `npm run build` produces the sole Pages edition at `dist/site/index.html` with hashed chunks, images and GLBs in `index-assets/`. Preview it with `npm run build:preview` at `/site/`. Only diagrams near the viewport are mounted; their code and model assets load when needed.
 - The reader’s Print whole book action exports all chapters through the browser, using every static poster. There is no separate PDF build.
 - `npm test` runs the tests against the existing Pages build, exercising the real browser interfaces and shipped GLB.
-- `npm run validate` checks TypeScript, builds the Pages edition, then runs all tests. CI uses this command.
+- `npm run validate` checks formatting, lint and strict TypeScript, builds the Pages edition, then runs Vitest. CI uses this command.
 
-React, D3 and Three.js are bundled locally; reading uses no CDN or external model service. Vite supplies the development server and HTTP builds. The model preview and poster authoring tools still use esbuild; the book itself uses Vite. The former imperative reader and Pandoc builder are retired. Add tests for new calculations or meaningful interaction contracts; retain browser checks for loading, fallbacks and a narrow reading column.
+React, D3 and Three.js are bundled locally; reading uses no CDN or external model service. Vite+ supplies development, builds, tests, type checks, lint and formatting. The model preview and poster authoring tools still use esbuild; the book itself uses Vite+. The former imperative reader and Pandoc builder are retired. Add tests for new calculations or meaningful interaction contracts; retain browser checks for loading, fallbacks and a narrow reading column.

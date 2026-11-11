@@ -7,12 +7,17 @@
     "jsx": "react-jsx",
     "strict": true,
     "noEmit": true,
-    "allowJs": true,
-    "checkJs": false,
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "types": ["node", "vite/client", "mdx"]
+    "types": ["node", "vite-plus/client", "mdx"]
   },
-  "include": ["src", "scripts/**/*.ts", "vite.config.ts", "tests/**/*.ts"]
+  "include": [
+    "src",
+    "scripts/**/*.ts",
+    "interactive/**/*.ts",
+    "book/**/diagrams/**/*.ts",
+    "tests/**/*.ts",
+    "vite.config.ts"
+  ]
 }

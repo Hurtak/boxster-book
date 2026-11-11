@@ -13,6 +13,8 @@ node_modules/
 __pycache__/
 *.py[cod]
 .cache/
+.vite/
+.vite-plus/
 *.tsbuildinfo
 
 # Local machine files and logs

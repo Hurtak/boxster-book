@@ -35,7 +35,7 @@ The [book guidelines](.agents/boxster-987-2-book-guidelines.md) define the chapt
 
 ## Build and preview
 
-Requires **Node 22.12+**; CI uses Node 24. Install dependencies, build the book and start its preview:
+Requires **Node 22.18+, 24.11+ or 26+**; CI uses Node 24. Install dependencies, build the book and start its preview:
 
 ```sh
 npm ci
@@ -45,15 +45,33 @@ npm run build:preview
 
 Open <http://localhost:8000/site/>. There is one production build: **`dist/site/index.html` and its `index-assets/` folder**, the same files deployed to GitHub Pages. Keep that directory together and serve it over HTTP. Diagram code and 3D models load on demand; the complete manuscript, photographs, static illustrations and sources are in the prerendered document. Fonts and styles are bundled locally. Rebuild after editing MDX or diagram code.
 
-For development, `npm run dev` starts Vite at the displayed local URL. It prerenders the manuscript, hydrates the reader and reloads chapter/asset edits; shared React edits use Vite's development pipeline. `npm run build:preview -- --port 8001` selects another preview port. The preview also serves `/boxster-book/`, matching the published project path.
+For development, `npm run dev` runs `vp dev` directly using [vite.config.ts](vite.config.ts). The book's Vite plugin prerenders the manuscript, hydrates the reader and reloads chapter/asset edits; shared React edits use Vite's development pipeline. The displayed local URL is normally <http://127.0.0.1:5173/>. Standard Vite flags work, for example `npm run dev -- --port 5174` or `npm run dev -- --host 0.0.0.0`. `npm run build:preview -- --port 8001` selects another build-preview port. The build preview also serves `/boxster-book/`, matching the published project path.
 
 Builds preserve older content-hashed assets so an already open book can finish loading; use a fresh output directory when cleaning up unused assets. The HTML is replaced only after a successful build. Optional paths:
 
 ```sh
-node --import tsx scripts/build.ts --source book --output dist/site/index.html
+npm exec -- vpx ./scripts/build.ts --source book --output dist/site/index.html
 ```
 
 Default paths are relative to this project; explicit paths are relative to the working directory. Run the direct CLI from the project directory, or use `npm --prefix /path/to/boxster-book run build` from elsewhere.
+
+## Code quality and tests
+
+Vite+ owns the build, Vitest runner, Oxlint and Oxfmt. All authored application code, diagrams, geometry factories, build scripts and tests use TypeScript. Chapters remain MDX, and research and source notes remain Markdown.
+
+| Command                                   | Purpose                                                                                  |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `npm run validate`                        | Run all quality checks, build the Pages edition, then run all tests; this is the CI gate |
+| `npm run check`                           | Check formatting, lint and types with `vp check`; warnings fail the check                |
+| `npm exec -- vp check --no-fmt --no-lint` | Check strict TypeScript across the application, scripts, diagrams and tests              |
+| `npm exec -- vp lint --deny-warnings`     | Run type-aware Oxlint; warnings fail the check                                           |
+| `npm exec -- vp fmt`                      | Apply Oxfmt formatting to code and tooling documents                                     |
+| `npm exec -- vp fmt --check`              | Check formatting without writing files                                                   |
+| `npm run check:fix`                       | Apply safe formatting and lint fixes                                                     |
+| `npm test`                                | Run Vitest, including Playwright browser checks against the existing build               |
+| `npm run test:watch`                      | Watch tests during development                                                           |
+
+The shared configuration is [vite.config.ts](vite.config.ts). Formatting leaves the manuscript, research, provenance records, model/image assets and agent guidance unchanged. Tests do not build implicitly: run `npm run build` first after manuscript or runtime edits, or use `npm run validate`. Browser checks require Chrome or Chromium; set `BROWSER_EXECUTABLE_PATH` if it is not installed at the default location. CI installs Chromium explicitly. Task caching is disabled so validation always checks the current build and browser state.
 
 ## Print or save the whole book as PDF
 
@@ -65,7 +83,7 @@ The browser tests generate tagged, bookmarked PDFs in `dist/previews/` and check
 
 ## GitHub Pages
 
-The [Pages workflow](.github/workflows/pages.yml) validates the book on pushes to `main`, pull requests and manual runs. It installs Node 24 and Chromium, then runs `npm run validate`: TypeScript, the single Pages build and the tests. After successful validation on `main`, GitHub Actions publishes `dist/site/` to <https://hurtak.github.io/boxster-book/>.
+The [Pages workflow](.github/workflows/pages.yml) validates the book on pushes to `main`, pull requests and manual runs. It installs Node 24 and Chromium, then runs `npm run validate`: Vite+ formatting, lint and strict type checks, the single Pages build and the Vitest suite. After successful validation on `main`, GitHub Actions publishes `dist/site/` to <https://hurtak.github.io/boxster-book/>.
 
 Relative asset URLs work under the `/boxster-book/` project path. Browser tests serve the same build at the local preview and project-prefixed URLs to check navigation, code and 3D-model loading.
 
@@ -112,13 +130,13 @@ Edit `scripts/book.css` for presentation and `src/reader/` for the React reader.
 
 Node prerenders the complete React/MDX tree with `renderToString`; the browser hydrates the matching tree before applying the URL hash and saved preferences. All chapter content remains available without JavaScript and for full-book printing. The first migration includes compiled chapter code in browser assets; it does not embed a second JSON copy of the rendered manuscript.
 
-Vite builds one Pages edition with lazy diagram/model chunks and content-hashed media. Image imports become stable asset keys resolved through the same emitted media manifest during prerendering and hydration. Fonts and CSS remain embedded. Nested local SVG resources are embedded and external SVG/CSS dependencies are rejected. Builds replace the HTML only after successful compilation, rendering and asset assembly.
+Vite+ builds one Pages edition with lazy diagram/model chunks and content-hashed media. Image imports become stable asset keys resolved through the same emitted media manifest during prerendering and hydration. Fonts and CSS remain embedded. Nested local SVG resources are embedded and external SVG/CSS dependencies are rejected. Builds replace the HTML only after successful compilation, rendering and asset assembly.
 
 React owns navigation, disclosures and figure wrappers. Each live diagram receives a dedicated imperative host, retained state and an AbortSignal. D3/Three.js own the host contents. Viewport disposal reserves the measured height before removing those contents; cancellation and cleanup also support React development Strict Mode. Diagram/model modules do not run during Node rendering.
 
 Image dimensions are read at build time and emitted as intrinsic width/height attributes. On startup and chapter navigation, the reader settles fonts and prepares the selected chapter's lightweight diagram layouts before revealing the reading sheet and performing the final anchor scroll. Car viewers construct their complete controls and text before waiting for visibility and fetching models; a loading placeholder keeps that measured space until the scene is ready. Hidden chapters retain their last measured reservations. Failed reader scripts fall back to the static manuscript, and disabled JavaScript never hides it.
 
-`npm run typecheck` checks implementation types; compiling every chapter separately validates MDX syntax and book component metadata. `tests/fixtures/manuscript-baseline.json` records the pre-migration content and public destination contract. Its hashes normalise typography/whitespace while preserving letters, numbers and ordering. Update this contract deliberately when reviewing future manuscript changes, alongside the owning evidence; ordinary build/runtime changes must preserve it.
+`npm exec -- vp check --no-fmt --no-lint` checks all TypeScript implementation, diagram, model-authoring and test files in strict mode; compiling every chapter separately validates MDX syntax and book component metadata. `tests/fixtures/manuscript-baseline.json` records the pre-migration content and public destination contract. Its hashes normalise typography/whitespace while preserving letters, numbers and ordering. Update this contract deliberately when reviewing future manuscript changes, alongside the owning evidence; ordinary build/runtime changes must preserve it.
 
 ## Interactive diagrams
 
@@ -134,11 +152,11 @@ Every component chapter, from body structure through occupant protection (chapte
 
 Every interactive figure has a static SVG for printing, disabled JavaScript or unavailable WebGL. Its **Interactive / Static diagram** buttons also let readers choose the poster directly, including while a model downloads. The view choice and interactive control values are retained while moving between chapters; returning to Interactive restores the controls. Static view releases the live diagram's resources. Controls use native labelled sliders and buttons. The runtime releases 3D resources offscreen while retaining control values, and renders on interaction rather than running a continuous animation loop.
 
-The car is an original **photo-guided model**, with deep metallic green paint, a tan cabin, curved body panels, split-spoke wheels, projector lamps and twin exhaust tips. The [model source notes](interactive/models/boxster/README.md) describe the reference choices and geometry. The mechanical assemblies remain educational schematics: the front disc has the stated nominal 318 × 28 mm envelope, while pipe routing, clearances and most other component dimensions are illustrative. `npm run model:generate` regenerates the GLBs from the JavaScript geometry sources; the book build uses the existing GLBs.
+The car is an original **photo-guided model**, with deep metallic green paint, a tan cabin, curved body panels, split-spoke wheels, projector lamps and twin exhaust tips. The [model source notes](interactive/models/boxster/README.md) describe the reference choices and geometry. The mechanical assemblies remain educational schematics: the front disc has the stated nominal 318 × 28 mm envelope, while pipe routing, clearances and most other component dimensions are illustrative. `npm run model:generate` regenerates the GLBs from the TypeScript geometry sources; the book build uses the existing GLBs.
 
 For a larger model inspection view, run `npm run model:preview`, then `npm run build:preview`, and open <http://localhost:8000/model-preview/>. Front, rear, side, low-front and cabin camera presets help compare revisions. The photographs and their backgrounds are not embedded in the model.
 
-Run `npm run validate` for the complete check: TypeScript, the Pages build, then tests. Use `npm test` to run only the tests against the existing build; rebuild first after changes to the manuscript or runtime. The tests check calculations, GLB contents, all chapters and interactive figures, cross-chapter links, local images, keyboard controls, resource cleanup, phone layout, printing and fallbacks. Browser tests use an installed Google Chrome; set `BROWSER_EXECUTABLE_PATH` to use another compatible Chromium executable. Test screenshots are written to `dist/previews/`.
+Run `npm run validate` for the complete check: formatting, lint, strict TypeScript, the Pages build, then tests. Use `npm test` to run only the tests against the existing build; rebuild first after changes to the manuscript or runtime. The tests check calculations, GLB contents, all chapters and interactive figures, cross-chapter links, local images, keyboard controls, resource cleanup, phone layout, printing and fallbacks. Browser tests use an installed Google Chrome; set `BROWSER_EXECUTABLE_PATH` to use another compatible Chromium executable. Test screenshots are written to `dist/previews/`.
 
 ## Reader design
 

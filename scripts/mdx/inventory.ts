@@ -1,12 +1,13 @@
-import { readdir, readFile, stat } from 'node:fs/promises';
-import { resolve, dirname, relative } from 'node:path';
-import { unified } from 'unified';
-import remarkParse from 'remark-parse';
-import remarkMdx from 'remark-mdx';
-import remarkGfm from 'remark-gfm';
-import { visit } from 'unist-util-visit';
+import type { Heading, Nodes, PhrasingContent, Root, RootContent } from 'mdast';
+import type { MdxJsxAttribute, MdxJsxFlowElement, MdxJsxTextElement } from 'mdast-util-mdx-jsx';
 import { toString } from 'mdast-util-to-string';
-import type { Root, Heading } from 'mdast';
+import { readdir, readFile, stat } from 'node:fs/promises';
+import { dirname, relative, resolve } from 'node:path';
+import remarkGfm from 'remark-gfm';
+import remarkMdx from 'remark-mdx';
+import remarkParse from 'remark-parse';
+import { unified } from 'unified';
+import { visit } from 'unist-util-visit';
 import type { ChapterMetadata } from '../../src/book/types';
 
 export interface BookInventory {
@@ -16,31 +17,51 @@ export interface BookInventory {
   ids: Set<string>;
 }
 export const parser = () => unified().use(remarkParse).use(remarkMdx).use(remarkGfm);
-export const attribute = (node: any, name: string) => node.attributes?.find((a: any) => a.name === name)?.value;
-export function literalAttribute(node:any,name:string):unknown {
-  const value=attribute(node,name);
-  if(typeof value==='string')return value;
-  if(value && typeof value==='object'){try{return JSON.parse(value.value);}catch{/* a binding, not a literal */}}
+export const attribute = (node: MdxJsxFlowElement | MdxJsxTextElement, name: string) =>
+  node.attributes.find(
+    (attribute): attribute is MdxJsxAttribute => attribute.type === 'mdxJsxAttribute' && attribute.name === name,
+  )?.value;
+export function literalAttribute(node: MdxJsxFlowElement | MdxJsxTextElement, name: string): unknown {
+  const value = attribute(node, name);
+  if (typeof value === 'string') return value;
+  if (value && typeof value === 'object') {
+    try {
+      return JSON.parse(value.value);
+    } catch {
+      /* a binding, not a literal */
+    }
+  }
 }
 export function explicitHeadings(tree: Root): void {
-  visit(tree, (node: any) => {
+  visit(tree, (node) => {
     if (node.type !== 'mdxJsxFlowElement' || node.name !== 'Heading') return;
     const level = attribute(node, 'level');
-    const depth = Number(typeof level === 'object' ? level.value : level);
+    const depth = Number(level && typeof level === 'object' ? level.value : level);
     const id = attribute(node, 'id');
-    if (!(depth >= 1 && depth <= 6) || typeof id !== 'string' || !id) throw Error('Heading needs a literal id and level from 1 to 6');
-    const children = node.children.flatMap((child: any) => child.type === 'paragraph' ? child.children : [child]);
+    if (!(depth >= 1 && depth <= 6) || typeof id !== 'string' || !id)
+      throw Error('Heading needs a literal id and level from 1 to 6');
+    const children = node.children.flatMap<RootContent | PhrasingContent>((child) =>
+      child.type === 'paragraph' ? child.children : [child],
+    );
     Object.assign(node, { type: 'heading', depth, children, data: { hProperties: { id } } });
   });
 }
 export function headingRecords(tree: Root, prefix: string) {
   const used = new Set<string>();
   const records: { node: Heading; id: string; title: string; depth: number }[] = [];
-  visit(tree, 'heading', node => {
+  visit(tree, 'heading', (node) => {
     const title = toString(node);
     const explicit = node.data?.hProperties?.id;
-    const base = typeof explicit === 'string' ? explicit : title.toLowerCase().replace(/[^\p{L}\p{N}_\-.\s]/gu, '').replace(/^[^\p{L}]*/u, '').replace(/\s+/g, '-') || 'section';
-    let slug = base, n = 1;
+    const base =
+      typeof explicit === 'string'
+        ? explicit
+        : title
+            .toLowerCase()
+            .replace(/[^\p{L}\p{N}_\-.\s]/gu, '')
+            .replace(/^[^\p{L}]*/u, '')
+            .replace(/\s+/g, '-') || 'section';
+    let slug = base,
+      n = 1;
     if (explicit && used.has(slug)) throw Error(`Duplicate heading id: ${slug}`);
     while (used.has(slug)) slug = `${base}-${n++}`;
     used.add(slug);
@@ -48,16 +69,22 @@ export function headingRecords(tree: Root, prefix: string) {
   });
   return records;
 }
-function readingText(node:any):string {
-  if(node.type==='mdxjsEsm'||node.type==='footnoteDefinition'||node.type==='footnoteReference')return '';
-  if(node.type==='mdxJsxFlowElement'&&node.name==='Diagram')return String(literalAttribute(node,'alt')??'');
-  if(typeof node.value==='string')return node.value;
-  const block=['root','list','listItem','table','tableRow','tableCell','mdxJsxFlowElement'].includes(node.type);
-  return (node.children??[]).map(readingText).join(block?'\n':'');
+function readingText(node: Nodes): string {
+  if (node.type === 'mdxjsEsm' || node.type === 'footnoteDefinition' || node.type === 'footnoteReference') return '';
+  if (node.type === 'mdxJsxFlowElement' && node.name === 'Diagram') {
+    const alt = literalAttribute(node, 'alt');
+    return typeof alt === 'string' ? alt : '';
+  }
+  if ('value' in node && typeof node.value === 'string') return node.value;
+  const block = ['root', 'list', 'listItem', 'table', 'tableRow', 'tableCell', 'mdxJsxFlowElement'].includes(node.type);
+  return ('children' in node ? node.children : []).map(readingText).join(block ? '\n' : '');
 }
 export async function discoverBook(source: string, root: string): Promise<BookInventory> {
-  const paths = (await readdir(source, { withFileTypes: true })).filter(e => e.isDirectory() && /^\d/.test(e.name));
-  const chapters: ChapterMetadata[] = [], diagrams: Record<string, string> = {}, ids = new Set<string>(), numbers = new Set<number>();
+  const paths = (await readdir(source, { withFileTypes: true })).filter((e) => e.isDirectory() && /^\d/.test(e.name));
+  const chapters: ChapterMetadata[] = [],
+    diagrams: Record<string, string> = {},
+    ids = new Set<string>(),
+    numbers = new Set<number>();
   let noteOffset = 0;
   for (const entry of paths.sort((a, b) => Number(a.name.split('-')[0]) - Number(b.name.split('-')[0]))) {
     if (!/^\d{2,}-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.name)) throw Error(`Invalid chapter folder: ${entry.name}`);
@@ -65,27 +92,33 @@ export async function discoverBook(source: string, root: string): Promise<BookIn
     if (!number || numbers.has(number)) throw Error(`Chapter numbers must be positive and unique: ${entry.name}`);
     numbers.add(number);
     const folder = resolve(source, entry.name);
-    const files = (await readdir(folder)).filter(name => /^index\.mdx?$/.test(name));
+    const files = (await readdir(folder)).filter((name) => /^index\.mdx?$/.test(name));
     if (files.length !== 1) throw Error(`Expected exactly one index.mdx in ${folder}`);
-    if(files[0]!=='index.mdx')throw Error(`Convert the chapter entry to index.mdx: ${folder}`);
+    if (files[0] !== 'index.mdx') throw Error(`Convert the chapter entry to index.mdx: ${folder}`);
     const file = resolve(folder, files[0]);
     const raw = await readFile(file, 'utf8');
     const tree = parser().parse(raw);
     explicitHeadings(tree);
     const prefix = `book__${entry.name}__index.md__`;
     const headings = headingRecords(tree, prefix);
-    if (headings.filter(h => h.depth === 1).length !== 1 || headings[0]?.depth !== 1) throw Error(`Each chapter needs exactly one opening # title: ${file}`);
+    if (headings.filter((h) => h.depth === 1).length !== 1 || headings[0]?.depth !== 1)
+      throw Error(`Each chapter needs exactly one opening # title: ${file}`);
     let noteCount = 0;
-    visit(tree, 'footnoteReference', () => { noteCount++; });
+    visit(tree, 'footnoteReference', () => {
+      noteCount++;
+    });
     const references: string[] = [];
-    visit(tree, (node: any) => {
-      if(node.type==='text' && /\[\^[^\]]+\]/.test(node.value))throw Error(`Unresolved footnote reference in ${file}: ${node.value}`);
-      if(node.type==='image')throw Error(`Use Figure with an imported image and descriptive alt text in ${file}`);
-      if(node.type==='mdxJsxFlowElement' && ['Figure','Diagram'].includes(node.name)){
-        const alt=literalAttribute(node,'alt');
-        if(typeof alt!=='string'||!alt.trim())throw Error(`${node.name} needs non-empty literal alt text in ${file}`);
-        const src=attribute(node,node.name==='Diagram'?'poster':'src');
-        if(!src || (typeof src==='string'&&!src.startsWith('data:')))throw Error(`${node.name} needs an imported image (src={image} or poster={poster}) in ${file}`);
+    visit(tree, (node) => {
+      if (node.type === 'text' && /\[\^[^\]]+\]/.test(node.value))
+        throw Error(`Unresolved footnote reference in ${file}: ${node.value}`);
+      if (node.type === 'image') throw Error(`Use Figure with an imported image and descriptive alt text in ${file}`);
+      if (node.type === 'mdxJsxFlowElement' && node.name && ['Figure', 'Diagram'].includes(node.name)) {
+        const alt = literalAttribute(node, 'alt');
+        if (typeof alt !== 'string' || !alt.trim())
+          throw Error(`${node.name} needs non-empty literal alt text in ${file}`);
+        const src = attribute(node, node.name === 'Diagram' ? 'poster' : 'src');
+        if (!src || (typeof src === 'string' && !src.startsWith('data:')))
+          throw Error(`${node.name} needs an imported image (src={image} or poster={poster}) in ${file}`);
       }
       if (node.type === 'mdxJsxFlowElement' && node.name === 'Diagram') {
         const id = attribute(node, 'id');
@@ -94,24 +127,45 @@ export async function discoverBook(source: string, root: string): Promise<BookIn
         references.push(id);
       }
     });
-    const available=await readdir(resolve(folder,'diagrams'),{withFileTypes:true}).catch((e:NodeJS.ErrnoException)=>{if(e.code==='ENOENT')return [];throw e;});
-    for(const entry of available){
-      if(!entry.isDirectory())continue;
-      if(diagrams[entry.name])throw Error(`Duplicate diagram id: ${entry.name}`);
-      const module=resolve(folder,'diagrams',entry.name,'index.js');
-      if(!await stat(module).catch(()=>null))throw Error(`Missing diagram module: ${module}`);
-      diagrams[entry.name]=module;
+    const available = await readdir(resolve(folder, 'diagrams'), { withFileTypes: true }).catch(
+      (e: NodeJS.ErrnoException) => {
+        if (e.code === 'ENOENT') return [];
+        throw e;
+      },
+    );
+    for (const entry of available) {
+      if (!entry.isDirectory()) continue;
+      if (diagrams[entry.name]) throw Error(`Duplicate diagram id: ${entry.name}`);
+      const module = resolve(folder, 'diagrams', entry.name, 'index.ts');
+      if (!(await stat(module).catch(() => null))) throw Error(`Missing diagram module: ${module}`);
+      diagrams[entry.name] = module;
     }
     for (const id of references) {
-      const module = resolve(folder, 'diagrams', id, 'index.js');
-      if (!await stat(module).catch(() => null)) throw Error(`Missing diagram module: ${module}`);
-      if(diagrams[id]!==module)throw Error(`Unknown chapter diagram: ${id} in ${file}`);
+      const module = resolve(folder, 'diagrams', id, 'index.ts');
+      if (!(await stat(module).catch(() => null))) throw Error(`Missing diagram module: ${module}`);
+      if (diagrams[id] !== module) throw Error(`Unknown chapter diagram: ${id} in ${file}`);
     }
-    for (const h of headings) { if (ids.has(h.id)) throw Error(`Duplicate heading: ${h.id}`); ids.add(h.id); }
-    for (let i = 1; i <= noteCount; i++) { ids.add(`fn${noteOffset+i}`); ids.add(`fnref${noteOffset+i}`); }
+    for (const h of headings) {
+      if (ids.has(h.id)) throw Error(`Duplicate heading: ${h.id}`);
+      ids.add(h.id);
+    }
+    for (let i = 1; i <= noteCount; i++) {
+      ids.add(`fn${noteOffset + i}`);
+      ids.add(`fnref${noteOffset + i}`);
+    }
     ids.add(headings[0].id + '--notes');
-    chapters.push({ number, file, id: headings[0].id, title: headings[0].title, headings: headings.slice(1).map(({node, ...h}) => h), diagrams: references, noteOffset, noteCount,
-      minutes: Math.max(1, Math.ceil(readingText(tree).trim().split(/\s+/).length / 220)), planned: tree.children.filter(n => n.type !== 'mdxjsEsm').length === 1 });
+    chapters.push({
+      number,
+      file,
+      id: headings[0].id,
+      title: headings[0].title,
+      headings: headings.slice(1).map(({ node: _node, ...h }) => h),
+      diagrams: references,
+      noteOffset,
+      noteCount,
+      minutes: Math.max(1, Math.ceil(readingText(tree).trim().split(/\s+/).length / 220)),
+      planned: tree.children.filter((n) => n.type !== 'mdxjsEsm').length === 1,
+    });
     noteOffset += noteCount;
   }
   if (!chapters.length) throw Error(`No numbered chapters in ${source}`);
@@ -120,7 +174,9 @@ export async function discoverBook(source: string, root: string): Promise<BookIn
   for (const chapter of chapters) {
     const source = await readFile(chapter.file, 'utf8');
     const tree = parser().parse(source);
-    visit(tree, 'link', node => { resolveBookLink(node.url, chapter, inventory); });
+    visit(tree, 'link', (node) => {
+      resolveBookLink(node.url, chapter, inventory);
+    });
   }
   return inventory;
 }
@@ -130,7 +186,7 @@ export function resolveBookLink(url: string, chapter: ChapterMetadata, book: Boo
   let owner = chapter;
   if (path) {
     const file = resolve(dirname(chapter.file), decodeURIComponent(path)).replace(/index\.mdx?$/, 'index.md');
-    const match = book.chapters.find(c => c.file.replace(/index\.mdx?$/, 'index.md') === file);
+    const match = book.chapters.find((c) => c.file.replace(/index\.mdx?$/, 'index.md') === file);
     if (!match) {
       if (/index\.mdx?$/.test(path)) throw Error(`Unknown chapter link ${url} in ${relative(book.root, chapter.file)}`);
       return url;
@@ -138,7 +194,12 @@ export function resolveBookLink(url: string, chapter: ChapterMetadata, book: Boo
     owner = match;
   }
   if (!path && !fragment) return url;
-  const id = fragment ? (fragment.startsWith('book__') || /^fn(?:ref)?\d+$/.test(fragment) ? fragment : owner.id.slice(0, owner.id.lastIndexOf('__') + 2) + decodeURIComponent(fragment)) : owner.id;
-  if (!book.ids.has(id) && !['book','title','contents'].includes(id)) throw Error(`Unknown chapter heading ${url} in ${relative(book.root, chapter.file)}`);
+  const id = fragment
+    ? fragment.startsWith('book__') || /^fn(?:ref)?\d+$/.test(fragment)
+      ? fragment
+      : owner.id.slice(0, owner.id.lastIndexOf('__') + 2) + decodeURIComponent(fragment)
+    : owner.id;
+  if (!book.ids.has(id) && !['book', 'title', 'contents'].includes(id))
+    throw Error(`Unknown chapter heading ${url} in ${relative(book.root, chapter.file)}`);
   return '#' + id;
 }

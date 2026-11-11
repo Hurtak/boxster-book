@@ -6,78 +6,314 @@
   font-family: var(--ui);
   overflow-wrap: normal;
 }
-#book .book-diagram > figure { margin: 0; }
-.book-diagram .diagram-interactive { background: var(--ground); padding: 24px; }
-.book-diagram:not(.diagram-ready) .diagram-interactive { position: absolute; inset: 0 0 auto; visibility: hidden; pointer-events: none; width: 100%; }
-.book-diagram .diagram-static[hidden] { display: none; }
-.diagram-view-controls { display: none; }
-.reader-enhanced .diagram-view-controls { display: flex; gap: 8px; position: relative; z-index: 2; padding: 12px 24px; background: var(--ground); border-bottom: 1px solid #d3dbd6; }
-.book-diagram.diagram-poster { min-height: 0; }
-.diagram-loading { display: none; }
-.reader-enhanced .book-diagram:is([data-diagram-status="loading"], [data-diagram-status="suspended"]) .diagram-loading { display: grid; position: absolute; inset: 0; place-items: center; background: var(--ground); color: var(--muted); font: 16px/1.5 var(--ui); }
-.diagram-loading::after { content: "Loading interactive diagram…"; }
+#book .book-diagram > figure {
+  margin: 0;
+}
+.book-diagram .diagram-interactive {
+  background: var(--ground);
+  padding: 24px;
+}
+.book-diagram:not(.diagram-ready) .diagram-interactive {
+  position: absolute;
+  inset: 0 0 auto;
+  visibility: hidden;
+  pointer-events: none;
+  width: 100%;
+}
+.book-diagram .diagram-static[hidden] {
+  display: none;
+}
+.diagram-view-controls {
+  display: none;
+}
+.reader-enhanced .diagram-view-controls {
+  display: flex;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+  padding: 12px 24px;
+  background: var(--ground);
+  border-bottom: 1px solid #d3dbd6;
+}
+.book-diagram.diagram-poster {
+  min-height: 0;
+}
+.diagram-loading {
+  display: none;
+}
+.reader-enhanced .book-diagram:is([data-diagram-status='loading'], [data-diagram-status='suspended']) .diagram-loading {
+  display: grid;
+  position: absolute;
+  inset: 0;
+  place-items: center;
+  background: var(--ground);
+  color: var(--muted);
+  font: 16px/1.5 var(--ui);
+}
+.diagram-loading::after {
+  content: 'Loading interactive diagram…';
+}
 /* Keep the measured placeholder while an offscreen view is suspended. A tall
    poster must not expand it; print and failure states still show the poster. */
-.book-diagram.diagram-suspended .diagram-static { display: none; }
-.book-diagram h4 { margin: 0 0 8px; font-size: 21px; line-height: 1.3; }
-.book-diagram p { margin: 0 0 16px; }
-.diagram-description { font-size: 16px; line-height: 1.5; }
-.diagram-stage { position: relative; height: 320px; min-width: 0; }
-.diagram-stage-3d { height: 380px; }
-.diagram-stage canvas { display: block; width: 100%; height: 100%; touch-action: pan-y; }
-.diagram-stage svg { display: block; width: 100%; height: 100%; overflow: visible; }
-.diagram-controls { margin-top: 20px; }
-.diagram-controls label { font: 600 16px/1.4 var(--ui); }
-.diagram-controls select { display: block; width: 100%; min-height: 44px; padding: 8px; border: 1px solid #a5b2aa; border-radius: 0; color: var(--ink); background: var(--paper); font: 16px/1.3 var(--ui); }
-.diagram-controls select:hover { border-color: var(--ink); }
-.diagram-slider { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; font-size: 16px; }
-.diagram-slider + .diagram-slider { margin-top: 16px; }
-.diagram-slider label { font-weight: 600; }
-.diagram-slider output { font-variant-numeric: tabular-nums; }
-.diagram-slider input { grid-column: 1 / -1; width: 100%; min-height: 44px; margin: 0; accent-color: var(--focus); cursor: ew-resize; }
-.diagram-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 16px; font-size: 16px; }
-.book-diagram button { min-height: 44px; padding: 8px 14px; border: 1px solid #a5b2aa; border-radius: 0; color: var(--ink); background: var(--paper); font: 16px/1.3 var(--ui); cursor: pointer; transition: background-color .12s, border-color .12s, color .12s; }
-.book-diagram button:hover { border-color: var(--ink); }
-.book-diagram button:active { background: var(--tone); }
-.book-diagram button[aria-pressed="true"] { border-color: var(--ink); color: var(--paper); background: var(--ink); }
-.diagram-explanation { min-height: 3em; font-size: 16px; line-height: 1.5; }
-.book-diagram .diagram-note { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.5; }
-.diagram-callout { position: absolute; top: 12px; left: 12px; max-width: calc(100% - 24px); padding: 6px 10px; color: var(--paper); background: #1c2823; font-size: 16px; pointer-events: none; }
-.diagram-notice { font: 16px/1.5 var(--ui); }
-.diagram-notice button { margin-left: 8px; }
-.diagram-energy-value { font-weight: 600; }
-.component-explorer .diagram-stage-3d { height: 420px; }
-.component-markers { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
-.component-marker { position: absolute; display: grid; place-items: center; width: 24px; height: 24px; transform: translate(-50%, -50%); color: #fff; background: #34443e; border-radius: 50%; font: 600 14px/1 var(--ui); }
-.component-marker[hidden], .component-front[hidden], .component-marker-leader[hidden] { display: none; }
-.component-marker-leader { position: absolute; height: 1px; background: #526159; transform-origin: left center; } /* taste-skill-ignore: Functional leader connecting a part number to its 3D component. */
-.component-marker.is-selected { background: #2165a6; }
-.component-front { position: absolute; transform: translate(-50%, -50%); color: var(--ink); font: 600 14px/1 var(--ui); pointer-events: none; }
-.component-part-number { opacity: .8; }
-.component-connection-toggle { display: flex; align-items: center; gap: 8px; min-height: 44px; }
-.component-connection-toggle input { width: 20px; height: 20px; accent-color: var(--focus); }
-.diagram-connections { font: 16px/1.5 var(--ui); }
+.book-diagram.diagram-suspended .diagram-static {
+  display: none;
+}
+.book-diagram h4 {
+  margin: 0 0 8px;
+  font-size: 21px;
+  line-height: 1.3;
+}
+.book-diagram p {
+  margin: 0 0 16px;
+}
+.diagram-description {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.diagram-stage {
+  position: relative;
+  height: 320px;
+  min-width: 0;
+}
+.diagram-stage-3d {
+  height: 380px;
+}
+.diagram-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+.diagram-stage svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.diagram-controls {
+  margin-top: 20px;
+}
+.diagram-controls label {
+  font: 600 16px/1.4 var(--ui);
+}
+.diagram-controls select {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid #a5b2aa;
+  border-radius: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: 16px/1.3 var(--ui);
+}
+.diagram-controls select:hover {
+  border-color: var(--ink);
+}
+.diagram-slider {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  font-size: 16px;
+}
+.diagram-slider + .diagram-slider {
+  margin-top: 16px;
+}
+.diagram-slider label {
+  font-weight: 600;
+}
+.diagram-slider output {
+  font-variant-numeric: tabular-nums;
+}
+.diagram-slider input {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  accent-color: var(--focus);
+  cursor: ew-resize;
+}
+.diagram-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 16px;
+  font-size: 16px;
+}
+.book-diagram button {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid #a5b2aa;
+  border-radius: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: 16px/1.3 var(--ui);
+  cursor: pointer;
+  transition:
+    background-color 0.12s,
+    border-color 0.12s,
+    color 0.12s;
+}
+.book-diagram button:hover {
+  border-color: var(--ink);
+}
+.book-diagram button:active {
+  background: var(--tone);
+}
+.book-diagram button[aria-pressed='true'] {
+  border-color: var(--ink);
+  color: var(--paper);
+  background: var(--ink);
+}
+.diagram-explanation {
+  min-height: 3em;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.book-diagram .diagram-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.diagram-callout {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  max-width: calc(100% - 24px);
+  padding: 6px 10px;
+  color: var(--paper);
+  background: #1c2823;
+  font-size: 16px;
+  pointer-events: none;
+}
+.diagram-notice {
+  font: 16px/1.5 var(--ui);
+}
+.diagram-notice button {
+  margin-left: 8px;
+}
+.diagram-energy-value {
+  font-weight: 600;
+}
+.component-explorer .diagram-stage-3d {
+  height: 420px;
+}
+.component-markers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.component-marker {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background: #34443e;
+  border-radius: 50%;
+  font: 600 14px/1 var(--ui);
+}
+.component-marker[hidden],
+.component-front[hidden],
+.component-marker-leader[hidden] {
+  display: none;
+}
+.component-marker-leader {
+  position: absolute;
+  height: 1px;
+  background: #526159;
+  transform-origin: left center;
+} /* taste-skill-ignore: Functional leader connecting a part number to its 3D component. */
+.component-marker.is-selected {
+  background: #2165a6;
+}
+.component-front {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: var(--ink);
+  font: 600 14px/1 var(--ui);
+  pointer-events: none;
+}
+.component-part-number {
+  opacity: 0.8;
+}
+.component-connection-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+}
+.component-connection-toggle input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--focus);
+}
+.diagram-connections {
+  font: 16px/1.5 var(--ui);
+}
 @media (prefers-reduced-motion: reduce) {
-  .book-diagram button { transition: none; }
+  .book-diagram button {
+    transition: none;
+  }
 }
 @media (max-width: 600px) {
   /* Panels run to the screen edges; their contents keep the text column. */
-  .book-diagram { margin-inline: calc(-1 * var(--sheet-padding)); }
-  .book-diagram .diagram-interactive { padding: 20px var(--sheet-padding); }
-  #book .book-diagram > figure { padding: 20px var(--sheet-padding); }
-  .reader-enhanced .diagram-view-controls { padding-inline: var(--sheet-padding); }
-  .diagram-notice { padding-inline: var(--sheet-padding); }
-  .diagram-stage { height: 300px; }
-  .diagram-stage-3d { height: 300px; }
-  .component-explorer .diagram-stage-3d { height: 340px; }
-  .component-explorer .component-parts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .component-explorer .component-parts button { min-width: 0; }
+  .book-diagram {
+    margin-inline: calc(-1 * var(--sheet-padding));
+  }
+  .book-diagram .diagram-interactive {
+    padding: 20px var(--sheet-padding);
+  }
+  #book .book-diagram > figure {
+    padding: 20px var(--sheet-padding);
+  }
+  .reader-enhanced .diagram-view-controls {
+    padding-inline: var(--sheet-padding);
+  }
+  .diagram-notice {
+    padding-inline: var(--sheet-padding);
+  }
+  .diagram-stage {
+    height: 300px;
+  }
+  .diagram-stage-3d {
+    height: 300px;
+  }
+  .component-explorer .diagram-stage-3d {
+    height: 340px;
+  }
+  .component-explorer .component-parts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .component-explorer .component-parts button {
+    min-width: 0;
+  }
   /* Equal columns sized to the longest label keep rows even on a phone. */
-  .diagram-buttons { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, calc(var(--longest-label, 10ch) * .9 + 18px)), 1fr)); gap: 6px; }
-  .book-diagram button { padding: 8px; }
+  .diagram-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, calc(var(--longest-label, 10ch) * 0.9 + 18px)), 1fr));
+    gap: 6px;
+  }
+  .book-diagram button {
+    padding: 8px;
+  }
 }
 @media print {
-  .book-diagram { min-height: 0; margin-inline: 0; }
-  .book-diagram .diagram-interactive, .diagram-notice, .diagram-loading, .diagram-view-controls { display: none !important; }
-  .book-diagram .diagram-static { display: block !important; }
+  .book-diagram {
+    min-height: 0;
+    margin-inline: 0;
+  }
+  .book-diagram .diagram-interactive,
+  .diagram-notice,
+  .diagram-loading,
+  .diagram-view-controls {
+    display: none !important;
+  }
+  .book-diagram .diagram-static {
+    display: block !important;
+  }
 }
