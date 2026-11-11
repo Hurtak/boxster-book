@@ -2,7 +2,7 @@ import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright-core';
 import { createServer } from 'node:http';
-import { readFile, mkdir, readdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
@@ -53,6 +53,98 @@ async function ready(page, name) {
   await page.waitForFunction((name) => document.querySelector(`[data-diagram="${name}"]`).classList.contains('diagram-ready'), name);
   return figure;
 }
+
+test('a slow chapter reload does not flash the cover before the reader hydrates', async () => {
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  let release;
+  const gate = new Promise(resolve => { release = resolve; });
+  try {
+    await page.route('**/reader-*.js', async route => { await gate; await route.continue(); });
+    const id = 'book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems';
+    await page.goto(web + '#' + id, { waitUntil: 'commit' });
+    await page.locator('#title').waitFor({state:'attached'});
+    assert.equal(await page.locator('#title').isVisible(), false, 'The cover must stay hidden while a chapter is loading');
+    await page.screenshot({path:resolve(previews,'reader-loading-phone.png')});
+    release();
+    await page.locator('html.reader-enhanced').waitFor();
+    await page.locator(`[id="${id}"]`).waitFor({ state: 'visible' });
+    assert.equal(await page.locator('#title').isVisible(), false);
+  } finally { release(); await page.close(); }
+});
+
+test('car diagrams reserve their complete panels before models arrive on phones and desktops', async () => {
+  const measurements=[];
+  for(const width of [390,1440])for(const id of ['brake-explorer','fluids-explorer']){
+  const page = await browser.newPage({ viewport: { width, height: 844 } });
+  let release;
+  const gate = new Promise(resolve => { release = resolve; });
+  try {
+    await page.route('**/*.glb', async route => { await gate; await route.continue(); });
+    await page.goto(web);
+    await page.locator('html.reader-enhanced').waitFor();
+    const figure = page.locator(`[data-diagram="${id}"]`);
+    await figure.evaluate(element => { location.hash = element.closest('section.level2').id; });
+    await figure.waitFor({ state: 'visible' });
+    await figure.scrollIntoViewIfNeeded();
+    await figure.evaluate(element=>scrollTo(0,element.getBoundingClientRect().top+scrollY-90));
+    const before = await figure.evaluate(element => ({ height: element.getBoundingClientRect().height, next: element.getBoundingClientRect().bottom + scrollY }));
+    await page.screenshot({path:resolve(previews,`${id}-${width}-loading.png`)});
+    release();
+    await page.waitForFunction(id => document.querySelector(`[data-diagram="${id}"]`).classList.contains('diagram-ready'),id);
+    const after = await figure.evaluate(element => ({ height: element.getBoundingClientRect().height, next: element.getBoundingClientRect().bottom + scrollY }));
+    await page.screenshot({path:resolve(previews,`${id}-${width}-loaded.png`)});
+    assert.ok(Math.abs(after.height - before.height) <= 1, `Car diagram height changed from ${before.height} to ${after.height}`);
+    assert.ok(Math.abs(after.next - before.next) <= 1, 'Loading the car must not move the following reading content');
+    measurements.push({width,id,before,after});
+  } finally { release(); await page.close(); }
+  }
+  await writeFile(resolve(previews,'loading-layout.json'),JSON.stringify(measurements,null,2));
+});
+
+test('prerendered images reserve their intrinsic aspect ratio before decoding', async () => {
+  const page = await browser.newPage();
+  try {
+    await page.goto(web);
+    const missing = await page.locator('#book img').evaluateAll(elements => elements.filter(image => !image.hasAttribute('width') || !image.hasAttribute('height')).map(image => image.alt));
+    assert.equal(missing.length, 0, `${missing.length} images have no intrinsic reservation; first: ${missing[0]}`);
+    // SVGs with only a viewBox can report the browser's 300×150 natural-size
+    // default. Their reserved geometry is exercised by the delayed-image test.
+    const wrong=await page.locator('#book img').evaluateAll(images=>images.filter(image=>!image.dataset.bookAsset?.endsWith('.svg')&&Math.abs(Number(image.getAttribute('width'))*image.naturalHeight-Number(image.getAttribute('height'))*image.naturalWidth)>Math.max(image.naturalWidth,image.naturalHeight)).map(image=>image.alt));
+    assert.deepEqual(wrong,[], 'Reserved aspect ratios must match the actual images');
+  } finally { await page.close(); }
+});
+
+test('a delayed chapter photograph does not move the text when it decodes', async () => {
+  const page=await browser.newPage({viewport:{width:390,height:844}});
+  let release;const gate=new Promise(resolve=>{release=resolve;});
+  try{
+    await page.route('**/media/**',async route=>{await gate;await route.continue();});
+    await page.goto(web,{waitUntil:'domcontentloaded'});
+    const chapter=page.locator('#book > section.level2').first();
+    await chapter.evaluate(element=>{location.hash=element.id;});
+    await chapter.waitFor({state:'visible'});
+    const images=chapter.locator('figure:not(.diagram-static) img');
+    const selected=[images.nth(0),images.nth(1)];
+    const before=await Promise.all(selected.map(image=>image.boundingBox()));
+    assert.ok(before.every(box=>box.height>0));
+    release();await Promise.all(selected.map(image=>image.evaluate(image=>image.decode())));
+    const after=await Promise.all(selected.map(image=>image.boundingBox()));
+    for(let i=0;i<selected.length;i++){
+      assert.ok(Math.abs(before[i].height-after[i].height)<=1);
+      assert.ok(Math.abs(before[i].y-after[i].y)<=1);
+    }
+  }finally{release();await page.close();}
+});
+
+test('a failed reader script still leaves a readable static book',async()=>{
+  const page=await browser.newPage();
+  try{
+    await page.route('**/reader-*.js',route=>route.abort());
+    await page.goto(web);
+    await page.locator('#book > section.level2').first().waitFor({state:'visible'});
+    assert.equal(await page.locator('#reader-loading').isVisible(),false);
+  }finally{await page.close();}
+});
 
 test('portable HTML works offline; keyboard and part controls survive leaving the page section', async () => {
   const context = await browser.newContext({ offline: true, viewport: { width: 1440, height: 1100 } });
@@ -272,6 +364,7 @@ test('reader navigation, sources and browser history preserve chapter context', 
     assert.equal(await page.getByRole('heading', { level: 1 }).innerText(), 'Porsche Boxster 2.9');
     await page.getByRole('navigation', { name: 'Written chapters' }).getByRole('link', { name: 'Brakes and stability systems', exact: true }).click();
     const chapter = page.locator('#book > section.level2:not([hidden])');
+    await chapter.locator('h1').waitFor({state:'visible'});
     assert.match(await chapter.locator('h1').innerText(), /Brakes and stability/);
     await page.waitForFunction(() => document.activeElement?.tagName === 'H1');
     await page.getByRole('link', { name: 'Skip to reading' }).focus();
@@ -296,10 +389,12 @@ test('reader navigation, sources and browser history preserve chapter context', 
     assert.equal(new URL(page.url()).hash, `#${referenceId}`);
     await page.getByRole('navigation', { name: 'Adjacent chapters' }).getByRole('link').first().click();
     await page.waitForFunction(() => document.querySelector('#book > .level2:not([hidden]) .chapter-meta')?.textContent.includes('Chapter 12 '));
+    await chapter.locator('.chapter-meta').waitFor({state:'visible'});
     assert.match(await chapter.locator('.chapter-meta').innerText(), new RegExp(`Chapter 12 of ${chapterCount} · \\d+ min read`));
     assert.doesNotMatch(await chapter.innerText(), /This chapter is planned/);
     await page.goBack();
     await page.waitForFunction((id) => !document.getElementById(id).closest('.level2').hidden, referenceId);
+    await page.locator('h1:visible').waitFor();
     assert.equal(await page.locator('h1:visible').count(), 1);
     await page.goto(site + `#${noteId}`);
     await page.locator(`[id="${noteId}"]`).waitFor({ state: 'visible' });
@@ -381,6 +476,7 @@ test('chapters number their own notes, list their sections in the contents and o
     assert.equal(await page.locator('[data-continue-reading]').isVisible(), false);
     await page.getByRole('navigation', { name: 'Written chapters' }).getByRole('link', { name: 'Brakes and stability systems', exact: true }).click();
     const chapter = page.locator('#book > .level2:not([hidden])');
+    await chapter.locator('h1').waitFor({state:'visible'});
     assert.equal(await chapter.locator('.footnote-ref').first().innerText(), '1');
     assert.equal(await chapter.locator('.chapter-notes ol > li').first().evaluate((element) => element.value), 1);
     assert.match(await chapter.locator('.notes-count').innerText(), /^\d+ notes$/);
@@ -472,6 +568,7 @@ test('every chapter and the reference appendix have offline illustrations and lo
       await page.locator('.book-name').click();
       await written.getByRole('link', { name: title, exact: true }).click();
       const chapter = page.locator('#book > .level2:not([hidden])');
+      await chapter.locator('h1').waitFor({state:'visible'});
       assert.equal(await chapter.locator('h1').innerText(), title);
       assert.doesNotMatch(await chapter.locator('.chapter-meta').innerText(), /Planned/);
       const photos = chapter.locator('img[src^="data:image/jpeg"], img[src^="data:image/png"], img[src^="data:image/webp"]');

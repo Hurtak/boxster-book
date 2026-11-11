@@ -15,3 +15,6 @@ Ordinary-model original: [January 2010 UK catalogue](https://mrsportscars.com/wp
 Spyder original: [January 2010 UK Spyder brochure](https://porschecarshistory.com/wp-content/old/brochures2/93/2010%20987%20Boxster%20Spyder.pdf#page=9).
 
 The ordinary-model photos are small original brochure assets (344–527 pixels wide). Their limited resolution is retained; no invented detail has been added. Visible manuscript captions link to the original publications.
+
+
+The chapter also retains fifteen Porsche-authored factory exploded-view plates and their parts/application lists as 31 full-page PNGs under [part-reference/](../part-reference/README.md). These are unaltered 1800-pixel-maximum Poppler rasterisations of *PET 987209*, P33, 19 July 2018, retrieved 10 November 2026, with source, hash, original page, plate, callout and applicability recorded in that manifest. They retain the original Porsche/source rights and are not this book's MIT-licensed diagrams. They support component identification, not CAD geometry or workshop sequencing.

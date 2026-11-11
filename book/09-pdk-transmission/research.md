@@ -1,6 +1,6 @@
 # Chapter 09 research: PDK transmission
 
-Checked **10 November 2026**. Reference car is the **2010 European/UK 987.2 Boxster 2.9**, with standard six-speed manual and optional seven-speed PDK. The manuscript contains approximately **2,030 words before footnote definitions**, including headings, captions and table cells. Research, illustrations and changes are restricted to this chapter folder.
+Checked **10 November 2026**. Reference car is the **2010 European/UK 987.2 Boxster 2.9**, with standard six-speed manual and optional seven-speed PDK. Research, illustrations and changes are restricted to this chapter folder.
 
 ## Primary publications inspected
 
@@ -104,3 +104,16 @@ Access limits: individual ManualsLib pp. 95–96 and the Dropbox link could not 
 Local checks: all 17 footnotes match definitions; all six chapter image references and chapter-relative links resolve; all four SVGs parse as XML; JavaScript syntax and chapter-scoped whitespace checks pass. The explorer model text changed and is flagged for the parent's poster regeneration. No global build, staging, shared-code edit or other-chapter change was performed.
 
 Parent reconciliation: independently extracted the ordinary UK original PDF pp. 25–26. PASM/differential printed54–55 is PDF25; Sport Chrono printed56–57 is PDF26. Corrected this chapter's Chrono link and evidence locators accordingly.
+
+
+## Factory parts-drawing verification — 10 November 2026
+
+The selected full factory drawings and their application lists are now retained as **17 unaltered full-page PNGs** in [part-reference/](part-reference/README.md), with source/hash/rights, plate numbers, PDF pages, item IDs, applicability and limits. The complete [verification inventory](part-reference/verification.md) covers every chapter topic, all four SVGs, both photographs, both interactive modules, all explorer parts/links and the four car-tour stops.
+
+Freshly inspected PET **987209**, snapshot **19 July 2018 / P33**, plates **102-000, 320-000, 320-005, 360-000, 370-000, 701-001 and 901-003** and the transmission-number key. The factory drawing establishes a separate bolted sump below the hydraulic unit, distinct short/long output flanges, separate ECU/retainer, exchanger oil pipes and coolant hoses/valve, PDK brackets, and the selector cable. These external identities were missing from the otherwise adequate functional diagrams. Training text was freshly read for the mechanical parking catch, internal K1/K2 paths and cooling principles; PET does not expose those internals.
+
+The prose now connects these installed components, identifies **CG200** for the 2.9 against **CG220** for S/Spyder, and makes the selector's mechanical parking-lock connection explicit alongside electronic forward-gear requests. Existing endnotes gained exact PET locators without altering their sequence/count or published heading/diagram IDs. No service instruction, original option chronology or current replacement-part recommendation is inferred from the 2018 catalogue.
+
+The explorer now has **ten** selectable groups and **fifteen** links: the original eight plus the deliberately cutaway **housing/sump/supports** and **selector/cable**. Its cooler gains oil/coolant plumbing and disc-valve shapes, controller a retainer, and outputs unequal internal reach. Counts, sides, coordinates, routes and casting geometry remain explicitly illustrative. The two static functional SVGs and sixteen shift states remain correct within their declared limits and did not need churn. Earlier eight-group counts above describe the prior iteration. Parent integration must regenerate **pdk-explorer** and check current browser/phone/print layouts; an older chapter screenshot was found stale and is not current visual evidence.
+
+Scoped checks preserve **21 footnote-reference occurrences / 17 definitions** and the exact sequence; all image imports and factory references resolve, SVG XML and chapter JavaScript syntax pass, and Node imports validate all geometry and links. Full results and remaining limits are in the verification inventory.

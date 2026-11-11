@@ -6,16 +6,16 @@ import {
 export const config = {
   id: 'audio-explorer',
   title: 'From the car to the audio system',
-  location: 'The standard 2010 2.9 has CDR-30 in the centre console, two tweeters on the dashboard and one woofer in each door. The radio aerial supplies reception; vehicle power supplies the output stages.',
+  location: 'The standard 2010 2.9 has CDR-30 in the centre console, two tweeters on the dashboard and one woofer in each door. The radio aerial and its signal amplifier supply reception; vehicle power supplies the audio output stages.',
   overview: 'Follow radio or CD information into the head unit, then speaker-driving current from its internal output stages to four drivers. The dashboard and door locations distribute the sound around the two occupants.',
   assembled: 'The source drive, tuner, controls and output stages belong to one head-unit installation. The four speakers remain in their dashboard and door positions; the electrical supply provides the energy that moves their diaphragms.',
   exploded: 'The head-unit case and internal output board separate, while the speakers move clear of their mounting regions. Their open sections reveal magnet, voice coil and diaphragm relationships; these are display offsets, not a removal order.',
   focus: 'head-unit',
   hideCarParts: ['interior'],
   direction: [1.45, .95, -1.25],
-  note: 'Standard four-speaker CDR-30 layout; PCM, separate upgraded amplifiers and telephone options are omitted. Driver sections, antenna pattern, circuit-board details, mounts and wire routes are illustrative.',
+  note: 'Standard four-speaker CDR-30 layout; PCM, separate sound-package amplifiers and telephone options are omitted. PET 911-000/911-005 establishes the aerial amplifier, driver variants and mountings. Driver sections, antenna pattern, circuit boards, geometry and wire routes are illustrative.',
   connections: [
-    { from: 'windscreen-aerial', to: 'head-unit', label: 'Radio reception feeds the tuner', kind: 'signal' },
+    { from: 'windscreen-aerial', to: 'head-unit', label: 'The aerial amplifier passes the received signal to the tuner', kind: 'signal' },
     { from: 'vehicle-supply', to: 'head-unit', label: 'Supply and earth power the source and controls', kind: 'electrical' },
     { from: 'vehicle-supply', to: 'output-stages', label: 'Vehicle electrical energy supplies the power stages', kind: 'electrical' },
     { from: 'head-unit', to: 'output-stages', label: 'Selected music and volume control set the programme', kind: 'signal' },
@@ -42,7 +42,15 @@ function driver(parent, radius, m, tweeter = false) {
   for (const angle of [.35, 2.05, 3.75]) {
     const x = Math.cos(angle), y = Math.sin(angle);
     beam(unit, [x * radius, y * radius, .01], [x * radius * .36, y * radius * .36, -depth * .75], radius * .045, m.metal);
-    box(unit, [radius * .18, radius * .18, .008], m.dark, [x * radius * 1.1, y * radius * 1.1, .008], [0, 0, angle]);
+  }
+  // PET 911-005 items 1/2 and 7/8: two clips per tweeter, four bolts per
+  // door bass-driver housing. Positions and the cutaway remain illustrative.
+  const mountingCount = tweeter ? 2 : 4;
+  for (let i = 0; i < mountingCount; i++) {
+    const angle = i * Math.PI * 2 / mountingCount;
+    const position = [Math.cos(angle) * radius * 1.1, Math.sin(angle) * radius * 1.1, .008];
+    box(unit, [radius * .18, radius * .18, .008], m.dark, position, [0, 0, angle]);
+    if (!tweeter) cylinder(unit, radius * .045, .012, m.metal, [position[0], position[1], .015], [Math.PI / 2, 0, 0]);
   }
   cylinder(unit, radius * .43, depth * .42, m.dark, [0, 0, -depth * .83], [Math.PI / 2, 0, 0]).name = 'fixed-magnet';
   cylinder(unit, radius * .16, depth * .5, m.metal, [0, 0, -depth * .57], [Math.PI / 2, 0, 0]).name = 'pole-piece';
@@ -97,21 +105,24 @@ export function createAssembly() {
   for (const side of [-1, 1]) {
     const left = side > 0;
     const tweeter = part(root, left ? 'left-tweeter' : 'right-tweeter', left ? 'Left dash tweeter' : 'Right dash tweeter', [side * .56, .79, .73], [side * .17, .27, .02],
-      'One of the standard pair of dashboard high-range speakers. Its small diaphragm moves air at high frequencies; the enlarged open section exposes the coil and fixed magnet rather than a factory assembly drawing.');
+      'One of the standard pair of dashboard high-range speakers, retained by two clips in PET 911-005 items 1–2. Its small diaphragm moves air at high frequencies; the enlarged open section explains the coil and magnet, not exact factory construction.');
     const tweeterUnit = driver(tweeter, .034, m, true);
     tweeterUnit.rotation.x = -Math.PI / 2;
     const woofer = part(root, left ? 'left-woofer' : 'right-woofer', left ? 'Left door woofer' : 'Right door woofer', [side * .735, .455, .24], [side * .32, -.08, -.1],
-      'One of the standard pair of door low-range speakers. Current in the voice coil acts in the magnet’s field, moving the attached diaphragm. The door supports its mounting frame; the cutaway and tabs are illustrative.');
+      'One of the standard pair of door low-range speakers. PET 911-005 items 7–8 distinguishes the standard bass-driver housing from Plus/BOSE variants and lists four mounting bolts per housing. The coil/magnet cutaway and mounting geometry are illustrative.');
     const wooferUnit = driver(woofer, .087, m);
     wooferUnit.rotation.y = -side * Math.PI / 2;
   }
 
-  const aerial = part(root, 'windscreen-aerial', 'Radio aerial context', [0, .995, .67], [0, .28, .14],
-    'The radio aerial receives a small broadcast signal for the tuner. The windscreen and conductor pattern provide schematic context, not a verified layout of the standard CDR-30 aerial system, a diversity-control map, a GPS aerial or a telephone aerial.');
+  const aerial = part(root, 'windscreen-aerial', 'Radio aerial and amplifier', [0, .995, .67], [0, .28, .14],
+    'The aerial receives the broadcast; its signal amplifier and connection feed CDR-30 (PET 911-000 item 13 and radio cable). This reception amplifier does not drive the speakers. The windscreen pattern, amplifier position and cable route are schematic; GPS and telephone use distinct optional aerial hardware.');
   box(aerial, [1.16, .008, .43], m.glass, [0, 0, 0], [1.05, 0, 0]);
   const points = [[-.5, -.145, .083], [-.4, .125, -.071], [-.13, .15, -.086], [0, -.125, .072], [.13, .15, -.086], [.4, .125, -.071], [.5, -.145, .083]];
   for (let i = 1; i < points.length; i++) beam(aerial, points[i - 1], points[i], .002, m.warm);
-  box(aerial, [.035, .025, .013], m.black, [-.48, -.147, .085]);
+  const receptionAmp = cylinder(aerial, .012, .078, m.metal, [-.48, -.147, .085], [0, 0, Math.PI / 2]);
+  receptionAmp.name = 'radio-aerial-signal-amplifier';
+  box(aerial, [.05, .005, .025], m.dark, [-.48, -.162, .085]);
+  tube(aerial, [[-.44, -.147, .085], [-.42, -.18, .1], [-.36, -.2, .12]], .003, m.black);
 
   const power = part(root, 'vehicle-supply', 'Vehicle supply and earth', [0, .59, 1.1], [-.14, .08, .2],
     'The battery-backed vehicle supply powers the head unit and its output stages. Earth connections complete the electrical circuit. The visible supply and return paths explain connectivity, not the fuse locations or harness route.');

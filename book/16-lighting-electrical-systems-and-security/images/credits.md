@@ -14,3 +14,9 @@ The source PDF was independently opened online and its lighting spread was rende
 Copyright remains with Dr. Ing. h.c. F. Porsche AG. These reproductions are included for the requested personal reading draft; the project's MIT licence does not relicense them. No claim is made that an archive host owns the photographs.
 
 The explanatory SVG diagrams, D3 circuit and 3D explorer are original project material. Their geometry is schematic and is not a reproduction of Porsche wiring, photometry or workshop drawings.
+
+## Factory parts excerpts
+
+The **57 full-page PNGs** in [`../part-reference/`](../part-reference/README.md) reproduce Porsche-authored PET **987209**, *Model life 2009>>2012*, catalogue P33, snapshot **19 July 2018**. They were rendered with Poppler from the independently hosted [original catalogue PDF](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf), checked on **10 November 2026**. Source SHA-256: `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`.
+
+Each retains the whole page, numbered callouts, catalogue identity, date and page furniture; only rasterisation to a 1,800-pixel long edge was performed. No cropping, redrawing, annotation or generative processing. The parts-reference README records every filename, original one-based PDF page, plate/item IDs and application limits; the accompanying verification file records figure and topic coverage. Original copyright remains with Dr. Ing. h.c. F. Porsche AG, including these factory excerpts; they are not MIT artwork.

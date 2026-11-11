@@ -87,17 +87,17 @@
         {
           "id": "fn5",
           "reference": "fnref5",
-          "textHash": "d97da0eb3946b04d0f586b800f33ea15136484abace34d49a65cac29c1beb6a3"
+          "textHash": "bfb9b0a3d370c8d9dc23e8f71121e9f141a0094210c01724f668ee97b090ed14"
         },
         {
           "id": "fn6",
           "reference": "fnref6",
-          "textHash": "f2ed24864b57635a2c3ee9e98b446dc274e5039d6a9318ee65ce7e221aed6afa"
+          "textHash": "07e01ef5e673a916da9f03f52e104f55c454a8b18d8a30f563af674b971ea7d1"
         },
         {
           "id": "fn7",
           "reference": "fnref7",
-          "textHash": "f2ed24864b57635a2c3ee9e98b446dc274e5039d6a9318ee65ce7e221aed6afa"
+          "textHash": "07e01ef5e673a916da9f03f52e104f55c454a8b18d8a30f563af674b971ea7d1"
         },
         {
           "id": "fn8",
@@ -128,7 +128,7 @@
       "diagrams": [
         "family-variant-selector"
       ],
-      "textHash": "7427196702cc1c9b6a6891da920e3427c174b3fc004566e325eb6ee60071cc80"
+      "textHash": "77767173153093f5295a53e61ce0db976e7e4f119ceae5722b068b1a1b4df7b6"
     },
     {
       "id": "book__02-the-yearly-timeline__index.md__the-yearly-timeline",
@@ -174,7 +174,7 @@
           "captionHash": "24b46ab7165fb337683b4933cc14a1cf9588c62a142419bff7a58b0f7d224e08"
         },
         {
-          "alt": "The initial timeline selects 2010: a January UK reference brochure and the February Spyder introduction planned in Porsche’s Dutch announcement. Porsche Classic’s later 2011 heading is a separate label.",
+          "alt": "The initial timeline selects 2010: a January UK reference brochure and the February Spyder introduction planned in Porsche's Dutch announcement. Porsche Classic's later 2011 heading is a separate label.",
           "width": null,
           "style": null,
           "captionHash": "7cffc3e31bfe2ee51c8b32e0a05b952c53e2345382458c2c97a4adbacf7782d9"
@@ -202,7 +202,7 @@
         {
           "id": "fn13",
           "reference": "fnref13",
-          "textHash": "c265d199eff3f758b69967b0b87bf46928e147c66e85a1a76937838f054cb139"
+          "textHash": "c6589243ebae994b821dcabbf727261d756ce87d16632fbc362630d30ec5d298"
         },
         {
           "id": "fn14",
@@ -247,7 +247,7 @@
         {
           "id": "fn22",
           "reference": "fnref22",
-          "textHash": "4ce1d0024a674d6be29c1c05a838e4cc0da3b5f6185ac47a5e87936a4ac45aa8"
+          "textHash": "6d1fe6346bcdab502f170b7df608365184c9975adeb9c159b45645cf34be29a4"
         },
         {
           "id": "fn23",
@@ -257,7 +257,7 @@
         {
           "id": "fn24",
           "reference": "fnref24",
-          "textHash": "c14d758c615168c27cc8aaee39a80d49d914263255aeebb2629aeec2f1409b63"
+          "textHash": "a7a7a1ec6d2eca55c9484b16993cdb0ba7263678d89da223d3d2944e867a490d"
         },
         {
           "id": "fn25",
@@ -298,7 +298,7 @@
       "diagrams": [
         "timeline-evidence"
       ],
-      "textHash": "5ab6a463d5f2bb0b9ba25772d84a8c59065707d27fb065d59e80da6a343d2e9b"
+      "textHash": "5ca5549f6a8c3c06251b69e07d2b6aa2ed837bac5d38550f9b0e7c9ca3d35b7d"
     },
     {
       "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__the-2010-boxster-2.9-specification-and-options",
@@ -334,7 +334,7 @@
         }
       ],
       "tables": [
-        "e3213baca780bc5fe320f53403421cedc8a7ddb3f95d51422a38ca621ad24d98",
+        "276a0c594aa6e2ed3994e8067347c5b96a1832933daf19ef9427c53708cfa71c",
         "4b1b4b1df23d7f0d5de119ed325cbae3aa1812e88c232939f8a6121875fbb6f9",
         "ed842db6ec277af631664f52a31ef6b9da0fa4cb71a6414e216553dde5c54f23",
         "bfbb127f635534d454b7d9fc3a3c4c4b8dfb96742ac7d0700717a4b7a023590a"
@@ -450,7 +450,7 @@
         {
           "id": "fn47",
           "reference": "fnref47",
-          "textHash": "3edeeae0c70fe3f078c42aa14a59e1bfa3557f7a23c0429d69886cc7dba60cb9"
+          "textHash": "68c5f32d8a25bd3b6faf3450599962e1eb8e55d687e194c22f5c0e4fadda5ca1"
         },
         {
           "id": "fn48",
@@ -467,7 +467,7 @@
         "specification-gearbox-comparison",
         "specification-option-links"
       ],
-      "textHash": "ea632b6ee1061a8ed2fc7920e27349cfc582f6dd4a5106c6071542ea4253fc1e"
+      "textHash": "1c97495ac53c34000b1a285a89b5aed1ec5a468b3d67092cf4d5ce42dfbd5e35"
     },
     {
       "id": "book__04-body-structure-and-packaging__index.md__body-structure-and-packaging",
@@ -513,10 +513,10 @@
       "tables": [],
       "figures": [
         {
-          "alt": "The body shell in the car: a formed floor and centre tunnel join the sills below the doors, with bulkheads across the front and rear of the cabin and the reinforced windscreen frame rising ahead of the occupants.",
+          "alt": "The body shell in the car: a formed floor and centre tunnel join reinforced sills below the doors. Seat-support frames sit beside the tunnel; bulkheads bound the cabin, a separate service cover closes the rear wall, and the reinforced windscreen frame rises ahead of the occupants.",
           "width": null,
           "style": null,
-          "captionHash": "115fbacc3d2992d07263e2db2b659f8b0d0e75fd2cad4d54812752ae86e7a537"
+          "captionHash": "eaa024eaa714938675a92f77a34c14f9e2cf82c7e1397096b3397c764e8399e0"
         },
         {
           "alt": "Plan-view schematic showing the sills, centre tunnel and transverse connections carrying loads around an open passenger compartment.",
@@ -558,22 +558,22 @@
         {
           "id": "fn51",
           "reference": "fnref51",
-          "textHash": "bb1547ff8d74e7f885c4f772ea6c0567729aa639303fc90a663e64761516bb57"
+          "textHash": "c57d385518378485ac4d92f41d74764ec2649f81c29331afa0f8a26f00334d41"
         },
         {
           "id": "fn52",
           "reference": "fnref52",
-          "textHash": "f27ef7592048440fade688996bfc1525b8302c3d0e2982458fe7b1b4778c8010"
+          "textHash": "6066db577b350d161efa1125e7326aaca84566f1a9947ab3b887070fe40ac91b"
         },
         {
           "id": "fn53",
           "reference": "fnref53",
-          "textHash": "e96025c6be175170b8fe38a026a7c489f489f4fc9fbb10dc09073ea857dbbdd2"
+          "textHash": "e8759f7fe61d4ef464294c51c0012b96ea55b03da2f88cd8d64bb4080d050f6c"
         },
         {
           "id": "fn54",
           "reference": "fnref54",
-          "textHash": "0ebefbfcdaa3dd555bf5cb83e024073dd4a48143867c809bc1b02d0731368562"
+          "textHash": "4c3d64f7b07d2773424ab95742d139a2ad627a32b3535ac4d4b0292dfee49e98"
         },
         {
           "id": "fn55",
@@ -583,12 +583,12 @@
         {
           "id": "fn56",
           "reference": "fnref56",
-          "textHash": "842d082e3a23474fd54fbea0a0bd66533b1ed5d52197e365fa7867bd83973050"
+          "textHash": "54f7ab9f8fb847453e06311f121cba34438d51c0e7f238a7001c7f11c756564b"
         },
         {
           "id": "fn57",
           "reference": "fnref57",
-          "textHash": "012a12dedeb26affc017031b7acee46964453c985e124b2a38ab7c033497394b"
+          "textHash": "b86ded6c0f770a5f5d5f1f06b23f1f797c2bba4a070ebf2bf469c2be3c48df1d"
         },
         {
           "id": "fn58",
@@ -630,7 +630,7 @@
         "body-explorer",
         "body-packaging-layers"
       ],
-      "textHash": "59394b8e2d3d495b33cd10358f103eb32e325e9dd339a77ee05bd8d40d8b77ef"
+      "textHash": "3963457a95ec61b887f898ecdf63e1e93b65df2be7e88b58c7fb0e0bef390dc7"
     },
     {
       "id": "book__05-engine-construction-and-valve-gear__index.md__engine-construction-and-valve-gear",
@@ -746,7 +746,7 @@
         {
           "id": "fn65",
           "reference": "fnref65",
-          "textHash": "00bb7479ad827ea4d73bf44e4bcb7bc18f2a27c60b56ea5e27df2e062ed6e3d5"
+          "textHash": "84f18095313c65d699680e612be88e543f4ebd25602a9b810051390bf293db11"
         },
         {
           "id": "fn66",
@@ -781,12 +781,12 @@
         {
           "id": "fn72",
           "reference": "fnref72",
-          "textHash": "935112f5d5a15a35432f0da68fb21a237aaa257c865378b9a258b45f06c88120"
+          "textHash": "e3da249621ccbe6aeffcf6f591a120fbbf6c8a8ad65c73297506f58483b7e603"
         },
         {
           "id": "fn73",
           "reference": "fnref73",
-          "textHash": "40e776c476ec496a6ef318b6bc6531c9d5dc23a868bd7eaa96a193b1311d5649"
+          "textHash": "16425bec2932ce3fded0d3c815a5d119122281f14b46d28e806f26d083a0b212"
         },
         {
           "id": "fn74",
@@ -796,7 +796,7 @@
         {
           "id": "fn75",
           "reference": "fnref75",
-          "textHash": "e7437ebb214c06fbb66e0af1fc2d29d1dab13decb278a12e40bb82198eab7009"
+          "textHash": "4becea85ce1b697ee2e7f9e3c4f89d74ae3fc468b886df93907da7de53ac9e66"
         },
         {
           "id": "fn76",
@@ -806,7 +806,7 @@
         {
           "id": "fn77",
           "reference": "fnref77",
-          "textHash": "9da26919feb2125ca691a810b0f8969154815569c833cb5e6ce28d8f63e8aa35"
+          "textHash": "924763335265b52b72892a003a1651345ff684967e7f6dcc33dfb8befcf61ed8"
         },
         {
           "id": "fn78",
@@ -856,7 +856,7 @@
         {
           "id": "fn87",
           "reference": "fnref87",
-          "textHash": "29dcd73351e018abc10bef74858d79f2d343421c7034870dbef63a82d8ae67fc"
+          "textHash": "f555b3bef41df8d64578fa69bd7bf2d7a73695473c86a7985a422a72f9825588"
         },
         {
           "id": "fn88",
@@ -866,12 +866,12 @@
         {
           "id": "fn89",
           "reference": "fnref89",
-          "textHash": "00bb7479ad827ea4d73bf44e4bcb7bc18f2a27c60b56ea5e27df2e062ed6e3d5"
+          "textHash": "84f18095313c65d699680e612be88e543f4ebd25602a9b810051390bf293db11"
         },
         {
           "id": "fn90",
           "reference": "fnref90",
-          "textHash": "00bb7479ad827ea4d73bf44e4bcb7bc18f2a27c60b56ea5e27df2e062ed6e3d5"
+          "textHash": "84f18095313c65d699680e612be88e543f4ebd25602a9b810051390bf293db11"
         }
       ],
       "diagrams": [
@@ -879,7 +879,7 @@
         "engine-four-stroke",
         "engine-timing-lift"
       ],
-      "textHash": "8d5b33c696977ee5c1195957abafe00100f511862f729ba11deda631ebd4a802"
+      "textHash": "29d84a47c2b26fc77f750fbbbf8ab1e77d6c69aa198cc48099d80dfa6a58ff44"
     },
     {
       "id": "book__06-air-fuel-ignition-and-engine-control__index.md__air-fuel-ignition-and-engine-control",
@@ -994,7 +994,7 @@
         {
           "id": "fn92",
           "reference": "fnref92",
-          "textHash": "d570a5bdb0199fd69fb36cfd61789f9105f98175aacd64b5c668fa0f28ec93c5"
+          "textHash": "18811000e769dbfaf3b29f755c4c7726144f7f3b5e62442ccdfae436bfc2a8d5"
         },
         {
           "id": "fn93",
@@ -1004,7 +1004,7 @@
         {
           "id": "fn94",
           "reference": "fnref94",
-          "textHash": "c6ada939bed481727526fd06d75d37c2a8c555ff1d767ffc2668a0962450a136"
+          "textHash": "debeb3e8b629de1e6f9725491c9d900becc5bf17809e9e773ef339686a63a2fc"
         },
         {
           "id": "fn95",
@@ -1044,7 +1044,7 @@
         {
           "id": "fn102",
           "reference": "fnref102",
-          "textHash": "c6ef8f9b6dab93f0aa9a47c20808693a2e8716d4887c26cbcac63bcfbadd7365"
+          "textHash": "1e3dab1b5dfba3cec49619500b62ca8cbc0da126fdd9541211a4f44477fb4558"
         },
         {
           "id": "fn103",
@@ -1069,7 +1069,7 @@
         {
           "id": "fn107",
           "reference": "fnref107",
-          "textHash": "1305c73e07ade2a7430edee0e293a27b465d997b3e0cfb0d5784e3417f7af956"
+          "textHash": "c8664ab70e02ce1d5fe9b55d1947def7010af3bffa1fece804dd4fe0089da777"
         },
         {
           "id": "fn108",
@@ -1079,7 +1079,7 @@
         {
           "id": "fn109",
           "reference": "fnref109",
-          "textHash": "d836be7d93c68f640bf261b75b808c2f3ede04c65dd19ab876ad85505728ae6f"
+          "textHash": "f28eaad012835b17408ad4f9b92ef4c0980fbe2f03682dd7e7916563fb455d85"
         },
         {
           "id": "fn110",
@@ -1094,12 +1094,12 @@
         {
           "id": "fn112",
           "reference": "fnref112",
-          "textHash": "d836be7d93c68f640bf261b75b808c2f3ede04c65dd19ab876ad85505728ae6f"
+          "textHash": "f28eaad012835b17408ad4f9b92ef4c0980fbe2f03682dd7e7916563fb455d85"
         },
         {
           "id": "fn113",
           "reference": "fnref113",
-          "textHash": "c3d4567f9aa91197c38fb77a3e5071e5453cb5615f6689e260df6e0043d6cb27"
+          "textHash": "ac3f2839dd7d26329fcc8d3ffcbb52bfc5a9da0b98a528f55c43a6ebfcb3bf92"
         },
         {
           "id": "fn114",
@@ -1114,12 +1114,12 @@
         {
           "id": "fn116",
           "reference": "fnref116",
-          "textHash": "c6ef8f9b6dab93f0aa9a47c20808693a2e8716d4887c26cbcac63bcfbadd7365"
+          "textHash": "1e3dab1b5dfba3cec49619500b62ca8cbc0da126fdd9541211a4f44477fb4558"
         },
         {
           "id": "fn117",
           "reference": "fnref117",
-          "textHash": "98096dbdd86a3fc3e270cba871371da354f66f08e388abb916b36c43ce858ab0"
+          "textHash": "d6bc2d757818bf3757d2ea69e553c2ddb1009beff9738e60a09abbd0478430f2"
         },
         {
           "id": "fn118",
@@ -1129,7 +1129,7 @@
         {
           "id": "fn119",
           "reference": "fnref119",
-          "textHash": "98096dbdd86a3fc3e270cba871371da354f66f08e388abb916b36c43ce858ab0"
+          "textHash": "d6bc2d757818bf3757d2ea69e553c2ddb1009beff9738e60a09abbd0478430f2"
         },
         {
           "id": "fn120",
@@ -1149,7 +1149,7 @@
         {
           "id": "fn123",
           "reference": "fnref123",
-          "textHash": "87b125c2fb12e6b7b7f69a10d18fae00294ffb4b1be18074f15ad82c3b9e9ce0"
+          "textHash": "3f42207831b30e51004b95a381761f90088e4229ae2a200b14d73e7524ff52ca"
         },
         {
           "id": "fn124",
@@ -1184,14 +1184,14 @@
         {
           "id": "fn130",
           "reference": "fnref130",
-          "textHash": "d570a5bdb0199fd69fb36cfd61789f9105f98175aacd64b5c668fa0f28ec93c5"
+          "textHash": "18811000e769dbfaf3b29f755c4c7726144f7f3b5e62442ccdfae436bfc2a8d5"
         }
       ],
       "diagrams": [
         "intake-explorer",
         "engine-mixture-feedback"
       ],
-      "textHash": "88716addc12825da6f31a27caf4da9e9fdbb218d4f00cd6872b5f6132336e06b"
+      "textHash": "161624c609390ba6c9059b99b392b9038fad0079ba56ac2612fe106337c9905c"
     },
     {
       "id": "book__07-lubrication-cooling-and-exhaust__index.md__lubrication-cooling-and-exhaust",
@@ -1237,7 +1237,7 @@
       "tables": [],
       "figures": [
         {
-          "alt": "The rear engine, integrated oil reservoir and oil-to-coolant exchanger connect to a belt-driven coolant pump, front radiator pair through long pipes, and a rear expansion-tank branch. Separate exhaust assemblies and silencers lead to the 2.9’s single central outlet.",
+          "alt": "The rear engine, integrated oil reservoir and oil-to-coolant exchanger connect to a belt-driven coolant pump, front radiator pair through long pipes, and a rear expansion-tank branch. Separate exhaust assemblies and silencers lead to the 2.9's single central outlet.",
           "width": null,
           "style": null,
           "captionHash": "001eabe6923019bf17fa69061a9c4b9c44024e606560b4f600a2d30ff1cdd549"
@@ -1255,7 +1255,7 @@
           "captionHash": "67f8f1dc789824d3ce4611996c6acc10a1e592de3e2c6c1f53643cd073c64935"
         },
         {
-          "alt": "During warm-up, coolant keeps circulating through the engine’s short return path while the thermostat restricts the front radiator route. Once warm, the radiator circuit opens; electric fans can assist airflow when required.",
+          "alt": "During warm-up, coolant keeps circulating through the engine's short return path while the thermostat restricts the front radiator route. Once warm, the radiator circuit opens; electric fans can assist airflow when required.",
           "width": null,
           "style": null,
           "captionHash": "e9f836e6e21fade1bf51e69f7be4154fcdc2cf7323dd59ceea27a5f7491930d2"
@@ -1288,7 +1288,7 @@
         {
           "id": "fn132",
           "reference": "fnref132",
-          "textHash": "08521c1ebec2909124b0976fa27b4319b9ba3e464a3b1566e8c5948953dc97b6"
+          "textHash": "10432b0c405ec9f5870084d987020d42a8a2e3d0bd259272f23259554c9cbcf7"
         },
         {
           "id": "fn133",
@@ -1308,7 +1308,7 @@
         {
           "id": "fn136",
           "reference": "fnref136",
-          "textHash": "f272ceb3db3750dd686c41a10e749c01114c33323eeae7e7e62277b9cbc003d7"
+          "textHash": "cd98b0ba8bf0147a7d9db5b55e1047632ca6c6fed597c8d1d1d309f72f7aa37f"
         },
         {
           "id": "fn137",
@@ -1328,22 +1328,22 @@
         {
           "id": "fn140",
           "reference": "fnref140",
-          "textHash": "f99863c09d86741e14f052474ad4f2cbcc29934f9ff9942d04932a49cc5bc607"
+          "textHash": "b278ea6ea2e4cbb191853dab90a3320e11f0cfe6b8668ba810e3a3bd8f3f243b"
         },
         {
           "id": "fn141",
           "reference": "fnref141",
-          "textHash": "acd6602ffa04ec114f27504177bd788b597102a9b54f6c0440a6116dcb173045"
+          "textHash": "30a31ff5ff91a67ca2984b49ac5423b99ee79723f8f0e5e419bc285c271a9836"
         },
         {
           "id": "fn142",
           "reference": "fnref142",
-          "textHash": "ea647f2ec94d8ab3d1ea727111ec2e72dd1b1aa2b7238ab3c01299ebccc03885"
+          "textHash": "917d33d467f4aacfe08f448df9043556bd8e8494f19a17a23b70cf90945be982"
         },
         {
           "id": "fn143",
           "reference": "fnref143",
-          "textHash": "ea647f2ec94d8ab3d1ea727111ec2e72dd1b1aa2b7238ab3c01299ebccc03885"
+          "textHash": "917d33d467f4aacfe08f448df9043556bd8e8494f19a17a23b70cf90945be982"
         },
         {
           "id": "fn144",
@@ -1363,7 +1363,7 @@
         {
           "id": "fn147",
           "reference": "fnref147",
-          "textHash": "826313380b24acde0bc22a2f6dcea493e6e6c9c93625bd0ff3bf1bc842b5048b"
+          "textHash": "42532b3cbbbef8d83cfc707f7f10df3dba4c62c0accd4c5fee997499e7393f29"
         },
         {
           "id": "fn148",
@@ -1373,7 +1373,7 @@
         {
           "id": "fn149",
           "reference": "fnref149",
-          "textHash": "08521c1ebec2909124b0976fa27b4319b9ba3e464a3b1566e8c5948953dc97b6"
+          "textHash": "10432b0c405ec9f5870084d987020d42a8a2e3d0bd259272f23259554c9cbcf7"
         },
         {
           "id": "fn150",
@@ -1390,7 +1390,7 @@
         "fluids-explorer",
         "fluid-cooling-path"
       ],
-      "textHash": "4b83c5c5dc18dd97c2a4d7fcabe0cb2df5087b03e10757d22d0d0c551b017f98"
+      "textHash": "543673384941ff3177212e42142f8c4b6d37bdd70232716b92e8b7d974d0cff7"
     },
     {
       "id": "book__08-manual-transmission-and-clutch__index.md__manual-transmission-and-clutch",
@@ -1443,7 +1443,7 @@
           "alt": "Two clutch sections compare the pedal-up state, with the friction plate clamped, against the pedal-down state, with pressure relieved. A separate path shows pedal force reaching the release mechanism through the master cylinder, fluid and slave cylinder.",
           "width": null,
           "style": null,
-          "captionHash": "bfdfecc3041b2cc569e0ff44658c38b3f579a67822a6dd0ad901b7c4ec196714"
+          "captionHash": "5022587eba4ea08dff8b7a697f8990b0671241ab81897ed50459ba221457e749"
         },
         {
           "alt": "Porsche's period close-up of the six-speed manual gear lever in a tan centre console.",
@@ -1458,7 +1458,7 @@
           "captionHash": "5c869a3ad56c4ba4fcee42366705bc6cf50f9f26546ef99e6064669dc71f56a8"
         },
         {
-          "alt": "At an illustrative 3,000 engine rpm and 200 Nm, third gear’s 1.407 ratio and 3.875 final drive give 550 wheel rpm, 69.3 km/h with a 2.10 metre circumference, and 1,090 Nm total after the final drive.",
+          "alt": "At an illustrative 3,000 engine rpm and 200 Nm, third gear's 1.407 ratio and 3.875 final drive give 550 wheel rpm, 69.3 km/h with a 2.10 metre circumference, and 1,090 Nm total after the final drive.",
           "width": null,
           "style": null,
           "captionHash": "b5588da934a4331f72dc12d6bc4ab14847a1d194d7aa442754f3dd6962dedbbd"
@@ -1473,7 +1473,7 @@
         {
           "id": "fn153",
           "reference": "fnref153",
-          "textHash": "197feb75b3936bc55dffab4f0a1089d679abf1086c62ff16fc26c50a53dc3331"
+          "textHash": "5e0574a19e91367e1951e1fd8dc82b3874791414d0613fe669e295a88144ffa0"
         },
         {
           "id": "fn154",
@@ -1488,12 +1488,12 @@
         {
           "id": "fn156",
           "reference": "fnref156",
-          "textHash": "8ccfe240f48681978a6e02c8e5eb5eab3ecbf68917c157ba965147b74763945f"
+          "textHash": "939457a44bcf2bb7e9b034064e679c1514976b07315a9e83423d39dafca6c731"
         },
         {
           "id": "fn157",
           "reference": "fnref157",
-          "textHash": "8a4eadd4f2585140715a26517e2d585506d845e09d789f279e902ab9609932a6"
+          "textHash": "e1b26aa13b9ee8c68579fb4349a5936349a302f023a1b2f5fc6708b8855cd654"
         },
         {
           "id": "fn158",
@@ -1503,7 +1503,7 @@
         {
           "id": "fn159",
           "reference": "fnref159",
-          "textHash": "9e41e6988dafda64289ab61d92353fa748b8cef12d6c85d1e751addb3c82c100"
+          "textHash": "1298324ce7eda3e548978ae4d5372b5f9e660ba3f197aa899281a334a3ce2395"
         },
         {
           "id": "fn160",
@@ -1543,12 +1543,12 @@
         {
           "id": "fn167",
           "reference": "fnref167",
-          "textHash": "c10a3737878da1c3b676e68aea5fb45ad930839935ec908187e108e59fc0c8ee"
+          "textHash": "9b66edb8ee5284a445fe62fbe5921b16f98cf0904f912a70f0897e58f8d0abe4"
         },
         {
           "id": "fn168",
           "reference": "fnref168",
-          "textHash": "197feb75b3936bc55dffab4f0a1089d679abf1086c62ff16fc26c50a53dc3331"
+          "textHash": "5e0574a19e91367e1951e1fd8dc82b3874791414d0613fe669e295a88144ffa0"
         },
         {
           "id": "fn169",
@@ -1558,7 +1558,7 @@
         {
           "id": "fn170",
           "reference": "fnref170",
-          "textHash": "d0c4844755f7e59bdde92035e9cce336b03a0f7956ab1691054470158f23c34b"
+          "textHash": "2dff26e779730846f508186dca9a037c693de57cda35c45ddd6adc7a7fee3ddf"
         },
         {
           "id": "fn171",
@@ -1570,7 +1570,7 @@
         "manual-explorer",
         "manual-ratio-explorer"
       ],
-      "textHash": "3ba77c0b4b849ee0b5b9cae1cefb0a76ee16d8159ba7515558af2aa965f7828a"
+      "textHash": "973203d30cbca7e390c19a1f8889fc28d845acd12d1d15db82cc43402f3fd2b3"
     },
     {
       "id": "book__09-pdk-transmission__index.md__pdk-transmission",
@@ -1618,10 +1618,10 @@
       ],
       "figures": [
         {
-          "alt": "Optional PDK behind the engine connects its flywheel, nested K1 and K2 packs, concentric shafts and sample gearing to the rear final drive. Separate hydraulic, electronic and cooling components complete the system.",
+          "alt": "Optional PDK behind the engine connects its flywheel, nested K1 and K2 packs, concentric shafts and sample gearing to the rear final drive. The cutaway housing, bolted sump, support brackets, separate controller, heat exchanger and selector cable locate its connections to the car.",
           "width": null,
           "style": null,
-          "captionHash": "51c3766da51c67391b1a1db7f6b20739f667b3d818f9ef58062558f126ab091f"
+          "captionHash": "c13b4dfab38ee72bf172cc0ac13bfed9be9ecfb8fc4e8f45f6e0ac0c7b82736f"
         },
         {
           "alt": "Porsche factory cutaway of the seven-speed PDK, showing the gear train, clutch end and final-drive assembly in one housing.",
@@ -1683,7 +1683,7 @@
         {
           "id": "fn177",
           "reference": "fnref177",
-          "textHash": "c89de1bfdd8e99d075e58870e6c8c144308742edd5f1c085f5f2144921fc1b73"
+          "textHash": "d29da4f7588107eb9bec468c9e941a6a98de684bc69f4c8d563c40c3f40fd790"
         },
         {
           "id": "fn178",
@@ -1693,22 +1693,22 @@
         {
           "id": "fn179",
           "reference": "fnref179",
-          "textHash": "c89de1bfdd8e99d075e58870e6c8c144308742edd5f1c085f5f2144921fc1b73"
+          "textHash": "d29da4f7588107eb9bec468c9e941a6a98de684bc69f4c8d563c40c3f40fd790"
         },
         {
           "id": "fn180",
           "reference": "fnref180",
-          "textHash": "6bfe7857fbca0be054fb705b6c4a4990ce4ea17f17c0ce26f074457e3a5bbbce"
+          "textHash": "1a15ddf455864cf806b491c43fd3966d5addda604168115f5909f8b7aa3a5833"
         },
         {
           "id": "fn181",
           "reference": "fnref181",
-          "textHash": "4d4ead85b388eaece5b63d7e4a3d16d28f4e81f27dac35b261f7b41ca53f90e4"
+          "textHash": "72e0c2acd7635e02a7d4336a2406389f62cac9ae2c5f2804429c527cc6a5c3cb"
         },
         {
           "id": "fn182",
           "reference": "fnref182",
-          "textHash": "10765144a0c81f8782b39e0014fcda9b9201b25f6e2003ac98c4df8cda49d89f"
+          "textHash": "2c3cba5ef85dc5101b2c25923a5bd6e56ea9ee2fc4e98b037964f8e1667a01de"
         },
         {
           "id": "fn183",
@@ -1765,7 +1765,7 @@
         "pdk-explorer",
         "pdk-power-path"
       ],
-      "textHash": "1eebc4d1571fbff06f090ed84b71cb9e670464f9bf57e456aae0cc625ea21cf1"
+      "textHash": "b92213f3d9fb2fffa1b3382e1d293d1bf66f687fd2b3db7c984cf402bd233823"
     },
     {
       "id": "book__10-differential-driveshafts-and-mounts__index.md__differential-driveshafts-and-mounts",
@@ -1905,12 +1905,12 @@
         {
           "id": "fn203",
           "reference": "fnref203",
-          "textHash": "17d09cd7f8d8781a7be030ef0dc4ee735705d734a89d99f81e7c7306048cccf3"
+          "textHash": "b30b222be057f09e6db31ae33e34e52d560c16dc75b74b60315e2ec3c1070bae"
         },
         {
           "id": "fn204",
           "reference": "fnref204",
-          "textHash": "96a906726f033be74651299e49a1ab27d048ab8701c65c7a1671fbc1ecc234a2"
+          "textHash": "e5702b00328f19684ec64f3881219ad48ac22eb763a2f1fb1c919abe5232b984"
         },
         {
           "id": "fn205",
@@ -1925,7 +1925,7 @@
         {
           "id": "fn207",
           "reference": "fnref207",
-          "textHash": "17d09cd7f8d8781a7be030ef0dc4ee735705d734a89d99f81e7c7306048cccf3"
+          "textHash": "b30b222be057f09e6db31ae33e34e52d560c16dc75b74b60315e2ec3c1070bae"
         },
         {
           "id": "fn208",
@@ -1942,7 +1942,7 @@
         "drivetrain-explorer",
         "drivetrain-open-differential"
       ],
-      "textHash": "1b72bff7e34e55adf17b0b0f2c5ba054c47cd2ab999042ab0dba873f64aab650"
+      "textHash": "b6dd9b1b781b4cea99a2b1cc2e5bd2eff63360224f272c0dd5a433cc0f56f9c7"
     },
     {
       "id": "book__11-suspension-and-wheel-geometry__index.md__suspension-and-wheel-geometry",
@@ -2059,12 +2059,12 @@
         {
           "id": "fn211",
           "reference": "fnref211",
-          "textHash": "85ee346ab4310d17505072eb660316bace664b35ee7b9d16e5f6c13b055ec7d9"
+          "textHash": "c8d18f61a60a3f29599f2ecd4d91276c03e40fb2924187a54faad3ca700c3071"
         },
         {
           "id": "fn212",
           "reference": "fnref212",
-          "textHash": "846c41342221244c0d6843037773eb50498523adfd2f67ad0b650f4e4becfa65"
+          "textHash": "aa1056339482f04dddfeb207428f3e816a9fcd232f9b706101f1ff6cbafc1da2"
         },
         {
           "id": "fn213",
@@ -2074,7 +2074,7 @@
         {
           "id": "fn214",
           "reference": "fnref214",
-          "textHash": "63e3040f4cb67c5e3d98d1d4e7776da2c87c0626903cdaf7db3a827cf6229166"
+          "textHash": "9c77051f929adc7d40cd8ab06c32d71e1d2d95ab87693698dbe0a9f1a5a5f7cd"
         },
         {
           "id": "fn215",
@@ -2104,12 +2104,12 @@
         {
           "id": "fn220",
           "reference": "fnref220",
-          "textHash": "85ee346ab4310d17505072eb660316bace664b35ee7b9d16e5f6c13b055ec7d9"
+          "textHash": "c8d18f61a60a3f29599f2ecd4d91276c03e40fb2924187a54faad3ca700c3071"
         },
         {
           "id": "fn221",
           "reference": "fnref221",
-          "textHash": "846c41342221244c0d6843037773eb50498523adfd2f67ad0b650f4e4becfa65"
+          "textHash": "aa1056339482f04dddfeb207428f3e816a9fcd232f9b706101f1ff6cbafc1da2"
         },
         {
           "id": "fn222",
@@ -2129,7 +2129,7 @@
         {
           "id": "fn225",
           "reference": "fnref225",
-          "textHash": "63e3040f4cb67c5e3d98d1d4e7776da2c87c0626903cdaf7db3a827cf6229166"
+          "textHash": "9c77051f929adc7d40cd8ab06c32d71e1d2d95ab87693698dbe0a9f1a5a5f7cd"
         }
       ],
       "diagrams": [
@@ -2137,7 +2137,7 @@
         "suspension-spring-damper",
         "suspension-anti-roll"
       ],
-      "textHash": "f3aa4b7b40dfd79dd13994f1881e1365c473b24d3733d691904741ef812a9f04"
+      "textHash": "a7fc6050abcea46c09e454aa1d55a6ad9d0a873c0b36538379bd8609279e51af"
     },
     {
       "id": "book__12-steering-wheels-and-tyres__index.md__steering-wheels-and-tyres",
@@ -2250,12 +2250,12 @@
         {
           "id": "fn227",
           "reference": "fnref227",
-          "textHash": "1ecef3cf9bbe3f0c6d187828c8a75b58bbb81263edfdca845d2d1bcb5ab4ce35"
+          "textHash": "9d60f0c486caf0802ad3174a66dad56d7fa2c7a69fe9b672c5d7a68b74fa872f"
         },
         {
           "id": "fn228",
           "reference": "fnref228",
-          "textHash": "a428f94bc74b605258fdb537cbefcbff5725a76cb8bf9b8a03f849292bfea903"
+          "textHash": "2403661e5df801ff78496f8e0c52f90c5e36e2097205c4cccc2d258a0f1917f7"
         },
         {
           "id": "fn229",
@@ -2275,7 +2275,7 @@
         {
           "id": "fn232",
           "reference": "fnref232",
-          "textHash": "0c1e6c84eab191a3a9c58b7676b70041e766e1308c1730e24abd613a78dc26c0"
+          "textHash": "c3e7fb6603f29286715ba050ccc1d8f89aff6bd4bd9f8bd9d481488809b092d3"
         },
         {
           "id": "fn233",
@@ -2325,12 +2325,12 @@
         {
           "id": "fn242",
           "reference": "fnref242",
-          "textHash": "0c1e6c84eab191a3a9c58b7676b70041e766e1308c1730e24abd613a78dc26c0"
+          "textHash": "c3e7fb6603f29286715ba050ccc1d8f89aff6bd4bd9f8bd9d481488809b092d3"
         },
         {
           "id": "fn243",
           "reference": "fnref243",
-          "textHash": "c5e49ccc799b551e4514cea49b2f0a5e0c2663d1d89b6528cf08e73a4cb10444"
+          "textHash": "8a21c3fa7626fc9db7c3df505b4c181ea4b8648d04b19541a6e71ad6aec993c3"
         },
         {
           "id": "fn244",
@@ -2363,7 +2363,7 @@
         "tyre-grip-budget",
         "tyres-rolling-size"
       ],
-      "textHash": "ed14dc54b5feddeed46231f2d4d0748c4c8b41c8517b274c20ce381cec392aa9"
+      "textHash": "9ec2d10513b98162d38570770120a9abdf8f08d5cbcb6d46e9722709ddea6abf"
     },
     {
       "id": "book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems",
@@ -2452,10 +2452,10 @@
       ],
       "figures": [
         {
-          "alt": "The front brake in context: the master cylinder connects hydraulically to four wheel brakes; the front assembly contains a wheel, hub, disc, two pads and a fixed caliper.",
+          "alt": "The front brake in context: the master cylinder connects hydraulically to four wheel brakes. The front assembly contains a wheel, hub, disc, stationary cover plate, two pads and a fixed caliper, with separate pad retainers, wear-indicator lead and hydraulic pipe/hose connection.",
           "width": null,
           "style": null,
-          "captionHash": "963a931aaa2039d86fe7eec873a3c3b6b026942c259090a994afaa2507e6df94"
+          "captionHash": "09f37fdd8cb18cb2d9ebfadf718294a7fcc0e5037b90c7aa8c7904d4311f6316"
         },
         {
           "alt": "The braking chain: foot force is assisted and converted to hydraulic pressure; calipers clamp the rotating discs, and road force on the tyres slows the car.",
@@ -2486,17 +2486,17 @@
         {
           "id": "fn249",
           "reference": "fnref249",
-          "textHash": "d5d113a29700d00af45bd5e97b73772a9e02ed9b9cdf898f530462ff0367dda5"
+          "textHash": "2127795e47031e055f90ea9d484d7f9c9c395efdf5ac2905b164720bbf845e3b"
         },
         {
           "id": "fn250",
           "reference": "fnref250",
-          "textHash": "d5d113a29700d00af45bd5e97b73772a9e02ed9b9cdf898f530462ff0367dda5"
+          "textHash": "2127795e47031e055f90ea9d484d7f9c9c395efdf5ac2905b164720bbf845e3b"
         },
         {
           "id": "fn251",
           "reference": "fnref251",
-          "textHash": "a1292cd9ef22e6f2abe62190aebd3cb5912d106d1a8546fc4c04c5ed44a208d0"
+          "textHash": "f4da879b4de9e19fefc7408635a2657253c67b3ab758d19a3907329df6ee4425"
         },
         {
           "id": "fn252",
@@ -2521,7 +2521,7 @@
         {
           "id": "fn256",
           "reference": "fnref256",
-          "textHash": "a1292cd9ef22e6f2abe62190aebd3cb5912d106d1a8546fc4c04c5ed44a208d0"
+          "textHash": "f4da879b4de9e19fefc7408635a2657253c67b3ab758d19a3907329df6ee4425"
         },
         {
           "id": "fn257",
@@ -2536,7 +2536,7 @@
         {
           "id": "fn259",
           "reference": "fnref259",
-          "textHash": "a1292cd9ef22e6f2abe62190aebd3cb5912d106d1a8546fc4c04c5ed44a208d0"
+          "textHash": "f4da879b4de9e19fefc7408635a2657253c67b3ab758d19a3907329df6ee4425"
         },
         {
           "id": "fn260",
@@ -2591,17 +2591,17 @@
         {
           "id": "fn270",
           "reference": "fnref270",
-          "textHash": "2edd503a933df653030989b03f725397a000f9d4b5a7df5d1860b7f100da0a72"
+          "textHash": "f44e0c06f961b55cdd50afa7619e0ba550c77ee153bb62e2c461ae304a2a75af"
         },
         {
           "id": "fn271",
           "reference": "fnref271",
-          "textHash": "d5d113a29700d00af45bd5e97b73772a9e02ed9b9cdf898f530462ff0367dda5"
+          "textHash": "2127795e47031e055f90ea9d484d7f9c9c395efdf5ac2905b164720bbf845e3b"
         },
         {
           "id": "fn272",
           "reference": "fnref272",
-          "textHash": "d5d113a29700d00af45bd5e97b73772a9e02ed9b9cdf898f530462ff0367dda5"
+          "textHash": "2127795e47031e055f90ea9d484d7f9c9c395efdf5ac2905b164720bbf845e3b"
         },
         {
           "id": "fn273",
@@ -2616,7 +2616,7 @@
         {
           "id": "fn275",
           "reference": "fnref275",
-          "textHash": "a1292cd9ef22e6f2abe62190aebd3cb5912d106d1a8546fc4c04c5ed44a208d0"
+          "textHash": "f4da879b4de9e19fefc7408635a2657253c67b3ab758d19a3907329df6ee4425"
         },
         {
           "id": "fn276",
@@ -2639,7 +2639,7 @@
         "caliper-pressure",
         "braking-energy"
       ],
-      "textHash": "1a7b7fdc79702fbec55e17ec4cad3d6db807f16bac99c8d0088f081def57ca8e"
+      "textHash": "347a7a27865f2bd0a887827bd373181252b0c8a41a41b32b7853f27a7aca183a"
     },
     {
       "id": "book__14-roof-glass-seals-and-drainage__index.md__roof-glass-seals-and-drainage",
@@ -2707,10 +2707,10 @@
       ],
       "figures": [
         {
-          "alt": "The ordinary roof sits above the cabin, with its motor, paired side gearboxes and stowage well behind the seats. A separated cutaway identifies the fixed header, manual front latch, supporting frame, fabric, rigid heated rear pane, drive paths, compartment cover and side drainage areas.",
+          "alt": "The ordinary roof sits above the cabin, with its motor, paired side gearboxes and stowage well behind the seats. A separated cutaway identifies the fixed header, manual front latch and centring journals, supporting frame, fabric and tension wires, rigid heated rear pane, drive paths, compartment cover, separate roof seals and side drainage areas with filters.",
           "width": null,
           "style": null,
-          "captionHash": "34329013e5afd0ca08efeb727bb42f9d4d2ecd17a8804f7ef198acdbab17ea69"
+          "captionHash": "8e6d1362a23c1766263679d5c30ba90db3fbb758a250f25c5cb19faf4f56f625"
         },
         {
           "alt": "The ordinary 987.2 roof closed, showing the curved fabric profile between the windscreen and rear deck.",
@@ -2776,17 +2776,17 @@
         {
           "id": "fn280",
           "reference": "fnref280",
-          "textHash": "0d37c44a7f989df5663dad1ccb47f154aaf3f4031c3baba17e771c036d464d2c"
+          "textHash": "3e267fec4698ac89fe8f681ff1ef61ac7ea06a57e4a894864af02c1fb48d363f"
         },
         {
           "id": "fn281",
           "reference": "fnref281",
-          "textHash": "0d37c44a7f989df5663dad1ccb47f154aaf3f4031c3baba17e771c036d464d2c"
+          "textHash": "3e267fec4698ac89fe8f681ff1ef61ac7ea06a57e4a894864af02c1fb48d363f"
         },
         {
           "id": "fn282",
           "reference": "fnref282",
-          "textHash": "afa93ee67602176d8cc38acdd7a0dd9ef0de309231d0ad96485e30b858e114a1"
+          "textHash": "508b1ef79d43314837eec387892b3e5f1b84e3edf0064b788dd6b26c7b345e41"
         },
         {
           "id": "fn283",
@@ -2796,7 +2796,7 @@
         {
           "id": "fn284",
           "reference": "fnref284",
-          "textHash": "afa93ee67602176d8cc38acdd7a0dd9ef0de309231d0ad96485e30b858e114a1"
+          "textHash": "508b1ef79d43314837eec387892b3e5f1b84e3edf0064b788dd6b26c7b345e41"
         },
         {
           "id": "fn285",
@@ -2811,7 +2811,7 @@
         {
           "id": "fn287",
           "reference": "fnref287",
-          "textHash": "f1e9aae5bbc9d63308f392e0fef7ecf7efee204254e0d4aeaee849dffcf1cd43"
+          "textHash": "1d05d825251b981667fb479192f40b950081a295b39dec7d05bcb9e07424edce"
         },
         {
           "id": "fn288",
@@ -2821,7 +2821,7 @@
         {
           "id": "fn289",
           "reference": "fnref289",
-          "textHash": "fdab4e967223ee1198bcd1742c601161c7d9a7120de0676203189edeab7e348c"
+          "textHash": "82d074edaf9af78e3b0aac172cda5095e0ea840083dba2a08881411f876051e1"
         },
         {
           "id": "fn290",
@@ -2836,17 +2836,17 @@
         {
           "id": "fn292",
           "reference": "fnref292",
-          "textHash": "63c85ba8d34eff8ae895a945bd2ac751c2b709fcdf44806d3bf54a0eabc67d17"
+          "textHash": "cb5ac23c8fc0d0accc6720bdc760e56dcdd270579de17d8ea48188cd38ede46a"
         },
         {
           "id": "fn293",
           "reference": "fnref293",
-          "textHash": "63c85ba8d34eff8ae895a945bd2ac751c2b709fcdf44806d3bf54a0eabc67d17"
+          "textHash": "cb5ac23c8fc0d0accc6720bdc760e56dcdd270579de17d8ea48188cd38ede46a"
         },
         {
           "id": "fn294",
           "reference": "fnref294",
-          "textHash": "63c85ba8d34eff8ae895a945bd2ac751c2b709fcdf44806d3bf54a0eabc67d17"
+          "textHash": "cb5ac23c8fc0d0accc6720bdc760e56dcdd270579de17d8ea48188cd38ede46a"
         },
         {
           "id": "fn295",
@@ -2856,7 +2856,7 @@
         {
           "id": "fn296",
           "reference": "fnref296",
-          "textHash": "cb44dd1d177407f4063d670e011e2d2d16c06edab1024d15d1c2113ea6231f5b"
+          "textHash": "ef8a18191e3af3601658eed3348cc501df2bcb3ea8a567e45b96931c509e8aaf"
         },
         {
           "id": "fn297",
@@ -2871,17 +2871,17 @@
         {
           "id": "fn299",
           "reference": "fnref299",
-          "textHash": "0d37c44a7f989df5663dad1ccb47f154aaf3f4031c3baba17e771c036d464d2c"
+          "textHash": "3e267fec4698ac89fe8f681ff1ef61ac7ea06a57e4a894864af02c1fb48d363f"
         },
         {
           "id": "fn300",
           "reference": "fnref300",
-          "textHash": "77b2dddaef803adbd0bfe89ec7f3657046d64957a848ea0b9f501ef000dcfc2f"
+          "textHash": "3ff8403a62ad5567d8f117239c0425402d9dcf5c3f87f05fff35c53ceb6141db"
         },
         {
           "id": "fn301",
           "reference": "fnref301",
-          "textHash": "77b2dddaef803adbd0bfe89ec7f3657046d64957a848ea0b9f501ef000dcfc2f"
+          "textHash": "3ff8403a62ad5567d8f117239c0425402d9dcf5c3f87f05fff35c53ceb6141db"
         },
         {
           "id": "fn302",
@@ -2899,7 +2899,7 @@
         "roof-opening",
         "roof-drainage"
       ],
-      "textHash": "9dbeb254f307f9f448f0585349789131b3acd8fa0664834bff840c6623f08e0d"
+      "textHash": "f0a29d1735faede4613b62054c62614459d3030b7620d66c2dd280d2e6180467"
     },
     {
       "id": "book__15-cabin-seating-and-climate__index.md__cabin-seating-and-climate",
@@ -2987,10 +2987,10 @@
           "captionHash": "89c906e4776142ca7e6a7578ff9a9f34842736ee494f9f24050fb2a748b25052"
         },
         {
-          "alt": "Separate loops show hot engine coolant delivering heat to a heater core and refrigerant taking cabin heat through an evaporator to the front condensers. Only heat crosses between the fluids and the cabin air.",
+          "alt": "Separate loops show hot engine coolant delivering heat to a heater core and refrigerant taking cabin heat through an evaporator to the front condensers, with a receiver-drier before the expansion valve. Only heat crosses between the fluids and the cabin air.",
           "width": null,
           "style": null,
-          "captionHash": "00946dc21b4c5adb6da6afc6627f1e9415515c4cb7e54b8310a581cc259e6657"
+          "captionHash": "65a8c692babaeaabd1702c9879b8ab025d4761649433e30cf164164e94e7e7e9"
         },
         {
           "alt": "With fresh air selected, the blower moves air through an evaporator with A/C enabled, around the heater and towards the face vents. Recirculation changes the source; heater contribution changes heat addition; outlet selection changes the destination.",
@@ -3008,7 +3008,7 @@
         {
           "id": "fn305",
           "reference": "fnref305",
-          "textHash": "61df2c4da2013c7fa1bb780251f247ae5dfb94702cb4dc0b26dd86d2e3918636"
+          "textHash": "e57e9fc9be1648fa3fd3570859093d45a45d6d45c128d7a2fb23bf7a552f9ef3"
         },
         {
           "id": "fn306",
@@ -3018,12 +3018,12 @@
         {
           "id": "fn307",
           "reference": "fnref307",
-          "textHash": "61df2c4da2013c7fa1bb780251f247ae5dfb94702cb4dc0b26dd86d2e3918636"
+          "textHash": "e57e9fc9be1648fa3fd3570859093d45a45d6d45c128d7a2fb23bf7a552f9ef3"
         },
         {
           "id": "fn308",
           "reference": "fnref308",
-          "textHash": "61df2c4da2013c7fa1bb780251f247ae5dfb94702cb4dc0b26dd86d2e3918636"
+          "textHash": "e57e9fc9be1648fa3fd3570859093d45a45d6d45c128d7a2fb23bf7a552f9ef3"
         },
         {
           "id": "fn309",
@@ -3038,37 +3038,37 @@
         {
           "id": "fn311",
           "reference": "fnref311",
-          "textHash": "d5c2fe15a6166492bdc68f6315286a917d72f671437bd8d7bd92b579c065e980"
+          "textHash": "7ecd4b6f2cbd6f8b0540d4b9dd3382dd7fe2058885dbff299226c7713b21ccf7"
         },
         {
           "id": "fn312",
           "reference": "fnref312",
-          "textHash": "d5c2fe15a6166492bdc68f6315286a917d72f671437bd8d7bd92b579c065e980"
+          "textHash": "7ecd4b6f2cbd6f8b0540d4b9dd3382dd7fe2058885dbff299226c7713b21ccf7"
         },
         {
           "id": "fn313",
           "reference": "fnref313",
-          "textHash": "d5c2fe15a6166492bdc68f6315286a917d72f671437bd8d7bd92b579c065e980"
+          "textHash": "7ecd4b6f2cbd6f8b0540d4b9dd3382dd7fe2058885dbff299226c7713b21ccf7"
         },
         {
           "id": "fn314",
           "reference": "fnref314",
-          "textHash": "5ea5b738af1c2340560fcf4d4c0ab6ecea16f5ead1ef32f684f31f84857dbdb4"
+          "textHash": "246b2b119d538ba385a1a004712f14a6330f3e5dc1d12d51e26e86d0a3c0a056"
         },
         {
           "id": "fn315",
           "reference": "fnref315",
-          "textHash": "5ea5b738af1c2340560fcf4d4c0ab6ecea16f5ead1ef32f684f31f84857dbdb4"
+          "textHash": "246b2b119d538ba385a1a004712f14a6330f3e5dc1d12d51e26e86d0a3c0a056"
         },
         {
           "id": "fn316",
           "reference": "fnref316",
-          "textHash": "537f7d72a07eb8cc3947ae1531eaf0de94fab8d82379ed84a2757097afab4a96"
+          "textHash": "25d9137391ec279681b52dbe80eabb1c78d072f78a63e4ea5b185270bcd98160"
         },
         {
           "id": "fn317",
           "reference": "fnref317",
-          "textHash": "bf44259fb05f85c9e30ee53824195b21ddc6605f9c07db3ec9693bd9fcb8deab"
+          "textHash": "069e351a56ed59e5ab25c25a2cc4ff4583b6bd0b5160445afbdc2c19d7ed0556"
         },
         {
           "id": "fn318",
@@ -3103,7 +3103,7 @@
         {
           "id": "fn324",
           "reference": "fnref324",
-          "textHash": "d5c2fe15a6166492bdc68f6315286a917d72f671437bd8d7bd92b579c065e980"
+          "textHash": "7ecd4b6f2cbd6f8b0540d4b9dd3382dd7fe2058885dbff299226c7713b21ccf7"
         },
         {
           "id": "fn325",
@@ -3130,7 +3130,7 @@
         "cabin-explorer",
         "cabin-air-route"
       ],
-      "textHash": "cf4be6f8d98ecceb4d13be8d76b263f1bf51d9eda1396b8db59b9325e6cea405"
+      "textHash": "a1b0a0d5ddcc207d10e05523bf8d25fc17773e4a106b08553b1f0d2d61968398"
     },
     {
       "id": "book__16-lighting-electrical-systems-and-security__index.md__lighting-electrical-systems-and-security",
@@ -3235,12 +3235,12 @@
         {
           "id": "fn330",
           "reference": "fnref330",
-          "textHash": "c2c5cb25e95b7b18e07798543ac8454a8ae83d8b2b5b1a35425703593f72034c"
+          "textHash": "df4cb712ddf45453b483c4fdc0a948bcacd41f66ef444bd03e3283c116551fa8"
         },
         {
           "id": "fn331",
           "reference": "fnref331",
-          "textHash": "7b4490a991112ab33052e59533c8a0e9558e22e9f4d0cedb8d81ebcccf4794e1"
+          "textHash": "3c53154e86012ea9bbb45655272d1983249f9901eb4bede1f34a0b6ea3872fdb"
         },
         {
           "id": "fn332",
@@ -3255,7 +3255,7 @@
         {
           "id": "fn334",
           "reference": "fnref334",
-          "textHash": "7b4490a991112ab33052e59533c8a0e9558e22e9f4d0cedb8d81ebcccf4794e1"
+          "textHash": "3c53154e86012ea9bbb45655272d1983249f9901eb4bede1f34a0b6ea3872fdb"
         },
         {
           "id": "fn335",
@@ -3275,12 +3275,12 @@
         {
           "id": "fn338",
           "reference": "fnref338",
-          "textHash": "52d010a158122f1da2d0435919cd13a78ac19c7f8abfb9136b0853440b39e579"
+          "textHash": "257552feed8686305073a42947fb9af5dbe63ff5cfdce1bfdf809e7ecd60c295"
         },
         {
           "id": "fn339",
           "reference": "fnref339",
-          "textHash": "c2c5cb25e95b7b18e07798543ac8454a8ae83d8b2b5b1a35425703593f72034c"
+          "textHash": "df4cb712ddf45453b483c4fdc0a948bcacd41f66ef444bd03e3283c116551fa8"
         },
         {
           "id": "fn340",
@@ -3290,7 +3290,7 @@
         {
           "id": "fn341",
           "reference": "fnref341",
-          "textHash": "52d010a158122f1da2d0435919cd13a78ac19c7f8abfb9136b0853440b39e579"
+          "textHash": "257552feed8686305073a42947fb9af5dbe63ff5cfdce1bfdf809e7ecd60c295"
         },
         {
           "id": "fn342",
@@ -3300,12 +3300,12 @@
         {
           "id": "fn343",
           "reference": "fnref343",
-          "textHash": "52d010a158122f1da2d0435919cd13a78ac19c7f8abfb9136b0853440b39e579"
+          "textHash": "257552feed8686305073a42947fb9af5dbe63ff5cfdce1bfdf809e7ecd60c295"
         },
         {
           "id": "fn344",
           "reference": "fnref344",
-          "textHash": "9144cd4185a21628546997bca3b76909188b36cf263c653227598a37d9b2e728"
+          "textHash": "49183661de16f377a6cdd8940941b23804e99fe8c0ed0770f2c5884bd2964276"
         },
         {
           "id": "fn345",
@@ -3315,12 +3315,12 @@
         {
           "id": "fn346",
           "reference": "fnref346",
-          "textHash": "6e33422c8bfd3879ff1d30dcf063a65ae77f033fa45f484a61ebcf6ffd4089fa"
+          "textHash": "bd73700007058875785e9c04784d1f17e579a11666a104ac34596ac459196716"
         },
         {
           "id": "fn347",
           "reference": "fnref347",
-          "textHash": "6e33422c8bfd3879ff1d30dcf063a65ae77f033fa45f484a61ebcf6ffd4089fa"
+          "textHash": "bd73700007058875785e9c04784d1f17e579a11666a104ac34596ac459196716"
         },
         {
           "id": "fn348",
@@ -3330,17 +3330,17 @@
         {
           "id": "fn349",
           "reference": "fnref349",
-          "textHash": "ab32d6fb698560ff1cac8fdf9e6277aec201d04ded5de037b41286a0cf3c7506"
+          "textHash": "278a0cca9d21380f0eca06c501e525545a85306d7957fc2544b2708fe4419362"
         },
         {
           "id": "fn350",
           "reference": "fnref350",
-          "textHash": "ab32d6fb698560ff1cac8fdf9e6277aec201d04ded5de037b41286a0cf3c7506"
+          "textHash": "278a0cca9d21380f0eca06c501e525545a85306d7957fc2544b2708fe4419362"
         },
         {
           "id": "fn351",
           "reference": "fnref351",
-          "textHash": "7f9b56522418a41e4d72933a43b0c2aa589e92db3a90c77b3c527d802b09864c"
+          "textHash": "573ea4efde5e68ff5fc682a5411a1dc4753461fb5694c56498799686b7defc2c"
         },
         {
           "id": "fn352",
@@ -3360,17 +3360,17 @@
         {
           "id": "fn355",
           "reference": "fnref355",
-          "textHash": "c2c5cb25e95b7b18e07798543ac8454a8ae83d8b2b5b1a35425703593f72034c"
+          "textHash": "df4cb712ddf45453b483c4fdc0a948bcacd41f66ef444bd03e3283c116551fa8"
         },
         {
           "id": "fn356",
           "reference": "fnref356",
-          "textHash": "9144cd4185a21628546997bca3b76909188b36cf263c653227598a37d9b2e728"
+          "textHash": "49183661de16f377a6cdd8940941b23804e99fe8c0ed0770f2c5884bd2964276"
         },
         {
           "id": "fn357",
           "reference": "fnref357",
-          "textHash": "c2c5cb25e95b7b18e07798543ac8454a8ae83d8b2b5b1a35425703593f72034c"
+          "textHash": "df4cb712ddf45453b483c4fdc0a948bcacd41f66ef444bd03e3283c116551fa8"
         },
         {
           "id": "fn358",
@@ -3397,7 +3397,7 @@
         "electrical-explorer",
         "electrical-current-path"
       ],
-      "textHash": "279321051b789e61a6a1e28fcecdbf07f1a8301488542f3838fc5f4b117847e1"
+      "textHash": "d893f2b70694b5309f17cfd7e5cec0a150dc9a8b47e779279914d0c15e334b64"
     },
     {
       "id": "book__17-audio-navigation-and-communication__index.md__audio-navigation-and-communication",
@@ -3484,7 +3484,7 @@
         {
           "id": "fn363",
           "reference": "fnref363",
-          "textHash": "ed346edb7e2be73eab43384dc738bf7d81b2abe025e915bb16e85454ee0a8268"
+          "textHash": "ee76ecbcf4b9517b386ec190862bb10ffcdb2ae0e094fa1a76ac82c3c79103a9"
         },
         {
           "id": "fn364",
@@ -3504,12 +3504,12 @@
         {
           "id": "fn367",
           "reference": "fnref367",
-          "textHash": "1f83b167ae419db465eb067bf00616d50128da50caa14488f65c41b6cddf183b"
+          "textHash": "fa949c4f23ef5bc8759dd324166d379724f886d3236c140392005b4c23985730"
         },
         {
           "id": "fn368",
           "reference": "fnref368",
-          "textHash": "81d65d075dc68a3fe19beadbb419289be677c958ff1ae6218c15d3bd4c9cbb2a"
+          "textHash": "1152c6d5e62391c36c478706bd497f24552f3be686f9b92bc203ef09178153ee"
         },
         {
           "id": "fn369",
@@ -3571,7 +3571,7 @@
         "audio-explorer",
         "audio-source-path"
       ],
-      "textHash": "7ef3485629c91d7ea5ce5bbbf0cd619f9d37d6933bd301ef7ac9523d271c3ede"
+      "textHash": "ef9fd3c55623ee1de6199b0f93d5a90afe060e362984b16cce13863c7cb6c8e5"
     },
     {
       "id": "book__18-occupant-protection-and-system-integration__index.md__occupant-protection-and-system-integration",
@@ -3647,7 +3647,7 @@
           "captionHash": "c5f92a0b82c3029f68edf6256439eb964bc52761efacfc1bb72c38306d914f8e"
         },
         {
-          "alt": "Acceleration in the standard manual car: pedal and engine information goes to DME, which controls throttle, injection and ignition. The driver’s clutch and gear selection carry torque through the manual transmission. Fixed structure remains present and the crash restraint controller assesses its own inputs.",
+          "alt": "Acceleration in the standard manual car: pedal and engine information goes to DME, which controls throttle, injection and ignition. The driver's clutch and gear selection carry torque through the manual transmission. Fixed structure remains present and the crash restraint controller assesses its own inputs.",
           "width": null,
           "style": null,
           "captionHash": "4947751a0f700b00a99a9d454398122a64d4bfda003fb4126b65621151f8b4e5"
@@ -3657,17 +3657,17 @@
         {
           "id": "fn380",
           "reference": "fnref380",
-          "textHash": "f67a96ab171a1fde6c9381bb3b714cbe4866cea276199e2c10106cdbd48018b9"
+          "textHash": "cdb2368e47c29fa072392da8921c2d100e8adacecc521fd0a51b8af9f6bffbfb"
         },
         {
           "id": "fn381",
           "reference": "fnref381",
-          "textHash": "f67a96ab171a1fde6c9381bb3b714cbe4866cea276199e2c10106cdbd48018b9"
+          "textHash": "cdb2368e47c29fa072392da8921c2d100e8adacecc521fd0a51b8af9f6bffbfb"
         },
         {
           "id": "fn382",
           "reference": "fnref382",
-          "textHash": "8f1b9ca5ad5e8a41b80f898ebcf0e46bb0d261ae97e5ee333dabe11dcb4df471"
+          "textHash": "d6338581d18b5a12a15fd980f528fc0fe2186440dd89bf6ccbab0bea3545e12d"
         },
         {
           "id": "fn383",
@@ -3677,12 +3677,12 @@
         {
           "id": "fn384",
           "reference": "fnref384",
-          "textHash": "8f1b9ca5ad5e8a41b80f898ebcf0e46bb0d261ae97e5ee333dabe11dcb4df471"
+          "textHash": "d6338581d18b5a12a15fd980f528fc0fe2186440dd89bf6ccbab0bea3545e12d"
         },
         {
           "id": "fn385",
           "reference": "fnref385",
-          "textHash": "f67a96ab171a1fde6c9381bb3b714cbe4866cea276199e2c10106cdbd48018b9"
+          "textHash": "cdb2368e47c29fa072392da8921c2d100e8adacecc521fd0a51b8af9f6bffbfb"
         },
         {
           "id": "fn386",
@@ -3692,17 +3692,17 @@
         {
           "id": "fn387",
           "reference": "fnref387",
-          "textHash": "e2885d7983f78317cdef84327a964e6eca8679f80fcad28ecc9eb214a64c4412"
+          "textHash": "46649cd63f06e786842ae42350cff5b9c837f910860e0587923806a67edeb22b"
         },
         {
           "id": "fn388",
           "reference": "fnref388",
-          "textHash": "04ed0124c4ad7b37bd6f89fdd9a2516e8b912d55c4345910ae25e754198bea88"
+          "textHash": "65b270bcb3325e5940cc4d0d2de5bf39c4a10120d675f45906d80c37839965db"
         },
         {
           "id": "fn389",
           "reference": "fnref389",
-          "textHash": "f67a96ab171a1fde6c9381bb3b714cbe4866cea276199e2c10106cdbd48018b9"
+          "textHash": "cdb2368e47c29fa072392da8921c2d100e8adacecc521fd0a51b8af9f6bffbfb"
         },
         {
           "id": "fn390",
@@ -3737,7 +3737,7 @@
         {
           "id": "fn396",
           "reference": "fnref396",
-          "textHash": "eb368a1e5f90ef56bdf3d10808e13d8d8bf63c8d64d03bb71c1b2b446bf600cb"
+          "textHash": "6ec0305956a9117a4a8822f2eec125dbdc209011d50e9a112981b60fcab783b3"
         },
         {
           "id": "fn397",
@@ -3747,14 +3747,14 @@
         {
           "id": "fn398",
           "reference": "fnref398",
-          "textHash": "e2885d7983f78317cdef84327a964e6eca8679f80fcad28ecc9eb214a64c4412"
+          "textHash": "46649cd63f06e786842ae42350cff5b9c837f910860e0587923806a67edeb22b"
         }
       ],
       "diagrams": [
         "protection-explorer",
         "protection-system-scenarios"
       ],
-      "textHash": "c8bcb634c79eea258026b291ced656d5b50f2370991d7fe7df767e5cf327cdc8"
+      "textHash": "af46dd027e0ea766d9e727819c6145cbba1351f7c31a8203353c5e48af7c2605"
     },
     {
       "id": "book__19-reference-atlas-and-index__index.md__reference-atlas-and-index",
@@ -3813,10 +3813,10 @@
         "c7c0dabc8e5b8f05728222791e9d5734d31035e31d5aa50de4e54000e3d0eae9",
         "6864cc2c96dd7ff894c1af0845b1d1e1a57dc931a719bf46ef6d4320ff97a722",
         "a0d0ebbd2efed21dec346448c743f568f1fcb2cde885fd2e5df9dec2273d3134",
-        "d504633988991f253f455063f63dd70ff997f3f5eea42422358135e7df84107f",
+        "3e8444cf1c233e9e90eff40a20817d96b32d773bf9d29e09361cfaaf3031f4f7",
         "52ab380e66cf3fd1224be55f4e898abbc71a333af2abcbea7515b599636e95ce",
         "a7f41cc977d9251c4fdbf000a9a19081b0d296b46ec89eafeb80f280ec29c297",
-        "aa0ea508134ec367ea3e18acab1df77b368a8e169171d8f04cf72205b7584498",
+        "8f6f023ab67cfd5f2e52b273de49792e5729c4ef11be4044cf554b58786d480c",
         "c9f4278ee9793cb77474da1c3d58269e531ec695c97e53444092f1da35b5ad0a"
       ],
       "figures": [
@@ -3824,7 +3824,7 @@
           "alt": "Boxster III · 17-inch: catalogue wheel photograph.",
           "width": null,
           "style": null,
-          "captionHash": "e71d123dc7e33e74fdeea6b33bb1773b5f89286329c179009117d296cd3a293e"
+          "captionHash": "9d142fa33e044de958b0b036074bc73083004a8893dcb70e81d68fbf6a126396"
         },
         {
           "alt": "Cayman II · 17-inch: catalogue wheel photograph.",
@@ -4110,12 +4110,12 @@
         {
           "id": "fn402",
           "reference": "fnref402",
-          "textHash": "0d25e720f40aa258586fd5059c859fec5302bc5b8f778348c2b1609bb11cecbe"
+          "textHash": "62156674e379558927a207eec20adb83bc90c92a5db2a29162ce94e6b1253bb7"
         },
         {
           "id": "fn403",
           "reference": "fnref403",
-          "textHash": "c61945114e2c5a9886ce3807cdae00b805594c70abdb83dc738271e3198e8533"
+          "textHash": "a0ca3d45c8ca2bdd4fd7d2582762ec330698441bfda66a6f6b4abcab89060370"
         },
         {
           "id": "fn404",
@@ -4145,11 +4145,11 @@
         {
           "id": "fn409",
           "reference": "fnref409",
-          "textHash": "be720360c7d4332ef7ea672dd60ffca60366e2c053aa7d8c81324164e7f3de12"
+          "textHash": "2adb85b5af76b9e49e5fb2c5633092cd91cb7377d21339f86274f839edaeec5a"
         }
       ],
       "diagrams": [],
-      "textHash": "1bc39b430711113aabdf62230ae9dbf1bd2cb057e3fe5c627e41fd867db63cd7"
+      "textHash": "d61775313a376d6d2d4f659a7448a0416cd96674c6d5be3bcb3db6ff10b2011c"
     }
   ]
 }

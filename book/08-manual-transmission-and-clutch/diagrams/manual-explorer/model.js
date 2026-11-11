@@ -5,17 +5,18 @@ export const config = {
   id: 'manual-explorer',
   title: 'From the car to the manual gearbox',
   location: 'The standard six-speed manual sits behind the 2010 2.9 engine. Its clutch faces the engine; the final drive sends torque sideways to the rear wheels.',
-  overview: 'Follow engine torque through the flywheel, single dry clutch and gearbox. The cabin lever selects a synchroniser through cables; a separate hydraulic release acts on the clutch.',
+  overview: 'Follow engine torque through the flywheel, single dry clutch and gearbox. Pedal, master cylinder and hydraulic line command a separate slave/lever release; the cabin lever selects gears through two cables.',
   assembled: 'The clutch and gearbox input share a longitudinal axis. The final drive belongs to the same transaxle and connects to the rear half-shafts. The open housing exposes representative gear pairs.',
-  exploded: 'Separation reveals the flywheel, one driven plate, pressure assembly and release mechanism. The synchroniser is lifted from one example gear path; these offsets are not working travel or a dismantling sequence.',
+  exploded: 'Separation reveals one driven plate, pressure assembly, bearing/guide sleeve and the pedal-to-slave circuit. The synchroniser is lifted from one example gear path; offsets are not working travel or dismantling order.',
   focus: 'clutch',
   hideCarParts: ['gearbox', 'chassis'],
   direction: [1.3, .9, -1.6],
-  note: 'G87/10 concept. Two example gear pairs are not a six-ratio shaft plan. Housing, tooth forms, release geometry and cable routing are illustrative; S-model X-Tend is not assigned to this clutch.',
+  note: 'G87/10 concept checked against PET 102-000, 301-000/005, 302-000/005, 501-005, 701-000 and 702-000/008. Two pairs are not a six-ratio shaft plan. Geometry/routing and the LHD pedal location are illustrative; UK/RHD feed pipes differ. No S-model X-Tend is assigned.',
   connections: [
     { from: 'engine-interface', to: 'flywheel', label: 'Crankshaft drives the engine-side flywheel mass', kind: 'mechanical' },
     { from: 'flywheel', to: 'clutch', label: 'Flywheel face and pressure plate clamp one driven disc', kind: 'mechanical' },
     { from: 'clutch', to: 'geartrain', label: 'Disc hub transmits torque to the input shaft', kind: 'mechanical' },
+    { from: 'pedal-hydraulics', to: 'release', label: 'Pedal-driven master sends fluid pressure to the separate slave', kind: 'fluid' },
     { from: 'release', to: 'clutch', label: 'Slave, lever and bearing relieve the diaphragm clamp', kind: 'mechanical' },
     { from: 'selector', to: 'synchroniser', label: 'Two cables command selector and fork movement', kind: 'mechanical' },
     { from: 'synchroniser', to: 'geartrain', label: 'Sleeve locks a selected gear to its shaft after speed matching', kind: 'mechanical' },
@@ -69,15 +70,29 @@ export function createAssembly() {
     beam(clutch, [Math.cos(angle) * .038, Math.sin(angle) * .038, -.045], [Math.cos(angle) * .095, Math.sin(angle) * .095, -.027], .005, m.dark);
   }
 
-  const release = part(root, 'release', 'Clutch release', [0, .47, -1.245], [.42, .14, .01], 'A separate slave cylinder pushes a pivoted lever and release bearing. Fluid arrives from the pedal master cylinder; this mechanism releases the clamp rather than supplying its normal spring force.');
+  const release = part(root, 'release', 'Clutch release', [0, .47, -1.245], [.42, .14, .01], 'A separate slave pushes the pivoted lever. The release bearing slides on a guide sleeve around the input shaft and acts on the diaphragm; it relieves spring clamping force. PET 301-000 items 3–5 and 10; 301-005 item 1.');
   axialRing(release, .042, .021, .027, m.metal);
-  axialRing(release, .027, .019, .075, m.dark, -.021);
+  // The stationary sleeve fits inside the sliding bearing, clear of the shaft.
+  axialRing(release, .0205, .0185, .075, m.dark, -.021);
   for (const y of [-.036, .036]) beam(release, [.026, y, -.003], [.145, y * .4, -.025], .009, m.green);
   beam(release, [.145, -.018, -.025], [.145, .075, -.085], .012, m.green);
   sphere(release, .016, m.metal, [.145, -.018, -.025]);
   cylinder(release, .025, .1, m.metal, [.145, .075, -.16], zAxis);
   beam(release, [.145, .075, -.11], [.145, .075, -.085], .009, m.metal);
   tube(release, [[.145, .075, -.2], [.17, .12, -.18], [.18, .16, -.11]], .009, m.blue);
+
+  const pedal = part(root, 'pedal-hydraulics', 'Pedal and master', [.48, .43, .52], [.18, .34, .1], 'The pedal drives the master cylinder; a separate feed supplies brake-reservoir fluid and a pressure line reaches the slave. The pedal also has an assist spring. PET 702-000/008; LHD position and pipe paths are illustrative.');
+  beam(pedal, [0, .13, .08], [0, -.12, -.025], .012, m.metal);
+  cylinder(pedal, .018, .08, m.dark, [0, .13, .08]);
+  box(pedal, [.07, .055, .018], m.black, [0, -.12, -.025], [-.25, 0, 0]);
+  beam(pedal, [0, .085, .06], [0, .1, .1], .006, m.metal);
+  cylinder(pedal, .023, .12, m.metal, [0, .1, .16], zAxis);
+  box(pedal, [.08, .06, .10], m.glass, [0, .29, .16]);
+  cylinder(pedal, .019, .015, m.dark, [0, .3275, .16], [0, 0, 0]);
+  tube(pedal, [[0, .26, .16], [.025, .21, .15], [.025, .12, .14]], .007, m.blue);
+  coil(pedal, [.045, .14, .07], [.045, .065, .015], .014, .003, m.warm, 7);
+  box(pedal, [.06, .025, .08], m.green, [.015, .145, .07]);
+  tube(pedal, [[0, .1, .22], [-.06, -.1, .1], [-.28, -.13, -.4], [-.30, -.13, -1.6], [-.30, .20, -1.875]], .007, m.blue);
 
   const transmission = part(root, 'geartrain', 'Gearbox and input', [0, .47, -1.55], [0, -.08, -.25], 'Two representative constant-mesh pairs show an input and a selected output path. They do not reproduce all six ratios, reverse, or the real G87/10 shaft and bearing layout.');
   beam(transmission, [0, 0, .39], [0, 0, -.235], .018, m.metal);
@@ -107,7 +122,7 @@ export function createAssembly() {
   beam(synchroniser, [-.055, .085, -.002], [.055, .085, -.002], .009, m.green);
   beam(synchroniser, [0, .085, -.15], [0, .085, .15], .009, m.metal);
 
-  const selector = part(root, 'selector', 'Lever and cables', [0, .48, .12], [0, .25, .18], 'The cabin lever sends cross-gate and fore-and-aft commands through two cables to the gearbox selector. Cable paths and lever joints here show connectivity, not installation routing.');
+  const selector = part(root, 'selector', 'Lever and cables', [0, .48, .12], [0, .25, .18], 'The cabin lever sends cross-gate and fore-and-aft commands through two cables to the gearbox selector. Brackets retain the cable housings; the inner cables move. PET 701-000 items 1, 3, 25–26; routes and joints are schematic.');
   box(selector, [.13, .025, .17], m.dark, [0, 0, 0]);
   beam(selector, [0, 0, 0], [0, .15, .035], .014, m.metal);
   sphere(selector, .03, m.tan, [0, .17, .04], [1, 1.3, 1]);
@@ -115,6 +130,7 @@ export function createAssembly() {
   for (const x of [-.034, .034]) {
     tube(selector, [[x, -.01, -.06], [x, -.11, -.3], [x + .03, -.14, -.9], [.17 + x, .075, -1.65]], .008, m.black);
     cylinder(selector, .014, .055, m.metal, [.17 + x, .075, -1.65], zAxis);
+    box(selector, [.036, .012, .045], m.green, [.17 + x, .057, -1.65]);
   }
 
   const final = part(root, 'final-drive', 'Final drive and shafts', [0, .329, -1.2075], [0, -.23, -.13], 'The transaxle final drive turns longitudinal input into drive for the rear differential and half-shafts. The two shafts reach rotating hubs; their articulated joints accommodate suspension movement.');

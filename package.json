@@ -11,7 +11,8 @@
     "posters": "node scripts/render-component-posters.mjs",
     "preview:model": "npm run models && node scripts/preview-model.mjs",
     "serve": "node --import tsx scripts/serve.ts",
-    "test": "npm run typecheck && npm run build && npm run build:web && npm run build:pages && node --import tsx --test tests/*.test.js tests/*.test.ts",
+    "test": "node --import tsx --test tests/*.test.js tests/*.test.ts",
+    "validate": "npm run typecheck && npm run build && npm run build:web && npm run build:pages && npm test",
     "dev": "node --import tsx scripts/dev.ts",
     "typecheck": "tsc --noEmit"
   },

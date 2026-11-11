@@ -2,6 +2,8 @@
 
 These are contemporary Porsche photographs extracted as their original JPEG image objects from Porsche-authored PDF brochures. Copyright remains with Dr. Ing. h.c. F. Porsche AG. Collector hosting does not transfer the rights; the book's MIT licence does not apply to these photographs. They are retained locally for the requested personal-reading draft.
 
+The chapter's separate [factory parts-reference archive](../part-reference/README.md) contains 13 unaltered full-page renderings from Porsche PET 987209, dated 19 July 2018. Its source, hash, exact PDF/plate/item locators, applicability and copyright limits are recorded there. These factory excerpts are also excluded from the MIT licence.
+
 ## `2009-launch-boxster-s.jpg`
 
 - Subject: red facelift **Boxster S**, side profile. It is a comparison car, not the book's reference 2.9.

@@ -6,9 +6,37 @@ import { panel, slider, buttons } from '../../../../interactive/ui.js';
 import { scene3D, loadModel, opacity, disposeObject } from '../../../../interactive/three/scene.js';
 import { sampleTimeline, segment } from '../../../../interactive/math.js';
 
-export async function mount(host, { state, signal }) {
+export async function mount(host, { state, signal, whenVisible }) {
   state.progress ??= 0;
   state.part ??= 'disc';
+  const { stage, controls, explanation } = panel(host, {
+    title: 'From the car to the front brake',
+    description: 'Move through the assembly with the slider. Select a part for a closer view. Drag to rotate; pinch or scroll to zoom.',
+    note: '2010 2.9 layout with a photo-guided green and tan car. Selected parts are blue; the wheel is ghosted to expose the brake. Factory PET plates 602-000, 604-010 and 401-005 identify the parts. Mechanical geometry, pipe and wire routing, colours, clearances and exploded distances are illustrative.',
+  });
+  stage.classList.add('diagram-stage-3d');
+  let paint=()=>{}, stageRow, partRow;
+  const stageFor=p=>segment(p,65,100)>0?config.stages.at(-1):[...config.stages].reverse().find(item=>p>=item.value)??config.stages[0];
+  const update=()=>{
+    const p=state.progress, exploded=segment(p,65,100);
+    const currentStage=stageFor(p);
+    const selected = config.parts.find((part) => part.name === state.part);
+    explanation.textContent = `${currentStage.text} ${p >= 60 ? selected.text : ''}`;
+    stageRow?.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(config.stages[i] === currentStage)));
+    partRow?.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(config.parts[i].name === state.part)));
+    host.dataset.progress = p;
+    host.dataset.exploded = exploded.toFixed(3);
+    host.dataset.part = state.part;
+    paint();
+  };
+  const progress = slider(controls, { label: 'Explore the assembly', value: state.progress, format: (v) => `${v}%`, signal, onChange: (value) => { state.progress = value; state.focusPart = false; update(); } });
+  stageRow = buttons(controls, config.stages.map((item) => ({ label: item.label, action: () => progress.set(item.value) })), signal);
+  partRow = buttons(controls, config.parts.map((part) => ({ label: part.label, action: () => { state.part = part.name; progress.set(100); state.focusPart = true; update(); } })), signal);
+  buttons(controls, [{ label: 'Reset view', action: () => { state.part = 'disc'; progress.set(0); } }], signal);
+  update();
+  host.dispatchEvent(new Event('diagram-layout'));
+  await whenVisible;
+  signal.throwIfAborted();
   const loaded = await Promise.allSettled([loadModel(reference, signal, import.meta.url), loadModel(assembly, signal, import.meta.url)]);
   const failure = loaded.find((result) => result.status === 'rejected');
   if (failure) {
@@ -16,11 +44,6 @@ export async function mount(host, { state, signal }) {
     throw failure.reason;
   }
   const [car, brake] = loaded.map((result) => result.value);
-  const { stage, controls, explanation } = panel(host, {
-    title: 'From the car to the front brake',
-    description: 'Move through the assembly with the slider. Select a part for a closer view. Drag to rotate; pinch or scroll to zoom.',
-    note: '2010 2.9 layout with a photo-guided green and tan car. Selected parts are blue; the wheel is ghosted to expose the brake. Mechanical geometry, pipe routing, clearances and exploded distances are illustrative.',
-  });
   let view;
   try { view = scene3D(stage, { signal }); }
   catch (error) { disposeObject(car); disposeObject(brake); throw error; }
@@ -53,9 +76,7 @@ export async function mount(host, { state, signal }) {
   const callout = document.createElement('div');
   callout.className = 'diagram-callout';
   stage.append(callout);
-  let stageRow;
-  let partRow;
-  const update = () => {
+  paint = () => {
     const p = state.progress;
     const pose = sampleTimeline(p, config.camera);
     body.position.y = segment(p, 0, 30) * 0.75;
@@ -77,8 +98,9 @@ export async function mount(host, { state, signal }) {
       });
       opacity(part.object, state.focusPart && part.name !== state.part ? 0.08 : part.name === 'wheel' && state.part !== 'wheel' ? 1 - segment(p, 45, 65) * 0.85 : 1);
     }
-    const currentStage = exploded > 0 ? config.stages.at(-1) : [...config.stages].reverse().find((item) => p >= item.value) ?? config.stages[0];
-    const selected = parts.find((part) => part.name === state.part);
+    const currentStage=stageFor(p);
+    const selected=parts.find(part=>part.name===state.part);
+    callout.textContent=state.focusPart?selected.label:currentStage.label;
     view.camera.position.fromArray(pose.position);
     view.controls.target.fromArray(pose.target);
     if (state.focusPart) {
@@ -92,19 +114,8 @@ export async function mount(host, { state, signal }) {
       view.camera.position.copy(sphere.center).addScaledVector(direction, distance);
     }
     view.controls.update();
-    callout.textContent = state.focusPart ? selected.label : currentStage.label;
-    explanation.textContent = `${currentStage.text} ${p >= 60 ? selected.text : ''}`;
-    stageRow?.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(config.stages[i] === currentStage)));
-    partRow?.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(parts[i].name === state.part)));
-    host.dataset.progress = p;
-    host.dataset.exploded = exploded.toFixed(3);
-    host.dataset.part = state.part;
     view.render();
   };
-  const progress = slider(controls, { label: 'Explore the assembly', value: state.progress, format: (v) => `${v}%`, signal, onChange: (value) => { state.progress = value; state.focusPart = false; update(); } });
-  stageRow = buttons(controls, config.stages.map((item) => ({ label: item.label, action: () => progress.set(item.value) })), signal);
-  partRow = buttons(controls, parts.map((part) => ({ label: part.label, action: () => { state.part = part.name; progress.set(100); state.focusPart = true; update(); } })), signal);
-  buttons(controls, [{ label: 'Reset view', action: () => { state.part = 'disc'; progress.set(0); } }], signal);
   update();
   return view.dispose;
 }

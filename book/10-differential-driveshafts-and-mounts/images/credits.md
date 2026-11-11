@@ -1,6 +1,6 @@
 # Chapter 10 image credits
 
-The two reproduced images are genuine Porsche factory technical illustrations, not generated pictures. Retained locally for the book's requested personal reading use. Copyright remains with Dr. Ing. h.c. F. Porsche AG; the project's MIT licence does not relicense them.
+The two reproduced reading images are genuine Porsche factory technical illustrations, not generated pictures. Retained locally for the book's requested personal reading use. Copyright remains with Dr. Ing. h.c. F. Porsche AG; the project's MIT licence does not relicense them.
 
 ## `porsche-driveshaft-and-hub.png`
 
@@ -20,3 +20,7 @@ The two reproduced images are genuine Porsche factory technical illustrations, n
 - Modifications: rendered at a maximum dimension of 1,500 pixels; cropped to the complete exploded support assembly to remove the page border, headings, vehicle locator and footer. No part of the assembly or callouts changed. Output 619 × 665 pixels.
 
 The original schematic files `drivetrain-layout.svg`, `drivetrain-cv-and-hub.svg`, `diagrams/drivetrain-open-differential/poster.svg` and `diagrams/drivetrain-explorer/poster.svg`, together with their interactive code and source models, were authored for this chapter. Their simplified geometry is not Porsche workshop artwork or a scale drawing. The explorer's symmetrical shaft geometry does not establish factory lengths or parts interchangeability.
+
+## Full factory reference pages
+
+The chapter's [parts-reference archive](../part-reference/README.md) retains **23 complete, unaltered Porsche PET pages**, rendered at a maximum dimension of 1,800 pixels from the freshly downloaded original with SHA-256 `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`. Unlike the two reading-image crops, these pages retain all headings, numbered callouts, application lists and edition footers. The archive identifies every file, one-based source page, plate, relevant callout and model/gearbox condition; the [verification map](../part-reference/verification.md) covers every chapter asset and component group. They retain Porsche's copyright and are supporting references, not newly authored MIT illustrations.

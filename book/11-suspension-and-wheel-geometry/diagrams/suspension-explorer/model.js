@@ -6,8 +6,8 @@ export const config = {
   title: 'From the car to the front suspension',
   location: 'This is the front-left corner of the standard 2010 2.9. The hub sits inside the wheel; the coil-over strut rises to the body above it.',
   overview: 'The strut, lower arm and fore/aft guide locate the carrier. The steering tie rod turns it. The anti-roll bar connects movement across the axle through its drop links.',
-  assembled: 'Follow the shared joints: carrier to strut and lower arm, guide to lower arm, steering tie rod to carrier, and drop link to strut. The translucent wheel exposes these connections.',
-  exploded: 'Separating the groups reveals the spring around the damper, hub inside the carrier, and distinct guiding, steering and anti-roll connections. These offsets do not show a service sequence.',
+  assembled: 'Follow the shared joints: carrier to strut and lower arm, guide to lower arm, steering tie rod to carrier, and drop link to strut. The front hub has a retaining bolt, not a driven half-shaft. The translucent wheel exposes these connections.',
+  exploded: 'Separating the groups reveals the spring seats, protective bellows and auxiliary stop around the damper rod, plus the thrust bearing below the body mount. The hub and its speed sensor stay with the carrier group. These offsets do not show a service sequence.',
   focus: 'coilover',
   hideCarParts: ['chassis', 'wheel-fl'],
   direction: [1.8, .8, 1.1],
@@ -56,11 +56,17 @@ export function createAssembly() {
     beam(wheel, [.055, Math.cos(a) * .048, Math.sin(a) * .048], [.09, Math.cos(a) * .203, Math.sin(a) * .203], .012, m.metal);
   }
 
-  const carrier = part(root, 'carrier', 'Hub and carrier', [.73, .329, 1.2075], [.16, -.08, -.1], 'The hub rotates in its bearing, while the carrier follows suspension and steering movement. Separate ears connect the carrier to the strut, lower-arm ball joint and steering tie rod.');
+  const carrier = part(root, 'carrier', 'Hub and carrier', [.73, .329, 1.2075], [.16, -.08, -.1], 'The hub rotates in its bearing, while the carrier follows suspension and steering movement. A central retaining bolt and nut secure the front hub; no driveshaft drives it. The small wheel-speed sensor is fixed to the carrier. Separate ears connect the carrier to the strut, lower-arm ball joint and steering tie rod.');
   annulus(carrier, .077, .041, .055, m.dark, [-.015, 0, 0]);
   annulus(carrier, .057, .029, .06, m.metal, [.015, 0, 0]);
   annulus(carrier, .044, .026, .07, m.metal, [.05, 0, 0]);
   annulus(carrier, .091, .026, .017, m.metal, [.085, 0, 0]);
+  // PET 401-005 items 3/5/6: sensor and front retaining bolt/nut, not a driveshaft.
+  cylinder(carrier, .013, .15, m.metal, [.012, 0, 0]).name = 'front-hub-retaining-bolt';
+  cylinder(carrier, .037, .012, m.metal, [-.068, 0, 0]);
+  mesh(carrier, new THREE.CylinderGeometry(.022, .022, .017, 6), m.dark, [.096, 0, 0], [0, 0, Math.PI / 2]).name = 'front-hub-retaining-nut';
+  box(carrier, [.022, .027, .031], m.black, [-.053, .048, .045]).name = 'wheel-speed-sensor';
+  tube(carrier, [[-.053, .059, .045], [-.065, .083, .068], [-.08, .118, .069]], .003, m.black).name = 'wheel-speed-sensor-tail';
   for (let i = 0; i < 5; i++) {
     const a = i * Math.PI * 2 / 5;
     cylinder(carrier, .007, .018, m.black, [.096, Math.cos(a) * .065, Math.sin(a) * .065]);
@@ -73,22 +79,29 @@ export function createAssembly() {
   beam(carrier, [-.03, -.005, -.025], [-.08, -.029, -.1475], .019, m.metal);
   joint(carrier, [-.08, -.029, -.1475], m, .017);
 
-  const strut = part(root, 'coilover', 'Spring and strut', [.69, .43, 1.2075], [.14, .17, .16], 'The coil spring surrounds the hydraulic damper. Both meet the body through the upper mounting; the structural strut also guides the carrier. This shows the passive chassis, with no electronic damping actuator.');
+  const strut = part(root, 'coilover', 'Spring and strut', [.69, .43, 1.2075], [.14, .17, .16], 'The coil spring sits between seats around the hydraulic damper. Protective bellows and a compressible auxiliary stop surround the rod; a thrust bearing below the top mount permits steering rotation. The structural strut also guides the carrier. This shows the passive chassis, with no electronic damping actuator.');
   const axis = [-.12, .5, -.0575];
   const at = t => axis.map(v => v * t);
   beam(strut, at(0), at(.64), .026, m.dark);
   beam(strut, at(.55), at(1), .013, m.metal);
-  cylinderAlong(strut, at(.28), .079, .013, m.dark, axis);
-  cylinderAlong(strut, at(.86), .077, .014, m.dark, axis);
+  cylinderAlong(strut, at(.28), .079, .013, m.dark, axis).name = 'lower-spring-seat';
+  cylinderAlong(strut, at(.86), .077, .014, m.dark, axis).name = 'upper-spring-seat';
   coil(strut, at(.3), at(.85), .064, .0065, m.warm, 6);
-  for (const t of [.66, .7, .74, .78]) cylinderAlong(strut, at(t), .022, .013, m.black, axis);
-  cylinderAlong(strut, at(.89), .026, .055, m.tan, axis);
+  // PET 402-000 items 8/9/11: gaiter, auxiliary compression stop, thrust bearing.
+  cylinderAlong(strut, at(.655), .025, .14, m.black, axis).name = 'protective-bellows';
+  for (const t of [.54, .58, .62, .66, .7, .74, .78]) cylinderAlong(strut, at(t), .029, .009, m.black, axis);
+  cylinderAlong(strut, at(.82), .026, .03, m.tan, axis).name = 'auxiliary-compression-stop';
+  cylinderAlong(strut, at(.91), .056, .016, m.metal, axis).name = 'front-thrust-bearing';
   beam(strut, [-.03, .08, -.0075], [-.03, .08, -.03], .013, m.metal);
 
-  const body = part(root, 'body-mounts', 'Body and mountings', [.57, .93, 1.15], [0, .35, -.18], 'The top mount, arm and guide bushes, rack mounts and anti-roll-bar bushes all connect to the front structure. These separated reference pieces locate that common support; their shapes are schematic.');
+  const body = part(root, 'body-mounts', 'Body and mountings', [.57, .93, 1.15], [0, .35, -.18], 'The top mount connects the strut to the body tower. The front crossmember supports the lower-arm bushes and rack; the separate guide reaches a forward body mounting. Anti-roll-bar bushes also join the front structure. These separated reference pieces locate that common support; their shapes are schematic.');
   cylinder(body, .081, .028, m.green, [0, .025, 0], [0, 0, 0]);
   cylinder(body, .052, .035, m.black, [0, .004, 0], [0, 0, 0]);
   cylinder(body, .018, .043, m.metal, [0, .032, 0], [0, 0, 0]);
+  for (let i = 0; i < 3; i++) {
+    const angle = i * Math.PI * 2 / 3;
+    cylinder(body, .006, .032, m.metal, [Math.cos(angle) * .065, .038, Math.sin(angle) * .065], [0, 0, 0]);
+  }
   box(body, [.25, .025, .2], m.green, [0, .047, 0]);
   box(body, [.78, .045, .09], m.green, [-.39, -.67, .07]);
   box(body, [.78, .035, .08], m.green, [-.39, -.65, .26]);

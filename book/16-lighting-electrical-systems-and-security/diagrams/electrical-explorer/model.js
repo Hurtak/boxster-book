@@ -13,7 +13,7 @@ export const config = {
   focus: 'battery',
   hideCarParts: ['hydraulics'],
   direction: [1.15, 0.9, 1.65],
-  note: 'Standard halogen example. Harness routes, fuse count, controls and internal geometry are illustrative. No pinouts, ratings or controller mounting coordinates are supplied.',
+  note: 'Standard halogen, left-hand-drive layout. UK right-hand-drive controls, fuse carrier and cables differ. Harness routes, distributor mounting, fuse count and lamp/internal geometry are illustrative; no pinouts or ratings are supplied.',
   connections: [
     { from: 'battery', to: 'positive-feed', label: 'Positive terminal supplies the high-current feed', kind: 'electrical' },
     { from: 'positive-feed', to: 'starter-drive', label: 'High-current branch supplies the starter for cranking', kind: 'electrical' },
@@ -68,8 +68,8 @@ export function createAssembly() {
   box(battery, [.18, .008, .06], m.metal, [0, -.098, 0]);
   for (const x of [-.13, .13]) beam(battery, [x, -.1, -.075], [x, -.1, .075], .006, m.metal);
 
-  const positive = part(root, 'positive-feed', 'Positive feed cables', [0, .3, 0], [-.3, -.08, 0],
-    'The main positive cable joins the front supply to the engine connection point and starter/alternator network. The smaller lighting branch leaves that supply separately; the drawn route is not a harness installation map.');
+  const positive = part(root, 'positive-feed', 'Positive feed and distributor', [0, .3, 0], [-.3, -.08, 0],
+    'Battery positive feeds a power distributor with fuse elements, distinct from the footwell fuse carrier. A long cable reaches the covered engine connection point and starter/alternator wire set. Distributor position, link count and cable route are schematic.');
   tube(positive, [[.115, .5, 1.145], [.16, .24, .9], [.18, .015, .55], [.18, .015, -.55], [.13, .18, -.95]], .011, m.red);
   tube(positive, [[.13, .18, -.95], [.16, .23, -1.05], [.185, .215, -1.05]], .01, m.red);
   tube(positive, [[.13, .18, -.95], [.16, .21, -.7], [.12, .35, -.55]], .009, m.red);
@@ -78,6 +78,16 @@ export function createAssembly() {
     box(positive, [.05, .04, .035], m.red, [p[0], p[1] - .025, p[2]]);
   }
   for (const z of [-.55, 0, .55]) ringZ(positive, .017, .012, .012, m.black, [.18, .015, z]);
+  // PET 902-005 identifies the distributor/fuse links, not their exact mounting coordinates.
+  box(positive, [.13, .15, .045], m.black, [.16, .24, .9]);
+  box(positive, [.11, .11, .015], m.dark, [.16, .24, .928]);
+  for (const y of [.21, .25, .29]) {
+    box(positive, [.067, .014, .009], m.warm, [.16, y, .941]);
+    for (const x of [.12, .2]) cylinder(positive, .006, .014, m.metal, [x, y, .946], longitudinal);
+  }
+  box(positive, [.12, .075, .01], m.blue, [.16, .218, .958]);
+  box(positive, [.065, .012, .055], m.metal, [.13, .145, -.95]);
+  cylinder(positive, .008, .03, m.warm, [.13, .18, -.95]);
 
   const distribution = part(root, 'distribution', 'Protection and distribution', [.57, .44, .62], [.28, .17, .15],
     'The driver-footwell fuse panel protects individual circuits. This small set of coloured fuse shapes illustrates protected branches, not the actual fuse count, assignments or ratings. The starter feed is shown separately.');
@@ -140,19 +150,28 @@ export function createAssembly() {
   for (let i = 0; i < 5; i++) box(alternator, [.004, .026, .023], m.metal, [-.027 + i * .013, -.05, -.106]);
 
   const headlamp = part(root, 'headlamp', 'Halogen and lower light unit', [.68, .61, 1.65], [.26, .18, .2],
-    'The standard main headlamp uses a halogen filament and shaped optics. The separate lower module includes a fog lamp and LED position lights. The schematic omits the main cluster’s indicator and detailed beam-forming optics.');
+    'The standard main headlamp contains separate H7 and H9 halogen road-light bulbs and a direction-indicator bulb. A carrier and connector locate the assembly. The lower module combines a rectangular fog lamp with an LED position-light module. These optics are illustrative.');
   const reflector = m.metal.clone();
   reflector.side = THREE.DoubleSide;
   const profile = [[.014, -.055], [.035, -.048], [.07, -.025], [.105, .02], [.12, .06]].map(([r, y]) => new THREE.Vector2(r, y));
-  mesh(headlamp, new THREE.LatheGeometry(profile, 40), reflector, [0, 0, 0], longitudinal);
+  const mainReflector = mesh(headlamp, new THREE.LatheGeometry(profile, 40), reflector, [.032, .027, .01], longitudinal);
+  mainReflector.scale.setScalar(.65);
+  const secondReflector = mesh(headlamp, new THREE.LatheGeometry(profile, 32), reflector, [-.055, -.051, .025], longitudinal);
+  secondReflector.scale.setScalar(.36);
   sphere(headlamp, .122, m.glass, [0, 0, .068], [1, 1, .24]);
-  cylinder(headlamp, .015, .045, m.black, [0, 0, -.035], longitudinal);
-  sphere(headlamp, .021, m.glass, [0, 0, .006], [.7, .7, 1.3]);
-  for (const x of [-.004, .004]) beam(headlamp, [x, 0, -.02], [x, 0, .018], .0015, m.metal);
-  tube(headlamp, [[-.004, 0, .018], [-.002, .003, .021], [0, 0, .021], [.002, -.003, .021], [.004, 0, .018]], .0015, m.warm);
+  for (const [x, y] of [[.032, .027], [-.055, -.051]]) {
+    cylinder(headlamp, .011, .035, m.black, [x, y, -.013], longitudinal);
+    sphere(headlamp, .015, m.glass, [x, y, .015], [.7, .7, 1.3]);
+    for (const dx of [-.003, .003]) beam(headlamp, [x + dx, y, 0], [x + dx, y, .026], .0012, m.metal);
+    tube(headlamp, [[x - .003, y, .026], [x, y + .003, .028], [x + .003, y, .026]], .0012, m.warm);
+  }
+  box(headlamp, [.075, .015, .014], m.warm, [.018, -.086, .052]);
   ringZ(headlamp, .125, .118, .018, m.black, [0, 0, .06]);
+  box(headlamp, [.23, .012, .13], m.dark, [0, -.13, -.018]);
+  box(headlamp, [.04, .028, .025], m.black, [0, -.1, -.05]);
   box(headlamp, [.2, .06, .06], m.dark, [0, -.19, .095]);
-  sphere(headlamp, .026, m.metal, [-.066, -.19, .128], [1, .85, .22]);
+  box(headlamp, [.075, .032, .011], m.metal, [-.052, -.19, .128]);
+  box(headlamp, [.065, .022, .006], m.glass, [-.052, -.19, .137]);
   for (let i = 0; i < 5; i++) box(headlamp, [.018, .012, .008], m.glass, [-.02 + i * .027, -.18, .129]);
 
   const controls = part(root, 'request-controls', 'Ignition and lighting controls', [.43, .7, .51], [.13, .34, 0],

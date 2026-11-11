@@ -2,22 +2,26 @@
   "camera": [
     { "at": 0, "position": [3.5, 2.2, 4.5], "target": [0, 0.56, 0] },
     { "at": 30, "position": [3.4, 3.2, 4.4], "target": [0, 0.5, 0.2] },
-    { "at": 65, "position": [1.55, 0.76, 1.94], "target": [0.86, 0.329, 1.2075] },
+    { "at": 65, "position": [2.033, 1.062, 2.453], "target": [0.86, 0.329, 1.2075] },
     { "at": 100, "position": [3, 1.18, 2.4], "target": [1.38, 0.2, 1.14] }
   ],
   "stages": [
     { "value": 0, "label": "Whole car", "text": "The front-left assembly is one of four hydraulic service brakes. The engine is behind the seats; the brake master cylinder is at the front." },
     { "value": 30, "label": "Connections", "text": "Blue lines show hydraulic connectivity. Pressure from the master cylinder reaches the calipers through the ABS/PSM hydraulic unit, pipes and flexible hoses. Valves, separate circuits and actual pipe routes are omitted." },
-    { "value": 65, "label": "At the wheel", "text": "The front-left wheel is ghosted and drawn outboard to expose the assembled brake. The hub, disc and wheel rotate together; the caliper is fixed to the wheel carrier." },
-    { "value": 100, "label": "Exploded", "text": "The stack spreads along the wheel axis; the caliper and four pistons are lifted clear for inspection. These offsets are neither working piston travel nor a workshop disassembly sequence." }
+    { "value": 65, "label": "At the wheel", "text": "The front-left wheel is ghosted and drawn outboard to expose the assembled brake. The hub, disc and wheel rotate together; the caliper and cover plate stay with the wheel carrier. A flexible hose supplies fluid; a separate electrical lead monitors pad wear." },
+    { "value": 100, "label": "Exploded", "text": "The stack spreads along the wheel axis; the caliper, pistons and pad hardware are lifted clear for inspection. Pipe and wire groups separate without simulating bending. These offsets are neither working travel nor a workshop disassembly sequence." }
   ],
   "parts": [
     { "name": "wheel", "label": "Wheel", "offset": [0.95, 0, 0], "text": "Wheel bolts secure the wheel to the hub, with the disc's central hat between their mounting faces. The wheel, disc and hub turn together. The visible wheel style and mounting clearances are illustrative." },
     { "name": "disc", "label": "Brake disc", "offset": [0.29, 0, 0], "text": "The front friction ring is nominally 318 mm in diameter and 28 mm thick. Two friction faces enclose the ventilation gap; the holes through the faces are cross-drilling, a separate feature. The disc rotates between the pads." },
     { "name": "inner-pad", "label": "Inner pad", "offset": [-0.16, -0.04, 0], "text": "Inboard means towards the vehicle's centre. Two pistons push this pad's backing plate so its brown friction lining presses the inboard disc face. The pad stays with the caliper while the disc rotates." },
     { "name": "outer-pad", "label": "Outer pad", "offset": [0.54, -0.04, 0], "text": "Outboard means towards the wheel's outer face. Two opposing pistons press this pad against the other disc face. The two pads clamp the rotating disc from both sides." },
-    { "name": "caliper", "label": "Caliper body", "offset": [0, 0.02, 0.36], "text": "The black aluminium monobloc body stays in one piece. Fixed to the wheel carrier, it does not rotate with the disc or slide across it. It supports the pads and carries their braking reaction into the suspension." },
+    { "name": "caliper", "label": "Caliper body", "offset": [0, 0.02, 0.36], "text": "The black aluminium monobloc body stays in one piece. Fixed to the wheel carrier, it does not rotate with the disc or slide across it. It supports the pads and carries their braking reaction into the suspension. The small upper fitting represents its bleed valve; internal fluid passages are omitted." },
     { "name": "pistons", "label": "Four pistons", "offset": [0.04, 0.23, 0.06], "text": "Two pistons act on each pad, one pair on each side of the disc. Hydraulic pressure pushes both pairs towards the disc through the pad backing plates. Their real working movement is small; this lifted group only exposes their arrangement." },
-    { "name": "hub", "label": "Hub", "offset": [0, 0, 0], "text": "The hub rotates in the wheel bearing and supports the disc and wheel. Its five holes receive removable wheel bolts; they are not projecting studs. Bearing, wheel carrier, fasteners and the flexible brake hose are simplified or omitted." }
+    { "name": "hub", "label": "Hub", "offset": [0, 0, 0], "text": "The hub rotates in the wheel bearing and supports the disc and wheel. Its five holes receive removable wheel bolts; they are not projecting studs. The bearing, wheel carrier, speed sensor and mounting fasteners are omitted; their arrangement is recorded in factory plate 401-005." },
+    { "name": "cover-plate", "label": "Cover plate", "offset": [-0.15, 0, -0.1], "text": "The factory parts drawing places a separate cover plate behind the disc. It is stationary with the wheel carrier, unlike the rotating friction ring. This simplified open sector shows its identity and position; its exact outline, mounting points and clearances are not modelled." },
+    { "name": "pad-retainers", "label": "Pad retaining hardware", "offset": [0.18, 0.17, 0.24], "text": "A retaining pin, spring and securing hardware keep the pads located in the fixed caliper. These are separate from the hydraulic pistons that apply clamping force. The factory lists them as a fastener repair set; the simplified pieces are not a fitting sequence." },
+    { "name": "wear-lead", "label": "Pad-wear lead", "offset": [0.15, 0.27, 0.09], "text": "An electrical sender lead serves the pads' wear indicators and connects to the vehicle wiring. It carries no brake fluid and is separate from the wheel-speed sensor used by ABS/PSM. Green identifies this signal lead in the schematic; routing and connector shape are illustrative." },
+    { "name": "brake-hose", "label": "Brake pipe and hose", "offset": [-0.13, 0.12, 0.17], "text": "A short rigid brake pipe joins the caliper to a flexible hose, then the body-side pipework. The flexible section accommodates steering and suspension movement. This group carries hydraulic pressure, unlike the wear-indicator lead. Bends, lengths and fittings are illustrative, not a routing template." }
   ]
 }

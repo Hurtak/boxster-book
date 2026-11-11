@@ -58,12 +58,12 @@ export function frameBounds(box, camera, direction, padding = 1.18, points) {
   return { target: target.toArray(), position: target.clone().addScaledVector(direction, distance).toArray() };
 }
 
-export async function mountExplorer(host, { state, signal }, { reference, base, config, createAssembly }) {
+export async function mountExplorer(host, { state, signal, whenVisible }, { reference, base, config, createAssembly }) {
   state.progress = clamp((state.progress ?? 0) / 100) * 100;
   state.part ??= config.focus;
   state.showConnections ??= true;
-  const car = await loadModel(reference, signal, base);
-  let model, view;
+  let car, model, view, locator;
+  let links = [];
   try {
     model = createAssembly();
     const parts = model.children.filter(object => object.userData.label).map((object, i) => {
@@ -80,6 +80,7 @@ export async function mountExplorer(host, { state, signal }, { reference, base, 
     });
     host.classList.add('component-explorer');
     stage.style.overflow = 'hidden';
+    stage.classList.add('diagram-stage-3d');
     const markers = document.createElement('div');
     markers.className = 'component-markers';
     markers.setAttribute('aria-hidden', 'true');
@@ -135,30 +136,22 @@ export async function mountExplorer(host, { state, signal }, { reference, base, 
       orient.style.top = `${(1 - front.y) * stage.clientHeight / 2}px`;
     };
     let update = () => {};
-    view = scene3D(stage, { signal, onRender: projectMarkers, onResize: () => update() });
-    view.controls.maxDistance = 20;
-    view.renderer.domElement.setAttribute('aria-label', `${config.title}. ${config.location}`);
-    view.scene.add(car, model);
     const assembledBox = new THREE.Box3().setFromObject(model);
     const assembledCorners = geometryCorners(model);
     for (const part of parts) part.object.position.copy(part.initial).add(new THREE.Vector3(...part.explode));
     const explodedBox = new THREE.Box3().setFromObject(model);
     const explodedCorners = geometryCorners(model);
     for (const part of parts) part.object.position.copy(part.initial);
-    const carBox = new THREE.Box3().setFromObject(car);
-    const carCorners = geometryCorners(car);
-    const contextBox = carBox.clone().union(assembledBox);
+    let carBox, carCorners, contextBox;
     const focusBox = new THREE.Box3().setFromObject(byName.get(config.focus).object);
-    const locator = new THREE.Box3Helper(focusBox, '#327cc3');
+    locator = new THREE.Box3Helper(focusBox, '#327cc3');
     locator.material.depthTest = false;
     locator.material.transparent = true;
     locator.material.opacity = 0.9;
-    view.scene.add(locator);
-    const links = config.connections.map(connection => {
+    links = config.connections.map(connection => {
       if (!byName.has(connection.from) || !byName.has(connection.to)) throw new Error(`Unknown connection in ${config.id}`);
       const geometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3()]);
       const line = new THREE.Line(geometry, new THREE.LineDashedMaterial({ color: connectionColours[connection.kind] ?? '#6d7a80', dashSize: 0.045, gapSize: 0.025, transparent: true, opacity: 0.85 }));
-      view.scene.add(line);
       return { ...connection, line };
     });
     let stageRow, partRow;
@@ -166,8 +159,18 @@ export async function mountExplorer(host, { state, signal }, { reference, base, 
     const carDirection = new THREE.Vector3(1.05, 0.7, 1.45).normalize();
     update = () => {
       const progress = state.progress;
-      const exploded = segment(progress, 65, 100);
       const selected = byName.get(state.part);
+      const exploded = segment(progress, 65, 100);
+      const stop = [...stops].reverse().find(stop => progress >= stop.value) ?? stops[0];
+      const text = [config.location, config.overview, config.assembled, config.exploded][stops.indexOf(stop)];
+      callout.textContent = state.focusPart ? selected.label : stop.label;
+      explanation.textContent = state.focusPart ? selected.description : `${text}${progress >= 60 ? ` ${selected.label}: ${selected.description}` : ''}`;
+      const connections = links.filter(link => link.from === state.part || link.to === state.part);
+      relationship.textContent = `Connected to ${selected.label.toLowerCase()}: ${connections.map(link => `${byName.get(link.from === state.part ? link.to : link.from).label} — ${link.label}`).join('; ')}.`;
+      stageRow?.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(!state.focusPart && stops[i] === stop)));
+      partRow?.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(parts[i] === selected)));
+      Object.assign(host.dataset, { progress: String(progress), exploded: exploded.toFixed(3), part: state.part, focusPart: String(Boolean(state.focusPart)), explorer: config.id, connectionCount: String(links.length) });
+      if(!car || !view)return;
       const contextOpacity = 1 - segment(progress, 0, 55);
       for (const subsystem of car.children) {
         const replaced = config.hideCarParts?.includes(subsystem.name);
@@ -204,15 +207,6 @@ export async function mountExplorer(host, { state, signal }, { reference, base, 
       camera.position.fromArray(pose.position);
       view.controls.target.fromArray(pose.target);
       view.controls.update();
-      const stop = [...stops].reverse().find(stop => progress >= stop.value) ?? stops[0];
-      const text = [config.location, config.overview, config.assembled, config.exploded][stops.indexOf(stop)];
-      callout.textContent = state.focusPart ? selected.label : stop.label;
-      explanation.textContent = state.focusPart ? selected.description : `${text}${progress >= 60 ? ` ${selected.label}: ${selected.description}` : ''}`;
-      const connections = links.filter(link => link.from === state.part || link.to === state.part);
-      relationship.textContent = `Connected to ${selected.label.toLowerCase()}: ${connections.map(link => `${byName.get(link.from === state.part ? link.to : link.from).label} — ${link.label}`).join('; ')}.`;
-      stageRow?.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(!state.focusPart && stops[i] === stop)));
-      partRow?.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(parts[i] === selected)));
-      Object.assign(host.dataset, { progress: String(progress), exploded: exploded.toFixed(3), part: state.part, focusPart: String(Boolean(state.focusPart)), explorer: config.id, connectionCount: String(links.length) });
       view.render();
     };
     const progress = slider(controls, { label: 'Explore the assembly', value: state.progress, format: value => `${value}%`, signal, onChange: value => { state.progress = value; state.focusPart = false; update(); } });
@@ -237,10 +231,24 @@ export async function mountExplorer(host, { state, signal }, { reference, base, 
     controls.append(toggle);
     buttons(controls, [{ label: 'Reset view', action: () => { state.part = config.focus; state.showConnections = true; checkbox.checked = true; progress.set(0); } }], signal);
     update();
+    host.dispatchEvent(new Event('diagram-layout'));
+    await whenVisible;
+    signal.throwIfAborted();
+    car = await loadModel(reference, signal, base);
+    view = scene3D(stage, { signal, onRender: projectMarkers, onResize: () => update() });
+    view.controls.maxDistance = 20;
+    view.renderer.domElement.setAttribute('aria-label', `${config.title}. ${config.location}`);
+    view.scene.add(car, model);
+    view.scene.add(locator);
+    links.forEach(link=>view.scene.add(link.line));
+    carBox = new THREE.Box3().setFromObject(car);
+    carCorners = geometryCorners(car);
+    contextBox = carBox.clone().union(assembledBox);
+    update();
     return view.dispose;
   } catch (error) {
     if (view) view.dispose();
-    else { disposeObject(car); if (model) disposeObject(model); }
+    else { if(car)disposeObject(car); if(model)disposeObject(model); if(locator)disposeObject(locator); links.forEach(link=>disposeObject(link.line)); }
     throw error;
   }
 }

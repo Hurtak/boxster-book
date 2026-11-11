@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 785" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 850" role="img" aria-labelledby="title desc">
   <title id="title">2010 2.9 timing chains: drive connections and slack control</title>
-  <desc id="desc">The crankshaft directly drives two timing chains without an intermediate shaft. Each chain drives the inlet and exhaust camshafts of one cylinder bank. All four camshafts turn once for every two crankshaft turns. Arrows show drive connections, not chain routing or rotation direction. A separate, simplified chain-segment detail shows a guide rail and an oil-fed hydraulic tensioner pressing a tensioning rail against the chain. The engine has two hydraulic chain tensioners, one for each chain. Shapes, positions and sizes are schematic; no sprocket tooth counts or timing-setting positions are shown.</desc>
+  <desc id="desc">The crankshaft directly drives two timing chains without an intermediate shaft. Each chain drives the inlet and exhaust camshafts of one cylinder bank. All four camshafts turn once for every two crankshaft turns. Arrows show drive connections, not chain routing or rotation direction. A separate, simplified chain-segment detail shows a guide rail and an oil-fed hydraulic tensioner pressing a tensioning rail against the chain. The camshaft drive has two hydraulic chain tensioners, one for each cam-drive chain. A separate third chain drives the oil pump and is not shown. Shapes, positions and sizes are schematic; no sprocket tooth counts or timing-setting positions are shown.</desc>
   <defs>
     <marker id="drive-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0 0 7 3.5 0 7Z" fill="#b07d38"/>
@@ -9,7 +9,7 @@
       <path d="M0 0 9 4.5 0 9Z" fill="#3c7592"/>
     </marker>
   </defs>
-  <rect width="420" height="785" fill="#f5f3eb"/>
+  <rect width="420" height="850" fill="#f5f3eb"/>
   <g font-family="sans-serif" fill="#243f33" text-anchor="middle">
     <text x="210" y="31" font-size="23" font-weight="700">2010 2.9: timing chain drive</text>
     <text x="210" y="58" font-size="18">Crankshaft drives four camshafts</text>
@@ -89,6 +89,8 @@
       <text x="125" y="710">Oil-fed hydraulic</text>
       <text x="125" y="734">tensioner pushes rail</text>
     </g>
-    <text x="210" y="767" font-size="18">2 tensioners total · one per chain</text>
+    <text x="210" y="767" font-size="18">2 cam-chain tensioners · one per bank</text>
+    <text x="210" y="804" font-size="18">A separate third chain drives the oil pump;</text>
+    <text x="210" y="829" font-size="18">its drive is not shown in this camshaft map.</text>
   </g>
 </svg>

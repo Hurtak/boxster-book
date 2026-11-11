@@ -12,7 +12,7 @@ The reference 2010 Boxster 2.9 has a six-speed manual as standard. Its optional 
 
 PDK's distinctive feature is preparation. While one ratio carries drive, another can be ready on the other input shaft. The shift then transfers the engine's connection between the two paths. Understanding that separation between **selecting a gear** and **closing a clutch** explains much more than the number of gears alone.
 
-<Diagram id="pdk-explorer" poster={illustration0} alt={"Optional PDK behind the engine connects its flywheel, nested K1 and K2 packs, concentric shafts and sample gearing to the rear final drive. Separate hydraulic, electronic and cooling components complete the system."} />
+<Diagram id="pdk-explorer" poster={illustration0} alt={"Optional PDK behind the engine connects its flywheel, nested K1 and K2 packs, concentric shafts and sample gearing to the rear final drive. The cutaway housing, bolted sump, support brackets, separate controller, heat exchanger and selector cable locate its connections to the car."} />
 
 <Figure src={illustration2} alt={"Porsche factory cutaway of the seven-speed PDK, showing the gear train, clutch end and final-drive assembly in one housing."}>
 
@@ -54,7 +54,7 @@ Preselection is a prediction about what the driver may need next. A sudden chang
 
 ## The selector and steering-wheel controls
 
-The centre lever gives the driver familiar automatic-transmission choices. These are requests to the transmission system, rather than a direct mechanical selection of each numbered gear.[^operation]
+The centre lever gives the driver familiar automatic-transmission choices. Forward-gear requests are handled electronically and hydraulically. There is also a mechanical cable from the selector assembly to the gearbox: in P, the selector mechanism engages a catch with the parking-lock gear on the pinion shaft. This restraint is separate from the two friction clutches.[^operation]
 
 | Position | Function |
 | --- | --- |
@@ -76,7 +76,9 @@ A steering-wheel request can temporarily override D. In M, the controller still 
 
 ## Hydraulics, feedback and heat
 
-The **mechatronic control system** combines electronic decisions with hydraulic force. The hydraulic block in the transmission's sump area directs fluid to clutch circuits and gear-selection actuators. Electrically operated valves turn the controller's commands into changes of pressure or flow. Pressure determines how firmly a clutch is clamped; actuator movement determines which engagement sleeve is selected.[^hydraulics]
+The **mechatronic control system** combines electronic decisions with hydraulic force. The hydraulic block in the transmission's sump area directs fluid to clutch circuits and gear-selection actuators. Electrically operated valves turn the controller's commands into changes of pressure or flow. Pressure determines how firmly a clutch is clamped; actuator movement determines which engagement sleeve is selected.
+
+The factory parts drawing places this hydraulic unit above a separate bolted oil sump. The surrounding transmission housing joins the engine, carries the gearing and final drive, and has left and right support brackets. The final drive's short and long output flanges connect to the rear driveshafts; they are distinct parts, despite appearing as a simple symmetrical pair in a functional diagram.[^hydraulics]
 
 Feedback closes the loop. Input-speed sensing tells the system how the two clutch paths are turning; selector-position sensing establishes where the gear-selection mechanism has moved. Pressure and temperature information help it manage clutch operation and protection. The electronic PDK controller is a separate unit in the rear-right luggage-compartment area, connected to other controllers through CAN. It receives driver demand and vehicle-state information, including accelerator and brake signals. “Mechatronic” describes the cooperation of these parts, rather than requiring the electronic controller to sit inside the hydraulic block.[^control]
 
@@ -88,7 +90,7 @@ PDK control and oil functions: an electronic controller commands hydraulic clutc
 
 *Original functional diagram. Arrows distinguish commands, feedback and heat movement; they do not reproduce hose routing or a complete hydraulic circuit.*
 
-PDK has **two separate oil functions**. Special hydraulic fluid operates and cools the clutches and supplies gear actuation. Separate gear oil lubricates the gear train and final drive. Porsche's technical introduction expressly says these oils must not be mixed. An oil-to-coolant heat exchanger outside the transmission removes clutch/hydraulic heat; the gear-oil side rejects heat through the housing.[^oil]
+PDK has **two separate oil functions**. Special hydraulic fluid operates and cools the clutches and supplies gear actuation. Separate gear oil lubricates the gear train and final drive. Porsche's technical introduction expressly says these oils must not be mixed. An oil-to-coolant heat exchanger outside the transmission removes clutch/hydraulic heat; the gear-oil side rejects heat through the housing. The exchanger has oil pipes back to the gearbox and separate coolant hoses: heat crosses its internal walls while the liquids remain separate.[^oil]
 
 As with the [manual clutch](../08-manual-transmission-and-clutch/index.mdx#the-flywheel-and-clutch-make-a-controllable-connection), slip generates heat. PDK’s oil supply and exchanger manage that heat during moving-off, manoeuvring and shifting. The handbook directs the driver to hold the car on a slope with the brakes.[^temperature]
 
@@ -120,7 +122,7 @@ For the UK Black Edition, the March 2011 price list makes the SportDesign steeri
 
 ## Identification and ageing
 
-Service records should identify which of the two oil circuits was serviced. An entry saying only “gearbox oil changed” leaves that unresolved; match the work to the installed transmission and the [separate fluid functions](#hydraulics-feedback-and-heat).
+Service records should identify which of the two oil circuits was serviced. An entry saying only “gearbox oil changed” leaves that unresolved; match the work to the installed transmission and the [separate fluid functions](#hydraulics-feedback-and-heat). Porsche's catalogue identifies the reference 2.9's PDK as **CG200**, while the S and Spyder use **CG220**. That distinction remains useful even where a drawing or later replacement part is shared.
 
 Clutch friction surfaces, seals, bearings, hydraulic valves, sensors, wiring and the dual-mass flywheel all contribute to behaviour. Record temperature and operating conditions alongside a harsh change, delayed engagement, leak or warning. Porsche documents different warning and reduced-operation states; their precise response belongs to the applicable owner's manual.[^temperature]
 
@@ -136,15 +138,15 @@ The central relationship remains straightforward: the selected gear establishes 
 
 [^overlap]: Porsche AG, *The Boxster*, UK 01/10, printed pp. 44–45, [overlap-shift explanation](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=20); *2009 Technik Introduction*, printed pp. 72–74 and 91–92, [full training text](https://www.scribd.com/document/972719474/Boxster-2009). The four interactive stages and next-gear examples are original teaching choices, without measured timing, pressure or torque shares.
 
-[^operation]: Porsche AG, *Boxster, Boxster S Owner's Manual*, WKD 987 021 10, 5/09, printed pp. 174–180, PDF pp. 176–182, [original North American manual](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=176). Used for control operation, not UK equipment availability. Automatic low-engine-speed downshifts in M: *2009 Technik Introduction*, printed pp. 72–74; parking-lock mechanism: printed p. 88, [full training text](https://www.scribd.com/document/972719474/Boxster-2009).
+[^operation]: Porsche AG, *Boxster, Boxster S Owner's Manual*, WKD 987 021 10, 5/09, printed pp. 174–180, PDF pp. 176–182, [original North American manual](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=176). Used for control operation, not UK equipment availability. Automatic low-engine-speed downshifts in M: *2009 Technik Introduction*, printed pp. 72–74; mechanical parking-lock catch on the pinion shaft: printed p. 88, [full training text](https://www.scribd.com/document/972719474/Boxster-2009). Porsche PET 987209, 19 July 2018, plate 701-001, PDF pp. 222–224, identifies the selector assembly (1) and cable (5); [factory catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=222).
 
 [^wheel]: Porsche AG, *The Boxster*, UK 01/10, printed pp. 46–47 and 113, [control descriptions](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=21). Paddle wheel code 840 at printed p. 113.
 
-[^hydraulics]: Porsche, *2009 Technik Introduction*, printed pp. 87 and 93–95, [full training text](https://www.scribd.com/document/972719474/Boxster-2009). Generic electronic/hydraulic control principle: Bosch, [“Components for automatic transmissions”](https://www.bosch-mobility.com/en/solutions/transmission-technology/automatic-transmissions/).
+[^hydraulics]: Porsche, *2009 Technik Introduction*, printed pp. 87 and 93–95, [full training text](https://www.scribd.com/document/972719474/Boxster-2009). PET 987209, 19 July 2018, plate 320-005, PDF pp. 121–123, identifies the sump (7), hydraulic control unit (11), short/long drive flanges (15/16) and pressure sensors (24); plate 370-000, pp. 127–128, identifies the PDK support brackets (1/2). Its transmission table, PDF p. 7, distinguishes CG200 from CG220. [Factory catalogue](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=121). Catalogue replacements do not establish original fitment or interchangeability. Generic electronic/hydraulic control principle: Bosch, [“Components for automatic transmissions”](https://www.bosch-mobility.com/en/solutions/transmission-technology/automatic-transmissions/).
 
-[^control]: Porsche, *2009 Technik Introduction*, printed pp. 97–102, particularly p. 102 for controller location, CAN and inputs, [full training text](https://www.scribd.com/document/972719474/Boxster-2009).
+[^control]: Porsche, *2009 Technik Introduction*, printed pp. 97–102, particularly p. 102 for controller location, CAN and inputs, [full training text](https://www.scribd.com/document/972719474/Boxster-2009). PET plate 901-003, PDF pp. 508–509, separately identifies the PDK electronic controller (7) and its retainer (8), PR 250.
 
-[^oil]: Porsche, *2009 Technik Introduction*, printed pp. 66, 91–92 and 96, [full training text](https://www.scribd.com/document/972719474/Boxster-2009). Printed p. 96 identifies the external oil/water exchanger for clutch/hydraulic fluid and housing cooling for gear-wheel oil.
+[^oil]: Porsche, *2009 Technik Introduction*, printed pp. 66, 91–92 and 96, [full training text](https://www.scribd.com/document/972719474/Boxster-2009). Printed p. 96 identifies the external oil/water exchanger for clutch/hydraulic fluid and housing cooling for gear-wheel oil. PET plate 360-000, PDF pp. 124–125, identifies the exchanger (1), oil pipes (3/4), coolant hoses (10/13) and disc valve (12); [factory drawing and application list](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=124). Its later pipe/valve replacement entries do not date original 2010 components.
 
 [^temperature]: Porsche AG, *Boxster, Boxster S Owner's Manual*, 5/09, printed pp. 179–180, [slope-holding and warning descriptions](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=181). Frictional-heat relationship is an ideal mechanical explanation, not a published Porsche diagnostic threshold.
 

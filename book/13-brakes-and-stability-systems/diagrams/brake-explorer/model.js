@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { material, group, mesh, box, cylinder, wheel, annulus } from '../../../../interactive/models/geometry.js';
+import { material, group, mesh, box, cylinder, wheel, annulus, tube } from '../../../../interactive/models/geometry.js';
 
 // Nominal front friction-ring envelope is 318 × 28 mm. Other geometry is illustrative.
 export function brakeAssembly() {
@@ -46,5 +46,38 @@ export function brakeAssembly() {
     const piston = cylinder(pistons, 0.022, 0.026, steel, [side * 0.042, y, 0]);
     piston.name = `piston-${side < 0 ? 'inboard' : 'outboard'}-${y < 0 ? 'lower' : 'upper'}`;
   }
+  // PET 602-000 item 3: a stationary cover behind the disc, open around the caliper.
+  // The outline is an explanatory sector, not a tracing or a measured clearance.
+  const cover = group('cover-plate', root, [-0.028, 0, 0]);
+  const coverShape = new THREE.Shape();
+  coverShape.absarc(0, 0, 0.151, -Math.PI * 0.8, Math.PI * 0.8, false);
+  coverShape.absarc(0, 0, 0.075, Math.PI * 0.8, -Math.PI * 0.8, true);
+  coverShape.closePath();
+  const coverGeometry = new THREE.ExtrudeGeometry(coverShape, { depth: 0.002, bevelEnabled: false, curveSegments: 32 });
+  coverGeometry.translate(0, 0, -0.001);
+  mesh(cover, coverGeometry, material('#59616a', 0.45, 0.65), [0, 0, 0], [0, Math.PI / 2, 0]);
+
+  // PET 602-000 item 15 groups the pin, spring and securing hardware.
+  const retainers = group('pad-retainers', root, [0, 0, 0.177]);
+  cylinder(retainers, 0.0035, 0.15, steel);
+  box(retainers, [0.072, 0.057, 0.002], steel, [0, 0, 0.003]);
+  for (const side of [-1, 1]) box(retainers, [0.02, 0.057, 0.002], steel, [side * 0.043, 0, -0.003], [0, side * 0.4, 0]);
+
+  // Separate electrical wear lead and hydraulic supply: colours identify function.
+  const wearLead = group('wear-lead', root);
+  const wire = material('#496a42', 0.1, 0.7);
+  tube(wearLead, [[0.029, 0.05, 0.14], [0.09, 0.08, 0.17], [0.08, 0.13, 0.23], [-0.07, 0.13, 0.23], [-0.11, 0.13, 0.15]], 0.0025, wire);
+  tube(wearLead, [[-0.029, 0.05, 0.14], [-0.09, 0.08, 0.16], [-0.11, 0.13, 0.15]], 0.0025, wire);
+  box(wearLead, [0.023, 0.012, 0.012], black, [-0.12, 0.13, 0.15]);
+  for (const side of [-1, 1]) box(wearLead, [0.008, 0.014, 0.009], black, [side * 0.029, 0.05, 0.14]);
+
+  const supply = group('brake-hose', root);
+  tube(supply, [[-0.084, -0.04, 0.13], [-0.12, -0.04, 0.13], [-0.17, -0.02, 0.08]], 0.003, steel);
+  tube(supply, [[-0.17, -0.02, 0.08], [-0.23, 0.05, 0.08], [-0.23, 0.16, 0.05], [-0.19, 0.22, -0.03]], 0.005, black);
+  cylinder(supply, 0.008, 0.018, steel, [-0.17, -0.02, 0.08]);
+  cylinder(supply, 0.008, 0.018, steel, [-0.19, 0.22, -0.03]);
+  // One bleed valve is shown on the standard front caliper; the PET's external
+  // front crossover pipe is PR:450, so it is deliberately absent from this model.
+  cylinder(caliper, 0.004, 0.012, steel, [-0.064, 0.094, 0.005], [0, 0, 0]);
   return root;
 }

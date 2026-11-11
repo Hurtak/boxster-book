@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1400" role="img" aria-labelledby="title desc" font-family="sans-serif">
   <title id="title">Three-point belt routing and three restraint functions</title>
-  <desc id="desc">A front-view occupant schematic shows the shoulder belt across the chest and the lap belt low across the pelvis. The upper anchorage is on the Boxster's rear rollover bar; a lower outer anchorage and the inboard buckle complete the three-point restraint. Loads pass from occupant through webbing and anchorages into the passenger cell. Separate functional symbols explain reel locking against free payout, pretensioning to remove slack when triggered, and force limiting by controlled yielding under load. Component positions, internal designs, travel, force and trigger thresholds are not depicted.</desc>
+  <desc id="desc">A front-view occupant schematic shows the shoulder belt across the chest and the lap belt low across the pelvis. The upper anchorage is on the Boxster's rear rollover bar; a lower outer body anchorage and the inboard seat-mounted buckle complete the three-point restraint. Loads pass from occupant through webbing, body anchorages and the seat structure into the passenger cell. Separate functional symbols explain reel locking against free payout, pretensioning to remove slack when triggered, and force limiting by controlled yielding under load. Component positions, internal designs, travel, force and trigger thresholds are not depicted.</desc>
   <defs>
     <marker id="belt-load-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M1 1 7 4 1 7" fill="none" stroke="#a56430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -22,6 +22,7 @@
   <path d="M250 241Q300 229 352 241L369 347L353 369H249L234 347Z" fill="#e9cfad" stroke="#bba485" stroke-width="3"/>
   <path d="M248 353H354L371 413H235Z" fill="#dbc09e" stroke="#bba485" stroke-width="3"/>
   <path d="M236 255L215 340M370 255L397 340M263 426L246 478M342 426L363 478" fill="none" stroke="#bba485" stroke-width="24" stroke-linecap="round"/>
+  <path d="M224 485H404M388 466V485" fill="none" stroke="#aabbb0" stroke-width="10" stroke-linecap="round"/>
   <path d="M183 208L246 248L382 407L351 396H248L205 413" fill="none" stroke="#1e6250" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M383 417L388 465" fill="none" stroke="#526b5d" stroke-width="10"/>
   <g fill="#173f32" stroke="#f5f7f2" stroke-width="3">
@@ -48,11 +49,11 @@
     <text x="26" y="366">pelvis</text>
     <text x="26" y="457">Lower anchor</text>
     <text x="416" y="421">Buckle /</text>
-    <text x="416" y="453">anchorage</text>
+    <text x="416" y="453">seat mount</text>
   </g>
 
   <text x="300" y="527" text-anchor="middle" fill="#173f32" font-size="28" font-weight="bold">Restraint load path</text>
-  <text x="300" y="568" text-anchor="middle" fill="#173f32" font-size="28">Occupant → belt → anchorages</text>
+  <text x="300" y="568" text-anchor="middle" fill="#173f32" font-size="28">Occupant → belt → body / seat</text>
   <path d="M300 579V600" fill="none" stroke="#a56430" stroke-width="3" marker-end="url(#belt-load-arrow)"/>
   <rect x="145" y="610" width="310" height="54" rx="9" fill="#dbe4dc" stroke="#74897e" stroke-width="2"/>
   <text x="300" y="647" text-anchor="middle" fill="#173f32" font-size="28">Passenger cell</text>

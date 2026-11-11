@@ -22,6 +22,14 @@
 * { box-sizing: border-box; }
 /* The one offset for every in-page destination; scroll-margin would add to it. */
 html { scroll-padding-top: calc(var(--bar) + 24px); }
+#reader-loading { display: none; }
+html[data-reader-pending] #reader-root { visibility: hidden; }
+html[data-reader-pending] #reader-loading { display: block; position: fixed; inset: var(--bar) var(--frame) auto; padding: 32px; color: var(--muted); background: var(--paper); font: 16px/1.5 var(--ui); }
+html.reader-enhanced[data-reader-pending] #reader-loading { display: none; }
+html.reader-enhanced[data-reader-pending] :is(.viewer-bar, .book-sidebar, .chapter-outline) { visibility: visible; }
+html.reader-enhanced[data-reader-pending] #book::before { content: "Loading chapter…"; visibility: visible; display: block; position: absolute; inset: 0; padding: 32px; color: var(--muted); background: var(--paper); font: 16px/1.5 var(--ui); }
+html.reader-enhanced[data-reader-pending][data-view="cover"] #book::before { content: "Loading book…"; }
+#book { position: relative; }
 body { margin: 0; color: var(--ink); background: var(--ground); font: var(--reading-size)/1.65 var(--text); }
 [hidden] { display: none !important; }
 a { color: var(--focus); text-underline-offset: .18em; text-decoration-thickness: 1px; }
@@ -254,6 +262,9 @@ body:has(.contents-dialog[open]) { overflow: hidden; }
   h1, .level2 > h2 { font-size: 28px; }
 }
 @media print {
+  html[data-reader-pending] #reader-root { visibility: visible; }
+  #reader-loading { display: none !important; }
+  html.reader-enhanced[data-reader-pending] #book::before { display: none; }
   body { background: var(--paper); font-size: 11pt; }
   .viewer-bar, .skip-link, .book-sidebar, .chapter-outline, .chapter-pagination, .book-footer, .contents-dialog, .planned-message, .cover-actions { display: none !important; }
   .reader-layout { display: block; max-width: none; margin: 0; padding: 0; }

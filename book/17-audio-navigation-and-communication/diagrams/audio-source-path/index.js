@@ -42,7 +42,7 @@ function pathFor(state) {
   }[state.sound];
   const speakers = {
     standard: ['4 speakers', '2 dashboard tweeters', '+ 2 door woofers'],
-    plus: ['7 speakers', 'Drivers matched to the cabin'],
+    plus: ['7 speakers', '2 dash tweeters + centre', '2 door midrange + 2 woofers'],
     bose: ['11 speakers', 'Includes centre + active subwoofer'],
   }[state.sound];
   return { pcm, missing, blockedAt, source, input, signal, amplifier, speakers };
@@ -101,13 +101,13 @@ export function mount(host, { state, signal }) {
     const gainX = Math.max(205, width - 78);
     amp.append('path').attr('d', `M155,399H${gainX - 8}m-6,-4l6,4l-6,4M${gainX},384l27,15l-27,15Z`).attr('fill', 'none').attr('stroke', power).attr('stroke-width', 2);
     down(439, 479, ['Speaker-driving current'], active, power, true);
-    card(490, state.sound === 'standard' ? 98 : 84, route.speakers, active);
+    card(490, route.speakers.length > 2 ? 98 : 84, route.speakers, active);
     // Generic loudspeaker symbol and outgoing pressure waves; no mounting geometry.
     const speakerY = 615;
     svg.append('path').attr('d', `M${centre - 58},${speakerY - 7}h10l15,-10v34l-15,-10h-10Z M${centre - 21},${speakerY - 12}q12,12 0,24 M${centre - 13},${speakerY - 20}q20,20 0,40`).attr('stroke', active ? green : '#72887b').attr('stroke-width', 2).attr('fill', 'none').attr('opacity', active ? 1 : 0.52);
     text(centre + 59, speakerY - 2, 'Cone motion', 18, active ? ink : '#72887b');
     text(centre + 59, speakerY + 21, '→ sound waves', 18, active ? ink : '#72887b');
-    const details = state.sound === 'bose' ? `${route.pcm ? 'PCM sends programme data over MOST to the' : 'The selected programme feeds the'} digital BOSE amplifier. Its output stages supply speaker-driving current; eleven speakers do not imply eleven programme channels.` : state.sound === 'plus' ? 'Analogue audio feeds the separate, fully active Plus amplifier. It drives all seven speakers; the head unit does not retain the speaker-driving role.' : 'The output stages are inside the head unit, rather than a separate amplifier. They drive two dashboard tweeters and two door woofers; four drivers can reproduce a two-channel stereo programme.';
+    const details = state.sound === 'bose' ? `${route.pcm ? 'PCM sends programme data over MOST to the' : 'The selected programme feeds the'} digital BOSE amplifier. Its output stages supply speaker-driving current; eleven speakers do not imply eleven programme channels.` : state.sound === 'plus' ? 'Analogue audio feeds the separate, fully active Plus amplifier. It drives two dashboard tweeters and a centre speaker, plus a midrange and bass driver in each door. The head unit does not retain the speaker-driving role.' : 'The output stages are inside the head unit, rather than a separate amplifier. They drive two dashboard tweeters and two door woofers; four drivers can reproduce a two-channel stereo programme.';
     const sourceDetails = {
       radio: 'The tuner recovers audio from the aerial’s radio signal.',
       cd: 'The drive and decoder recover audio from the disc.',

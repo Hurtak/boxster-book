@@ -13,8 +13,9 @@ export function virtualSource(name:string,book:BookInventory,assets:Map<string,A
   if(name==='virtual:book-manifest')return book.chapters.map((c,i)=>`import C${i} from ${JSON.stringify(c.file)};`).join('\n')+
     `\nexport const chapters=[${book.chapters.map((c,i)=>`{...${JSON.stringify({...c,file:relative(book.root,c.file)})},Component:C${i}}`).join(',')}];`;
   if(name==='virtual:diagrams')return `export const registry={${Object.entries(book.diagrams).map(([id,file])=>`${JSON.stringify(id)}:()=>import(${JSON.stringify(file)})`).join(',')}};`;
-  if(name==='virtual:book-assets')return prefix ? `export const assets=${JSON.stringify(assetUrls(assets,prefix))};` :
-    `export const assets=Object.fromEntries([...document.querySelectorAll('img[data-book-asset]')].map(e=>[e.dataset.bookAsset,e.getAttribute('src')]));`;
+  if(name==='virtual:book-assets')return (prefix ? `export const assets=${JSON.stringify(assetUrls(assets,prefix))};` :
+    `export const assets=Object.fromEntries([...document.querySelectorAll('img[data-book-asset]')].map(e=>[e.dataset.bookAsset,e.getAttribute('src')]));`)+
+    `export const assetSizes=${JSON.stringify(Object.fromEntries([...assets.values()].filter(a=>a.size).map(a=>[a.key,a.size])))};`;
 }
 export function bookConfig(book:BookInventory,assets:Map<string,Asset>,prefix:string,inputs:Set<string>):InlineConfig{
   const bookPlugin:Plugin={

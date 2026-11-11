@@ -9,3 +9,7 @@
 - **Rights:** © Porsche AG. Retained locally for the user's personal illustrated book; the repository's MIT licence does not relicense it.
 
 The belt, fixed-rollover and scenario diagrams are original explanatory artwork written for this chapter. They are not Porsche CAD, measured crash-test images or calibrated simulations.
+
+## Factory parts-reference excerpts
+
+Twenty-five unaltered full-page Porsche PET 987209/P33 renderings, dated 19 July 2018, are saved in [part-reference](../part-reference/README.md). Exact source, hash, PDF page/plate, applicability and rights are recorded there. © Porsche AG; these are factory drawings/applicability lists, not MIT-licensed project artwork. They informed the belt's seat-mounted buckle, joined rear-bar assembly and separate module-support/inflator details; original explanatory geometry remains schematic rather than factory CAD.

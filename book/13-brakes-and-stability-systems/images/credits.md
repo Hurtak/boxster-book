@@ -1,3 +1,7 @@
 # Brake illustration credits
 
 The braking-chain and booster-vacuum SVGs are original explanatory artwork. The latter was added10November2026 from the mechanisms cited in the chapter: Porsche training/PET plus generic Bosch/ATE booster principles. It is not a factory section, hose-route drawing or a measured diaphragm/pressure model. The chapter-owned interactive/3D figures retain their existing source notes and original artwork status.
+
+The brake-explorer model and static poster were expanded on 10 November 2026 with a stationary front-disc cover, pad retaining hardware, separate electrical wear lead and hydraulic pipe/hose connection. Part identities and neighbouring connections were checked against Porsche PET 987209/P33, 19 July 2018, plates 602-000, 604-010 and 401-005. The shapes, colours, dimensions other than the nominal front-disc envelope, wire/pipe paths and exploded offsets are original illustrative approximations, not factory CAD or a service sequence.
+
+The [part-reference folder](../part-reference/README.md) separately contains 27 unaltered, full-page raster excerpts from the Porsche-authored PET. Porsche retains copyright in those factory drawings and lists; they are not covered by the original-artwork statement above or described as MIT artwork. The folder records original PDF pages, plate/item numbers, model/PR qualifications, source URL, snapshot date and original-PDF hash. Its [verification inventory](../part-reference/verification.md) covers every chapter SVG, interactive figure and tour component.

@@ -1,7 +1,8 @@
 import { createContext, useContext } from 'react';
-import type { AssetMap, DiagramRegistry } from './types';
+import type { AssetMap, AssetSizes, DiagramRegistry } from './types';
 
 export const Assets = createContext<AssetMap>({});
+export const ImageSizes = createContext<AssetSizes>({});
 export const Diagrams = createContext<DiagramRegistry>({});
 export function useAsset(source: string): string {
   const assets = useContext(Assets);

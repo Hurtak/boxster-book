@@ -60,7 +60,7 @@
     <text x="205" y="725" font-size="18">Inside engine / oil sump</text>
 
     <text x="200" y="793" font-size="21" font-weight="700">All five share mechanical drive</text>
-    <text x="200" y="822" font-size="18">Crankshaft → chain → common shaft</text>
+    <text x="200" y="822" font-size="17">Crankshaft → oil-pump chain → shaft</text>
     <text x="200" y="865" font-size="21" font-weight="700">Pressure-section regulation</text>
     <text x="200" y="894" font-size="18">DME → valve → hydraulic gear shift</text>
     <text x="200" y="919" font-size="18">Changes overlap and pump delivery.</text>

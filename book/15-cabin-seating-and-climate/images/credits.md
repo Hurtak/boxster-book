@@ -16,10 +16,17 @@ Third-party photographs are retained locally for the user's personal illustrated
 - **Source identification:** Original caption **Sports bucket seat**; one of three separate seat photographs on that spread. The brochure describes optional ordinary-model equipment. It is used as a construction comparison, not to establish a car's original seat specification.
 - **Local treatment:** Embedded JPEG extracted with Poppler `pdfimages -f 35 -l 35 -j`, local extraction image 001, **165×209**, displayed at a modest 180px width. No upscaling/compositing or labels added. Extraction order was checked against the complete rendered spread; image 002 is the adaptive sports seat, not this bucket. Visually inspected 10 November 2026.
 
-The two static explanatory SVGs, D3 airflow diagram and 3D cabin model are original schematic artwork created for this chapter. They are not Porsche factory engineering drawings.
+The three standalone explanatory SVGs, D3 airflow diagram and 3D cabin model are original schematic artwork created for this chapter. They are not Porsche factory engineering drawings.
 
 ## Coverage additions — 10 November 2026
 
 `dashboard-controls.svg`: original functional map of instrument and control groups, not an exact LHD/RHD dashboard drawing.
 
 `porsche-dashboard-s.png`: Porsche AG, *The Boxster*, UK01/10, printed72–73/PDF34, extracted embedded image0 with Poppler as PNG. Source caption explicitly identifies Boxster S interior with optional PDK multifunction wheel and personalisation; aluminium-coloured dials, PCM and automatic climate are visible. No retouching, overlay or substitution. Rights remain with Porsche AG; visible photo credit/source is beside the photograph.
+
+
+## Factory parts reference excerpts — 10 November 2026
+
+The **67 full-page PNGs** in [part-reference](../part-reference/README.md) are Porsche AG factory catalogue excerpts, **PET987209 / P33,19 July2018**, covering29 drawing plates with selected application tables. Each is an unaltered Poppler rendering at1800px maximum dimension, retaining catalogue headers, numbered callouts, date and page identity. Exact original PDF pages, plate IDs, relevant items, source URL/hash and application limits are listed beside the files. These factory pages remain Porsche copyright and are distinct from the original schematic SVG/model artwork.
+
+The original **cabin-heat-paths.svg** now includes the factory-listed receiver-drier on the high-pressure liquid side. It remains a functional explanatory drawing, not a traced factory hose map. The **cabin-explorer** model gains a local refrigerant-pipe/drier group and clearer seat/inlet support detail; its shapes, pipe routes, fin/spring counts, colours and separation offsets remain illustrative. Its generated fallback is regenerated centrally by the parent integration task.

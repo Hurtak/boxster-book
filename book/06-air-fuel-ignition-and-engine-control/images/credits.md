@@ -15,3 +15,9 @@ The air-path and injection-location SVGs, the mixture-feedback D3 view and its p
 ## Coverage additions — 10 November 2026
 
 `fuel-supply-and-vapour.svg` and `crankcase-ventilation.svg`: original functional maps of separate liquid, vapour and breather/oil-return paths.
+
+## Factory parts-reference audit — 10 November 2026
+
+The unaltered full-page factory renderings are retained separately in [`../part-reference/`](../part-reference/README.md), with every filename, original PDF page/plate, relevant callouts, applicability, source URL, catalogue identity/date and SHA-256 recorded there. They are Porsche-authored PET illustrations, © Porsche; independently hosted originals and local renderings receive no project MIT licence. They are supporting reference evidence rather than artwork redrawn into these SVGs.
+
+The original `air-path.svg` now names the factory-documented cylindrical element and vacuum-operated tuning flaps. The original `intake-explorer` geometry is corrected to a cylindrical filter and gains clamped air guide/manifold joints, two vacuum units/change-over valves, connected bank fuel pipes, injector clips and seals. These are project-authored educational shapes informed by PET 106-000/107-007/107-010, not traced factory CAD or dimensional reproductions. Its generated poster is refreshed by parent integration after the model change. Existing functional-flow SVGs, injection comparison and mixture-feedback view retain their original schematic limits.

@@ -82,6 +82,8 @@ The build discovers chapter modules automatically and generates the lazy registr
 
 `mount` may be asynchronous. `state` is the same plain object on subsequent mounts of that figure. `signal` is aborted when it leaves the area around the viewport; cancel subscriptions and dispose any owned resources. A returned cleanup function must be safe to call more than once. Only mutate the supplied host; React owns the static fallback and outer figure. Keep browser access inside `mount`, since Node must be able to render the chapter without creating a drawing surface. Late asynchronous mounts must check the signal and release any resources they acquired. Development uses React Strict Mode, so repeated setup/teardown is expected.
 
+The reader can prepare a selected chapter's panel layouts before they enter the viewport. Heavy async viewers receive an optional `whenVisible` promise: build all headings, stage sizing, controls, explanations and notes first, dispatch `new Event('diagram-layout')` on the host, then await `whenVisible` and check `signal.throwIfAborted()` before downloading models or creating WebGL. Resolve the mount only after the scene is rendered; the reader shows a measured loading placeholder until then. The shared component viewer and brake viewer use this sequence. Synchronous SVG modules need no special event. Preparation must describe the retained control state so loading the model does not change the panel's height.
+
 Keep the poster and alt text meaningful. A diagram must explain its main idea in print and without scripting. Native sliders support arrow keys, Home and End; preset buttons give keyboard access to the 3D tour. Explain selection in text as well as colour. Avoid automatic motion and make quantities, units and assumptions visible.
 
 ## 3D assets and the guided slider
@@ -131,6 +133,7 @@ Run `npm run posters` after changing a procedural model or its configuration. It
 - `npm run preview:model` regenerates the models and builds a full-size inspection viewer at `dist/model-preview/`. Serve `dist/` with `npm run serve`; its camera presets support front, rear, side and cabin comparisons.
 - `npm run build` makes one portable offline HTML file. All interactive code and models are embedded, so its size grows with the whole book.
 - `npm run build:web` produces `dist/web/book.html` with hashed code chunks and GLBs in `book-assets/`. Serve the directory over HTTP. Only diagrams near the viewport are mounted; their code and model assets load when needed.
-- `npm test` rebuilds both editions and exercises the real browser interfaces and shipped GLB.
+- `npm test` runs the tests against already-built editions, exercising the real browser interfaces and shipped GLB.
+- `npm run validate` checks TypeScript, rebuilds the portable, web and Pages editions, then runs all tests. CI uses this command.
 
 React, D3 and Three.js are bundled locally; reading uses no CDN or external model service. Vite supplies the development server and HTTP builds. The portable export keeps esbuild for its IIFE/binary-model path, and the model preview/poster tools also still use esbuild. The former imperative reader and Pandoc builder are retired. Add tests for new calculations or meaningful interaction contracts; retain browser checks for loading, fallbacks and a narrow reading column.

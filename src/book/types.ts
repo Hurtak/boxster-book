@@ -16,8 +16,9 @@ export interface ChapterMetadata {
 }
 export interface Chapter extends ChapterMetadata { Component: ComponentType<MDXProps> }
 export type AssetMap = Record<string, string>;
+export type AssetSizes = Record<string,{width:number;height:number}>;
 export interface DiagramModule {
-  mount: (host: HTMLElement, options: { state: Record<string, unknown>; signal: AbortSignal }) =>
+  mount: (host: HTMLElement, options: { state: Record<string, unknown>; signal: AbortSignal; whenVisible?:Promise<void> }) =>
     void | (() => void) | Promise<void | (() => void)>;
 }
 export type DiagramRegistry = Record<string, () => Promise<DiagramModule>>;

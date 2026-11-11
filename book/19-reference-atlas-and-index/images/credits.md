@@ -65,3 +65,9 @@ PDF48, printed101–104. Extraction indices below refer to a separate page48-onl
 | carrera-red-interior | 48 |
 
 GT Silver crop: x533/y207/137×63 in a2000px-wide render of PDF48. Two-tone crop: x1520/y299/133×63 in the same render. Both crops include only the intended catalogue swatch. Source originals and mapping contact sheet inspected locally in `/tmp/boxster-coverage-sources/`.
+
+## Factory-reference verification, 10 November 2026
+
+All 44 Porsche atlas assets are unchanged. Forty-one native PNGs byte-match fresh `pdfimages -png` extraction from the original UK 01/10 PDF; the baseline JPEG byte-matches PDF24's original image object 1. The GT Silver and two-tone images exactly match the documented crop pixels of a fresh full-page PDF48 render at 2,000 pixels wide. The complete labelled wheel, seat and palette spreads were visually inspected again.
+
+The [chapter reference inventory](../part-reference/README.md) records the source editions, SHA-256 hashes, individual page filenames and rendering scales for 27 Porsche PET pages, 12 dated ordinary UK brochure spreads and one UK Black Edition price-list spread. These are unaltered complete-page manufacturer references, with numbered callouts, application columns and source footers retained. They remain Porsche copyrighted material, separate from the original project seat-support SVG imported from chapter 15; neither the PET pages nor the catalogue reproductions are MIT-licensed project artwork.

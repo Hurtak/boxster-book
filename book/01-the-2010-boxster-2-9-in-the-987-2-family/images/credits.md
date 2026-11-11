@@ -19,3 +19,7 @@ The following are genuine Porsche period photographs extracted from the original
 - Origin within PDF: embedded image object 25 0; 566 × 337 pixels.
 - Preparation: extracted with Poppler `pdfimages -f 8 -l 8 -j`; original JPEG copied without cropping, retouching or enlargement.
 - Use: ordinary Boxster rear/cabin relationship; no hidden options inferred.
+
+## Factory parts-reference excerpts
+
+The sixteen full-page PNGs in [`../part-reference/`](../part-reference/README.md) are Porsche-authored PET drawings and application tables, catalogue **987209 / P33**, snapshot **19 July 2018**. They were rendered without cropping or alteration from the [independently hosted factory PDF](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). The reference README records every file, original PDF page, plate, item and applicability limit, together with the PDF hash. Porsche retains the original copyright; these excerpts are not MIT-licensed book artwork. They support the assembly audit rather than replacing dated sales publications or the book's explanatory schematics.

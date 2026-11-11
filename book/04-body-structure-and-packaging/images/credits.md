@@ -17,3 +17,10 @@ These two Porsche-authored illustrations/photographs are retained locally for th
 - **Local treatment:** extracted original embedded JPEG using Poppler `pdfimages -f 37 -l 37 -j`, image 002, **527 × 300**. No compositing, recolouring or crop. Checked visually against the complete source spread on 10 November 2026.
 
 The load-path and airflow SVGs, the D3 packaging-layer view and the 3D body-shell explorer are original book artwork. Their shapes, clearances and load/air paths are schematic, not factory CAD or measured analysis.
+
+
+## Factory parts-reference pages
+
+The **46 full-page PNGs** in [`../part-reference/`](../part-reference/README.md) reproduce selected original Porsche PET **987209**, **P33**, **19 July 2018** pages for chapter research. The source/edition/hash, each original page/plate, callouts and applicability are recorded in that directory's README. The drawings were rasterised at 1800 pixels on the longest side without cropping, recolouring or changing their numbered callouts. Porsche retains copyright; these are not original MIT-licensed artwork or factory CAD. All 20 drawing pages were visually inspected against their parts lists on 10 November 2026.
+
+The new seat-support pair, inner sill webs and rear-wall service cover in the body explorer, right-side fan symbol in the airflow map, and top-cover seal in the packaging view are original educational geometry. PET confirms their identities and neighbouring assemblies; their shapes, offsets, dimensions and symbolic fan blades remain illustrative. Full figure-by-figure coverage is in [`verification.md`](../part-reference/verification.md).

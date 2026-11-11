@@ -12,3 +12,9 @@ The steering and offset SVGs, tyre-comparison figure and 3D-explorer rendering w
 ## Coverage additions — 10 November 2026
 
 `tyre-slip-angle.svg` and `tyre-grip-budget`/poster: original explanatory geometry, not copied Michelin artwork or measured Porsche tyre data.
+
+## Factory parts-reference audit — 10 November 2026
+
+[Chapter-local factory excerpts](../part-reference/README.md) retain 22 complete, unaltered rendered pages from Porsche AG's *PET — Boxster 987209, 2009–2012*, P33 snapshot 19 July 2018; original PDF SHA-256 `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`. Source, individual PDF pages, plate/item numbers, applicability and rights are recorded there. They are Porsche material rather than original MIT-licensed diagrams.
+
+The explorer's revised broad reservoir over the pump, protected inner track-rod joints, ordinary valve and balancing weight follow parts identities in PET 403-003, 403-000 and 601-000. Dimensions/positions remain original schematic geometry. The two existing Porsche photographs remain unchanged; PET's generic rim picture does not replace the standard-wheel photograph. No standalone SVG was changed by this audit. Regenerate the original `steering-explorer/poster.svg` from its updated model/config during parent integration.

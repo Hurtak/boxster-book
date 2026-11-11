@@ -1,0 +1,46 @@
+# Factory parts references — suspension and wheel geometry
+
+These are full, uncropped Porsche-authored PET pages, including the original numbered callouts and page headers/footers. They are supporting source assets for chapter 11, not the chapter's original educational artwork.
+
+Source: Porsche, *Boxster 2009–2012*, PET model **987209**, catalogue **P33**, snapshot **19 July 2018**, 583-page PDF. [Porsche-authored catalogue, independently hosted](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). Retrieved and checked 10 November 2026. SHA-256 of the source PDF: `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`.
+
+Each PNG is a full-page Poppler render at a maximum dimension of 1,800 pixels; no callout, part, or attribution has been redrawn, cropped or retouched. The ten drawing pages were visually inspected and the adjacent application lists read. Copyright remains Porsche's. The repository's MIT licence does not apply to these excerpts; no permission to republish is asserted. The full PDF is not duplicated here.
+
+## Saved pages and applicability
+
+PDF page numbers below are **one-based**. An exploded drawing covers the listed family; the adjoining parts rows determine the applicable variant. In the source key, PR **029** = standard chassis (p. 8), **475** = PASM and **480** = six-speed manual (p. 11), **250** = PDK (p. 9), **450** = PCCB (p. 11), **603** = xenon plus dynamic cornering light (p. 12), and **778** = Boxster Spyder (p. 13). PR 220 identifies the locking differential (p. 9); its generic key wording is not used here to establish a locking percentage. These are catalogue keys, not proof that every listed equipment combination was orderable in the UK in 2010.
+
+| Saved file | PDF page / plate | Relevant items and application |
+| --- | --- | --- |
+| [pet-401-000-p129.png](pet-401-000-p129.png) | 129 / 401-000 drawing | 1 front crossmember; 3 separate guide; 6 wishbone; 8 mounting plate; 14 braces. Items 15–21 are the PR 603 lighting-level sensor/bracket/link branch, not standard suspension sensors. |
+| [pet-401-000-p130.png](pet-401-000-p130.png) | 130 / 401-000 list | Common arm/guide/crossmember rows; PR 603 qualification applies to 15–21. No engine/gearbox distinction assigned to arm identity by these rows. |
+| [pet-401-005-p131.png](pet-401-005-p131.png) | 131 / 401-005 drawing | 1 carrier; 2 angular ball bearing; 3 speed sensor; 5 retaining bolt; 6 central nut; 7 bearing cover; 9 hub. The front stub is a retaining bolt, not a driven half-shaft. |
+| [pet-401-005-p132.png](pet-401-005-p132.png) | 132 / 401-005 list | Left/right carrier entries include a separate PR 450 PCCB branch. Hub rows show superseded and later replacement numbers; these do not prove original 2010 front/rear interchangeability. |
+| [pet-402-000-p133.png](pet-402-000-p133.png) | 133 / 402-000 drawing | 1 damper with lower seat; 3 top mount; 4/5 rings/plate; 6 stop plates; 7 main spring; 8 bellows; 9 auxiliary stop, called “helper spring”; 11 separate bearing with housing; 14 PASM controller; 16/17 acceleration sensor/bracket. |
+| [pet-402-000-p134.png](pet-402-000-p134.png) | 134 / 402-000 list 1 | Damper 1 and spring 7 distinguish PR 029, PR 475 and Spyder. Item 11 is a grooved ball bearing with housing; distinct from the hub bearing. Spring seats/colour descriptions and auxiliary-stop branches are retained as identification evidence, not spring-rate data. |
+| [pet-402-000-p135.png](pet-402-000-p135.png) | 135 / 402-000 list 2 | PASM controller 14 is PR 475. Completes the brake-hose-clamp and acceleration-sensor/bracket rows. Some sensor rows lack a repeated PR tag; that omission does not make PASM control equipment standard. |
+| [pet-402-005-p136.png](pet-402-005-p136.png) | 136 / 402-005 drawing | 1 front bar, 2 body bearing/bracket, 4 handed coupling/drop links and their end joints. Break line in the bar is drawing convention, not a joint in a split bar. |
+| [pet-402-005-p137.png](pet-402-005-p137.png) | 137 / 402-005 list | Bar 1 separates PR 029 from PR 475/Spyder; 4 is left/right coupling rod. A shared service bar row does not make complete PASM and Spyder chassis identical. |
+| [pet-403-000-p138.png](pet-403-000-p138.png) | 138 / 403-000 drawing | 1 steering rack; 2 bellows; 6 inner joint; 7 locknut; 8 outer track rod. Establishes rack–inner joint–threaded rod–carrier connection used by this chapter's front-corner explorer. Steering assistance is owned by chapter 12. |
+| [pet-403-000-p139.png](pet-403-000-p139.png) | 139 / 403-000 list | Rack 1 separates PR 098 LHD and PR 099 RHD and service supersessions; inner/outer tie-rod identity is distinct from the suspension guide. The teaching rack does not reproduce handed pinion/pipe routing. |
+| [pet-501-000-p181.png](pet-501-000-p181.png) | 181 / 501-000 drawing | 1 rear carrier; 2 bearing; 5 speed sensor; 7 hub; 8 guide; 9 wishbone; 12/13 wishbone eccentric bolt/washer; 17 track rod; 18/19 separate track-rod eccentric bolt/washer. Guide joins wishbone, track rod joins carrier. |
+| [pet-501-000-p182.png](pet-501-000-p182.png) | 182 / 501-000 list | Rear components and eccentric identities; separate PR 603 bracket at 22 and PR XRP spacer at 23 are equipment branches. Does not establish alignment targets or current-car settings. |
+| [pet-501-001-p183.png](pet-501-001-p183.png) | 183 / 501-001 drawing | Rear support structure: 1 braces, 2 crossmember, 3 side parts, 6 lower bracket, 7 brace; 17–21 optional lighting-level sensor mounting/link. |
+| [pet-501-001-p184.png](pet-501-001-p184.png) | 184 / 501-001 list | Crossmember 2 splits through MY2010/from MY2011; bracket 6 splits PR 480/manual versus PR 250/PDK. This is a replacement-catalogue application distinction, not proof of a change to spring/damper tuning or a dated UK launch. Items 17–21 are PR 603. |
+| [pet-501-003-p185.png](pet-501-003-p185.png) | 185 / 501-003 drawing | Rear bar 1, bearing/bracket 2, clamp 3, coupling/drop link 5; distinguishes the transverse torsion member from its articulated links. |
+| [pet-501-003-p186.png](pet-501-003-p186.png) | 186 / 501-003 list | Multiple Boxster/S bar and bearing rows depend on gearbox, PR 220 locking differential and PR 475. Combined/multiline rows must be read in the original layout; this record does not flatten them into a universal bar specification. |
+| [pet-501-005-p187.png](pet-501-005-p187.png) | 187 / 501-005 drawing | Rear driveshaft 1, driven hub 7 and nut 8; CV-joint/bellows identities show how a rear hub connects to the drivetrain while suspension moves. Mechanism is explained in chapter 10. |
+| [pet-501-005-p188.png](pet-501-005-p188.png) | 188 / 501-005 list | Driveshafts branch Boxster/S and PR 480/manual versus PR 250/PDK. Later common service hub numbers are not evidence that complete original front and rear assemblies were interchangeable. |
+| [pet-502-000-p189.png](pet-502-000-p189.png) | 189 / 502-000 drawing | Rear strut 1, top mount 2, spring bush 3, centring ring 4, plates 5, main spring 6, bellows 7, auxiliary stop 8; PASM controller 10 and body-acceleration sensor 11. Rear mount is not the front's separate steering thrust-bearing arrangement. |
+| [pet-502-000-p190.png](pet-502-000-p190.png) | 190 / 502-000 list 1 | Damper rows separate PR 029, PR 475 and Spyder; rear springs branch by Boxster/S, chassis and manual/PDK. Bilstein is named in these service damper rows; this does not establish every original car's supplier. |
+| [pet-502-000-p191.png](pet-502-000-p191.png) | 191 / 502-000 list 2 | Completes Spyder manual/PDK springs and colours, bellows/stop, PR 475 controller 10 and body acceleration sensor/bracket 11/12. Controller is the same item referenced on the front plate, not a second controller per axle. |
+
+## What these pages establish
+
+The drawings establish component identity and how neighbouring pieces join: carrier–bearing–hub, crossmember–arm–guide, carrier–strut, steering rack–tie rod–carrier, rear carrier–toe link, and bar–bush–drop link. The front thrust bearing, bellows and auxiliary compression stop are useful details absent from the earlier model descriptions. The chapter and explorer now explain these within the same eight selectable groups.
+
+The plates do **not** supply installed XYZ coordinates, alignment targets, angular travel, force division, damper valve circuits, control calibration, spring rates or removal order. The chapter's three-dimensional model remains approximate. Its single detailed front-left corner does not claim to be a second rear-axle model; the saved rear drawings and prose provide the rear component breakdown.
+
+Normal/Sport operation, 10 mm PASM factory lowering, ordinary UK availability and the Spyder's fixed 20 mm-lower setup remain supported by the dated Porsche brochures/training sources in [research.md](../research.md). Spring/damper forces, anti-roll differential action and alignment definitions are separately supported operating principles. The 2018 PET snapshot is not used to infer 2010 UK option availability or precise original factory fitment on an unidentified car.
+
+See [verification.md](verification.md) for the complete component, SVG, interactive and tour audit.

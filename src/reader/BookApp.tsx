@@ -1,18 +1,18 @@
 import { createElement } from 'react';
-import type { AssetMap, Chapter } from '../book/types';
-import { Assets } from '../book/context';
+import type { AssetMap, AssetSizes, Chapter } from '../book/types';
+import { Assets, ImageSizes } from '../book/context';
 import { BookImage } from '../book/Figure';
 import { ChapterView } from './ChapterView';
 import { ChapterNavigation, ContentsDialog, Pagination, sectionsFor } from './Navigation';
 import { useReader } from './useReader';
 import cover from '../../assets/book-cover.png';
 
-export function BookApp({chapters,assets}: {chapters:Chapter[];assets:AssetMap}) {
+export function BookApp({chapters,assets,assetSizes={}}: {chapters:Chapter[];assets:AssetMap;assetSizes?:AssetSizes}) {
   const reader=useReader(chapters), {active,enhanced}=reader;
   const drafted=chapters.filter(c=>!c.planned), first=drafted[0];
   const continued=chapters.find(c=>c.id===reader.place || c.headings.some(h=>h.id===reader.place));
   const navigation=<ChapterNavigation chapters={chapters} active={active} section={reader.section}/>;
-  return <Assets.Provider value={assets}>
+  return <Assets.Provider value={assets}><ImageSizes.Provider value={assetSizes}>
     <a className="skip-link" href="#book">Skip to reading</a>
     <header className="viewer-bar" data-ui="">
       <a className="book-name" href="#title">Boxster 2.9 <span>2010 · 987.2</span></a>
@@ -49,5 +49,5 @@ export function BookApp({chapters,assets}: {chapters:Chapter[];assets:AssetMap})
       </aside>
     </div>
     <ContentsDialog open={reader.dialogOpen} onClose={()=>reader.setDialogOpen(false)}>{navigation}</ContentsDialog>
-  </Assets.Provider>;
+  </ImageSizes.Provider></Assets.Provider>;
 }

@@ -8,6 +8,8 @@ The [coverage and consolidation review](.agents/reviews/coverage-and-consolidati
 
 The [MDX migration review](.agents/reviews/mdx-migration.md) records manuscript preservation, export compatibility, responsive verification and payload measurements for the Node/React/Vite build.
 
+The [factory parts reference review](.agents/reviews/parts-reference-review.md) links the chapter-by-chapter checks against Porsche's PET drawings. Each chapter's `part-reference/` folder keeps the selected factory page images, original page and illustration numbers, applicability notes and verification record. These supporting research files are separate from the compiled manuscript. The original Porsche material retains its own copyright; the project MIT licence does not relicense it.
+
 [Read the online book](https://hurtak.github.io/boxster-book/). GitHub Actions builds and publishes the latest edition after each successful push to `main`.
 
 ## Chapter files
@@ -74,7 +76,7 @@ Default paths are relative to this project; explicit paths are relative to the w
 
 ## GitHub Pages
 
-The [Pages workflow](.github/workflows/pages.yml) builds and tests the book on pushes to `main`, pull requests and manual runs. It installs Node 24 and Chromium, then runs `npm test`, including the TypeScript gate. After a successful build on `main`, GitHub Actions publishes `dist/site/` to <https://hurtak.github.io/boxster-book/>.
+The [Pages workflow](.github/workflows/pages.yml) validates the book on pushes to `main`, pull requests and manual runs. It installs Node 24 and Chromium, then runs `npm run validate` to check TypeScript, build all three editions and run the tests. After successful validation on `main`, GitHub Actions publishes `dist/site/` to <https://hurtak.github.io/boxster-book/>.
 
 `npm run build:pages` creates the web edition at `dist/site/index.html`, with relative asset URLs that work under the `/boxster-book/` project path. With `npm run serve`, preview it at <http://localhost:8000/site/>. Browser tests also serve this artifact under `/boxster-book/` to check code and 3D-model loading.
 
@@ -125,6 +127,8 @@ Vite builds the HTTP editions with lazy diagram/model chunks and content-hashed 
 
 React owns navigation, disclosures and figure wrappers. Each live diagram receives a dedicated imperative host, retained state and an AbortSignal. D3/Three.js own the host contents. Viewport disposal reserves the measured height before removing those contents; cancellation and cleanup also support React development Strict Mode. Diagram/model modules do not run during Node rendering.
 
+Image dimensions are read at build time and emitted as intrinsic width/height attributes. On startup and chapter navigation, the reader settles fonts and prepares the selected chapter's lightweight diagram layouts before revealing the reading sheet and performing the final anchor scroll. Car viewers construct their complete controls and text before waiting for visibility and fetching models; a loading placeholder keeps that measured space until the scene is ready. Hidden chapters retain their last measured reservations. Failed reader scripts fall back to the static manuscript, and disabled JavaScript never hides it.
+
 `npm run typecheck` checks implementation types; compiling every chapter separately validates MDX syntax and book component metadata. `tests/fixtures/manuscript-baseline.json` records the pre-migration content and public destination contract. Its hashes normalise typography/whitespace while preserving letters, numbers and ordering. Update this contract deliberately when reviewing future manuscript changes, alongside the owning evidence; ordinary build/runtime changes must preserve it.
 
 ## Interactive diagrams
@@ -145,7 +149,7 @@ The car is an original **photo-guided model**, with deep metallic green paint, a
 
 For a larger model inspection view, run `npm run preview:model`, then `npm run serve`, and open <http://localhost:8000/model-preview/>. Front, rear, side, low-front and cabin camera presets help compare revisions. The photographs and their backgrounds are not embedded in the model.
 
-Run `npm test` to rebuild the portable, web and Pages outputs and check the calculations, GLB contents, all chapters and interactive figures, cross-chapter links, offline images, keyboard controls, resource cleanup, phone layout, printing and fallbacks. Browser tests use an installed Google Chrome; set `BROWSER_EXECUTABLE_PATH` to use another compatible Chromium executable. Test screenshots are written to `dist/previews/`.
+Run `npm run validate` for the complete check: TypeScript, portable/web/Pages builds, then tests. Use `npm test` to run only the tests against already-built editions; rebuild all three editions first after changes to the manuscript or runtime. The tests check calculations, GLB contents, all chapters and interactive figures, cross-chapter links, offline images, keyboard controls, resource cleanup, phone layout, printing and fallbacks. Browser tests use an installed Google Chrome; set `BROWSER_EXECUTABLE_PATH` to use another compatible Chromium executable. Test screenshots are written to `dist/previews/`.
 
 ## Reader design
 
@@ -153,7 +157,15 @@ The reader follows **The page is the object** direction (seed `1298968287`): the
 
 The enhanced reader shows one chapter at a time, preserving section and footnote deep links, browser history and chapter-local notes, numbered from 1 in each chapter. The current chapter's sections are listed under it in the contents; wide desktops also show them as an outline beside the page. A bar under the header shows progress through the chapter, and the cover offers a link back to the last section read. Text-size buttons and the reading place are kept as local preferences. Photographs and drawings sit on a common plate whatever their size, and interactive panels run to the screen edges on phones. Without JavaScript, the complete document and contents remain available; printing includes every chapter and static diagrams.
 
-The cover lists drafted chapters automatically, and title-only chapters are marked as planned. It uses the supplied green-and-tan Boxster photograph, with its provenance recorded in [asset credits](assets/credits.md). The component chapters combine original explanatory diagrams with credited period photographs. Chapter-local `research.md` files record technical evidence and uncertainties; `images/credits.md` files record image origins. The [design review](.agents/reviews/reader-design-review.md) records the reader’s layout and responsive checks. Screenshots are generated under `dist/design-review/`.
+The cover lists drafted chapters automatically, and title-only chapters are marked as planned. It uses the supplied green-and-tan Boxster photograph, with its provenance recorded in [cover photograph credits](#cover-photograph). The component chapters combine original explanatory diagrams with credited period photographs. Chapter-local `research.md` files record technical evidence and uncertainties; `images/credits.md` files record image origins. The [design review](.agents/reviews/reader-design-review.md) records the reader’s layout and responsive checks. Screenshots are generated under `dist/design-review/`.
+
+## Shared image credits
+
+### Cover photograph
+
+[assets/book-cover.png](assets/book-cover.png) is the 1440 × 1080 photograph supplied by the user on 10 November 2026: a dark green Boxster with tan seats, photographed from a low front three-quarter angle against a blue sky. It replaces the previous model rendering.
+
+The supplied file is stored unchanged. The screen layout crops some sky and road with CSS; the print edition shows the full photograph. The photographer and original publication were not supplied. The project MIT licence does not relicense this photograph.
 
 ## License
 

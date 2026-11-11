@@ -18,3 +18,7 @@ Both photographs are reproduced from Porsche-authored period material, not gener
 - **Modification:** direct extraction and descriptive rename; no compositing or generative alteration.
 
 Original chapter SVGs (`audio-amplification.svg`, `telephone-paths.svg`, and `diagrams/audio-source-path/poster.svg`) are author-created educational diagrams. They are not reproductions of Porsche wiring or component drawings.
+
+## Factory parts-reference excerpts
+
+The twelve complete PNG pages in [`../part-reference/`](../part-reference/README.md) reproduce Porsche-authored **PET 987209**, **19 July 2018**, plates **911-000, 911-005 and 911-010**. The reference README records source URL, PDF hash, page numbers, applicability and the visual audit. Poppler rasterisation preserves the complete original pages and callouts, without cropping or generative alteration. Copyright remains Porsche's; these factory pages are not author-created MIT artwork. The original explanatory schematics and explorer remain approximate teaching diagrams, rather than traced factory drawings.

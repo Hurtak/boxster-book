@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1100" role="img" aria-labelledby="air-title air-desc">
   <title id="air-title">The 2.9-litre intake path: air first, fuel at the ports</title>
-  <desc id="air-desc">Functional flow, not physical hose routing. Incoming air passes through the air cleaner, mass-air-flow sensor and electronic throttle. The resonance intake has connected passages and switchable flaps that tune pressure waves, and an air plenum for each cylinder bank. Three runners per bank lead to the inlet ports for three cylinders. One port injector per cylinder adds fuel there, before the charge passes the inlet valves into the cylinders. Green arrows show the direction of air and charge flow; amber arrows show fuel joining the air.</desc>
+  <desc id="air-desc">Functional flow, not physical hose routing. Incoming air passes through a cylindrical pleated filter, mass-air-flow sensor and electronic throttle. The resonance intake has connected passages and vacuum-operated tuning flaps, controlled through electrical change-over valves, and an air plenum for each cylinder bank. Three runners per bank lead to the inlet ports for three cylinders. One port injector per cylinder adds fuel there, before the charge passes the inlet valves into the cylinders. Green arrows show the direction of air and charge flow; amber arrows show fuel joining the air.</desc>
   <defs>
     <marker id="air-arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0 0L12 6L0 12Z" fill="#276950"/>
@@ -23,7 +23,7 @@
       <rect x="100" y="382" width="400" height="76" rx="5"/>
     </g>
     <text x="300" y="184" font-size="28" font-weight="600">Air cleaner</text>
-    <text x="300" y="215" font-size="26" fill="#52685b">Filter traps particles</text>
+    <text x="300" y="215" font-size="26" fill="#52685b">Cylindrical pleated filter</text>
     <text x="300" y="299" font-size="28" font-weight="600">Mass-air-flow sensor (MAF)</text>
     <text x="300" y="330" font-size="26" fill="#52685b">Measures incoming air mass</text>
     <text x="300" y="414" font-size="28" font-weight="600">Electronic throttle</text>
@@ -36,7 +36,7 @@
 
     <rect x="20" y="497" width="560" height="269" rx="5" fill="#dce8df" stroke="#276950" stroke-width="2"/>
     <text x="300" y="533" font-size="28" font-weight="600">Resonance intake system</text>
-    <text x="300" y="568" font-size="26">Tuning + distribution flaps</text>
+    <text x="300" y="568" font-size="26">Vacuum-operated tuning flaps</text>
     <text x="300" y="602" font-size="26">Alter pressure waves between banks</text>
     <g fill="none" stroke="#276950" stroke-width="4" marker-end="url(#air-arrow)">
       <path d="M300 619V636H150V650"/>

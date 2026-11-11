@@ -10,3 +10,5 @@ Source for both: Porsche, *The Boxster*, UK edition **01/10**, publication **WSL
 | `boxster-personalised-cabin.jpg` | Printed pp. **98–99**, PDF page **47**, image object **199**, 1,106 × 427 px | `pdfimages -f 47 -l 47 -j`; JPEG copied directly, no crop, retouch, recolouring or added labels. Original visible caption describes macassar interior package, macassar multifunction wheel, leather trim and optional equipment. A manual gear lever is visible. |
 
 The three SVG diagrams are original explanatory illustrations by the book author, based on figures and option conditions credited in the manuscript. They are not Porsche factory drawings or measured performance plots.
+
+The separately archived factory PET drawings, applicability/key pages and dated UK catalogue sheets are listed in [the chapter's parts-reference archive](../part-reference/README.md). Those unaltered publisher-page renders retain Porsche's copyright and are not additional author-created SVGs. Both chapter JPEGs were viewed again and independently matched byte for byte to fresh PDF image-object extractions during the 10 November 2026 parts-reference pass.

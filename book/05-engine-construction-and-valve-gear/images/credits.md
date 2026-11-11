@@ -22,3 +22,9 @@ The chapter's SVG diagrams and interactive D3 graphics are original explanatory 
 ## Coverage additions — 10 November 2026
 
 `accessory-drive.svg`: original functional belt-drive map; exact pulley positions, wrap and diameters are not reproduced.
+
+## Factory parts reference addition — 10 November 2026
+
+The 29 full-page PNGs in [part-reference](../part-reference/README.md) reproduce selected Porsche-authored PET 987209/P33 pages, catalogue snapshot 19 July 2018, retrieved 10 November 2026. They retain the entire page, factory callouts, plate identifiers, dates and footers; longest edge 1,800 pixels, no compositing or part substitution. Exact per-file PDF page/plate/application and source hash are in the reference index. Copyright remains Porsche's; these are not original/MIT-licensed book drawings.
+
+`timing-drive.svg` now explicitly separates the two cam-drive chains and their two hydraulic tensioners from the third, omitted oil-pump chain (PET 103-015). `accessory-drive.svg` now identifies the crank pulley's torsional vibration damper (102-000 item 16). Both remain original functional schematics. The engine explorer's additional ring/bearing/gasket/tappet/spring/adjuster/sprocket/catalyst details are simplified original geometry informed by PET 102-000/005, 103-000/005/010 and 202-000, not extracted factory CAD. See [complete visual verification](../part-reference/verification.md).

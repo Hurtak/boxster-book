@@ -6,9 +6,6 @@ on:
   pull_request:
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 concurrency:
   group: pages-${{ github.ref }}
   cancel-in-progress: false
@@ -36,8 +33,8 @@ jobs:
           import { appendFileSync } from 'node:fs';
           appendFileSync(process.env.GITHUB_ENV, `BROWSER_EXECUTABLE_PATH=${chromium.executablePath()}\n`);
           JS
-      - name: Build editions and run tests
-        run: npm test
+      - name: Validate types, editions and tests
+        run: npm run validate
       - name: Include project license
         run: cp LICENSE dist/site/LICENSE
       - name: Configure Pages

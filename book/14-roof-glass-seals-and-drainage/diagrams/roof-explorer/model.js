@@ -5,9 +5,9 @@ export const config = {
   id: 'roof-explorer',
   title: 'From the car to the folding roof',
   location: 'The ordinary 2010 2.9 roof spans the cabin. Its drive, side linkages and stowage well sit behind the occupants, ahead of the rear boot.',
-  overview: 'The manual front latch meets the fixed header. Frame members support the fabric and rigid rear glass; one motor drives both side gearboxes. The cover conceals the stowage well, while side pans collect runoff.',
+  overview: 'The manual front latch and centring journals meet the fixed header. Frame members support cloth and rigid heated glass; one motor drives both side gearboxes. Separate seals limit entry, while filtered side pans collect runoff.',
   assembled: 'This closed-roof cutaway places the supporting frame below the cloth, the rear glass in its aperture, and the drive beside the stowage well. The separate opening diagram explains their movement.',
-  exploded: 'The cloth, frame, glass, drive and collection areas separate for identification. This is a spatial breakdown, not a roof-opening position or a removal sequence. The rear glass remains one rigid pane.',
+  exploded: 'The cloth, frame, glass, seals, drive and collection areas separate for identification. This is a spatial breakdown, not a roof-opening position or a removal sequence. The rear glass remains one rigid pane.',
   focus: 'roof-frame',
   hideCarParts: ['interior'],
   direction: [1.25, 0.9, 1.45],
@@ -21,6 +21,8 @@ export const config = {
     { from: 'side-drives', to: 'cover-well', label: 'Side guide arms and rods coordinate the compartment cover', kind: 'mechanical' },
     { from: 'covering', to: 'drainage', label: 'Runoff reaching the wet collection areas can drain outside', kind: 'fluid' },
     { from: 'cover-well', to: 'drainage', label: 'Collection components manage water around the roof compartment', kind: 'fluid' },
+    { from: 'roof-frame', to: 'roof-seals', label: 'Retaining strips hold the separate roof seals against the frame', kind: 'structure' },
+    { from: 'cover-well', to: 'roof-seals', label: 'The compartment has a separate perimeter seal and drainage hoses', kind: 'structure' },
   ],
 };
 
@@ -72,7 +74,7 @@ export function createAssembly() {
   box(header, [.065, .022, .035], m.metal, [0, 1.19, .535]);
   for (const side of [-1, 1]) box(header, [.075, .11, .09], m.green, [side * .66, .64, .88]);
 
-  const frame = part(root, 'roof-frame', 'Frame and front latch', [0, 0, 0], [0, .3, 0], 'Articulated side members and bows support the roof. The manually operated front lever and hook travel with its front edge. Bow count and joint geometry are explanatory rather than a factory frame reconstruction.');
+  const frame = part(root, 'roof-frame', 'Frame and front latch', [0, 0, 0], [0, .3, 0], 'Articulated side members and bows support the roof. A manual catch and paired centring journals travel with its front edge: the journals locate it at the fixed header and the catch retains it. Bow count and joint geometry are illustrative.');
   for (const side of [-1, 1]) {
     const points = [[side * .585, 1.16, .51], [side * .57, 1.22, .08], [side * .55, 1.18, -.4], [side * .52, .98, -.77], [side * .56, .76, -.87]];
     for (let i = 0; i < points.length - 1; i++) beam(frame, points[i], points[i + 1], .018, m.metal);
@@ -85,18 +87,21 @@ export function createAssembly() {
   cylinder(frame, .015, .13, m.metal, [0, 1.15, .49]);
   beam(frame, [0, 1.15, .49], [0, 1.12, .42], .012, m.black);
   tube(frame, [[0, 1.155, .5], [0, 1.17, .55], [0, 1.185, .55], [0, 1.185, .535]], .008, m.warm);
+  for (const side of [-1, 1]) beam(frame, [side * .45, 1.16, .49], [side * .45, 1.16, .55], .012, m.warm);
 
-  const covering = part(root, 'covering', 'Fabric and lining', [0, 0, 0], [0, .68, .04], 'The outer cloth and inner lining form a flexible enclosure supported by the frame. The rear opening accommodates glass as a separate rigid element. Cloth edges and seam positions are simplified.');
+  const covering = part(root, 'covering', 'Fabric and lining', [0, 0, 0], [0, .68, .04], 'The outer covering and moulded headliner are separate parts. Tension wires guide the cloth edges; these do not rotate like the motor’s drive shafts. The rear opening accommodates a rigid pane. Cloth edges, wire paths and seams are simplified.');
   clothSurface(covering, fabric);
   panel(covering, [[-.49, 1.17, .45], [.49, 1.17, .45], [.46, 1.2, -.49], [-.46, 1.2, -.49]], lining);
   for (const side of [-1, 1]) tube(covering, [[side * .59, 1.185, .5], [side * .575, 1.25, .08], [side * .535, 1.205, -.62], [side * .53, .845, -1]], .007, m.black);
 
-  const glass = part(root, 'rear-glass', 'Rigid heated rear glass', [0, 0, 0], [0, .17, -.44], 'The heated rear window stays one rigid pane while the surrounding roof folds. Its aperture and electrical heating are separate from the motor drive and water drains. Heating elements are drawn only to identify their role.');
+  const glass = part(root, 'rear-glass', 'Rigid heated rear glass', [0, 0, 0], [0, .17, -.44], 'The rear window stays one rigid pane while the surrounding roof folds. Its separate heating loom supplies resistance elements, independently of the roof motor. Element pattern and the short wire shown are illustrative, not factory wiring or routing.');
   const glassPoint = (x, t) => [x, 1.205 - t * .36, -.62 - t * .38 - .003];
   panel(glass, [glassPoint(-.385, .2), glassPoint(.385, .2), glassPoint(.385, .8), glassPoint(-.385, .8)], m.glass);
   tube(glass, [glassPoint(-.385, .2), glassPoint(.385, .2), glassPoint(.385, .8), glassPoint(-.385, .8), glassPoint(-.385, .2)], .009, m.black);
   for (let i = 0; i < 7; i++) beam(glass, glassPoint(-.36, .27 + i * .075), glassPoint(.36, .27 + i * .075), .0014, m.warm);
   for (const side of [-1, 1]) beam(glass, glassPoint(side * .36, .24), glassPoint(side * .36, .76), .004, m.warm);
+  tube(glass, [glassPoint(.36, .73), [.43, .9, -.95], [.51, .84, -.99]], .005, m.black);
+  box(glass, [.025, .015, .03], m.dark, [.51, .84, -.99]);
 
   const motor = part(root, 'motor-shafts', 'Motor and two shafts', [0, .72, -1.06], [0, -.25, -.15], 'One reversible electric motor supplies both sides. Two flexible rotary shafts transmit its turning motion to separate gearboxes; they are not pull cables. Their visible curves identify connectivity rather than the installed route.');
   cylinder(motor, .045, .19, m.dark, [0, 0, 0]);
@@ -132,7 +137,7 @@ export function createAssembly() {
   panel(well, [[-.69, .18, -.25], [.69, .18, -.25], [.59, .205, -.39], [-.59, .205, -.39]], m.green);
   for (const side of [-1, 1]) beam(well, [side * .57, .11, -.17], [side * .6, .2, -.27], .012, m.metal);
 
-  const drains = part(root, 'drainage', 'Side pans and drains', [0, 0, 0], [0, -.32, .05], 'Side collection pans receive water reaching the wet roof-compartment region. Outlets lead outside the body. The simplified drops show drainage function, not the concealed hose route or a measured pan capacity.');
+  const drains = part(root, 'drainage', 'Side pans and drains', [0, 0, 0], [0, -.32, .05], 'Left and right drip pans have separate filter elements and drain pipes. The filters intercept debris but still need inspection and cleaning. Separate drive-area drain plates and compartment-seal hoses also appear in PET. These simplified drops do not map all concealed routes.');
   for (const side of [-1, 1]) {
     const x = side * .66;
     const floor = new THREE.Shape();
@@ -144,7 +149,22 @@ export function createAssembly() {
     for (const edge of [-1, 1]) box(drains, [.015, .065, .45], m.blue, [x + edge * .075, .71, -.84]);
     box(drains, [.16, .065, .015], m.blue, [x, .71, -.615]);
     annulus(drains, .028, .018, .03, m.dark, [x, .66, -.99]).rotation.set(-Math.PI / 2, 0, 0);
+    // Open filter grille above the outlet: water can pass through its gaps.
+    annulus(drains, .035, .029, .008, m.dark, [x, .7, -.99]).rotation.set(-Math.PI / 2, 0, 0);
+    for (const offset of [-.016, 0, .016]) {
+      beam(drains, [x - .025, .702, -.99 + offset], [x + .025, .702, -.99 + offset], .002, m.metal);
+      beam(drains, [x + offset, .702, -1.015], [x + offset, .702, -.965], .002, m.metal);
+    }
     tube(drains, [[x, .66, -.99], [x + side * .02, .53, -1.02], [x + side * .035, .34, -1.05], [x + side * .055, .24, -1.08]], .016, m.black);
   }
+
+  const seals = part(root, 'roof-seals', 'Roof and compartment seals', [0, 0, 0], [.25, .18, .22], 'Separate roof-frame, B-pillar and roof-arch seals meet neighbouring surfaces; retaining strips hold them to the frame. The stowage box has its own seal. Contact paths are schematic, with no seal profile, adjustment dimension or concealed drainage route implied.');
+  tube(seals, [[-.585, 1.145, .51], [0, 1.205, .51], [.585, 1.145, .51]], .013, m.black);
+  for (const side of [-1, 1]) {
+    tube(seals, [[side * .585, 1.145, .51], [side * .57, 1.205, .08], [side * .55, 1.165, -.4]], .012, m.black);
+    tube(seals, [[side * .55, 1.165, -.4], [side * .52, .98, -.77], [side * .56, .8, -.87]], .016, m.black);
+  }
+  tube(seals, [[-.56, .82, -.87], [-.3, .83, -1.01], [0, .83, -1.05], [.3, .83, -1.01], [.56, .82, -.87]], .012, m.black);
+  tube(seals, [[-.62, .78, -.93], [-.62, .78, -1.31], [0, .79, -1.36], [.62, .78, -1.31], [.62, .78, -.93]], .011, m.black);
   return root;
 }

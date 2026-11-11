@@ -10,6 +10,9 @@
 .book-diagram .diagram-interactive { background: var(--ground); padding: 24px; }
 .book-diagram:not(.diagram-ready) .diagram-interactive { position: absolute; inset: 0 0 auto; visibility: hidden; pointer-events: none; width: 100%; }
 .book-diagram .diagram-static[hidden] { display: none; }
+.diagram-loading { display: none; }
+.reader-enhanced .book-diagram:is([data-diagram-status="loading"], [data-diagram-status="suspended"]) .diagram-loading { display: grid; position: absolute; inset: 0; place-items: center; background: var(--ground); color: var(--muted); font: 16px/1.5 var(--ui); }
+.diagram-loading::after { content: "Loading interactive diagram…"; }
 /* Keep the measured placeholder while an offscreen view is suspended. A tall
    poster must not expand it; print and failure states still show the poster. */
 .book-diagram.diagram-suspended .diagram-static { display: none; }
@@ -71,6 +74,6 @@
 }
 @media print {
   .book-diagram { min-height: 0; margin-inline: 0; }
-  .book-diagram .diagram-interactive, .diagram-notice { display: none !important; }
+  .book-diagram .diagram-interactive, .diagram-notice, .diagram-loading { display: none !important; }
   .book-diagram .diagram-static { display: block !important; }
 }

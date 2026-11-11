@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1160" role="img" aria-labelledby="title desc">
 <title id="title">Three airflow jobs in the Boxster body</title>
-<desc id="desc">Functional plan view with the front at the top. Outside air crosses the front radiators and warmed air leaves below and around the front end. Coolant carries engine heat forward to those radiators. The vehicle-left side inlet supplies the air cleaner and then the engine intake. The vehicle-right side inlet supplies the space around the engine, assisted by an engine-compartment blower. Left and right follow the direction of travel. The car outline establishes relative locations; arrows are functional connections, not exact ducts or measured streamlines.</desc>
+<desc id="desc">Functional plan view with the front at the top. Outside air crosses the front radiators and warmed air leaves below and around the front end. Coolant carries engine heat forward to those radiators. The vehicle-left side inlet supplies the air cleaner and then the engine intake. The vehicle-right side inlet has an air-guide channel and fan supplying the engine compartment. The fan symbol identifies that assembly, without depicting its exact mounting position or blade count. Left and right follow the direction of travel. The car outline establishes relative locations; arrows are functional connections, not exact ducts or measured streamlines.</desc>
 <defs>
   <marker id="body-air-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#357694"/></marker>
   <marker id="body-air-warm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#a35d32"/></marker>
@@ -44,7 +44,13 @@
     <path d="M32 478H148"/>
     <path d="M280 470H325V489"/>
     <path d="M568 453H461"/>
-    <path d="M442 457V533"/>
+    <path d="M442 502V533"/>
+  </g>
+  <!-- PET 801-080 separates the right air guide, scoop and fan; symbol only. -->
+  <g stroke="#357694" stroke-width="3" fill="#dce8e8">
+    <circle cx="442" cy="478" r="18"/>
+    <path d="M442 464V492M428 478H456M432 468L452 488M432 488L452 468"/>
+    <circle cx="442" cy="478" r="4" fill="#357694"/>
   </g>
   <circle cx="63" cy="432" r="20" fill="#357694"/>
   <text x="63" y="442" text-anchor="middle" fill="#fff" font-weight="bold">2</text>
@@ -71,7 +77,7 @@
   <text x="47" y="989" text-anchor="middle" fill="#fff" font-weight="bold">3</text>
   <text x="82" y="989" font-weight="bold">Right: ventilate the engine bay</text>
   <text x="28" y="1031">Air enters the space around the engine.</text>
-  <text x="28" y="1067">A blower assists this flow.</text>
+  <text x="28" y="1067">A fan in its duct assists this flow.</text>
   <text x="300" y="1114" text-anchor="middle" font-size="23">Left/right follow the direction of travel.</text>
   <text x="300" y="1145" text-anchor="middle" font-size="23">Functional plan; ducts and exits are schematic.</text>
 </g>

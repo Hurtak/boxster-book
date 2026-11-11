@@ -17,3 +17,9 @@ Both third-party images are Porsche factory illustrations retained locally for t
 - **Local treatment:** Embedded JPEG extracted from the same PDF with Poppler`pdfimages`, image003,971×536pixels. The original numbered key is a separate PDF text/vector overlay and is not part of the JPEG; no unreadable spread text is reproduced. No compositing or part changes.
 
 The chapter's schematic SVGs, D3 interactive and 3D component explorer are original explanatory artwork created for the book. Their shapes and routes are functional schematics, not Porsche CAD or workshop assembly drawings.
+
+## Factory parts drawings in `../part-reference/`
+
+The chapter now preserves 32 complete original PET pages across 14 plates, with all numbered callouts and original headers/footers retained. These are **Porsche AG factory illustrations and text**, separately hosted original documents, not book-created MIT artwork. Source: *Boxster 2009–2012 PET*, **987209/P33, snapshot 19 July 2018**, [original PDF](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf). Retrieved/reopened 10 November 2026; full PDF SHA-256 `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`.
+
+Poppler converted each full page to a 1,800-pixel-longest-edge PNG without crop, compositing, redrawing or callout removal. The [local register](../part-reference/README.md) lists each file, original page, plate, item IDs and engine/equipment qualifiers. [Verification](../part-reference/verification.md) distinguishes factory-backed identity/attachment from the original schematics and illustrative 3D geometry. Copyright remains Porsche's.

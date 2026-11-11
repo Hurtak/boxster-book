@@ -11,12 +11,14 @@ export function useReader(chapters: Chapter[]) {
   const active = chapters.find(c => c.id === activeId);
   const destination = useRef('');
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const locationChanged = () => {
       let id = ''; try { id = decodeURIComponent(location.hash.slice(1)); } catch { /* malformed fragment */ }
       destination.current = id;
       const owner = document.getElementById(id)?.closest('section.level2')?.id;
-      if (id !== 'book') currentId.current = chapters.some(c => c.id === owner) ? owner! : null;
+      const next=id==='book'?currentId.current:chapters.some(c=>c.id===owner)?owner!:null;
+      if(next!==currentId.current || !document.documentElement.classList.contains('reader-enhanced'))document.documentElement.dataset.readerPending='true';
+      currentId.current=next;
       setActiveId(currentId.current); setDialogOpen(false); setEnhanced(true);
       setRoute(value=>value+1);
     };
@@ -29,21 +31,37 @@ export function useReader(chapters: Chapter[]) {
     return () => removeEventListener('hashchange', locationChanged);
   }, [chapters]);
 
-  // Route scrolling is part of the committed layout. A deferred frame can run
-  // after a reader starts using a diagram and pull them back to the title.
+  // Settle fonts and lightweight panel layouts before the final anchor scroll.
+  // The reading sheet stays hidden until then; superseded routes cannot scroll
+  // after the reader has started interacting with the next chapter.
   useLayoutEffect(()=>{
     if(!enhanced)return;
+    let cancelled=false;
     const id=destination.current,target=document.getElementById(id);
     for(let node=target?.closest('details');node;node=node.parentElement?.closest('details'))node.open=true;
     const owner=target?.closest('section.level2');
-    if(owner && target){
-      const focus=target===owner?owner.firstElementChild:target.matches('details')?target.firstElementChild:target;
-      if(focus instanceof HTMLElement){focus.scrollIntoView({block:'start'});if(focus.tagName!=='SUMMARY')focus.tabIndex=-1;focus.focus({preventScroll:true});}
-    }else if(!id||id==='title'){
-      scrollTo(0,0);
-      if(!initial.current){const heading=document.querySelector<HTMLElement>('#title>:first-child');if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}}
-    }else if(id==='book')document.getElementById('book')?.focus({preventScroll:true});
-    initial.current=false;
+    const diagrams=[...document.querySelectorAll<HTMLElement>('#book > section.level2:not([hidden]) [data-diagram]')];
+    document.querySelectorAll('#book > section.level2[hidden] [data-diagram]').forEach(node=>node.dispatchEvent(new Event('diagram-suspend')));
+    const preparing=document.documentElement.hasAttribute('data-reader-pending');
+    if(preparing)diagrams.forEach(node=>node.dispatchEvent(new Event('diagram-prepare')));
+    const settle=async()=>{
+      await document.fonts.ready;
+      while(!cancelled && preparing && diagrams.some(node=>node.dataset.layoutReady!=='true'))await new Promise(requestAnimationFrame);
+      if(cancelled)return;
+      let focus:Element|null|undefined;
+      if(owner&&target){
+        focus=target===owner?owner.firstElementChild:target.matches('details')?target.firstElementChild:target;
+        focus?.scrollIntoView({block:'start'});
+      }else if(!id||id==='title'){
+        scrollTo(0,0);
+        if(!initial.current)focus=document.querySelector('#title>:first-child');
+      }else if(id==='book')focus=document.getElementById('book');
+      delete document.documentElement.dataset.readerPending;
+      if(focus instanceof HTMLElement){if(focus.tagName!=='SUMMARY')focus.tabIndex=-1;focus.focus({preventScroll:true});}
+      initial.current=false;
+    };
+    void settle();
+    return ()=>{cancelled=true;};
   },[route,enhanced]);
 
   useLayoutEffect(() => {

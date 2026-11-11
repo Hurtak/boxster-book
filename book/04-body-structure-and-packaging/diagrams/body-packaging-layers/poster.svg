@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" role="img" aria-labelledby="title desc" viewBox="0 0 600 620">
 <title id="title">Three spaces behind the seats, with different access covers</title>
-<desc id="desc">Illustrative rear-half side cutaway, front to the left. A seat and rear cabin boundary locate the roof bay above the engine. The rear boot is farther back and holds 130 litres with the roof lowered. The roof-bay outer cover and rear boot lid are separate; trim and a removable engine cover are internal layers. A flap within the boot gives access to oil and coolant fillers. Expanded gaps and generic shapes do not represent measured geometry or a removal sequence.</desc>
+<desc id="desc">Illustrative rear-half side cutaway, front to the left. A seat and rear cabin boundary locate the roof bay above the engine. The rear boot is farther back and holds 130 litres with the roof lowered. The roof-bay outer cover and rear boot lid are separate; carpet trim, a removable engine cover and its perimeter seal are internal layers. A flap within the boot gives access to oil and coolant fillers. Expanded gaps and generic shapes do not represent measured geometry or a removal sequence.</desc>
 <rect width="600" height="620" fill="#f7f6f0"/>
 <text x="24" y="31" text-anchor="start" font-size="25" fill="#63736a">← Front</text>
 <text x="576" y="31" text-anchor="end" font-size="25" fill="#63736a">Rear →</text>
@@ -39,9 +39,10 @@
 <path d="M185 281L195 289M208 281L218 289M231 281L241 289M254 281L264 289M277 281L287 289M300 281L310 289M323 281L333 289M346 281L356 289" fill="none" stroke="#6f7d69" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
 </path>
 <text x="272" y="308" text-anchor="middle" font-size="26" fill="#253d32">Trim above</text>
-<text x="272" y="347" text-anchor="middle" font-size="26" fill="#a35d32">engine cover</text>
+<text x="272" y="347" text-anchor="middle" font-size="26" fill="#a35d32">Cover + seal</text>
 <path d="M174 358H369" fill="none" stroke="#a35d32" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7">
 </path>
+<path d="M177 365H366" fill="none" stroke="#716958" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M185 380L207 368H337L360 380V423H185Z" fill="#d3e1d3" stroke="#176b53" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
 </path>
 <path d="M194 380H226M319 380H352" fill="none" stroke="#176b53" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">

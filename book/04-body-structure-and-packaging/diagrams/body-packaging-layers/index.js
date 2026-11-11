@@ -5,7 +5,7 @@ const layers = [
   { id: 'all', label: 'All spaces', text: 'Behind the seats, the folding roof has its own bay above the engine region. The rear boot is farther back. The roof-bay cover and rear luggage lid are separate exterior panels; the removable engine cover is an internal service layer.' },
   { id: 'luggage', label: 'Rear boot', text: 'The rear boot has its own luggage lid. Porsche quotes 130 litres even with the ordinary powered roof lowered: the folded roof uses its dedicated bay. A small flap inside the boot exposes oil and coolant fillers, rather than the complete engine.' },
   { id: 'roof', label: 'Roof bay', text: 'The folded roof occupies the bay immediately behind the occupants, above the engine region. Its exterior compartment cover moves to provide clearance during roof operation. This is a different panel from the rear luggage lid.' },
-  { id: 'access', label: 'Service layers', text: 'Trim and a removable engine cover separate the roof region from top engine access. A different, small flap in the rear boot exposes the oil and coolant fillers. The highlighted parts identify access boundaries, not steps in a removal procedure.' },
+  { id: 'access', label: 'Service layers', text: 'Carpet trim lies above the removable top engine cover and its perimeter seal (PET 807-005, items 1, 5 and 7). A separate cover behind the cabin rear-wall trim provides another access boundary. The rear boot has a different small flap for the oil and coolant fillers. These are component relationships, not removal steps.' },
 ];
 
 export function mount(host, { state, signal }) {
@@ -24,7 +24,7 @@ export function mount(host, { state, signal }) {
     svg.selectAll('*').remove();
     svg.attr('viewBox', '0 0 600 620');
     svg.append('title').text('Three spaces behind the seats, with different access covers');
-    svg.append('desc').text('Illustrative rear-half side cutaway, front to the left. A seat and rear cabin boundary locate the roof bay above the engine. The rear boot is farther back and holds 130 litres with the roof lowered. The roof-bay outer cover and rear boot lid are separate; trim and a removable engine cover are internal layers. A flap within the boot gives access to oil and coolant fillers. Expanded gaps and generic shapes do not represent measured geometry or a removal sequence.');
+    svg.append('desc').text('Illustrative rear-half side cutaway, front to the left. A seat and rear cabin boundary locate the roof bay above the engine. The rear boot is farther back and holds 130 litres with the roof lowered. The roof-bay outer cover and rear boot lid are separate; carpet trim, a removable engine cover and its perimeter seal are internal layers. A flap within the boot gives access to oil and coolant fillers. Expanded gaps and generic shapes do not represent measured geometry or a removal sequence.');
     const chosen = layers.find(layer => layer.id === state.layer);
     const selected = id => state.layer === 'all' || state.layer === id;
     const ink = '#253d32', muted = '#63736a';
@@ -66,8 +66,9 @@ export function mount(host, { state, signal }) {
     path('M178 285H366', tone(activeAccess, '#6f7d69'), 5);
     path('M185 281L195 289M208 281L218 289M231 281L241 289M254 281L264 289M277 281L287 289M300 281L310 289M323 281L333 289M346 281L356 289', tone(activeAccess, '#6f7d69'), 1.5);
     text(272, 308, 'Trim above', activeAccess ? ink : muted, 26);
-    text(272, 347, 'engine cover', activeAccess ? service : muted, 26);
+    text(272, 347, 'Cover + seal', activeAccess ? service : muted, 26);
     path('M174 358H369', tone(activeAccess, service), activeAccess ? 7 : 4, 'none', '10 7');
+    path('M177 365H366', tone(activeAccess, '#716958'), activeAccess ? 3 : 2);
     path('M185 380L207 368H337L360 380V423H185Z', tone(activeAccess, engine), activeAccess ? 3.5 : 2, activeAccess ? '#d3e1d3' : '#dde5db');
     path('M194 380H226M319 380H352', tone(activeAccess, engine), 5);
     text(272, 409, 'Engine', activeAccess ? ink : muted);
