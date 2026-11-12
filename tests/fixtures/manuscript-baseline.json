@@ -1,5 +1,5 @@
 {
-  "revision": "3a3ee94ef10705717e0a8e82834b2a403cbbf7fa",
+  "revision": "0d6b41ec91f6ab75d353d846d4d21d37f7a7c536",
   "chapters": [
     {
       "id": "book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__the-2010-boxster-2.9-in-the-987.2-family",
@@ -22,12 +22,8 @@
           "title": "Where the Cayman fits"
         },
         {
-          "id": "book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__reading-evidence-and-condition",
-          "title": "Reading evidence and condition"
-        },
-        {
-          "id": "book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__reading-this-book",
-          "title": "Reading this book"
+          "id": "book__01-the-2010-boxster-2-9-in-the-987-2-family__index.md__how-to-read-this-book",
+          "title": "How to read this book"
         }
       ],
       "tables": [],
@@ -42,13 +38,13 @@
           "alt": "Three stacked cards distinguish the original 987, revised 987.2 and succeeding 981. The 2010 2.9 belongs to the middle card.",
           "width": null,
           "style": null,
-          "captionHash": "c1e38d6f215acbdeb55fd59f8d3b1abb1ad2756ddeb72186048e16d325f03071"
+          "captionHash": "130e3968b2619e4e38d9ac7ea07e8da640947eb5ddf78298b3f906bf4665c5ac"
         },
         {
           "alt": "A simplified side view places front luggage, two seats, the engine ahead of the rear axle, and the rear luggage compartment.",
           "width": null,
           "style": null,
-          "captionHash": "255bba4f59f5b764af7beb8af768b6dfbff21ea326f192533895d72bb909dcb9"
+          "captionHash": "65a1407f1d459afed36c18e6f580f9ff5e23ab3cd17fec4587e91bf41784c239"
         },
         {
           "alt": "The reference Boxster 2.9 has 188 kW / 255 PS, multipoint injection and a powered fabric roof. The selector compares the S and later derivatives against that baseline.",
@@ -60,7 +56,7 @@
           "alt": "The ordinary green Boxster seen from behind on a road, showing the two-seat cabin, rear deck and central exhaust outlet.",
           "width": null,
           "style": null,
-          "captionHash": "89a4bcc008601288a4c04215f2f779e3d77e25ae1912e2c7f9a78970c04be96b"
+          "captionHash": "03520780e81a7b0047ffe679db4b7e8e1bc18b4d0e4597908ac5db540b0ef832"
         }
       ],
       "notes": [
@@ -126,39 +122,39 @@
         }
       ],
       "diagrams": ["family-variant-selector"],
-      "textHash": "6e97d3e55bde059c77e4905eddde54a3aa8fa80b8afba16a49529454764b7c61"
+      "textHash": "b2d2510f93eb52f0f428a1aa2a300b6a5ffd3f7860f6d66109c0f7912fc26cfd"
     },
     {
       "id": "book__02-the-yearly-timeline__index.md__the-yearly-timeline",
       "title": "The yearly timeline",
       "headings": [
         {
-          "id": "book__02-the-yearly-timeline__index.md__five-dates-that-answer-different-questions",
-          "title": "Five dates that answer different questions"
+          "id": "book__02-the-yearly-timeline__index.md__which-date-answers-which-question",
+          "title": "Which date answers which question"
         },
         {
           "id": "book__02-the-yearly-timeline__index.md__late-2008-the-2.9-is-announced",
           "title": "Late 2008: the 2.9 is announced"
         },
         {
-          "id": "book__02-the-yearly-timeline__index.md__the-principal-revision-reaches-customers",
-          "title": "2009: the principal revision reaches customers"
+          "id": "book__02-the-yearly-timeline__index.md__the-new-range-reaches-customers",
+          "title": "2009: the new range reaches customers"
         },
         {
-          "id": "book__02-the-yearly-timeline__index.md__the-reference-car-then-the-spyder",
-          "title": "2010: the reference car, then the Spyder"
+          "id": "book__02-the-yearly-timeline__index.md__the-reference-car-and-the-spyder",
+          "title": "2010: the reference car and the Spyder"
         },
         {
-          "id": "book__02-the-yearly-timeline__index.md__a-numbered-s-derivative",
-          "title": "2011: a numbered S derivative"
+          "id": "book__02-the-yearly-timeline__index.md__the-black-edition",
+          "title": "2011: the Black Edition"
         },
         {
-          "id": "book__02-the-yearly-timeline__index.md__identify-the-outgoing-car-before-reading-its-specification",
-          "title": "2012: identify the outgoing car before reading its\nspecification"
+          "id": "book__02-the-yearly-timeline__index.md__the-last-987s-and-the-new-981",
+          "title": "2012: the last 987s and the new 981"
         },
         {
           "id": "book__02-the-yearly-timeline__index.md__reading-an-individual-cars-history",
-          "title": "Reading an individual car’s history"
+          "title": "Reading an individual car's history"
         }
       ],
       "tables": ["08a4c73f98d349abb7b216d31c95b618cf49e0e6e9634fbecfe12cf95ea13ed8"],
@@ -167,7 +163,7 @@
           "alt": "Announcement, market availability, model year, build date and registration describe different events. The first two concern a product range; the last two concern an individual car.",
           "width": null,
           "style": null,
-          "captionHash": "24b46ab7165fb337683b4933cc14a1cf9588c62a142419bff7a58b0f7d224e08"
+          "captionHash": "8d5835926a8f85b8b74a2932dc3abeee247e7ba8a2e83ca245d290728a2ee226"
         },
         {
           "alt": "The initial timeline selects 2010: a January UK reference brochure and the February Spyder introduction planned in Porsche's Dutch announcement. Porsche Classic's later 2011 heading is a separate label.",
@@ -191,7 +187,7 @@
           "alt": "Two specification columns distinguish the outgoing 987.2 base Boxster, with a 2.9-litre port-injected engine and 188 kW, from the incoming 981 base Boxster, with a 2.7-litre direct-injected engine and 195 kW. A 2012 registration alone cannot choose between them.",
           "width": null,
           "style": null,
-          "captionHash": "b393e4fee4ceb61bf4efa1539832a33c85e652952fa7cecda442a2903d96db23"
+          "captionHash": "7cffb13f56dd6a71a124cc7fd7a3f2157a2b8848828a4c53e29dc18ca22646e7"
         }
       ],
       "notes": [
@@ -292,7 +288,7 @@
         }
       ],
       "diagrams": ["timeline-evidence"],
-      "textHash": "5ca5549f6a8c3c06251b69e07d2b6aa2ed837bac5d38550f9b0e7c9ca3d35b7d"
+      "textHash": "609f1d884efaa76fa9abf9a2baf1d796fa86e47d4d6c2103bb5a4ddd5e59395c"
     },
     {
       "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__the-2010-boxster-2.9-specification-and-options",
@@ -307,20 +303,20 @@
           "title": "What the gearbox changes"
         },
         {
-          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__dimensions-luggage-and-the-meaning-of-weight",
-          "title": "Dimensions, luggage and the meaning of weight"
+          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__dimensions-luggage-and-weight",
+          "title": "Dimensions, luggage and weight"
         },
         {
-          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__factory-options-grouped-by-purpose",
-          "title": "Factory options, grouped by purpose"
+          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__factory-options",
+          "title": "Factory options"
         },
         {
-          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__combinations-matter",
-          "title": "Combinations matter"
+          "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__options-that-depend-on-each-other",
+          "title": "Options that depend on each other"
         },
         {
           "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__reading-an-individual-cars-record",
-          "title": "Reading an individual car’s record"
+          "title": "Reading an individual car's record"
         },
         {
           "id": "book__03-the-2010-boxster-2-9-specification-and-options__index.md__other-years-and-other-boxsters",
@@ -350,7 +346,7 @@
           "alt": "Manual weight references: 1,335 kg DIN; add the EC allowance of 68 kg driver and 7 kg luggage to obtain 1,410 kg EC. The separately quoted permissible gross weight is 1,635 kg.",
           "width": null,
           "style": null,
-          "captionHash": "1957779b3150b6e8e2fffa75462c76f7df87c8260315065a3f482399d68e4def"
+          "captionHash": "437e9fd6365a99107702467c7d6fb13a2615a6e1e5340cff66ace840b40fe823"
         },
         {
           "alt": "Porsche photograph looking down into a tan Boxster cabin with both doors open, showing personalised interior trim and a manual gear lever.",
@@ -397,11 +393,6 @@
           "textHash": "a446f3abdcddf29b0ae924b72dd0e19c39d48c7056e09f83581249471c9ae767"
         },
         {
-          "id": "fn38",
-          "reference": "fnref38",
-          "textHash": "b42bbf63c61945d1e473db7721797051ef428744732fd24c6f7d32a107399d51"
-        },
-        {
           "id": "fn39",
           "reference": "fnref39",
           "textHash": "ab94716ae889362614c32b328ecd7bc811bca7392ced6160c4f2825a76781208"
@@ -412,8 +403,8 @@
           "textHash": "8200baa6317e3cb0a0e88088a8079ea373d76e18c9bfd46bc811c49c3f6211b6"
         },
         {
-          "id": "fn41",
-          "reference": "fnref41",
+          "id": "fn38",
+          "reference": "fnref38",
           "textHash": "b42bbf63c61945d1e473db7721797051ef428744732fd24c6f7d32a107399d51"
         },
         {
@@ -458,15 +449,15 @@
         }
       ],
       "diagrams": ["specification-gearbox-comparison", "specification-option-links"],
-      "textHash": "1c97495ac53c34000b1a285a89b5aed1ec5a468b3d67092cf4d5ce42dfbd5e35"
+      "textHash": "5fc21756f6be94b71474a78c331d561c13da95b01283486fa899f20808a183e9"
     },
     {
       "id": "book__04-body-structure-and-packaging__index.md__body-structure-and-packaging",
       "title": "Body structure and packaging",
       "headings": [
         {
-          "id": "book__04-body-structure-and-packaging__index.md__a-connected-shell-around-an-open-centre",
-          "title": "A connected shell around an open centre"
+          "id": "book__04-body-structure-and-packaging__index.md__a-connected-shell-around-an-open-cabin",
+          "title": "A connected shell around an open cabin"
         },
         {
           "id": "book__04-body-structure-and-packaging__index.md__stiffness-and-occupant-protection-have-different-aims",
@@ -481,8 +472,8 @@
           "title": "Two boots, with different shapes"
         },
         {
-          "id": "book__04-body-structure-and-packaging__index.md__the-body-also-guides-air",
-          "title": "The body also guides air"
+          "id": "book__04-body-structure-and-packaging__index.md__air-around-and-through-the-body",
+          "title": "Air around and through the body"
         },
         {
           "id": "book__04-body-structure-and-packaging__index.md__options-on-the-2010-2.9",
@@ -513,13 +504,13 @@
           "alt": "Plan-view schematic showing the sills, centre tunnel and transverse connections carrying loads around an open passenger compartment.",
           "width": null,
           "style": null,
-          "captionHash": "bb2564d767b0586b21c974364514c4b268c084825f0c44d3c13ce0467011f7b1"
+          "captionHash": "35b732867e047b22598049ee943a7f9b9ae75626558e5156908600a35c5b9f6d"
         },
         {
           "alt": "Porsche factory cutaway illustration exposing the front structure, sills, windscreen frame and rollover structures, with material categories shown in colour.",
           "width": null,
           "style": null,
-          "captionHash": "7ab52b31adcfb3d6f609ec2a73ae1ca78dfc189992aa0c34de352d346449508e"
+          "captionHash": "b2ec108ae41edc21eca795ff89401741bae474d24139cb7eaa65c4163eee6c96"
         },
         {
           "alt": "A rear-half section separates seats, the roof bay above the engine cover, the engine below and the rear boot farther back. The roof cover and rear boot lid are different panels.",
@@ -529,21 +520,21 @@
         },
         {
           "alt": "Factory exploded drawing separating the upper engine cover and its perimeter seal from the carpet, rear-wall access cover and surrounding trim.",
-          "width": "540",
+          "width": "540px",
           "style": null,
-          "captionHash": "41f4c1aeae193871168b40a28533a0a07b97cfbce80af6c9484386a7c442497a"
+          "captionHash": "a74ca27bf7bdb87049953067d3613381bd2889e54f2e1ec31846ef7ef1e7305d"
         },
         {
           "alt": "A red Boxster S with the front and rear luggage lids raised together, showing that the folded roof and two luggage openings occupy separate regions.",
           "width": null,
           "style": null,
-          "captionHash": "4cbb614b73cc0f7fd122660e91bb6c4fb3951e578315fdd1bef56a78a8b77687"
+          "captionHash": "a323e139b4b72e27568d0aaf2a33f5b7085005b40c4c05f6ef9677f7dcdc529b"
         },
         {
           "alt": "Functional flow map separating front radiator airflow, left-side combustion-air intake and right-side engine-compartment ventilation.",
           "width": null,
           "style": null,
-          "captionHash": "e7ceae4e25c08ec90a802c8361f580a216da77ed5c72322413a81003ad104e6d"
+          "captionHash": "f07e226f4f44e5e7189c619039d0fd6a53913ff9c411ba85bb8e0d0f20972f18"
         }
       ],
       "notes": [
@@ -624,7 +615,7 @@
         }
       ],
       "diagrams": ["body-explorer", "body-packaging-layers"],
-      "textHash": "1afa323fab15e02b5275d77c4243d75d6312e5681a6d3328edfe3b78246d03c7"
+      "textHash": "ab8ac5abad3b5b7e7ed77a170298c00dd4c5d1c0b0a0df6fefeef5e5ae1e192a"
     },
     {
       "id": "book__05-engine-construction-and-valve-gear__index.md__engine-construction-and-valve-gear",
@@ -643,20 +634,20 @@
           "title": "Four strokes turn fuel into rotation"
         },
         {
-          "id": "book__05-engine-construction-and-valve-gear__index.md__understanding-the-dimensions-and-output",
-          "title": "Understanding the dimensions and output"
+          "id": "book__05-engine-construction-and-valve-gear__index.md__bore-stroke-torque-and-power",
+          "title": "Bore, stroke, torque and power"
         },
         {
           "id": "book__05-engine-construction-and-valve-gear__index.md__crankcase-crankshaft-rods-and-pistons",
           "title": "Crankcase, crankshaft, rods and pistons"
         },
         {
-          "id": "book__05-engine-construction-and-valve-gear__index.md__heads-and-valves-control-the-gas-exchange",
-          "title": "Heads and valves control the gas exchange"
+          "id": "book__05-engine-construction-and-valve-gear__index.md__cylinder-heads-and-valves",
+          "title": "Cylinder heads and valves"
         },
         {
-          "id": "book__05-engine-construction-and-valve-gear__index.md__chains-synchronise-crankshaft-and-camshafts",
-          "title": "Chains synchronise crankshaft and camshafts"
+          "id": "book__05-engine-construction-and-valve-gear__index.md__chains-drive-the-camshafts",
+          "title": "Chains drive the camshafts"
         },
         {
           "id": "book__05-engine-construction-and-valve-gear__index.md__the-external-accessory-drive",
@@ -695,13 +686,13 @@
           "alt": "A complete used 987-generation 2.9-litre engine, viewed from its gearbox end, with a broad black intake assembly above the low aluminium crankcase.",
           "width": null,
           "style": null,
-          "captionHash": "203091b1cba7652242d9615a717f48e16a412756dc7679d7d46647e105cc6ac7"
+          "captionHash": "11f66fab35bde839773be38acc73c99cb4f01f6e6f9684afcaa56c94ec7c514e"
         },
         {
           "alt": "A plan of the 2010 2.9 shows three cylinders on either side of the crankshaft, connecting rods between pistons and crank throws, and two camshafts in each outer cylinder head.",
           "width": null,
           "style": null,
-          "captionHash": "e74f7418f239d085274b2431c559775ce58ca2473ae0618152f3b2a631b55931"
+          "captionHash": "4f00b29affd61fd3c001a49f36d03e6bffda7caf1dd1d5950dd8183badbefc92"
         },
         {
           "alt": "Intake, compression, power and exhaust occupy two crankshaft revolutions. The crank turns 720 degrees while each camshaft turns 360 degrees; the illustrated valve events are simplified to the stroke boundaries.",
@@ -711,27 +702,27 @@
         },
         {
           "alt": "Exploded crankshaft drawing with a separate connecting rod and cap, bearing shells, end seals, flywheel and pulley.",
-          "width": "520",
+          "width": "520px",
           "style": null,
-          "captionHash": "f3978547fd376ecb2b8e745bd568fa74bf6d76c3fddb84280ac67282a26a0e87"
+          "captionHash": "6651c057da2dd5672db2acfd1a98013abb000850f45a72ba1319e6a04a6d27c7"
         },
         {
           "alt": "Exploded piston group showing three separate rings, a hollow piston pin and two retaining clips.",
-          "width": "580",
+          "width": "580px",
           "style": null,
-          "captionHash": "cf4fb6a58249805992e8e91cddfc214f7f484310e8fac6140756cb3a89f0a23b"
+          "captionHash": "3d929eafe0aebd2fce25feabd8c5c4ec82dcaa83792dd0902e390a68e03640a2"
         },
         {
           "alt": "A connection schematic shows the crankshaft driving two chains and four camshafts, with guide rails and oil-fed hydraulic tensioners. There is no intermediate shaft between crankshaft and camshafts.",
           "width": null,
           "style": null,
-          "captionHash": "7785ae5a5eaf27ea9b7152c209f2f71bfb1f34e1699a115b7269734de8bce076"
+          "captionHash": "83235bb896479d8b576dc09739ac08bf928b16c9a115dc5a58866f3a86fdecfd"
         },
         {
           "alt": "A functional accessory-drive map connects the crankshaft pulley and common belt to four loads: alternator, hydraulic steering pump, A/C compressor and coolant pump. A hydraulic tensioner controls the belt.",
           "width": null,
           "style": null,
-          "captionHash": "79fa4eed9c605125457f2f16c895e0966805a93040f8f0f5e63aee9b22ba938c"
+          "captionHash": "d2b5072e873b881a43b956f44af05a5b04f3082ed59ff38931e4cfc9c3ade408"
         },
         {
           "alt": "Moving a valve event earlier changes its timing, while switching from 3.6 to 10.0 millimetres changes peak inlet lift. Curves and durations are illustrative, not a measured Porsche valve map.",
@@ -743,7 +734,7 @@
           "alt": "Porsche's period photograph of the 3.4-litre Boxster S engine, viewed from its accessory-drive end, showing pulleys above and around the crankshaft pulley.",
           "width": null,
           "style": null,
-          "captionHash": "5ab66cd41243a1669adad22f262aeeeaa92cabf021c41c8d20bd0fcd02b1f032"
+          "captionHash": "a3dbf51436e1623e15ea641a6b5b89fa3af0d466f0eb72a76feec08a009d27f3"
         }
       ],
       "notes": [
@@ -781,6 +772,11 @@
           "id": "fn71",
           "reference": "fnref71",
           "textHash": "ef0aef04dfaf8b2bd6ccfc56bf1e7da6fa3a32e933283dd3f54203dda3a96052"
+        },
+        {
+          "id": "book__05-engine-construction-and-valve-gear__index.md__note-70b27deb2ba84ace-2",
+          "reference": "book__05-engine-construction-and-valve-gear__index.md__noteref-70b27deb2ba84ace-2",
+          "textHash": "c0f602eb9e8bc39c69a9bce6cf6954e549b51a7b76f4ba0b159cbb6402e1c073"
         },
         {
           "id": "fn72",
@@ -848,11 +844,6 @@
           "textHash": "7ff6eb2c9673e783b921ea99af160f61fd25167750ee86a69e8b077ed8a2f097"
         },
         {
-          "id": "fn85",
-          "reference": "fnref85",
-          "textHash": "7ff6eb2c9673e783b921ea99af160f61fd25167750ee86a69e8b077ed8a2f097"
-        },
-        {
           "id": "fn86",
           "reference": "fnref86",
           "textHash": "1a572fad1f91b3211ae5e3185dfaee9a1d7fd37d96552ec9d1f6f0eb83f7d509"
@@ -879,7 +870,7 @@
         }
       ],
       "diagrams": ["engine-explorer", "engine-four-stroke", "engine-timing-lift"],
-      "textHash": "abe714502823406669e3e9746fb34c93218bcc3166aad1305dbfd9ed9d24973f"
+      "textHash": "abafb15b140ba624cb78dc39a8ff2a4e1572fae522f1ab5dadf812ce794b42e1"
     },
     {
       "id": "book__06-air-fuel-ignition-and-engine-control__index.md__air-fuel-ignition-and-engine-control",
@@ -906,8 +897,8 @@
           "title": "Crankcase ventilation and oil separation"
         },
         {
-          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__making-the-spark-useful",
-          "title": "Making the spark useful"
+          "id": "book__06-air-fuel-ignition-and-engine-control__index.md__ignition-and-knock-control",
+          "title": "Ignition and knock control"
         },
         {
           "id": "book__06-air-fuel-ignition-and-engine-control__index.md__what-the-controller-needs-to-know",
@@ -950,37 +941,37 @@
           "alt": "Schematic flow from air filter through MAF and throttle to the resonance intake and the cylinders’ inlet ports.",
           "width": null,
           "style": null,
-          "captionHash": "1d2b0ff00540e7accf4cd7d9adaff20c662e9468031977b13583ba5833a7eb1d"
+          "captionHash": "f40de4b733e31b4a2378d2d2c971f9a5fb2cdc11f2f703a132bae30bd364a011"
         },
         {
           "alt": "Exploded air-cleaner housing with a cylindrical filter element, removable cover, airflow meter and flexible outlet duct.",
-          "width": "540",
+          "width": "540px",
           "style": null,
-          "captionHash": "5bad02b2101fd37cabea36d98a7ccdead3b3307baa9cd23e74d8779d0f701853"
+          "captionHash": "ea7515d429e0e481ee4e60ef5c87a12447c6ee43d3cd24b16b9a604d14cd6955"
         },
         {
           "alt": "Factory drawing of the 2.9 intake with linked fuel rails above both banks and one injector separated to show its clips and seals.",
-          "width": "540",
+          "width": "540px",
           "style": null,
-          "captionHash": "7def72c90254291f47f08bfac4ff0786f3138807d5e7c9878952a8f1defc9ec1"
+          "captionHash": "77cad234742b514ca6e8836520da1900f2d3cef431923036cf07fc4ac9a47f70"
         },
         {
           "alt": "Port injection places the fuel spray before the inlet valve; the 3.4 DFI comparison places it in the cylinder.",
           "width": null,
           "style": null,
-          "captionHash": "ae948f003dc250e58394faa53e2ce521991793753746eb93f2338917f32ab279"
+          "captionHash": "e76bee8e46bece6e9a8196dae004d7a110b2fda329cc2e31005ea68d3ef29552"
         },
         {
           "alt": "Two separate fuel paths connect the front tank and rear engine: pressurised liquid through pump, filter/regulation and injectors; vapour through the carbon canister and controlled purge to the intake.",
           "width": null,
           "style": null,
-          "captionHash": "6144804a26acf8d5112e685270bd973424aa0a50fe0d35cb729efa029a763e0c"
+          "captionHash": "9eaaea328b2a2f5653352e0b69a13f5c7b6db3233cedd4e6502db7138589ea0e"
         },
         {
           "alt": "Blow-by enters the crankcase past the piston rings, reaches oil separation, then returns as ventilated gas to the intake. Separated oil returns to the engine’s oil collection; it is not sent through the carbon canister.",
           "width": null,
           "style": null,
-          "captionHash": "5ff1fcaab1793d4fae14568c53eb50f7ead6a5986db75d8c1982eaa4026bbef2"
+          "captionHash": "77eb2c9ee2f16ccfc3c3e1bdbd0308fe3dc9726efdc24c3721ef5cbaec4c38be"
         },
         {
           "alt": "Ten per cent additional unmetered air initially gives lambda 1.100 in this illustrative model. Successive fuel corrections approach lambda one.",
@@ -992,7 +983,7 @@
           "alt": "Porsche's period photograph of the dashboard-mounted Sport Chrono stopwatch.",
           "width": null,
           "style": null,
-          "captionHash": "b5ce65be6e5119621bac0efcd168f89f27da9eb5d3f646dd13bd4690d0fb65b9"
+          "captionHash": "bc32ca7bb1f5b181773a8d9174abd7bd3a0f9998af5997f013e9bc0d59b37c91"
         }
       ],
       "notes": [
@@ -1069,11 +1060,6 @@
         {
           "id": "fn105",
           "reference": "fnref105",
-          "textHash": "65e62ce2355a9d226d29b69d0c86bbab6f8401a4690f3330567d64f9f70faba0"
-        },
-        {
-          "id": "fn106",
-          "reference": "fnref106",
           "textHash": "65e62ce2355a9d226d29b69d0c86bbab6f8401a4690f3330567d64f9f70faba0"
         },
         {
@@ -1198,7 +1184,7 @@
         }
       ],
       "diagrams": ["intake-explorer", "engine-mixture-feedback"],
-      "textHash": "7cc34d44ca6188ee2f7586f4a524be5fafbdad1f1b0c32defd0b65fc375124d6"
+      "textHash": "ee28eab1ebf6796a6e7a1763447e471a2b2131e31de9059f1385012b56c65391"
     },
     {
       "id": "book__07-lubrication-cooling-and-exhaust__index.md__lubrication-cooling-and-exhaust",
@@ -1209,20 +1195,20 @@
           "title": "Oil collection and pressure supply"
         },
         {
-          "id": "book__07-lubrication-cooling-and-exhaust__index.md__reading-the-oil-level",
-          "title": "Reading the oil level"
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__checking-the-oil-level",
+          "title": "Checking the oil level"
         },
         {
-          "id": "book__07-lubrication-cooling-and-exhaust__index.md__moving-heat-to-the-front",
-          "title": "Moving heat to the front"
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__carrying-heat-to-the-front",
+          "title": "Carrying heat to the front"
         },
         {
-          "id": "book__07-lubrication-cooling-and-exhaust__index.md__where-oil-and-water-exchange-heat",
-          "title": "Where oil and water exchange heat"
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__where-oil-and-coolant-exchange-heat",
+          "title": "Where oil and coolant exchange heat"
         },
         {
-          "id": "book__07-lubrication-cooling-and-exhaust__index.md__exhaust-collection-treatment-and-silencing",
-          "title": "Exhaust collection, treatment and silencing"
+          "id": "book__07-lubrication-cooling-and-exhaust__index.md__the-exhaust-cleaning-and-silencing",
+          "title": "The exhaust: cleaning and silencing"
         },
         {
           "id": "book__07-lubrication-cooling-and-exhaust__index.md__options-on-the-2010-2.9",
@@ -1253,13 +1239,13 @@
           "alt": "Four pumps return oil from the two heads; the fifth supplies the pressure circuit. The drawing groups functions and does not specify the order of every filter, cooler and gallery passage.",
           "width": null,
           "style": null,
-          "captionHash": "8c14aec5330c695d631e1baa6bc462f7773335e23626fc3b002edc73e4ced4bc"
+          "captionHash": "58201dcf9c4e742ee0e6e016332c052ef430bff67427e8ab27881861bf0b824c"
         },
         {
           "alt": "Porsche's period cutaway places the radiator installation at the front and the engine, rear silencers and coolant expansion tank towards the rear. This is the brochure's Boxster S illustration, used to show the shared mid-engine packaging rather than to identify the reference car's options. © Porsche AG.",
           "width": null,
           "style": null,
-          "captionHash": "67f8f1dc789824d3ce4611996c6acc10a1e592de3e2c6c1f53643cd073c64935"
+          "captionHash": "645f84c78c2b334dd8707749116fe67b4e7155204f9af1a6edda22cdacfe8201"
         },
         {
           "alt": "During warm-up, coolant keeps circulating through the engine's short return path while the thermostat restricts the front radiator route. Once warm, the radiator circuit opens; electric fans can assist airflow when required.",
@@ -1271,25 +1257,25 @@
           "alt": "The exchanger transfers heat across a metal wall while keeping oil and coolant separate. The arrows depict hotter oil losing heat to cooler coolant; the direction reverses if their relative temperatures reverse.",
           "width": null,
           "style": null,
-          "captionHash": "c939ec440acfe84aec7ada162bda3cf9cdcc468e502c61657639b6dff4224387"
+          "captionHash": "4d4c4e3e1f3258c4d922693e84f0a41a445701a67d25c41d5c3a70efafb3acfe"
         },
         {
           "alt": "Exploded oil-conducting housing with the filter insert and cup below, heat exchanger above, and separate oil separator.",
-          "width": "520",
+          "width": "520px",
           "style": null,
-          "captionHash": "4fd5b2f668d5b7dc54e8348df6064ac8c0217c7e966a16ce7ffd9ddfae33ba1f"
+          "captionHash": "ef13671712413c672af108bc2db5e13750fc85920096d797b5b46c4c04cb8e41"
         },
         {
           "alt": "Each bank has two catalyst bricks within one manifold/converter assembly, with an oxygen sensor before the first brick and another between the bricks. The schematic shows gas-treatment sequence and connected silencers.",
           "width": null,
           "style": null,
-          "captionHash": "4c0adabe5be3b365afd9a72712fc6a60595c368583160e9a249af0f85898bc79"
+          "captionHash": "ebdaa6e207b5279c06f3841e8ebb8c7540f7eb487b2585423e6641822b0adc46"
         },
         {
           "alt": "The standard Boxster S exhaust pictured by Porsche shows two manifold/catalyst assemblies, two rear silencers, connecting pipes and twin central outlets. Porsche describes the 2.9 system as matching the S apart from its tailpipe. © Porsche AG.",
           "width": null,
           "style": null,
-          "captionHash": "d6fec84aa8643df8d41a7e79f19a80a4a75038cbc209e06ec3cdb6094e344a42"
+          "captionHash": "7c7c4e40efd43c6520b6de94965722d841c6a136aadde4cbedc8ec4e252acbdb"
         }
       ],
       "notes": [
@@ -1400,7 +1386,7 @@
         }
       ],
       "diagrams": ["fluids-explorer", "fluid-cooling-path"],
-      "textHash": "954b5d373eb964f7db3fde5d25807bbb214c6ee0e23b3de642e5718860857c35"
+      "textHash": "ef8e25bf5598fef4f55625e6ac5cbc61458e18743a1dae97353be6f83d2b75d0"
     },
     {
       "id": "book__08-manual-transmission-and-clutch__index.md__manual-transmission-and-clutch",
@@ -1411,12 +1397,16 @@
           "title": "The flywheel and clutch make a controllable connection"
         },
         {
-          "id": "book__08-manual-transmission-and-clutch__index.md__from-pedal-movement-to-release-movement",
-          "title": "From pedal movement to release movement"
+          "id": "book__08-manual-transmission-and-clutch__index.md__how-the-pedal-releases-the-clutch",
+          "title": "How the pedal releases the clutch"
         },
         {
           "id": "book__08-manual-transmission-and-clutch__index.md__what-the-gear-lever-actually-moves",
           "title": "What the gear lever actually moves"
+        },
+        {
+          "id": "book__08-manual-transmission-and-clutch__index.md__constant-mesh-and-synchronisers",
+          "title": "Constant mesh and synchronisers"
         },
         {
           "id": "book__08-manual-transmission-and-clutch__index.md__ratios-exchange-speed-for-torque",
@@ -1451,25 +1441,25 @@
           "alt": "Two clutch sections compare the pedal-up state, with the friction plate clamped, against the pedal-down state, with pressure relieved. A separate path shows pedal force reaching the release mechanism through the master cylinder, fluid and slave cylinder.",
           "width": null,
           "style": null,
-          "captionHash": "5022587eba4ea08dff8b7a697f8990b0671241ab81897ed50459ba221457e749"
+          "captionHash": "2d047f0a1616196e46d9e4ea4a7bba50b9a3427b6520a3e3954fd8fd300e3c9a"
         },
         {
           "alt": "Clutch exploded drawing separating the pressure assembly and driven plate from the release lever, bearing and guide sleeve.",
-          "width": "560",
+          "width": "560px",
           "style": null,
-          "captionHash": "2c130a247332e484dc9b3634be082df76b55434da5a61884951ea89867d70245"
+          "captionHash": "1cffa4c7c0447f09fccf6f112e2b8a70bcd5ba8807ff835308d187cc2f2ef342"
         },
         {
           "alt": "Porsche's period close-up of the six-speed manual gear lever in a tan centre console.",
           "width": null,
           "style": null,
-          "captionHash": "faf334fc80699ddab1e51733f119e7c4d5ca42bd2786bb6272fc12c1e7841690"
+          "captionHash": "5dd67854233fbd4c62eb780d662f77afd66036f15d0a7e5cc176b42f35bc3d76"
         },
         {
           "alt": "A simplified two-ratio constant-mesh gearbox shows both gear pairs meshed, with one free-running wheel locked to the output shaft by a sliding sleeve. A three-stage strip explains cone friction, matching speeds and tooth engagement.",
           "width": null,
           "style": null,
-          "captionHash": "5c869a3ad56c4ba4fcee42366705bc6cf50f9f26546ef99e6064669dc71f56a8"
+          "captionHash": "f6be46c8422b7a5830cc37d574e278b6e8e58d7506918ca7c7852906c94c7cda"
         },
         {
           "alt": "At an illustrative 3,000 engine rpm and 200 Nm, third gear's 1.407 ratio and 3.875 final drive give 550 wheel rpm, 69.3 km/h with a 2.10 metre circumference, and 1,090 Nm total after the final drive.",
@@ -1581,15 +1571,15 @@
         }
       ],
       "diagrams": ["manual-explorer", "manual-ratio-explorer"],
-      "textHash": "aaed2e9de8e5eb2ff8014f775b1fd466e5c69505225fb6fc84046aaeb1dfdd40"
+      "textHash": "968e293ae4732b722f3655839598c42903f353827961cfbbf615433fe52d7e6f"
     },
     {
       "id": "book__09-pdk-transmission__index.md__pdk-transmission",
       "title": "PDK transmission",
       "headings": [
         {
-          "id": "book__09-pdk-transmission__index.md__two-clutches-and-two-inputs",
-          "title": "Two clutches and two inputs"
+          "id": "book__09-pdk-transmission__index.md__two-clutches-and-two-input-shafts",
+          "title": "Two clutches and two input shafts"
         },
         {
           "id": "book__09-pdk-transmission__index.md__what-happens-during-a-shift",
@@ -1624,7 +1614,7 @@
           "title": "Identification and ageing"
         }
       ],
-      "tables": ["8e65fa0efad74f0cff39ef7039bfea65a36ac9d2d8c0bfa5c19581eba5d342bb"],
+      "tables": ["f4a7ec6a2f29e8b11af1a772ea8b2b9ee25955a6e2d8146596a12f01e68c9fce"],
       "figures": [
         {
           "alt": "Optional PDK behind the engine connects its flywheel, nested K1 and K2 packs, concentric shafts and sample gearing to the rear final drive. The cutaway housing, bolted sump, support brackets, separate controller, heat exchanger and selector cable locate its connections to the car.",
@@ -1636,13 +1626,13 @@
           "alt": "Porsche factory cutaway of the seven-speed PDK, showing the gear train, clutch end and final-drive assembly in one housing.",
           "width": null,
           "style": null,
-          "captionHash": "dcf703e161a133342cee3d4b44f74d4f5059907ecdb2222b09a00205acf7e8d1"
+          "captionHash": "b1b47e24d6a985f4c23802fede87eb333ddab022b885bd27ff83af35ffe46bb2"
         },
         {
           "alt": "End view of concentric input shafts: inner shaft 1 serves odd gears and reverse; hollow shaft 2 serves even gears. Outer clutch K1 connects to inner shaft 1, while inner clutch K2 connects to hollow shaft 2.",
           "width": null,
           "style": null,
-          "captionHash": "b5d0109f6cb82628bcf72fb02bb7dd63851e7ad00e3355ebf04b6b4dad118de3"
+          "captionHash": "1e033c27214ba5f9989332aea3a3dff391c911225aee8f43ec2e881478781d5a"
         },
         {
           "alt": "First gear drives through closed clutch K1 while second is preselected behind open clutch K2. Both gear paths feed the final drive, but only the closed-clutch path carries engine drive in this steady state.",
@@ -1654,19 +1644,19 @@
           "alt": "Period Porsche cabin photograph with the optional three-spoke paddle steering wheel and PDK selector.",
           "width": null,
           "style": null,
-          "captionHash": "c22d401534c1a22d943db0ff18914061af6cbd56c516191b82f5fe550f4c4a76"
+          "captionHash": "cf50b2c973e3586bec8203f89a0d7ee28959cadc076acd1d039bd7e6f52bce8a"
         },
         {
           "alt": "PDK transmission housing above a separated hydraulic control block and bolted oil sump, with output flanges beside the housing.",
-          "width": "520",
+          "width": "520px",
           "style": null,
-          "captionHash": "2e0d81be084490855fc56f1f5a59fe40c93e0ec6635efeba2a8a5f399e9c2fc2"
+          "captionHash": "063b53a04f0e7ca82121f6cf998d22046300a3ac9fb0d73e99cb40af75ff0712"
         },
         {
           "alt": "PDK control and oil functions: an electronic controller commands hydraulic clutch and selector operation; clutch heat reaches an oil-to-coolant exchanger, while separate gear oil lubricates the gears and final drive and loses heat through the housing.",
           "width": null,
           "style": null,
-          "captionHash": "e5e04e5ff15c53b4b476b6a447298959e4153fbf5afc9f57c0681427c5d64e4b"
+          "captionHash": "c33dd1708bafb28a878cb2627c029ec3fd5682db33e19f1aa417954efad4c0c8"
         }
       ],
       "notes": [
@@ -1777,23 +1767,23 @@
         }
       ],
       "diagrams": ["pdk-explorer", "pdk-power-path"],
-      "textHash": "7c785c77dd947b04bf81de6a992c56fa52ab6a5bdfff3f2c20eb52abb7fa5477"
+      "textHash": "d81610d0174c235b308f7964059ffee3615244da3fce1671b4a0d322dde40afc"
     },
     {
       "id": "book__10-differential-driveshafts-and-mounts__index.md__differential-driveshafts-and-mounts",
       "title": "Differential, driveshafts and mounts",
       "headings": [
         {
-          "id": "book__10-differential-driveshafts-and-mounts__index.md__from-gearbox-to-rear-wheels",
-          "title": "From gearbox to rear wheels"
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__from-the-gearbox-to-the-wheels",
+          "title": "From the gearbox to the wheels"
         },
         {
-          "id": "book__10-differential-driveshafts-and-mounts__index.md__how-the-open-differential-makes-a-corner-possible",
-          "title": "How the open differential makes a corner possible"
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__the-open-differential",
+          "title": "The open differential"
         },
         {
-          "id": "book__10-differential-driveshafts-and-mounts__index.md__why-unequal-grip-limits-both-sides",
-          "title": "Why unequal grip limits both sides"
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__why-the-weaker-tyre-sets-the-limit",
+          "title": "Why the weaker tyre sets the limit"
         },
         {
           "id": "book__10-differential-driveshafts-and-mounts__index.md__mechanical-limited-slip-and-brake-intervention",
@@ -1804,8 +1794,8 @@
           "title": "Driveshaft joints, plunge and the hub"
         },
         {
-          "id": "book__10-differential-driveshafts-and-mounts__index.md__mounts-support-isolate-and-locate",
-          "title": "Mounts support, isolate and locate"
+          "id": "book__10-differential-driveshafts-and-mounts__index.md__engine-and-gearbox-mounts",
+          "title": "Engine and gearbox mounts"
         },
         {
           "id": "book__10-differential-driveshafts-and-mounts__index.md__options-on-the-2010-2.9",
@@ -1836,7 +1826,7 @@
           "alt": "Original plan-view schematic locating the engine ahead of the transaxle, the final drive between the rear driveshafts and three compliant power-unit support positions.",
           "width": null,
           "style": null,
-          "captionHash": "b22a8646d7b26d4dbc23f93c0944156be5e3514d60e0582ac7d0bde04ab48436"
+          "captionHash": "806048116ebc0f475163708857673bc713d12aa22c933d59e111b177dcfdf358"
         },
         {
           "alt": "At a carrier speed of 300 rpm, illustrative offsets of minus and plus 20 percent of carrier speed give left and right outputs of 240 and 360 rpm. Both output speeds average back to the carrier speed.",
@@ -1848,19 +1838,19 @@
           "alt": "Original schematic of a driveshaft between a fixed transmission flange and moving wheel, showing joint articulation, axial plunge and the separation between the rotating hub and stationary wheel carrier.",
           "width": null,
           "style": null,
-          "captionHash": "bc550cecb0c645166cb25ccd9de4d81e6a20e90b8a2a104605ef36b3c59edacd"
+          "captionHash": "6b0a27a4723c1c64f350a4a73258fc5122bc58d128522a82ade050e9636d000c"
         },
         {
           "alt": "Porsche's exploded parts illustration of a rear driveshaft, splined wheel hub, joint, flexible boots and retaining hardware.",
           "width": null,
           "style": null,
-          "captionHash": "22928dde572349c3d0e143707db4bf70441b73552e976c02d8ed8d187b39a9f1"
+          "captionHash": "e9955ed205a0797ea08144c2f78de6ce2173ddfe564efd3b53a29a27332738f9"
         },
         {
           "alt": "Porsche's engine-support illustration showing the mounting console, central compliant support, bracket and stops as separate parts.",
           "width": null,
           "style": null,
-          "captionHash": "c877ef99fed812566af432cfc1db4b49d1b43cd40f2a84c4f510ca17d1c73f24"
+          "captionHash": "ff8df2ad02437aa4ab5bcafbe84720c1387b0d51de5f041356d7b6c38dd4bf11"
         }
       ],
       "notes": [
@@ -1951,7 +1941,7 @@
         }
       ],
       "diagrams": ["drivetrain-explorer", "drivetrain-open-differential"],
-      "textHash": "b6dd9b1b781b4cea99a2b1cc2e5bd2eff63360224f272c0dd5a433cc0f56f9c7"
+      "textHash": "e88d718d454a1207e36fe61051e8916f573057f76f6cf5a1545f61abcfd816de"
     },
     {
       "id": "book__11-suspension-and-wheel-geometry__index.md__suspension-and-wheel-geometry",
@@ -1970,20 +1960,20 @@
           "title": "At the rear"
         },
         {
-          "id": "book__11-suspension-and-wheel-geometry__index.md__springs-support-dampers-settle",
-          "title": "Springs support; dampers settle"
+          "id": "book__11-suspension-and-wheel-geometry__index.md__springs-and-dampers",
+          "title": "Springs and dampers"
         },
         {
-          "id": "book__11-suspension-and-wheel-geometry__index.md__what-the-anti-roll-bars-add",
-          "title": "What the anti-roll bars add"
+          "id": "book__11-suspension-and-wheel-geometry__index.md__anti-roll-bars",
+          "title": "Anti-roll bars"
         },
         {
           "id": "book__11-suspension-and-wheel-geometry__index.md__compliance-and-unsprung-mass",
           "title": "Compliance and unsprung mass"
         },
         {
-          "id": "book__11-suspension-and-wheel-geometry__index.md__three-angles-that-describe-the-wheel",
-          "title": "Three angles that describe the wheel"
+          "id": "book__11-suspension-and-wheel-geometry__index.md__camber-caster-and-toe",
+          "title": "Camber, caster and toe"
         },
         {
           "id": "book__11-suspension-and-wheel-geometry__index.md__options-on-the-2010-2.9",
@@ -2020,25 +2010,25 @@
           "alt": "Porsche's isolated front axle assembly showing tall coil-over struts, lower arms, steering rack and red S brake calipers.",
           "width": null,
           "style": null,
-          "captionHash": "4fa959b889badd8e2cabf48a554a25e01a63dc72f70900df398cb4e23e39c7b3"
+          "captionHash": "c36525648b3669206ba2a04af2d3c747931c56be23790e7069b1ff9a6753ae06"
         },
         {
           "alt": "Porsche's rear axle assembly showing its two coil-over struts, wheel carriers and several lower guiding links.",
           "width": null,
           "style": null,
-          "captionHash": "bb8f0ea3f61a0dc1563422bd66d25f50b68c650cde6b96a1a1b94503f0f5acba"
+          "captionHash": "7f98ac972665c31d6bbe05a527725d022907dfc6c3d7f20921e17dd0a8261a4e"
         },
         {
           "alt": "A conceptual Boxster suspension corner routes vertical load through its coil-over strut and reacts tyre forces through the carrier, lower arm, guide and body. A key distinguishes the front steering tie rod from the rear toe-control link.",
           "width": null,
           "style": null,
-          "captionHash": "e40684fc62533c3ea76be6417a59557a1792cea061b08d3cbc4245460e636f94"
+          "captionHash": "03907c5d12615588666bf84630c2e77b1965c790d6e80039e8ff24f2b7ede933"
         },
         {
           "alt": "Front strut separated into damper, coil spring, protective bellows, auxiliary stop, bearing and upper mount, with optional PASM electronics beside it.",
-          "width": "520",
+          "width": "520px",
           "style": null,
-          "captionHash": "45ad1e6e0c3ce182bb7ad58a26c8cdc5b5ef052dbd035dfedbe063dd89da6d8d"
+          "captionHash": "d646c62d49dbd80a69cc2ac869e5d3be0bc4b7fd426dc3978ca10b90562231e4"
         },
         {
           "alt": "Two springs with equal compression carry equal additional spring force. A stationary ideal damper produces no force; a moving damper resists its motion. Position and velocity can therefore change independently.",
@@ -2056,13 +2046,13 @@
           "alt": "Camber is shown from the front, caster from the side and toe from above. Negative camber leans the tops inward; positive caster places the steering-axis top rearward; toe-in brings the wheel fronts closer together.",
           "width": null,
           "style": null,
-          "captionHash": "074ffe2e26efbb2c43b33c120d74e732c2f27d5cf7a209e683eac9b7622f9cac"
+          "captionHash": "c7ef5781667bf38df9e90266d928b5b751b6c743da7b56838150f52ad5d090be"
         },
         {
           "alt": "A white 987 Boxster Spyder cornering in Porsche's period catalogue photograph, showing its 19-inch wheels and distinctive rear bodywork.",
           "width": null,
           "style": null,
-          "captionHash": "5428a300bb2740c0eb39757a895aba83e9961a8c2ca61f7cad88b20edcb404fe"
+          "captionHash": "d7c524ad0e25c19887f5652ea8bafb5b0331feb3aa27575e548c1f5811060f62"
         }
       ],
       "notes": [
@@ -2148,43 +2138,51 @@
         }
       ],
       "diagrams": ["suspension-explorer", "suspension-spring-damper", "suspension-anti-roll"],
-      "textHash": "58f219468a6f53afa470265f6c533a1d3393a5f6169a9457046b0feb4a0e75a1"
+      "textHash": "57c6ca73125798ec075705fcd9614bbde1b159032c835c0f6ac3fc1df7d2f47a"
     },
     {
       "id": "book__12-steering-wheels-and-tyres__index.md__steering-wheels-and-tyres",
       "title": "Steering, wheels and tyres",
       "headings": [
         {
-          "id": "book__12-steering-wheels-and-tyres__index.md__from-steering-wheel-to-front-wheels",
-          "title": "From steering wheel to front wheels"
+          "id": "book__12-steering-wheels-and-tyres__index.md__from-the-steering-wheel-to-the-front-wheels",
+          "title": "From the steering wheel to the front wheels"
         },
         {
-          "id": "book__12-steering-wheels-and-tyres__index.md__what-the-hydraulic-assistance-contributes",
-          "title": "What the hydraulic assistance contributes"
+          "id": "book__12-steering-wheels-and-tyres__index.md__hydraulic-assistance",
+          "title": "Hydraulic assistance"
+        },
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__a-variable-ratio",
+          "title": "A variable ratio"
         },
         {
           "id": "book__12-steering-wheels-and-tyres__index.md__reading-a-wheel-and-tyre-size",
           "title": "Reading a wheel and tyre size"
         },
         {
-          "id": "book__12-steering-wheels-and-tyres__index.md__offset-and-the-mounting-face",
-          "title": "Offset and the mounting face"
+          "id": "book__12-steering-wheels-and-tyres__index.md__offset-and-bolt-pattern",
+          "title": "Offset and bolt pattern"
         },
         {
-          "id": "book__12-steering-wheels-and-tyres__index.md__what-the-tyre-does",
-          "title": "What the tyre does"
+          "id": "book__12-steering-wheels-and-tyres__index.md__how-a-tyre-works",
+          "title": "How a tyre works"
         },
         {
           "id": "book__12-steering-wheels-and-tyres__index.md__slip-and-the-shared-grip-budget",
           "title": "Slip and the shared grip budget"
         },
         {
-          "id": "book__12-steering-wheels-and-tyres__index.md__rolling-radius-road-speed-and-engine-speed",
-          "title": "Rolling radius, road speed and engine speed"
+          "id": "book__12-steering-wheels-and-tyres__index.md__rolling-size-and-engine-speed",
+          "title": "Rolling size and engine speed"
         },
         {
           "id": "book__12-steering-wheels-and-tyres__index.md__options-on-the-2010-2.9",
           "title": "Options on the 2010 2.9"
+        },
+        {
+          "id": "book__12-steering-wheels-and-tyres__index.md__tyre-pressure-monitoring",
+          "title": "Tyre-pressure monitoring"
         },
         {
           "id": "book__12-steering-wheels-and-tyres__index.md__changes-in-other-2.9-model-years",
@@ -2209,19 +2207,19 @@
         },
         {
           "alt": "Steering gear with a protective bellows, separate inner joint, locknut and outer ball-jointed track rod arranged along its end.",
-          "width": "620",
+          "width": "620px",
           "style": null,
-          "captionHash": "4b75fb9e55953dde9a609038fdc3a52b306660692df6d843fa5badd0c6f06751"
+          "captionHash": "6884fbd5680a8b6f4244b5d876c02fc55e6da5b0adcfeedc0473cd4262b1aa18"
         },
         {
           "alt": "The steering shaft turns a pinion; the rack slides sideways and moves two track rods, which turn the front carriers. An engine-driven pump supplies hydraulic assistance to the rack housing.",
           "width": null,
           "style": null,
-          "captionHash": "18d6007f2c7b67c0c37eb8d86fd655938f33050983962c39e9d5252b1b29e8bc"
+          "captionHash": "e16bd2d9bf72d3045146c6dc29476ae7fd67fb62fb31f8eba4e45b810cc765f5"
         },
         {
           "alt": "Porsche’s standard 17-inch Boxster III wheel and tyre, with its open five-spoke pattern.",
-          "width": "210",
+          "width": "210px",
           "style": null,
           "captionHash": "45ded3d2fba9934f68789126a1afad3291905151dd2f46af3a067a67a5dea702"
         },
@@ -2229,19 +2227,13 @@
           "alt": "A wheel section shows rim width between the flanges, its centre plane and a mounting face 55 mm towards the outside. A second outline shows how reducing offset at the same width moves the rim outwards.",
           "width": null,
           "style": null,
-          "captionHash": "4289a21614284e9e08051837776ae670ac9fe59ff0c5620e68032da2aded1904"
-        },
-        {
-          "alt": "A green ordinary Boxster behind a red Boxster S, each on a different optional 19-inch wheel design.",
-          "width": null,
-          "style": null,
-          "captionHash": "3512710604d71fce2840ef93e6cb1c855dc721e950b16f1ce4906f4ec0faf365"
+          "captionHash": "c294810aee74838c39e8f9eb303b8b8f7c978a6982b7b111cf0669356319a0ca"
         },
         {
           "alt": "A tyre viewed from above points slightly to the left of its travel arrow. The angle between its wheel plane and travel direction is slip angle; a lateral force acts across its path.",
           "width": null,
           "style": null,
-          "captionHash": "ab74fd534b7ac57d6ff7c08cf44bbb6525548fe765572a1a89f5623b823be85b"
+          "captionHash": "a88bb0372ad5036d95921c8dbcd98a37970dcf543239893923961c20f8ca588d"
         },
         {
           "alt": "With an illustrative capacity of 100 units, demands of 60 longitudinal and 60 cornering units give a resultant of 84.9, within the circle. At 60 longitudinal units, at most 80 cornering units remain.",
@@ -2254,6 +2246,12 @@
           "width": null,
           "style": null,
           "captionHash": "831340d5f2fc5fe322b1c0b2bc920c643951c54f33bc41759e16f823671e28ff"
+        },
+        {
+          "alt": "A green ordinary Boxster behind a red Boxster S, each on a different optional 19-inch wheel design.",
+          "width": null,
+          "style": null,
+          "captionHash": "3512710604d71fce2840ef93e6cb1c855dc721e950b16f1ce4906f4ec0faf365"
         }
       ],
       "notes": [
@@ -2374,7 +2372,7 @@
         }
       ],
       "diagrams": ["steering-explorer", "tyre-grip-budget", "tyres-rolling-size"],
-      "textHash": "25f2fdcca7a8a6308b1d28ca89107516f8a6329550744b3e234ad58841a53194"
+      "textHash": "24ea4d675f523e083e9822d3cd5a1fd7a20b99bbde1e399e7172bfe8470bb4e1"
     },
     {
       "id": "book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems",
@@ -2413,12 +2411,12 @@
           "title": "ABS and PSM"
         },
         {
-          "id": "book__13-brakes-and-stability-systems__index.md__abs-keeps-the-wheels-controllable",
-          "title": "ABS keeps the wheels controllable"
+          "id": "book__13-brakes-and-stability-systems__index.md__abs-keeps-the-wheels-turning",
+          "title": "ABS keeps the wheels turning"
         },
         {
           "id": "book__13-brakes-and-stability-systems__index.md__psm-watches-the-cars-direction",
-          "title": "PSM watches the car’s direction"
+          "title": "PSM watches the car's direction"
         },
         {
           "id": "book__13-brakes-and-stability-systems__index.md__preparing-for-an-urgent-stop",
@@ -2449,8 +2447,8 @@
           "title": "Identification and ageing"
         },
         {
-          "id": "book__13-brakes-and-stability-systems__index.md__identifying-the-fitted-version-1",
-          "title": "Identifying the fitted version"
+          "id": "book__13-brakes-and-stability-systems__index.md__which-brakes-are-fitted",
+          "title": "Which brakes are fitted"
         },
         {
           "id": "book__13-brakes-and-stability-systems__index.md__ageing-and-wear",
@@ -2458,7 +2456,7 @@
         }
       ],
       "tables": [
-        "269581d7a2af6dff185aae27f18960de18c353459b4a30b05f172b1c15725903",
+        "65b9ff8523e6c47ea68f236d8b0cbeb8a2f1c817dcf3d1b95d86c8179d8bb2e0",
         "b152675beb074fabda6aa1d3908da315953c6613f646a94a9c535711714106d0"
       ],
       "figures": [
@@ -2472,19 +2470,19 @@
           "alt": "The braking chain: foot force is assisted and converted to hydraulic pressure; calipers clamp the rotating discs, and road force on the tyres slows the car.",
           "width": null,
           "style": null,
-          "captionHash": "38abb6f6c8e1b654cb69d5baf350135ed70293eb9e02d454d363da2723b749d7"
+          "captionHash": "7cc5383a3056b435179d60845577afdf3126d72f6a4a7f8f8c79345f61eb18b9"
         },
         {
           "alt": "The exhaust camshaft drives a rear vacuum pump; a supply line and non-return valve serve the front booster. Pedal operation admits atmospheric pressure to one booster chamber so a pressure difference assists the pushrod into the hydraulic master cylinder.",
           "width": null,
           "style": null,
-          "captionHash": "7d9cbacef489e80027c767556cc3c67a13359dc9f66b7a6a48c6bde14b21a8ad"
+          "captionHash": "bfcb43a97929e02bd08e4f79c6f8d064d4aaa3e2ccfb54d9b567379eb4e6efc9"
         },
         {
           "alt": "Exploded front disc brake with disc, backing cover, caliper, pads, wear-indicator lead and pad-retaining hardware.",
-          "width": "520",
+          "width": "520px",
           "style": null,
-          "captionHash": "5935b1d8a312718de0e8bdc9ff13bbc6d5bcaa62bf70f149a9c8f21e281fdd0b"
+          "captionHash": "4792e11f4b4e980fa039826757b0222752fbd2ee3bbb747ae660638f9ac611d9"
         },
         {
           "alt": "A simplified fixed-caliper cutaway: two pistons on each side press two pads towards opposite faces of the brake disc.",
@@ -2500,9 +2498,9 @@
         },
         {
           "alt": "Two curved parking-brake shoes separated from their adjuster, return and retaining springs, and expanding mechanism.",
-          "width": "560",
+          "width": "560px",
           "style": null,
-          "captionHash": "304ef3d7e10ae958a3cf4b026ba862cdd0c7bc198a8d05127a5369e2f8f9b84d"
+          "captionHash": "77a900ffb15cb23be89419a50fc7eca0576f303be374c444d4e29463d3871a24"
         }
       ],
       "notes": [
@@ -2622,11 +2620,6 @@
           "textHash": "2127795e47031e055f90ea9d484d7f9c9c395efdf5ac2905b164720bbf845e3b"
         },
         {
-          "id": "fn272",
-          "reference": "fnref272",
-          "textHash": "2127795e47031e055f90ea9d484d7f9c9c395efdf5ac2905b164720bbf845e3b"
-        },
-        {
           "id": "fn273",
           "reference": "fnref273",
           "textHash": "fb21f5470ab6b2e89f94fbccc22ca4cc718774b6fca02ef6009117820a45d215"
@@ -2658,7 +2651,7 @@
         }
       ],
       "diagrams": ["brake-explorer", "caliper-pressure", "braking-energy"],
-      "textHash": "ee7b91af6d6d8541b62227afd7fbf237a916eec3aee973a7e9cc0b0d2b51e8ca"
+      "textHash": "ad95a1bd2a61386fb21a0923c02dcfe5bf104f5326b518cf7b2de00b5a2bcf13"
     },
     {
       "id": "book__14-roof-glass-seals-and-drainage__index.md__roof-glass-seals-and-drainage",
@@ -2677,16 +2670,16 @@
           "title": "The cover makes room for the folding frame"
         },
         {
-          "id": "book__14-roof-glass-seals-and-drainage__index.md__the-latch-and-electrical-controls-do-different-jobs",
-          "title": "The latch and electrical controls do different jobs"
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__latch-and-switches",
+          "title": "Latch and switches"
         },
         {
           "id": "book__14-roof-glass-seals-and-drainage__index.md__glass-and-weather-sealing",
           "title": "Glass and weather sealing"
         },
         {
-          "id": "book__14-roof-glass-seals-and-drainage__index.md__why-the-door-glass-makes-a-short-drop",
-          "title": "Why the door glass makes a short drop"
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__why-the-door-glass-drops-slightly",
+          "title": "Why the door glass drops slightly"
         },
         {
           "id": "book__14-roof-glass-seals-and-drainage__index.md__seals-need-the-right-contact",
@@ -2713,8 +2706,8 @@
           "title": "The Spyder takes a different approach"
         },
         {
-          "id": "book__14-roof-glass-seals-and-drainage__index.md__the-black-edition-retains-the-powered-roof",
-          "title": "The Black Edition retains the powered roof"
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__the-black-edition-keeps-the-powered-roof",
+          "title": "The Black Edition keeps the powered roof"
         },
         {
           "id": "book__14-roof-glass-seals-and-drainage__index.md__reading-the-signs-of-age",
@@ -2731,20 +2724,20 @@
         },
         {
           "alt": "The ordinary 987.2 roof closed, showing the curved fabric profile between the windscreen and rear deck.",
-          "width": null,
-          "style": "width:70.0%",
+          "width": "70%",
+          "style": null,
           "captionHash": "05adbdd489c112da840380fa885f78fd6aa96207fc275ad01d3db27475ab6393"
         },
         {
           "alt": "Connection map showing one roof motor driving left and right gearboxes through two flexible shafts, then levers and rods moving the roof frame and compartment cover.",
           "width": null,
           "style": null,
-          "captionHash": "ff1e900201585ec86a13509377904bcbf62ea6b7c97ba6fc60342ce15eebde87"
+          "captionHash": "312c43a675a5586dc724cb0f8596cd9b8b73d3a06f283e615a5226786b4023bd"
         },
         {
           "alt": "Porsche’s ordinary Boxster roof part-way through folding behind the seats, with the compartment cover raised.",
-          "width": null,
-          "style": "width:70.0%",
+          "width": "70%",
+          "style": null,
           "captionHash": "471062a4b8cc0ca2465c8edacbcbd6095d6673e22827eb9c6ef43b669af6b25b"
         },
         {
@@ -2757,13 +2750,13 @@
           "alt": "Conceptual end sections show raised frameless glass meeting a resilient roof seal, then the glass lowered slightly to give clearance before the door swings outwards.",
           "width": null,
           "style": null,
-          "captionHash": "5b9ffdb84f63053888433f893b554d62284b8f2c29895a53310d8770755f6c08"
+          "captionHash": "05d9b6e55acf5e82b16dbb54ba60537ef0349960294341dad9eaa6679c75c192"
         },
         {
           "alt": "Photograph of the left water-collecting tray, a shallow black moulded pan with a long contoured edge and several mounting and outlet features.",
-          "width": "650",
+          "width": "650px",
           "style": null,
-          "captionHash": "17d0f7f0f552e80e34bce2f0c753274573dc19c56ec6773b95b675c6f79403a9"
+          "captionHash": "3bc7104cb3bda782e294e05628e5e2aff8b728d5f2b7d9064d6ee53b25e17f2d"
         },
         {
           "alt": "With an intact upper seal, a clear drip-pan outlet lets water leave the body; blocking the same outlet lets water accumulate and eventually overflow.",
@@ -2773,8 +2766,8 @@
         },
         {
           "alt": "The ordinary Boxster’s three-piece wind deflector, with inserts in the roll-over bars and a transparent centre section.",
-          "width": null,
-          "style": "width:70.0%",
+          "width": "70%",
+          "style": null,
           "captionHash": "8373ff68b53ed78695d639dd920c61862fa3d65500025a317d385b216effb45e"
         },
         {
@@ -2787,7 +2780,7 @@
           "alt": "The 987 Boxster Spyder with its lightweight sunshield in place and the rear opening exposed, showing why it is distinct from the ordinary folding roof.",
           "width": null,
           "style": null,
-          "captionHash": "578ff62727488a15315c1e2bc37b40c2eb4bfc7e1b6dabb95d5d0c036fb24647"
+          "captionHash": "769e20059f1ae6d4918e28789ffce99109ff0a8e1e3e0ebd722ce5bfc86ca72f"
         }
       ],
       "notes": [
@@ -2819,6 +2812,11 @@
         {
           "id": "fn284",
           "reference": "fnref284",
+          "textHash": "508b1ef79d43314837eec387892b3e5f1b84e3edf0064b788dd6b26c7b345e41"
+        },
+        {
+          "id": "book__14-roof-glass-seals-and-drainage__index.md__note-9bf5a24e4aa77998-3",
+          "reference": "book__14-roof-glass-seals-and-drainage__index.md__noteref-9bf5a24e4aa77998-3",
           "textHash": "508b1ef79d43314837eec387892b3e5f1b84e3edf0064b788dd6b26c7b345e41"
         },
         {
@@ -2918,27 +2916,23 @@
         }
       ],
       "diagrams": ["roof-explorer", "roof-opening", "roof-drainage"],
-      "textHash": "2b0936c8fd20516e4adbe426a2a34d25dcba06cb934388847342f97f22eef762"
+      "textHash": "c50ebf6ed6365419293ad01778df6ac4a6cb98b74c99261e682632c25e693214"
     },
     {
       "id": "book__15-cabin-seating-and-climate__index.md__cabin-seating-and-climate",
       "title": "Cabin, seating and climate",
       "headings": [
         {
-          "id": "book__15-cabin-seating-and-climate__index.md__instruments-and-everyday-controls",
-          "title": "Instruments and everyday controls"
-        },
-        {
           "id": "book__15-cabin-seating-and-climate__index.md__a-seat-is-a-support-structure",
           "title": "A seat is a support structure"
         },
         {
-          "id": "book__15-cabin-seating-and-climate__index.md__electric-adjustment-bolsters-and-the-bucket-shell",
-          "title": "Electric adjustment, bolsters and the bucket shell"
+          "id": "book__15-cabin-seating-and-climate__index.md__electric-seats-adjustable-bolsters-and-the-bucket",
+          "title": "Electric seats, adjustable bolsters and the bucket"
         },
         {
-          "id": "book__15-cabin-seating-and-climate__index.md__heat-and-air-at-the-seat-surface",
-          "title": "Heat and air at the seat surface"
+          "id": "book__15-cabin-seating-and-climate__index.md__heated-and-ventilated-seats",
+          "title": "Heated and ventilated seats"
         },
         {
           "id": "book__15-cabin-seating-and-climate__index.md__two-heat-circuits-one-stream-of-cabin-air",
@@ -2947,6 +2941,10 @@
         {
           "id": "book__15-cabin-seating-and-climate__index.md__choosing-the-air-route",
           "title": "Choosing the air route"
+        },
+        {
+          "id": "book__15-cabin-seating-and-climate__index.md__instruments-and-everyday-controls",
+          "title": "Instruments and everyday controls"
         },
         {
           "id": "book__15-cabin-seating-and-climate__index.md__options-on-the-2010-2.9",
@@ -2980,6 +2978,42 @@
           "captionHash": "26746d54966c0af0a79540db9868d5073d6175bdd59bacd01222590d69a603c7"
         },
         {
+          "alt": "Exposed seat base frame and runners with the manual height lever, alternative side trims, switches and an optional child-seat bracket separated around it.",
+          "width": "580px",
+          "style": null,
+          "captionHash": "95d0934f13a1e5a26c84ca2b7fe3ad0b7f3621b702bdbc8d6e886ea5959b6892"
+        },
+        {
+          "alt": "A seat schematic separates its supporting frame, cushion and runners, and shows that fore-and-aft travel, height and backrest angle change different parts of the driving position.",
+          "width": null,
+          "style": null,
+          "captionHash": "a0ca6ad0c5c4c3b6bbf14f79bb748b85a5b21f31166aa006a82d9741e036376f"
+        },
+        {
+          "alt": "The optional folding sports bucket seat, with a deeply shaped shell, raised cushion bolsters and exposed mounting structure beneath.",
+          "width": "180px",
+          "style": null,
+          "captionHash": "89c906e4776142ca7e6a7578ff9a9f34842736ee494f9f24050fb2a748b25052"
+        },
+        {
+          "alt": "Separate loops show hot engine coolant delivering heat to a heater core and refrigerant taking cabin heat through an evaporator to the front condensers, with a receiver-drier before the expansion valve. Only heat crosses between the fluids and the cabin air.",
+          "width": null,
+          "style": null,
+          "captionHash": "b211e955d13065d9b060c57c77b651db6b75dc133530813107fb0127b2b1f254"
+        },
+        {
+          "alt": "Air-conditioning casing with a separate heater core, expansion valve, blower, flap motors and wiring arranged around it.",
+          "width": "540px",
+          "style": null,
+          "captionHash": "80145fdd5f9356eddb62954beb6f4ec60c396513be0264665a0036f647546f23"
+        },
+        {
+          "alt": "With fresh air selected, the blower moves air through an evaporator with A/C enabled, around the heater and towards the face vents. Recirculation changes the source; heater contribution changes heat addition; outlet selection changes the destination.",
+          "width": null,
+          "style": null,
+          "captionHash": "5c346be1a6ff1a5eb0dee626e3e1213ba572ad579467c7be5bf0141ee6478077"
+        },
+        {
           "alt": "The period Boxster S dashboard with aluminium-coloured instrument faces, an optional multifunction PDK steering wheel, PCM and automatic climate controls.",
           "width": null,
           "style": null,
@@ -2989,43 +3023,7 @@
           "alt": "A schematic dashboard map identifies the three-dial instrument cluster, steering-column controls, audio and climate panels, and the lower console’s roof and equipment-dependent mode controls. A separate key marks optional cruise and multifunction controls.",
           "width": null,
           "style": null,
-          "captionHash": "fc8c8ee2c8d7a68c8bba898a09a18d9c73c89f5638c8af1fcaed5bf0b333e191"
-        },
-        {
-          "alt": "Exposed seat base frame and runners with the manual height lever, alternative side trims, switches and an optional child-seat bracket separated around it.",
-          "width": "580",
-          "style": null,
-          "captionHash": "0a4a80632e83744b0fd0b90007b72bbc4eed51d6f614f83cdfc46eda4b6e80b6"
-        },
-        {
-          "alt": "A seat schematic separates its supporting frame, cushion and runners, and shows that fore-and-aft travel, height and backrest angle change different parts of the driving position.",
-          "width": null,
-          "style": null,
-          "captionHash": "19a90a242fb0b339d623397ef4bd356d101485c9d9889af6f9e834cdc1d97cce"
-        },
-        {
-          "alt": "The optional folding sports bucket seat, with a deeply shaped shell, raised cushion bolsters and exposed mounting structure beneath.",
-          "width": "180",
-          "style": null,
-          "captionHash": "89c906e4776142ca7e6a7578ff9a9f34842736ee494f9f24050fb2a748b25052"
-        },
-        {
-          "alt": "Separate loops show hot engine coolant delivering heat to a heater core and refrigerant taking cabin heat through an evaporator to the front condensers, with a receiver-drier before the expansion valve. Only heat crosses between the fluids and the cabin air.",
-          "width": null,
-          "style": null,
-          "captionHash": "65a8c692babaeaabd1702c9879b8ab025d4761649433e30cf164164e94e7e7e9"
-        },
-        {
-          "alt": "Air-conditioning casing with a separate heater core, expansion valve, blower, flap motors and wiring arranged around it.",
-          "width": "540",
-          "style": null,
-          "captionHash": "a2e676694b889bf114fb703113028426383df94bf75efc7951b058dfc90d9e96"
-        },
-        {
-          "alt": "With fresh air selected, the blower moves air through an evaporator with A/C enabled, around the heater and towards the face vents. Recirculation changes the source; heater contribution changes heat addition; outlet selection changes the destination.",
-          "width": null,
-          "style": null,
-          "captionHash": "5c346be1a6ff1a5eb0dee626e3e1213ba572ad579467c7be5bf0141ee6478077"
+          "captionHash": "c06185860488dca903fc09e31700cc646f5da53702ebba1ab4259bcacab85d4f"
         }
       ],
       "notes": [
@@ -3033,26 +3031,6 @@
           "id": "fn304",
           "reference": "fnref304",
           "textHash": "4961b34a9bccfeb3c414252e76c5fdca65c86b3f1586297f170d9bb85562ab17"
-        },
-        {
-          "id": "fn305",
-          "reference": "fnref305",
-          "textHash": "e57e9fc9be1648fa3fd3570859093d45a45d6d45c128d7a2fb23bf7a552f9ef3"
-        },
-        {
-          "id": "fn306",
-          "reference": "fnref306",
-          "textHash": "b0b85a9e72b8486da22831577113ef6ada0023fd02a4a3bb19c558f63b4d04ac"
-        },
-        {
-          "id": "fn307",
-          "reference": "fnref307",
-          "textHash": "e57e9fc9be1648fa3fd3570859093d45a45d6d45c128d7a2fb23bf7a552f9ef3"
-        },
-        {
-          "id": "fn308",
-          "reference": "fnref308",
-          "textHash": "e57e9fc9be1648fa3fd3570859093d45a45d6d45c128d7a2fb23bf7a552f9ef3"
         },
         {
           "id": "fn309",
@@ -3125,6 +3103,26 @@
           "textHash": "7865000639b6de7b81432cfba4003d05f92065105b9d554946af58e6bea074c0"
         },
         {
+          "id": "fn305",
+          "reference": "fnref305",
+          "textHash": "e57e9fc9be1648fa3fd3570859093d45a45d6d45c128d7a2fb23bf7a552f9ef3"
+        },
+        {
+          "id": "fn306",
+          "reference": "fnref306",
+          "textHash": "b0b85a9e72b8486da22831577113ef6ada0023fd02a4a3bb19c558f63b4d04ac"
+        },
+        {
+          "id": "fn307",
+          "reference": "fnref307",
+          "textHash": "e57e9fc9be1648fa3fd3570859093d45a45d6d45c128d7a2fb23bf7a552f9ef3"
+        },
+        {
+          "id": "fn308",
+          "reference": "fnref308",
+          "textHash": "e57e9fc9be1648fa3fd3570859093d45a45d6d45c128d7a2fb23bf7a552f9ef3"
+        },
+        {
           "id": "fn323",
           "reference": "fnref323",
           "textHash": "6c1274c1340a03a66663e2fdf9e42dab96edcb3d834f665c48c2d3c507aacf0b"
@@ -3156,31 +3154,31 @@
         }
       ],
       "diagrams": ["cabin-explorer", "cabin-air-route"],
-      "textHash": "ccf96a8c1ca5f0c4752c371d0d85c5d5aea338731d05b2f7ef31aad336c21b14"
+      "textHash": "76edb4f3880bc051ca5e3fdcca0ac79583ea442adb1eb0547bc8c7550e279f3a"
     },
     {
       "id": "book__16-lighting-electrical-systems-and-security__index.md__lighting-electrical-systems-and-security",
       "title": "Lighting, electrical systems and security",
       "headings": [
         {
-          "id": "book__16-lighting-electrical-systems-and-security__index.md__stored-energy-starting-and-charging",
-          "title": "Stored energy, starting and charging"
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__battery-starter-and-alternator",
+          "title": "Battery, starter and alternator"
         },
         {
-          "id": "book__16-lighting-electrical-systems-and-security__index.md__a-circuit-needs-a-return-path",
-          "title": "A circuit needs a return path"
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__circuits-earths-and-fuses",
+          "title": "Circuits, earths and fuses"
         },
         {
-          "id": "book__16-lighting-electrical-systems-and-security__index.md__controllers-carry-decisions-as-well-as-current",
-          "title": "Controllers carry decisions as well as current"
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__control-units-and-the-data-network",
+          "title": "Control units and the data network"
         },
         {
-          "id": "book__16-lighting-electrical-systems-and-security__index.md__halogen-bi-xenon-and-the-front-light-modules",
-          "title": "Halogen, bi-xenon and the front light modules"
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__halogen-and-bi-xenon-headlamps",
+          "title": "Halogen and bi-xenon headlamps"
         },
         {
-          "id": "book__16-lighting-electrical-systems-and-security__index.md__rear-lamps-and-everyday-visibility",
-          "title": "Rear lamps and everyday visibility"
+          "id": "book__16-lighting-electrical-systems-and-security__index.md__rear-and-convenience-lighting",
+          "title": "Rear and convenience lighting"
         },
         {
           "id": "book__16-lighting-electrical-systems-and-security__index.md__keys-locks-immobiliser-and-alarm",
@@ -3211,7 +3209,7 @@
           "title": "Identification and ageing"
         }
       ],
-      "tables": ["b5b442fbfe9e2c4b6f932bdfcaad12d687ee1f77d6f9760c7fb49bc2d7570b23"],
+      "tables": ["e65dc153ca441500f8fdab9b3a8e5cb5ca281d1aea9dfaa98c688a52d0d7ef5c"],
       "figures": [
         {
           "alt": "The front battery connects through a long positive feed to the rear starter and alternator; a protected branch supplies a front halogen lamp, while body and engine earth connections complete the circuit. Ignition and lighting controls have a separate request role.",
@@ -3223,7 +3221,7 @@
           "alt": "Starting uses stored battery energy to turn the starter and engine. Running reverses the energy relationship: the engine drives the alternator, which supplies electrical loads and can recharge the battery.",
           "width": null,
           "style": null,
-          "captionHash": "78dc5a49550a35697e831c025c3816e66c7e24deef12aa7bf47e0cc1e3a0af2a"
+          "captionHash": "4a8f158270695659444d4196b9c0066bb1b2b8e30145d871474cdb000513fc51"
         },
         {
           "alt": "An ideal 12-volt battery powers one 24-watt lamp through an intact fuse and a closed switch. The return path completes the circuit, giving 2 amperes. A second parallel lamp increases total current; an open fuse or return connection stops both lamps.",
@@ -3233,27 +3231,27 @@
         },
         {
           "alt": "Halogen headlamp assembly with H7 and H9 bulbs, indicator bulb, covers and carrier separated; the lower front light and side repeater appear below.",
-          "width": "540",
+          "width": "540px",
           "style": null,
-          "captionHash": "025955a69d4f47abf3e619b33ce1b1716575d810fa5faacc1d14c9db8649a10e"
+          "captionHash": "6590ac694052f0d69dd375afa368579f190cedf54f66e64f1276b44d91932463"
         },
         {
           "alt": "The standard front arrangement uses halogen headlamps and a separate fog-lamp and LED-position-light module. The optional arrangement adds bi-xenon road lighting, beam levelling and dynamic cornering, with dedicated LED daytime running lights below.",
           "width": null,
           "style": null,
-          "captionHash": "746b7f2ddf8cb6dd136f4ed3e2dbf5907eb0cf60033337ba66ec164f7799c3fc"
+          "captionHash": "23001d69d90aa69386774a751217fe73831bd0060d4586efe8fb92552d6d651c"
         },
         {
           "alt": "A red Boxster has bi-xenon main headlamps above separate illuminated LED front modules.",
           "width": null,
           "style": null,
-          "captionHash": "73d78e3259607c6fa467e1c00f922ae7f68a46183f491596aabdfba7d5ce8426"
+          "captionHash": "150a55c55a7dec93a496ec45c95fc6fa75baf7ab9307caf344c08005ef2aa58b"
         },
         {
           "alt": "The rear of a red Boxster S shows illuminated rear light signatures, one on each side of the luggage lid.",
           "width": null,
           "style": null,
-          "captionHash": "07c0f021e65b52c3fdfd519047bad24b8185af43f4664e6a9d20bb56977932b4"
+          "captionHash": "7e2844641616847220885b7db36f93a3cb918a941608efc9ae214a6f2da01724"
         }
       ],
       "notes": [
@@ -3323,14 +3321,14 @@
           "textHash": "257552feed8686305073a42947fb9af5dbe63ff5cfdce1bfdf809e7ecd60c295"
         },
         {
-          "id": "fn342",
-          "reference": "fnref342",
-          "textHash": "b9bb50f5a03401312f104f736781fcaaf156774d012b40c12c3de842be3fd432"
-        },
-        {
           "id": "fn343",
           "reference": "fnref343",
           "textHash": "257552feed8686305073a42947fb9af5dbe63ff5cfdce1bfdf809e7ecd60c295"
+        },
+        {
+          "id": "fn342",
+          "reference": "fnref342",
+          "textHash": "b9bb50f5a03401312f104f736781fcaaf156774d012b40c12c3de842be3fd432"
         },
         {
           "id": "fn344",
@@ -3424,27 +3422,31 @@
         }
       ],
       "diagrams": ["electrical-explorer", "electrical-current-path"],
-      "textHash": "bfa08fba4da355f492f8d39876f1d75b7ebec0d39a2152eee3993a45a7916698"
+      "textHash": "37e47dc81ec43794a4eed9d93287f0d3db1d1238326f947dadbfd931cd739739"
     },
     {
       "id": "book__17-audio-navigation-and-communication__index.md__audio-navigation-and-communication",
       "title": "Audio, navigation and communication",
       "headings": [
         {
-          "id": "book__17-audio-navigation-and-communication__index.md__from-stored-music-to-moving-air",
-          "title": "From stored music to moving air"
+          "id": "book__17-audio-navigation-and-communication__index.md__from-a-signal-to-moving-air",
+          "title": "From a signal to moving air"
         },
         {
-          "id": "book__17-audio-navigation-and-communication__index.md__cdr-30-and-pcm-3.0",
-          "title": "CDR-30 and PCM 3.0"
+          "id": "book__17-audio-navigation-and-communication__index.md__the-standard-cdr-30",
+          "title": "The standard CDR-30"
         },
         {
-          "id": "book__17-audio-navigation-and-communication__index.md__the-sound-packages",
-          "title": "The sound packages"
+          "id": "book__17-audio-navigation-and-communication__index.md__pcm-3.0-and-navigation",
+          "title": "PCM 3.0 and navigation"
         },
         {
-          "id": "book__17-audio-navigation-and-communication__index.md__external-players-and-telephone-equipment",
-          "title": "External players and telephone equipment"
+          "id": "book__17-audio-navigation-and-communication__index.md__sound-package-plus-and-bose",
+          "title": "Sound Package Plus and BOSE"
+        },
+        {
+          "id": "book__17-audio-navigation-and-communication__index.md__music-players-and-telephones",
+          "title": "Music players and telephones"
         },
         {
           "id": "book__17-audio-navigation-and-communication__index.md__options-on-the-2010-2.9",
@@ -3475,7 +3477,7 @@
           "alt": "An original schematic separates source selection, electrical amplification and the speaker’s conversion of current into movement.",
           "width": null,
           "style": null,
-          "captionHash": "4b248aca6bb8c3713899eb9a56b9a49d10412c888463aca5665985cc22f9af32"
+          "captionHash": "725d70a7bcbcdaeb844c17c3d3645986065501b334624b72eece423dab692db2"
         },
         {
           "alt": "The CDR-30’s monochrome screen and surrounding physical controls in Porsche’s period photograph.",
@@ -3487,13 +3489,13 @@
           "alt": "The PCM colour touchscreen and NAVI/MAP keys in Porsche’s period photograph.",
           "width": null,
           "style": null,
-          "captionHash": "7cb4093fd15fa23857e5f14c585079db942126e0ad11edbf5c5587aac31c297e"
+          "captionHash": "3af55dc488d8ed9b7b081bfd03fa7ee37b344a13091bd5d6e369c57c6afd1450"
         },
         {
           "alt": "Catalogue drawing comparing a dashboard tweeter and centre driver, door midrange and bass drivers, and the wide rear BOSE subwoofer enclosure.",
-          "width": "520",
+          "width": "520px",
           "style": null,
-          "captionHash": "4dced0a72096b9bb2ba8af51fceee2dcc91357e9110784ad09d2e1f66a730b93"
+          "captionHash": "8fd53e715d7cb503a8173988dcd82d00ff7e28b48693cc86135ce31508363415"
         },
         {
           "alt": "The initial example follows FM radio through CDR-30 and its output stages to the standard four speakers. Other sources require their corresponding interfaces, while the sound package determines the amplification route.",
@@ -3505,7 +3507,7 @@
           "alt": "Three telephone arrangements distinguish the device that actually connects to the mobile network: the mobile phone in HFP mode without an aerial-connected cradle, or the PCM telephone module with a direct SIM or compatible SAP connection.",
           "width": null,
           "style": null,
-          "captionHash": "25885a8b0d919e1a48b17675d6f124dee5d2a33c632fb758634733a212ea7acd"
+          "captionHash": "4a9ae904eabf8b8493aa0626578b03e3249886933c83244f03f2b7057f98ad88"
         }
       ],
       "notes": [
@@ -3517,6 +3519,11 @@
         {
           "id": "fn363",
           "reference": "fnref363",
+          "textHash": "ee76ecbcf4b9517b386ec190862bb10ffcdb2ae0e094fa1a76ac82c3c79103a9"
+        },
+        {
+          "id": "book__17-audio-navigation-and-communication__index.md__note-722d64a5a416d3ed-2",
+          "reference": "book__17-audio-navigation-and-communication__index.md__noteref-722d64a5a416d3ed-2",
           "textHash": "ee76ecbcf4b9517b386ec190862bb10ffcdb2ae0e094fa1a76ac82c3c79103a9"
         },
         {
@@ -3601,35 +3608,31 @@
         }
       ],
       "diagrams": ["audio-explorer", "audio-source-path"],
-      "textHash": "04c352570f074cf763bd9cb6f0dec3eba9fbe24d07bf4bf71994cc7b9e499da5"
+      "textHash": "9b664cbab7ee8ec7de4a7f0c554fe496169fca1b689f7c2977e79e5139ad0d81"
     },
     {
       "id": "book__18-occupant-protection-and-system-integration__index.md__occupant-protection-and-system-integration",
       "title": "Occupant protection and system integration",
       "headings": [
         {
-          "id": "book__18-occupant-protection-and-system-integration__index.md__space-for-the-occupants-time-to-slow-them",
-          "title": "Space for the occupants, time to slow them"
+          "id": "book__18-occupant-protection-and-system-integration__index.md__a-fixed-structure-around-the-cabin",
+          "title": "A fixed structure around the cabin"
         },
         {
-          "id": "book__18-occupant-protection-and-system-integration__index.md__three-belt-functions",
-          "title": "Three belt functions"
+          "id": "book__18-occupant-protection-and-system-integration__index.md__seat-belts",
+          "title": "Seat belts"
         },
         {
-          "id": "book__18-occupant-protection-and-system-integration__index.md__front-thorax-and-head-airbags",
-          "title": "Front, thorax and head airbags"
+          "id": "book__18-occupant-protection-and-system-integration__index.md__airbags",
+          "title": "Airbags"
         },
         {
-          "id": "book__18-occupant-protection-and-system-integration__index.md__permanent-rollover-structure",
-          "title": "Permanent rollover structure"
+          "id": "book__18-occupant-protection-and-system-integration__index.md__one-bend-many-systems",
+          "title": "One bend, many systems"
         },
         {
-          "id": "book__18-occupant-protection-and-system-integration__index.md__one-bend-connects-the-chassis",
-          "title": "One bend connects the chassis"
-        },
-        {
-          "id": "book__18-occupant-protection-and-system-integration__index.md__requests-decisions-and-physical-action",
-          "title": "Requests, decisions and physical action"
+          "id": "book__18-occupant-protection-and-system-integration__index.md__from-request-to-physical-action",
+          "title": "From request to physical action"
         },
         {
           "id": "book__18-occupant-protection-and-system-integration__index.md__options-on-the-2010-2.9",
@@ -3657,28 +3660,28 @@
           "captionHash": "9bbf425d16e1b8224d76f2a6b5f0acc8abe5d4d5a81d1521d91c959364e32b6f"
         },
         {
+          "alt": "An original schematic showing a reinforced windscreen frame at the front and two fixed steel rollover bars behind the seats, with upper belt anchorage points on the rear bars.",
+          "width": null,
+          "style": null,
+          "captionHash": "fac2231cff0acc7bd1daaddd1e4c5bc7e51adfca3982adc9192a3e464ccb900d"
+        },
+        {
+          "alt": "Joined rear rollover hoops and cross-member with a belt and retractor, buckle, and neighbouring roof drip pan and drain pipe separated below.",
+          "width": "520px",
+          "style": null,
+          "captionHash": "f0463bd7cc4848eacbeb3709da10d3287f865c89dd0c17b03a732a26c8e7c918"
+        },
+        {
           "alt": "A schematic occupant with diagonal and lap belt paths connected to the passenger cell. Three boxes distinguish normal reel locking, removal of slack by the pretensioner and control of belt force by the limiter.",
           "width": null,
           "style": null,
-          "captionHash": "ef94c6b1bed7715f7ea799a4dcb4fd59490c6fcde40fd8a726d70e3610145db5"
+          "captionHash": "69b64cf23ff16be55b6ea36e4e411982e3f94a1bd99748e512296180fdf0cd43"
         },
         {
           "alt": "Porsche factory illustration of an open red 987.2 Boxster with its front and side airbags inflated, showing the different locations around the two seats.",
           "width": null,
           "style": null,
-          "captionHash": "467aba04a7238044bafd3e083ea7c286f4d3073f20825b5a975e7f54fd4e2896"
-        },
-        {
-          "alt": "An original schematic showing a reinforced windscreen frame at the front and two fixed steel rollover bars behind the seats, with upper belt anchorage points on the rear bars.",
-          "width": null,
-          "style": null,
-          "captionHash": "c5f92a0b82c3029f68edf6256439eb964bc52761efacfc1bb72c38306d914f8e"
-        },
-        {
-          "alt": "Joined rear rollover hoops and cross-member with a belt and retractor, buckle, and neighbouring roof drip pan and drain pipe separated below.",
-          "width": "520",
-          "style": null,
-          "captionHash": "363300eb3c7894231c07371509dca9618c9e687d32c338e131301bd47b683f4d"
+          "captionHash": "fa2f16fcdb78bbf4249b93213d3f38770a126fe1f5d86be19be10d4452434c1a"
         },
         {
           "alt": "Acceleration in the standard manual car: pedal and engine information goes to DME, which controls throttle, injection and ignition. The driver's clutch and gear selection carry torque through the manual transmission. Fixed structure remains present and the crash restraint controller assesses its own inputs.",
@@ -3699,6 +3702,11 @@
           "textHash": "cdb2368e47c29fa072392da8921c2d100e8adacecc521fd0a51b8af9f6bffbfb"
         },
         {
+          "id": "fn385",
+          "reference": "fnref385",
+          "textHash": "cdb2368e47c29fa072392da8921c2d100e8adacecc521fd0a51b8af9f6bffbfb"
+        },
+        {
           "id": "fn382",
           "reference": "fnref382",
           "textHash": "d6338581d18b5a12a15fd980f528fc0fe2186440dd89bf6ccbab0bea3545e12d"
@@ -3714,8 +3722,8 @@
           "textHash": "d6338581d18b5a12a15fd980f528fc0fe2186440dd89bf6ccbab0bea3545e12d"
         },
         {
-          "id": "fn385",
-          "reference": "fnref385",
+          "id": "fn389",
+          "reference": "fnref389",
           "textHash": "cdb2368e47c29fa072392da8921c2d100e8adacecc521fd0a51b8af9f6bffbfb"
         },
         {
@@ -3732,11 +3740,6 @@
           "id": "fn388",
           "reference": "fnref388",
           "textHash": "65b270bcb3325e5940cc4d0d2de5bf39c4a10120d675f45906d80c37839965db"
-        },
-        {
-          "id": "fn389",
-          "reference": "fnref389",
-          "textHash": "cdb2368e47c29fa072392da8921c2d100e8adacecc521fd0a51b8af9f6bffbfb"
         },
         {
           "id": "fn390",
@@ -3785,7 +3788,7 @@
         }
       ],
       "diagrams": ["protection-explorer", "protection-system-scenarios"],
-      "textHash": "92df45bbc292378407b6d0ceba4b63122cb6058e9933351ce024c831be58f769"
+      "textHash": "2cb1bab57dd445b94bb84e4bf1ec4d7d780805dc63d866c4b8de946a963e05cd"
     },
     {
       "id": "book__19-reference-atlas-and-index__index.md__reference-atlas-and-index",
@@ -3915,7 +3918,7 @@
           "alt": "The baseline seat’s frame, cushion and runners, with separate fore/aft, height and backrest adjustments. Original schematic; it does not depict a particular leather colour.",
           "width": null,
           "style": null,
-          "captionHash": "2fb9b98cd8e874f3a2a248f5c5d6aafd162563c19be4ce5569099d64daa36800"
+          "captionHash": "2f404776a715daf6f95175f66ff12c68c3320e2231648e241ff496b9f6c0cff4"
         },
         {
           "alt": "Comfort seat · P15: catalogue seat photograph.",
@@ -4180,7 +4183,7 @@
         }
       ],
       "diagrams": [],
-      "textHash": "d61775313a376d6d2d4f659a7448a0416cd96674c6d5be3bcb3db6ff10b2011c"
+      "textHash": "7a834a6f5ca323d244225e353c49d585a1738e8762fdfcdf3a131e49b8ee368b"
     }
   ]
 }

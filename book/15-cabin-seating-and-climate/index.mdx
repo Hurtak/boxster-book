@@ -12,9 +12,9 @@ import seatFrameParts from "./images/pet-seat-frame.png";
 
 # Cabin, seating and climate
 
-The seat fixes the driver's relationship to the pedals, steering wheel and instruments. The ventilation system then manages the air around that position: where it comes from, where it goes, how much heat it carries and how much moisture it can remove. These are related parts of comfort, but they work by different mechanisms.
+The seat fixes the driver's position relative to the pedals, wheel and instruments. The ventilation system manages the air around that position: where it comes from, where it goes, and how much heat and moisture it carries. Both serve comfort, but by different mechanisms.
 
-The reference 2010 UK Boxster 2.9 has seats with manual fore-and-aft and height adjustment, electrically adjusted backrests and Alcantara seat centres. Air conditioning is standard; automatic climate control is optional. The switches and displays for these standard functions differ from the fully electric seat and automatic climate options below.[^baseline]
+The 2010 UK Boxster 2.9 has seats with manual fore-and-aft and height adjustment, electric backrests and Alcantara centres. Air conditioning is standard; automatic climate control is optional, with its own controls and display.[^baseline]
 
 <Diagram id="cabin-explorer" poster={illustration0} alt={"A spatial cabin cutaway locates the seat runners, frame and upholstery between the axles, the blower and two heat exchangers ahead of the occupants, and the ducts and coolant pipes connected to the air unit. Structural links distinguish body support from airflow and coolant flow."} />
 
@@ -24,9 +24,93 @@ Optional comfort seats with driver memory in a cabin fitted with PDK and other o
 
 </Figure>
 
+## A seat is a support structure
+
+A seat has a load-bearing frame, a sprung cushion, shaped foam and a cover. The cushion sits on springs in the base frame; a separate backrest frame carries the padding and integrated head restraint. The cushion spreads the occupant's weight, the backrest supports the upper body and raised bolsters resist sideways movement. Softness and support are separate qualities: a soft centre can sit between firm bolsters, and reshaping the bolsters changes where the body is held.
+
+The base slides on runners, setting pedal reach. Height changes eye level, headroom and the angle of the legs to the pedals. Backrest angle moves the shoulders and changes reach to the wheel. Setting one to an extreme and compensating with the others rarely gives a relaxed position.
+
+The standard seat and optional ordinary sports seat adjust the same way. A hand lever releases the runner lock, a pumping lever sets the height and an electric switch sets the backrest angle. The head restraint moves with the backrest and has no separate height adjustment. The sports seat adds firmer upholstery and more pronounced side support.[^seat-operation]
+
+<Figure src={seatFrameParts} alt="Exposed seat base frame and runners with the manual height lever, alternative side trims, switches and an optional child-seat bracket separated around it." width="580px">
+
+Without upholstery, the frame and runners (1) form the seat base and lever (2) works the manual height adjustment. The plate also shows electric-seat trims and the optional child-seat bracket (7, 8); no single seat has every part. Factory drawing: Porsche AG, [PET 817-008, PDF p. 457](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=457).
+
+</Figure>
+
+<Figure src={illustration5} alt={"A seat schematic separates its supporting frame, cushion and runners, and shows that fore-and-aft travel, height and backrest angle change different parts of the driving position."}>
+
+Runners, height and backrest each move a different part of the driving position, which is why the adjustments interact.
+
+</Figure>
+
+Start with pedal reach, then use seat height, backrest angle and the column's height and reach adjustment to bring the controls comfortably to hand. Porsche's handbook describes a slightly bent leg with the manual car's clutch pressed, and shoulders staying against the backrest when setting steering reach. Adjust only when stationary, and check that the runner and column locks have engaged.[^seat-operation]
+
+The gearbox matters here: the manual driver needs full clutch travel, while a PDK car has no clutch pedal. The seat's restraint and airbag functions are covered in [Occupant protection and system integration](../18-occupant-protection-and-system-integration/index.mdx).
+
+## Electric seats, adjustable bolsters and the bucket
+
+The **comfort seat with driver memory** adjusts fore-and-aft position, height, backrest, cushion tilt and lumbar support electrically. Lumbar adjustment changes the backrest's curve rather than reclining it. Memory recalls the driver's seat and exterior-mirror positions, which helps when several people drive the car.[^seat-options]
+
+The **adaptive sports seat** adds electrically adjustable bolsters in the cushion and backrest, changing lateral support without moving the whole seat. The brochure excludes the bolster positions from the driver's memory. The lumbar and bolster supports are pneumatic, unlike the seat's other adjustments: a small electric air pump and valves fill inflatable elements, which shape the backrest for lumbar support and, on the adaptive seat, the sides of the cushion and backrest. They are separate from the seat's restraint airbag.[^seat-options]
+
+The **sports bucket seat** takes another route. A shaped glass- and carbon-fibre-reinforced backrest shell gives deep side support with less reliance on adjustment. It keeps manual fore-and-aft movement and a backrest that folds for access behind the seat, which is not an adjustable recline. The handbook excludes the bucket from its ordinary height and backrest-angle instructions.[^seat-options]
+
+<Figure src={illustration6} alt={"The optional folding sports bucket seat, with a deeply shaped shell, raised cushion bolsters and exposed mounting structure beneath."} width="180px">
+
+The optional folding sports bucket seat. Photo: Porsche AG, *The Boxster* (UK, 01/10), pp. 74–75. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+
+</Figure>
+
+## Heated and ventilated seats
+
+Seat heating puts electrical warmth next to the occupant without waiting for the cabin to warm up; it has two settings. Ventilation works differently. Fans draw air in through the seat's perforations and on through permeable material in the cushion and backrest, then discharge it into the cabin, carrying warm, moist air away from the contact area. Vented foam, air-distribution layers and fan modules in both cushion and backrest form a separate assembly under the cover.[^ventilation]
+
+It depends on air movement, breathable layers and cabin conditions; there is no refrigerant evaporator in the cushion. Heating and ventilation can run together, since warmth and moisture removal do not conflict. Porsche's technical introduction requires at least about 15°C at the seat and interior temperature sensors, and the handbook specifies that the engine is running.[^ventilation]
+
+Blocked perforations or an airtight cover defeat the system. Its three settings vary fan operation, separately from the two heating settings. Leather alone does not prove the fans are fitted; the prerequisites are in the options table below.
+
+## Two heat circuits, one stream of cabin air
+
+The heater draws its warmth from the engine's **coolant circuit**. Hot coolant flows through a small heat exchanger in the front heater unit, and air crossing its fins picks up heat while the coolant continues round its closed circuit. Supply and return run in separate underbody pipes and flexible hoses, sealed where they pass through the body. Air flaps set how much heating the air receives. Only heat, not coolant, reaches the cabin air.[^hardware]
+
+That ties cabin heat to engine warm-up. Just after a cold start the coolant has little heat to spare, and more blower speed moves more air without making the heat exchanger hotter. The engine side is covered in [Lubrication, cooling and exhaust](../07-lubrication-cooling-and-exhaust/index.mdx).
+
+Air conditioning moves heat the other way. Refrigerant evaporates in the cabin unit's **evaporator**, absorbing heat from the passing air. The engine-driven compressor raises its pressure, the front condensers give the heat to outside air, and an expansion valve meters refrigerant back into the low-pressure side. A **receiver-drier** between the condensers and expansion valve stores liquid refrigerant, filters it and absorbs moisture inside the sealed circuit, which is different from drying the cabin air. Because the compressor adds work, the condensers reject both the cabin's heat and the energy that drives the cycle.[^refrigeration]
+
+On this generation the compressor has no magnetic clutch. Its shaft turns whenever the engine runs, and an electronic valve varies its delivery; A/C OFF sets delivery to zero rather than stopping the shaft. A turning belt therefore says nothing about cooling output.[^compressor]
+
+<Figure src={illustration7} alt={"Separate loops show hot engine coolant delivering heat to a heater core and refrigerant taking cabin heat through an evaporator to the front condensers, with a receiver-drier before the expansion valve. Only heat crosses between the fluids and the cabin air."}>
+
+Two sealed loops share one stream of cabin air: coolant adds heat at the heater core, while refrigerant removes it at the evaporator and releases it at the front condensers.
+
+</Figure>
+
+Cooling also dries the air. When the evaporator is below the air's dew point, water condenses on it and drains away, and the heater can then rewarm the dried air. Warm air from the vents and active air conditioning can work together, which is useful for clear glass. Water under the car after air-conditioning use can be normal condensate.[^air-operation]
+
+<Figure src={climateUnitParts} alt="Air-conditioning casing with a separate heater core, expansion valve, blower, flap motors and wiring arranged around it." width="540px">
+
+The casing and evaporator assembly (1), heater core (2), expansion valve (4) and blower (8) are separate parts. The flap motors depend on the control system fitted; the drawing does not make automatic climate control standard. Factory drawing: Porsche AG, [PET 813-005, PDF p. 429](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=429).
+
+</Figure>
+
+## Choosing the air route
+
+Fresh air enters near the base of the windscreen and passes a filter that traps airborne particles. The blower pushes it through the unit and ducts, and outlet flaps distribute it between the central and side vents, footwells and windscreen. The dashboard vents can also be aimed and opened individually.[^air-operation]
+
+**Recirculation** shuts off outside air and reuses cabin air. That helps briefly when outside air is unpleasant or a hot cabin needs cooling. But occupants keep adding moisture from breath and wet clothing, and reused air that is not dried enough mists cold glass. Fresh air, heat, air movement and evaporator drying each address a different part of the problem.
+
+<Diagram id="cabin-air-route" poster={illustration1} alt={"With fresh air selected, the blower moves air through an evaporator with A/C enabled, around the heater and towards the face vents. Recirculation changes the source; heater contribution changes heat addition; outlet selection changes the destination."} />
+
+The diagram's demisting preset selects fresh air, windscreen delivery, heat and available A/C drying. It shows the principle, not every interlock of the Porsche panel, and calculates no cabin temperature, humidity or clearing time.
+
+The standard **manually controlled air conditioning** lets the driver set heat, blower speed and distribution, with temperature shown as bars. Optional **automatic climate control** works to a selected cabin temperature using temperature and solar sensors. In AUTO it adjusts air quantity and distribution as conditions change, and the driver can still intervene. The set temperature is a target for the controller, not the temperature the vent air will always have.[^climate]
+
+To demist, the air must reach the glass; a strong but badly aimed face vent cannot replace the windscreen outlets. Porsche tells the driver to end recirculation if the windows mist and use the windscreen demisting function. Compressor output also has temperature and engine-load limits, so "A/C selected" does not mean continuous cooling in every condition.[^air-operation]
+
 ## Instruments and everyday controls
 
-The ordinary 2.9 has **black instrument faces**, with the analogue rev counter in the centre. A digital speed readout accompanies it; the left dial carries the analogue speedometer, trip and total distance. The on-board computer supplies selectable information such as range, average consumption and, when fitted, tyre pressures. PDK adds its selection/gear information. The S’s aluminium-coloured faces are a visual comparison, rather than the base specification.[^instruments]
+The ordinary 2.9 has **black instrument faces**: an analogue rev counter in the centre with a digital speed readout, and an analogue speedometer, trip and total distance on the left dial. The on-board computer shows range, average consumption and, when fitted, tyre pressures; PDK adds selector and gear information. The S's aluminium-coloured faces, pictured below, are not the base specification.[^instruments]
 
 <Figure src={illustration3} alt={"The period Boxster S dashboard with aluminium-coloured instrument faces, an optional multifunction PDK steering wheel, PCM and automatic climate controls."}>
 
@@ -36,99 +120,15 @@ Optioned S dashboard with PDK multifunction controls. Photo: Porsche AG, *The Bo
 
 <Figure src={illustration4} alt={"A schematic dashboard map identifies the three-dial instrument cluster, steering-column controls, audio and climate panels, and the lower console’s roof and equipment-dependent mode controls. A separate key marks optional cruise and multifunction controls."}>
 
-A schematic dashboard map identifies the three-dial instrument cluster, steering-column controls, audio and climate panels, and the lower console’s roof and equipment-dependent mode controls. A separate key marks optional cruise and multifunction controls.
+The controls by group: three-dial cluster, column stalks, audio and climate panels, and the roof and equipment-dependent mode switches on the lower console, with optional cruise and multifunction controls keyed separately. It is not a literal left- or right-hand-drive layout.
 
 </Figure>
 
-Column controls put indicators/main beam, wipers and on-board-computer selection near the driver. Optional **cruise control, 454**, adds a separate stalk: it stores a chosen road speed and requests engine output to maintain it. The UK catalogue gives a 30–240 km/h operating range. Brake or clutch operation interrupts speed control; the reference system sets speed rather than following another vehicle’s distance.[^cruise]
+The column stalks put indicators and main beam, wipers and on-board-computer selection near the driver. Optional **cruise control, code 454**, adds a separate stalk that holds a chosen road speed by requesting engine output, over a 30–240 km/h range according to the UK catalogue. Brake or clutch operation cancels it, and it sets speed only; it does not follow the distance to another vehicle.[^cruise]
 
-The standard sports steering wheel provides steering and its airbag. A multifunction wheel adds audio and, with the relevant equipment, telephone/navigation controls. PDK switches or paddles request gear changes; their [two control arrangements](../09-pdk-transmission/index.mdx#the-selector-and-steering-wheel-controls) remain distinct. A wheel’s appearance cannot establish every electronic function behind it.[^instruments]
+The standard sports steering wheel carries the steering and its airbag. A multifunction wheel adds audio and, with the relevant equipment, telephone and navigation controls. PDK switches or paddles request gear changes, and the [two arrangements](../09-pdk-transmission/index.mdx#the-selector-and-steering-wheel-controls) differ. A wheel's appearance cannot establish every function behind it.[^instruments]
 
-Lower in the centre console, the roof and fitted driving-mode switches command their respective systems; [the integration matrix](../18-occupant-protection-and-system-integration/index.mdx#options-on-the-2010-2.9) explains the equipment dependencies. Storage includes door and console compartments, a locking glovebox and retractable cupholders above it. The rear-bulkhead box shares its space with the optional BOSE installation.[^instruments]
-
-## A seat is a support structure
-
-A seat has a load-bearing frame, a suspended cushion, shaped foam and a covering. A spring-supported cushion sits within the base frame, while a separate backrest frame carries the backrest padding and integrated head restraint. The cushion spreads the occupant's weight; the backrest supports the trunk; raised side bolsters resist sideways movement. Softness and support are separate qualities. A soft centre can still sit between firm bolsters, while changing the bolster shape changes where the body receives lateral support.
-
-The base of the seat travels on longitudinal runners. Moving it changes pedal reach. Height adjustment changes the eye position, headroom and the angle at which the legs approach the pedals. Backrest inclination changes shoulder position and steering reach. These adjustments interact, which is why setting one extreme and compensating with the others rarely produces a relaxed position.
-
-The standard seat and optional ordinary sports seat share the basic adjustment pattern. A hand lever releases the fore-and-aft runner lock; a pumping lever changes height; an electric switch changes backrest angle. The integrated head restraint moves with the backrest rather than having a separate height adjustment. The sports seat adds firmer upholstery and more pronounced side support.[^seat-operation]
-
-<Figure src={seatFrameParts} alt="Exposed seat base frame and runners with the manual height lever, alternative side trims, switches and an optional child-seat bracket separated around it." width="580px">
-
-With upholstery removed, frame and runners (1) form the seat’s base; lever (2) operates manual height adjustment. The same plate also shows electric-seat trims and the optional child-seat bracket (7, 8), rather than one assembly fitted with every option. Factory drawing: Porsche AG, [PET 817-008, PDF p. 457](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=457).
-
-</Figure>
-
-<Figure src={illustration5} alt={"A seat schematic separates its supporting frame, cushion and runners, and shows that fore-and-aft travel, height and backrest angle change different parts of the driving position."}>
-
-A seat schematic separates its supporting frame, cushion and runners, and shows that fore-and-aft travel, height and backrest angle change different parts of the driving position.
-
-</Figure>
-
-Start with pedal reach, then use seat height, backrest angle and the steering column's height and longitudinal adjustment to bring the controls to a comfortable relationship. Porsche's handbook describes a slightly bent leg with the manual car's clutch depressed, and shoulders remaining against the backrest when establishing steering reach. Make these adjustments while stationary, and check that the seat runner and column locks have engaged.[^seat-operation]
-
-This is also where the two transmissions alter the cabin's use: the manual driver needs full clutch travel, while a PDK car has no clutch pedal. The seat's restraint and airbag functions are covered in [Occupant protection and system integration](../18-occupant-protection-and-system-integration/index.mdx).
-
-## Electric adjustment, bolsters and the bucket shell
-
-The **comfort seat with driver memory** adds electric movement for longitudinal position, height, backrest, cushion inclination and lumbar support. Lumbar adjustment changes the backrest's supporting curvature, rather than simply reclining the whole backrest. Memory can recall the driver's position and exterior mirrors. It is useful when different drivers need repeatable positions.[^seat-options]
-
-The **adaptive sports seat** combines that adjustment system with electrically adjustable side bolsters in the cushion and backrest. The occupant can change lateral support without moving the entire seat nearer the wheel. The brochure excludes those bolster positions from the driver's stored memory settings. These support adjustments use a small electric air pump, valves and inflatable elements: lumbar elements change the backrest contour, while the adaptive seat adds elements at the cushion and backrest sides. Those comfort elements are separate from the seat's restraint airbag.[^seat-options]
-
-The **sports bucket seat** takes another route. A shaped glass/carbon-fibre-reinforced backrest shell provides deep side support with less reliance on a broad range of adjustments. It retains manual longitudinal movement and a folding backrest. Folding provides access behind the seat; it is a different movement from choosing a continuously adjustable driving recline. The handbook excludes the bucket from its ordinary height and backrest-angle setting instructions.[^seat-options]
-
-<Figure src={illustration6} alt={"The optional folding sports bucket seat, with a deeply shaped shell, raised cushion bolsters and exposed mounting structure beneath."} width="180px">
-
-The optional folding sports bucket seat. Photo: Porsche AG, *The Boxster* (UK, 01/10), pp. 74–75. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
-
-</Figure>
-
-## Heat and air at the seat surface
-
-Seat heating puts electrical heat close to the occupant, rather than waiting for the entire cabin to warm. The available system has two settings. Seat ventilation uses a different mechanism: fans draw air from the occupant-facing perforations through permeable material in the cushion and backrest, then discharge it into the cabin. That movement carries away warm, moist air from the contact area. The vented foam, air-distribution layers and fan modules in both cushion and backrest form a distinct assembly beneath the cover.[^ventilation]
-
-The ventilated seat therefore depends on air movement, breathable layers and the surrounding cabin conditions. It has no separate refrigerant evaporator inside the cushion. Heating and ventilation can operate together: warmth at the contact surface and removal of moisture are compatible goals. Porsche's technical introduction requires at least approximately 15°C at the seat and interior temperature sensors, and the handbook specifies operation with the engine running.[^ventilation]
-
-A blocked perforated surface or impermeable seat cover defeats the intended route. The three ventilation settings vary fan operation; they are separate from the two heating settings. The option prerequisites are listed below, because the presence of leather alone does not establish that the fans are fitted.
-
-## Two heat circuits, one stream of cabin air
-
-The heater obtains warmth from the engine's **coolant circuit**. Hot coolant passes through a small heat exchanger in the front heater unit. Air passing across its fins gains heat, while the coolant carries on around its own closed circuit. The supply and return run through separate underbody pipes and flexible hoses to the front unit, with seals at the body passage. Air-routing flaps determine the heating contribution. Coolant remains inside the metal passages: it is the heat, rather than the fluid itself, that reaches the cabin air.[^hardware]
-
-This connects cabin heating to engine warm-up. Immediately after a cold start, the coolant has little spare heat to give away. Raising blower speed moves more air, but cannot instantly make the heat exchanger hot. The engine-side circuit is introduced in [Lubrication, cooling and exhaust](../07-lubrication-cooling-and-exhaust/index.mdx).
-
-Air conditioning transfers heat in the opposite useful direction. Refrigerant evaporates in the cabin unit's **evaporator**, absorbing heat from the passing air. The engine-driven compressor raises the refrigerant's pressure; the front condensers reject heat to outside air; an expansion valve meters the returning refrigerant into the low-pressure side. A separate **receiver-drier** between the condensers and expansion valve stores liquid refrigerant, filters it and absorbs moisture within that sealed circuit. This is different from removing moisture from cabin air. The compressor adds work to this cycle, so the condensers reject both the heat removed from the cabin and the energy supplied to drive the process.[^refrigeration]
-
-On this generation the compressor has no magnetic clutch: its shaft turns whenever the engine runs, while an electronic valve varies its delivery. Selecting A/C OFF commands zero delivery rather than stopping the shaft. Useful cooling therefore depends on refrigerant output, not simply on whether the belt is turning.[^compressor]
-
-<Figure src={illustration7} alt={"Separate loops show hot engine coolant delivering heat to a heater core and refrigerant taking cabin heat through an evaporator to the front condensers, with a receiver-drier before the expansion valve. Only heat crosses between the fluids and the cabin air."}>
-
-Separate loops show hot engine coolant delivering heat to a heater core and refrigerant taking cabin heat through an evaporator to the front condensers, with a receiver-drier before the expansion valve. Only heat crosses between the fluids and the cabin air.
-
-</Figure>
-
-Cooling air can also remove moisture. When the evaporator surface is below the air's dew point, water condenses on it and drains away. The resulting air can then receive heat from the heater. Warm air from the vents and active air-conditioning cooling can consequently occur together, particularly when dry air is useful for clear glass. Water under the car after air-conditioning operation can be normal condensate.[^air-operation]
-
-<Figure src={climateUnitParts} alt="Air-conditioning casing with a separate heater core, expansion valve, blower, flap motors and wiring arranged around it." width="540px">
-
-The casing and evaporator assembly (1), heater core (2), expansion valve (4) and blower (8) are distinct pieces. Flap motors around the casing depend on the control-system variant; the drawing does not make automatic climate control standard. Factory drawing: Porsche AG, [PET 813-005, PDF p. 429](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=429).
-
-</Figure>
-
-## Choosing the air route
-
-Fresh air enters near the base of the windscreen, ahead of the cabin. A filter traps airborne material before it reaches the occupants. The blower supplies the pressure difference that moves air through the unit and ducts; outlet flaps distribute it towards the central and side vents, footwells and windscreen. The dashboard vents also have local direction and opening controls.[^air-operation]
-
-**Recirculation** changes the inlet route. It uses cabin air again and interrupts the outside-air supply. That is useful briefly when outside air is unpleasant, or when reducing the cooling task in a hot cabin. Occupants continue adding moisture through breathing and wet clothing, however. Reusing that air without sufficient drying can encourage condensation on cold glass. Fresh air, heat, air movement and available evaporator drying each address a different part of the problem.
-
-<Diagram id="cabin-air-route" poster={illustration1} alt={"With fresh air selected, the blower moves air through an evaporator with A/C enabled, around the heater and towards the face vents. Recirculation changes the source; heater contribution changes heat addition; outlet selection changes the destination."} />
-
-The diagram separates these choices so their roles are visible. Its demisting preset selects fresh air, windscreen delivery, heater contribution and available A/C drying. It explains the principle rather than reproducing every interlock of the Porsche control panel. It does not calculate cabin temperature, humidity or a time to clear the glass.
-
-The standard **manually controlled air conditioning** lets the driver set temperature contribution, blower and distribution. Its temperature display uses bars. Optional **automatic climate control** adds a selected cabin temperature and uses temperature and solar sensing to regulate the response. In AUTO, it controls air quantity and distribution as conditions change; the driver can still intervene. A temperature target is therefore a request to the controller, rather than a promise that the vent air will always emerge at that temperature.[^climate]
-
-Demisting needs the air to reach the glass. Strong airflow from an incorrectly aimed face vent cannot replace the windscreen outlets. Porsche directs the driver to end recirculation if the windows fog and use the windscreen demisting function. Compressor cooling output also has temperature and engine-load limits; “A/C selected” does not mean continuous cooling under every condition.[^air-operation]
+On the lower console, the roof and any fitted driving-mode switches control their own systems; [the integration matrix](../18-occupant-protection-and-system-integration/index.mdx#options-on-the-2010-2.9) explains the equipment dependencies. Storage includes door and console compartments, a locking glovebox with retractable cupholders above it, and a rear-bulkhead box that shares its space with the optional BOSE installation.[^instruments]
 
 ## Options on the 2010 2.9
 
@@ -145,25 +145,25 @@ The January 2010 UK catalogue offers these choices.[^option-codes]
 | Automatic climate control | 573 | Temperature and solar sensing; automatic cabin regulation |
 | Heated steering wheel | 345 | Requires heated seats; unavailable with the sports steering wheel with gearshift paddles |
 
-The ventilation row combines the full seat description with the abbreviated option-table conditions.[^seat-options] The [colour/trim atlas](../19-reference-atlas-and-index/index.mdx#colours-and-trim) separates upholstery colour, leather coverage and decorative finishes.
+The ventilation row combines the full seat description with the option table's shorter conditions.[^seat-options] The [colour and trim atlas](../19-reference-atlas-and-index/index.mdx#colours-and-trim) covers upholstery colour, leather coverage and decorative finishes.
 
 ## Changes in other 2.9 model years
 
-Seat ventilation arrived with the facelift generation; the January 2010 UK catalogue establishes this chapter’s seat/climate choices.[^years] Later annual UK ordering and component entries are recorded in the [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix).
+Seat ventilation arrived with the facelift generation; the January 2010 UK catalogue establishes the choices in this chapter.[^years] Later UK ordering and component entries are in the [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix).
 
 ## The S, Spyder and Black Edition
 
-The **S** uses the same seat and climate option families in the January 2010 UK table.[^option-codes]
+The **S** has the same seat and climate option families in the January 2010 UK table.[^option-codes]
 
-The **Spyder** starts with sports bucket seats and omits air conditioning as part of its lighter specification. Its January 2010 UK brochure lists sports seats P77 and automatic climate control 573 as alternatives/additions. Heated seats 342 require **both sports seats and automatic climate control**.[^spyder]
+The **Spyder** starts with sports bucket seats and omits air conditioning as part of its lighter specification. Its January 2010 UK brochure lists sports seats P77 and automatic climate control 573 as alternatives or additions, and heated seats 342 require **both sports seats and automatic climate control**.[^spyder]
 
-The **Boxster S Black Edition** instead includes automatic climate control in the UK March 2011 price list. The same standard-equipment section specifies partial-leather seats with manual longitudinal and height adjustment and electric backrests.[^black]
+The **Boxster S Black Edition** instead includes automatic climate control in the UK March 2011 price list, with partial-leather seats offering manual fore-and-aft and height adjustment and electric backrests.[^black]
 
 ## Identification and ageing
 
-An AUTO button and numeric temperature selection identify the automatic climate panel; the standard control uses a temperature bar display. Seat-side switches, memory controls and the shape of the shell help identify the adjustment system; perforations and an attractive retrim alone cannot prove factory ventilation.
+An AUTO button and numerical temperature setting identify the automatic climate panel; the standard panel shows bars. Seat-side switches, memory buttons and the shell's shape identify the seat type. Perforations or a smart retrim do not prove factory ventilation.
 
-Ageing separates airflow faults from temperature faults. A restricted filter or duct can reduce the air reaching every outlet. A blower problem changes delivery; a distribution-flap problem can send air to the wrong destination; a refrigeration or heater problem can leave plenty of air at the wrong temperature. Seat runners, adjustment drives, foam, perforated trim and fans have their own wear paths. Identifying which quantity has changed—position, airflow, heat or moisture removal—makes the original mechanism a useful guide to understanding the car today.
+When something fails, ask which has changed: position, airflow, heat or moisture removal. A restricted filter can reduce the air reaching every outlet, while a blocked duct affects the outlets it feeds. A blower fault changes how much air arrives, a flap fault can send it to the wrong place, and a refrigeration or heater fault can deliver plenty of air at the wrong temperature. Seat runners, adjustment drives, foam, perforated trim and fans each wear in their own way.
 
 [^baseline]: Porsche, *The Boxster*, UK edition 01/10, printed pp. 74–76 and 110–111, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=35).
 

@@ -8,79 +8,81 @@ import clutchParts from "./images/pet-manual-clutch.png";
 
 # Manual transmission and clutch
 
-The manual drivetrain gives the driver two separate controls. The clutch pedal connects or separates the engine and gearbox; the gear lever selects the relationship between engine speed and road speed. On the reference 2010 Boxster 2.9, the standard gearbox has **six forward speeds and reverse**. Porsche identifies the basic-model transmission as **G87/10**, distinct from the S model's G87/40.[^manual-id]
+A manual car gives the driver two separate controls. The clutch pedal connects the engine to the gearbox or separates them; the gear lever chooses how fast the engine turns for a given road speed. The 2010 Boxster 2.9's standard gearbox has **six forward speeds and reverse**. Porsche calls it the **G87/10**, distinct from the S model's G87/40.[^manual-id]
 
-The engine sits ahead of the gearbox in the rear power unit. Turning force passes from the crankshaft through the flywheel and clutch to the gearbox input shaft, through the selected gear pair and then through the final drive to the differential and rear driveshafts. The gearbox and final drive share the transaxle assembly, but perform different tasks. This chapter follows selection and interruption of the drive; [Differential, driveshafts and mounts](../10-differential-driveshafts-and-mounts/index.mdx) follows its distribution to the rear wheels.
+The engine sits ahead of the gearbox in the rear power unit. Drive passes from the crankshaft through the flywheel and clutch to the gearbox input shaft, through the selected gear pair, then through the final drive to the differential and rear driveshafts. The gearbox and final drive share the transaxle assembly but do different jobs. This chapter covers selecting and interrupting the drive; [Differential, driveshafts and mounts](../10-differential-driveshafts-and-mounts/index.mdx) follows it to the rear wheels.
 
 <Diagram id="manual-explorer" poster={illustration0} alt={"The manual transaxle sits behind the engine. The flywheel and dry clutch connect its longitudinal input, cables connect the cabin lever to selection, and the final drive connects sideways to the rear half-shafts."} />
 
 ## The flywheel and clutch make a controllable connection
 
-An engine can run while the car is stationary because the clutch can separate its rotating crankshaft from the transmission. The reference manual uses a **single-plate dry clutch and a dual-mass flywheel**. Porsche's technical introduction gives a 240 mm pressure-plate diameter.[^clutch]
+The clutch lets the engine run while the car stands still. The 2.9 manual uses a **single-plate dry clutch and a dual-mass flywheel**, with a 240 mm pressure plate according to Porsche's technical introduction.[^clutch]
 
-The flywheel is attached to the crankshaft. Its rotating mass stores energy between combustion impulses, helping smooth the rotation. A dual-mass flywheel divides this function between an engine-side mass and a transmission-side mass, connected through a torsional damping mechanism. They can move through a limited angle relative to each other against springs, reducing the transmission of the engine's twisting oscillations into the gearbox. This is a different movement from clutch slip: the flywheel remains a drive connection while damping variations in it.[^dmf]
+The flywheel is attached to the crankshaft, and its spinning mass carries the engine smoothly between firing pulses. A dual-mass flywheel splits that mass into an engine-side mass and a gearbox-side mass joined through a spring damper. The two can twist a little relative to each other, so the springs reduce how much of the engine's torsional vibration reaches the gearbox. This is not clutch slip: the flywheel remains a drive connection while it damps the variations in it.[^dmf]
 
-The clutch's driven plate has friction linings on its two faces and a central hub splined to the gearbox input shaft. A pressure plate squeezes those linings between itself and the flywheel's friction face. With sufficient clamping force and no slip, the driven plate turns at the flywheel's speed and carries torque into the input shaft. The spring supplies the clamping force when the pedal is released; the driver does not have to press a pedal to maintain drive.[^clutch-principle]
+The clutch's driven plate has friction linings on both faces and a hub splined to the gearbox input shaft. A spring-loaded pressure plate squeezes it against the flywheel's friction face, and once it is clamped without slipping it turns with the flywheel and carries the engine's torque. The spring does the clamping, so with your foot off the pedal the drive stays connected without effort.[^clutch-principle]
 
 <Figure src={illustration2} alt={"Two clutch sections compare the pedal-up state, with the friction plate clamped, against the pedal-down state, with pressure relieved. A separate path shows pedal force reaching the release mechanism through the master cylinder, fluid and slave cylinder."}>
 
-Two clutch sections compare the pedal-up state, with the friction plate clamped, against the pedal-down state, with pressure relieved. Below, the reservoir supplies fluid to the master cylinder; pedal pressure reaches the release mechanism through a separate slave cylinder.
+Pedal up, the spring clamps the friction plate; pedal down, the clamping pressure is relieved. Below, the reservoir feeds the master cylinder, and pedal pressure reaches the release mechanism through a separate slave cylinder.
 
 </Figure>
 
-Depressing the pedal operates the release mechanism. The release bearing acts on the diaphragm spring, allowing the pressure plate to lift away enough to relieve the grip on the driven plate. The flywheel can then continue turning while the input shaft slows or turns at another speed. The bearing allows an axial release force to act on a rotating clutch assembly.
+Pressing the pedal moves the release bearing against the diaphragm spring, letting the pressure plate back off enough to free the driven plate. The flywheel keeps turning while the input shaft slows or turns at another speed; the bearing lets the release force act on the spinning clutch.
 
-Between fully released and fully clamped, friction can transmit torque while the two sides rotate at different speeds. That controlled slip lets the engine start the car moving without being pulled abruptly down to zero rpm. It also produces heat. The instantaneous rate of heating is related to transmitted torque multiplied by the angular-speed difference. Once the speeds match and the clutch holds without slipping, that particular source of frictional heating falls away. Prolonged partial engagement puts more heat into the clutch than a brief, smooth connection.
+Between fully released and fully clamped, the clutch passes torque while its two sides still turn at different speeds. That controlled slip lets you move off without the engine being dragged down to zero rpm, but it makes heat. The heating rate depends on the torque passed multiplied by the difference in rotational speed. Once both sides turn together, that source of friction heat falls away. Prolonged slipping therefore heats the clutch more than a brief, smooth engagement.
 
-“Dry” describes friction surfaces that work without immersion in cooling oil. The gearbox uses lubricating oil, and the clutch release has a separate hydraulic circuit.
+"Dry" means the friction surfaces are not bathed in oil. The gearbox has its own lubricating oil, and the clutch release its own hydraulic circuit.
 
-## From pedal movement to release movement
+## How the pedal releases the clutch
 
-The clutch pedal operates a **master cylinder**. Movement of its piston displaces hydraulic fluid through a pipe and hose to a **slave cylinder** at the transmission. The slave cylinder acts through a pivoted operating lever and release bearing. The bearing slides on a guide sleeve surrounding the input shaft, keeping its axial movement aligned with the clutch. Porsche's parts catalogue identifies these as separate components for G87/10; the chapter's diagram therefore shows a slave cylinder and lever, rather than substituting an integrated concentric release unit.[^release]
+The clutch pedal pushes a piston in a **master cylinder**, sending fluid through a pipe and hose to a **slave cylinder** on the gearbox. The slave cylinder pushes a pivoted release lever, which moves the release bearing along a guide sleeve around the input shaft that keeps it square to the clutch. Porsche's parts catalogue lists these as separate components for the G87/10, so the diagram shows a slave cylinder and lever rather than an integrated concentric release unit.[^release]
 
 <Figure src={clutchParts} alt="Clutch exploded drawing separating the pressure assembly and driven plate from the release lever, bearing and guide sleeve." width="560px">
 
-Clutch set (1) groups the pressure assembly and single driven plate. Release lever (3) moves bearing (4) along guide sleeve (5). The plate is shared with S applications; it does not make the S’s self-adjusting clutch standard on the 2.9. Factory drawing: Porsche AG, [PET 301-000, PDF p. 109](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=109).
+The clutch set (1) groups the pressure assembly and single driven plate; the release lever (3) moves the bearing (4) along the guide sleeve (5). The plate is shared with S applications, but that does not make the S's self-adjusting clutch standard on the 2.9. Factory drawing: Porsche AG, [PET 301-000, PDF p. 109](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=109).
 
 </Figure>
 
-Hydraulics allow the pedal and clutch to be some distance apart without a rigid mechanical linkage running the length of the car. Fluid pressure acts on piston area to produce force. The master and slave sizes, together with the pedal and release-lever geometry, trade movement against force. The circuit transmits the driver's effort; it does not supply the sustained clamping force that carries engine torque.
+Hydraulics let the pedal sit far from the clutch without a rigid linkage running down the car. Fluid pressure on a piston produces force, and the cylinder sizes, with the pedal and lever geometry, trade travel against force. The circuit carries only the driver's effort, not the clamping force.
 
-The hydraulic circuit draws its supply from the brake-fluid reservoir, although clutch release and wheel braking have different actuators and purposes. A feed line supplies the master cylinder; the pressure line carries the pedal's command rearwards. The pedal has its own assist spring, separate from the diaphragm spring that clamps the clutch. Air, leakage or a movement problem can reduce the useful release travel. That can leave a clutch dragging when the pedal is down, making gear selection difficult even when the gearbox itself is sound.[^hydraulics]
+The circuit draws fluid from the brake-fluid reservoir, although clutch and brakes have different actuators and purposes. A feed line supplies the master cylinder and a pressure line carries the pedal's command rearwards. The pedal has its own assist spring, separate from the diaphragm spring. Air, a leak or a sticking part can shorten the release travel. The clutch can then drag with the pedal down, making gears hard to select even when the gearbox is sound.[^hydraulics]
 
-Full separation matters during a shift because it unloads the selected gear's engagement and allows the next ratio's rotating parts to change speed. Porsche's handbook calls for full clutch-pedal travel and complete gear engagement. It also warns against holding the car on a steep gradient with a partially depressed clutch. The standard Drive-Off Assistant uses the brakes for its brief hill hold; it does not turn the manual clutch into an automatically controlled starting clutch.[^handbook]
+A full release matters during a shift: it unloads the engaged gear and lets the parts for the next ratio change speed. Porsche's handbook asks for full pedal travel and complete gear engagement, and warns against holding the car on a steep slope with a partly pressed clutch. The standard Drive-Off Assistant holds the car briefly on a hill with the brakes; it does not make the manual clutch automatic.[^handbook]
 
 ## What the gear lever actually moves
 
-The cabin lever controls the transmission through two cables, with their outer housings retained by brackets and their moving ends connected to the lever and gearbox selector. Porsche describes this arrangement as isolating the lever from drivetrain vibration. Fore-and-aft and cross-gate movements tell the selector mechanism which engagement to make; selector forks move the appropriate sliding engagement sleeves.[^lever]
+Two cables link the gear lever to the gearbox. Brackets hold their outer sleeves, and their inner ends join the lever to the gearbox selector; Porsche says this keeps drivetrain vibration out of the lever. Moving the lever forwards and back, and across the gate, tells the selector mechanism which gear to engage, and selector forks then slide the matching engagement sleeves.[^lever]
 
 <Figure src={illustration3} alt={"Porsche's period close-up of the six-speed manual gear lever in a tan centre console."}>
 
-The six-speed manual control. Short-shifter availability is discussed below. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 47. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=21).
+The six-speed manual gear lever; short-shifter availability is covered under the options below. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 47. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=21).
 
 </Figure>
 
-In a constant-mesh gearbox, the principal forward gear pairs remain meshed. Some wheels are fixed to a shaft; their mating wheels can turn freely on their shaft until selected. Selecting a gear locks the required free-running wheel to its shaft through a toothed engagement. The working gear teeth remain in mesh while the sleeve changes which wheel carries torque into the shaft.
+## Constant mesh and synchronisers
 
-**Neutral** leaves no forward or reverse ratio engaged between the input and final-drive path. With the clutch up, parts on the input side can still rotate. **Clutch down with a gear selected** is a different condition: the gear relationship exists inside the gearbox, but the clutch has interrupted its connection to the engine. These two ways of interrupting drive explain why pedal position and lever position must be considered separately.
+In a constant-mesh gearbox the main forward gear pairs are always in mesh. Some gears are fixed to a shaft; their mating gears spin freely on their own shaft until a toothed sleeve locks them in place. The sleeve, not the meshing teeth, chooses which gear drives the shaft.
+
+**Neutral** means no forward or reverse gear connects the input to the final drive, though input-side parts can still turn with the clutch up. **Clutch down with a gear selected** is different: the gear is engaged, but the clutch has cut it off from the engine. Pedal and lever interrupt the drive in separate ways.
 
 <Figure src={illustration4} alt={"A simplified two-ratio constant-mesh gearbox shows both gear pairs meshed, with one free-running wheel locked to the output shaft by a sliding sleeve. A three-stage strip explains cone friction, matching speeds and tooth engagement."}>
 
-A simplified two-ratio constant-mesh gearbox shows both gear pairs meshed, with one free-running wheel locked to the output shaft by a sliding sleeve. A three-stage strip explains cone friction, matching speeds and tooth engagement.
+A simplified two-speed gearbox: both gear pairs stay in mesh, and a sliding sleeve locks one free-running gear to the output shaft. The strip shows the synchroniser's three stages: cone friction, matched speeds, then tooth engagement.
 
 </Figure>
 
-A **synchroniser** helps make this engagement quiet and manageable. As the selector starts to move a sleeve, a friction cone brings the selected wheel and the shaft-linked hub towards the same speed. A blocking action delays tooth engagement while their speeds differ. Once they match, the sleeve can engage the wheel's dog teeth and establish the positive torque connection. Friction first changes the speed; teeth then carry the sustained drive.[^synchroniser]
+A **synchroniser** helps make the engagement quiet and manageable. As the selector starts moving a sleeve, a friction cone brings the chosen gear and the shaft's hub towards the same speed, and a blocking action keeps the teeth apart until the speeds match. The sleeve then slides over the gear's dog teeth and locks it to the shaft. Friction matches the speeds; the teeth carry the drive.[^synchroniser]
 
-During an upshift at unchanged road speed, the next ratio requires a lower input speed. During a downshift it requires a higher input speed. The synchroniser handles the relevant gearbox speed change with the clutch separated; reconnecting the clutch also brings the engine to the speed demanded by the selected ratio. These are related but distinct events.
+At a steady road speed, an upshift needs the gearbox input to slow down and a downshift needs it to speed up. The synchroniser makes that change inside the gearbox while the clutch is released; letting the clutch in then brings the engine to the speed the new gear demands.
 
-Reverse provides an additional reversing gear path so that the output turns in the opposite driving direction. Its **3.333:1** ratio is separate from first gear's 3.667:1. The handbook requires the vehicle to be stationary before selecting reverse. Its instructions remain the operating authority; the simplified forward-gear drawing is not an internal G87/10 assembly plan.[^ratios][^handbook]
+Reverse adds an extra gear to its path so that the output turns the other way. Its ratio is **3.333:1**, distinct from first's 3.667:1, and the handbook requires the car to be stationary before it is selected. The handbook is the authority on operation; the simplified forward-gear drawing is not a plan of the G87/10's internals.[^ratios][^handbook]
 
 ## Ratios exchange speed for torque
 
-A **3.667:1** first-gear ratio means the input makes about 3.667 revolutions for one revolution of that ratio's output. The final drive adds another reduction. Multiplying the two gives the total reduction between the engine and differential carrier, with the clutch fully engaged.
+A first-gear ratio of **3.667:1** means the input turns about 3.667 times for each turn of that gear's output. The final drive adds a second reduction, and multiplying the two gives the overall reduction between the engine and the differential carrier, with the clutch fully engaged.
 
-Ignoring losses, a reduction multiplies torque by the same factor that it divides speed. First gives more wheel torque and less wheel speed than sixth at the same engine input. The explorer applies that relationship to the reference manual’s ratios.
+Ignoring losses, a reduction multiplies torque by the same factor that it divides speed, much as a lever trades distance for force. For the same engine input, first therefore gives more torque and less speed at the wheels than sixth. The explorer applies this to the 2.9 manual's ratios.
 
 <details className="technical-detail">
 <summary>Manual ratios and one worked example</summary>
@@ -95,43 +97,43 @@ Ignoring losses, a reduction multiplies torque by the same factor that it divide
 | Sixth | 0.841 | 3.259 |
 | Reverse | 3.333 | 12.915, reverse direction |
 
-*Porsche's 2010 technical-data sheet, basic Boxster manual column; totals calculated from its rounded ratios. The S and PDK columns describe different gearing.[^ratios]*
+*Ratios from Porsche's 2010 technical-data sheet, basic Boxster manual column; overall figures calculated from its rounded ratios. The S and PDK columns describe different gearing.[^ratios]*
 
-At an illustrative **200 Nm and 3,000 rpm**, first’s total reduction gives about **2,842 Nm** and **211 rpm** at the differential carrier. The torque is the total before distribution to the wheels. Greater torque comes with less rotational speed; the ideal calculation conserves power.
+At an illustrative **200 Nm and 3,000 rpm**, first's overall reduction gives about **2,842 Nm** and **211 rpm** at the differential carrier. That torque is the total before it is split between the wheels. Torque rises as speed falls; in this ideal calculation the power stays the same.
 
 </details>
 
 <Diagram id="manual-ratio-explorer" poster={illustration1} alt={"At an illustrative 3,000 engine rpm and 200 Nm, third gear's 1.407 ratio and 3.875 final drive give 550 wheel rpm, 69.3 km/h with a 2.10 metre circumference, and 1,090 Nm total after the final drive."} />
 
-The interactive uses a fixed **2.10 m illustrative rolling circumference**, no clutch or tyre slip, equal rear-wheel speeds and no transmission losses. Wheel speed equals engine rpm divided by total reduction. Road speed follows by multiplying wheel revolutions per minute by circumference and converting minutes to hours. Its torque value is the **total after the final drive**, before distribution between the two wheels.
+The explorer assumes an illustrative **2.10 m rolling circumference**, no clutch or tyre slip, equal rear-wheel speeds and no transmission losses. Wheel speed is engine rpm divided by the overall reduction; road speed is wheel rpm multiplied by the circumference, converted from minutes to hours. The torque shown is the **total after the final drive**, before it is shared between the wheels.
 
-At fixed road speed, an upshift lowers the engine speed required by the new ratio. The diagram calculates that relationship rather than predicting acceleration: real engine torque varies with speed and throttle, tyres deflect under load, and the car must overcome inertia and road resistance. [Steering, wheels and tyres](../12-steering-wheels-and-tyres/index.mdx) explains the tyre contribution.
+It shows how an upshift at fixed road speed lowers the engine speed, but does not predict acceleration: real engine torque varies with speed and throttle, tyres deflect under load, and the car must overcome inertia and road resistance. [Steering, wheels and tyres](../12-steering-wheels-and-tyres/index.mdx) explains the tyres' part.
 
 ## Options on the 2010 2.9
 
-The major transmission alternative is seven-speed **PDK**, which controls two wet clutches and gear selection itself. Its mechanism and Sport Chrono functions are covered in [PDK transmission](../09-pdk-transmission/index.mdx).
+The main alternative is the seven-speed **PDK**, which operates two wet clutches and selects gears itself; [PDK transmission](../09-pdk-transmission/index.mdx) covers it and its Sport Chrono functions.
 
-Sport Chrono leaves the manual’s six ratios and driver-operated clutch unchanged; its other effects are in the [integration matrix](../18-occupant-protection-and-system-integration/index.mdx#options-on-the-2010-2.9).[^chrono]
+On a manual car, Sport Chrono leaves the six ratios and the driver-operated clutch unchanged; its other effects are in the [integration matrix](../18-occupant-protection-and-system-integration/index.mdx#options-on-the-2010-2.9).[^chrono]
 
-A shorter-throw lever changes the movement needed at the driver's hand, rather than the road gearing. Porsche's contemporary **North American Exclusive Boxster** catalogue lists a short shifter as **XCZ** for Boxster and S. The separate 987 Tequipment catalogue describes the accessory mechanism and notes that cold shift action can be more restricted. Those establish genuine Porsche short-shifter equipment, but the January 2010 ordinary UK option table does not itself list XCZ. Exact factory-order availability for an ordinary **2010 UK 2.9** should therefore be checked against its dated order record; no percentage reduction is assigned here.[^short]
+A short shifter shortens the lever's travel, not the gearing. Porsche's contemporary **North American Exclusive Boxster** catalogue lists one as **XCZ** for the Boxster and S, and the separate 987 Tequipment catalogue describes the accessory mechanism, noting that the shift can be more restricted when cold. Genuine Porsche short-shift equipment therefore existed, but the January 2010 UK option table for the ordinary car does not list XCZ. Check factory availability for a **2010 UK 2.9** against the car's dated order record; no percentage reduction in throw is given here.[^short]
 
 ## Changes in other 2.9 model years
 
-The 2009 introduction records the six-speed G87/10, revised housing/engine flange and a changed fifth ratio. Earlier five-speed base gearing therefore does not describe this car.[^manual-id] The January 2010 UK catalogue retains six speeds; the [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix) distinguishes later US gearing corroboration from unresolved UK revisions.
+The six-speed G87/10 arrived with the 2009 revision, together with a revised housing and engine flange and a changed fifth ratio, so the earlier base car's five-speed gearing does not apply.[^manual-id] The January 2010 UK catalogue still lists six speeds. The [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix) separates later US evidence on gearing from UK revisions that remain unresolved.
 
-One smaller distinction is documented in the parts catalogue: clutch tube item 10 changes from a model-year-2009 listing to a different listing from model year 2010. The feed pipes and forward clutch tube also differ between left- and right-hand drive. These are hydraulic installation distinctions; the catalogue does not explain a change in pedal feel or clutch capacity.[^later]
+The parts catalogue records one smaller change: clutch tube item 10 has one listing up to model year 2009 and another from model year 2010. The feed pipes and forward clutch tube also differ between left- and right-hand drive. These are plumbing differences; the catalogue says nothing about a change in pedal feel or clutch capacity.[^later]
 
 ## The S, Spyder and Black Edition
 
-The ordinary S also has six manual speeds, but Porsche identifies **G87/40** and documents additional final-drive and sixth-gear changes at the facelift. The training source specifically assigns the **self-adjusting X-Tend clutch to the S models**. It compensates for lining wear within the pressure assembly; it is not evidence that every basic 2.9 clutch has that feature. The parts catalogue also lists separate basic/S flywheel, release-bearing and pedal-spring entries.[^clutch][^manual-id]
+The ordinary S also has six manual speeds, but Porsche calls its gearbox the **G87/40** and records further final-drive and sixth-gear changes at the facelift. The training material assigns the **self-adjusting X-Tend clutch to the S models**. It compensates for lining wear inside the pressure assembly, and the source does not describe it as a feature of the basic 2.9's clutch. The parts catalogue also lists separate basic and S flywheels, release bearings and pedal springs.[^clutch][^manual-id]
 
-The Spyder and Boxster S Black Edition retain a standard six-speed manual and optional PDK with their higher-output 3.4-litre engines. Their catalogue performance figures reflect their own engine, weight and equipment combinations. The short count “six-speed” alone does not establish identical clutch assemblies or ratios across all derivatives. For the later **UK Black Edition**, the **March 2011** price list explicitly offers the **XCZ short shifter** at **£388 including 20% VAT**, only with the manual gearbox.[^special]
+The Spyder and the Boxster S Black Edition keep a standard six-speed manual and optional PDK behind their higher-output 3.4-litre engines; their catalogue performance reflects their own engines, weights and equipment. "Six-speed" alone does not mean identical clutches or ratios. For the later **UK Black Edition**, the **March 2011** price list offers the **XCZ short shifter** at **£388 including 20% VAT**, with the manual gearbox only.[^special]
 
 ## Identification and ageing
 
-Use the installed G87 transmission identification to distinguish the gearbox from later changes to the lever or knob.
+The identification on the installed G87 gearbox tells you which transmission is fitted, whatever has been done to the lever or knob.
 
-Age can affect several different links in the chain. Friction-lining wear, contamination or loss of clamp load can allow slip. Release-travel problems can cause drag. Wear or damage in cables and their joints can affect selection before the fork or synchroniser is reached. A dual-mass flywheel can deteriorate in its damping mechanism while the driven plate still has usable lining. Useful distinctions are slip under load, incomplete release, lost lever movement and resistance in one selection.[^ageing]
+Worn or contaminated linings, or lost clamping force, can let the clutch slip. Short release travel can make it drag. Worn cables or joints can upset selection before a fork or synchroniser is involved. A dual-mass flywheel can deteriorate in its damping mechanism while the driven plate still has usable lining. It helps to tell apart slip under load, incomplete release, lost lever movement and resistance in one particular gear.[^ageing]
 
 [^manual-id]: Porsche Cars North America, *2009 Technik Introduction — All Boxster/Cayman Models*, PNA 987 021 09, edition 2/09, printed Transmission pp. **103–104**, [publicly reproduced primary document](https://www.scribd.com/document/972719474/Boxster-2009); also [ManualsLib viewer p. 110](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=110). The introduction contains change descriptions, not a complete manual ratio table.
 

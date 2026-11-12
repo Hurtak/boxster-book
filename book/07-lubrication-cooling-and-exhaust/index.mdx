@@ -10,131 +10,129 @@ import oilHousingParts from "./images/pet-oil-filter-and-cooler.png";
 
 # Lubrication, cooling and exhaust
 
-The 2010 Boxster 2.9 manages heat in three connected ways. Oil separates moving surfaces and carries heat away from them. Coolant collects heat from the engine and releases it through radiators at the front of the car. Exhaust gas carries another substantial share of the combustion heat through catalysts and silencers to the central outlet. The machinery that produces this heat is described in [engine construction and valve gear](../05-engine-construction-and-valve-gear/index.mdx); this chapter follows what leaves it.
+The 2010 Boxster 2.9 gets rid of its heat in three connected ways. Oil keeps the moving surfaces apart and carries heat away from them. Coolant collects heat from the engine and sheds it through radiators at the front. Exhaust gas carries a large share of the combustion heat out through the catalysts and silencers to the central tailpipe. [Engine construction and valve gear](../05-engine-construction-and-valve-gear/index.mdx) describes the machinery that makes the heat; this chapter follows what leaves it.
 
 <Diagram id="fluids-explorer" poster={illustration0} alt={"The rear engine, integrated oil reservoir and oil-to-coolant exchanger connect to a belt-driven coolant pump, front radiator pair through long pipes, and a rear expansion-tank branch. Separate exhaust assemblies and silencers lead to the 2.9's single central outlet."} />
 
 ## Oil collection and pressure supply
 
-Porsche calls the 2.9's system **integrated dry-sump lubrication**. Its oil reservoir is within the engine assembly, below the working machinery. Returning oil is actively collected from the cylinder heads rather than being left entirely to gravity. The January 2010 brochure identifies four return pumps and a fifth pump supplying the lubricating points.[^fluid-integrated]
+Porsche calls the 2.9's system **integrated dry-sump lubrication**. The oil reservoir is inside the engine, below the moving parts, and oil is pumped out of the cylinder heads rather than left to drain back by gravity alone. The January 2010 brochure counts four of these return pumps and a fifth that feeds the lubrication points.[^fluid-integrated]
 
-The distinction between those jobs matters. A **scavenge pump** brings used oil back towards the reservoir. A **pressure pump** draws from the collected supply and delivers oil into the lubrication circuit. Collecting a plentiful volume somewhere in the engine would be of little use if the pressure pump could not draw it reliably during braking or cornering. Conversely, ample pressure at the pump cannot compensate indefinitely for oil remaining elsewhere.
+**Scavenge pumps** pull used oil back to the reservoir; the **pressure pump** draws from that supply and pushes it round the lubrication circuit. Each needs the other: a full reservoir is no use if the pressure pump cannot pick up oil under braking or cornering, and pressure at the pump cannot make up indefinitely for oil held up elsewhere in the engine.
 
-Each head has two extraction points served by two scavenge pumps. All five pumps are grouped in the oil-pan area and share a shaft; their drive comes from the crankshaft through a separate oil-pump chain, distinct from the two camshaft-drive chains. This compact arrangement serves the flat engine's widely separated heads while retaining the reservoir within the engine. Porsche also introduced a separating sheet-metal panel between crankcase and oil pan.[^fluid-pumps]
+Each head has two extraction points, with a scavenge pump for each. All five pumps sit on one shaft in the oil-pan area, driven from the crankshaft by their own chain, separate from the two camshaft chains. This reaches both of the flat engine's widely separated heads while keeping the reservoir inside it. Porsche also added a sheet-metal panel separating the crankcase from the oil pan.[^fluid-pumps]
 
 <Figure src={illustration2} alt={"Four pumps return oil from the two heads; the fifth supplies the pressure circuit. The drawing groups functions and does not specify the order of every filter, cooler and gallery passage."}>
 
-Four pumps return oil from the two heads; the fifth supplies the pressure circuit. The drawing groups functions and does not specify the order of every filter, cooler and gallery passage.
+Four scavenge pumps return oil from the two heads; the fifth feeds the pressure circuit. The drawing groups the pumps by job and does not show the order of every filter, cooler and gallery passage.
 
 </Figure>
 
-Oil delivered under pressure reaches bearing surfaces and the oil-fed mechanisms described in [engine construction and valve gear](../05-engine-construction-and-valve-gear/index.mdx). In a rotating plain bearing, relative motion draws oil into the narrowing clearance, creating a load-carrying film. Continuous supply replenishes that film and removes heat. The oil then returns to the collection system for another circuit. Pressure, flow, temperature and the physical condition of the bearing all contribute to the result; a level reading answers only one of those questions.
+The pressurised oil reaches the bearings and the oil-fed mechanisms described in [engine construction and valve gear](../05-engine-construction-and-valve-gear/index.mdx). In a plain bearing, the turning shaft drags oil into the narrowing gap and builds a load-carrying film, which a steady supply renews while taking heat away. Pressure, flow, temperature and bearing condition all matter, and the oil-level reading measures none of them.
 
-The pressure pump varies its delivery to suit demand. The engine management uses speed, load, oil temperature and the expected change in engine speed to position a control valve. Hydraulic force moves one pump gear axially, changing its overlap with the fixed gear. Less overlap reduces delivery and the work needed to drive the pump. The controller can therefore provide the required supply without making the pump deliver its maximum volume throughout gentle running.[^fluid-demand]
+The pressure pump varies its delivery to suit demand. The engine management sets a control valve from engine speed, load, oil temperature and the expected change in engine speed. Oil pressure from that valve slides one pump gear along its axis, changing its overlap with the fixed gear; less overlap cuts both delivery and the effort needed to turn the pump.[^fluid-demand] The control is electronic, but the crankshaft still drives the pump and the four scavenge sections keep working regardless. That is how the same system can be described both as five pumps and as a demand-controlled oil pump.
 
-“Electronically controlled” describes the regulation: the crankshaft still provides the mechanical drive. The four scavenge sections retain their separate return function. These distinctions explain how a five-pump system can also be described as having a demand-controlled oil pump.
+The [crankcase-ventilation separator](../06-air-fuel-ignition-and-engine-control/index.mdx#crankcase-ventilation-and-oil-separation) handles a different flow, recovering oil mist from blow-by gases before they return to the intake.
 
-The [crankcase-ventilation separator](../06-air-fuel-ignition-and-engine-control/index.mdx#crankcase-ventilation-and-oil-separation) recovers oil mist from blow-by before gases return to the intake. It serves a different flow from these liquid-oil pump circuits.
+## Checking the oil level
 
-## Reading the oil level
+The level is read through the on-board computer. Porsche specifies a stationary car on level ground, the engine idling and the oil at operating temperature, at least **60 °C**. Select the oil menu and wait for the measurement to finish. A slope or a different engine state moves the oil and spoils the comparison.[^fluid-level]
 
-The level is checked through the on-board computer. For this generation, Porsche specifies a stationary, horizontal car, an idling engine and oil at operating temperature, at least **60 °C**. After selecting the oil menu, the driver waits for the measurement to finish. A sloping surface or a different engine state changes where the oil lies and makes comparisons less meaningful.[^fluid-level]
+The segmented display shows the permitted band, not the total oil in the engine, and its top mark is a limit, not a target. A good level also proves nothing about the pressure circuit, which has its own warning.
 
-The segmented display represents the permitted level band, rather than the engine's entire oil quantity. Its top mark is a limit, not an invitation to add an extra margin. Equally, the oil-pressure warning and the level display concern different conditions: sufficient oil in the reservoir does not prove that the pressure circuit is working correctly.
+A later Porsche bulletin covering model years 2009–2012 explains that an oil-level warning can stay on after topping up until the prescribed confirmation measurement is done. Porsche issued it because level sensors that worked were being replaced unnecessarily. Complete the measurement before blaming the sensor.[^fluid-confirm]
 
-A later Porsche bulletin covering model years 2009–2012 explains that an oil-level warning can remain after topping up until the prescribed confirmation measurement is performed. Porsche issued it because functioning level sensors were being replaced unnecessarily. Follow the car's measurement process before interpreting the continued message as a failed sensor.[^fluid-confirm]
+## Carrying heat to the front
 
-## Moving heat to the front
-
-The mid-mounted engine and front-mounted radiators are joined by long coolant pipes and flexible connections. The principal radiator modules sit behind the left and right front openings, where they can receive outside air. Porsche's parts drawings distinguish each radiator core, rear fan and fan shroud, front air guides, and supply and return connections. Separate distributor tubes connect the left and right radiators to the long circuit; the two cores are not arranged one after the other. The centre-radiator installation has its own plate and configuration qualifiers.[^fluid-pet-cooling]
+Long coolant pipes and flexible connections link the engine to radiators at the front, where they meet fresh air. The two main radiator modules sit behind the left and right front openings, each with its own core, rear fan and shroud, front air guides, and supply and return connections in Porsche's parts drawings. Separate distributor tubes feed the two radiators side by side, not one after the other. The centre radiator has its own parts plate and configuration qualifiers.[^fluid-pet-cooling]
 
 <Figure src={illustration3} alt={"Porsche's period cutaway places the radiator installation at the front and the engine, rear silencers and coolant expansion tank towards the rear. This is the brochure's Boxster S illustration, used to show the shared mid-engine packaging rather than to identify the reference car's options. © Porsche AG."}>
 
-S cutaway locating the front radiators and rear power unit. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), pp. 40–41. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=18).
+Boxster S cutaway, showing the layout the 2.9 shares: radiators at the front; engine, rear silencers and coolant expansion tank at the back. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), pp. 40–41. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=18).
 
 </Figure>
 
-The coolant pump creates circulation. Coolant absorbs heat while passing through the engine's internal jackets, travels towards the radiators, releases heat through their tubes and fins, then returns towards the pump. Air passing through the fins receives that heat. Moving coolant and moving air are therefore two parts of the same transfer process: a clear coolant passage alone cannot compensate for blocked airflow.
+The pump circulates coolant through the engine's internal jackets, where it picks up heat, then through the radiators' tubes and fins, where air carries the heat away. Both flows are needed: a clear coolant circuit cannot make up for blocked airflow.
 
-Inside the engine, Porsche uses cross-flow cooling to distribute coolant across the cylinder heads. The new generation received revised passages, including additional cooling around the exhaust-valve seat area, where gas leaving the combustion chamber imposes a high local heat load. The pump is a separate, belt-driven module attached outside the crankcase on the bank 1–3 side.[^fluid-engine-cooling]
+Inside the engine, cross-flow cooling spreads coolant across the cylinder heads. The new generation gained revised passages, including extra cooling around the exhaust-valve seats, where gas leaving the combustion chamber concentrates the heat. The pump is a separate belt-driven module on the outside of the crankcase, on the bank 1–3 side.[^fluid-engine-cooling]
 
-The **thermostat** regulates access to the radiator circuit as the engine warms. Restricting that long circuit during warm-up allows a shorter circulation path to bring the engine towards its working temperature. Opening the radiator path then increases heat rejection. This is progressive regulation, with an intermediate state as well as the simplified closed and open states used in teaching diagrams. The general thermostat principle is a temperature-sensitive expansion element moving a valve against a spring.[^fluid-thermostat]
+The **thermostat** controls how much coolant reaches the radiators. From cold it restricts the long radiator circuit, so coolant takes a shorter path that brings the engine up to working temperature. As it warms, the thermostat opens the radiator path progressively, through intermediate positions, not just the shut and open states of teaching diagrams. The general principle is a temperature-sensitive element that expands and pushes a valve open against a spring.[^fluid-thermostat]
 
 <Diagram id="fluid-cooling-path" poster={illustration1} alt={"During warm-up, coolant keeps circulating through the engine's short return path while the thermostat restricts the front radiator route. Once warm, the radiator circuit opens; electric fans can assist airflow when required."} />
 
-A thermostat's opening temperature is not a promise that every part of the engine will stay at that exact temperature. Heat production, radiator capacity, air temperature and airflow still influence the operating balance.
+Its opening temperature does not fix the temperature of every part of the engine; heat output, radiator capacity, air temperature and airflow still set the balance.
 
-The electric radiator fans support airflow through the front modules, particularly when road speed supplies little of it. The engine-compartment blower has a different task: it ventilates the enclosed engine space. Porsche's handbook locates these separately and explains that the engine-compartment blower can continue running, or restart, after shutdown as the compartment temperature is monitored.[^fluid-fans]
+The electric radiator fans draw air through the front modules, which matters most at low road speed. The engine-compartment blower is a different fan that ventilates the enclosed engine space; Porsche's handbook notes that it may keep running, or start again, after switch-off while the compartment temperature is monitored.[^fluid-fans]
 
-The **expansion tank** accommodates the coolant's changing volume; its filling connection is reached through the rear luggage-compartment service flap. The parts drawing separates the moulded tank, bleed valve, level switch and vent lines from the rear service cup and connecting hose. That cup carries separate oil and coolant filler caps. The liquid expands as it warms; the pressurised system and its cap maintain a controlled operating environment. Check the marked tank level with the engine cold and the car level. A hot cap can release pressurised coolant, so its apparent accessibility does not make hot opening appropriate.[^fluid-tank]
+The **expansion tank** gives the coolant room to expand as it warms, and the cap holds the system under pressure. The filler sits under the service flap in the rear luggage compartment, in a service cup that carries separate oil and coolant caps; the parts drawing lists the moulded tank, bleed valve, level switch and vent lines separately from the cup and its hose. Check the marked level with the engine cold and the car level. The cap is easy to reach, but opened hot it can release pressurised coolant.[^fluid-tank]
 
-The long circuit also makes trapped air relevant after work. Air occupies space that should contain coolant and can interrupt effective heat transfer. Correct filling and bleeding consequently belong to the repair procedure, not to guesswork based on a single temperature-gauge observation.
+After work on so long a circuit, trapped air can displace coolant and block heat transfer. Correct filling and bleeding are part of the repair, not something to judge from one glance at the temperature gauge.
 
-## Where oil and water exchange heat
+## Where oil and coolant exchange heat
 
-The engine includes an oil-to-coolant heat exchanger. Separate passages bring the two fluids close together across metal walls. Heat crosses those walls; the liquids remain separate. Porsche's engine-lubrication catalogue places the exchanger on the oil-conducting housing. A replaceable filter insert sits in a removable cup beneath the adjoining part of that housing; a separate oil-pressure sender also mounts there. The oil-level sender belongs to the sump assembly. Filtering oil, measuring pressure and measuring level are three distinct jobs.[^fluid-exchanger]
+The engine's oil-to-coolant heat exchanger runs the two liquids through separate passages divided by metal walls: heat crosses, while the liquids stay separate. Porsche's engine-lubrication catalogue places the exchanger on the oil-conducting housing. A removable cup beneath the neighbouring part of that housing holds the replaceable filter insert, and a separate oil-pressure sender mounts there too. The oil-level sender belongs to the sump. Filtering the oil, measuring its pressure and measuring its level are three separate jobs.[^fluid-exchanger]
 
 <Figure src={illustration4} alt={"The exchanger transfers heat across a metal wall while keeping oil and coolant separate. The arrows depict hotter oil losing heat to cooler coolant; the direction reverses if their relative temperatures reverse."}>
 
-The exchanger transfers heat across a metal wall while keeping oil and coolant separate. The arrows depict hotter oil losing heat to cooler coolant; the direction reverses if their relative temperatures reverse.
+Heat crosses the wall from the hotter fluid to the cooler one, while oil and coolant stay apart. The arrows show hot oil warming the coolant; when the coolant is warmer, heat flows the other way.
 
 </Figure>
 
-Calling the component an oil cooler describes an important operating role, but heat always follows the temperature difference. When the coolant is warmer, it can help warm the oil; when the oil is warmer, heat passes towards the coolant and ultimately the radiators. Neither fluid has to match the other's temperature. Oil and coolant warm different masses, follow different paths and experience different heat inputs, so a settled coolant gauge does not establish that all the oil is equally warm.
+"Oil cooler" describes an important part of its job, but heat always flows from hotter to cooler. When the coolant is warmer, it helps warm the oil; when the oil is warmer, its heat passes to the coolant and on to the radiators. The two never have to reach the same temperature. Oil and coolant heat different masses, follow different paths and pick up heat in different places, so a steady coolant gauge does not mean all the oil is equally warm.
 
 <Figure src={oilHousingParts} alt="Exploded oil-conducting housing with the filter insert and cup below, heat exchanger above, and separate oil separator." width="520px">
 
-The oil-conducting housing (1) brings together the filter cup (9), insert (11), heat exchanger (12) and oil separator (15). The separated pieces make their different jobs visible; their catalogue spacing is not the installed layout. Factory drawing: Porsche AG, [PET 104-005, PDF p. 60](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=60).
+The oil-conducting housing (1) carries the filter cup (9) and insert (11), the heat exchanger (12) and the oil separator (15), spread out to show their separate jobs rather than their installed positions. Factory drawing: Porsche AG, [PET 104-005, PDF p. 60](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=60).
 
 </Figure>
 
-## Exhaust collection, treatment and silencing
+## The exhaust: cleaning and silencing
 
-Each cylinder bank releases pulses into its exhaust manifold. The complete system balances several requirements: getting the gas out of the cylinders, converting pollutants, containing noise and fitting hot components around the rear power unit. Porsche's technical introduction describes two gas-treatment paths which meet through connecting pipes at the silencers before discharging centrally.[^fluid-exhaust-route]
+Each cylinder bank pushes its exhaust pulses into its own manifold. The system must let the gas out freely, convert pollutants, contain noise and fit hot parts around the rear power unit. Porsche's technical introduction describes two treatment paths, one per bank, joined by connecting pipes at the silencers before the gas leaves through the centre.[^fluid-exhaust-route]
 
-Each bank has one main catalytic-converter assembly integrated with its manifold, containing **two ceramic monoliths**, or substrate bricks. The gas passes through **upstream oxygen sensor → first brick → downstream oxygen sensor → second brick → main silencer**. There are four oxygen sensors in total: two per bank. Distinguishing the bricks from the complete assemblies avoids mistaking this arrangement for four separate converter units.[^fluid-exhaust-route]
+Each bank has one main catalytic converter built into its manifold, containing **two ceramic monoliths**, or bricks. The gas passes an upstream oxygen sensor, the first brick, a downstream oxygen sensor and the second brick before reaching the main silencer. That makes four oxygen sensors and four bricks, but only two converters.[^fluid-exhaust-route]
 
 <Figure src={illustration5} alt={"Each bank has two catalyst bricks within one manifold/converter assembly, with an oxygen sensor before the first brick and another between the bricks. The schematic shows gas-treatment sequence and connected silencers."}>
 
-Each bank has two catalyst bricks within one manifold/converter assembly, with an oxygen sensor before the first brick and another between the bricks. The schematic shows gas-treatment sequence and connected silencers.
+Each bank's manifold and converter assembly holds two catalyst bricks, with one oxygen sensor before the first brick and another between them. Connecting pipes join the two silencers.
 
 </Figure>
 
-These sensors connect the physical exhaust route to the [mixture-feedback system](../06-air-fuel-ignition-and-engine-control/index.mdx#mixture-feedback-checking-the-result) explained in the preceding chapter.
+Those sensors feed the [mixture-feedback system](../06-air-fuel-ignition-and-engine-control/index.mdx#mixture-feedback-checking-the-result) explained in the previous chapter.
 
-A catalyst provides active surfaces on which reactions convert pollutants; it needs a suitable working temperature. A silencer instead manages pressure waves and sound. Its chambers and passages change how pulses travel and interact, while the gas continues towards the outlet. The connecting pipes let the two banks communicate acoustically as well as combine their discharge. Flanged joints connect the manifold/converter assemblies to the silencers; heat shields protect neighbouring parts, while a rear retainer and straps support the silencers. The catalogue distinguishes manual and PDK versions of that retainer. These functions explain why simply judging an exhaust by the size of its visible end misses most of the system.
+The catalyst provides active surfaces on which reactions convert pollutants, and must be hot enough to work. The silencer handles pressure waves and sound: its chambers and passages change how the pulses travel and interact as the gas flows on. The connecting pipes link the banks acoustically as well as combining their flow. Flanged joints connect each manifold and converter to its silencer, heat shields protect nearby parts, and a rear retainer and straps carry the silencers; the catalogue lists manual and PDK versions of the retainer. Little of this can be judged from the tailpipe.
 
 <Figure src={illustration6} alt={"The standard Boxster S exhaust pictured by Porsche shows two manifold/catalyst assemblies, two rear silencers, connecting pipes and twin central outlets. Porsche describes the 2.9 system as matching the S apart from its tailpipe. © Porsche AG."}>
 
-S exhaust assembly with twin outlets; the standard 2.9 has a single shaped outlet. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 39. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=17).
+Boxster S exhaust, with twin outlets; the standard 2.9 has a single shaped outlet. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 39. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=17).
 
 </Figure>
 
-The standard 2.9 has a single shaped stainless-steel outlet; the S has twin outlets. The 2.9's technical account expressly says that its exhaust otherwise matches the S system. The 2.9 also has the [secondary-air warm-up system](../06-air-fuel-ignition-and-engine-control/index.mdx#cold-running-and-emissions) described in engine control.[^fluid-base-exhaust]
+The standard 2.9 ends in a single shaped stainless-steel tailpipe where the S has two. Porsche's technical account says the 2.9's exhaust otherwise matches the S system. The 2.9 also has the [secondary-air warm-up system](../06-air-fuel-ignition-and-engine-control/index.mdx#cold-running-and-emissions) described under engine control.[^fluid-base-exhaust]
 
 ## Options on the 2010 2.9
 
-The UK catalogue offers a **sports exhaust system** for a more pronounced sound. Its switch is shown in the handbook, with an illuminated indicator when selected. Porsche's later parts catalogue distinguishes sports-tailpipe code **XLS** from sports-exhaust code **XLF**: appearance and switchable silencing are distinct equipment questions.[^fluid-exhaust-option]
+The UK catalogue offers a **sports exhaust system** for a more pronounced sound. The handbook shows its button, which lights up when the system is selected. Porsche's later parts catalogue gives sports tailpipes and the sports exhaust separate codes, **XLS** and **XLF**: the look and the switchable silencing are separate equipment.[^fluid-exhaust-option]
 
-The factory sports system uses flaps associated with the silencers. Porsche's parts documentation identifies the change-over valve, vacuum lines and vacuum unit. In this arrangement an electrical command controls a pneumatic path; a pressure difference moves an actuator and its linkage, which positions the flap. Altering the acoustic route changes the exhaust note. The button therefore commands a system containing electrical control, small-bore hoses and mechanical movement.[^fluid-valves]
+The factory sports system uses flaps associated with the silencers. Porsche's parts documentation lists a change-over valve, vacuum lines and a vacuum unit. An electrical command switches the vacuum path; the pressure difference moves the actuator, and its linkage positions the flap, giving the gas a different acoustic route. The button therefore depends on electrics, small-bore hoses and moving parts.[^fluid-valves]
 
-Optional PDK brings a further oil-to-coolant exchanger for its clutch and hydraulic circuit. This is separate from the engine-oil exchanger. The gearbox's heat becomes another load for the cooling system; [PDK](../09-pdk-transmission/index.mdx) explains its oil circuits. Centre-radiator fitment should be checked against the installed configuration rather than inferred from the model badge alone.[^fluid-pdk]
+Optional PDK adds a second oil-to-coolant exchanger, for the gearbox's clutch and hydraulic oil, separate from the engine's. The gearbox's heat adds to the cooling load; [PDK](../09-pdk-transmission/index.mdx) explains its oil circuits. Check centre-radiator fitment on the car itself, not from the model badge.[^fluid-pdk]
 
 ## Changes in other 2.9 model years
 
-The five-pump system, demand control and revised cooling arrived with the 2009 engine generation. Sports exhaust was advertised for **April 2009 at the earliest**.[^fluid-years] See the [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix) for the dated evidence beyond this reference arrangement.
+The five-pump lubrication, demand control and revised cooling arrived with the 2009 engine generation. The launch brochure advertised the sports exhaust from **April 2009 at the earliest**.[^fluid-years] The [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix) holds the dated evidence for other years.
 
 ## The S, Spyder and Black Edition
 
-The S shares the five-pump lubrication, revised cooling principles and basic exhaust arrangement. Its twin tailpipe distinguishes the standard exhaust outlet from the 2.9’s single outlet.[^fluid-pumps][^fluid-base-exhaust]
+The S shares the five-pump lubrication, the cooling principles and the basic exhaust layout. Its standard exhaust differs at the tail, with twin outlets instead of the 2.9's single one.[^fluid-pumps][^fluid-base-exhaust]
 
-The Spyder and Black Edition both offer sports exhaust as an option. Their higher rated output is a separate engine specification; the sources do not establish a different pump count, reservoir or thermostat calibration for these derivatives.[^fluid-special]
+The Spyder and Black Edition both list the sports exhaust as an option. Their higher rated output comes from a different engine specification; the sources show no different pump count, reservoir or thermostat calibration for either.[^fluid-special]
 
 ## Identification and ageing
 
-For cooling, follow the complete chain from front air passages and radiator faces through pipes, connections, pump and tank. For a sports exhaust, inspect the control hoses and linkages as well as the silencers; replacement tailpipe trim alone does not identify the switchable system.
+To check the cooling, follow the whole chain from the front air openings and radiator faces through the pipes, connections, pump and tank. To identify a sports exhaust, look for its vacuum hoses and flap linkages as well as the silencers. Replacement tailpipe trim alone does not show that the switchable system is fitted.
 
-Leaks, obstructed fins, deteriorated connections and immobile mechanisms affect different parts of these chains. Diagnose the observed symptom against the relevant circuit: an oil-level message, pressure warning, coolant loss and unusual exhaust sound are different starting points.
+Leaks, clogged fins, perished connections and seized mechanisms each affect a different link. Start from the circuit the symptom belongs to: an oil-level message, an oil-pressure warning, coolant loss and an unusual exhaust note point to different places.
 
 [^fluid-integrated]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 32–33, [original brochure, PDF p. 14](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=14).
 

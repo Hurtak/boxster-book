@@ -9,119 +9,119 @@ import halogenLampParts from "./images/pet-halogen-headlamp.png";
 
 # Lighting, electrical systems and security
 
-The Boxster's electrical system has two overlapping tasks. It delivers energy to motors, lamps and heaters, and carries information between switches, sensors and controllers. A headlamp needs both a usable power supply and an instruction to illuminate. A starter needs substantial electrical power. Starting the engine also requires authorisation.
+The Boxster's electrical system does two jobs. It delivers energy to motors, lamps and heaters, and it carries information between switches, sensors and control units. A headlamp needs both: power, and an instruction to light. The starter needs a great deal of power, but starting the engine also needs authorisation.
 
-The reference 2010 2.9 uses a conventional 12-volt system with a battery, a separate starter and an engine-driven alternator. Halogen headlamps are the starting specification; bi-xenon lighting is an option. These distinctions matter when identifying the equipment on a surviving car.[^supply][^lamps]
+The 2010 2.9 has a conventional 12-volt system with a battery, a separate starter and an engine-driven alternator. Halogen headlamps are standard; bi-xenon lighting is an option.[^supply][^lamps]
 
 <Diagram id="electrical-explorer" poster={illustration0} alt={"The front battery connects through a long positive feed to the rear starter and alternator; a protected branch supplies a front halogen lamp, while body and engine earth connections complete the circuit. Ignition and lighting controls have a separate request role."} />
 
-## Stored energy, starting and charging
+## Battery, starter and alternator
 
-The battery stores energy chemically. Its positive and negative terminals establish a voltage difference; a complete circuit allows current to flow through a load. The Boxster's battery sits under a cover in the front luggage-compartment area, while the engine and starter are behind the cabin. The positive supply includes a power distributor with fuse elements, a long cable to a covered engine connection point, and a starter/alternator wire set. The distributor is distinct from the footwell fuse panel; separate body and engine earth connections complete the return network.[^battery]
+The battery stores energy chemically; the voltage between its terminals drives current through any complete circuit. It sits under a cover in the front luggage compartment, far from the engine and starter behind the cabin. The positive supply runs through a power distributor with fuse elements, separate from the footwell fuse panel, then along a long cable to a covered connection point at the engine and a starter/alternator wire set. Body and engine earth connections complete the return.[^battery]
 
-During starting, the starter's electric motor turns the engine through its engagement with the flywheel drive. This provides the rotation needed for the engine to begin its own combustion cycles. The ignition key requests starting through a control circuit; a separate high-current path supplies the motor.[^starter]
+The starter motor engages the flywheel drive and turns the engine until it runs on its own combustion. The key only requests a start through a control circuit; a separate high-current path feeds the motor.[^starter]
 
-Once the engine runs, the alternator converts mechanical rotation into electrical energy. Its internal rectification supplies direct current to the vehicle, and regulation controls its output voltage. The accessory belt drives the Boxster's alternator, along with other engine accessories. Available alternator output must supply the operating loads and replenish energy removed from the battery.[^supply]
+Once the engine runs, the accessory belt drives the alternator with the other engine accessories. Internal rectification turns its output into direct current, and a regulator controls the voltage. In normal running, the alternator supplies the switched-on loads and replaces the energy taken from the battery.[^supply]
 
 <Figure src={illustration2} alt={"Starting uses stored battery energy to turn the starter and engine. Running reverses the energy relationship: the engine drives the alternator, which supplies electrical loads and can recharge the battery."}>
 
-Starting uses stored battery energy to turn the starter and engine. Running reverses the energy relationship: the engine drives the alternator, which supplies electrical loads and can recharge the battery.
+Energy flows one way when starting and the other way when running. The battery turns the engine; then the engine turns the alternator, which powers the loads and recharges the battery.
 
 </Figure>
 
-The battery remains part of the working system after starting. It can support the loads when demand exceeds the alternator's available output. Repeated short trips, cold starting and electrical use while parked can leave less charge than a longer journey restores. Porsche's manual specifically draws attention to roof and audio operation with the engine stopped.[^battery]
+The battery still works after starting, covering any demand the alternator cannot meet. Short trips, cold starts and electrical use while parked can leave the battery with less charge than a longer journey would restore. Porsche's manual singles out operating the roof and the audio system with the engine stopped.[^battery]
 
-Battery **capacity**, expressed in ampere-hours, describes stored charge under specified conditions. Starting ability also depends on temperature, internal condition and the resistance of the entire high-current path. A battery can light a small cabin lamp yet struggle to turn the engine: the starter demands much more current. Capacity and present state of charge are related questions, but they are not interchangeable measurements.
+A battery's **capacity**, in ampere-hours, is the charge it stores under specified conditions, which is not the same as its present state of charge. Starting also depends on temperature, the battery's internal condition and the resistance of the whole high-current path. A battery that lights a cabin lamp may still fail to turn the engine, because the starter draws far more current.
 
-## A circuit needs a return path
+## Circuits, earths and fuses
 
-A typical load receives power through protected wiring and a switching device, then returns current to battery negative through wiring and the car's earth connections. The body and engine provide useful parts of that return network. An earth is an electrical connection, rather than a place where current disappears.
+Current must flow round a loop. A load takes power through protected wiring and a switch, and the current returns to battery negative through wiring and earth connections, with the body and engine forming part of that path. An earth is a connection, not a place where current disappears.
 
-Voltage is measured in **volts (V)**, current in **amperes (A)** and power in **watts (W)**. For a steady direct-current example, **power = voltage × current**. At an ideal 12 V, a 24 W load draws 2 A. Adding another identical load in parallel raises the supply current to 4 A while each branch still receives 12 V. These are teaching values, not the Boxster's lamp ratings.
+Voltage is measured in **volts (V)**, current in **amperes (A)** and power in **watts (W)**. For steady direct current, **power = voltage × current**. At an ideal 12 V, a 24 W lamp draws 2 A. A second identical lamp in parallel doubles the supply current to 4 A, while each lamp still receives 12 V. These are teaching values, not the Boxster's lamp ratings.
 
 <Diagram id="electrical-current-path" poster={illustration1} alt={"An ideal 12-volt battery powers one 24-watt lamp through an intact fuse and a closed switch. The return path completes the circuit, giving 2 amperes. A second parallel lamp increases total current; an open fuse or return connection stops both lamps."} />
 
-The interactive circuit deliberately makes a broken earth as effective as an open feed. In a real connection, corrosion may add resistance without making a complete break. Some supply voltage is then lost across that resistance when current flows, leaving less across the intended load. A connection can consequently behave acceptably with a small load and poorly with a large one.[^earth]
+In the interactive circuit, a broken earth stops the lamps as surely as a broken feed. A real corroded joint often adds resistance without breaking the circuit. Some voltage is then lost across the joint, leaving less for the load, so a poor connection can cope with a small load and fail under a large one.[^earth]
 
-Fuses protect circuits against excessive current caused by faults or overloads. A fuse element opens the circuit when its operating conditions are exceeded; it does not restore a damaged wire or identify the original fault. The owner's manual locates the fuse panel in the driver's footwell and supplies the assignment on its cover. The specified fuse rating is matched to the protected circuit.[^fuses]
+A fuse opens the circuit when a fault or overload pushes the current beyond its rating. It does not repair a damaged wire or identify the fault. The owner's manual places the fuse panel in the driver's footwell, with the assignments on its cover; each rating is matched to its circuit.[^fuses]
 
-## Controllers carry decisions as well as current
+## Control units and the data network
 
-Many operations are mediated by electronic controllers. A switch can report a request; a controller checks the relevant conditions and operates an output. A door contact, for example, conveys the state of a latch, whereas a lock actuator converts electrical energy into movement. A timed interior lamp combines an input, a decision and a power output.
+Many functions pass through an electronic control unit. A switch reports a request; the control unit checks the conditions and operates an output. A door contact reports a latch's state, while a lock actuator turns electrical energy into movement. A timed interior lamp combines input, decision and power output.
 
-Controllers also exchange information. Porsche's contemporary engine-management diagram explicitly shows a **CAN interface** connecting functions including transmission control, the immobiliser, instruments and climate control. A data message can carry an engine-speed value or an operating request without carrying the energy needed to run a motor. The receiving module still needs power and an earth.[^network]
+Control units also share information. Porsche's engine-management diagram shows a **CAN interface** linking functions including transmission control, the immobiliser, instruments and climate control. A message can carry an engine-speed value or a request, but not the energy to run a motor; the receiving module still needs power and an earth.[^network]
 
-This explains why a fault can cross apparent system boundaries. Several warnings may share an underlying supply or communication problem, while a single failed lamp can have an entirely local cause. The number of warnings alone does not establish the number of failed components. Entertainment connections are covered separately in [Audio, navigation and communication](../17-audio-navigation-and-communication/index.mdx).
+One supply or communication fault can therefore raise warnings in several systems, while a single dead lamp may have a purely local cause. Counting warnings does not count failed parts. Entertainment connections are covered in [Audio, navigation and communication](../17-audio-navigation-and-communication/index.mdx).
 
-## Halogen, bi-xenon and the front light modules
+## Halogen and bi-xenon headlamps
 
-Headlamps shape light onto the road. Dipped beam provides a controlled distribution for ordinary night driving; main beam extends illumination when conditions allow. In a halogen lamp, current heats a filament until it emits light. A gas-discharge xenon lamp produces light through an electrical arc and requires its associated control equipment. **Bi-xenon** describes xenon lighting serving both dipped- and main-beam functions.[^xenon]
+Dipped beam gives a controlled pattern for ordinary night driving; main beam reaches further when conditions allow. A halogen lamp makes light by heating a filament. A xenon lamp is a gas-discharge lamp: it uses an electrical arc and needs its own control equipment. **Bi-xenon** means xenon provides both dipped and main beam.[^xenon]
 
-The reference car's standard arrangement combines halogen main headlamps with separate front modules above the outer air intakes. Each main assembly has separate H7 and H9 road-light bulbs plus a direction-indicator bulb, and sits on a carrier with a secured electrical connector. The lower modules combine rectangular front fog lamps and LED **position lights**. Position lights identify the car's presence and width; their job differs from lighting the road.[^lamps][^lamp-wording]
+The standard car has halogen headlamps, with separate front modules above the outer air intakes. Each headlamp holds separate H7 and H9 bulbs for the road beams and an indicator bulb, on a carrier with a secured connector. The lower modules combine rectangular fog lamps with LED **position lights**, which show the car's presence and width rather than lighting the road.[^lamps][^lamp-wording]
 
 <Figure src={halogenLampParts} alt="Halogen headlamp assembly with H7 and H9 bulbs, indicator bulb, covers and carrier separated; the lower front light and side repeater appear below." width="540px">
 
-Inside the standard halogen arrangement: main assembly (1), H7 and H9 bulbs (2, 3), indicator bulb (5), and carrier (12). The lower front module (20) and side repeater (28) are separate units; the catalogue also lists model-specific alternatives. Factory drawing: Porsche AG, [PET 905-000, PDF p. 552](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=552).
+Inside the standard halogen headlamp: main assembly (1), H7 and H9 bulbs (2, 3), indicator bulb (5) and carrier (12). The lower front module (20) and side repeater (28) are separate units; the catalogue also lists model-specific alternatives. Factory drawing: Porsche AG, [PET 905-000, PDF p. 552](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=552).
 
 </Figure>
 
-The optional **P75** package adds bi-xenon headlamps, dynamic cornering lights and dedicated LED daytime running lights. It includes headlamp cleaning, and the bi-xenon system has automatic beam-height adjustment. The gas-discharge bulbs, lamp control units, range-control servomotors and cornering controller are distinct components. The cleaning circuit has its own pump and two nozzle assemblies supplied from the washer reservoir. With this arrangement, the front auxiliary modules provide position lights and LED daytime running lights in place of the standard front fog lamps.[^xenon]
+The optional **P75** package adds bi-xenon headlamps with automatic beam-height adjustment, dynamic cornering lights, headlamp cleaning and dedicated LED daytime running lights. Its hardware includes gas-discharge bulbs, lamp control units, range-control servomotors and a cornering controller. The cleaning system has its own pump and two nozzle assemblies, fed from the washer reservoir. The lower modules then carry position lights and LED daytime running lights instead of fog lamps.[^xenon]
+
+Dynamic cornering swivels the beam into a bend, using steering angle and vehicle movement; Porsche quotes up to **15°**. Automatic levelling corrects the beam height as load and body pitch change.[^xenon]
 
 <Figure src={illustration3} alt={"The standard front arrangement uses halogen headlamps and a separate fog-lamp and LED-position-light module. The optional arrangement adds bi-xenon road lighting, beam levelling and dynamic cornering, with dedicated LED daytime running lights below."}>
 
-The standard front arrangement uses halogen headlamps and a separate fog-lamp and LED-position-light module. The optional arrangement adds bi-xenon road lighting, beam levelling and dynamic cornering, with dedicated LED daytime running lights below.
+Standard halogen lighting with fog lamps in the lower modules, and the P75 alternative: bi-xenon with levelling and cornering, and LED daytime running lights where the fog lamps were.
 
 </Figure>
 
-Daytime running lights help other people see the car during daylight. They do not substitute for dipped beam in darkness, and their presence does not establish that all rear lights are illuminated. Porsche's manual distinguishes the switch arrangements for halogen and bi-xenon cars and cautions that daytime-light operation varies by country.[^daylight]
+Daytime running lights help other people see the car by day. They do not replace dipped beam after dark, and they do not mean the rear lights are on. Porsche's manual describes different switches for halogen and bi-xenon cars and notes that daytime-light operation varies by country.[^daylight]
 
 <Figure src={illustration4} alt={"A red Boxster has bi-xenon main headlamps above separate illuminated LED front modules."}>
 
-The optional bi-xenon front arrangement. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 65. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+Optional bi-xenon headlamps above the lit LED front modules. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 65. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
 </Figure>
 
-Dynamic cornering swivels the beam horizontally towards a bend using steering angle and vehicle movement. Automatic levelling corrects beam height as load and body pitch change. Porsche quotes up to **15°** of cornering swivel.[^xenon]
+## Rear and convenience lighting
 
-## Rear lamps and everyday visibility
-
-LED rear lighting is a characteristic 987.2 change. Light-emitting diodes produce light electronically rather than by heating a filament. Their fast response is useful for a brake-light signal, and they allow the rear light signature to be formed from numerous small sources. The rear clusters combine several distinct functions within one housing: the parts catalogue separately lists conventional bulbs for reversing and direction indication. “LED rear lights” therefore does not mean that every light source in that housing uses the same technology.[^rear]
+LED rear lights are a characteristic 987.2 change. LEDs produce light electronically rather than from a hot filament; they respond quickly, which suits a brake light, and many small sources can form the light signature. Not every lamp in the cluster is an LED, though: the parts catalogue lists conventional bulbs for reversing and the indicators.[^rear]
 
 <Figure src={illustration5} alt={"The rear of a red Boxster S shows illuminated rear light signatures, one on each side of the luggage lid."}>
 
-S rear lighting; the 2.9 shares the LED rear-light concept. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 65. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+Boxster S rear lights; the 2.9 shares the LED rear-light concept. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 65. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
 </Figure>
 
-The car also coordinates interior and exterior convenience lighting. Welcome Home illumination provides a temporary pool of light when entering or leaving; it is a timed operating mode, rather than a separate kind of bulb. The brochure describes adjustment of its delay through PCM with Sport Chrono Package Plus. A lamp that stays on briefly after locking can therefore be following a commanded delay.[^convenience]
+Welcome Home lighting is a timed mode, not a separate lamp: it gives a temporary pool of light as you get in or out. The brochure says the delay can be adjusted through PCM with Sport Chrono Package Plus, so a lamp that stays on briefly after locking may simply be following it.[^convenience]
 
 ## Keys, locks, immobiliser and alarm
 
-The key combines a mechanical blade, a radio remote and an immobiliser transponder. Those functions answer different questions. The blade fits the lock; the remote requests locking or luggage-compartment release; the transponder supplies an authorised code for starting. The exterior mechanical lock cylinder belongs to the driver's door handle, changing sides between left- and right-hand-drive cars. The immobiliser prevents an unauthorised starting request from becoming permission to run the engine.[^security]
+The key combines a mechanical blade, a radio remote and an immobiliser transponder. The blade fits the lock, the remote requests locking or luggage-compartment release, and the transponder supplies the authorised code for starting. The exterior lock cylinder is in the driver's door handle, so it changes sides between left- and right-hand-drive cars. The immobiliser stops an unauthorised start request from becoming permission to run the engine.[^security]
 
-Central locking operates the locks together. An alarm adds surveillance and a warning response. Contact monitoring detects changes at protected openings, while optional radar-based interior surveillance monitors the cabin with the hood closed. Porsche's manual states that passenger-compartment monitoring is switched off with the convertible hood open. Lock status and surveillance coverage therefore need to be considered separately.[^security]
+Central locking operates all the locks together; an alarm adds surveillance and a warning. Contacts monitor the protected openings, and optional radar-based interior surveillance watches the cabin with the hood closed. With the hood open, the manual says, interior monitoring is switched off, so a locked car is not necessarily fully monitored.[^security]
 
-For the ordinary 2.9, the January 2010 catalogue lists alarm and interior surveillance as option **534**. It lists the S's exterior alarm as standard, with interior surveillance optional. Tracking-system preparation **674** is separate and specified in conjunction with the alarm system. The brochure describes wiring, a higher-capacity battery and a tilt sensor to support subsequent installation of the tracking system.[^security-options]
+For the ordinary 2.9, the January 2010 catalogue lists the alarm with interior surveillance as option **534**. On the S the exterior alarm is standard and interior surveillance optional. Tracking-system preparation, **674**, is a separate option specified with the alarm; the brochure describes wiring, a higher-capacity battery and a tilt sensor for a tracker to be fitted later.[^security-options]
 
 ## ParkAssist and distance sensing
 
-Optional **ParkAssist, 635**, uses four ultrasonic sensors in the rear bumper, connected through the rear wiring set to a separate parking-aid controller. Selecting reverse enables the rear parking aid; reflected sound pulses let the system estimate distance to detected obstacles. As a detected obstacle gets closer, the warning intervals shorten. This is a distance warning for the driver, with steering and braking still under the driver’s control.[^parkassist]
+Optional **ParkAssist**, **635**, uses four ultrasonic sensors in the rear bumper, connected through the rear wiring set to a separate control unit. Selecting reverse switches it on. The sensors send out sound pulses and time the echoes; because each pulse travels out and back, the distance is half the round trip. The warning tones speed up as an obstacle gets closer, but the driver still steers and brakes.[^parkassist]
 
-A pulse travels out and its echo travels back, so distance depends on half the sound’s round-trip travel. Small, angled or sound-absorbing objects may return a poor echo, and the sensing field has blind regions. Clean sensor faces and an audible warning are consequently part of useful operation; an absence of beeps cannot establish that the whole path is clear. The brochure establishes UK option availability, while the handbook explains the sensing limits.[^parkassist]
+Small, angled or sound-absorbing objects may return a weak echo, and the sensing field has blind spots. Keep the sensor faces clean and the warning audible, and remember that silence does not prove the way behind is clear.[^parkassist]
 
 ## Wipers and mirrors
 
-The standard windscreen wipers offer adjustable intermittent operation as well as continuous speeds. One motor drives a crank linkage and two arm pivots; the blades' rubber edges displace water. The washer pump supplies fluid from its reservoir through hoses and a T-piece to two heated, filtered nozzles. Motor, linkage and arm applications differ between left- and right-hand-drive cars.[^wipers]
+The standard wipers have continuous speeds and adjustable intermittent operation. One motor drives a crank linkage that swings both arms, and the rubber blade edges clear the water. The washer pump feeds fluid from the reservoir through hoses and a T-piece to two heated, filtered nozzles. Motor, linkage and arms differ between left- and right-hand-drive cars.[^wipers]
 
-Option **P12** combines automatically dimming interior/exterior mirrors with a rain sensor. The sensor allows wiping frequency to respond to wetting of the windscreen rather than a fixed interval. Optical rain sensing works by sending light into the glass and detecting the change in returned light when water is present. This describes the sensing principle, without attributing later combined camera or headlamp-control functions to the 987.[^rain]
+Option **P12** combines automatically dimming interior and exterior mirrors with a rain sensor, which lets the wiping frequency follow how wet the screen is instead of a fixed interval. An optical rain sensor shines light into the glass; water on the screen changes how much comes back.[^rain]
 
-The dimming mirrors respond to light measured at the interior mirror, reducing glare and returning towards their normal state as conditions change. They are separate from mirror heating, which helps clear moisture. The ordinary manually dipped interior mirror provides its anti-glare change through the driver's lever.[^mirrors]
+The dimming mirrors respond to light measured at the interior mirror, darkening against glare and clearing as conditions change. Mirror heating, which clears moisture, is separate. The standard interior mirror is dipped by hand with a lever.[^mirrors]
 
 ## Options on the 2010 2.9
 
-The electrical options chiefly change lighting performance, convenience or surveillance coverage. The January 2010 catalogue identifies these relevant packages:[^option-table]
+The January 2010 catalogue lists these electrical options:[^option-table]
 
-| Option | Effect relevant to this chapter |
+| Option | What it adds |
 | --- | --- |
 | P75 | Bi-xenon, dynamic cornering and LED daytime running lights |
 | P12 | Automatically dimming mirrors and rain sensor |
@@ -132,23 +132,23 @@ The electrical options chiefly change lighting performance, convenience or surve
 
 ## Changes in other 2.9 model years
 
-The new front modules, optional dynamic cornering and LED rear-light concept belong to the 2009 introduction.[^lamps][^rear] The [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix) separates this documented arrangement from unresolved later UK equipment/programming changes.
+The new front modules, optional dynamic cornering and LED rear-light concept arrived with the 2009 introduction.[^lamps][^rear] The [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix) separates this documented arrangement from later UK equipment or programming changes that remain unresolved.
 
 ## The S, Spyder and Black Edition
 
-The S offers the same standard halogen and optional P75 bi-xenon arrangements. Its exterior alarm is standard, as described above.[^lamps][^security-options]
+The S has the same standard halogen lamps and optional P75 bi-xenon package, with the exterior alarm as standard.[^lamps][^security-options]
 
-The January 2010 Spyder brochure describes minimal LED position lights in its front intakes and lists bi-xenon with dynamic cornering as option **P74**. It also lists a lightweight lithium-ion battery as **191** and P12 dimming mirrors/rain sensor. These choices belong to the Spyder’s specification.[^spyder]
+The January 2010 Spyder brochure describes minimal LED position lights in the front intakes and lists bi-xenon with dynamic cornering as option **P74**. It also lists a lightweight lithium-ion battery, **191**, and the P12 dimming mirrors and rain sensor.[^spyder]
 
-The March 2011 UK **Boxster S Black Edition** price list includes bi-xenon with dynamic cornering, LED position lights/DRLs, automatically dimming mirrors with rain sensor and an alarm in its standard specification.[^black]
+The March 2011 UK price list for the **Boxster S Black Edition** makes bi-xenon with dynamic cornering, LED position lights and daytime running lights, automatically dimming mirrors with rain sensor, and an alarm standard.[^black]
 
 ## Identification and ageing
 
-Identify the lamp units and their associated controls. Confirm levelling, cornering operation and cleaning equipment when identifying P75; a replacement LED bulb alone does not reproduce that complete system. UK headlamps must also suit left-hand traffic. The catalogue treats traffic-side headlamps, steering-side cables/controls and rear-fog-lamp side as separate application choices.
+Identify the lamp units and their controls. A P75 car has levelling, cornering movement and headlamp cleaning; an LED replacement bulb does not reproduce that system. UK headlamps must also suit left-hand traffic. The parts catalogue treats the headlamps' traffic side, the steering side of cables and controls, and the rear-fog-lamp side as separate choices.
 
-With age, battery condition, cable connections, earths, water entry and previous accessory wiring can affect several systems together. [Roof, glass, seals and drainage](../14-roof-glass-seals-and-drainage/index.mdx) explains how water is meant to leave the car. A dry-looking cabin surface does not establish the condition of concealed connections.
+With age, battery condition, cable connections, earths, water entry and old accessory wiring can affect several systems at once. [Roof, glass, seals and drainage](../14-roof-glass-seals-and-drainage/index.mdx) explains how water is meant to leave the car. A dry-looking cabin says nothing about hidden connections.
 
-Porsche documents timed load shutdown and a remote-control standby change after prolonged parking. These behaviours help explain why a parked car is not electrically inert, but they are not a universal parasitic-current test specification. Record supply state and fault information alongside those timed behaviours.[^standby]
+Porsche documents a timed shutdown of loads, and a change to the remote control's standby behaviour after long parking. A parked car is not electrically inert, but these timings are not a universal specification for testing parasitic current. Record the supply state and fault information alongside them.[^standby]
 
 [^supply]: Porsche, *The Boxster*, January 2010 UK edition, printed p. 39, [brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=17). General alternator mechanism: DENSO, [“Alternator troubleshooting”, 31 March 2022](https://www.denso-am.eu/news/alternator-troubleshooting), “Alternator overview”. Rectification: DENSO, [*Starters & Alternators Technical Manual*](https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf), “Rectification”. The 12 V system is confirmed by Porsche's manual, printed p. 255 (PDF p. 257). DENSO explains general mechanisms, not the Boxster's alternator rating or control calibration.
 

@@ -1336,6 +1336,141 @@ test('the prerendered book preserves the manuscript, tables, figures and publish
     await context.close();
   }
 });
+test.each(['sections', 'sources'])(
+  'published $0 links retain their destinations after manuscript edits',
+  async (kind) => {
+    const published = JSON.parse(await readFile(resolve('tests/fixtures/published-links.json'), 'utf8'));
+    const context = await browser.newContext({ javaScriptEnabled: false });
+    try {
+      const page = await context.newPage();
+      await page.goto(site);
+      assert.deepEqual(
+        await page.locator('[id]').evaluateAll((nodes) => {
+          const seen = new Set<string>();
+          return nodes.flatMap((node) => (seen.has(node.id) ? [node.id] : (seen.add(node.id), [])));
+        }),
+        [],
+        'Published aliases must not introduce duplicate IDs',
+      );
+      const actual = await page.evaluate((chapters) => {
+        const destination = (id: string) => {
+          const anchor = document.getElementById(id);
+          return anchor?.hasAttribute('data-fragment-target')
+            ? document.getElementById(anchor.getAttribute('data-fragment-target')!)
+            : anchor;
+        };
+        return chapters.map(
+          (chapter: { id: string; headings: string[]; notes: { id: string; reference: string }[] }) => ({
+            sections: chapter.headings.map((id) => ({
+              id,
+              owner: destination(id)?.closest('section.level2')?.id,
+            })),
+            notes: chapter.notes.map(({ id, reference }) => {
+              const target = destination(id);
+              const clone = target?.cloneNode(true) as HTMLElement | undefined;
+              clone?.querySelectorAll('.footnote-back').forEach((node) => node.remove());
+              const backlink = destination(reference) as HTMLAnchorElement | null;
+              return {
+                id,
+                owner: target?.closest('section.level2')?.id,
+                text: clone?.textContent ?? '',
+                referenceOwner: backlink?.closest('section.level2')?.id,
+                referenceTarget: backlink ? destination(backlink.hash.slice(1))?.id : null,
+                target: target?.id,
+              };
+            }),
+          }),
+        );
+      }, published.chapters);
+      for (let i = 0; i < published.chapters.length; i++) {
+        const chapter = published.chapters[i];
+        if (kind === 'sections') {
+          assert.deepEqual(
+            actual[i].sections,
+            chapter.headings.map((id: string) => ({ id, owner: chapter.id })),
+          );
+        } else {
+          for (let j = 0; j < chapter.notes.length; j++) {
+            const expected = chapter.notes[j],
+              note = actual[i].notes[j];
+            const normal = note.text
+              .normalize('NFKC')
+              .replace(/[’‘]/g, "'")
+              .replace(/[“”]/g, '"')
+              .replace(/[^\p{L}\p{N}]/gu, '');
+            assert.equal(
+              createHash('sha256').update(normal).digest('hex'),
+              expected.textHash,
+              `${expected.id}: source identity`,
+            );
+            assert.equal(note.owner, chapter.id, `${expected.id}: source chapter`);
+            assert.equal(note.referenceOwner, chapter.id, `${expected.reference}: reference chapter`);
+            assert.equal(note.referenceTarget, note.target, `${expected.reference}: source destination`);
+          }
+        }
+      }
+    } finally {
+      await context.close();
+    }
+  },
+);
+test.each([390, 1440])('published aliases navigate, focus and return from sources at $0 px', async (width) => {
+  const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: 'reduce' });
+  try {
+    const prefix = 'book__07-lubrication-cooling-and-exhaust__index.md__';
+    await page.addInitScript(
+      (id) => localStorage.setItem('boxster-reading-place', id),
+      prefix + 'reading-the-oil-level',
+    );
+    await page.goto(site);
+    await page.locator('html.reader-enhanced:not([data-reader-pending])').waitFor();
+    const resume = page.locator('[data-continue-reading]');
+    assert.ok(await resume.isVisible(), 'A saved published heading still offers Continue reading');
+    assert.equal(await resume.getAttribute('href'), '#' + prefix + 'checking-the-oil-level');
+    await resume.click();
+    await page.waitForFunction((id) => document.activeElement?.id === id, prefix + 'checking-the-oil-level');
+
+    await page.goto(site + '#' + prefix + 'reading-the-oil-level');
+    await page.waitForFunction(
+      () =>
+        !document.documentElement.hasAttribute('data-reader-pending') &&
+        document.documentElement.classList.contains('reader-enhanced'),
+    );
+    assert.equal(await page.locator('html').getAttribute('data-view'), 'chapter');
+    assert.equal(await page.evaluate(() => document.activeElement?.id), prefix + 'checking-the-oil-level');
+    assert.ok(await page.getByRole('heading', { name: 'Checking the oil level', exact: true }).isVisible());
+
+    await page.evaluate(() => {
+      location.hash = 'fn38';
+    });
+    await page.waitForFunction(() => document.activeElement?.id === 'fn38');
+    assert.match(await page.locator('#fn38').innerText(), /126–127/);
+    assert.ok(await page.locator('#fn38').evaluate((node) => node.closest('details')!.open));
+    const alias = await page.locator('span[data-fragment-target]').evaluateAll((nodes) => {
+      const node = nodes.find((node) => /^fn\d+$/.test(node.id))!;
+      return { id: node.id, target: node.getAttribute('data-fragment-target')! };
+    });
+    await page.evaluate((id) => {
+      location.hash = id;
+    }, alias.id);
+    await page.waitForFunction((id) => document.activeElement?.id === id, alias.target);
+    const backlink = page.locator(`[id="${alias.target}"] .footnote-back`);
+    const reference = (await backlink.getAttribute('href'))!.slice(1);
+    await backlink.click();
+    await page.waitForFunction((id) => document.activeElement?.id === id, reference);
+    await page.evaluate(
+      (id) => {
+        location.hash = id;
+      },
+      alias.id.replace(/^fn/, 'fnref'),
+    );
+    await page.waitForFunction((id) => document.activeElement?.id === id, reference);
+    assert.equal(await page.locator(`[id="${reference}"]`).getAttribute('href'), '#' + alias.target);
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+  } finally {
+    await page.close();
+  }
+});
 test('the book hydrates without warnings, missing assets or premature model downloads at both URL mounts', async () => {
   for (const edition of [preview, site]) {
     const page = await browser.newPage(),

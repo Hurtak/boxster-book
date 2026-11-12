@@ -11,54 +11,54 @@ import steeringRackParts from "./images/pet-steering-rack.png";
 
 # Steering, wheels and tyres
 
-The steering wheel begins a chain of mechanical movement that ends at two small areas of rubber on the road. The steering gear converts the driver's rotation into sideways movement; the front carriers turn; the tyres develop the sideways forces that change the car's direction. Wheel and tyre choices alter this relationship even when the suspension remains the same.
+Turning the steering wheel starts a chain of movement that ends at two small patches of rubber on the road. The steering gear converts the driver's rotation into sideways movement, the front wheel carriers turn, and the tyres develop the sideways forces that change the car's direction. Different wheels and tyres alter that chain even with the same suspension.
 
-The 2010 Boxster 2.9 combines hydraulically assisted, variable-ratio steering with different wheel and tyre sizes at the front and rear. Its standard wheels are 17-inch Boxster III alloys. Larger catalogue alternatives change the rim, tyre width and sidewall together, rather than simply making the entire wheel-and-tyre assembly much taller.[^baseline]
+The 2010 Boxster 2.9 has hydraulically assisted, variable-ratio steering and different wheel and tyre sizes front and rear. Its standard wheels are 17-inch Boxster III alloys. The larger catalogue alternatives change the rim, tyre width and sidewall together, without making the whole assembly much taller.[^baseline]
 
 <Diagram id="steering-explorer" poster={illustration0} alt={"The front steering rack joins the driver’s column and both front carriers, while long hydraulic paths reach the engine-driven pump behind the cabin. The separated front-left rim and tyre expose their bead-seat connection."} />
 
-## From steering wheel to front wheels
+## From the steering wheel to the front wheels
 
-A shaft connects the steering wheel to the pinion, a small gear meshing with the rack. Turning the pinion slides the rack across the car. A track rod, also called a tie rod, connects each end of the rack to a steering arm on a front wheel carrier. An inner joint and an outer ball-jointed end let it articulate as the suspension rises and falls; the bellows protects the inner connection. The carrier turns around its steering axis while the hub and wheel rotate on the bearing inside it.
+A shaft connects the steering wheel to the pinion, a small gear that slides a toothed rack across the car. A track rod, or tie rod, connects each end of the rack to a steering arm on a front wheel carrier. An inner joint and an outer ball-jointed end let the rod articulate as the suspension moves, and a bellows protects the inner connection. The carrier turns about its steering axis while the hub and wheel spin on the bearing inside it.
 
-The rack therefore moves both front wheels through a linked mechanism. Their angles in a corner need not be identical: the inside wheel follows a tighter path. The relationship between those angles, the steering axis and suspension movement belongs with the [wheel geometry](../11-suspension-and-wheel-geometry/index.mdx) already described. Here the important distinction is between the mechanism that positions the wheels and the tyres that generate the resulting force. Porsche's parts drawing identifies the steering gear, protective bellows, joints and two track rods as separate components. The explorer uses a left-hand-drive layout; UK right-hand-drive cars have different steering-gear and hydraulic-line listings, with the same operating principle.[^rack]
+In a corner the inside wheel follows a tighter path, so the two front wheels' angles need not match. How they relate to the steering axis and suspension movement belongs with the [wheel geometry](../11-suspension-and-wheel-geometry/index.mdx) of the previous chapter. The linkage only positions the wheels; the tyres generate the force. Porsche's parts drawing shows the steering gear, bellows, joints and two track rods as separate components. The explorer shows a left-hand-drive car; UK right-hand-drive cars have their own steering-gear and hydraulic-line listings but work the same way.[^rack]
 
 <Figure src={steeringRackParts} alt="Steering gear with a protective bellows, separate inner joint, locknut and outer ball-jointed track rod arranged along its end." width="620px">
 
-Beyond steering gear (1), bellows (2) protects the inner joint (6). Locknut (7) and the outer ball-jointed track rod (8) complete the linkage towards the carrier. LHD and RHD parts have separate catalogue listings; this drawing is not a UK hose-routing plan. Factory drawing: Porsche AG, [PET 403-000, PDF p. 138](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=138).
+Beyond the steering gear (1), the bellows (2) protects the inner joint (6); the locknut (7) and outer ball-jointed track rod (8) complete the linkage towards the carrier. Left- and right-hand-drive steering gears have separate catalogue listings, and this drawing is not a UK hose-routing plan. Factory drawing: Porsche AG, [PET 403-000, PDF p. 138](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=138).
 
 </Figure>
 
 <Figure src={illustration3} alt={"The steering shaft turns a pinion; the rack slides sideways and moves two track rods, which turn the front carriers. An engine-driven pump supplies hydraulic assistance to the rack housing."}>
 
-The steering shaft turns a pinion; the rack slides sideways and moves two track rods, which turn the front carriers. An engine-driven pump supplies hydraulic assistance to the rack housing.
+The mechanical steering path, with the separate hydraulic assistance circuit from the engine-driven pump. This original schematic is simplified: hoses and steering arms are not drawn to installed dimensions.
 
 </Figure>
 
-*Original schematic: a mechanical path from the driver to the front wheels, with a separate hydraulic assistance circuit. The arrangement is simplified; hoses and steering arms are not drawn to installation dimensions.*
+### Hydraulic assistance
 
-### What the hydraulic assistance contributes
+A belt-driven pump, with its reservoir mounted directly on top, supplies fluid to the steering gear. Pressure and return lines run between the power unit at the rear and the steering gear at the front, and Porsche also lists a return connection between the pump and a heat exchanger. A control valve responds to the driver's steering effort and directs fluid so that a pressure difference across a piston helps move the rack; the fluid then returns towards the reservoir. The driver still sets the direction through the shaft and gear teeth. The hydraulics supply part of the force needed to overcome the resistance at the tyres.[^hydraulics]
 
-A belt-driven pump supplies fluid to the steering gear. Its reservoir mounts directly above the pump, while separate pressure and return lines run between the rear power unit and front steering gear. Porsche also lists a return connection between the pump and heat exchanger. A control valve responds to the driver's steering effort and directs fluid so that a pressure difference across a piston helps move the rack. Fluid returns towards the reservoir. The driver still determines direction through the shaft and gear teeth; the hydraulic system supplies part of the force needed to overcome resistance at the tyres.[^hydraulics]
+Assistance matters most in slow manoeuvres, when the tyres must turn against the road with little rolling movement. At speed, the driver also feels forces returning through the linkage. The valve characteristics shape the effort and feedback, while the gear geometry decides how movement is translated.
 
-Assistance matters particularly during slow manoeuvres, when the tyres must turn against the road with little rolling movement. At speed, the driver also feels forces returning through the steering linkage. The system's valve characteristics influence effort and feedback, while the gear geometry determines how movement is translated. These are related tuning decisions with different jobs.
+### A variable ratio
 
-The 987's **variable steering ratio is mechanical**. Around straight ahead, a given hand movement produces a relatively modest change at the wheels. Further into a turn, the gearing becomes more direct, giving more wheel movement for an additional turn of the steering wheel. Porsche describes this progression as useful in tight corners and parking; its published turning circle is 11.1 m. The 2010 technical table explicitly identifies hydraulic assistance, so the later 981's electric steering system should not be read back into this car.[^ratio]
+The 987's **variable steering ratio is mechanical**. Near straight ahead, a given hand movement turns the wheels relatively little. Further into a turn the gearing becomes more direct, so each extra turn of the steering wheel moves the front wheels more. Porsche says this helps in tight corners and when parking; the published turning circle is 11.1 m. The 2010 technical table explicitly lists hydraulic assistance, so the later 981's electric steering should not be read back into this car.[^ratio]
 
 ## Reading a wheel and tyre size
 
-A wheel marking such as **7 J × 17** describes the rim rather than the whole rolling assembly. The 7 is the nominal width between the inner faces of the rim flanges, in inches; J identifies the flange contour; 17 is the nominal bead-seat diameter, also in inches. The tyre's outer diameter is larger because its sidewall extends beyond the rim.[^wheel-dimensions]
+A marking such as **7 J × 17** describes the rim, not the whole wheel and tyre. The 7 is the nominal width between the inner faces of the rim flanges, in inches. J identifies the flange contour, and 17 is the nominal bead-seat diameter, also in inches. The tyre's outer diameter is larger because its sidewall extends beyond the rim.[^wheel-dimensions]
 
-The corresponding front tyre, **205/55 ZR 17**, has a nominal section width of 205 mm. Its aspect ratio is 55 per cent, so the nominal sidewall height is 205 × 0.55 = **112.75 mm**. R identifies radial construction; ZR is a high-speed designation. Load index and the additional speed symbol complete the service description and matter alongside size. Width alone cannot establish whether a tyre is suitable.[^markings]
+The matching front tyre, **205/55 ZR 17**, has a nominal section width of 205 mm and an aspect ratio of 55 per cent, so its nominal sidewall height is 205 × 0.55 = **112.75 mm**. R means radial construction; ZR is a high-speed designation. The load index and an additional speed symbol complete the service description, which matters as much as the size. Width alone cannot show that a tyre is suitable.[^markings]
 
-The base car's standard combination is deliberately staggered:
+The standard fitment is deliberately staggered:
 
 | Position | Standard rim | Standard summer tyre | Rim offset |
 | --- | --- | --- | --- |
 | Front | 7 J × 17 | 205/55 ZR 17 | 55 mm |
 | Rear | 8.5 J × 17 | 235/50 ZR 17 | 40 mm |
 
-The UK brochure establishes the standard dimensions; the contemporary Porsche handbook supplies the offsets.[^fitments] A rear wheel is therefore not a front wheel with a wider tyre fitted. Its rim width and mounting position differ too.
+The UK brochure gives the standard sizes; the contemporary Porsche handbook gives the offsets.[^fitments] Front and rear differ in rim width and mounting position, not just tyre size.
 
 <Figure src={illustration4} alt={"Porsche’s standard 17-inch Boxster III wheel and tyre, with its open five-spoke pattern."} width="210px">
 
@@ -66,55 +66,47 @@ The standard 17-inch Boxster III wheel. Photo: Porsche AG, *The Boxster* (UK, 01
 
 </Figure>
 
-### Offset and the mounting face
+### Offset and bolt pattern
 
-**Offset**, commonly marked ET, is the distance between the rim's centre plane and its hub mounting face. With positive offset, the mounting face lies towards the outer side of the wheel. At a fixed width, reducing positive offset moves the wheel outwards. Increasing it moves the wheel inwards. A wider rim also extends farther on both sides of its centre plane, so width and offset must be considered together.
+**Offset**, usually marked ET, is the distance from the rim's centre plane, not its inner edge, to the face that bolts to the hub. Positive offset places the mounting face towards the outside of the wheel. At a fixed width, reducing positive offset moves the wheel outwards and increasing it moves the wheel inwards. A wider rim also extends further on both sides of its centre plane, so width and offset must be considered together.[^offset]
 
 <Figure src={illustration5} alt={"A wheel section shows rim width between the flanges, its centre plane and a mounting face 55 mm towards the outside. A second outline shows how reducing offset at the same width moves the rim outwards."}>
 
-A wheel section shows rim width between the flanges, its centre plane and a mounting face 55 mm towards the outside. A second outline shows how reducing offset at the same width moves the rim outwards.
+Rim width is measured between the flanges; offset runs from the centre plane to the mounting face, here 55 mm towards the outside. The second outline, at the same width but 45 mm offset, sits 10 mm further out. This original diagram illustrates the effect; it is not a recommended alteration.
 
 </Figure>
 
-*Original diagram: offset is measured from the rim centre plane, not from its inner edge. The 55-to-45 mm example illustrates a 10 mm outward movement at unchanged width; it is not a recommended alteration.*[^offset]
+The five wheel bolts lie on a 130 mm pitch circle, written **5 × 130**.[^bolt-circle] That pattern alone does not make a wheel compatible. Centre location, bolt seat, bolt length, brake clearance, wheel load capacity and the space around the suspension and body all matter. Porsche's handbook distinguishes standard bolts from arrangements involving spacers. A wheel that bolts on is not thereby an approved wheel-and-tyre combination.[^bolts]
 
-The five wheel bolts follow a 130 mm pitch circle, conventionally written **5 × 130**.[^bolt-circle] That describes the hole pattern, not complete compatibility. The centre location, bolt seat, bolt length, brake clearance, wheel load capacity and available space around the suspension and body also matter. Porsche's handbook specifically distinguishes standard bolts from arrangements involving spacers. A wheel that can be bolted on has not thereby been established as an approved wheel-and-tyre combination.[^bolts]
+## How a tyre works
 
-<Figure src={illustration6} alt={"A green ordinary Boxster behind a red Boxster S, each on a different optional 19-inch wheel design."}>
+A tyre is a pressurised composite structure. An airtight inner liner holds the air. Reinforcing cords form the casing; in this radial design they run across the tyre from bead to bead, and belts beneath the tread stabilise the crown. The sidewalls flex as the tyre rolls, the reinforced beads seat against the rim, and the tread provides the working surface and channels to clear water from beneath it.[^construction]
 
-Optional 19-inch designs: Carrera Sport on the green Boxster and Carrera S II on the red S. Photo: Porsche AG, *The Boxster* (UK, 01/10), pp. 52–53. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+Under load, the bottom of the tyre flattens into a **contact patch**, through which every force on the car from the road passes. Inflation pressure, load and casing stiffness shape the patch and the spread of pressure across it. At the same load and pressure, a wider tyre need not give a proportionally larger patch; the footprint can become wider and shorter. Compound, temperature, tread depth and water also affect the forces available.
 
-</Figure>
+To a first approximation, more load needs more supporting pressure or more contact area, which is why an appealing tyre width is no substitute for the correct pressure and construction. It is only an approximation: the casing carries force too and tread pressure is uneven, so dividing wheel load by inflation pressure does not give an exact Boxster footprint.
 
-## What the tyre does
-
-The tyre is a pressurised composite structure. An airtight inner liner retains the air. Reinforcing cords support the casing; the radial carcass cords run across the tyre from bead to bead. Belts beneath the tread stabilise the crown. The sidewalls flex as the tyre rolls, while reinforced beads seat against the rim. The tread provides the working surface and channels for moving water from beneath it.[^construction]
-
-Under load, the bottom of the tyre flattens into a **contact patch**. The forces supporting the car and accelerating, braking or turning it pass through this patch. Inflation pressure, vertical load and casing stiffness affect its shape and the distribution of pressure across it. A wider tyre need not give a proportionally larger patch at the same load and inflation pressure: the footprint can become wider and shorter. Rubber compound, temperature, tread depth and water also affect the forces available.
-
-A useful first physical approximation is that more load requires either more supporting pressure or more effective contact area. The carcass also carries force, and tread pressure is uneven, so dividing wheel load by inflation pressure does not provide an exact Boxster footprint. This explains why an attractive tyre width cannot substitute for the correct pressure and construction.
-
-Pressure also changes how much the sidewall works. Underinflation increases flexing and heat, and can change wear and response. Pressure rises as the tyre warms during use. The appropriate reference is the car's specified **cold** pressure for its wheel/tyre combination and operating load, checked against the relevant label and handbook; there is no single pressure prescription for every 987 wheel or journey.[^pressure]
+Pressure also sets how hard the sidewall works. Underinflation increases flexing and heat, and can change wear and response. Pressure rises as the tyre warms, so the reference is the specified **cold** pressure for the wheel and tyre combination and operating load, checked against the label and handbook. No single pressure suits every 987 wheel or journey.[^pressure]
 
 ## Slip and the shared grip budget
 
-A tyre can produce cornering force while its wheel points slightly across its actual travel direction. That angular difference is the **slip angle**: tread and casing deform through the contact patch. It does not mean the entire footprint is already sliding freely. Longitudinal slip instead compares the tyre’s circumferential motion with its progress over the road during braking or driving. Neither is the steering-wheel angle.[^grip-principles]
+A tyre produces cornering force while its wheel points slightly across its actual direction of travel. That angle is the **slip angle**. It comes from the tread and casing deforming through the contact patch, and does not mean the whole footprint is sliding. **Longitudinal slip**, under braking or drive, instead compares the tyre's circumferential motion with its progress over the road. Neither is the steering-wheel angle.[^grip-principles]
 
 <Figure src={illustration7} alt={"A tyre viewed from above points slightly to the left of its travel arrow. The angle between its wheel plane and travel direction is slip angle; a lateral force acts across its path."}>
 
-A tyre viewed from above points slightly to the left of its travel arrow. The angle between its wheel plane and travel direction is slip angle; a lateral force acts across its path.
+Seen from above, the tyre points slightly left of its direction of travel. The angle between the two is the slip angle, and the tyre develops a sideways force across its path.
 
 </Figure>
 
-Braking or driving force and cornering force share a tyre-road limit. In a simple **friction-circle** picture, spending more of that capacity in one direction leaves less available in the other. A change in surface or wheel load changes the available limit. Real combined-slip behaviour is more complex than a circle and depends on compound, temperature, load and slip; the picture is a teaching envelope.[^grip-principles]
+Braking or driving force and cornering force share one tyre-road limit. In the simple **friction-circle** picture, using more of it in one direction leaves less for the other, and a change of surface or wheel load changes the limit. Real combined-slip behaviour is more complex, depending on compound, temperature, load and slip, so the circle is a teaching envelope.[^grip-principles]
 
 <Diagram id="tyre-grip-budget" poster={illustration1} alt={"With an illustrative capacity of 100 units, demands of 60 longitudinal and 60 cornering units give a resultant of 84.9, within the circle. At 60 longitudinal units, at most 80 cornering units remain."} />
 
-The controls express **force demand**, rather than brake-pedal travel, steering angle or a Porsche calibration. The marker remains at the requested force, including when it exceeds the envelope; the model does not invent the resulting slide or allocate forces among the four wheels. [ABS and PSM](../13-brakes-and-stability-systems/index.mdx#abs-and-psm) manage braking and stability within the tyre’s available forces.
+*The controls set the force demanded of the tyre, not pedal travel, steering angle or a Porsche calibration. The marker stays at the requested force even outside the circle; the model does not invent the resulting slide or share forces among the four wheels. On the car, [ABS and PSM](../13-brakes-and-stability-systems/index.mdx#abs-and-psm) manage braking and stability within the grip available.*
 
-## Rolling radius, road speed and engine speed
+## Rolling size and engine speed
 
-A larger rim is generally paired with a shorter sidewall in the catalogue combinations. The complete assembly’s outer diameter consequently changes much less than the rim diameter. Actual rolling circumference also depends on the manufactured tyre, load, pressure, wear and operating conditions.
+In the catalogue combinations a larger rim generally comes with a shorter sidewall, so the overall diameter changes much less than the rim. The actual rolling circumference also depends on the tyre itself, its load, pressure and wear, and the operating conditions.
 
 <details className="technical-detail">
 <summary>Calculating a nominal tyre diameter</summary>
@@ -125,37 +117,45 @@ A larger rim is generally paired with a shorter sidewall in the catalogue combin
 
 <Diagram id="tyres-rolling-size" poster={illustration2} alt={"Compare the rear standard 235/50 ZR17 with the period 265/40 ZR18 combination. Estimated diameters are 666.8 and 669.2 mm; at 60 mph the wheel speeds are approximately 768 and 765 rpm. The larger rim is mostly offset by a shorter sidewall."} />
 
-The rear 17-to-18-inch comparison changes nominal diameter by only about **0.36 per cent**. At a fixed road speed, the taller estimate turns slightly more slowly. In the same selected gear, engine speed changes in the same proportion as driven-wheel speed, through the [transmission and final drive](../10-differential-driveshafts-and-mounts/index.mdx). This calculation describes the direction and approximate scale of the effect; it does not predict a dashboard speedometer error or approve an alternative tyre.
+Going from the standard 17-inch rear tyre to the 18-inch one changes nominal diameter by only about **0.36 per cent**, so at a fixed road speed the taller tyre turns slightly more slowly. In the same gear, engine speed changes in the same proportion as wheel speed, through the [transmission and final drive](../10-differential-driveshafts-and-mounts/index.mdx). The calculation shows the direction and rough scale of the effect; it does not predict a speedometer error or approve an alternative tyre.
 
 ## Options on the 2010 2.9
 
-The January 2010 UK catalogue offered an alternative 17-inch Cayman II design, two 18-inch designs and several 19-inch designs. The [wheel atlas](../19-reference-atlas-and-index/index.mdx#wheel-atlas) shows each beside its name and option code.[^uk-options]
+The January 2010 UK catalogue offered an alternative 17-inch Cayman II design, two 18-inch designs and several 19-inch designs. The [wheel atlas](../19-reference-atlas-and-index/index.mdx#wheel-atlas) shows each with its name and option code.[^uk-options]
 
-Wheel choice also affected another factory option: this catalogue required 18- or 19-inch wheels with the [mechanically locking rear differential](../10-differential-driveshafts-and-mounts/index.mdx), code 220. Larger wheels alone do not show that the differential was fitted.[^wheel-dependency]
+<Figure src={illustration6} alt={"A green ordinary Boxster behind a red Boxster S, each on a different optional 19-inch wheel design."}>
 
-For the diameter comparison above, Porsche's contemporary handbook lists **235/40 ZR18 front and 265/40 ZR18 rear**, or **235/35 ZR19 front and 265/35 ZR19 rear**. It also lists two 19-inch rim-width/offset pairings, so one universal “19-inch Boxster offset” would be misleading. These are period mechanical fitment data; the UK catalogue is the evidence for UK option availability.[^fitments]
+Optional 19-inch designs: Carrera Sport on the green Boxster and Carrera S II on the red S. Photo: Porsche AG, *The Boxster* (UK, 01/10), pp. 52–53. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
-A shorter sidewall changes compliance and the way tyre deformation builds during a steering input. Wheel design and tyre construction also affect the result, so rim diameter alone cannot predict comfort or grip. The consequences of wheel mass are covered in [suspension and unsprung mass](../11-suspension-and-wheel-geometry/index.mdx).
+</Figure>
 
-**Tyre Pressure Monitoring**, code 482, was optional in this UK catalogue. Porsche calls it TPM. Each wheel sensor attaches to its valve inside the rim; the system also has a separate control unit, aerial and four sender units. The instrument display can show the four tyre pressures and warnings. These pressure sensors are separate from the wheel-speed sensors used by ABS. The selected tyre/wheel information and the system's learning state matter when wheels are changed; the matching handbook explains the process.[^tpm]
+Wheel choice also governed another option: this catalogue required 18- or 19-inch wheels for the [mechanically locking rear differential](../10-differential-driveshafts-and-mounts/index.mdx), code 220. Larger wheels alone do not show that the differential was fitted.[^wheel-dependency]
+
+For the larger sizes, including the 18-inch pair in the comparison above, Porsche's contemporary handbook lists **235/40 ZR18 front and 265/40 ZR18 rear**, or **235/35 ZR19 front and 265/35 ZR19 rear**. It also lists two 19-inch rim-width and offset pairings, so there is no single “19-inch Boxster offset”. These are period fitment data; UK availability comes from the UK catalogue.[^fitments]
+
+A shorter sidewall changes compliance and the way tyre deformation builds during a steering input. Wheel design and tyre construction matter too, so rim diameter alone cannot predict comfort or grip. Wheel mass is covered under [compliance and unsprung mass](../11-suspension-and-wheel-geometry/index.mdx#compliance-and-unsprung-mass).
+
+### Tyre-pressure monitoring
+
+**Tyre Pressure Monitoring**, which Porsche calls TPM, code 482, was optional in this UK catalogue. A sensor attaches to each wheel's valve inside the rim, with a separate control unit, aerial and four sender units, and the instrument display can show all four pressures and any warnings. These sensors are separate from the ABS wheel-speed sensors. When wheels are changed, the selected wheel and tyre setting and the system's learning state matter; the matching handbook explains the process.[^tpm]
 
 ## Changes in other 2.9 model years
 
-The launch and January 2010 UK catalogues agree on the base 17-inch combination and hydraulic variable-ratio steering.[^years] The [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix) collects later tyre-size corroboration without treating it as a complete UK wheel/approval history.
+The launch and January 2010 UK catalogues agree on the standard 17-inch fitment and the hydraulic variable-ratio steering.[^years] The [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix) collects later tyre-size corroboration, without treating it as a complete history of UK wheels and approvals.
 
 ## The S, Spyder and Black Edition
 
-The ordinary S starts with 18-inch Boxster S II wheels and the 235/40 front, 265/40 rear tyre pairing. Its larger standard rim does not imply a different fundamental steering principle.[^baseline]
+The ordinary S has 18-inch Boxster S II wheels with 235/40 front and 265/40 rear tyres as standard. The larger rim does not imply a different steering principle.[^baseline]
 
-The Spyder's standard 19-inch wheels are a specific lightweight design. Its UK technical table gives **8.5 J × 19 ET55 front** and **10 J × 19 ET42 rear**, with 235/35 and 265/35 tyres respectively. The same table identifies hydraulic variable-ratio steering. Those dimensions describe the Spyder package, rather than making every 19-inch wheel identical.[^spyder]
+The Spyder's standard 19-inch wheels are a specific lightweight design. Its UK technical table gives **8.5 J × 19 ET55 front** and **10 J × 19 ET42 rear**, with 235/35 and 265/35 tyres respectively, and confirms hydraulic variable-ratio steering. Those dimensions describe the Spyder package; not every 19-inch wheel is the same.[^spyder]
 
-The UK Black Edition includes black-painted 19-inch Boxster Spyder wheels. Its [suspension specification](../11-suspension-and-wheel-geometry/index.mdx#s-spyder-and-black-edition) remains distinct from the Spyder’s.[^black]
+The UK Black Edition has black-painted 19-inch Boxster Spyder wheels, but its [suspension](../11-suspension-and-wheel-geometry/index.mdx#s-spyder-and-black-edition) differs from the Spyder's.[^black]
 
 ## Identification and ageing
 
-Check the casting markings behind the spokes, tyre size, service description and manufacture date. These identify the fitted dimensions more reliably than the spoke pattern.
+Check the casting markings behind the spokes, the tyre size, the service description and the tyre's manufacture date. They identify the fitted dimensions more reliably than the spoke pattern.
 
-Condition then becomes as important as original specification. Tyre hardening, damage, uneven wear, incorrect pressure and out-of-balance assemblies can change the steering's behaviour. Play in a track-rod joint and damage to a steering bellows concern different parts of the mechanism; fluid leakage concerns the hydraulic circuit. Assess vibration or pulling across the fitted wheel, tyre, linkage and geometry.[^condition]
+Condition then matters as much as original specification. Hardened, damaged or unevenly worn tyres, wrong pressures and out-of-balance assemblies can all change how the steering behaves. Play in a track-rod joint and a damaged steering bellows affect different parts of the mechanism, while a fluid leak concerns the hydraulic circuit. Assess vibration or pulling across the wheels, tyres, linkage and geometry together.[^condition]
 
 [^baseline]: Porsche, *The Boxster*, UK edition 01/10, printed pp. 20–23, 52–53 and 126–127, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 

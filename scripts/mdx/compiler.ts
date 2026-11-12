@@ -27,6 +27,7 @@ function remarkBook(book: BookInventory) {
   return (tree: Root, file: { path?: string }) => {
     const chapter = book.chapters.find((c) => c.file === file.path);
     if (!chapter) throw Error(`Chapter is absent from the book manifest: ${file.path}`);
+    const destinations = book.destinations.get(chapter.file)!;
     explicitHeadings(tree);
     const prefix = chapter.id.slice(0, chapter.id.lastIndexOf('__') + 2);
     for (const heading of headingRecords(tree, prefix)) {
@@ -47,12 +48,17 @@ function remarkBook(book: BookInventory) {
       const definition = definitions.get(node.identifier);
       if (!definition) throw Error(`Missing note ${node.identifier} in ${chapter.file}`);
       used.add(node.identifier);
-      const number = ++local,
-        global = chapter.noteOffset + number;
+      const number = ++local;
+      const destination = destinations.notes[number - 1];
       const reference = {
         ...component('SourceReference', {
-          note: String(global),
+          note: destination.id,
+          reference: destination.reference,
           number: String(number),
+          aliases: Object.entries(destinations.aliases)
+            .filter(([, target]) => target === destination.reference)
+            .map(([id]) => id)
+            .join(' '),
         }),
         type: 'mdxJsxTextElement' as const,
         children: [] as PhrasingContent[],
@@ -68,7 +74,7 @@ function remarkBook(book: BookInventory) {
         { type: 'text', value: ' ' },
         {
           type: 'link',
-          url: `#fnref${global}`,
+          url: `#${destination.reference}`,
           children: [{ type: 'text', value: '↩︎' }],
           data: {
             hProperties: {
@@ -83,7 +89,7 @@ function remarkBook(book: BookInventory) {
         type: 'listItem',
         spread: false,
         children,
-        data: { hProperties: { id: `fn${global}`, value: String(number) } },
+        data: { hProperties: { id: destination.id, value: String(number) } },
       });
     });
     for (const id of definitions.keys()) if (!used.has(id)) throw Error(`Unreferenced note ${id} in ${chapter.file}`);
@@ -100,8 +106,8 @@ function remarkBook(book: BookInventory) {
 
 // Preserve Pandoc's section wrappers/fragment IDs, while React chooses heading
 // levels appropriate to the complete document or the enhanced chapter reader.
-function rehypeSections() {
-  return (tree: HtmlRoot) => {
+function rehypeSections(book: BookInventory) {
+  return (tree: HtmlRoot, file: { path?: string }) => {
     const result: HtmlContent[] = [];
     const stack: { depth: number; node: Element }[] = [];
     for (const node of tree.children) {
@@ -128,6 +134,18 @@ function rehypeSections() {
       } else (stack.at(-1)?.node.children ?? result).push(node as Element);
     }
     tree.children = result;
+    const aliases = Object.entries(book.destinations.get(file.path!)!.aliases);
+    visit(tree, 'element', (node) => {
+      for (const [id, target] of aliases) {
+        if (node.properties.id !== target) continue;
+        node.children.unshift({
+          type: 'element',
+          tagName: 'span',
+          properties: { id, 'data-fragment-target': target, 'aria-hidden': 'true' },
+          children: [],
+        });
+      }
+    });
   };
 }
 
@@ -135,6 +153,6 @@ export function compilerOptions(book: BookInventory): CompileOptions {
   return {
     format: 'mdx',
     remarkPlugins: [remarkGfm, remarkSmartypants, [remarkBook, book]],
-    rehypePlugins: [rehypeSections],
+    rehypePlugins: [[rehypeSections, book]],
   };
 }

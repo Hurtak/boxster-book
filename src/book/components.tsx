@@ -5,9 +5,25 @@ export { BookImage, Figure } from './Figure';
 export function Heading({ level, id, children }: { level: number; id: string; children: ReactNode }) {
   return createElement(`h${level}`, { id }, children);
 }
-export function SourceReference({ note, number }: { note: string; number: string }) {
+export function SourceReference({
+  note,
+  reference,
+  number,
+  aliases = '',
+}: {
+  note: string;
+  reference: string;
+  number: string;
+  aliases?: string;
+}) {
   return (
-    <a href={`#fn${note}`} id={`fnref${note}`} className="footnote-ref" role="doc-noteref">
+    <a href={`#${note}`} id={reference} className="footnote-ref" role="doc-noteref">
+      {aliases
+        .split(' ')
+        .filter(Boolean)
+        .map((id) => (
+          <span key={id} id={id} data-fragment-target={reference} aria-hidden="true" />
+        ))}
       <sup>{number}</sup>
     </a>
   );

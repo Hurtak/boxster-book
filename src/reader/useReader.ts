@@ -60,8 +60,9 @@ export function useReader(chapters: Chapter[]) {
   useLayoutEffect(() => {
     const onHashChange = () => locationChanged();
     try {
+      const saved = localStorage.getItem('boxster-reading-place') ?? '';
       // oxlint-disable-next-line react/set-state-in-effect -- Read browser preferences after deterministic SSR hydration.
-      setPlace(localStorage.getItem('boxster-reading-place') ?? '');
+      setPlace(document.getElementById(saved)?.dataset.fragmentTarget ?? saved);
     } catch {
       /* optional reading place */
     }
@@ -77,7 +78,8 @@ export function useReader(chapters: Chapter[]) {
     if (!enhanced) return;
     let cancelled = false;
     const id = destination.current,
-      target = document.getElementById(id),
+      anchor = document.getElementById(id),
+      target = document.getElementById(anchor?.dataset.fragmentTarget ?? id),
       behavior = initial.current ? 'auto' : scrollBehavior.current;
     for (let node = target?.closest('details'); node; node = node.parentElement?.closest('details')) node.open = true;
     const owner = target?.closest('section.level2');

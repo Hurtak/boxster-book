@@ -47,6 +47,9 @@ test('all MDX chapters preserve the published chapter and section destinations',
 test('GFM tables, repeated notes, captions and legacy source links compile with the same options', async () => {
   await fixture(
     {
+      'published-links.json': JSON.stringify({
+        chapters: { '01-sample': { headings: {}, notes: { one: [1, 2], two: [3] } } },
+      }),
       '01-sample/index.mdx': `# Sample
 
 Intro[^one], repeated[^one], then another[^two]. [Legacy](index.md#details).
@@ -120,6 +123,83 @@ test('invalid authoring fails with actionable chapter, heading, diagram and note
     await fixture(files, async (source) => {
       await assert.rejects(discoverBook(source, root), pattern);
     });
+});
+test('published links survive renamed headings, reordered sources and removed duplicate citations', async () => {
+  await fixture(
+    {
+      'published-links.json': JSON.stringify({
+        chapters: {
+          '01-one': { headings: { 'old-topic': 'new-topic' }, notes: { first: [38, 41], second: [39] } },
+          '02-two': { headings: {}, notes: { third: [40] } },
+        },
+      }),
+      '01-one/index.mdx':
+        '# One\n\nSecond[^second], new[^new], first[^first]. [Old](#old-topic).\n\n## New topic\n\n[^first]: First source.\n[^second]: Second source.\n[^new]: New source.\n',
+      '02-two/index.mdx': '# Two\n\nThird[^third].\n\n[^third]: Third source.\n',
+    },
+    async (source) => {
+      const render = async (book: Awaited<ReturnType<typeof discoverBook>>, index: number) => {
+        const chapter = book.chapters[index];
+        const code = await compile(
+          { path: chapter.file, value: await readFile(chapter.file, 'utf8') },
+          {
+            ...compilerOptions(book),
+            outputFormat: 'function-body',
+          },
+        );
+        const module = await run(String(code), jsx);
+        return renderToString(createElement(module.default, { components: { SourceReference, SourceNotes } }));
+      };
+      const before = await discoverBook(source, root);
+      const destinations = before.destinations.get(before.chapters[0].file)!;
+      assert.equal(destinations.notes[0].id, 'fn39');
+      assert.equal(destinations.notes[2].id, 'fn38');
+      assert.equal(destinations.aliases.fn41, 'fn38');
+      assert.equal(destinations.aliases.fnref41, 'fnref38');
+      const html = await render(before, 0);
+      assert.match(
+        html,
+        /id="book__01-one__index.md__old-topic" data-fragment-target="book__01-one__index.md__new-topic"/,
+      );
+      assert.match(html, /id="fn41" data-fragment-target="fn38"/);
+      assert.match(html, /id="fnref41" data-fragment-target="fnref38"/);
+      assert.match(html, /href="#fn38" id="fnref38"[^>]*>.*?<sup>3<\/sup>/);
+      assert.match(await render(before, 1), /id="fn40"/);
+      await writeFile(
+        before.chapters[0].file,
+        (await readFile(before.chapters[0].file, 'utf8')).replace(
+          'Second[^second], new[^new], first[^first]',
+          'First[^first], second[^second], new[^new]',
+        ),
+      );
+      const after = await discoverBook(source, root);
+      const reordered = after.destinations.get(after.chapters[0].file)!.notes;
+      assert.equal(reordered[0].id, 'fn38');
+      assert.equal(reordered[1].id, 'fn39');
+      assert.equal(reordered[2].id, destinations.notes[1].id, 'An unpublished source has a stable label-based ID');
+      assert.equal(after.destinations.get(after.chapters[1].file)!.notes[0].id, 'fn40');
+    },
+  );
+});
+test('broken or conflicting published destinations fail before rendering', async () => {
+  for (const [links, pattern] of [
+    [{ '01-one': { headings: { old: 'missing' }, notes: { one: [1] } } }, /Missing published heading target/],
+    [{ '01-one': { headings: {}, notes: { absent: [1] } } }, /Published source absent has no reference/],
+    [{ '01-one': { headings: {}, notes: { one: [1, 1] } } }, /Duplicate published destination/],
+    [{ '01-one': { headings: { old: 'new' }, notes: { one: [1] } } }, /Duplicate published destination/],
+    [{ '01-one': { headings: {}, notes: { one: [-1] } } }, /Invalid published note/],
+    [{ '02-missing': { headings: {}, notes: {} } }, /Published chapter is missing/],
+  ] as const) {
+    await fixture(
+      {
+        'published-links.json': JSON.stringify({ chapters: links }),
+        '01-one/index.mdx': '# One\n\nText[^one].\n\n## Old\n\n## New\n\n[^one]: Source.\n',
+      },
+      async (source) => {
+        await assert.rejects(discoverBook(source, root), pattern);
+      },
+    );
+  }
 });
 test('a failed book build leaves the previously successful export intact', async () => {
   await fixture(

@@ -9,131 +9,127 @@ import pdkHydraulicParts from "./images/pet-pdk-hydraulic-unit.png";
 
 # PDK transmission
 
-The reference 2010 Boxster 2.9 has a six-speed manual as standard. Its optional **Porsche Doppelkupplung**, usually shortened to **PDK**, replaces the clutch pedal and manual selection mechanism with electronically controlled hydraulics. Inside are seven forward ratios, two wet clutch packs and two routes by which the engine can drive the final drive. The driver can let the system choose gears or request changes at the lever or steering wheel.[^catalogue]
+Instead of the standard six-speed manual, the 2010 Boxster 2.9 could be ordered with the optional **Porsche Doppelkupplung**, or **PDK**, which swaps the clutch pedal and manual selection for electronically controlled hydraulics. Inside are seven forward ratios, two wet clutch packs and two routes by which the engine can drive the final drive. The driver can let it choose gears or request changes at the lever or steering wheel.[^catalogue]
 
-PDK's distinctive feature is preparation. While one ratio carries drive, another can be ready on the other input shaft. The shift then transfers the engine's connection between the two paths. Understanding that separation between **selecting a gear** and **closing a clutch** explains much more than the number of gears alone.
+PDK's trick is preparation. While one gear drives the car, the next can already be engaged on the other input shaft, and a shift hands the drive from one shaft to the other. **Selecting a gear** and **closing a clutch** are separate steps; that distinction explains far more than the number of gears.
 
 <Diagram id="pdk-explorer" poster={illustration0} alt={"Optional PDK behind the engine connects its flywheel, nested K1 and K2 packs, concentric shafts and sample gearing to the rear final drive. The cutaway housing, bolted sump, support brackets, separate controller, heat exchanger and selector cable locate its connections to the car."} />
 
 <Figure src={illustration2} alt={"Porsche factory cutaway of the seven-speed PDK, showing the gear train, clutch end and final-drive assembly in one housing."}>
 
-Seven-speed PDK, with clutch packs, gear train and final drive. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 43. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=19).
+Seven-speed PDK, showing the clutch packs, gear train and final drive in one housing. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 43. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=19).
 
 </Figure>
 
-## Two clutches and two inputs
+## Two clutches and two input shafts
 
-A clutch transmits torque through friction between surfaces squeezed together. The [manual-transmission chapter](../08-manual-transmission-and-clutch/index.mdx) explains that principle and the dual-mass flywheel. PDK also receives drive through a dual-mass flywheel, but divides the friction connection into two independently controlled packs. Each contains several discs, giving multiple working surfaces in a compact space. Hydraulic pressure regulates their clamping force; oil carries away the heat produced during slip.[^clutches]
+The [manual-transmission chapter](../08-manual-transmission-and-clutch/index.mdx) explains how a clutch passes torque through friction, and how the dual-mass flywheel works. PDK also takes its drive through a dual-mass flywheel, but splits the clutch into two independently controlled packs. Each holds several discs, giving plenty of friction surface in a small space. Hydraulic pressure sets each pack's clamping force, and oil carries away the heat of slip.[^clutches]
 
-The two input shafts share a centreline. Shaft 1 runs inside hollow shaft 2, rather like a smaller rod passing through a tube. They can rotate at different speeds. Clutch **K1** supplies shaft 1 and the odd gears, **1, 3, 5 and 7**, plus reverse. Clutch **K2** supplies shaft 2 and the even gears, **2, 4 and 6**. Both gear paths ultimately reach the same final drive.[^paths]
+The two input shafts share a centreline: shaft 1 runs inside hollow shaft 2, like a rod through a tube, and each can turn at its own speed. Clutch **K1** drives shaft 1, which carries the odd gears, **1, 3, 5 and 7**, and reverse. Clutch **K2** drives shaft 2, which carries the even gears, **2, 4 and 6**. Both sets of gears drive the same final drive.[^paths]
 
-The clutch packs themselves are also nested radially. An easy identification trap is that the **outer clutch pack, K1, drives the inner input shaft**. The inner pack, K2, drives the hollow outer shaft. “Inner” therefore needs an identified component: it can describe either a clutch pack or an input shaft.
+The clutch packs are nested too, and this is easy to get wrong: the **outer clutch pack, K1, drives the inner input shaft**, while the inner pack, K2, drives the hollow outer shaft. "Inner" on its own is therefore ambiguous, so this chapter always says whether it means a pack or a shaft.
 
 <Figure src={illustration3} alt={"End view of concentric input shafts: inner shaft 1 serves odd gears and reverse; hollow shaft 2 serves even gears. Outer clutch K1 connects to inner shaft 1, while inner clutch K2 connects to hollow shaft 2."}>
 
-End view of concentric input shafts: inner shaft 1 serves odd gears and reverse; hollow shaft 2 serves even gears. Outer clutch K1 connects to inner shaft 1, while inner clutch K2 connects to hollow shaft 2.
+The input shafts end-on: inner shaft 1 carries the odd gears and reverse, hollow shaft 2 the even gears. Note the crossover, with outer clutch K1 driving the inner shaft and inner clutch K2 the outer one. In this original schematic the clutches are named in the labels rather than drawn, and dimensions and bearings are omitted.
 
 </Figure>
 
-*Original schematic of the shaft relationship. The clutch packs are identified in the labels, not drawn in this end view; dimensions and bearing details are omitted.*
-
-Hydraulic actuators select gears through synchronisers and engagement sleeves, using the [speed-matching principle described for the manual gearbox](../08-manual-transmission-and-clutch/index.mdx#what-the-gear-lever-actually-moves). PDK automates selection while separately controlling the friction clutches.[^selection]
+Hydraulic actuators select the gears through synchronisers and sliding sleeves, using the same [speed-matching principle as the manual gearbox](../08-manual-transmission-and-clutch/index.mdx#constant-mesh-and-synchronisers). PDK automates the selection and controls the clutches separately.[^selection]
 
 ## What happens during a shift
 
-Consider acceleration in first gear. K1 is closed and first carries drive. Second can already be selected on the even path while K2 remains open. The selected second-gear train can rotate with the moving transmission, but its open clutch leaves it free to run at a different speed from the engine. “Ready” therefore describes a completed gear engagement behind a disconnected clutch.
+When the car accelerates in first, K1 is closed and first is driving. Second can already be engaged on the even shaft with K2 open: its gear train turns with the moving gearbox, but the open clutch leaves it free to run at a different speed from the engine. "Ready" means a fully engaged gear behind a disconnected clutch.
 
-When the controller requests second, it reduces K1's torque-carrying capacity and increases K2's. During the handover, controlled frictional slip allows the engine speed to settle towards the speed required by second gear. Once K2 carries drive, K1 opens. The now-unloaded odd path can release first and prepare third. A downshift reverses the direction of the ratio change, with engine-speed coordination helping the incoming path take over smoothly.[^overlap]
+When the controller calls for second, it reduces K1's grip while increasing K2's. Controlled slip during this handover lets the engine speed settle towards what second needs. Once K2 carries the drive, K1 opens, and the unloaded odd shaft can release first and prepare third. A downshift reverses the direction of the ratio change, with engine-speed coordination helping the incoming gear take over smoothly.[^overlap]
 
-Two different ratios would demand two different input speeds at the same road speed. This is why the handover depends on regulated clutch pressure and slip: the system cannot simply lock both clutches rigidly while both ratios remain selected. Preselection works because the inactive path has an open clutch; overlap works because frictional connections can be progressively controlled.
+At a given road speed, two gears would need two different engine speeds, so the gearbox cannot lock both clutches solid while both gears are engaged. Preselection works because the waiting gear sits behind an open clutch; the overlap works because a friction clutch can be engaged gradually.
 
 <Diagram id="pdk-power-path" poster={illustration1} alt={"First gear drives through closed clutch K1 while second is preselected behind open clutch K2. Both gear paths feed the final drive, but only the closed-clutch path carries engine drive in this steady state."} />
 
-*Follow the clutch states through an upshift or downshift. The final stage prepares a plausible next gear; it does not reproduce the gearbox's prediction software.*
+*Step through an upshift or downshift and watch the two clutches. The last stage readies a plausible next gear; it does not reproduce the gearbox's prediction software.*
 
-Preselection is a prediction about what the driver may need next. A sudden change of demand can make a different ratio appropriate, requiring further selector movement. The best prepared adjacent shift and an unexpected multi-gear request therefore need not feel identical. Nor does uninterrupted power flow mean perfectly constant wheel torque: changing ratios changes multiplication, while the engine and clutches are being coordinated. The final-drive and wheel-torque relationships continue in the [differential chapter](../10-differential-driveshafts-and-mounts/index.mdx).
+Preselection is a prediction. If demand changes suddenly, a different gear may be needed and the selectors must move again, so a change to the waiting gear and an unexpected jump of several gears need not feel the same. Nor does unbroken power flow mean constant wheel torque: changing ratio changes the torque multiplication while engine and clutches are coordinated. The [differential chapter](../10-differential-driveshafts-and-mounts/index.mdx) follows the drive on to the wheels.
 
 ## The selector and steering-wheel controls
 
-The centre lever gives the driver familiar automatic-transmission choices. Forward-gear requests are handled electronically and hydraulically. There is also a mechanical cable from the selector assembly to the gearbox: in P, the selector mechanism engages a catch with the parking-lock gear on the pinion shaft. This restraint is separate from the two friction clutches.[^operation]
+The centre lever offers the familiar automatic positions. Forward-gear requests are electronic and hydraulic, but a mechanical cable also runs from the selector to the gearbox: in P, the selector mechanism engages a catch with the parking-lock gear on the pinion shaft, independently of the clutches.[^operation]
 
 | Position | Function |
 | --- | --- |
-| **P** | A parking lock mechanically restrains the transmission output. It has a separate function from clutch engagement. |
-| **R** | Selects reverse drive, using the odd/reverse clutch path. |
-| **N** | Neutral removes the engine's drive connection. It provides no parking restraint. |
-| **D** | The controller selects forward gears automatically. |
-| **M** | The driver requests forward gears using the lever or steering-wheel controls. |
+| **P** | A parking lock mechanically holds the transmission output. It works separately from the clutches. |
+| **R** | Selects reverse, using the odd/reverse clutch path. |
+| **N** | Neutral disconnects the engine's drive. It does not hold the car. |
+| **D** | The controller chooses forward gears automatically. |
+| **M** | The driver chooses forward gears with the lever or the steering-wheel controls. |
 
-The original PDK sports steering wheel has two push/pull switches. Either hand can request either direction: push forwards to change up, pull back to change down. The January 2010 UK catalogue also offers the three-spoke paddle wheel: pull the **right paddle for up**, the **left for down**. The centre lever follows the period Porsche arrangement, forwards for up and backwards for down.[^wheel]
+The original PDK sports steering wheel has two push/pull switches, so either hand can change either way: push forwards for up, pull back for down. The January 2010 UK catalogue also offers a three-spoke paddle wheel: pull the **right paddle for up** and the **left for down**. The centre lever follows Porsche's period arrangement, forwards for up and back for down.[^wheel]
 
 <Figure src={illustration4} alt={"Period Porsche cabin photograph with the optional three-spoke paddle steering wheel and PDK selector."}>
 
-The optional paddle wheel and PDK selector. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 46. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=21).
+The optional three-spoke paddle wheel and the PDK selector. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 46. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=21).
 
 </Figure>
 
-A steering-wheel request can temporarily override D. In M, the controller still checks whether the requested gear suits vehicle and engine speed; it refuses changes outside the permitted range. Automatic downshifts prevent excessively low engine speed, and kickdown remains active. Manual mode gives gear choice within this control system, while clutch actuation remains automatic.[^operation]
+A steering-wheel request can temporarily override D. In M, the controller still checks that the requested gear suits road and engine speed and refuses changes outside the permitted range; it also changes down by itself to stop the engine speed falling too low, and kickdown still works. In manual mode the driver chooses the gear, but the clutches always operate automatically.[^operation]
 
 ## Hydraulics, feedback and heat
 
-The **mechatronic control system** combines electronic decisions with hydraulic force. The hydraulic block in the transmission's sump area directs fluid to clutch circuits and gear-selection actuators. Electrically operated valves turn the controller's commands into changes of pressure or flow. Pressure determines how firmly a clutch is clamped; actuator movement determines which engagement sleeve is selected.
+PDK's **mechatronic control system** combines electronic decisions with hydraulic force. A hydraulic block in the sump area sends fluid to the clutches and gear-selection actuators, and electrically operated valves turn the controller's commands into changes of pressure or flow. Pressure sets how firmly each clutch is clamped; actuator movement decides which sleeve is engaged.
 
-The factory parts drawing places this hydraulic unit above a separate bolted oil sump. The surrounding transmission housing joins the engine, carries the gearing and final drive, and has left and right support brackets. The final drive's short and long output flanges connect to the rear driveshafts; they are distinct parts, despite appearing as a simple symmetrical pair in a functional diagram.[^hydraulics]
+The factory parts drawing shows this unit above a separate bolted oil sump. The housing joins the engine, carries the gears and final drive, and has left and right support brackets. The final drive's short and long output flanges, which connect to the rear driveshafts, are different parts, even if a functional diagram draws them as a matching pair.[^hydraulics]
 
 <Figure src={pdkHydraulicParts} alt="PDK transmission housing above a separated hydraulic control block and bolted oil sump, with output flanges beside the housing." width="520px">
 
-In the optional PDK, hydraulic unit (11) sits above the removable oil sump (7). The larger housing supports the transmission and final drive. This valve-and-actuator hardware is separate from the electronic controller in the luggage-compartment area. Factory drawing: Porsche AG, [PET 320-005, PDF p. 121](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=121).
+In the optional PDK, the hydraulic unit (11) sits above the removable oil sump (7), below the larger housing that carries the transmission and final drive. This valve-and-actuator hardware is separate from the electronic controller in the luggage-compartment area. Factory drawing: Porsche AG, [PET 320-005, PDF p. 121](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=121).
 
 </Figure>
 
-Feedback closes the loop. Input-speed sensing tells the system how the two clutch paths are turning; selector-position sensing establishes where the gear-selection mechanism has moved. Pressure and temperature information help it manage clutch operation and protection. The electronic PDK controller is a separate unit in the rear-right luggage-compartment area, connected to other controllers through CAN. It receives driver demand and vehicle-state information, including accelerator and brake signals. “Mechatronic” describes the cooperation of these parts, rather than requiring the electronic controller to sit inside the hydraulic block.[^control]
+Sensors close the loop. Input-speed sensors show how each clutch path is turning, selector-position sensors show where the selection mechanism has moved, and pressure and temperature readings help operate and protect the clutches. The electronic PDK controller is a separate unit in the rear-right luggage-compartment area, linked to other controllers over CAN. It receives driver demand and vehicle information, including accelerator and brake signals. "Mechatronic" describes the parts working together; the electronics need not sit inside the hydraulic block.[^control]
 
 <Figure src={illustration5} alt={"PDK control and oil functions: an electronic controller commands hydraulic clutch and selector operation; clutch heat reaches an oil-to-coolant exchanger, while separate gear oil lubricates the gears and final drive and loses heat through the housing."}>
 
-PDK control and oil functions: an electronic controller commands hydraulic clutch and selector operation; clutch heat reaches an oil-to-coolant exchanger, while separate gear oil lubricates the gears and final drive and loses heat through the housing.
+The controller commands hydraulic clutch and selector operation. Clutch heat goes to an oil-to-coolant exchanger, while the separate gear oil lubricates the gears and final drive and loses heat through the housing. In this original functional diagram, the arrows distinguish commands, feedback and heat flow, not hose routing or the complete hydraulic circuit.
 
 </Figure>
 
-*Original functional diagram. Arrows distinguish commands, feedback and heat movement; they do not reproduce hose routing or a complete hydraulic circuit.*
+PDK has **two separate oils**. A special hydraulic fluid operates and cools the clutches and works the gear selection; gear oil lubricates the gears and final drive. Porsche's technical introduction says plainly that they must not be mixed. An oil-to-coolant exchanger outside the gearbox, with oil pipes to the gearbox and separate coolant hoses, removes heat from the clutch and hydraulic fluid, while the gear oil sheds heat through the housing.[^oil]
 
-PDK has **two separate oil functions**. Special hydraulic fluid operates and cools the clutches and supplies gear actuation. Separate gear oil lubricates the gear train and final drive. Porsche's technical introduction expressly says these oils must not be mixed. An oil-to-coolant heat exchanger outside the transmission removes clutch/hydraulic heat; the gear-oil side rejects heat through the housing. The exchanger has oil pipes back to the gearbox and separate coolant hoses: heat crosses its internal walls while the liquids remain separate.[^oil]
-
-As with the [manual clutch](../08-manual-transmission-and-clutch/index.mdx#the-flywheel-and-clutch-make-a-controllable-connection), slip generates heat. PDK’s oil supply and exchanger manage that heat during moving-off, manoeuvring and shifting. The handbook directs the driver to hold the car on a slope with the brakes.[^temperature]
+As with the [manual clutch](../08-manual-transmission-and-clutch/index.mdx#the-flywheel-and-clutch-make-a-controllable-connection), slip makes heat, which the oil supply and exchanger handle when moving off, manoeuvring and shifting. The handbook tells the driver to hold the car on a slope with the brakes.[^temperature]
 
 ## Why seventh is a cruising gear
 
-Porsche describes gears one to six as the performance ratios and states that maximum speed is reached in **sixth**. Seventh is longer, reducing engine speed at a given road speed. A longer ratio also reduces the torque multiplication available to overcome resistance, so the highest numbered gear need not deliver the highest speed.[^catalogue]
+Porsche calls first to sixth the performance gears and says top speed comes in **sixth**. Seventh is taller, lowering engine speed at a given road speed but also multiplying torque less, leaving less to overcome resistance. The highest gear need not be the fastest.[^catalogue]
 
-With the published rounded sixth/seventh ratios of **0.88:1 and 0.62:1**, seventh needs about **70% of sixth’s engine speed** at the same road speed, assuming fully engaged clutches. The [manual ratio explorer](../08-manual-transmission-and-clutch/index.mdx#ratios-exchange-speed-for-torque) explains the underlying calculation.[^ratios]
+Using Porsche's rounded ratios of **0.88:1 for sixth and 0.62:1 for seventh**, seventh needs about **70% of sixth's engine speed** at the same road speed, with the clutches fully engaged. The [manual ratio explorer](../08-manual-transmission-and-clutch/index.mdx#ratios-exchange-speed-for-torque) explains the calculation.[^ratios]
 
 ## Options on the 2010 2.9
 
-PDK is option **250**. **Sport Chrono 639**, or **Sport Chrono Plus 640 with PCM**, adds control choices rather than more rated engine power. Sport changes accelerator response and PDK shift behaviour. With PDK, Sport Plus adds the more performance-focused shift strategy and Launch Control; the period manual states that seventh is not selected in Sport Plus.[^chrono]
+PDK is option **250**. **Sport Chrono 639**, or **Sport Chrono Plus 640 with PCM**, adds control choices, not engine power. Sport changes the accelerator response and changes how PDK shifts. With PDK, Sport Plus adds a more performance-focused shift strategy and Launch Control; the period handbook says that seventh is not used in Sport Plus.[^chrono]
 
-Launch Control coordinates the engine, clutch take-up and permitted wheel slip for a standing start. It is a controlled performance function, with substantial load on the engaged components, rather than a separate gear or an engine-output upgrade. Porsche's owner's manual limits its intended use to controlled conditions and warns of reduced component life. The catalogue acceleration qualification matters: for the 2.9, Porsche quotes **5.8 seconds to 100 km/h with PDK**, or **5.6 seconds with the optional Chrono package's Sport Plus function**. The full manual/PDK comparison is in [the specification tables](../03-the-2010-boxster-2-9-specification-and-options/index.mdx#the-reference-specification).[^performance]
+Launch Control coordinates the engine, clutch take-up and permitted wheel slip for a standing start. It heavily loads the engaged components and is neither an extra gear nor a power upgrade; Porsche's handbook restricts it to controlled conditions and warns of reduced component life. The catalogue's acceleration figures show why the equipment matters: for the 2.9, Porsche quotes **5.8 seconds to 100 km/h with PDK**, or **5.6 seconds using Sport Plus from the optional Chrono package**. The full manual and PDK comparison is in [the specification tables](../03-the-2010-boxster-2-9-specification-and-options/index.mdx#the-reference-specification).[^performance]
 
-The optional paddle wheel is **840**. PASM and the mechanical differential are separate options in [suspension](../11-suspension-and-wheel-geometry/index.mdx) and [drivetrain](../10-differential-driveshafts-and-mounts/index.mdx).
+The optional paddle wheel is **840**. PASM and the mechanical differential are separate options, covered under [suspension](../11-suspension-and-wheel-geometry/index.mdx) and [drivetrain](../10-differential-driveshafts-and-mounts/index.mdx).
 
 ## Changes in other 2.9 model years
 
-PDK replaced Tiptronic S at the 2009 facelift. The optional paddle wheel is documented by the January 2010 UK catalogue. Later ratios and the limits of annual UK evidence are collected in the [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix).[^years]
+PDK replaced the Tiptronic S automatic at the 2009 facelift. The January 2010 UK catalogue documents the optional paddle wheel. Later ratios, and the limits of the annual UK evidence, are collected in the [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix).[^years]
 
 ## The S, Spyder and Black Edition
 
-The ordinary S also offers seven-speed PDK. Porsche's introduction lists the same forward ratios for base and S applications, although that does not make every transmission assembly or application detail interchangeable. More engine torque changes the input to the gearbox; it does not change the odd/even clutch principle.[^ratios]
+The ordinary S also offers the seven-speed PDK. Porsche's introduction lists the same forward ratios for both cars, though that does not make every assembly or fitting detail interchangeable. The S's extra torque changes what goes into the gearbox, not the odd-and-even principle.[^ratios]
 
-The Spyder retains the choice of manual or optional PDK. Its January 2010 UK brochure quotes **5.0 seconds to 100 km/h with PDK**, improving to **4.8 seconds with Sport Plus and optional Sport Chrono**. Those figures belong to the lighter, more powerful 3.4-litre Spyder.[^spyder]
+The Spyder also offers a manual or optional PDK. Its January 2010 UK brochure quotes **5.0 seconds to 100 km/h with PDK**, or **4.8 seconds with Sport Plus and the optional Sport Chrono**. Those figures belong to the lighter, more powerful 3.4-litre Spyder.[^spyder]
 
-For the UK Black Edition, the March 2011 price list makes the SportDesign steering wheel standard, with paddles when optional PDK is fitted. PDK and Sport Chrono Plus remain options. This is a dated variant specification, not evidence that all ordinary 2.9 PDK cars received paddles as standard.[^black]
+The March 2011 UK price list makes the SportDesign steering wheel standard on the Black Edition, with paddles when the optional PDK is fitted; PDK and Sport Chrono Plus remain options. That is a dated specification for one edition, not evidence that ordinary 2.9 PDK cars had paddles as standard.[^black]
 
 ## Identification and ageing
 
-Service records should identify which of the two oil circuits was serviced. An entry saying only “gearbox oil changed” leaves that unresolved; match the work to the installed transmission and the [separate fluid functions](#hydraulics-feedback-and-heat). Porsche's catalogue identifies the reference 2.9's PDK as **CG200**, while the S and Spyder use **CG220**. That distinction remains useful even where a drawing or later replacement part is shared.
+Porsche's catalogue identifies the 2.9's PDK as **CG200**; the S and Spyder use **CG220**. That distinction still matters even where a drawing or a later replacement part is shared.
 
-Clutch friction surfaces, seals, bearings, hydraulic valves, sensors, wiring and the dual-mass flywheel all contribute to behaviour. Record temperature and operating conditions alongside a harsh change, delayed engagement, leak or warning. Porsche documents different warning and reduced-operation states; their precise response belongs to the applicable owner's manual.[^temperature]
+Service records should say which of the [two separate oils](#hydraulics-feedback-and-heat) was changed; "gearbox oil changed" alone leaves the question open, so match the work to the gearbox fitted.
 
-The central relationship remains straightforward: the selected gear establishes a possible mechanical route, the clutch determines its connection to the engine, and the controller coordinates the handover. That is what lets this compact transmission combine ordinary automatic operation with a prepared, rapid change of ratio.
+Clutch surfaces, seals, bearings, hydraulic valves, sensors, wiring and the dual-mass flywheel all affect behaviour. For a harsh change, delayed engagement, leak or warning, note the temperature and operating conditions. Porsche documents several warning and reduced-operation states; the applicable owner's manual gives their exact responses.[^temperature]
 
 [^catalogue]: Porsche AG, *The Boxster*, UK edition 01/10, printed pp. 42–45, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=19). Six-speed standard/manual and optional seven-speed PDK also appear on printed p. 126.
 

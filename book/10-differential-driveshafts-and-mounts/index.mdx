@@ -8,119 +8,111 @@ import illustration5 from "./images/porsche-engine-support.png";
 
 # Differential, driveshafts and mounts
 
-The gearbox supplies one rotating output, but the Boxster has two driven rear wheels. Between them lies the differential: a gear assembly which carries torque to both wheels while allowing their speeds to differ. The short driveshaft on each side then carries that torque to a wheel which moves with the suspension. Mounts support the combined engine and transmission while allowing controlled movement relative to the body.
+The gearbox has one output, but the Boxster has two driven rear wheels, and in a corner they must turn at different speeds. The differential, a set of gears, drives both wheels while letting their speeds differ. A short driveshaft on each side then carries the drive to a wheel that moves with the suspension. Mounts hold the joined engine and gearbox in the car while letting them move a little.
 
-These relationships apply to the reference 2010 2.9 with its standard six-speed manual, and to the optional seven-speed PDK. Their internal transmission arrangements differ; both must ultimately drive two independently suspended rear wheels.[^drive-layout]
+The standard six-speed manual and the optional seven-speed PDK differ inside, but both must drive two independently suspended rear wheels.[^drive-layout]
 
 <Diagram id="drivetrain-explorer" poster={illustration0} alt={"The engine lies ahead of the rear transaxle; an open differential connects through two booted CV shafts to bearing-supported rear hubs. A forward engine mount and two transmission supports carry the joined power unit."} />
 
-## From gearbox to rear wheels
+## From the gearbox to the wheels
 
-The **transaxle** combines the gearbox and final drive in one assembly behind the engine. The selected gear ratio establishes the relationship between engine speed and the gearbox's output. The **final drive** supplies another, fixed reduction before torque reaches the wheels. Changing from second to third changes the selected ratio; it does not exchange the final-drive gears. The manual and PDK chapters explain the steps before this point.[^drive-layout]
+The gearbox and final drive form one assembly behind the engine, the **transaxle**. The selected gear sets the ratio between engine speed and gearbox output; the **final drive** adds a second, fixed reduction. Shifting from second to third changes the selected ratio, not the final-drive gears. The manual and PDK chapters cover the earlier steps, and the [ratio explorer](../08-manual-transmission-and-clutch/index.mdx#ratios-exchange-speed-for-torque) calculates the combined reduction.[^drive-layout]
 
-The [ratio explorer](../08-manual-transmission-and-clutch/index.mdx#ratios-exchange-speed-for-torque) calculates the combined reduction. Here the next task is to distribute that drive between wheels whose speeds may differ.
-
-In Porsche's PDK training cutaway, a pinion drives a large ring gear through a **hypoid** final drive. This turns the drive across the car and reduces its speed. The ring gear is attached to the differential carrier. The carrier's bearings locate it in the transmission casing; output flanges connect the differential to the two driveshafts.[^final-drive]
+In Porsche's PDK training cutaway, a pinion drives a large ring gear through a **hypoid** gear set, turning the drive across the car and reducing its speed. The ring gear is attached to the differential carrier, which runs in bearings in the casing; output flanges connect it to the two driveshafts.[^final-drive]
 
 <Figure src={illustration2} alt={"Original plan-view schematic locating the engine ahead of the transaxle, the final drive between the rear driveshafts and three compliant power-unit support positions."}>
 
-Original plan-view schematic locating the engine ahead of the transaxle, the final drive between the rear driveshafts and three compliant power-unit support positions.
+The drive path from above: back through the engine and gearbox, then sideways from the final drive to the rear wheels. The three flexible supports hold the power unit but carry no drive. In this original schematic, positions and proportions are not to scale.
 
 </Figure>
 
-*Torque travels through the power unit, then sideways to the wheels. The mounts connect the power unit to the structure; they are not part of the rotating drive path. Positions and proportions are schematic.*
+## The open differential
 
-## How the open differential makes a corner possible
+Inside a conventional **open differential**, two side gears drive the left and right outputs. Smaller bevel pinions mesh with both and are carried round by the differential carrier. Two movements can therefore happen at once: the carrier spins with the ring gear, and the pinions can also turn on their own cross-axis.[^final-drive]
 
-Inside a conventional **open differential**, two side gears connect to the left and right outputs. Smaller bevel pinions mesh with both side gears and are carried around by the differential carrier. Think of two simultaneous movements: the whole carrier rotates with the ring gear, and its small pinions can also rotate on their own cross-axis.[^final-drive]
-
-On a straight road, equally sized tyres following equal paths need the same wheel speed. Both side gears can turn together with the carrier, with no relative rotation of the small pinions. In a bend, the outside wheel travels farther than the inside wheel. The pinions turn on their cross-axis, allowing one side gear to advance relative to the carrier while the other falls behind by the same amount.
-
-For a symmetrical differential, the carrier speed is the average of the output speeds:
+On a straight road, with equal tyres, both wheels turn at the same speed and the pinions stay still on their axis. In a bend the outside wheel travels farther, so the pinions turn, letting one side gear run ahead of the carrier while the other drops back by the same amount. For a symmetrical differential:
 
 **Carrier speed = (left output speed + right output speed) ÷ 2.**
 
-A carrier turning at 300 rpm can therefore accompany outputs turning at 240 and 360 rpm. The same average also permits 0 and 600 rpm. That second case helps explain a spinning wheel, but the equation alone cannot tell us which wheel will spin: road grip, load, braking and inertia determine the actual behaviour.
+A carrier at 300 rpm can drive the wheels at 240 and 360 rpm, or equally at 0 and 600 rpm, which is how one wheel can spin while the other stands still. The equation cannot say which wheel will spin; grip, load, braking and inertia decide that.
 
-The ideal open differential also delivers **equal torque** to the two outputs. Equal torque can accompany unequal speeds. Power is torque multiplied by angular speed, so the faster output receives more power when the output torques are equal. A differential is therefore easiest to understand by keeping speed, torque and power as separate quantities.[^open-principles]
+An ideal open differential also sends **equal torque** to both outputs, whatever their speeds. Power is torque multiplied by rotational speed, so the faster wheel receives more power.[^open-principles]
 
-### Why unequal grip limits both sides
+### Why the weaker tyre sets the limit
 
-Suppose one tyre can react only 100 Nm at its wheel before slipping, while the other could react 600 Nm. An ideal open differential in a steady, unbraked condition can sustain about 100 Nm at each output: 200 Nm in total. The high-grip tyre has unused capacity, because the differential cannot sustain a large left-to-right torque difference through its freely moving bevel gears.
+Equal torque has a catch. Suppose one tyre can take only 100 Nm at its wheel before slipping, while the other could take 600 Nm. In steady, unbraked driving, an ideal open differential can then sustain only about 100 Nm at each wheel: 200 Nm in total. Its freely turning bevel gears cannot hold a large torque difference between the sides, so the grippier tyre's spare capacity goes unused.
 
-These are wheel-torque limits, not engine-torque figures. They already represent the combined effects of normal load, road friction and tyre radius. A real car also has bearing friction, rotating inertia and control interventions. Once a wheel accelerates into spin, a static torque balance no longer describes the whole event.
+These are wheel torques, not engine torque; they already include each tyre's load, the road friction and the tyre radius. A real car adds bearing friction, rotating inertia and electronic intervention, and once a wheel accelerates into wheelspin a simple torque balance no longer applies.
 
 <Diagram id="drivetrain-open-differential" poster={illustration1} alt={"At a carrier speed of 300 rpm, illustrative offsets of minus and plus 20 percent of carrier speed give left and right outputs of 240 and 360 rpm. Both output speeds average back to the carrier speed."} />
 
-*Explore the speed relationship, then select unequal grip to see the steady open-differential torque limit. The two views answer different questions: the speed slider prescribes a kinematic example; the grip slider sets a torque ceiling. They do not simulate tyre slip or predict the car's acceleration.*
+*In the speed view, set the carrier speed and a difference about it; the model splits the wheel speeds either side of that average. Switch to unequal grip to see the weaker tyre cap the torque at both wheels. The figure does not simulate tyre slip or predict the car's acceleration.*
 
 ## Mechanical limited slip and brake intervention
 
-The optional **mechanically locking rear differential** adds friction discs to the differential assembly. These resist relative movement between the outputs and carrier, permitting a difference between left and right output torque. That helps exploit the better-loaded or higher-grip tyre when accelerating out of a bend. It still allows the different wheel speeds that cornering needs; it is not a permanently solid axle.[^final-drive]
+The optional **mechanically locking rear differential** adds friction discs that resist the outputs turning relative to the carrier. That lets the two wheels carry different torques, so more drive can go to the better-loaded or grippier tyre when accelerating out of a bend. The wheels can still turn at different speeds in a corner; this is not a solid axle.[^final-drive]
 
-Porsche documents locking values of **22% under drive and 27% on overrun** for this plate-type arrangement. The drive and overrun conditions load the locking mechanism differently. These figures describe its locking characteristic, rather than assigning a fixed percentage of engine torque to a particular wheel. Actual torque at either tyre depends on operating load, grip and the differential's friction behaviour. The interactive figure deliberately models the simpler open unit instead of inventing a map for this hardware.[^lock-values]
+Porsche quotes locking values of **22% under drive and 27% on overrun** for this plate-type unit; drive and overrun load the mechanism differently. The figures describe how strongly it locks, not a fixed share of engine torque sent to one wheel. The torque at each tyre depends on load, grip and the plates' friction behaviour, so the interactive figure models only the open differential rather than inventing a map for this one.[^lock-values]
 
-**PSM's automatic brake differential (ABD)** acts through another route. Braking a spinning rear wheel provides additional resistance on that side, enabling the open differential to sustain more torque at the opposite output. Some of the supplied power then becomes heat in the applied brake. PSM can also regulate engine output through its traction-control functions. The brake chapter covers the sensors, hydraulic control and broader stability response.[^abd]
+Standard PSM takes a different route. Its **automatic brake differential (ABD)** brakes a spinning rear wheel, and the extra resistance lets the open differential deliver more torque to the other wheel, though some power becomes heat in the brake. PSM can also cut engine output through its traction control. The [brakes chapter](../13-brakes-and-stability-systems/index.mdx) covers the sensors, hydraulics and wider stability response.[^abd]
 
-Mechanical limited slip works inside the transaxle; ABD applies wheel-brake torque. They can coexist. Porsche describes the mechanical option as reducing the frequency of PSM intervention in demanding driving. Neither creates extra tyre grip: each helps manage how available engine torque uses the grip that exists.[^abd]
+Limited slip works inside the transaxle and ABD through the wheel brakes, and a car can have both. Porsche says the mechanical differential reduces how often PSM intervenes in demanding driving. Neither creates grip. Both help the engine's torque use the grip that exists.[^abd]
 
 ## Driveshaft joints, plunge and the hub
 
-Each rear driveshaft, often called a **half-shaft**, connects a transmission output to its wheel hub. Suspension travel changes the shaft's angle, and the distance between its effective joint centres also varies. Small power-unit movements on the mounts add another changing relationship. A rigid shaft fixed at both ends would impose unwanted loads on the transmission and wheel bearings.
+Each rear driveshaft, or **half-shaft**, runs from a transmission output to a wheel hub. Suspension travel changes its angle and the distance between its joints, and the power unit shifts slightly on its mounts. A rigid shaft fixed at both ends would put unwanted loads on the transmission and wheel bearings.
 
-**Constant-velocity joints** transmit rotation across an angle without the cyclic speed variation of a single ordinary universal joint. Articulation accommodates the changing angle; a sliding or **plunging** joint accommodates the length change. These are distinct freedoms. The balls and tracks inside the joint carry torque, while the joint geometry allows movement. These are the two freedoms illustrated below.[^cv]
+**Constant-velocity (CV) joints** carry rotation through an angle without the speed fluctuation of a single ordinary universal joint. The shaft needs two separate freedoms: **articulation** for the changing angle, and sliding, or **plunge**, for the changing length. Balls running in tracks inside the joint carry the torque.[^cv]
 
 <Figure src={illustration3} alt={"Original schematic of a driveshaft between a fixed transmission flange and moving wheel, showing joint articulation, axial plunge and the separation between the rotating hub and stationary wheel carrier."}>
 
-Original schematic of a driveshaft between a fixed transmission flange and moving wheel, showing joint articulation, axial plunge and the separation between the rotating hub and stationary wheel carrier.
+Articulation and plunge between a fixed transmission flange and a wheel that moves with the suspension. The hub rotates; the wheel carrier around it does not. In this original schematic, the dashed position is illustrative, not a real joint angle or travel limit.
 
 </Figure>
 
-*Articulation changes the shaft angle; plunge accommodates changing joint-centre distance. The dashed position is an illustrative suspension movement. No actual joint angle or travel limit is implied.*
-
-Flexible boots retain the joint grease and exclude dirt and water. The folded boot must survive repeated flexing, so its condition matters as much as whether the shaft looks straight. Porsche's parts illustration distinguishes shaft assembly, joint, bellows, clips, grease and wheel hub. At the inner end, the joint bolts to a transmission drive flange; at the outer end, splines engage the hub and a retaining nut secures the assembly. The transmission's output seal retains gearbox lubricant around the rotating flange, separately from the grease held inside the joint boot. The adjacent rear-carrier drawing also identifies a bearing-retaining cover and a wheel-speed sensor: the sensor measures rotation rather than carrying drive torque.[^pet-shafts]
+Folded bellows boots keep the joint grease in and dirt and water out. Because they flex constantly, their condition matters as much as whether the shaft looks straight. Porsche's parts drawing lists the shaft assembly, joint, boots, clips, grease and wheel hub separately. The inner joint bolts to a transmission drive flange; at the outer end, splines engage the hub and a retaining nut secures it. A seal around the drive flange keeps gearbox oil in, separately from the joint grease. The adjoining rear-carrier drawing adds a bearing-retaining cover and a wheel-speed sensor, which measures rotation but carries no drive.[^pet-shafts]
 
 <Figure src={illustration4} alt={"Porsche's exploded parts illustration of a rear driveshaft, splined wheel hub, joint, flexible boots and retaining hardware."}>
 
-Rear driveshaft and hub, PET plate 501-005. The parts list distinguishes manual/PDK and Boxster/S applications. Factory illustration: Porsche AG. [Source, PDF p. 187](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=187).
+Rear driveshaft and hub, PET plate 501-005. The parts list separates manual from PDK, and Boxster from S, applications. Factory illustration: Porsche AG. [Source, PDF p. 187](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=187).
 
 </Figure>
 
-The hub rotates with the wheel and brake disc, supported by its wheel bearing in the stationary wheel carrier. The bearing carries road loads while the splined shaft delivers driving torque. A noisy bearing and a worn CV joint belong to different parts of this chain, even when the driver's impression is simply a noise from a rear corner. Suspension links locate the wheel carrier, as explained in the [suspension chapter](../11-suspension-and-wheel-geometry/index.mdx).
+The hub turns with the wheel and brake disc on a bearing in the stationary wheel carrier. The bearing carries road loads; the splined shaft delivers torque. A noisy bearing and a worn CV joint are therefore different faults, even if both just sound like a noise from a rear corner. Suspension links locate the carrier, as the [suspension chapter](../11-suspension-and-wheel-geometry/index.mdx) explains.
 
-## Mounts support, isolate and locate
+## Engine and gearbox mounts
 
-The engine and gearbox are bolted together, so their supports control the movement of one power unit. A forward engine support and supports at the transmission end carry its weight and react its tendency to roll under torque. Porsche's catalogue separates the engine bracket and mounting console from the transmission supports, with gearbox-specific listings. At the forward support, two stops flank the central mounting and a separate vibration damper is attached beside it. These small parts belong to the support assembly, rather than the rotating torque path.[^mounts]
+The bolted-together engine and gearbox form one power unit. A forward engine support and others at the transmission end carry its weight and resist its tendency to rock under torque. Porsche's catalogue lists the engine bracket and mounting console separately from the transmission supports, which have gearbox-specific listings. At the front support, two stops flank the central mounting, with a separate vibration damper beside it. None of these parts carries drive.[^mounts]
 
-A mount needs compliance to reduce vibration transmitted into the body, but sufficient stiffness to restrain movement during acceleration, gear changes and overrun. As engine torque changes, the housing reacts in the opposite direction to the rotating drive. The supports deform slightly and carry that reaction into the structure. Their damping helps prevent the power unit continuing to oscillate after the load changes.
+A mount must be soft enough to keep vibration out of the body, yet firm enough to restrain the power unit when you accelerate, change gear or lift off. Whenever torque changes, the casing reacts in the opposite direction to the rotating drive. The mounts flex slightly, pass that reaction into the structure, and their damping helps stop the unit rocking on afterwards.
 
 <Figure src={illustration5} alt={"Porsche's engine-support illustration showing the mounting console, central compliant support, bracket and stops as separate parts."}>
 
-Engine bracket, compliant support and stops, PET plate 109-000. Factory illustration: Porsche AG. [Source, PDF p. 96](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=96).
+Engine bracket, flexible central support and stops, PET plate 109-000. Factory illustration: Porsche AG. [Source, PDF p. 96](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=96).
 
 </Figure>
 
-More restraint can sharpen the perceived response to torque changes, while passing more vibration into the cabin. Excess movement can affect refinement and place greater demands on connected hoses, exhaust joints and driveshaft articulation. These relationships explain the engineering compromise without prescribing an aftermarket mount. The period equipment examined here establishes no electronically controlled dynamic mounts or Porsche Torque Vectoring option for the reference 2.9; those later system names are not used to describe its supports or ABD.
+Firmer mounts can sharpen the response to torque changes but let more vibration into the cabin. Too much movement can spoil refinement and place greater demands on the connected hoses, exhaust joints and driveshaft joints. That is the compromise; it is not advice on aftermarket mounts. The period documents examined show no electronically controlled dynamic mounts or Porsche Torque Vectoring for the 2.9, so those later names do not describe its mounts or ABD.
 
 ## Options on the 2010 2.9
 
-The January 2010 UK catalogue offers the mechanical differential as **option 220**, requiring **18- or 19-inch wheels**. The reference 2.9's standard 17-inch wheels therefore do not satisfy that ordering condition. Larger wheels alone do not establish that the differential was ordered. Consult the car's build evidence as described in the [specification and options chapter](../03-the-2010-boxster-2-9-specification-and-options/index.mdx).[^option-2010]
+The January 2010 UK catalogue lists the mechanical differential as **option 220**, requiring **18- or 19-inch wheels**, so the 2.9's standard 17-inch wheels do not qualify. Larger wheels do not prove the differential was ordered; check the build record as described in the [specification and options chapter](../03-the-2010-boxster-2-9-specification-and-options/index.mdx).[^option-2010]
 
 ## Changes in other 2.9 model years
 
-The launch catalogue advertised option 220 for **May 2009 at the earliest**, with manual transmission and 18/19-inch wheels.[^option-launch] January 2010 retains the wheel condition but omits the manual-only qualifier: a wording change that does not establish a new eligibility date. The [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix) retains that uncertainty alongside later service-parts evidence.[^pet-shafts]
+The launch catalogue offered option 220 from **May 2009 at the earliest**, with manual transmission and 18/19-inch wheels.[^option-launch] The January 2010 catalogue keeps the wheel condition but drops the manual-only note. That change of wording does not establish a new eligibility date. The [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix) records the uncertainty alongside later service-parts evidence.[^pet-shafts]
 
 ## The S, Spyder and Black Edition
 
-The ordinary **Boxster S** retains the same broad rear-wheel-drive arrangement, with the mechanical differential offered as an option in the January 2010 UK table. Its higher engine torque does not make limited slip standard. The parts catalogue separately lists Boxster and S shaft applications.[^option-2010]
+The **Boxster S** has the same layout and, despite its higher torque, the mechanical differential is still an option in the January 2010 UK table. The parts catalogue lists Boxster and S driveshafts separately.[^option-2010]
 
-The **Spyder** has the mechanical locking differential as standard, integrated with its particular sports chassis. The **Boxster S Black Edition** retains it as an extra-cost UK option despite its standard 19-inch Spyder-design wheels. These two derivatives therefore need different answers to “does it have the factory locking differential?”[^derivatives]
+The **Spyder** has the locking differential as standard, as part of its sports chassis. On the **Boxster S Black Edition** it remains an extra-cost UK option, even with standard 19-inch Spyder-design wheels.[^derivatives]
 
 ## Identification and ageing
 
-Confirm the differential and shaft application against the installed transaxle. A hand-rotation test alone is inconclusive: brake drag and the condition of a plate differential can influence what a raised wheel does.
+Check the differential and driveshaft application against the transaxle actually fitted. Turning a raised wheel by hand proves little, because brake drag and the state of a plate differential both affect the result.
 
-During inspection, useful observations include grease thrown from a damaged boot, deterioration around mounts, fluid leakage at output seals, and whether a noise follows road speed, cornering load or a change between drive and overrun. A clonk can involve more than one clearance in the torque path. Joint fasteners, hub retention and supported power-unit work require the correct workshop information for the installed components.
+On inspection, look for grease flung from a damaged boot, deteriorating mounts and leaks at the output seals. Note whether a noise follows road speed, cornering load or the change between drive and overrun; a clonk can come from more than one clearance in the drive path. Joint fasteners, hub retention and any work that needs the power unit supported call for the correct workshop information for the parts fitted.
 
 [^drive-layout]: Porsche, *The Boxster*, January 2010 UK edition, printed pp. 42–47 and 126–127, [original brochure](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf). See also the [manual transmission](../08-manual-transmission-and-clutch/index.mdx) and [PDK](../09-pdk-transmission/index.mdx) chapters.
 

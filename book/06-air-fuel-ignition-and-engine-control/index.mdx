@@ -11,107 +11,103 @@ import injectorParts from "./images/pet-port-injectors.png";
 
 # Air, fuel, ignition and engine control
 
-The 2.9-litre engine produces its torque by admitting air, adding the appropriate amount of petrol and igniting the mixture at the right point in each cylinder's cycle. These jobs form one controlled process. Pressing the accelerator changes a request; sensors report the engine's condition; electronics coordinate the throttle, injectors, ignition and inlet-valve control.
+The 2.9 makes its torque by drawing in air, adding the right amount of petrol and igniting the mixture at the right moment in each cylinder's cycle. These jobs form one controlled process: the accelerator sends a request, sensors report the engine's condition, and the electronics coordinate the throttle, injectors, ignition and inlet-valve control to meet it.
 
-On the reference 2010 Boxster, fuel enters the **inlet ports**, before the inlet valves. The contemporary S injects directly into the cylinders. The controller and sensor identifiers are collected in the reference disclosure below.[^controller] The mechanical structure and VarioCam Plus hardware are explained in [Engine construction and valve gear](../05-engine-construction-and-valve-gear/index.mdx). Here the subject is how the engine decides what to do with them.
+On the 2010 Boxster 2.9, fuel is sprayed into the **inlet ports**, ahead of the inlet valves; the contemporary S injects directly into the cylinders.[^controller] [Engine construction and valve gear](../05-engine-construction-and-valve-gear/index.mdx) explains the mechanical engine and the VarioCam Plus hardware. This chapter is about how the engine's electronics decide what that hardware does.
 
 <Diagram id="intake-explorer" poster={illustration0} alt={"The left side inlet feeds the air cleaner, air-mass sensor and throttle above the rear-mounted engine. Two-bank runners lead to six port injectors; the DME separately controls the throttle, injectors and six coil-and-plug units."} />
 
 ## Following the air
 
-The air cleaner contains a **cylindrical pleated element** inside its housing. It removes particles before incoming air reaches the measuring and metering components. A hot-film mass-air-flow sensor, or **MAF**, reports the mass of incoming air. Mass matters because combustion requires a corresponding quantity of fuel: the same volume of hot, thin air contains less oxygen than colder, denser air. The electronic throttle then controls the restriction into the intake system, whose branches serve the two cylinder banks.[^air-cleaner][^maf-principle]
+The air cleaner holds a **cylindrical pleated element** that removes particles before the air reaches the measuring and metering parts. A hot-film mass-air-flow sensor, or **MAF**, then measures the mass of air coming in. Mass is what matters, because the fuel has to match the oxygen available: a given volume of hot, thin air contains less oxygen than the same volume of colder, denser air. Finally, the electronic throttle controls the restriction into the intake system, whose branches feed the two cylinder banks.[^air-cleaner][^maf-principle]
 
 <Figure src={illustration2} alt={"Schematic flow from air filter through MAF and throttle to the resonance intake and the cylinders’ inlet ports."}>
 
-Schematic flow from air filter through MAF and throttle to the resonance intake and the cylinders’ inlet ports.
+Air passes the filter, MAF, throttle and resonance intake before reaching the inlet ports, where the fuel joins it. The drawing shows the sequence, not the real hose routes.
 
 </Figure>
 
-*The functional sequence, rather than the physical routing of hoses. Fuel joins the air at the individual inlet ports.*
-
-The intake manifold also exploits the pressure waves created by the engine's intermittent breathing. Its connected passages and switchable flaps change the behaviour of the air columns as speed changes. Rubber sleeves and clamps join the two bank distributors to the centre tube; two vacuum units operate the flaps through electrically controlled change-over valves. Porsche's 2.9 training account specifies a distribution-pipe flap opening above 3,800 rpm and a tuning flap above 5,500 rpm; both are vacuum-closed at idle. It also identifies a redesigned upper resonance chamber that suppresses unwanted high-speed resonance noise. These are distinct from the main throttle: the throttle meters the driver's requested load, while these flaps alter the intake system's tuning.[^intake]
+The intake manifold also exploits the pressure waves set up by the engine's stop-start breathing. Its connected passages and switchable flaps change how the air columns behave as engine speed rises. Rubber sleeves and clamps join the two bank distributors to the centre tube, and two vacuum units, switched by electrically controlled change-over valves, work the flaps. Porsche's 2.9 training material gives the switching points: the distribution-pipe flap opens above 3,800 rpm and the tuning flap above 5,500 rpm, and both are held closed by vacuum at idle. It also describes a redesigned upper resonance chamber that suppresses unwanted resonance noise at high speed. These flaps are separate from the main throttle: the throttle meters the load the driver asks for, while the flaps change how the intake is tuned.[^intake]
 
 <Figure src={airCleanerParts} alt="Exploded air-cleaner housing with a cylindrical filter element, removable cover, airflow meter and flexible outlet duct." width="540px">
 
-The cylindrical filter element (8) enters the shaped air-cleaner housing through cover (3) and is secured by retainer (9). The airflow meter (14) and flexible duct (16) continue the route towards the engine. Factory drawing: Porsche AG, [PET 106-000, PDF p. 85](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=85).
+The cylindrical filter element (8) enters the shaped housing through cover (3) and is held by retainer (9); the airflow meter (14) and flexible duct (16) carry the air on towards the engine. Factory drawing: Porsche AG, [PET 106-000, PDF p. 85](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=85).
 
 </Figure>
 
 ## The accelerator asks for torque
 
-An electronic accelerator measures pedal movement and sends a signal to the engine controller. The driver's foot therefore supplies an input to a calculation, rather than pulling a cable to a fixed throttle angle. The controller turns the request into a suitable air charge and coordinates the fuel and spark needed to burn it. Bosch's description of this principle explicitly treats the pedal signal as a request for torque.[^pedal]
+The accelerator pedal measures its own movement and sends the signal to the engine controller. The driver's foot supplies an input to a calculation rather than pulling a cable to a fixed throttle angle, and Bosch describes the pedal signal as a request for torque. The controller turns that request into a suitable air charge and coordinates the fuel and spark to burn it.[^pedal]
 
-Inside an electronic throttle body, an electric motor rotates a butterfly valve. A position sensor reports the actual angle, allowing the controller to compare commanded and achieved positions. Opening the valve reduces the intake restriction; at a given speed and operating condition, this generally permits a greater cylinder charge and more torque. Pedal percentage, throttle angle and percentage of maximum torque are three different quantities. Their relationship also depends on engine speed.[^throttle]
+Inside the electronic throttle body, an electric motor turns a butterfly valve, and a position sensor reports its actual angle so that the controller can compare it with the command. Opening the valve reduces the restriction in the intake. At a given engine speed and operating condition, that generally lets more air into the cylinders and produces more torque. Pedal position, throttle angle and percentage of maximum torque are three different quantities, and the relationship between them also depends on engine speed.[^throttle]
 
-This arrangement gives other systems a route to influence engine output. Idle control can admit enough air to maintain running without a foot on the accelerator. A transmission can coordinate a shift with the engine, and stability control can request an output change. The 2.9 controller specifically supports communication with optional PDK; the book treats the gearbox's actions in [PDK transmission](../09-pdk-transmission/index.mdx) and the driving-dynamics side in [Brakes and stability systems](../13-brakes-and-stability-systems/index.mdx).[^controller][^throttle]
+The same arrangement lets other systems influence engine output. Idle control can admit enough air to keep the engine running with no foot on the pedal. A gearbox can coordinate a shift with the engine, and stability control can ask for a change in output. The 2.9's controller specifically supports communication with the optional PDK. [PDK transmission](../09-pdk-transmission/index.mdx) covers the gearbox's side, and [Brakes and stability systems](../13-brakes-and-stability-systems/index.mdx) the driving-dynamics side.[^controller][^throttle]
 
 ## Supplying and metering the fuel
 
-The fuel tank sits in the front part of the car, separate from the rear engine. Its electric delivery pump supplies filtered, pressure-regulated petrol through the long feed to the engine’s fuel distribution pipes. A level sender reports tank contents; it does not measure delivery pressure. Porsche’s parts catalogue distinguishes the 2.9 pump application from the S.[^fuel-supply] A connected fuel-pipe assembly supplies both banks. Retaining clips secure its six injectors, with seals at their fuel-pipe and inlet-port ends; the injectors meter the supply into the individual cylinders’ inlet ports. In a port-injected system, electrical opening periods determine how much fuel each injector delivers, with the controller accounting for the operating conditions. *Sequential multipoint injection* means that the individual cylinders' injectors are operated in an appropriate sequence, rather than feeding one shared carburettor.[^port-principle][^later]
+The fuel tank sits in the front of the car, well away from the engine. Its electric delivery pump sends filtered, pressure-regulated petrol along the feed line to the engine's fuel distribution pipes. A level sender reports how much fuel is in the tank; it does not measure delivery pressure. Porsche's parts catalogue lists separate pump applications for the 2.9 and the S.[^fuel-supply]
 
-For this 2.9, Porsche specifies port injectors with eight fine outlet holes, supplied at approximately **4 bar**. Their mounting openings are in the flange area of the individual intake ports. Fuel is therefore sprayed upstream of the inlet valve and becomes part of the charge that passes into the cylinder.[^injectors]
+A connected fuel-pipe assembly feeds both banks. It carries six injectors, held by retaining clips and sealed at both their fuel-pipe and inlet-port ends, and each injector meters fuel into its own cylinder's inlet port. The controller sets each dose by how long it holds the injector open, allowing for the operating conditions. *Sequential multipoint injection* means that each cylinder has its own injector, operated in a suitable sequence, rather than one shared carburettor feeding them all.[^port-principle][^later]
+
+For the 2.9, Porsche specifies injectors with eight fine outlet holes, supplied at about **4 bar**. They are mounted in the flange area of the individual intake ports, so the fuel is sprayed upstream of the inlet valve and carried into the cylinder as part of the incoming charge.[^injectors]
 
 <Figure src={injectorParts} alt="Factory drawing of the 2.9 intake with linked fuel rails above both banks and one injector separated to show its clips and seals." width="540px">
 
-The 2.9’s connected fuel rails (1) supply the port injectors (6). Clips (7) retain the injectors, with seals (8, 9) at their connections. The drawing places them beside the intake ports, rather than inside the combustion chambers. Factory drawing: Porsche AG, [PET 107-007, PDF p. 90](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=90).
+The 2.9's connected fuel rails (1) feed the port injectors (6), which are held by clips (7) and sealed at their connections (8, 9). The injectors sit beside the intake ports, not in the combustion chambers. Factory drawing: Porsche AG, [PET 107-007, PDF p. 90](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=90).
 
 </Figure>
 
 <Figure src={illustration3} alt={"Port injection places the fuel spray before the inlet valve; the 3.4 DFI comparison places it in the cylinder."}>
 
-Port injection places the fuel spray before the inlet valve; the 3.4 DFI comparison places it in the cylinder.
+Where the fuel goes in: ahead of the inlet valve at about 4 bar on the 2.9, and into the cylinder at 40–120 bar on the 3.4 DFI engine. These are system descriptions, not workshop pressure-test values.
 
 </Figure>
 
-*Location is the defining difference. The documented 2.9 port-injection supply is approximately 4 bar; the contemporary 3.4 DFI high-pressure system operates at 40–120 bar. These are system descriptions, not a workshop pressure-test procedure.*
+Direct injection has a different task. Its injector must deliver fuel straight into a cylinder whose pressure changes throughout the cycle, so the S adds a camshaft-driven high-pressure stage, pressure regulation and suitable injectors. Porsche gives **40–120 bar** for that system, and its spray preparation, piston shape and injection timing are designed together. The high-pressure pump and injector drawings in the ordinary-model brochure are explicitly of the **3.4-litre S**, not the 2.9.[^dfi]
 
-Direct injection has a different task: its injector must deliver fuel straight into a cylinder whose pressure changes throughout the cycle. The S consequently adds an engine-driven high-pressure stage, pressure regulation and suitable injectors. Porsche gives **40–120 bar** for that system. Its spray preparation, piston shape and injection timing are designed together. The attractive high-pressure pump and injector drawings in the ordinary-model brochure are explicitly illustrations of the **3.4-litre S**.[^dfi]
+On the 2.9, a **pressure regulator** holds the supply near its intended pressure, while the injector's opening time sets the dose. The two jobs are separate: correctly timed injector pulses can only compensate for a supply error up to a point. The 2.9 has no equivalent of the S's high-pressure stage.[^fuel-supply]
 
 <Figure src={illustration4} alt={"Two separate fuel paths connect the front tank and rear engine: pressurised liquid through pump, filter/regulation and injectors; vapour through the carbon canister and controlled purge to the intake."}>
 
-Two separate fuel paths connect the front tank and rear engine: pressurised liquid through pump, filter/regulation and injectors; vapour through the carbon canister and controlled purge to the intake.
+Two separate fuel paths from the front tank to the rear engine. Liquid petrol goes under pressure through the pump, filter and regulator to the injectors; vapour goes through the carbon canister and a controlled purge into the intake. The tank group is drawn by function, not as a pump module to dismantle.
 
 </Figure>
-
-The **pressure regulator** holds the supply near its intended level while injector opening time meters the dose. It is different from the injector itself: a correctly timed electrical pulse cannot compensate for an unlimited supply error. This 2.9 does not add the S’s camshaft-driven high-pressure stage. The tank/filter/regulator group is shown by function, rather than as a pump-module dismantling diagram.[^fuel-supply]
 
 ### Tank ventilation and stored vapour
 
-Petrol also evaporates inside the tank. A separate breather line leads to an **activated-carbon canister**, which retains fuel vapour. During suitable engine operation, a controlled purge route carries stored vapour into the intake for combustion. Incoming air through the canister helps regenerate its storage capacity. The purge valve lets engine control manage that extra contribution to the mixture.[^fuel-vapour]
+Petrol also evaporates inside the tank. A separate breather line takes the vapour to an **activated-carbon canister**, which stores it. In suitable running conditions, a controlled purge route carries the stored vapour into the intake to be burned, while the air drawn through the canister helps regenerate its capacity. The purge valve lets the engine control manage this extra contribution to the mixture.
 
-This **evaporative-emissions** path carries vapour and air, while the supply pipe carries pressurised liquid. Neither is the exhaust’s secondary-air system. A leak or stuck purge valve can disturb mixture control, even with an intact liquid-fuel feed. Canister, breather and purge plumbing are separately identified in the Porsche catalogue; emission-market differences must be checked for a particular installation.[^fuel-vapour]
+This **evaporative-emissions** path carries vapour and air, whereas the supply pipe carries liquid under pressure; neither is the exhaust's secondary-air system. A leak or a stuck purge valve can upset mixture control even when the liquid-fuel feed is intact. The Porsche catalogue lists the canister, breather and purge pipes separately, and emission-market differences need checking on a particular car.[^fuel-vapour]
 
 ## Crankcase ventilation and oil separation
 
-Some combustion gas passes the piston rings into the crankcase. This **blow-by** has to leave through a controlled route so that pressure does not build up around the rotating machinery. The ventilation system returns the gases to the intake, after separating carried oil mist. Porsche describes a pre-separator and fine separator in the new engine generation.[^crankcase-vent]
+Some combustion gas passes the piston rings into the crankcase. This **blow-by** has to leave by a controlled route, so that pressure does not build up around the rotating parts. The ventilation system separates out the oil mist the gas carries, then returns the gas to the intake. Porsche describes a pre-separator and a fine separator in the new engine generation.[^crankcase-vent]
 
 <Figure src={illustration5} alt={"Blow-by enters the crankcase past the piston rings, reaches oil separation, then returns as ventilated gas to the intake. Separated oil returns to the engine’s oil collection; it is not sent through the carbon canister."}>
 
-Blow-by enters the crankcase past the piston rings, reaches oil separation, then returns as ventilated gas to the intake. Separated oil returns to the engine’s oil collection; it is not sent through the carbon canister.
+Blow-by passes the piston rings, goes through oil separation and returns to the intake; the separated oil drains back to the engine, not to the carbon canister. Porsche's factory drawings show separation hardware inside the engine as well as an external oil separator and breather hoses; the single separation block groups them. It does not borrow the earlier 987.1 separator's construction or a diagnostic vacuum limit.
 
 </Figure>
 
-Separation and pressure control serve different jobs. Separation removes suspended oil droplets; a controlled connection manages the crankcase’s pressure relationship with the intake. An unrestricted opening to intake depression would not provide the same controlled ventilation. This explains why the breather hoses and oil-separation assembly belong to the intake’s airtightness as well as to the oil system. The [oil pumps](../07-lubrication-cooling-and-exhaust/index.mdx#oil-collection-and-pressure-supply) have a separate task: circulating liquid lubricant.
+Separating the oil and controlling the pressure are different jobs. Separation removes the suspended oil droplets; a controlled connection manages the crankcase pressure relative to the intake. An unrestricted opening to the intake's depression would not give the same controlled ventilation, which is why the breather hoses and oil separator matter to the intake's airtightness as well as to the oil system. The [oil pumps](../07-lubrication-cooling-and-exhaust/index.mdx#oil-collection-and-pressure-supply) do a separate job: circulating liquid lubricant.
 
-The factory drawings show separation hardware within the engine as well as an external oil separator and connecting breather hoses. The single separation block in the drawing groups these functions.
+These **crankcase gases** are not the tank vapour described above. Both end up burned via the intake, but they have different origins, separators and control paths.
 
-These are **crankcase gases**, distinct from the tank vapour above. Both ultimately reach combustion through the intake, but they have different origins, separators and control paths. The drawing groups the ventilation functions; it does not assign the earlier 987.1 separator’s construction or a diagnostic vacuum limit to this engine.
+## Ignition and knock control
 
-## Making the spark useful
+Each cylinder has its own ignition coil, sitting directly on its spark plug. While current flows through the coil's primary winding, it stores energy in a magnetic field; switching the current off produces the high voltage that strikes a spark across the plug gap. The spark only starts combustion, and the burning mixture takes a finite time to release its energy, so spark timing must suit engine speed and load rather than coming at the same crank position every time.[^coil-principle]
 
-Each cylinder has its own ignition coil directly at its spark plug. The coil stores energy in a magnetic field while current flows through its primary winding. Switching that current off produces the high voltage needed to strike a spark across the plug gap. The plug begins combustion; the burning mixture then takes a finite time to release its energy. Spark timing must therefore suit engine speed and load, rather than simply occurring at the same crank position in every circumstance.[^coil-principle]
+Porsche's new coils contain their own electronic output stages and diagnostic functions, and the controller triggers each of the six individually. There is no rotating distributor and no set of long high-voltage leads from a central coil. The training document also describes surface-gap plugs with four ground electrodes arranged around the insulator. That describes how the plug is built, not four separately timed sparks.[^ignition][^plug]
 
-Porsche's new coils incorporate their own electronic output drivers and diagnostic functions. The controller activates the six modules individually. There is no rotating distributor and no long set of high-voltage leads carrying sparks from a central coil. The training document also describes surface-gap plugs with four ground electrodes arranged around the insulator. That describes plug construction, rather than four separately timed ignition events.[^ignition][^plug]
+Knock is abnormal combustion in which part of the unburned charge ignites spontaneously, causing sharp pressure disturbances. A knock sensor picks up the characteristic vibration this sends through the engine structure. In effect it listens to the engine, unlike the oxygen sensors, which judge the mixture in the exhaust.[^knock-principle]
 
-Knock is abnormal combustion in which part of the unburned charge auto-ignites and creates sharp pressure disturbances. A knock sensor detects characteristic vibration transmitted through the engine structure. It is an acoustic feedback device, separate from the oxygen sensors that observe mixture behaviour in the exhaust.[^knock-principle]
-
-The 2.9 has one knock sensor on each side of the crankcase. Porsche describes cylinder-selective control: the controller adjusts the timing of a knocking cylinder until the condition stops. If a sensor fails, protective retard under load can reduce power and increase consumption. Knock control manages combustion within the engine's calibrated operating range.[^ignition]
+The 2.9 has one knock sensor on each side of the crankcase. Porsche describes cylinder-selective control: the controller adjusts the timing of a knocking cylinder until the knock stops. If a sensor fails, protective retard under load can reduce power and increase consumption. Knock control manages combustion within the engine's calibrated operating range.[^ignition]
 
 ## What the controller needs to know
 
-The control system combines several different kinds of information. Crankshaft position establishes rotational speed and where events belong in the cycle. Camshaft position relates the inlet-valve system to that reference. Air measurement and temperature describe the incoming charge; temperature also distinguishes a cold engine from one ready for normal operating strategies. Throttle feedback establishes whether an actuator actually reached its intended position.[^inputs]
+Crankshaft position gives engine speed and shows where each event belongs in the cycle. Camshaft position relates the inlet-valve system to that reference. Air measurement and temperature describe the incoming charge, and temperature also tells a cold engine from one ready for its normal operating strategies. Throttle feedback confirms whether the actuator actually reached its intended position.[^inputs]
 
-Other signals answer different questions. Oxygen sensors report the result of mixture preparation after combustion. Knock sensors help assess the timing limit. These measurements are complementary: a plausible pedal signal says nothing by itself about fuel pressure, a functioning spark or an airtight intake. Coordinating them is the controller's principal job, and discrepancies also provide opportunities for diagnosis.
+The oxygen sensors report the result of mixture preparation after combustion, and the knock sensors help find the timing limit. Each signal answers a different question: a plausible pedal signal says nothing by itself about fuel pressure, a working spark or an airtight intake. Coordinating them is the controller's main job, and disagreements between them help diagnosis.
 
 <details className="technical-detail">
 <summary>Reference component identifiers</summary>
@@ -124,53 +120,55 @@ Other signals answer different questions. Oxygen sensors report the result of mi
 | Upstream oxygen sensors | LSU 4.9 | Wideband mixture feedback |
 | Between-brick oxygen sensors | LSF 4.2 | Switching sensing for exhaust monitoring |
 
-These are the technical introduction’s identifiers, rather than current replacement-part numbers.[^controller][^maf-principle][^injectors][^exhaust-sensors]
+These are the identifiers given in the technical introduction, not current replacement part numbers.[^controller][^maf-principle][^injectors][^exhaust-sensors]
 
 </details>
 
 ## Mixture feedback: checking the result
 
-The 2.9 uses **wideband oxygen sensors before the first catalyst brick** and **switching sensors between the two bricks in each bank's converter assembly**. The upstream sensors support mixture control; the downstream sensing helps monitor exhaust treatment. Separate exhaust paths let control respond to differences between the banks.[^controller][^exhaust-sensors]
+The 2.9 has **wideband oxygen sensors before the first catalyst brick** and **switching sensors between the two bricks in each bank's converter assembly**. The upstream sensors serve mixture control; the downstream ones help monitor the exhaust treatment. Because each bank has its own exhaust path, the control can respond to differences between the banks.[^controller][^exhaust-sensors]
 
-Lambda, written **λ**, expresses the air-to-fuel ratio relative to the chemically balanced ratio for the fuel. At λ = 1, the air and fuel are in their stoichiometric proportions. Above one the mixture is lean, with excess air; below one it is rich. Wideband sensing can quantify mixtures on either side of that point, rather than merely indicating a rich/lean transition.[^lambda]
+Lambda, written **λ**, compares the actual air–fuel ratio with the chemically balanced ratio for the fuel. At λ = 1 the air and fuel are in their stoichiometric proportions. Above 1 the mixture is lean, with air to spare; below 1 it is rich. A wideband sensor can measure how far the mixture is from that point on either side, rather than only signalling the switch from rich to lean.[^lambda]
 
-During suitable warm, steady operation, feedback compares the observed mixture with its target and adjusts fuelling. Imagine that the meter reports enough air to require one quantity of fuel, but an intake leak admits another ten per cent of air downstream. The original fuel calculation is now insufficient. An oxygen-sensor response can lead the controller to add fuel. The correction compensates for the error while the underlying leak remains.[^lambda]
+During suitable warm, steady running, feedback compares the measured mixture with its target and trims the fuelling. Suppose the meter reports enough air for a certain quantity of fuel, but a leak downstream admits another ten per cent. The fuel calculation is now too small; the oxygen sensors' response can lead the controller to add fuel. The correction compensates for the error, but the leak remains.[^lambda]
 
 <Diagram id="engine-mixture-feedback" poster={illustration1} alt={"Ten per cent additional unmetered air initially gives lambda 1.100 in this illustrative model. Successive fuel corrections approach lambda one."} />
 
-The interactive example deliberately holds everything else steady. A real engine is also starting, accelerating, changing temperature or entering overrun. Its target and available feedback depend on that state. A fuel correction is consequently evidence of a control response, rather than a uniquely identified failed part. Air leaks, fuel-delivery errors and misleading sensor information can disturb the same overall relationship.
+*An illustrative model, not measured Porsche behaviour. Everything except the leak and the correction is held steady.*
+
+A real engine is rarely that steady: it is starting, accelerating, changing temperature or entering overrun, and its target and available feedback depend on that state. A fuel correction therefore shows that the control has responded, not which part has failed. An air leak, a fuel-delivery fault or misleading sensor information can all disturb the same relationship.
 
 ## Cold running and emissions
 
-Cold operation changes fuel preparation and the effectiveness of exhaust treatment. Oxygen sensors need suitable operating conditions, and a catalyst must become hot enough to convert pollutants effectively. Sensor heating and warm-up strategies therefore belong to engine management as much as steady-running mixture control does.[^lambda-heating]
+Cold running changes how the fuel is prepared and how well the exhaust treatment works. Oxygen sensors need suitable operating conditions, and a catalyst must get hot enough to convert pollutants effectively. Sensor heating and warm-up strategies are therefore as much a part of engine management as steady-running mixture control.[^lambda-heating]
 
-A specific distinction matters on this car: the **2.9 retains secondary-air injection**, while the contemporary 3.4 DFI engine achieves its warm-up emissions strategy without it. Secondary air adds oxygen to the exhaust side during the relevant warm-up phase, encouraging oxidation of unburned components and helping heat exhaust treatment. Its electric pump sends air through a valve and separate connection lines to the two cylinder banks’ exhaust passages. It is a separate air path from the air charge admitted through the inlet valves. Porsche's training confirms Euro 5 compliance for the European application.[^secondary]
+One difference matters on this car: the **2.9 retains secondary-air injection**, whereas the contemporary 3.4 DFI engine manages its warm-up emissions without it. Secondary air adds oxygen on the exhaust side during the relevant warm-up phase, helping to burn off unburned components and heat the exhaust treatment. An electric pump sends it through a valve and separate connection lines to each bank's exhaust passages, an air path quite separate from the charge entering through the inlet valves. Porsche's training material confirms Euro 5 compliance for the European version.[^secondary]
 
-The S can exploit direct-injection-specific start and warm-up strategies, including multiple injection and altered injection timing. Those descriptions should not be transferred to the 2.9. The physical catalyst and exhaust arrangement is covered in [Lubrication, cooling and exhaust](../07-lubrication-cooling-and-exhaust/index.mdx).[^warmup-dfi]
+The S can use start and warm-up strategies specific to direct injection, including multiple injection and altered injection timing. These do not apply to the 2.9. The catalysts and exhaust layout are covered in [Lubrication, cooling and exhaust](../07-lubrication-cooling-and-exhaust/index.mdx).[^warmup-dfi]
 
 ## Options on the 2010 2.9
 
-**Sport Chrono** changes response. In Sport mode, the accelerator characteristic requests more output for a given intermediate pedal movement, making the engine feel more immediate. Porsche also describes a harder rev-limiter characteristic. Its published comparison curves converge at maximum requested torque: the option does not add a separate higher peak-power specification to the 188 kW / 255 PS engine.[^chrono]
+**Sport Chrono** changes how the engine responds. In Sport mode, a given part-way pedal movement asks for more output, so the engine feels more immediate. Porsche also describes a harder rev-limiter characteristic. Its published comparison curves meet at maximum requested torque, however: the option does not give the 188 kW / 255 PS engine a higher peak-power rating.[^chrono]
 
 <Figure src={illustration6} alt={"Porsche's period photograph of the dashboard-mounted Sport Chrono stopwatch."}>
 
-The optional Sport Chrono stopwatch. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 57. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+The optional Sport Chrono stopwatch on the dashboard. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 57. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
 
 </Figure>
 
-The package also affects [PDK](../09-pdk-transmission/index.mdx#options-on-the-2010-2.9) and, in Plus form, [PCM](../17-audio-navigation-and-communication/index.mdx#options-on-the-2010-2.9). Those chapters explain the transmission functions and display features; the accelerator-response change applies to the manual car too.[^chrono]
+The package also affects [PDK](../09-pdk-transmission/index.mdx#options-on-the-2010-2.9) and, in Plus form, [PCM](../17-audio-navigation-and-communication/index.mdx#options-on-the-2010-2.9); those chapters explain the gearbox functions and display features. The change in accelerator response applies to the manual car too.[^chrono]
 
 ## Changes in other 2.9 model years
 
-Port injection and ME 7.8.2 belong to the 2009 introduction. Later US technical data still distinguish the ordinary model’s multipoint injection from the other variants’ DFI.[^later] The [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix) records that corroboration separately from unverified UK software/component changes.
+This port-injected engine and its ME 7.8.2 controller belong to the 2009 introduction. Later US technical data still distinguish the ordinary model's multipoint injection from the other variants' DFI.[^later] The [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix) records that confirmation separately from UK software or component changes that remain unverified.
 
 ## The S, Spyder and Black Edition
 
-All three use 3.4-litre direct injection, including the high-pressure fuel stage described above. Their hardware and calibration differ from the 2.9’s port system; [engine construction](../05-engine-construction-and-valve-gear/index.mdx#the-s-spyder-black-edition-and-cayman) compares their outputs and internal dimensions.[^variants]
+All three use 3.4-litre direct injection, with the high-pressure fuel stage described above. Their hardware and calibration differ from the 2.9's port system; [engine construction](../05-engine-construction-and-valve-gear/index.mdx#the-s-spyder-black-edition-and-cayman) compares their outputs and internal dimensions.[^variants]
 
 ## Identification and ageing
 
-Useful observations connect symptoms to operating state: cold or warm, idle or loaded, one bank or both, intermittent or repeatable. Intake joints, electrical connections, coils, plugs and fuel delivery all participate in the same process. Stored fault information and measured values help distinguish an actuator failure from the controller's attempt to compensate for another problem. Porsche specifically refers plug and air-filter replacement intervals to the market-specific maintenance schedule.[^plug][^air-cleaner]
+Useful observations tie a symptom to the conditions in which it appears: cold or warm, idling or under load, one bank or both, intermittent or repeatable. Intake joints, electrical connections, coils, plugs and fuel delivery all take part in the same process. Stored fault information and measured values help tell a failed actuator from the controller compensating for a problem elsewhere. Porsche refers plug and air-filter replacement intervals to the market-specific maintenance schedule.[^plug][^air-cleaner]
 
 [^controller]: Porsche AfterSales Training, *2009 Technik Introduction — All Boxster/Cayman Models*, **PNA 987 021 09, edition 2/09**, printed Fuel and ignition p. 58, [viewer p. 64](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=64). The front matter identifies Porsche AG material edited for North America; UK options use the UK catalogue. [Indexed reproduction of the Porsche-authored text](https://www.scribd.com/document/972719474/Boxster-2009).
 

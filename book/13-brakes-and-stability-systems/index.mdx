@@ -9,13 +9,13 @@ import parkingBrakeParts from "./images/pet-parking-brake-shoes.png";
 
 # Brakes and stability systems
 
-Braking turns motion into heat. In the 2010 Boxster 2.9, pressing the pedal starts a chain of events: hydraulic pressure rises, pads clamp the discs, and contact with the road supplies the force that slows the car. Alongside that physical chain, electronic systems monitor the wheels and the car's movement, adjusting individual brakes when necessary.
+Braking turns motion into heat. Press the pedal of a 2010 Boxster 2.9 and fluid pressure rises, pads clamp the discs, and the tyres' grip on the road slows the car. Alongside that physical chain, electronic systems watch the wheels and the car's movement, and can adjust individual brakes when needed.
 
 ## The brakes on the 2010 Boxster 2.9
 
-The reference car has a hydraulic, power-assisted braking system with cast-iron discs at all four wheels. Its black calipers are fixed aluminium monobloc units with four pistons each. The discs are internally ventilated and cross-drilled. Behind each disc is a stationary cover plate; separate retaining hardware locates the pads, and electrical leads serve their wear indicators. The wheel-brake arrangement is the same whether the car has the six-speed manual gearbox or optional PDK.[^hardware]
+The reference car has hydraulic, power-assisted brakes with cast-iron discs at all four wheels. The discs are internally ventilated and cross-drilled, and each is gripped by a black, fixed aluminium monobloc caliper with four pistons. A stationary cover plate sits behind each disc, separate hardware retains the pads, and electrical leads serve their wear indicators. The wheel brakes are the same with the six-speed manual or optional PDK.[^hardware]
 
-| Component | Reference specification |
+| Component | 2010 Boxster 2.9 |
 | --- | --- |
 | Front discs | 318 mm diameter × 28 mm nominal thickness |
 | Rear discs | 299 mm diameter × 20 mm nominal thickness |
@@ -24,9 +24,9 @@ The reference car has a hydraulic, power-assisted braking system with cast-iron 
 | Stability control | Porsche Stability Management, or PSM, fitted as standard |
 | Parking brake | A hand lever operating the rear-wheel parking brakes through cables |
 
-The disc dimensions are **new-disc dimensions**, not replacement limits. A worn disc must be assessed against the specification for that particular part.[^hardware]
+These are new-disc dimensions, not wear limits. A worn disc must be checked against the specification for that particular part.[^hardware]
 
-Most of the visible hardware sits behind the wheels. The master cylinder and brake-fluid reservoir are at the front of the car, while rigid pipes and flexible hoses connect the hydraulic system to the wheel brakes. Flexible sections allow the wheels to steer and move with the suspension without asking a rigid pipe to bend repeatedly.
+The master cylinder and fluid reservoir are at the front. Rigid pipes and flexible hoses carry fluid to the wheels; the hoses let the wheels steer and move with the suspension without a rigid pipe bending repeatedly.
 
 <Diagram id="brake-explorer" poster={illustration0} alt={"The front brake in context: the master cylinder connects hydraulically to four wheel brakes. The front assembly contains a wheel, hub, disc, stationary cover plate, two pads and a fixed caliper, with separate pad retainers, wear-indicator lead and hydraulic pipe/hose connection."} />
 
@@ -34,125 +34,119 @@ Most of the visible hardware sits behind the wheels. The master cylinder and bra
 
 <Figure src={illustration3} alt={"The braking chain: foot force is assisted and converted to hydraulic pressure; calipers clamp the rotating discs, and road force on the tyres slows the car."}>
 
-The braking chain: foot force is assisted and converted to hydraulic pressure; calipers clamp the rotating discs, and road force on the tyres slows the car.
+Each stage changes the form of the effort: the booster adds to the driver's foot, the master cylinder turns force into pressure, the calipers turn it back into clamping force, and the road finally does the slowing.
 
 </Figure>
 
 ### From your foot to hydraulic pressure
 
-The pedal acts as a lever. A brake booster adds assistance, reducing the effort needed from the driver's leg. The master cylinder then turns that applied force into pressure in the brake fluid.
+The pedal is a lever, and a brake booster adds to the driver's effort. The master cylinder turns the combined force into pressure in the brake fluid. The brake lines carry that pressure to the caliper pistons, whose area turns it back into force on the pads. A small movement of fluid produces a large clamping force.
 
-The underlying principle is simple: force acting on a piston of a given area creates pressure. That pressure reaches the caliper pistons through the brake lines. At the wheels, piston area turns pressure back into force, pressing the pads against the discs. The system uses a small amount of fluid movement to produce substantial clamping force.
+The Boxster has two hydraulic circuits, split between the front and rear axles. If one fails the other still works, though braking is seriously reduced. The driver's connection to the brakes stays hydraulic and mechanical; the electronics add control of pressure within that system.[^handbook]
 
-The Boxster has two hydraulic circuits, divided between the front and rear axles. This provides a degree of redundancy, although losing either circuit seriously reduces the system's capability. The driver's connection to the brakes remains hydraulic and mechanical; the electronics add control of pressure within that system.[^handbook]
-
-Pressure transmission depends on having the correct fluid in a sound, properly bled circuit. Liquid compresses very little under these conditions. Air or vapour compresses much more readily, using up pedal movement before the pads receive the expected clamping force.
+Passing on pressure this way depends on the correct fluid in a sound, properly bled circuit. Liquid barely compresses; air or vapour does, and uses up pedal travel before the pads clamp as hard as expected.
 
 ### Where brake assistance comes from
 
-The rear engine’s mechanical **vacuum pump** is driven by the exhaust camshaft on bank 4–6. It evacuates the brake-booster supply and serves other vacuum-operated functions. A long connection brings that low-pressure supply forward to the booster near the master cylinder. The pump is separate from the accessory-belt drive and from the hydraulic ABS/PSM pump.[^vacuum-source]
+The booster's assistance comes from a mechanical **vacuum pump** on the rear engine, driven by the exhaust camshaft on bank 4–6. It evacuates the booster supply and serves other vacuum-operated functions, and a long line carries the low pressure forward to the booster at the master cylinder. The pump is separate from the accessory belt and from the hydraulic ABS/PSM pump.[^vacuum-source]
 
 <Figure src={illustration4} alt={"The exhaust camshaft drives a rear vacuum pump; a supply line and non-return valve serve the front booster. Pedal operation admits atmospheric pressure to one booster chamber so a pressure difference assists the pushrod into the hydraulic master cylinder."}>
 
-The exhaust camshaft drives a rear vacuum pump; a supply line and non-return valve serve the front booster. Pedal operation admits atmospheric pressure to one booster chamber so a pressure difference assists the pushrod into the hydraulic master cylinder.
+Vacuum is made at the back of the car and used at the front. Pressing the pedal admits outside air to one booster chamber, and the pressure difference provides the assisting push.
 
 </Figure>
 
-Inside a vacuum booster, a diaphragm separates pressure chambers. Applying the pedal operates valves so that atmospheric pressure acts on one side while the other retains reduced pressure. The resulting force helps the pushrod apply the master cylinder. A non-return valve helps retain the evacuated supply when the source pressure changes. Assistance reduces leg effort; the driver’s pedal still commands braking.[^booster-principle]
+Inside a vacuum booster of this general type, a diaphragm separates two chambers; the pedal's valves let atmospheric pressure act on one side while the other stays evacuated. A non-return valve holds the vacuum when the source pressure changes. The booster reduces leg effort, but the driver's foot still commands the braking.[^booster-principle]
 
-The vacuum line carries air, while the master cylinder and brake pipes carry fluid. Losing vacuum assistance can make the pedal much harder without being the same failure as losing hydraulic fluid. Stored assistance is finite after the engine stops. [The mode table](#options-on-the-2010-2.9) distinguishes this ordinary booster from the additional hydraulic brake-assist function.
+The vacuum line carries air, not fluid, so losing vacuum makes the pedal much harder without being a hydraulic failure. After the engine stops, only a limited reserve of assistance remains. [The options section](#options-on-the-2010-2.9) separates this ordinary booster from the additional hydraulic brake-assist function.
 
 ### What the four-piston caliper does
 
-A fixed caliper is mounted firmly around the disc, with pistons on both sides. When pressure rises, the pistons push the two pads against opposite faces of the rotating disc. The caliper body carries the reaction forces.
+A fixed caliper straddles the disc without moving, with pistons on both sides. As pressure rises, they push the two pads against opposite faces of the spinning disc, and the caliper body carries the reaction forces.
 
 <Figure src={frontBrakeParts} alt="Exploded front disc brake with disc, backing cover, caliper, pads, wear-indicator lead and pad-retaining hardware." width="520px">
 
-Disc (1), cover (3), caliper (5), pads (6) and wear lead (7) are separate items. This shared plate includes other brake variants: the external connecting tube (10) is listed for PCCB, rather than the standard 2.9 iron-disc installation. Factory drawing: Porsche AG, [PET 602-000, PDF p. 200](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=200).
+Disc (1), cover (3), caliper (5), pads (6) and wear lead (7) are separate items. The plate is shared with other brake versions: the external connecting tube (10) belongs to PCCB, not the 2.9's standard iron-disc brakes. Factory drawing: Porsche AG, [PET 602-000, PDF p. 200](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=200).
 
 </Figure>
 
-*Monobloc* describes a body made as one main piece. Its stiffness helps limit the deformation that would otherwise absorb fluid movement and soften the relationship between pressure and clamping force. Four pistons describe the arrangement of the actuators; braking performance also depends on their area, the pads, disc geometry, cooling and tyres.[^calipers]
+*Monobloc* means the body is made as one main piece. Its stiffness limits flexing that would absorb fluid movement and soften the link between pressure and clamping force. The piston count is only part of the story: piston area, pads, disc geometry, cooling and tyres matter too.[^calipers]
 
-The pads contain the friction material. Their formulation influences how readily the brakes bite, how friction changes with temperature, and how much noise, dust and wear they produce.[^friction] As the lining wears, the pistons rest progressively farther out to maintain the small working clearance. The fluid level in the reservoir can consequently fall slightly during normal pad wear. Pad-wear indicator leads are electrical connections, separate from both the hydraulic hoses and the wheel-speed sensors used by ABS/PSM.[^handbook]
+The pads carry the friction material. Its formulation decides how readily the brakes bite, how friction changes with temperature, and how much noise, dust and wear they produce.[^friction] As the pads wear, the pistons rest farther out to keep a small working clearance, so the reservoir level can fall slightly in normal use. The wear-indicator leads are electrical wires, separate from the hydraulic hoses and from the wheel-speed sensors used by ABS and PSM.[^handbook]
 
 <Diagram id="caliper-pressure" poster={illustration1} alt={"A simplified fixed-caliper cutaway: two pistons on each side press two pads towards opposite faces of the brake disc."} />
 
 ### From clamping force to heat
 
-Friction between pad and disc produces a torque opposing wheel rotation. When the car rolls forwards under braking, the road exerts a rearward force on the tyres, slowing the car; the tyres push forwards on the road. The disc absorbs much of the resulting heat before releasing it to the surrounding air and neighbouring components.
+Friction between pad and disc creates a torque against the wheel's rotation. The road then pushes rearwards on the tyres, slowing the car, as the tyres push forwards on the road. The disc absorbs much of the heat and passes it to the air and neighbouring parts.
 
-The energy involved rises quickly with speed. Using a deliberately rounded example of a 1,400 kg car, its straight-line kinetic energy at 100 km/h is about **540 kilojoules**. At 200 km/h it is about **2,160 kilojoules**: four times as much. These are illustrative calculations using one-half mass times speed squared, rather than measured Boxster stopping-test results. They leave out rotating components, aerodynamic drag and other losses.
+That energy rises steeply with speed. A round-figure 1,400 kg car carries about **540 kilojoules** of straight-line kinetic energy at 100 km/h, and about **2,160 kilojoules** at 200 km/h: four times as much. These are illustrative sums using one-half mass times speed squared, not Boxster stopping tests, and they leave out rotating parts, drag and other losses.
 
 <Diagram id="braking-energy" poster={illustration2} alt={"For an illustrative 1,400 kg car, kinetic energy rises from about 540 kJ at 100 km/h to about 2,160 kJ at 200 km/h. Doubling speed quadruples kinetic energy."} />
 
-A harder stop releases that energy in less time. Repeated stops add heat before the previous heat has escaped. This is why a braking system needs both the ability to generate torque and the thermal capacity to keep doing so.
+A harder stop releases that energy faster, and repeated stops add heat before the last has escaped, so a brake needs thermal capacity as well as torque.
 
-The Boxster's ventilated discs have an air gap and internal passages between their friction faces. Rotation moves cooling air through these passages. Cross-drilling adds holes through the friction surfaces; it is a different feature from internal ventilation. The car also directs cooling air towards its brakes.[^brochure]
+The ventilated discs have an air gap between their friction faces, crossed by internal passages, and rotation moves cooling air through them. Cross-drilling is a different feature: holes through the friction surfaces. The car also directs cooling air towards its brakes.[^brochure]
 
 ### Why the front and rear brakes differ
 
-Deceleration transfers load towards the front axle. The front tyres can then support a greater share of braking force, while the rear tyres become more lightly loaded. The brake system must work with this changing balance.
+Braking transfers load onto the front axle, so the front tyres can take more of the braking force while the rears are lightly loaded. The larger front discs suit that balance: the farther out the pads act, the more leverage they have on the wheel. Mass and construction also govern how a disc absorbs and sheds heat, so diameter alone is an incomplete description.
 
-The reference car's larger front discs form part of that arrangement. Increasing the effective radius at which a pad acts increases its leverage on the wheel. Disc mass and construction also affect heat absorption and cooling, so diameter alone gives an incomplete description of a brake.
-
-The tyre's available grip sets another limit. Once a wheel is close to locking, applying still more hydraulic pressure cannot simply turn into proportionally more useful road force. The next layer of the system addresses that problem.
+The tyre's grip sets the final limit: near lock-up, extra hydraulic pressure no longer turns into proportionally more useful road force. That is where the electronics come in.
 
 ## ABS and PSM
 
-ABS and PSM use related hardware for different jobs. ABS manages wheel slip while braking. PSM considers the movement of the whole car and can use individual brakes to influence its direction.
+ABS and PSM share hardware but do different jobs. ABS manages wheel slip under braking. PSM considers the whole car's movement and can brake individual wheels to influence its direction.
 
-### ABS keeps the wheels controllable
+### ABS keeps the wheels turning
 
-Each wheel has a speed sensor. During braking, the control system watches for a wheel slowing towards lock-up. Valves in the hydraulic unit can hold or reduce pressure at that wheel, then allow pressure to rise again as it recovers. The cycle repeats as conditions change.[^abs]
+Each wheel has a speed sensor. When a wheel starts slowing towards lock-up, valves in the hydraulic unit hold or reduce its pressure, then let it rise again as the wheel recovers. The cycle repeats as conditions change.[^abs]
 
-A rotating tyre retains the ability to generate steering force. By regulating wheel slip, ABS helps preserve directional control during heavy braking. It still works within the grip available from the tyres and road.
-
-This regulation can be felt as a rapid pulse through the pedal and heard as hydraulic activity. It is a normal feature of ABS intervention. Porsche's handbook instructs the driver to maintain firm, continuous pedal pressure during an emergency stop rather than pump the pedal.[^handbook]
+A rolling tyre can still generate steering force, so ABS helps preserve directional control in a heavy stop, within the grip the tyres and road can offer. Its operation shows as a rapid pulsing in the pedal and audible hydraulic activity, which is normal. Porsche's handbook tells the driver to keep firm, continuous pressure on the pedal in an emergency stop rather than pump it.[^handbook]
 
 ### PSM watches the car's direction
 
-Porsche Stability Management compares the intended course with the car's actual movement. Steering input indicates the requested direction. Wheel speeds, sideways acceleration and the rate at which the car rotates around its vertical axis help describe what it is doing. That rotation is called *yaw*.
+Porsche Stability Management compares the course the driver asks for, read from the steering, with the one the car is taking. Wheel speeds, sideways acceleration and the car's rate of rotation about its vertical axis, called *yaw*, show what it is actually doing.
 
-An individual brake can create a turning influence on the car. If the vehicle's movement departs from the intended path, the controller can use such an intervention, together with engine-torque control, to help stabilise it. The underlying principle is shared with electronic stability systems more generally.[^stability]
+Braking one wheel creates a turning effect on the car. If the car departs from the intended path, PSM can use that effect, together with engine-torque control, to help stabilise it. Electronic stability systems share this principle.[^stability]
 
-Imagine the car turning into a bend and the rear beginning to rotate farther than intended. PSM can select an appropriate wheel brake to oppose that rotation. The driver may notice a flashing control light, hydraulic noise or a reduction in engine response. The precise intervention depends on the situation; there is no single wheel that PSM always brakes in every slide.
+If the rear starts to rotate too far on the way into a bend, PSM can brake a suitable wheel to oppose it, and the driver may notice a flashing light, hydraulic noise or reduced engine response. Which wheel it brakes depends on the situation; there is no fixed choice for every slide.
 
-PSM also provides **anti-slip regulation (ASR)** to limit driven-wheel spin, and **automatic brake differential (ABD)** to brake a spinning driven wheel. The [drivetrain chapter](../10-differential-driveshafts-and-mounts/index.mdx#mechanical-limited-slip-and-brake-intervention) explains ABD’s torque-transfer effect and the separate mechanical locking differential.[^brochure]
+PSM also provides **anti-slip regulation (ASR)** to limit driven-wheel spin, and **automatic brake differential (ABD)** to brake a spinning driven wheel. The [drivetrain chapter](../10-differential-driveshafts-and-mounts/index.mdx#mechanical-limited-slip-and-brake-intervention) explains ABD's torque-transfer effect and the separate mechanical locking differential.[^brochure]
 
 ### Preparing for an urgent stop
 
-The facelift's braking electronics introduced two useful assistance functions. **Prefilling**, also described as precharging, prepares the brakes when a very rapid release of the accelerator suggests that braking may follow. It brings the pads into light contact with the discs, taking up clearance before the driver asks for substantial braking.
+The facelift added two assistance functions. **Prefilling**, also called precharging, reacts to a very rapid release of the accelerator, which suggests braking may follow. It brings the pads into light contact with the discs, taking up the clearance in advance.
 
-**Brake assist** recognises an emergency braking application from the speed and force of pedal actuation. The PSM hydraulic unit then supplies additional pressure for maximum deceleration, supplementing the ordinary vacuum brake booster. Prefilling concerns readiness; brake assist concerns the pressure generated during the stop. Both act through the hydraulic system, subject to the PSM and Sport-mode conditions below.[^assistance]
+**Brake assist** recognises an emergency stop from the speed and force of the pedal application. The PSM hydraulic unit then adds pressure for maximum deceleration, on top of the ordinary vacuum booster. Prefilling is about readiness; brake assist is about pressure during the stop. Both act through the hydraulic system, subject to the PSM and Sport-mode conditions below.[^assistance]
 
-These functions should also be understood separately from hill-start assistance. The **Drive-Off Assistant** can briefly retain brake pressure while the driver changes from braking to moving off on a suitable incline. It is provided with manual and PDK transmissions. The hold lasts approximately two seconds at most, with release related to moving off. The handbook specifies a stationary car, engine running, sufficient brake pressure and a gradient of around 5% or more, with a gear selected for travel up the slope; the manual car also requires the clutch pedal depressed.[^hill]
+Hill-start assistance is a separate function. The **Drive-Off Assistant**, provided with manual and PDK gearboxes, briefly holds brake pressure as the driver moves off on a slope. The hold lasts about two seconds at most and releases as the car moves away. The handbook requires a stationary car, engine running, sufficient brake pressure, a gradient of around 5% or more and a gear selected for going up the slope; a manual car also needs the clutch pedal pressed.[^hill]
 
 ### The parking brake has its own job
 
-The hand lever pulls separate left and right cables leading to the rear wheels. Expanding mechanisms press dedicated parking-brake shoes against drum surfaces inside the rear disc assemblies. Springs and an adjuster belong to this shoe mechanism, separate from the hydraulic caliper and its pads. This lets the car remain held without maintaining hydraulic pressure at the ordinary disc-brake pads.[^parking]
+The hand lever pulls separate left and right cables to the rear wheels. There, expanding mechanisms press dedicated shoes against drum surfaces inside the rear discs. The shoes, springs and adjuster are separate from the hydraulic caliper and its pads, so the car stays held without hydraulic pressure.[^parking]
 
 <Figure src={parkingBrakeParts} alt="Two curved parking-brake shoes separated from their adjuster, return and retaining springs, and expanding mechanism." width="560px">
 
-The parking brake uses curved shoes (1), an adjuster (2), springs (4–6) and an expanding mechanism (11). These parts work inside the rear disc’s drum section; they are separate from the hydraulic caliper’s disc pads. Factory drawing: Porsche AG, [PET 603-005, PDF p. 207](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=207).
+Shoes (1), adjuster (2), springs (4–6) and expanding mechanism (11) work inside the drum section of the rear disc, independently of the caliper's pads. Factory drawing: Porsche AG, [PET 603-005, PDF p. 207](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=207).
 
 </Figure>
 
-The handbrake, [PDK parking lock](../09-pdk-transmission/index.mdx#the-selector-and-steering-wheel-controls) and temporary hill hold are three separate ways of restraining movement. Each has its own mechanism and operating conditions.
+The handbrake, the [PDK parking lock](../09-pdk-transmission/index.mdx#the-selector-and-steering-wheel-controls) and the brief hill hold are three separate ways of stopping the car rolling, each with its own mechanism and conditions.
 
 ## Options on the 2010 2.9
 
-PSM and ABS are standard. Optional Sport Chrono is **639**, or **640** in Plus form with PCM.[^options]
+ABS and PSM are standard. The relevant option is Sport Chrono, code **639**, or **640** in Plus form with PCM.[^options]
 
-For this chapter, the relevant change is the control strategy. Selecting Sport mode raises the threshold for PSM intervention, allowing more movement before it intervenes. The iron-disc brake dimensions remain unchanged; [chapter 18](../18-occupant-protection-and-system-integration/index.mdx#options-on-the-2010-2.9) connects the equipment-dependent mode changes.[^options]
+For the brakes, it changes the control strategy, not the iron-disc dimensions. Sport mode raises the PSM intervention threshold, allowing more movement before PSM steps in. [Chapter 18](../18-occupant-protection-and-system-integration/index.mdx#options-on-the-2010-2.9) connects the equipment-dependent mode changes.[^options]
 
-With **PSM OFF**, ABS and ABD remain available. Stability intervention returns during braking when either front wheel enters ABS regulation; with Sport mode selected, both front wheels must enter that range. The handbook says the additional braking functions are deactivated with PSM off, with emergency reactivation linked to PSM intervention. The technical introduction also specifies that selecting SPORT with Sport Chrono Package Plus deactivates the additional hydraulic brake assist. The ordinary vacuum booster remains a separate source of pedal assistance.[^modes]
+With **PSM OFF**, ABS and ABD remain available. Stability intervention returns during braking when either front wheel enters ABS regulation, or both front wheels if Sport mode is selected. The handbook says the additional braking functions are deactivated with PSM off, with emergency reactivation tied to PSM intervention. The technical introduction adds that selecting SPORT with Sport Chrono Package Plus deactivates the additional hydraulic brake assist. The ordinary vacuum booster keeps assisting the pedal throughout.[^modes]
 
-**Porsche Ceramic Composite Brake (PCCB)** was an S option, unavailable on the ordinary 2.9 in the UK catalogue. Its hardware is compared below.[^options]
+**Porsche Ceramic Composite Brake (PCCB)** was an S option, not available on the ordinary 2.9 in the UK catalogue. Its hardware is compared below.[^options]
 
 ## Changes in other 2.9 model years
 
-The 2009 facelift enlarged the ordinary model’s front disc from **298 to 318 mm** and introduced PSM prefill/brake-assist functions. Both changes precede this chapter’s reference car.[^introduction] The later service-parts catalogue distinguishes a hydraulic unit from model year 2010 and a control-system sensor from model year 2011; those application splits do not explain a change in braking behaviour. Later US diameter corroboration and unresolved UK running details are collected in the [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix).[^later]
+The 2009 facelift enlarged the ordinary model's front discs from **298 to 318 mm** and introduced the PSM prefill and brake-assist functions, both before the reference car.[^introduction] The later parts catalogue lists a new hydraulic unit from model year 2010 and a new control-system sensor from model year 2011, but those splits say nothing about a change in braking behaviour. Later US confirmation of the diameters and the unresolved UK running details are in the [annual matrix](../19-reference-atlas-and-index/index.mdx#annual-equipment-matrix).[^later]
 
 <Heading level={2} id="where-else-the-system-appears">
 
@@ -160,7 +154,7 @@ The S, Spyder and Black Edition
 
 </Heading>
 
-The 2.9 shares its general braking architecture with the more powerful 987.2 models. The following comparison covers their standard iron brakes.
+The more powerful 987.2 models share the 2.9's general braking architecture. Comparing their standard iron brakes shows one dimensional difference.
 
 | Model | Front disc | Rear disc | Caliper colour |
 | --- | --- | --- | --- |
@@ -169,17 +163,15 @@ The 2.9 shares its general braking architecture with the more powerful 987.2 mod
 | Boxster Spyder | 318 × 28 mm | 299 × 24 mm | Red |
 | Boxster S Black Edition | 318 × 28 mm | 299 × 24 mm | Red |
 
-The notable dimensional difference between the ordinary 2.9 and S is at the **rear**: the S disc is 4 mm thicker. The front disc's nominal diameter and thickness are the same. Extra thickness can provide additional thermal capacity, but matching dimensions alone do not prove that all calipers, pads or complete assemblies are interchangeable. The later parts catalogue lists common standard front-disc numbers but separate base and S front-caliper numbers.[^hardware]
+That difference is at the **rear**, where the S disc is 4 mm thicker; the fronts match. Extra thickness can add thermal capacity, but matching dimensions do not prove that calipers, pads or assemblies interchange. The later parts catalogue lists common standard front-disc numbers but separate base and S front-caliper numbers. Porsche's technical introduction gives the Cayman 2.9 and Cayman S the same dimensions as their Boxster equivalents, another shared application of the design within the 987 family.[^hardware]
 
-Porsche's technical introduction also lists the corresponding Cayman 2.9 and Cayman S with these ordinary-model and S disc dimensions. This is another shared application of the design within the 987 family.[^hardware]
-
-The Spyder's dimensions are specified in its German price list. It also asks its brakes to slow a lighter basic vehicle; braking depends on mass as well as engine output. The UK Black Edition price list independently specifies the same nominal disc dimensions as the S, while its brochure confirms red four-piston monobloc calipers. These dimensions establish the broad hardware specification, without proving that every part is interchangeable.[^special]
+The Spyder's dimensions come from its German price list. Its brakes also have a lighter car to stop, and braking depends on mass as well as engine output. The UK Black Edition price list independently gives the S disc dimensions, and its brochure confirms red four-piston monobloc calipers. Neither proves that every part interchanges.[^special]
 
 ### What PCCB changes
 
-The S could be ordered with ceramic-composite discs and yellow calipers; PCCB also appears as an option in the Spyder and UK Black Edition catalogues. The ordinary UK catalogue describes 350 mm discs at both axles, six-piston front calipers and four-piston rear calipers. This is a complete brake-system specification, involving the appropriate discs, calipers and pads.[^pccb]
+The S could be ordered with ceramic-composite discs and yellow calipers, and PCCB is also an option in the Spyder and UK Black Edition catalogues. The ordinary UK catalogue describes 350 mm discs at both axles, six-piston front calipers and four-piston rear calipers: a complete system of matching discs, calipers and pads.[^pccb]
 
-Lighter discs reduce rotating mass and [unsprung mass](../11-suspension-and-wheel-geometry/index.mdx#compliance-and-unsprung-mass). Ceramic-composite material also changes thermal and wear behaviour, requiring the matching discs, pads and calipers.
+The lighter discs reduce rotating mass and [unsprung mass](../11-suspension-and-wheel-geometry/index.mdx#compliance-and-unsprung-mass). The ceramic-composite material also behaves differently with heat and wear.
 
 <Heading level={2} id="identifying-the-fitted-version">
 
@@ -187,9 +179,9 @@ Identification and ageing
 
 </Heading>
 
-### Identifying the fitted version
+### Which brakes are fitted
 
-Caliper paint is only an initial clue. A previous owner may have repainted a caliper, fitted replacement discs or changed the complete system. Disc part numbers and the correct dimensional specification provide stronger evidence. A visible outer wear lip also makes an improvised measurement a poor substitute for a proper inspection.
+Caliper colour is only a first clue: a previous owner may have repainted the calipers, fitted replacement discs or changed the whole system. Disc part numbers and the correct dimensional specification are stronger evidence. The wear lip at a disc's outer edge makes an improvised measurement a poor substitute for a proper inspection.
 
 <Heading level={3} id="ageing-and-wear">
 
@@ -197,17 +189,17 @@ Ageing and wear
 
 </Heading>
 
-Brake components age in different ways. Pads lose friction material, discs lose thickness, fluid takes up moisture, and exposed metal can corrode. A car with little annual mileage can therefore still need attention to its braking system.
+Pads and discs wear, fluid absorbs moisture and exposed metal corrodes, so a car that covers few miles can still need brake work.
 
-Light surface rust on an iron disc after rain or washing is different from established corrosion, heavy pitting or an uneven working surface. Porsche's handbook specifically notes that cast-iron discs can corrode during extended parking. The condition of both friction faces matters; a wheel can conceal much of the inner face.[^handbook]
+Light surface rust after rain or washing is different from established corrosion, heavy pitting or an uneven working surface. Porsche's handbook notes that cast-iron discs can corrode during extended parking. Check both friction faces; the wheel hides much of the inner one.[^handbook]
 
-Heat introduces another distinction. **Friction fade** concerns a loss of useful friction as the pad/disc interface becomes too hot.[^friction] **Fluid boiling** creates compressible vapour in a system that relies on liquid pressure transmission. Different mechanisms can therefore produce different pedal sensations during reduced braking performance.[^fluid]
+Heat causes two distinct problems. **Friction fade** is a loss of useful friction when the pad/disc interface gets too hot.[^friction] **Fluid boiling** puts compressible vapour into a system that relies on liquid. Each can feel different at the pedal.[^fluid]
 
-Brake fluid is hygroscopic: it absorbs moisture over time, lowering its boiling point. That makes fluid age relevant even when the pads remain thick. Fluid specification and replacement timing should follow the maintenance requirements for the car and its use.[^fluid]
+Brake fluid is hygroscopic: it absorbs moisture over time, which lowers its boiling point. Fluid age therefore matters even when the pads are thick. Follow the maintenance requirements for the car and its use for fluid specification and replacement timing.[^fluid]
 
-Seals and flexible hoses also deserve attention as the car ages. Leakage, restricted movement or a piston that fails to release properly can affect pressure or leave a pad dragging. Compare wear on both pads and friction faces.
+Seals and flexible hoses age too. A leak, restricted movement or a piston that fails to release can affect pressure or leave a pad dragging, so compare the wear on both pads and both faces.
 
-The parking brake has separate shoes, cables and adjustment. Fresh rear disc pads therefore say little about its condition. Similarly, a wheel-speed signal fault can affect electronic assistance while leaving the visible discs and pads apparently sound. Mechanical braking hardware and electronic brake control need to be considered together.
+The parking brake has its own shoes, cables and adjustment, so fresh rear pads say little about it. Equally, a wheel-speed signal fault can affect the electronic assistance while the discs and pads look sound. Mechanical hardware and electronic control need to be checked together.
 
 [^hardware]: Porsche Cars North America, *2009 Technik Introduction — All Boxster/Cayman Models*, PNA 987 021 09, edition 2/09, brake-system descriptions, printed p. 119 ([Porsche-authored text reproduced on Scribd](https://www.scribd.com/document/972719474/Boxster-2009)). This separates front and rear disc thicknesses. The UK catalogue independently confirms the diameters, caliper construction and colours: *The Boxster*, edition 01/10, printed pp. 22 and 61 (PDF pp. 9 and 28). Porsche PET 987209, P33, 19 July 2018, plates 602-000 and 603-000, PDF pp. 200–206: discs (1), cover plates (3), calipers (5), pads (6), wear leads (7) and retaining hardware (front 15, rear 11). The front list shares 996 351 405/406 01 discs but distinguishes base 997 351 421/422 00 and S/Spyder 996 351 425/426 11 calipers. This is a later service listing, not an original-part interchangeability claim. [Porsche-authored PET](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=200).
 

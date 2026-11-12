@@ -14,7 +14,6 @@ export interface ChapterMetadata {
   title: string;
   headings: HeadingRecord[];
   diagrams: string[];
-  noteOffset: number;
   noteCount: number;
   minutes: number;
   planned: boolean;

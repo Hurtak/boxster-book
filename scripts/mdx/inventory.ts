@@ -9,12 +9,14 @@ import remarkParse from 'remark-parse';
 import { unified } from 'unified';
 import { visit } from 'unist-util-visit';
 import type { ChapterMetadata } from '../../src/book/types';
+import { chapterDestinations, readPublishedLinks, type ChapterDestinations } from './published-links';
 
 export interface BookInventory {
   root: string;
   chapters: ChapterMetadata[];
   diagrams: Record<string, string>;
   ids: Set<string>;
+  destinations: Map<string, ChapterDestinations>;
 }
 export const parser = () => unified().use(remarkParse).use(remarkMdx).use(remarkGfm);
 export const attribute = (node: MdxJsxFlowElement | MdxJsxTextElement, name: string) =>
@@ -80,12 +82,13 @@ function readingText(node: Nodes): string {
   return ('children' in node ? node.children : []).map(readingText).join(block ? '\n' : '');
 }
 export async function discoverBook(source: string, root: string): Promise<BookInventory> {
+  const published = await readPublishedLinks(source);
   const paths = (await readdir(source, { withFileTypes: true })).filter((e) => e.isDirectory() && /^\d/.test(e.name));
   const chapters: ChapterMetadata[] = [],
     diagrams: Record<string, string> = {},
     ids = new Set<string>(),
     numbers = new Set<number>();
-  let noteOffset = 0;
+  const destinations = new Map<string, ChapterDestinations>();
   for (const entry of paths.sort((a, b) => Number(a.name.split('-')[0]) - Number(b.name.split('-')[0]))) {
     if (!/^\d{2,}-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.name)) throw Error(`Invalid chapter folder: ${entry.name}`);
     const number = Number(entry.name.split('-')[0]);
@@ -149,10 +152,17 @@ export async function discoverBook(source: string, root: string): Promise<BookIn
       if (ids.has(h.id)) throw Error(`Duplicate heading: ${h.id}`);
       ids.add(h.id);
     }
-    for (let i = 1; i <= noteCount; i++) {
-      ids.add(`fn${noteOffset + i}`);
-      ids.add(`fnref${noteOffset + i}`);
+    const links = chapterDestinations(
+      tree,
+      prefix,
+      headings.slice(1).map((h) => h.id),
+      published[entry.name],
+    );
+    for (const id of [...links.notes.flatMap((n) => [n.id, n.reference]), ...Object.keys(links.aliases)]) {
+      if (ids.has(id)) throw Error(`Duplicate published destination: ${id}`);
+      ids.add(id);
     }
+    destinations.set(file, links);
     ids.add(headings[0].id + '--notes');
     chapters.push({
       number,
@@ -161,16 +171,16 @@ export async function discoverBook(source: string, root: string): Promise<BookIn
       title: headings[0].title,
       headings: headings.slice(1).map(({ node: _node, ...h }) => h),
       diagrams: references,
-      noteOffset,
       noteCount,
       minutes: Math.max(1, Math.ceil(readingText(tree).trim().split(/\s+/).length / 220)),
       planned: tree.children.filter((n) => n.type !== 'mdxjsEsm').length === 1,
     });
-    noteOffset += noteCount;
   }
   if (!chapters.length) throw Error(`No numbered chapters in ${source}`);
+  for (const folder of Object.keys(published))
+    if (!paths.some((entry) => entry.name === folder)) throw Error(`Published chapter is missing: ${folder}`);
   // Validate links only after the complete chapter/heading index exists.
-  const inventory = { root, chapters, diagrams, ids };
+  const inventory = { root, chapters, diagrams, ids, destinations };
   for (const chapter of chapters) {
     const source = await readFile(chapter.file, 'utf8');
     const tree = parser().parse(source);
