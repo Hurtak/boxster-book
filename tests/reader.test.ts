@@ -7,6 +7,13 @@ declare global {
       images: boolean;
       dialog: boolean;
     };
+    __THREE_DEVTOOLS__?: EventTarget;
+    __bookFrame?: {
+      count: number;
+      image: string;
+      camera: number[];
+      objects: { name: string; matrix: number[]; visible: boolean }[];
+    };
   }
 }
 import assert from 'node:assert/strict';
@@ -16,10 +23,14 @@ import { createServer, type Server } from 'node:http';
 import { extname, resolve, sep } from 'node:path';
 import { build } from 'esbuild';
 import { Browser, chromium, Page } from 'playwright-core';
+import type { WebGLRenderer } from 'three';
 import { afterAll as after, afterEach, beforeAll as before, test } from 'vite-plus/test';
+import { discoverBook } from '../scripts/mdx/inventory';
 const root = resolve('dist');
 const previews = resolve(root, 'previews');
-const chapterCount = (await readdir(resolve('book'))).filter((name) => /^\d{2,}-/.test(name)).length;
+const inventory = await discoverBook(resolve('book'), resolve('.'));
+const chapterCount = inventory.chapters.length;
+const diagramNames = Object.keys(inventory.diagrams);
 let browser: Browser, server: Server, preview: string, site: string;
 before(async () => {
   await mkdir(previews, { recursive: true });
@@ -68,8 +79,16 @@ before(async () => {
   });
 });
 after(async () => {
-  await browser?.close();
-  await new Promise<void>((done) => (server ? server.close(() => done()) : done()));
+  try {
+    await browser?.close();
+  } finally {
+    await new Promise<void>((done) => {
+      if (!server) return done();
+      server.close(() => done());
+      // Abort abandoned requests and preconnect sockets after stopping accepts.
+      server.closeAllConnections();
+    });
+  }
 });
 afterEach(async () => {
   // A Vitest timeout does not cancel outstanding Playwright operations. Close
@@ -947,36 +966,60 @@ test.each([
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
     await page.clock.install({ time: new Date('2030-01-01T00:00:00Z') });
+    await page.addInitScript((id) => {
+      // Observe the actual book renderer without exposing a production test API.
+      // A global rAF hook can capture a cleared back buffer after unrelated work.
+      const devtools = (window.__THREE_DEVTOOLS__ = new EventTarget());
+      devtools.addEventListener('observe', (event) => {
+        const renderer = (event as CustomEvent<WebGLRenderer & { isWebGLRenderer?: boolean }>).detail;
+        if (!renderer.isWebGLRenderer) return;
+        const render = renderer.render.bind(renderer);
+        renderer.render = (scene, camera) => {
+          render(scene, camera);
+          if (renderer.domElement.closest('[data-diagram]')?.getAttribute('data-diagram') !== id) return;
+          const rounded = (values: number[]) => values.map((value) => Number(value.toFixed(9)));
+          const objects: NonNullable<Window['__bookFrame']>['objects'] = [];
+          scene.traverse((object) => {
+            objects.push({ name: object.name, matrix: rounded(object.matrixWorld.elements), visible: object.visible });
+          });
+          window.__bookFrame = {
+            count: (window.__bookFrame?.count ?? 0) + 1,
+            image: renderer.domElement.toDataURL(),
+            camera: rounded([...camera.matrixWorld.elements, ...camera.projectionMatrix.elements]),
+            objects,
+          };
+        };
+      });
+    }, id);
     await page.goto(preview);
     const figure = await ready(page, id);
     await page.clock.pauseAt('2030-01-01T01:00:00Z');
     const stage = figure.locator('.diagram-stage');
-    await figure.locator('canvas').evaluate((element) => {
-      const canvas = element as HTMLCanvasElement;
-      const request = window.requestAnimationFrame.bind(window);
-      window.requestAnimationFrame = (callback) =>
-        request((now) => {
-          callback(now);
-          canvas.dataset.frameImage = canvas.toDataURL();
-        });
-    });
+    const frame = () => page.evaluate(() => window.__bookFrame!);
     const imageHash = async () =>
       createHash('sha256')
-        .update((await figure.locator('canvas').getAttribute('data-frame-image'))!)
+        .update((await frame()).image)
         .digest('hex');
     const click = (name: string) =>
       figure.getByRole('button', { name, exact: true }).evaluate((button) => (button as HTMLButtonElement).click());
     const scrub = async (value: string) => {
+      const before = (await frame()).count;
       await figure.getByRole('slider', { name: 'Explore the assembly' }).evaluate((input, value) => {
         (input as HTMLInputElement).value = value;
         input.dispatchEvent(new Event('input', { bubbles: true }));
       }, value);
       await page.clock.fastForward(20);
+      assert.ok((await frame()).count > before, 'The slider must produce a fresh rendered frame');
     };
     // Capture each image after a controlled draw, before the browser clears
     // the non-preserved WebGL back buffer for compositing.
     await scrub('0');
     const original = await imageHash();
+    const originalFrame = await frame();
+    await page.evaluate(() => requestAnimationFrame(() => {}));
+    await page.clock.fastForward(20);
+    assert.equal(await imageHash(), original, 'An unrelated callback must not overwrite the last rendered scene');
+    assert.equal((await frame()).count, originalFrame.count, 'An unrelated callback does not render the scene');
     await click('Exploded');
     assert.equal(await stage.getAttribute('data-transitioning'), 'true');
     // Sample the required frames rather than PNG-encoding every intervening
@@ -1012,6 +1055,10 @@ test.each([
     assert.equal(await stage.getAttribute('data-transitioning'), 'false');
     assert.equal(await figure.getByRole('slider').inputValue(), '0');
     await page.clock.fastForward(20);
+    const resetFrame = await frame();
+    assert.ok(resetFrame.count > originalFrame.count, 'Reset must have rendered a fresh frame');
+    assert.deepEqual(resetFrame.camera, originalFrame.camera, 'Reset restores the rendered camera pose');
+    assert.deepEqual(resetFrame.objects, originalFrame.objects, 'Reset restores component transforms and visibility');
     assert.equal(await imageHash(), original, `${id} at ${width}px: reduced-motion reset restores the first frame`);
     assert.deepEqual(errors, []);
   } finally {
@@ -2044,109 +2091,112 @@ test('family and option comparisons keep the 2.9 baseline while changing the sel
     await page.close();
   }
 });
-test.each([320, 390, 768, 1440].flatMap((width) => [1, 2].map((batch) => ({ width, batch }))))(
-  'every interactive illustration responds to native controls and fits phone, tablet and desktop canvases ($width px, batch $batch)',
-  async ({ width, batch }) => {
+test('the responsive matrix covers every published diagram exactly once at each width', async () => {
+  const page = await browser.newPage({ javaScriptEnabled: false });
+  try {
+    await page.goto(preview);
+    const names = await page
+      .locator('[data-diagram]')
+      .evaluateAll((figures: HTMLElement[]) => figures.map((figure) => figure.dataset.diagram!));
+    assert.ok(names.length >= 24, 'The completed manuscript should retain its interactive illustrations');
+    assert.deepEqual(names.sort(), [...diagramNames].sort());
+  } finally {
+    await page.close();
+  }
+});
+test.each([320, 390, 768, 1440].flatMap((width) => diagramNames.map((name) => ({ width, name }))))(
+  'each interactive illustration responds to native controls and fits its canvas ($name, $width px)',
+  async ({ width, name }) => {
     // These snapshots inspect settled layouts; timed transitions are tested separately.
     const page = await browser.newPage({ viewport: { width, height: 844 }, reducedMotion: 'reduce' });
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
     try {
       (await page.goto(preview))!;
-      const names = await page
-        .locator('[data-diagram]')
-        .evaluateAll((figures: HTMLElement[]) => figures.map((figure) => figure.dataset.diagram!));
-      assert.ok(names.length >= 24, 'The completed manuscript should retain its interactive illustrations');
-      const batchSize = Math.ceil(names.length / 2);
-      for (const name of names.slice((batch - 1) * batchSize, batch * batchSize)) {
-        assert.ok(name, 'Every interactive figure has a diagram ID');
-        const figure = await ready(page, name);
-        const checkLabels = async () => {
-          const clipped = await figure.evaluate(async (element) => {
-            const svg = element.querySelector<SVGSVGElement>('.diagram-stage svg')!;
-            if (!svg) return [];
-            // Controls can resize the stage; allow its ResizeObserver and redraw to finish.
-            await new Promise(requestAnimationFrame);
-            await new Promise(requestAnimationFrame);
-            const bounds = svg.getBoundingClientRect();
-            return [...svg.querySelectorAll<HTMLElement>('text')]
-              .filter((text) => {
-                const box = text.getBoundingClientRect();
-                return (
-                  box.width &&
-                  (box.left < bounds.left - 2 ||
-                    box.right > bounds.right + 2 ||
-                    box.top < bounds.top - 2 ||
-                    box.bottom > bounds.bottom + 2)
-                );
-              })
-              .map((text) => text.textContent);
-          });
-          assert.deepEqual(clipped, [], `${name} clips its live labels at ${width}px`);
-        };
-        assert.ok(await figure.locator('.diagram-explanation').innerText(), `${name} needs a textual explanation`);
-        await checkLabels();
-        for (const range of await figure.getByRole('slider').all()) {
-          await range.focus();
-          await range.press('End');
-          assert.equal(
-            await range.inputValue(),
-            (await range.getAttribute('max'))!,
-            `${name} must respond to the keyboard`,
-          );
-          await checkLabels();
-          await range.press('Home');
-          assert.equal(await range.inputValue(), (await range.getAttribute('min'))!);
-          await checkLabels();
-        }
-        for (const select of await figure.getByRole('combobox').all()) {
-          for (const option of await select.locator('option').all()) {
-            const value = (await option.getAttribute('value'))!;
-            await select.selectOption(value);
-            assert.equal(await select.inputValue(), value);
-            await checkLabels();
-          }
-        }
-        for (const checkbox of await figure.getByRole('checkbox').all()) {
-          await checkbox.check();
-          assert.ok(await checkbox.isChecked());
-          await checkLabels();
-          await checkbox.uncheck();
-          await checkLabels();
-        }
-        const buttons = figure.locator('.diagram-interactive').getByRole('button');
-        for (const button of await buttons.all()) {
-          if (await button.isDisabled()) continue;
-          await button.click();
-          await checkLabels();
-        }
-        const overwideTables = await figure
-          .locator('.diagram-interactive table')
-          .evaluateAll((tables) =>
-            tables
-              .filter(
-                (table: { scrollWidth: number; clientWidth: number }) => table.scrollWidth > table.clientWidth + 1,
-              )
-              .map((table) => table.textContent),
-          );
-        assert.deepEqual(overwideTables, [], `${name} needs a readable comparison without sideways table scrolling`);
-        assert.equal(
-          await figure.locator('.diagram-notice').count(),
-          0,
-          `${name} must not fall back after a runtime error`,
-        );
-        assert.ok(
-          await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
-          `${name} overflows the ${width}px viewport`,
-        );
-        await figure.screenshot({
-          path: resolve(
-            previews,
-            `all-${name}-${width === 320 ? 'small-phone' : width === 390 ? 'phone' : width === 768 ? 'tablet' : 'desktop'}.png`,
-          ),
-          style: '.viewer-bar, .skip-link { visibility: hidden !important; }',
+      const figure = await ready(page, name);
+      const checkLabels = async () => {
+        const clipped = await figure.evaluate(async (element) => {
+          const svg = element.querySelector<SVGSVGElement>('.diagram-stage svg')!;
+          if (!svg) return [];
+          // Controls can resize the stage; allow its ResizeObserver and redraw to finish.
+          await new Promise(requestAnimationFrame);
+          await new Promise(requestAnimationFrame);
+          const bounds = svg.getBoundingClientRect();
+          return [...svg.querySelectorAll<HTMLElement>('text')]
+            .filter((text) => {
+              const box = text.getBoundingClientRect();
+              return (
+                box.width &&
+                (box.left < bounds.left - 2 ||
+                  box.right > bounds.right + 2 ||
+                  box.top < bounds.top - 2 ||
+                  box.bottom > bounds.bottom + 2)
+              );
+            })
+            .map((text) => text.textContent);
         });
+        assert.deepEqual(clipped, [], `${name} clips its live labels at ${width}px`);
+      };
+      assert.ok(await figure.locator('.diagram-explanation').innerText(), `${name} needs a textual explanation`);
+      await checkLabels();
+      for (const range of await figure.getByRole('slider').all()) {
+        await range.focus();
+        await range.press('End');
+        assert.equal(
+          await range.inputValue(),
+          (await range.getAttribute('max'))!,
+          `${name} must respond to the keyboard`,
+        );
+        await checkLabels();
+        await range.press('Home');
+        assert.equal(await range.inputValue(), (await range.getAttribute('min'))!);
+        await checkLabels();
       }
+      for (const select of await figure.getByRole('combobox').all()) {
+        for (const option of await select.locator('option').all()) {
+          const value = (await option.getAttribute('value'))!;
+          await select.selectOption(value);
+          assert.equal(await select.inputValue(), value);
+          await checkLabels();
+        }
+      }
+      for (const checkbox of await figure.getByRole('checkbox').all()) {
+        await checkbox.check();
+        assert.ok(await checkbox.isChecked());
+        await checkLabels();
+        await checkbox.uncheck();
+        await checkLabels();
+      }
+      const buttons = figure.locator('.diagram-interactive').getByRole('button');
+      for (const button of await buttons.all()) {
+        if (await button.isDisabled()) continue;
+        await button.click();
+        await checkLabels();
+      }
+      const overwideTables = await figure
+        .locator('.diagram-interactive table')
+        .evaluateAll((tables) =>
+          tables
+            .filter((table: { scrollWidth: number; clientWidth: number }) => table.scrollWidth > table.clientWidth + 1)
+            .map((table) => table.textContent),
+        );
+      assert.deepEqual(overwideTables, [], `${name} needs a readable comparison without sideways table scrolling`);
+      assert.equal(
+        await figure.locator('.diagram-notice').count(),
+        0,
+        `${name} must not fall back after a runtime error`,
+      );
+      assert.ok(
+        await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+        `${name} overflows the ${width}px viewport`,
+      );
+      await figure.screenshot({
+        path: resolve(
+          previews,
+          `all-${name}-${width === 320 ? 'small-phone' : width === 390 ? 'phone' : width === 768 ? 'tablet' : 'desktop'}.png`,
+        ),
+        style: '.viewer-bar, .skip-link { visibility: hidden !important; }',
+      });
       assert.deepEqual(errors, []);
     } finally {
       await page.close();
