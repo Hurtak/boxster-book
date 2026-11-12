@@ -108,6 +108,8 @@ export async function mountExplorer(
   state.progress = clamp((state.progress ?? 0) / 100) * 100;
   state.part ??= config.focus;
   state.showConnections ??= true;
+  let visualProgress = state.progress;
+  let visualFocus = Number(state.focusPart);
   let car: THREE.Object3D | undefined, view: ReturnType<typeof scene3D> | undefined;
   let model!: THREE.Object3D, locator!: THREE.Box3Helper;
   let disposeReplaced = () => {};
@@ -185,7 +187,7 @@ export async function mountExplorer(
         const x = ((p.x + 1) * width) / 2;
         const y = ((1 - p.y) * height) / 2;
         const visible =
-          state.progress >= 20 && p.z > -1 && p.z < 1 && x >= 14 && x <= width - 14 && y >= 14 && y <= height - 14;
+          visualProgress >= 20 && p.z > -1 && p.z < 1 && x >= 14 && x <= width - 14 && y >= 14 && y <= height - 14;
         part.marker.hidden = !visible;
         part.leader.hidden = !visible;
         if (!visible) continue;
@@ -210,7 +212,7 @@ export async function mountExplorer(
       }
       host.dataset.projectedParts = JSON.stringify(projected);
     };
-    let update = () => {};
+    let update = (_animate = false) => {};
     let assembledBox: THREE.Box3,
       assembledCorners: THREE.Vector3[],
       explodedBox: THREE.Box3,
@@ -242,7 +244,7 @@ export async function mountExplorer(
     let stageRow: HTMLDivElement, partRow: HTMLDivElement;
     const direction = new THREE.Vector3(...(config.direction ?? [1.25, 0.85, 1.65])).normalize();
     const carDirection = new THREE.Vector3(1.05, 0.7, 1.45).normalize();
-    update = () => {
+    update = (animate) => {
       const progress = state.progress;
       const selected = byName.get(state.part)!;
       const exploded = segment(progress, 65, 100);
@@ -269,51 +271,66 @@ export async function mountExplorer(
         connectionCount: String(links.length),
       });
       if (!car || !view) return;
-      const contextOpacity = 1 - segment(progress, 0, 55);
-      for (const subsystem of car.children) {
-        opacity(subsystem, contextOpacity * (1 - segment(progress, 10, 30) * 0.82));
-      }
-      for (const part of parts) {
-        part.object.position.copy(part.initial).addScaledVector(new THREE.Vector3(...part.explode), exploded);
-        const chosen = part === selected;
-        const ghost =
-          config.ghostParts?.includes(part.object.name) && !state.focusPart ? 1 - segment(progress, 10, 45) * 0.84 : 1;
-        opacity(part.object, ghost * (state.focusPart && !chosen ? 0.18 : 1));
-        part.object.traverse((object) => {
-          if (!isRenderable(object)) return;
-          for (const material of [object.material].flat().filter(Boolean)) {
-            const highlight = chosen && progress >= 20;
-            if (material instanceof THREE.MeshStandardMaterial) {
-              material.emissive.set(highlight ? '#124879' : '#000000');
-              material.emissiveIntensity = highlight ? 0.65 : 0;
+      const startProgress = visualProgress;
+      const startFocus = visualFocus;
+      const startPosition = view.camera.position.clone();
+      const startTarget = view.controls.target.clone();
+      const mountedView = view;
+      mountedView.transition((amount, moveCamera) => {
+        visualProgress = THREE.MathUtils.lerp(startProgress, state.progress, amount);
+        visualFocus = THREE.MathUtils.lerp(startFocus, Number(state.focusPart), amount);
+        const progress = visualProgress;
+        const exploded = segment(progress, 65, 100);
+        const contextOpacity = 1 - segment(progress, 0, 55);
+        for (const subsystem of car!.children) {
+          opacity(subsystem, contextOpacity * (1 - segment(progress, 10, 30) * 0.82));
+        }
+        for (const part of parts) {
+          part.object.position.copy(part.initial).addScaledVector(new THREE.Vector3(...part.explode), exploded);
+          const chosen = part === selected;
+          const ghost = config.ghostParts?.includes(part.object.name) ? 1 - segment(progress, 10, 45) * 0.84 : 1;
+          opacity(part.object, THREE.MathUtils.lerp(ghost, 1, visualFocus) * (chosen ? 1 : 1 - visualFocus * 0.82));
+          part.object.traverse((object) => {
+            if (!isRenderable(object)) return;
+            for (const material of [object.material].flat().filter(Boolean)) {
+              const highlight = chosen && progress >= 20;
+              if (material instanceof THREE.MeshStandardMaterial) {
+                material.emissive.set(highlight ? '#124879' : '#000000');
+                material.emissiveIntensity = highlight ? 0.65 : 0;
+              }
             }
-          }
-        });
-      }
-      model.updateMatrixWorld(true);
-      for (const link of links) {
-        link.line.visible = state.showConnections && progress >= 20;
-        link.line.geometry.setFromPoints([
-          surfaceAnchor(byName.get(link.from)!.object),
-          surfaceAnchor(byName.get(link.to)!.object),
-        ]);
-        link.line.computeLineDistances();
-      }
-      locator.visible = progress < 40;
-      const camera = view.camera;
-      const timeline = [
-        { at: 0, ...frameBounds(carBox, camera, carDirection, 1.12, carCorners) },
-        { at: 30, ...frameBounds(contextBox, camera, carDirection, 1.05) },
-        { at: 65, ...frameBounds(assembledBox, camera, direction, 1.18, assembledCorners) },
-        { at: 100, ...frameBounds(explodedBox, camera, direction, 1.18, explodedCorners) },
-      ];
-      const pose = state.focusPart
-        ? frameBounds(new THREE.Box3().setFromObject(selected.object), camera, direction, 1.4)
-        : sampleTimeline(progress, timeline);
-      camera.position.fromArray(pose.position);
-      view.controls.target.fromArray(pose.target);
-      view.controls.update();
-      view.render();
+          });
+        }
+        model.updateMatrixWorld(true);
+        for (const link of links) {
+          link.line.visible = state.showConnections && progress >= 20;
+          link.line.geometry.setFromPoints([
+            surfaceAnchor(byName.get(link.from)!.object),
+            surfaceAnchor(byName.get(link.to)!.object),
+          ]);
+          link.line.computeLineDistances();
+        }
+        locator.visible = progress < 40;
+        if (!moveCamera) return;
+        const camera = mountedView.camera;
+        const timeline = [
+          { at: 0, ...frameBounds(carBox, camera, carDirection, 1.12, carCorners) },
+          { at: 30, ...frameBounds(contextBox, camera, carDirection, 1.05) },
+          { at: 65, ...frameBounds(assembledBox, camera, direction, 1.18, assembledCorners) },
+          { at: 100, ...frameBounds(explodedBox, camera, direction, 1.18, explodedCorners) },
+        ];
+        const pose = state.focusPart
+          ? frameBounds(new THREE.Box3().setFromObject(selected.object), camera, direction, 1.4)
+          : sampleTimeline(progress, timeline);
+        if (amount === 1) {
+          camera.position.fromArray(pose.position);
+          mountedView.controls.target.fromArray(pose.target);
+        } else {
+          camera.position.copy(startPosition).lerp(new THREE.Vector3(...pose.position), amount);
+          mountedView.controls.target.copy(startTarget).lerp(new THREE.Vector3(...pose.target), amount);
+        }
+        mountedView.controls.update();
+      }, animate);
     };
     const progress = slider(controls, {
       label: 'Explore the assembly',
@@ -328,7 +345,15 @@ export async function mountExplorer(
     });
     stageRow = buttons(
       controls,
-      stops.map((stop) => ({ label: stop.label, action: () => progress.set(stop.value) })),
+      stops.map((stop) => ({
+        label: stop.label,
+        action: () => {
+          state.progress = stop.value;
+          state.focusPart = false;
+          progress.set(stop.value, false);
+          update(true);
+        },
+      })),
       signal,
     );
     partRow = buttons(
@@ -340,7 +365,7 @@ export async function mountExplorer(
           state.progress = 100;
           state.focusPart = true;
           progress.set(100, false);
-          update();
+          update(true);
         },
       })),
       signal,
@@ -378,7 +403,10 @@ export async function mountExplorer(
             state.part = config.focus;
             state.showConnections = true;
             checkbox.checked = true;
-            progress.set(0);
+            state.progress = 0;
+            state.focusPart = false;
+            progress.set(0, false);
+            update(true);
           },
         },
       ],

@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { clamp, smooth } from '../math';
 
 export const cameraHelp = 'Drag to rotate; Cmd/Ctrl + drag or middle-drag to move the view; pinch or scroll to zoom.';
 
@@ -161,15 +162,47 @@ export function scene3D(
   scene.add(rim);
   let frame = 0;
   let disposed = false;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let animation:
+    | { start: number; update: (amount: number, moveCamera: boolean) => void; moveCamera: boolean }
+    | undefined;
+  const setAnimating = (active: boolean) => {
+    host.dataset.transitioning = String(active);
+  };
   const render = () => {
     if (disposed || frame) return;
-    frame = requestAnimationFrame(() => {
-      frame = 0;
+    frame = requestAnimationFrame((now) => {
       if (disposed) return;
+      if (animation) {
+        const amount = reducedMotion.matches ? 1 : clamp((now - animation.start) / 650);
+        animation.update(smooth(amount), animation.moveCamera);
+        if (amount === 1) {
+          animation = undefined;
+          setAnimating(false);
+        }
+      }
       renderer.render(scene, camera);
       onRender({ camera, renderer });
+      frame = 0;
+      if (animation) render();
     });
   };
+  // A new destination starts at the currently displayed state. Direct gestures
+  // take ownership of the camera while the parts finish moving into place.
+  const transition = (update: (amount: number, moveCamera: boolean) => void, animate = false) => {
+    if (disposed) return;
+    animation = undefined;
+    setAnimating(animate && !reducedMotion.matches);
+    if (animate && !reducedMotion.matches) {
+      animation = { start: performance.now(), update, moveCamera: true };
+      update(0, true);
+    } else update(1, true);
+    render();
+  };
+  controls.addEventListener('start', () => {
+    if (animation) animation.moveCamera = false;
+  });
+  setAnimating(false);
   controls.addEventListener('change', render);
   const resize = new ResizeObserver(() => {
     const width = Math.max(1, host.clientWidth);
@@ -188,6 +221,8 @@ export function scene3D(
   const dispose = () => {
     if (disposed) return;
     disposed = true;
+    animation = undefined;
+    setAnimating(false);
     cancelAnimationFrame(frame);
     resize.disconnect();
     controls.dispose();
@@ -199,7 +234,7 @@ export function scene3D(
     renderer.domElement.remove();
   };
   signal.addEventListener('abort', dispose, { once: true });
-  return { scene, camera, controls, renderer, render, dispose };
+  return { scene, camera, controls, renderer, render, transition, dispose };
 }
 
 export function opacity(root: THREE.Object3D, amount: number) {

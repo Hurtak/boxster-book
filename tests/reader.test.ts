@@ -635,6 +635,156 @@ test('3D camera gestures pan without rotating or zooming and preserve plain orbi
     await page.close();
   }
 });
+test('3D transitions retarget smoothly, yield to gestures, honour reduced motion and stop rendering when idle or disposed', async () => {
+  const bundle = await build({
+    entryPoints: [resolve('tests/fixtures/scene-controls.ts')],
+    bundle: true,
+    write: false,
+    format: 'iife',
+    target: 'es2022',
+  });
+  const page = await browser.newPage({ viewport: { width: 1200, height: 900 }, reducedMotion: 'no-preference' });
+  try {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    await page.clock.install({ time: new Date('2030-01-01T00:00:00Z') });
+    await page.setContent('<main id="stage" style="width:800px;height:600px"></main>');
+    await page.addScriptTag({ content: bundle.outputFiles[0].text });
+    await page.waitForFunction(() => document.querySelector<HTMLElement>('#stage')!.dataset.pose);
+    await page.clock.pauseAt('2030-01-01T01:00:00Z');
+    const stage = page.locator('#stage');
+    const pose = () => stage.getAttribute('data-pose');
+    const click = (name: string) =>
+      page.getByRole('button', { name, exact: true }).evaluate((button) => (button as HTMLButtonElement).click());
+    const original = await pose();
+    await click('Near');
+    assert.equal(await stage.getAttribute('data-transitioning'), 'true');
+    assert.equal(await pose(), original, 'The first frame keeps the displayed camera pose');
+    await page.clock.runFor(200);
+    const middle = await pose();
+    assert.notEqual(middle, original);
+    const progress = Number(await stage.getAttribute('data-progress'));
+    assert.ok(progress > 0 && progress < 1, 'The assembly must also have an intermediate state');
+    await click('Far');
+    assert.equal(await pose(), middle, 'Retargeting must not snap to the previous destination');
+    assert.equal(Number(await stage.getAttribute('data-progress')), progress);
+    await page.clock.runFor(700);
+    assert.equal(await stage.getAttribute('data-transitioning'), 'false');
+    assert.equal(await stage.getAttribute('data-progress'), '0');
+    const frames = await stage.getAttribute('data-frames');
+    await page.clock.runFor(200);
+    assert.equal(await stage.getAttribute('data-frames'), frames, 'An idle viewer must not keep rendering');
+    await click('Near');
+    await page.clock.runFor(160);
+    await page.mouse.move(400, 300);
+    await page.mouse.down({ button: 'middle' });
+    await page.mouse.move(500, 350, { steps: 3 });
+    await page.mouse.up({ button: 'middle' });
+    await page.clock.runFor(20);
+    const panned = await pose();
+    await page.clock.runFor(700);
+    assert.equal(await pose(), panned, 'An interrupted transition must not fight manual camera movement');
+    assert.equal(await stage.getAttribute('data-progress'), '1', 'Parts still reach their destination');
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await click('Far');
+    assert.equal(await stage.getAttribute('data-transitioning'), 'false');
+    assert.equal(await stage.getAttribute('data-progress'), '0');
+    await page.clock.runFor(20);
+    const destination = JSON.parse((await pose())!) as { position: number[]; target: number[] };
+    destination.position.forEach((value, i) => assert.ok(Math.abs(value - [3, 2, 5][i]) < 1e-8));
+    assert.ok(destination.target.every((value) => Math.abs(value) < 1e-8));
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await click('Near');
+    await page.clock.runFor(100);
+    await click('Dispose');
+    const disposedFrames = await stage.getAttribute('data-frames');
+    await page.clock.runFor(1000);
+    assert.equal(await stage.locator('canvas').count(), 0);
+    assert.equal(await stage.getAttribute('data-transitioning'), 'false');
+    assert.equal(await stage.getAttribute('data-frames'), disposedFrames);
+    assert.deepEqual(errors, []);
+  } finally {
+    await page.close();
+  }
+});
+test('stage and part buttons animate the real brake and component tours on phones and desktops', async () => {
+  for (const width of [390, 1440]) {
+    for (const id of ['brake-explorer', 'roof-explorer']) {
+      const page = await browser.newPage({ viewport: { width, height: 1100 }, reducedMotion: 'no-preference' });
+      try {
+        const errors: string[] = [];
+        page.on('pageerror', (error) => errors.push(error.message));
+        await page.clock.install({ time: new Date('2030-01-01T00:00:00Z') });
+        await page.goto(preview);
+        const figure = await ready(page, id);
+        await page.clock.pauseAt('2030-01-01T01:00:00Z');
+        const stage = figure.locator('.diagram-stage');
+        await figure.locator('canvas').evaluate((element) => {
+          const canvas = element as HTMLCanvasElement;
+          const request = window.requestAnimationFrame.bind(window);
+          window.requestAnimationFrame = (callback) =>
+            request((now) => {
+              callback(now);
+              canvas.dataset.frameImage = canvas.toDataURL();
+            });
+        });
+        const imageHash = async () =>
+          createHash('sha256')
+            .update((await figure.locator('canvas').getAttribute('data-frame-image'))!)
+            .digest('hex');
+        const click = (name: string) =>
+          figure.getByRole('button', { name, exact: true }).evaluate((button) => (button as HTMLButtonElement).click());
+        const scrub = async (value: string) => {
+          await figure.getByRole('slider', { name: 'Explore the assembly' }).evaluate((input, value) => {
+            (input as HTMLInputElement).value = value;
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+          }, value);
+          await page.clock.runFor(20);
+        };
+        // Capture each image after a controlled draw, before the browser clears
+        // the non-preserved WebGL back buffer for compositing.
+        await scrub('0');
+        const original = await imageHash();
+        await click('Exploded');
+        assert.equal(await stage.getAttribute('data-transitioning'), 'true');
+        await page.clock.runFor(250);
+        const halfway = await imageHash();
+        assert.notEqual(halfway, original, `${id} at ${width}px must show an intermediate view`);
+        await page.clock.runFor(450);
+        const exploded = await imageHash();
+        assert.notEqual(exploded, halfway, `${id} at ${width}px must continue to the final view`);
+        assert.equal(await stage.getAttribute('data-transitioning'), 'false');
+        const part =
+          id === 'brake-explorer'
+            ? figure.getByRole('button', { name: 'Caliper body', exact: true })
+            : figure.locator('button[data-part]').last();
+        await part.evaluate((button) => (button as HTMLButtonElement).click());
+        assert.equal(await stage.getAttribute('data-transitioning'), 'true');
+        await page.clock.runFor(250);
+        const focusHalfway = await imageHash();
+        await page.clock.runFor(450);
+        assert.notEqual(await imageHash(), focusHalfway, 'A component selection must animate its camera zoom');
+        assert.equal(await stage.getAttribute('data-transitioning'), 'false');
+        await click('Whole car');
+        await page.clock.runFor(100);
+        await scrub('40');
+        assert.equal(await stage.getAttribute('data-transitioning'), 'false', 'Direct slider input is immediate');
+        const scrubbed = await imageHash();
+        await page.clock.runFor(700);
+        assert.equal(await imageHash(), scrubbed, 'A cancelled transition must not override slider input');
+        await page.emulateMedia({ reducedMotion: 'reduce' });
+        await click('Reset view');
+        assert.equal(await stage.getAttribute('data-transitioning'), 'false');
+        assert.equal(await figure.getByRole('slider').inputValue(), '0');
+        await page.clock.runFor(20);
+        assert.equal(await imageHash(), original, `${id} at ${width}px: reduced-motion reset restores the first frame`);
+        assert.deepEqual(errors, []);
+      } finally {
+        await page.close();
+      }
+    }
+  }
+});
 test('car tours can pan and Reset view restores their original framing', async () => {
   const page = await browser.newPage({ viewport: { width: 1440, height: 1100 }, reducedMotion: 'reduce' });
   try {
@@ -681,6 +831,7 @@ test('keyboard and part controls survive leaving the page section', async () => 
     await figure.screenshot({ path: resolve(previews, 'exploded-brake.png') });
     await figure.getByRole('button', { name: 'Caliper body', exact: true }).click();
     assert.match((await figure.locator('.diagram-explanation').textContent())!, /stays in one piece/);
+    await figure.locator('.diagram-stage[data-transitioning="false"]').waitFor();
     await figure.screenshot({ path: resolve(previews, 'caliper-detail.png') });
     const occupiedHeight = await figure.evaluate((element) => element.clientHeight);
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
@@ -1651,7 +1802,8 @@ test('family and option comparisons keep the 2.9 baseline while changing the sel
 });
 test('every interactive illustration responds to native controls and fits phone, tablet and desktop canvases', async () => {
   for (const width of [320, 390, 768, 1440]) {
-    const page = await browser.newPage({ viewport: { width, height: 844 } });
+    // These snapshots inspect settled layouts; timed transitions are tested separately.
+    const page = await browser.newPage({ viewport: { width, height: 844 }, reducedMotion: 'reduce' });
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
     try {
@@ -1772,7 +1924,7 @@ test('component tours locate, connect, separate and focus their parts while reta
     'protection',
   ].map((name) => `${name}-explorer`);
   for (const width of [390, 1440]) {
-    const page = await browser.newPage({ viewport: { width, height: 1000 } });
+    const page = await browser.newPage({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' });
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
     try {

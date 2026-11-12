@@ -128,7 +128,7 @@ The brake example maps a single 0–100 slider onto four authored stops:
 | 65       | Camera at the wheel, surrounding car hidden                  |
 | 100      | Assembly separated along per-part offsets                    |
 
-Camera poses interpolate smoothly between stops. Node transformations use the slider's absolute value, so scrubbing backwards reassembles the same scene without accumulating movement. Part buttons then focus a selected component; moving the main slider returns to the guided view. Named nodes separate the wheel, disc, pads, complete monobloc caliper, pistons and hub. The caliper body never splits into fictional halves.
+Clicking a stage, part or Reset view eases the camera and assembly into place over 650 ms. Rapid selections continue from the displayed position. The shared `scene3D.transition()` owns the demand-based animation frames and cancels them on disposal; a manual camera gesture takes over the camera while the parts finish moving. Initial mounting, direct slider input and reduced-motion preferences apply the destination immediately. Node transformations use absolute progress, so scrubbing backwards reassembles the same scene without accumulating movement. Part buttons focus a selected component; moving the main slider returns to the guided view. Named nodes separate the wheel, disc, pads, complete monobloc caliper, pistons and hub. The caliper body never splits into fictional halves.
 
 All 3D viewers share camera controls: drag to rotate, Cmd/Ctrl + left-drag or middle-drag to pan, and scroll or pinch to zoom. On touchscreens, two fingers can also move the view. Panning moves the camera and its orbit target together; the guided slider, part selection and Reset view restore an authored camera pose.
 

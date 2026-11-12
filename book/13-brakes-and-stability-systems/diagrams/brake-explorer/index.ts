@@ -18,14 +18,16 @@ export async function mount(host: HTMLElement, { state: saved, signal, whenVisib
     note: '2010 2.9 layout with a photo-guided green and tan car. Selected parts are blue; the wheel is ghosted to expose the brake. Factory PET plates 602-000, 604-010 and 401-005 identify the parts. Mechanical geometry, pipe and wire routing, colours, clearances and exploded distances are illustrative.',
   });
   stage.classList.add('diagram-stage-3d');
-  let paint = () => {},
+  let visualProgress = state.progress;
+  let visualFocus = Number(state.focusPart);
+  let paint = (_animate = false) => {},
     stageRow: HTMLDivElement,
     partRow: HTMLDivElement;
   const stageFor = (p: number) =>
     segment(p, 65, 100) > 0
       ? config.stages.at(-1)!
       : ([...config.stages].reverse().find((item) => p >= item.value) ?? config.stages[0]);
-  const update = () => {
+  const update = (animate = false) => {
     const p = state.progress,
       exploded = segment(p, 65, 100);
     const currentStage = stageFor(p);
@@ -40,7 +42,7 @@ export async function mount(host: HTMLElement, { state: saved, signal, whenVisib
     host.dataset.progress = String(p);
     host.dataset.exploded = exploded.toFixed(3);
     host.dataset.part = state.part;
-    paint();
+    paint(animate);
   };
   const progress = slider(controls, {
     label: 'Explore the assembly',
@@ -55,7 +57,15 @@ export async function mount(host: HTMLElement, { state: saved, signal, whenVisib
   });
   stageRow = buttons(
     controls,
-    config.stages.map((item) => ({ label: item.label, action: () => progress.set(item.value) })),
+    config.stages.map((item) => ({
+      label: item.label,
+      action: () => {
+        state.progress = item.value;
+        state.focusPart = false;
+        progress.set(item.value, false);
+        update(true);
+      },
+    })),
     signal,
   );
   partRow = buttons(
@@ -64,9 +74,10 @@ export async function mount(host: HTMLElement, { state: saved, signal, whenVisib
       label: part.label,
       action: () => {
         state.part = part.name;
-        progress.set(100);
+        state.progress = 100;
         state.focusPart = true;
-        update();
+        progress.set(100, false);
+        update(true);
       },
     })),
     signal,
@@ -78,7 +89,10 @@ export async function mount(host: HTMLElement, { state: saved, signal, whenVisib
         label: 'Reset view',
         action: () => {
           state.part = 'disc';
-          progress.set(0);
+          state.progress = 0;
+          state.focusPart = false;
+          progress.set(0, false);
+          update(true);
         },
       },
     ],
@@ -149,53 +163,62 @@ export async function mount(host: HTMLElement, { state: saved, signal, whenVisib
   const callout = document.createElement('div');
   callout.className = 'diagram-callout';
   stage.append(callout);
-  paint = () => {
-    const p = state.progress;
-    const pose = sampleTimeline(p, config.camera);
-    opacity(body, 1 - segment(p, 5, 52));
-    faded.forEach((object) => opacity(object, 1 - segment(p, 35, 65)));
-    opacity(lines, 1 - segment(p, 35, 60));
-    const exploded = segment(p, 65, 100);
-    wheelAxis.visible = exploded > 0 && !state.focusPart;
-    wheelAxis.material.opacity = exploded * 0.6;
-    for (const part of parts) {
-      part.object.position.copy(part.initial).addScaledVector(new THREE.Vector3(...part.offset), exploded);
-      if (part.name === 'wheel' && p > 30) part.object.position.x += segment(p, 30, 65) * 0.18;
-      part.object.traverse((object) => {
-        if (!(object instanceof THREE.Mesh)) return;
-        for (const material of [object.material].flat()) {
-          if (material instanceof THREE.MeshStandardMaterial) {
-            material.emissive.set(part.name === state.part ? '#123b78' : '#000000');
-            material.emissiveIntensity = part.name === state.part ? 0.65 : 0;
+  paint = (animate) => {
+    const startProgress = visualProgress;
+    const startFocus = visualFocus;
+    const startPosition = view.camera.position.clone();
+    const startTarget = view.controls.target.clone();
+    view.transition((amount, moveCamera) => {
+      visualProgress = THREE.MathUtils.lerp(startProgress, state.progress, amount);
+      visualFocus = THREE.MathUtils.lerp(startFocus, Number(state.focusPart), amount);
+      const p = visualProgress;
+      const pose = sampleTimeline(p, config.camera);
+      opacity(body, 1 - segment(p, 5, 52));
+      faded.forEach((object) => opacity(object, 1 - segment(p, 35, 65)));
+      opacity(lines, 1 - segment(p, 35, 60));
+      const exploded = segment(p, 65, 100);
+      wheelAxis.visible = exploded > 0 && visualFocus < 1;
+      wheelAxis.material.opacity = exploded * 0.6;
+      for (const part of parts) {
+        part.object.position.copy(part.initial).addScaledVector(new THREE.Vector3(...part.offset), exploded);
+        if (part.name === 'wheel' && p > 30) part.object.position.x += segment(p, 30, 65) * 0.18;
+        part.object.traverse((object) => {
+          if (!(object instanceof THREE.Mesh)) return;
+          for (const material of [object.material].flat()) {
+            if (material instanceof THREE.MeshStandardMaterial) {
+              material.emissive.set(part.name === state.part ? '#123b78' : '#000000');
+              material.emissiveIntensity = part.name === state.part ? 0.65 : 0;
+            }
           }
-        }
-      });
-      opacity(
-        part.object,
-        state.focusPart && part.name !== state.part
-          ? 0.08
-          : part.name === 'wheel' && state.part !== 'wheel'
-            ? 1 - segment(p, 45, 65) * 0.85
-            : 1,
-      );
-    }
-    const currentStage = stageFor(p);
-    const selected = parts.find((part) => part.name === state.part)!;
-    callout.textContent = state.focusPart ? selected.label : currentStage.label;
-    view.camera.position.fromArray(pose.position);
-    view.controls.target.fromArray(pose.target);
-    if (state.focusPart) {
-      brake.updateMatrixWorld(true);
-      const sphere = new THREE.Box3().setFromObject(selected.object).getBoundingSphere(new THREE.Sphere());
-      const vertical = THREE.MathUtils.degToRad(view.camera.fov / 2);
-      const halfFov = Math.min(vertical, Math.atan(Math.tan(vertical) * view.camera.aspect));
-      const distance = Math.max(0.35, (sphere.radius / Math.sin(halfFov)) * 1.25);
-      const direction = view.camera.position.clone().sub(view.controls.target).normalize();
-      view.controls.target.copy(sphere.center);
-      view.camera.position.copy(sphere.center).addScaledVector(direction, distance);
-    }
-    view.controls.update();
-    view.render();
+        });
+        const ghost = part.name === 'wheel' && state.part !== 'wheel' ? 1 - segment(p, 45, 65) * 0.85 : 1;
+        opacity(part.object, THREE.MathUtils.lerp(ghost, part.name === state.part ? 1 : 0.08, visualFocus));
+      }
+      const currentStage = stageFor(p);
+      const selected = parts.find((part) => part.name === state.part)!;
+      callout.textContent = state.focusPart ? selected.label : currentStage.label;
+      if (!moveCamera) return;
+      const position = new THREE.Vector3(...pose.position);
+      const target = new THREE.Vector3(...pose.target);
+      if (state.focusPart) {
+        brake.updateMatrixWorld(true);
+        const sphere = new THREE.Box3().setFromObject(selected.object).getBoundingSphere(new THREE.Sphere());
+        const vertical = THREE.MathUtils.degToRad(view.camera.fov / 2);
+        const halfFov = Math.min(vertical, Math.atan(Math.tan(vertical) * view.camera.aspect));
+        const distance = Math.max(0.35, (sphere.radius / Math.sin(halfFov)) * 1.25);
+        const direction = position.clone().sub(target).normalize();
+        target.copy(sphere.center);
+        position.copy(sphere.center).addScaledVector(direction, distance);
+      }
+      if (amount === 1) {
+        view.camera.position.copy(position);
+        view.controls.target.copy(target);
+      } else {
+        view.camera.position.copy(startPosition).lerp(position, amount);
+        view.controls.target.copy(startTarget).lerp(target, amount);
+      }
+      view.controls.update();
+    }, animate);
   };
   update();
   return () => {
