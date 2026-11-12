@@ -16,7 +16,7 @@ import { createServer, type Server } from 'node:http';
 import { extname, resolve, sep } from 'node:path';
 import { build } from 'esbuild';
 import { Browser, chromium, Page } from 'playwright-core';
-import { afterAll as after, beforeAll as before, test } from 'vite-plus/test';
+import { afterAll as after, afterEach, beforeAll as before, test } from 'vite-plus/test';
 const root = resolve('dist');
 const previews = resolve(root, 'previews');
 const chapterCount = (await readdir(resolve('book'))).filter((name) => /^\d{2,}-/.test(name)).length;
@@ -71,8 +71,13 @@ after(async () => {
   await browser?.close();
   await new Promise<void>((done) => (server ? server.close(() => done()) : done()));
 });
+afterEach(async () => {
+  // A Vitest timeout does not cancel outstanding Playwright operations. Close
+  // their contexts before the next test can compete with a leftover renderer.
+  await Promise.all(browser?.contexts().map((context) => context.close()) ?? []);
+});
 async function ready(page: Page, name: string | undefined) {
-  await page.locator('html.reader-enhanced').waitFor();
+  await page.locator('html.reader-enhanced:not([data-reader-pending])').waitFor();
   const figure = page.locator(`[data-diagram="${name}"]`);
   if (!(await figure.isVisible())) {
     await figure.evaluate((element) => {
@@ -424,7 +429,7 @@ test('chapter re-entry survives suspending a reserved diagram before its live vi
       document.addEventListener('diagram-prepare', suspend, true);
       location.hash = chapter;
     }, chapter);
-    await figure.waitFor({ state: 'visible', timeout: 5000 });
+    await figure.waitFor({ state: 'visible' });
     assert.equal(await figure.getAttribute('data-layout-ready'), 'true');
     await ready(page, 'engine-timing-lift');
     assert.equal(await figure.getByRole('slider').count(), 1);
@@ -843,82 +848,85 @@ test('3D transitions retarget smoothly, yield to gestures, honour reduced motion
     await page.close();
   }
 });
-test('stage and part buttons animate the real brake and component tours on phones and desktops', async () => {
-  for (const width of [390, 1440]) {
-    for (const id of ['brake-explorer', 'roof-explorer']) {
-      const page = await browser.newPage({ viewport: { width, height: 1100 }, reducedMotion: 'no-preference' });
-      try {
-        const errors: string[] = [];
-        page.on('pageerror', (error) => errors.push(error.message));
-        await page.clock.install({ time: new Date('2030-01-01T00:00:00Z') });
-        await page.goto(preview);
-        const figure = await ready(page, id);
-        await page.clock.pauseAt('2030-01-01T01:00:00Z');
-        const stage = figure.locator('.diagram-stage');
-        await figure.locator('canvas').evaluate((element) => {
-          const canvas = element as HTMLCanvasElement;
-          const request = window.requestAnimationFrame.bind(window);
-          window.requestAnimationFrame = (callback) =>
-            request((now) => {
-              callback(now);
-              canvas.dataset.frameImage = canvas.toDataURL();
-            });
+test.each([
+  { width: 390, id: 'brake-explorer' },
+  { width: 390, id: 'roof-explorer' },
+  { width: 1440, id: 'brake-explorer' },
+  { width: 1440, id: 'roof-explorer' },
+])('stage and part buttons animate the real brake and component tours ($id, $width px)', async ({ width, id }) => {
+  const page = await browser.newPage({ viewport: { width, height: 1100 }, reducedMotion: 'no-preference' });
+  try {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    await page.clock.install({ time: new Date('2030-01-01T00:00:00Z') });
+    await page.goto(preview);
+    const figure = await ready(page, id);
+    await page.clock.pauseAt('2030-01-01T01:00:00Z');
+    const stage = figure.locator('.diagram-stage');
+    await figure.locator('canvas').evaluate((element) => {
+      const canvas = element as HTMLCanvasElement;
+      const request = window.requestAnimationFrame.bind(window);
+      window.requestAnimationFrame = (callback) =>
+        request((now) => {
+          callback(now);
+          canvas.dataset.frameImage = canvas.toDataURL();
         });
-        const imageHash = async () =>
-          createHash('sha256')
-            .update((await figure.locator('canvas').getAttribute('data-frame-image'))!)
-            .digest('hex');
-        const click = (name: string) =>
-          figure.getByRole('button', { name, exact: true }).evaluate((button) => (button as HTMLButtonElement).click());
-        const scrub = async (value: string) => {
-          await figure.getByRole('slider', { name: 'Explore the assembly' }).evaluate((input, value) => {
-            (input as HTMLInputElement).value = value;
-            input.dispatchEvent(new Event('input', { bubbles: true }));
-          }, value);
-          await page.clock.runFor(20);
-        };
-        // Capture each image after a controlled draw, before the browser clears
-        // the non-preserved WebGL back buffer for compositing.
-        await scrub('0');
-        const original = await imageHash();
-        await click('Exploded');
-        assert.equal(await stage.getAttribute('data-transitioning'), 'true');
-        await page.clock.runFor(250);
-        const halfway = await imageHash();
-        assert.notEqual(halfway, original, `${id} at ${width}px must show an intermediate view`);
-        await page.clock.runFor(450);
-        const exploded = await imageHash();
-        assert.notEqual(exploded, halfway, `${id} at ${width}px must continue to the final view`);
-        assert.equal(await stage.getAttribute('data-transitioning'), 'false');
-        const part =
-          id === 'brake-explorer'
-            ? figure.getByRole('button', { name: 'Caliper body', exact: true })
-            : figure.locator('button[data-part]').last();
-        await part.evaluate((button) => (button as HTMLButtonElement).click());
-        assert.equal(await stage.getAttribute('data-transitioning'), 'true');
-        await page.clock.runFor(250);
-        const focusHalfway = await imageHash();
-        await page.clock.runFor(450);
-        assert.notEqual(await imageHash(), focusHalfway, 'A component selection must animate its camera zoom');
-        assert.equal(await stage.getAttribute('data-transitioning'), 'false');
-        await click('Whole car');
-        await page.clock.runFor(100);
-        await scrub('40');
-        assert.equal(await stage.getAttribute('data-transitioning'), 'false', 'Direct slider input is immediate');
-        const scrubbed = await imageHash();
-        await page.clock.runFor(700);
-        assert.equal(await imageHash(), scrubbed, 'A cancelled transition must not override slider input');
-        await page.emulateMedia({ reducedMotion: 'reduce' });
-        await click('Reset view');
-        assert.equal(await stage.getAttribute('data-transitioning'), 'false');
-        assert.equal(await figure.getByRole('slider').inputValue(), '0');
-        await page.clock.runFor(20);
-        assert.equal(await imageHash(), original, `${id} at ${width}px: reduced-motion reset restores the first frame`);
-        assert.deepEqual(errors, []);
-      } finally {
-        await page.close();
-      }
-    }
+    });
+    const imageHash = async () =>
+      createHash('sha256')
+        .update((await figure.locator('canvas').getAttribute('data-frame-image'))!)
+        .digest('hex');
+    const click = (name: string) =>
+      figure.getByRole('button', { name, exact: true }).evaluate((button) => (button as HTMLButtonElement).click());
+    const scrub = async (value: string) => {
+      await figure.getByRole('slider', { name: 'Explore the assembly' }).evaluate((input, value) => {
+        (input as HTMLInputElement).value = value;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      }, value);
+      await page.clock.fastForward(20);
+    };
+    // Capture each image after a controlled draw, before the browser clears
+    // the non-preserved WebGL back buffer for compositing.
+    await scrub('0');
+    const original = await imageHash();
+    await click('Exploded');
+    assert.equal(await stage.getAttribute('data-transitioning'), 'true');
+    // Sample the required frames rather than PNG-encoding every intervening
+    // software-rendered frame on the Ubuntu runner.
+    await page.clock.fastForward(250);
+    const halfway = await imageHash();
+    assert.notEqual(halfway, original, `${id} at ${width}px must show an intermediate view`);
+    await page.clock.fastForward(450);
+    const exploded = await imageHash();
+    assert.notEqual(exploded, halfway, `${id} at ${width}px must continue to the final view`);
+    assert.equal(await stage.getAttribute('data-transitioning'), 'false');
+    const part =
+      id === 'brake-explorer'
+        ? figure.getByRole('button', { name: 'Caliper body', exact: true })
+        : figure.locator('button[data-part]').last();
+    await part.evaluate((button) => (button as HTMLButtonElement).click());
+    assert.equal(await stage.getAttribute('data-transitioning'), 'true');
+    await page.clock.fastForward(250);
+    const focusHalfway = await imageHash();
+    await page.clock.fastForward(450);
+    assert.notEqual(await imageHash(), focusHalfway, 'A component selection must animate its camera zoom');
+    assert.equal(await stage.getAttribute('data-transitioning'), 'false');
+    await click('Whole car');
+    await page.clock.fastForward(100);
+    await scrub('40');
+    assert.equal(await stage.getAttribute('data-transitioning'), 'false', 'Direct slider input is immediate');
+    const scrubbed = await imageHash();
+    await page.clock.fastForward(700);
+    assert.equal(await imageHash(), scrubbed, 'A cancelled transition must not override slider input');
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await click('Reset view');
+    assert.equal(await stage.getAttribute('data-transitioning'), 'false');
+    assert.equal(await figure.getByRole('slider').inputValue(), '0');
+    await page.clock.fastForward(20);
+    assert.equal(await imageHash(), original, `${id} at ${width}px: reduced-motion reset restores the first frame`);
+    assert.deepEqual(errors, []);
+  } finally {
+    await page.close();
   }
 });
 test('car tours can pan and Reset view restores their original framing', async () => {
@@ -1230,12 +1238,16 @@ test('the book hydrates without warnings, missing assets or premature model down
     }
   }
 });
-test('every diagram and model loads at local and project-prefixed URLs', async () => {
-  for (const [edition, width] of [
-    [preview, 390],
-    [site, 1440],
-  ] as const) {
-    const page = await browser.newPage({ viewport: { width, height: 1000 } }),
+test.each(
+  [
+    { mount: 'local', width: 390 },
+    { mount: 'project-prefixed', width: 1440 },
+  ].flatMap((edition) => [1, 2].map((batch) => ({ ...edition, batch }))),
+)(
+  'every diagram and model loads at local and project-prefixed URLs ($mount, batch $batch)',
+  async ({ mount, width, batch }) => {
+    const edition = mount === 'local' ? preview : site;
+    const page = await browser.newPage({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' }),
       errors: string[] = [];
     try {
       page.on('pageerror', (error) => errors.push(error.message));
@@ -1250,7 +1262,9 @@ test('every diagram and model loads at local and project-prefixed URLs', async (
       const names = await page
         .locator('[data-diagram]')
         .evaluateAll((figures: HTMLElement[]) => figures.map((figure) => figure.dataset.diagram));
-      for (const name of names) {
+      const batchSize = Math.ceil(names.length / 2);
+      assert.ok(names.length >= 24, 'Both URL mounts must retain the full diagram inventory');
+      for (const name of names.slice((batch - 1) * batchSize, batch * batchSize)) {
         assert.ok(name, 'Every interactive figure has a diagram ID');
         const figure = await ready(page, name);
         assert.ok(await figure.locator('.diagram-explanation').innerText(), name);
@@ -1260,11 +1274,12 @@ test('every diagram and model loads at local and project-prefixed URLs', async (
     } finally {
       await page.close();
     }
-  }
-});
-test('chapter menus scroll smoothly after layout, respect reduced motion and retain history', async () => {
-  const chapter = 'book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems';
-  for (const width of [390, 1024, 1440]) {
+  },
+);
+test.each([390, 1024, 1440])(
+  'chapter menus scroll smoothly after layout, respect reduced motion and retain history (%i px)',
+  async (width) => {
+    const chapter = 'book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems';
     for (const reducedMotion of ['no-preference', 'reduce'] as const) {
       const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion });
       try {
@@ -1334,8 +1349,8 @@ test('chapter menus scroll smoothly after layout, respect reduced motion and ret
         await page.close();
       }
     }
-  }
-});
+  },
+);
 test('reader navigation, sources and browser history preserve chapter context', async () => {
   const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
   try {
@@ -1745,63 +1760,66 @@ test('Pages index loads interactive code and models under the project URL', asyn
     await page.close();
   }
 });
-test('every chapter and the reference appendix have locally served illustrations and local source links', async () => {
-  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
-  try {
-    const page = await context.newPage();
-    (await page.goto(preview))!;
-    const written = page.getByRole('navigation', { name: 'Written chapters' });
-    await written.waitFor();
-    assert.equal(await written.getByRole('link').count(), chapterCount);
-    const titles = await written.getByRole('link').allTextContents();
-    assert.match(
-      await page.locator('[data-draft-status]').innerText(),
-      new RegExp(`All ${chapterCount} chapters drafted`),
-    );
-    await page.getByRole('link', { name: 'Start reading', exact: false }).click();
-    await page.getByRole('heading', { level: 1, name: titles[0], exact: true }).waitFor();
-    for (const title of titles) {
-      await page.locator('.book-name').click();
-      await written.getByRole('link', { name: title, exact: true }).click();
-      const chapter = page.locator('#book > .level2:not([hidden])');
-      await chapter.locator('h1').waitFor({ state: 'visible' });
-      assert.equal(await chapter.locator('h1').innerText(), title);
-      assert.doesNotMatch(await chapter.locator('.chapter-meta').innerText(), /Planned/);
-      const photos = chapter.locator(
-        'img[data-book-asset$=".jpg"], img[data-book-asset$=".jpeg"], img[data-book-asset$=".png"], img[data-book-asset$=".webp"]',
+test.each(Array.from({ length: Math.ceil(chapterCount / 4) }, (_, index) => index + 1))(
+  'every chapter and the reference appendix have locally served illustrations and local source links (batch %i)',
+  async (batch) => {
+    const context = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
+    try {
+      const page = await context.newPage();
+      (await page.goto(preview))!;
+      const written = page.getByRole('navigation', { name: 'Written chapters' });
+      await written.waitFor();
+      assert.equal(await written.getByRole('link').count(), chapterCount);
+      const titles = await written.getByRole('link').allTextContents();
+      assert.match(
+        await page.locator('[data-draft-status]').innerText(),
+        new RegExp(`All ${chapterCount} chapters drafted`),
       );
-      if (title !== 'Brakes and stability systems')
-        assert.ok((await photos.count()) >= 1, `${title} needs a real photograph`);
-      assert.ok((await chapter.locator('figure').count()) >= 3, `${title} needs explanatory illustrations`);
-      let hasLargeImage = false;
-      for (const photo of await photos.all()) {
-        const image = await photo.evaluate((element: HTMLImageElement) => ({
-          loaded: element.complete && element.naturalWidth > 0,
-          width: element.naturalWidth,
-        }));
-        assert.ok(image.loaded, `${title} has a broken image`);
-        hasLargeImage ||= image.width >= 200;
+      await page.getByRole('link', { name: 'Start reading', exact: false }).click();
+      await page.getByRole('heading', { level: 1, name: titles[0], exact: true }).waitFor();
+      for (const title of titles.slice((batch - 1) * 4, batch * 4)) {
+        await page.locator('.book-name').click();
+        await written.getByRole('link', { name: title, exact: true }).click();
+        const chapter = page.locator('#book > .level2:not([hidden])');
+        await chapter.locator('h1').waitFor({ state: 'visible' });
+        assert.equal(await chapter.locator('h1').innerText(), title);
+        assert.doesNotMatch(await chapter.locator('.chapter-meta').innerText(), /Planned/);
+        const photos = chapter.locator(
+          'img[data-book-asset$=".jpg"], img[data-book-asset$=".jpeg"], img[data-book-asset$=".png"], img[data-book-asset$=".webp"]',
+        );
+        if (title !== 'Brakes and stability systems')
+          assert.ok((await photos.count()) >= 1, `${title} needs a real photograph`);
+        assert.ok((await chapter.locator('figure').count()) >= 3, `${title} needs explanatory illustrations`);
+        let hasLargeImage = false;
+        for (const photo of await photos.all()) {
+          const image = await photo.evaluate((element: HTMLImageElement) => ({
+            loaded: element.complete && element.naturalWidth > 0,
+            width: element.naturalWidth,
+          }));
+          assert.ok(image.loaded, `${title} has a broken image`);
+          hasLargeImage ||= image.width >= 200;
+        }
+        if (await photos.count()) assert.ok(hasLargeImage, `${title} needs an image large enough to examine`);
+        const reference = chapter.locator('.footnote-ref').first();
+        const noteId = (await reference.getAttribute('href'))!.slice(1);
+        await reference.click();
+        await page.waitForURL((url: { hash: string }) => url.hash === `#${noteId}`);
+        assert.ok(await chapter.locator(`[id="${noteId}"]`).isVisible());
+        assert.equal(
+          await chapter.locator('h1').innerText(),
+          title,
+          'Opening a source note must retain the owning chapter',
+        );
+        assert.ok(
+          await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+          `${title} overflows on a phone`,
+        );
       }
-      if (await photos.count()) assert.ok(hasLargeImage, `${title} needs an image large enough to examine`);
-      const reference = chapter.locator('.footnote-ref').first();
-      const noteId = (await reference.getAttribute('href'))!.slice(1);
-      await reference.click();
-      await page.waitForURL((url: { hash: string }) => url.hash === `#${noteId}`);
-      assert.ok(await chapter.locator(`[id="${noteId}"]`).isVisible());
-      assert.equal(
-        await chapter.locator('h1').innerText(),
-        title,
-        'Opening a source note must retain the owning chapter',
-      );
-      assert.ok(
-        await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
-        `${title} overflows on a phone`,
-      );
+    } finally {
+      await context.close();
     }
-  } finally {
-    await context.close();
-  }
-});
+  },
+);
 test('cross-chapter explanations navigate to the owning section and every book fragment resolves', async () => {
   for (const edition of [preview, site]) {
     const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
@@ -1936,8 +1954,9 @@ test('family and option comparisons keep the 2.9 baseline while changing the sel
     await page.close();
   }
 });
-test('every interactive illustration responds to native controls and fits phone, tablet and desktop canvases', async () => {
-  for (const width of [320, 390, 768, 1440]) {
+test.each([320, 390, 768, 1440].flatMap((width) => [1, 2].map((batch) => ({ width, batch }))))(
+  'every interactive illustration responds to native controls and fits phone, tablet and desktop canvases ($width px, batch $batch)',
+  async ({ width, batch }) => {
     // These snapshots inspect settled layouts; timed transitions are tested separately.
     const page = await browser.newPage({ viewport: { width, height: 844 }, reducedMotion: 'reduce' });
     const errors: string[] = [];
@@ -1948,7 +1967,8 @@ test('every interactive illustration responds to native controls and fits phone,
         .locator('[data-diagram]')
         .evaluateAll((figures: HTMLElement[]) => figures.map((figure) => figure.dataset.diagram!));
       assert.ok(names.length >= 24, 'The completed manuscript should retain its interactive illustrations');
-      for (const name of names) {
+      const batchSize = Math.ceil(names.length / 2);
+      for (const name of names.slice((batch - 1) * batchSize, batch * batchSize)) {
         assert.ok(name, 'Every interactive figure has a diagram ID');
         const figure = await ready(page, name);
         const checkLabels = async () => {
@@ -2040,32 +2060,34 @@ test('every interactive illustration responds to native controls and fits phone,
     } finally {
       await page.close();
     }
-  }
-});
-test('component tours locate, connect, separate and focus their parts while retaining state across chapters', async () => {
-  const names = [
-    'body',
-    'engine',
-    'intake',
-    'fluids',
-    'manual',
-    'pdk',
-    'drivetrain',
-    'suspension',
-    'steering',
-    'roof',
-    'cabin',
-    'electrical',
-    'audio',
-    'protection',
-  ].map((name) => `${name}-explorer`);
-  for (const width of [390, 1440]) {
+  },
+);
+test.each([390, 1440].flatMap((width) => [1, 2].map((batch) => ({ width, batch }))))(
+  'component tours locate, connect, separate and focus their parts while retaining state across chapters ($width px, batch $batch)',
+  async ({ width, batch }) => {
+    const names = [
+      'body',
+      'engine',
+      'intake',
+      'fluids',
+      'manual',
+      'pdk',
+      'drivetrain',
+      'suspension',
+      'steering',
+      'roof',
+      'cabin',
+      'electrical',
+      'audio',
+      'protection',
+    ].map((name) => `${name}-explorer`);
     const page = await browser.newPage({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' });
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
     try {
       (await page.goto(preview))!;
-      for (const name of names) {
+      const batchSize = Math.ceil(names.length / 2);
+      for (const name of names.slice((batch - 1) * batchSize, batch * batchSize)) {
         assert.ok(name, 'Every interactive figure has a diagram ID');
         const figure = await ready(page, name);
         assert.equal(await figure.locator('canvas').count(), 1);
@@ -2107,8 +2129,8 @@ test('component tours locate, connect, separate and focus their parts while reta
     } finally {
       await page.close();
     }
-  }
-});
+  },
+);
 test('the grip budget retains force requests beyond capacity and restores them after remounting', async () => {
   const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
   try {
