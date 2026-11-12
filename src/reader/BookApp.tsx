@@ -63,11 +63,6 @@ export function BookApp({
           <aside id="contents" className="book-sidebar">
             <h2>Contents</h2>
             {navigation}
-            <p className="edition-note">
-              Europe &amp; UK edition
-              <br />
-              2010 2.9-litre baseline
-            </p>
           </aside>
           <main id="book" tabIndex={-1}>
             <header id="title" className="book-cover" hidden={!!active}>
@@ -113,6 +108,18 @@ export function BookApp({
                     : 'An illustrated draft with chapter source notes.'}
                 </p>
               </div>
+              <section className="cover-author" aria-labelledby="cover-author-title">
+                <h2 id="cover-author-title">By Petr Hurtak</h2>
+                <nav className="cover-author-links" aria-label="Author and project links">
+                  <a href="https://petrhurtak.com/" rel="author">
+                    Website
+                  </a>
+                  <a href="https://x.com/PetrHurtak" rel="me">
+                    X
+                  </a>
+                  <a href="https://github.com/Hurtak/boxster-book">GitHub</a>
+                </nav>
+              </section>
               <section
                 className="available-chapters enhanced-only"
                 data-written-chapters

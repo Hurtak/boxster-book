@@ -83,7 +83,6 @@ export function ContentsDialog({
       </div>
       <PrintBook className="print-dialog" onPrepare={onClose} />
       <div className="dialog-navigation">{children}</div>
-      <p className="edition-note">Europe &amp; UK · 2010 2.9-litre baseline</p>
     </dialog>
   );
 }
