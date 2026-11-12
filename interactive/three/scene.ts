@@ -3,6 +3,8 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+export const cameraHelp = 'Drag to rotate; Cmd/Ctrl + drag or middle-drag to move the view; pinch or scroll to zoom.';
+
 interface CachedModel {
   size: number;
   promise: Promise<ArrayBuffer>;
@@ -124,7 +126,7 @@ export function scene3D(
   scene.environmentIntensity = 0.45;
   studio.dispose();
   generator.dispose();
-  renderer.domElement.setAttribute('aria-label', '3D diagram. Drag to rotate; use the controls below to explore.');
+  renderer.domElement.setAttribute('aria-label', `3D diagram. ${cameraHelp}`);
   renderer.domElement.setAttribute('role', 'img');
   renderer.domElement.addEventListener(
     'webglcontextlost',
@@ -141,7 +143,8 @@ export function scene3D(
   host.append(renderer.domElement);
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = false;
-  controls.enablePan = false;
+  controls.enablePan = true;
+  controls.mouseButtons.MIDDLE = THREE.MOUSE.PAN;
   controls.minDistance = 0.35;
   controls.maxDistance = 10;
   scene.add(new THREE.HemisphereLight(0xf7f8ff, 0x7b8584, 0.85));

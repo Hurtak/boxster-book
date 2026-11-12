@@ -130,6 +130,8 @@ The brake example maps a single 0–100 slider onto four authored stops:
 
 Camera poses interpolate smoothly between stops. Node transformations use the slider's absolute value, so scrubbing backwards reassembles the same scene without accumulating movement. Part buttons then focus a selected component; moving the main slider returns to the guided view. Named nodes separate the wheel, disc, pads, complete monobloc caliper, pistons and hub. The caliper body never splits into fictional halves.
 
+All 3D viewers share camera controls: drag to rotate, Cmd/Ctrl + left-drag or middle-drag to pan, and scroll or pinch to zoom. On touchscreens, two fingers can also move the view. Panning moves the camera and its orbit target together; the guided slider, part selection and Reset view restore an authored camera pose.
+
 The renderer uses demand-based frames, a capped pixel ratio, a generated studio reflection environment, self-shadowing and disposable WebGL surfaces. Reflections supply the green paint and glass finish without adding a photographic background. A 32 MiB cache of recently used model bytes avoids repeated downloads, while each mounted scene gets its own parsed objects. Larger assets still load, but are not retained in this cache. Component chapters reuse the same reference car and supply their own assembly and explanation. The approximate geometry must not be treated as CAD or a workshop disassembly sequence.
 
 ## Chapter component explorers

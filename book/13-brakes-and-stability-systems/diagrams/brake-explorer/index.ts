@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { sampleTimeline, segment } from '../../../../interactive/math.ts';
 import reference from '../../../../interactive/models/reference-car.glb';
 import { installAssembly } from '../../../../interactive/three/installed-assembly.ts';
-import { disposeObject, loadModel, opacity, scene3D } from '../../../../interactive/three/scene.ts';
+import { cameraHelp, disposeObject, loadModel, opacity, scene3D } from '../../../../interactive/three/scene.ts';
 import { initializeState, type DiagramContext } from '../../../../interactive/types';
 import { buttons, panel, slider } from '../../../../interactive/ui.ts';
 import assembly from './brake.glb';
@@ -14,8 +14,7 @@ export async function mount(host: HTMLElement, { state: saved, signal, whenVisib
   state.part ??= 'disc';
   const { stage, controls, explanation } = panel(host, {
     title: 'From the car to the front brake',
-    description:
-      'Move through the assembly with the slider. Select a part for a closer view. Drag to rotate; pinch or scroll to zoom.',
+    description: `Move through the assembly with the slider. Select a part for a closer view. ${cameraHelp}`,
     note: '2010 2.9 layout with a photo-guided green and tan car. Selected parts are blue; the wheel is ghosted to expose the brake. Factory PET plates 602-000, 604-010 and 401-005 identify the parts. Mechanical geometry, pipe and wire routing, colours, clearances and exploded distances are illustrative.',
   });
   stage.classList.add('diagram-stage-3d');

@@ -5,7 +5,7 @@ import { buttons, panel, slider } from '../ui.ts';
 import { installAssembly } from './installed-assembly.ts';
 import { surfaceAnchor } from './anchors';
 import { placeMarker } from './marker-layout';
-import { disposeObject, isRenderable, loadModel, opacity, scene3D } from './scene.ts';
+import { cameraHelp, disposeObject, isRenderable, loadModel, opacity, scene3D } from './scene.ts';
 
 const stops = [
   { value: 0, label: 'Whole car' },
@@ -138,8 +138,7 @@ export async function mountExplorer(
     if (!byName.has(config.focus)) throw new Error(`Unknown focus part in ${config.id}`);
     const { stage, controls, explanation } = panel(host, {
       title: config.title,
-      description:
-        'Locate the assembly, follow its connections, then separate its main parts. Select a part for a closer view; drag to rotate and pinch or scroll to zoom.',
+      description: `Locate the assembly, follow its connections, then separate its main parts. Select a part for a closer view. ${cameraHelp}`,
       note: `2010 European/UK 2.9. Blue: selected part. Dashed links: functional connections. Geometry, routes and separation are schematic.${config.note ? ` ${config.note}` : ''}`,
     });
     host.classList.add('component-explorer');
@@ -402,7 +401,7 @@ export async function mountExplorer(
     for (const part of parts) part.object.position.copy(part.initial);
     view = scene3D(stage, { signal, onRender: projectMarkers, onResize: () => update() });
     view.controls.maxDistance = 20;
-    view.renderer.domElement.setAttribute('aria-label', `${config.title}. ${config.location}`);
+    view.renderer.domElement.setAttribute('aria-label', `${config.title}. ${config.location} ${cameraHelp}`);
     view.scene.add(car, model);
     view.scene.add(locator);
     links.forEach((link) => view!.scene.add(link.line));

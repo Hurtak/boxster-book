@@ -14,6 +14,7 @@ import { createHash } from 'node:crypto';
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { createServer, type Server } from 'node:http';
 import { extname, resolve, sep } from 'node:path';
+import { build } from 'esbuild';
 import { Browser, chromium, Page } from 'playwright-core';
 import { afterAll as after, beforeAll as before, test } from 'vite-plus/test';
 const root = resolve('dist');
@@ -562,6 +563,100 @@ test('a failed reader script still leaves a readable static book', async () => {
     (await page.goto(preview))!;
     await page.locator('#book > section.level2').first().waitFor({ state: 'visible' });
     assert.equal(await page.locator('#reader-loading').isVisible(), false);
+  } finally {
+    await page.close();
+  }
+});
+test('3D camera gestures pan without rotating or zooming and preserve plain orbit and wheel zoom', async () => {
+  const bundle = await build({
+    entryPoints: [resolve('tests/fixtures/scene-controls.ts')],
+    bundle: true,
+    write: false,
+    format: 'iife',
+    target: 'es2022',
+  });
+  const page = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+  try {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    await page.setContent('<main id="stage" style="width:800px;height:600px"></main>');
+    await page.addScriptTag({ content: bundle.outputFiles[0].text });
+    await page.waitForFunction(() => document.querySelector<HTMLElement>('#stage')!.dataset.pose);
+    const stage = page.locator('#stage');
+    interface Pose {
+      position: number[];
+      target: number[];
+      orientation: number[];
+    }
+    const pose = async () => JSON.parse((await stage.getAttribute('data-pose'))!) as Pose;
+    const delta = (a: number[], b: number[]) => a.map((value, i) => value - b[i]);
+    const magnitude = (v: number[]) => Math.hypot(...v);
+    const distance = (p: Pose) => magnitude(delta(p.position, p.target));
+    const gesture = async (button: 'left' | 'middle', modifier?: 'Meta' | 'Control') => {
+      const before = await stage.getAttribute('data-pose');
+      await page.mouse.move(400, 300);
+      if (modifier) await page.keyboard.down(modifier);
+      await page.mouse.down({ button });
+      await page.mouse.move(500, 350, { steps: 5 });
+      await page.mouse.up({ button });
+      if (modifier) await page.keyboard.up(modifier);
+      await page.waitForFunction(
+        (before) => document.querySelector<HTMLElement>('#stage')!.dataset.pose !== before,
+        before,
+      );
+    };
+    for (const modifier of ['Meta', 'Control', undefined] as const) {
+      const before = await pose();
+      await gesture(modifier ? 'left' : 'middle', modifier);
+      const after = await pose();
+      const moved = delta(after.target, before.target);
+      assert.ok(magnitude(moved) > 0.1, `${modifier ?? 'Middle'} drag must move the orbit target`);
+      assert.ok(magnitude(delta(delta(after.position, before.position), moved)) < 1e-8);
+      assert.ok(magnitude(delta(after.orientation, before.orientation)) < 1e-8, 'Panning must preserve orientation');
+      assert.ok(Math.abs(distance(after) - distance(before)) < 1e-8, 'Panning must preserve zoom');
+    }
+    const beforeOrbit = await pose();
+    await gesture('left');
+    const afterOrbit = await pose();
+    assert.ok(magnitude(delta(afterOrbit.target, beforeOrbit.target)) < 1e-8, 'Plain drag keeps the orbit target');
+    assert.ok(magnitude(delta(afterOrbit.position, beforeOrbit.position)) > 0.1);
+    assert.ok(Math.abs(distance(afterOrbit) - distance(beforeOrbit)) < 1e-8);
+    const beforeZoom = await stage.getAttribute('data-pose');
+    await page.mouse.wheel(0, 240);
+    await page.waitForFunction(
+      (before) => document.querySelector<HTMLElement>('#stage')!.dataset.pose !== before,
+      beforeZoom,
+    );
+    const afterZoom = await pose();
+    assert.ok(distance(afterZoom) > distance(afterOrbit) + 0.1, 'Wheel scrolling still zooms out');
+    assert.ok(magnitude(delta(afterZoom.target, afterOrbit.target)) < 1e-8);
+    assert.deepEqual(errors, []);
+  } finally {
+    await page.close();
+  }
+});
+test('car tours can pan and Reset view restores their original framing', async () => {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 }, reducedMotion: 'reduce' });
+  try {
+    await page.goto(preview);
+    for (const id of ['brake-explorer', 'roof-explorer']) {
+      const figure = await ready(page, id);
+      const canvas = figure.locator('canvas');
+      assert.match((await canvas.getAttribute('aria-label'))!, /Cmd\/Ctrl/);
+      const imageHash = async () =>
+        createHash('sha256')
+          .update(await canvas.screenshot())
+          .digest('hex');
+      const original = await imageHash();
+      const bounds = (await canvas.boundingBox())!;
+      await page.mouse.move(bounds.x + bounds.width / 2, bounds.y + bounds.height / 2);
+      await page.mouse.down({ button: 'middle' });
+      await page.mouse.move(bounds.x + bounds.width / 2 + 80, bounds.y + bounds.height / 2 + 30, { steps: 5 });
+      await page.mouse.up({ button: 'middle' });
+      assert.notEqual(await imageHash(), original, `${id} must render the panned view`);
+      await figure.getByRole('button', { name: 'Reset view', exact: true }).click();
+      assert.equal(await imageHash(), original, `${id} must restore its authored view after panning`);
+    }
   } finally {
     await page.close();
   }
