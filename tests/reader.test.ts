@@ -848,6 +848,94 @@ test('3D transitions retarget smoothly, yield to gestures, honour reduced motion
     await page.close();
   }
 });
+test.each([390, 1440].flatMap((width) => ['brake-explorer', 'roof-explorer'].map((id) => ({ width, id }))))(
+  'guided assembly controls stay compact, synchronised and reusable ($id, $width px)',
+  async ({ width, id }) => {
+    const context = await browser.newContext({
+      viewport: { width, height: 1000 },
+      hasTouch: width < 600,
+      isMobile: width < 600,
+      colorScheme: 'light',
+      reducedMotion: 'reduce',
+    });
+    try {
+      const page = await context.newPage();
+      const errors: string[] = [];
+      page.on('pageerror', (error) => errors.push(error.message));
+      await page.goto(site);
+      const figure = await ready(page, id);
+      const tour = figure.locator('.assembly-tour');
+      const stages = tour.locator('.assembly-stages button');
+      const next = tour.locator('.assembly-next');
+      const slider = tour.getByRole('slider', { name: 'Explore the assembly', exact: true });
+      const parts = tour.getByRole('group', { name: 'Inspect a component', exact: true });
+      const activate = async (button: import('playwright-core').Locator) =>
+        width < 600 ? button.tap() : button.click();
+      assert.equal(await stages.count(), 4);
+      const stageTops = await stages.evaluateAll((buttons) =>
+        buttons.map((button) => button.getBoundingClientRect().top),
+      );
+      assert.ok(Math.max(...stageTops) - Math.min(...stageTops) < 1, 'Stage controls align on one row');
+      assert.equal(await tour.locator('details, summary').count(), 0);
+      assert.equal(await tour.getByRole('button', { name: 'Reset view', exact: true }).count(), 0);
+      assert.equal(await parts.isVisible(), true);
+      assert.ok(await parts.getByRole('button').count());
+      await figure.screenshot({
+        path: resolve(previews, `guided-${id}-${width}.png`),
+        style: '.viewer-bar, .skip-link { visibility: hidden !important; }',
+      });
+      const ordered = await tour.evaluate((element) => {
+        const follows = (first: string, second: string) =>
+          Boolean(
+            element.querySelector(first)!.compareDocumentPosition(element.querySelector(second)!) &
+            Node.DOCUMENT_POSITION_FOLLOWING,
+          );
+        return (
+          follows('.assembly-stages', '.diagram-stage') &&
+          follows('.diagram-stage', '.assembly-navigation') &&
+          follows('.assembly-navigation', '.diagram-slider') &&
+          follows('.diagram-slider', '.assembly-caption') &&
+          follows('.assembly-caption', '.assembly-components')
+        );
+      });
+      assert.equal(
+        ordered,
+        true,
+        'The model, navigation, slider, description and parts must follow the approved layout',
+      );
+      for (const value of ['30', '65', '100']) {
+        await activate(next);
+        assert.equal(await slider.inputValue(), value);
+        assert.equal(await next.evaluate((element) => getComputedStyle(element).backgroundColor), 'rgb(23, 75, 61)');
+      }
+      assert.equal(await next.innerText(), 'Start again ↺');
+      await activate(next);
+      assert.equal(await slider.inputValue(), '0');
+      assert.equal(await tour.locator('.assembly-back').isDisabled(), true);
+      await activate(stages.nth(2));
+      assert.equal(await slider.inputValue(), '65');
+      assert.equal(await stages.nth(2).getAttribute('aria-current'), 'step');
+      await slider.fill('45');
+      await activate(next);
+      assert.equal(await slider.inputValue(), '65', 'Next follows the current continuous slider position');
+      const part = parts.getByRole('button').last();
+      await activate(part);
+      assert.equal(await slider.inputValue(), '100');
+      assert.equal(await part.getAttribute('aria-pressed'), 'true');
+      assert.equal(await tour.locator('.diagram-explanation').count(), 1);
+      assert.equal(await tour.locator('.assembly-components p').count(), 0);
+      const dimensions = await part.boundingBox();
+      assert.ok(dimensions && dimensions.height >= 36 && dimensions.height < 44, 'Part buttons use the compact size');
+      await activate(next);
+      assert.equal(await slider.inputValue(), '0');
+      assert.equal(await parts.locator('[aria-pressed="true"]').count(), 0);
+      assert.equal(await tour.getByText('1 of 4', { exact: true }).isVisible(), true);
+      assert.deepEqual(errors, []);
+    } finally {
+      await context.close();
+    }
+  },
+);
 test.each([
   { width: 390, id: 'brake-explorer' },
   { width: 390, id: 'roof-explorer' },
@@ -919,7 +1007,8 @@ test.each([
     await page.clock.fastForward(700);
     assert.equal(await imageHash(), scrubbed, 'A cancelled transition must not override slider input');
     await page.emulateMedia({ reducedMotion: 'reduce' });
-    await click('Reset view');
+    await click('Exploded');
+    await click('Start again ↺');
     assert.equal(await stage.getAttribute('data-transitioning'), 'false');
     assert.equal(await figure.getByRole('slider').inputValue(), '0');
     await page.clock.fastForward(20);
@@ -929,7 +1018,7 @@ test.each([
     await page.close();
   }
 });
-test('car tours can pan and Reset view restores their original framing', async () => {
+test('car tours can pan and stage navigation restores their original framing', async () => {
   const page = await browser.newPage({ viewport: { width: 1440, height: 1100 }, reducedMotion: 'reduce' });
   try {
     await page.goto(preview);
@@ -948,7 +1037,7 @@ test('car tours can pan and Reset view restores their original framing', async (
       await page.mouse.move(bounds.x + bounds.width / 2 + 80, bounds.y + bounds.height / 2 + 30, { steps: 5 });
       await page.mouse.up({ button: 'middle' });
       assert.notEqual(await imageHash(), original, `${id} must render the panned view`);
-      await figure.getByRole('button', { name: 'Reset view', exact: true }).click();
+      await figure.getByRole('button', { name: 'Whole car', exact: true }).click();
       assert.equal(await imageHash(), original, `${id} must restore its authored view after panning`);
     }
   } finally {
@@ -997,7 +1086,7 @@ test('keyboard and part controls survive leaving the page section', async () => 
       (await figure.getByRole('button', { name: 'Caliper body', exact: true }).getAttribute('aria-pressed'))!,
       'true',
     );
-    await figure.getByRole('button', { name: 'Reset view', exact: true }).click();
+    await figure.getByRole('button', { name: 'Start again ↺', exact: true }).click();
     assert.equal(await figure.getByRole('slider').inputValue(), '0');
     assert.deepEqual(errors, []);
   } finally {
@@ -1422,13 +1511,14 @@ test('chapter sources start collapsed, toggle by keyboard and expand for printin
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
     (await page.goto(preview))!;
-    await page.locator('html.reader-enhanced').waitFor();
+    await page.locator('html.reader-enhanced:not([data-reader-pending])').waitFor();
     assert.equal(await page.locator('details.chapter-notes').count(), chapterCount);
     assert.equal(await page.locator('details.chapter-notes[open]').count(), 0);
     await page
       .getByRole('navigation', { name: 'Written chapters' })
       .getByRole('link', { name: 'Brakes and stability systems', exact: true })
       .click();
+    await page.locator('html:not([data-reader-pending])').waitFor();
     const notes = page.locator('#book > .level2:not([hidden]) details.chapter-notes');
     const summary = notes.locator('summary');
     assert.equal(await notes.locator('ol').isVisible(), false);
@@ -2026,6 +2116,7 @@ test.each([320, 390, 768, 1440].flatMap((width) => [1, 2].map((batch) => ({ widt
         }
         const buttons = figure.locator('.diagram-interactive').getByRole('button');
         for (const button of await buttons.all()) {
+          if (await button.isDisabled()) continue;
           await button.click();
           await checkLabels();
         }

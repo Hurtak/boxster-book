@@ -199,18 +199,6 @@
   font-size: 16px;
   line-height: 1.5;
 }
-.diagram-callout {
-  position: absolute;
-  z-index: 2;
-  top: 12px;
-  left: 12px;
-  max-width: calc(100% - 24px);
-  padding: 6px 10px;
-  color: var(--paper);
-  background: var(--ink);
-  font-size: 16px;
-  pointer-events: none;
-}
 .diagram-notice {
   font: 16px/1.5 var(--ui);
 }
@@ -221,7 +209,7 @@
   font-weight: 600;
 }
 .component-explorer .diagram-stage-3d {
-  height: 420px;
+  height: 360px;
 }
 .component-markers {
   position: absolute;
@@ -247,10 +235,10 @@
 }
 .component-marker-leader {
   position: absolute;
-  height: 1px;
+  height: 1px; /* taste-skill-ignore: Functional leader connecting a part number to its 3D component. */
   background: #526159;
   transform-origin: left center;
-} /* taste-skill-ignore: Functional leader connecting a part number to its 3D component. */
+}
 .component-marker.is-selected {
   background: #2165a6;
 }
@@ -270,6 +258,148 @@
 }
 .diagram-connections {
   font: 16px/1.5 var(--ui);
+}
+.assembly-tour .diagram-stage-3d {
+  height: 360px;
+}
+.assembly-stages {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  list-style: none;
+}
+#book .assembly-stages {
+  margin: 16px 0 8px;
+  padding: 0;
+}
+.assembly-stages li {
+  min-width: 0;
+  margin: 0;
+}
+.book-diagram .assembly-stages button {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 0 8px;
+  border: 0;
+  color: var(--muted);
+  background: transparent;
+  text-align: left;
+  font: 500 13px/1.4 var(--ui);
+}
+.assembly-stages button::before {
+  content: '';
+  display: block;
+  height: 3px;
+  margin-bottom: 8px;
+  background: var(--tone);
+}
+.book-diagram .assembly-stages button:hover {
+  color: var(--focus);
+}
+.book-diagram .assembly-stages button[aria-current] {
+  color: var(--ink);
+  font-weight: 650;
+}
+.assembly-stages button:is([aria-current], .is-complete)::before {
+  background: var(--focus);
+}
+.assembly-tour .diagram-controls {
+  margin-top: 16px;
+}
+.assembly-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.book-diagram .assembly-navigation button {
+  font-size: 15px;
+}
+.book-diagram .assembly-back {
+  border: 0;
+  padding-inline: 0;
+  background: transparent;
+  color: var(--muted);
+}
+.assembly-back:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+/* Touch browsers may retain :hover after a tap. Keep the primary action green. */
+.book-diagram .assembly-next,
+.book-diagram .assembly-next:is(:hover, :active) {
+  border-color: var(--focus);
+  background: var(--focus);
+  color: var(--paper);
+  font-weight: 600;
+}
+.assembly-tour .diagram-slider,
+.assembly-tour .diagram-slider label {
+  font: 400 14px/1.5 var(--ui);
+}
+.assembly-caption {
+  padding-block: 8px 16px;
+}
+.assembly-current {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.assembly-current > span {
+  color: var(--muted);
+  font-size: 13px;
+}
+.book-diagram .assembly-current h5 {
+  margin: 0;
+  font: 600 18px/1.3 var(--ui);
+}
+.assembly-caption .diagram-explanation {
+  min-height: 0;
+  margin: 0;
+}
+.assembly-caption .diagram-connections {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.assembly-components {
+  border-top: 1px solid var(--rule); /* taste-skill-ignore: Preserve the approved tour's control-group separator. */
+  padding-top: 16px;
+  margin-bottom: 16px;
+}
+.book-diagram .assembly-components h5 {
+  margin: 0 0 10px;
+  font: 600 16px/1.3 var(--ui);
+}
+.assembly-parts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.book-diagram .assembly-parts button {
+  min-height: 36px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 6px 10px;
+  font: 500 14px/1.3 var(--ui);
+}
+.book-diagram .assembly-parts button[aria-pressed='true'] {
+  background: var(--focus);
+  border-color: var(--focus);
+  color: var(--paper);
+}
+.assembly-components .component-connection-toggle {
+  margin-top: 8px;
+  min-height: 36px;
+  font-size: 14px;
+}
+.assembly-tour .diagram-note {
+  font-size: 14px;
 }
 @media (prefers-reduced-motion: reduce) {
   .book-diagram button {
@@ -300,14 +430,17 @@
   .diagram-stage-3d {
     height: 300px;
   }
-  .component-explorer .diagram-stage-3d {
-    height: 340px;
+  .assembly-tour .diagram-stage-3d {
+    height: 300px;
   }
-  .component-explorer .component-parts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .assembly-stages {
+    gap: 8px;
   }
-  .component-explorer .component-parts button {
-    min-width: 0;
+  .book-diagram .assembly-stages button {
+    font-size: 12px;
+  }
+  .book-diagram .assembly-navigation button {
+    font-size: 14px;
   }
   /* Equal columns sized to the longest label keep rows even on a phone. */
   .diagram-buttons {

@@ -15,6 +15,7 @@ scripts/mdx/
   bundler.ts                 # Lazy Vite diagram registry and asset manifest
 interactive/
   ui.ts                       # Panels, labelled sliders and buttons
+  assembly-tour.ts            # Guided stages, navigation, slider and compact part controls
   styles.css                  # Responsive controls, static/print fallback
   svg.ts                      # Responsive D3 SVG surface
   math.ts                     # Units, energy calculation, camera interpolation
@@ -128,9 +129,13 @@ The brake example maps a single 0–100 slider onto four authored stops:
 | 65       | Camera at the wheel, surrounding car hidden                  |
 | 100      | Assembly separated along per-part offsets                    |
 
-Clicking a stage, part or Reset view eases the camera and assembly into place over 650 ms. Rapid selections continue from the displayed position. The shared `scene3D.transition()` owns the demand-based animation frames and cancels them on disposal; a manual camera gesture takes over the camera while the parts finish moving. Initial mounting, direct slider input and reduced-motion preferences apply the destination immediately. Node transformations use absolute progress, so scrubbing backwards reassembles the same scene without accumulating movement. Part buttons focus a selected component; moving the main slider returns to the guided view. Named nodes separate the wheel, disc, pads, complete monobloc caliper, pistons and hub. The caliper body never splits into fictional halves.
+All fifteen car-to-component tours use `assembly-tour.ts`. Click the stage labels above the model or use Back/Next to move to the nearest authored stop from the current slider position. At the end, Start again returns to the whole car and restores the initial part and connection settings. The always-visible slider sits below navigation and above the stage heading and description, so changing explanation length does not move the main controls. Compact part buttons remain visible in an Inspect a component section; selecting one updates the single description above it. Stage selection or scrubbing leaves part focus. Component tours retain their Show connections checkbox and a separate explanation of the selected part's connections.
 
-All 3D viewers share camera controls: drag to rotate, Cmd/Ctrl + left-drag or middle-drag to pan, and scroll or pinch to zoom. On touchscreens, two fingers can also move the view. Panning moves the camera and its orbit target together; the guided slider, part selection and Reset view restore an authored camera pose.
+The helper owns the DOM controls and delegates changes to the caller's existing retained state and scene update. Construct it synchronously before waiting for visibility or models, and call `refresh()` from each scene update. It uses the mount's AbortSignal for listeners. Keep shared tour controls here so the brake and component viewers use the same layout and behaviour.
+
+Clicking a stage, part or Start again eases the camera and assembly into place over 650 ms. Rapid selections continue from the displayed position. The shared `scene3D.transition()` owns the demand-based animation frames and cancels them on disposal; a manual camera gesture takes over the camera while the parts finish moving. Initial mounting, direct slider input and reduced-motion preferences apply the destination immediately. Node transformations use absolute progress, so scrubbing backwards reassembles the same scene without accumulating movement. Part buttons focus a selected component; moving the main slider returns to the guided view. Named nodes separate the wheel, disc, pads, complete monobloc caliper, pistons and hub. The caliper body never splits into fictional halves.
+
+All 3D viewers share camera controls: drag to rotate, Cmd/Ctrl + left-drag or middle-drag to pan, and scroll or pinch to zoom. On touchscreens, two fingers can also move the view. Panning moves the camera and its orbit target together; stage selection, the guided slider, part selection and Start again restore an authored camera pose.
 
 The renderer uses demand-based frames, a capped pixel ratio, a generated studio reflection environment, self-shadowing and disposable WebGL surfaces. Reflections supply the green paint and glass finish without adding a photographic background. During fades, transmissive covers use alpha blending: the refraction pass cannot see transparent optics behind them. Returning to full opacity restores the authored refraction. A 32 MiB cache of recently used model bytes avoids repeated downloads, while each mounted scene gets its own parsed objects. Larger assets still load, but are not retained in this cache. Component chapters reuse the same reference car and supply their own assembly and explanation. The approximate geometry must not be treated as CAD or a workshop disassembly sequence.
 
@@ -146,7 +151,7 @@ Numbered leaders and functional links use `three/anchors.ts` to find an actual m
 
 For a compound group whose long hose or bracket pulls its centre away from the named component, the optional seventh argument to `part()` is a preferred local `[x, y, z]` target. The helper projects that target onto the group's real triangles; it does not create a floating anchor at an arbitrary coordinate. Set this metadata while authoring the static assembly.
 
-Live number badges use `three/marker-layout.ts` to stay inside the canvas, clear of the current title and other badges. Moving a badge changes its leader's length, while the component surface endpoint stays fixed. A bounded grid search supplies space when the nearby offsets are occupied.
+Live number badges use `three/marker-layout.ts` to stay inside the canvas, clear of other badges and any supplied blocked region. The guided tour names its current stage below the canvas. Moving a badge changes its leader's length, while the component surface endpoint stays fixed. A bounded grid search supplies space when the nearby offsets are occupied.
 
 ### Installed geometry and fit
 

@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { clamp, sampleTimeline, segment } from '../math.ts';
 import { initializeState, type DiagramContext, type ExplorerConfig } from '../types';
-import { buttons, panel, slider } from '../ui.ts';
+import { assemblyTour } from '../assembly-tour';
 import { installAssembly } from './installed-assembly.ts';
 import { surfaceAnchor } from './anchors';
 import { placeMarker } from './marker-layout';
@@ -9,9 +9,9 @@ import { cameraHelp, disposeObject, isRenderable, loadModel, opacity, scene3D } 
 
 const stops = [
   { value: 0, label: 'Whole car' },
-  { value: 30, label: 'Connections' },
-  { value: 65, label: 'Assembly' },
-  { value: 100, label: 'Exploded' },
+  { value: 30, label: 'Connections', nextLabel: 'See the connections →' },
+  { value: 65, label: 'Assembly', nextLabel: 'See the assembly →' },
+  { value: 100, label: 'Exploded', nextLabel: 'See exploded view →' },
 ];
 const connectionColours = {
   mechanical: '#6d7a80',
@@ -138,10 +138,26 @@ export async function mountExplorer(
     const byName = new Map(parts.map((part) => [part.object.name, part]));
     if (!byName.has(state.part)) state.part = config.focus;
     if (!byName.has(config.focus)) throw new Error(`Unknown focus part in ${config.id}`);
-    const { stage, controls, explanation } = panel(host, {
+    const { stage, explanation, inspection, refresh } = assemblyTour(host, {
       title: config.title,
-      description: `Locate the assembly, follow its connections, then separate its main parts. Select a part for a closer view. ${cameraHelp}`,
       note: `2010 European/UK 2.9. Blue: selected part. Dashed links: functional connections. Geometry, routes and separation are schematic.${config.note ? ` ${config.note}` : ''}`,
+      stages: stops.map((stop, i) => ({
+        ...stop,
+        text: [config.location, config.overview, config.assembled, config.exploded][i],
+      })),
+      parts: parts.map((part) => ({
+        name: part.object.name,
+        label: part.label,
+        description: part.description,
+        number: part.number,
+      })),
+      initialPart: config.focus,
+      state,
+      signal,
+      onChange: (animate) => update(animate),
+      onRestart: () => {
+        state.showConnections = true;
+      },
     });
     host.classList.add('component-explorer');
     stage.style.overflow = 'hidden';
@@ -161,9 +177,6 @@ export async function mountExplorer(
       part.leader = leader;
     }
     stage.append(markers);
-    const callout = document.createElement('div');
-    callout.className = 'diagram-callout';
-    stage.append(callout);
     const relationship = document.createElement('p');
     relationship.className = 'diagram-connections';
     explanation.after(relationship);
@@ -174,14 +187,6 @@ export async function mountExplorer(
       const projected: { name: string; x: number; y: number }[] = [];
       const width = stage.clientWidth,
         height = stage.clientHeight;
-      const bounds = stage.getBoundingClientRect();
-      const title = callout.getBoundingClientRect();
-      const blocked = {
-        left: title.left - bounds.left,
-        top: title.top - bounds.top,
-        right: title.right - bounds.left,
-        bottom: title.bottom - bounds.top,
-      };
       for (const part of parts) {
         const p = surfaceAnchor(part.object).project(view.camera);
         const x = ((p.x + 1) * width) / 2;
@@ -191,7 +196,7 @@ export async function mountExplorer(
         part.marker.hidden = !visible;
         part.leader.hidden = !visible;
         if (!visible) continue;
-        const point = placeMarker({ x, y }, width, height, projected, blocked);
+        const point = placeMarker({ x, y }, width, height, projected);
         if (!point) {
           part.marker.hidden = part.leader.hidden = true;
           continue;
@@ -236,27 +241,17 @@ export async function mountExplorer(
       );
       return { ...connection, line };
     });
-    let stageRow: HTMLDivElement, partRow: HTMLDivElement;
     const direction = new THREE.Vector3(...(config.direction ?? [1.25, 0.85, 1.65])).normalize();
     const carDirection = new THREE.Vector3(1.05, 0.7, 1.45).normalize();
     update = (animate) => {
       const progress = state.progress;
       const selected = byName.get(state.part)!;
       const exploded = segment(progress, 65, 100);
-      const stop = [...stops].reverse().find((stop) => progress >= stop.value) ?? stops[0];
-      const text = [config.location, config.overview, config.assembled, config.exploded][stops.indexOf(stop)];
-      callout.textContent = state.focusPart ? selected.label : stop.label;
-      explanation.textContent = state.focusPart
-        ? selected.description
-        : `${text}${progress >= 60 ? ` ${selected.label}: ${selected.description}` : ''}`;
+      refresh();
+      checkbox.checked = state.showConnections;
       const connections = links.filter((link) => link.from === state.part || link.to === state.part);
       relationship.textContent = `Connected to ${selected.label.toLowerCase()}: ${connections.map((link) => `${byName.get(link.from === state.part ? link.to : link.from)!.label} — ${link.label}`).join('; ')}.`;
-      stageRow
-        ?.querySelectorAll('button')
-        .forEach((button, i) => button.setAttribute('aria-pressed', String(!state.focusPart && stops[i] === stop)));
-      partRow
-        ?.querySelectorAll('button')
-        .forEach((button, i) => button.setAttribute('aria-pressed', String(parts[i] === selected)));
+      relationship.hidden = !state.focusPart;
       Object.assign(host.dataset, {
         progress: String(progress),
         exploded: exploded.toFixed(3),
@@ -326,53 +321,6 @@ export async function mountExplorer(
         mountedView.controls.update();
       }, animate);
     };
-    const progress = slider(controls, {
-      label: 'Explore the assembly',
-      value: state.progress,
-      format: (value) => `${value}%`,
-      signal,
-      onChange: (value) => {
-        state.progress = value;
-        state.focusPart = false;
-        update();
-      },
-    });
-    stageRow = buttons(
-      controls,
-      stops.map((stop) => ({
-        label: stop.label,
-        action: () => {
-          state.progress = stop.value;
-          state.focusPart = false;
-          progress.set(stop.value, false);
-          update(true);
-        },
-      })),
-      signal,
-    );
-    partRow = buttons(
-      controls,
-      parts.map((part) => ({
-        label: part.label,
-        action: () => {
-          state.part = part.object.name;
-          state.progress = 100;
-          state.focusPart = true;
-          progress.set(100, false);
-          update(true);
-        },
-      })),
-      signal,
-    );
-    partRow.classList.add('component-parts');
-    partRow.querySelectorAll('button').forEach((button, i) => {
-      const number = document.createElement('span');
-      number.className = 'component-part-number';
-      number.setAttribute('aria-hidden', 'true');
-      number.textContent = `${i + 1} `;
-      button.prepend(number);
-      button.dataset.part = parts[i].object.name;
-    });
     const toggle = document.createElement('label');
     toggle.className = 'component-connection-toggle';
     const checkbox = document.createElement('input');
@@ -387,25 +335,7 @@ export async function mountExplorer(
       { signal },
     );
     toggle.append(checkbox, ' Show connections');
-    controls.append(toggle);
-    buttons(
-      controls,
-      [
-        {
-          label: 'Reset view',
-          action: () => {
-            state.part = config.focus;
-            state.showConnections = true;
-            checkbox.checked = true;
-            state.progress = 0;
-            state.focusPart = false;
-            progress.set(0, false);
-            update(true);
-          },
-        },
-      ],
-      signal,
-    );
+    inspection.append(toggle);
     update();
     host.dispatchEvent(new Event('diagram-layout'));
     await whenVisible;

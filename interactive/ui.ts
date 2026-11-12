@@ -2,14 +2,14 @@ let sequence = 0;
 
 export function panel(
   host: HTMLElement,
-  { title, description, note }: { title: string; description: string; note: string },
+  { title, description, note }: { title: string; description?: string; note: string },
 ) {
   const heading = document.createElement('h4');
   heading.textContent = title;
   heading.id = `interactive-title-${++sequence}`;
   const introduction = document.createElement('p');
   introduction.className = 'diagram-description';
-  introduction.textContent = description;
+  introduction.textContent = description ?? '';
   const stage = document.createElement('div');
   stage.className = 'diagram-stage';
   stage.setAttribute('role', 'group');
@@ -21,7 +21,9 @@ export function panel(
   const caption = document.createElement('p');
   caption.className = 'diagram-note';
   caption.textContent = note;
-  host.append(heading, introduction, stage, controls, explanation, caption);
+  host.append(heading);
+  if (description) host.append(introduction);
+  host.append(stage, controls, explanation, caption);
   return { stage, controls, explanation };
 }
 

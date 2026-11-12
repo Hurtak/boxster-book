@@ -17,7 +17,7 @@ export function placeMarker(
   width: number,
   height: number,
   placed: readonly Point[],
-  blocked: Rectangle,
+  blocked?: Rectangle,
 ): Point | undefined {
   const free = (point: Point) =>
     point.x >= 14 &&
@@ -25,10 +25,11 @@ export function placeMarker(
     point.y >= 18 &&
     point.y <= height - 14 &&
     placed.every((other) => Math.hypot(point.x - other.x, point.y - other.y) >= 28) &&
-    Math.hypot(
-      point.x - Math.max(blocked.left, Math.min(point.x, blocked.right)),
-      point.y - Math.max(blocked.top, Math.min(point.y, blocked.bottom)),
-    ) >= 16;
+    (!blocked ||
+      Math.hypot(
+        point.x - Math.max(blocked.left, Math.min(point.x, blocked.right)),
+        point.y - Math.max(blocked.top, Math.min(point.y, blocked.bottom)),
+      ) >= 16);
   for (const [dx, dy] of [
     [0, -24],
     [-30, -16],

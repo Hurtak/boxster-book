@@ -2,9 +2,9 @@ import * as THREE from 'three';
 import { sampleTimeline, segment } from '../../../../interactive/math.ts';
 import reference from '../../../../interactive/models/reference-car.glb';
 import { installAssembly } from '../../../../interactive/three/installed-assembly.ts';
-import { cameraHelp, disposeObject, loadModel, opacity, scene3D } from '../../../../interactive/three/scene.ts';
+import { disposeObject, loadModel, opacity, scene3D } from '../../../../interactive/three/scene.ts';
 import { initializeState, type DiagramContext } from '../../../../interactive/types';
-import { buttons, panel, slider } from '../../../../interactive/ui.ts';
+import { assemblyTour } from '../../../../interactive/assembly-tour';
 import assembly from './brake.glb';
 import config from './scene.json';
 
@@ -12,92 +12,34 @@ export async function mount(host: HTMLElement, { state: saved, signal, whenVisib
   const state = initializeState(saved, { progress: 0, part: 'disc', focusPart: false });
   state.progress ??= 0;
   state.part ??= 'disc';
-  const { stage, controls, explanation } = panel(host, {
+  const tour = assemblyTour(host, {
     title: 'From the car to the front brake',
-    description: `Move through the assembly with the slider. Select a part for a closer view. ${cameraHelp}`,
     note: '2010 2.9 layout with a photo-guided green and tan car. Selected parts are blue; the wheel is ghosted to expose the brake. Factory PET plates 602-000, 604-010 and 401-005 identify the parts. Mechanical geometry, pipe and wire routing, colours, clearances and exploded distances are illustrative.',
+    stages: config.stages.map((stop, i) => ({
+      ...stop,
+      nextLabel: ['', 'See the connections →', 'Look at the wheel →', 'See exploded view →'][i],
+    })),
+    parts: config.parts.map((part) => ({ ...part, description: part.text })),
+    initialPart: 'disc',
+    state,
+    signal,
+    onChange: (animate) => update(animate),
   });
+  const { stage } = tour;
   stage.classList.add('diagram-stage-3d');
   let visualProgress = state.progress;
   let visualFocus = Number(state.focusPart);
-  let paint = (_animate = false) => {},
-    stageRow: HTMLDivElement,
-    partRow: HTMLDivElement;
-  const stageFor = (p: number) =>
-    segment(p, 65, 100) > 0
-      ? config.stages.at(-1)!
-      : ([...config.stages].reverse().find((item) => p >= item.value) ?? config.stages[0]);
+  let paint = (_animate = false) => {};
   const update = (animate = false) => {
     const p = state.progress,
       exploded = segment(p, 65, 100);
-    const currentStage = stageFor(p);
-    const selected = config.parts.find((part) => part.name === state.part)!;
-    explanation.textContent = `${currentStage.text} ${p >= 60 ? selected.text : ''}`;
-    stageRow
-      ?.querySelectorAll('button')
-      .forEach((button, i) => button.setAttribute('aria-pressed', String(config.stages[i] === currentStage)));
-    partRow
-      ?.querySelectorAll('button')
-      .forEach((button, i) => button.setAttribute('aria-pressed', String(config.parts[i].name === state.part)));
+    tour.refresh();
     host.dataset.progress = String(p);
     host.dataset.exploded = exploded.toFixed(3);
     host.dataset.part = state.part;
+    host.dataset.focusPart = String(state.focusPart);
     paint(animate);
   };
-  const progress = slider(controls, {
-    label: 'Explore the assembly',
-    value: state.progress,
-    format: (v) => `${v}%`,
-    signal,
-    onChange: (value) => {
-      state.progress = value;
-      state.focusPart = false;
-      update();
-    },
-  });
-  stageRow = buttons(
-    controls,
-    config.stages.map((item) => ({
-      label: item.label,
-      action: () => {
-        state.progress = item.value;
-        state.focusPart = false;
-        progress.set(item.value, false);
-        update(true);
-      },
-    })),
-    signal,
-  );
-  partRow = buttons(
-    controls,
-    config.parts.map((part) => ({
-      label: part.label,
-      action: () => {
-        state.part = part.name;
-        state.progress = 100;
-        state.focusPart = true;
-        progress.set(100, false);
-        update(true);
-      },
-    })),
-    signal,
-  );
-  buttons(
-    controls,
-    [
-      {
-        label: 'Reset view',
-        action: () => {
-          state.part = 'disc';
-          state.progress = 0;
-          state.focusPart = false;
-          progress.set(0, false);
-          update(true);
-        },
-      },
-    ],
-    signal,
-  );
   update();
   host.dispatchEvent(new Event('diagram-layout'));
   await whenVisible;
@@ -160,9 +102,6 @@ export async function mount(host: HTMLElement, { state: saved, signal, whenVisib
     });
     return { ...part, object, initial: object.position.clone() };
   });
-  const callout = document.createElement('div');
-  callout.className = 'diagram-callout';
-  stage.append(callout);
   paint = (animate) => {
     const startProgress = visualProgress;
     const startFocus = visualFocus;
@@ -194,9 +133,7 @@ export async function mount(host: HTMLElement, { state: saved, signal, whenVisib
         const ghost = part.name === 'wheel' && state.part !== 'wheel' ? 1 - segment(p, 45, 65) * 0.85 : 1;
         opacity(part.object, THREE.MathUtils.lerp(ghost, part.name === state.part ? 1 : 0.08, visualFocus));
       }
-      const currentStage = stageFor(p);
       const selected = parts.find((part) => part.name === state.part)!;
-      callout.textContent = state.focusPart ? selected.label : currentStage.label;
       if (!moveCamera) return;
       const position = new THREE.Vector3(...pose.position);
       const target = new THREE.Vector3(...pose.target);
