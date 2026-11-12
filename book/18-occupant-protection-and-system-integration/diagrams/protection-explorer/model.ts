@@ -186,7 +186,7 @@ export function createAssembly() {
     [0, 0.3, -0.4],
     'The two high-strength steel hoops and their cross-member form one fixed roll-bar assembly, bolted to the body behind the seats. Upper belt guides and retractor supports attach to its outer sides. It is separate from decorative covers and has no sensor-triggered extension.',
   );
-  beam(bars, [-0.56, 0.65, -0.61], [0.56, 0.65, -0.61], 0.026, p.green);
+  beam(bars, [-0.56, 0.65, hoopDepth(0.745) + 0.002], [0.56, 0.65, hoopDepth(0.745) + 0.002], 0.026, p.green);
   for (const side of [-1, 1]) {
     const x = side * 0.345;
     tube(
@@ -196,12 +196,12 @@ export function createAssembly() {
       p.green,
     );
     for (const dx of [-0.192, 0.192]) {
-      beam(bars, [x + dx, 0.65, -0.61], [x + dx, 0.745, hoopDepth(0.745)], 0.018, p.green);
-      box(bars, [0.09, 0.04, 0.1], p.metal, [x + dx, 0.65, -0.61]);
+      beam(bars, [x + dx, 0.65, hoopDepth(0.745) + 0.002], [x + dx, 0.745, hoopDepth(0.745)], 0.018, p.green);
+      box(bars, [0.09, 0.04, 0.1], p.metal, [x + dx, 0.65, hoopDepth(0.745) + 0.002]);
     }
-    box(bars, [0.035, 0.25, 0.1], p.green, [side * 0.537, 0.78, -0.615]);
-    box(bars, [0.07, 0.075, 0.025], p.metal, [side * 0.537, 1.005, -0.639]);
-    cylinder(bars, 0.027, 0.03, p.warm, [side * 0.537, 1.005, -0.639], [Math.PI / 2, 0, 0]);
+    box(bars, [0.035, 0.25, 0.1], p.green, [side * 0.537, 0.78, hoopDepth(0.78)]);
+    box(bars, [0.07, 0.075, 0.025], p.metal, [side * 0.537, 1.005, hoopDepth(1.005)]);
+    cylinder(bars, 0.027, 0.03, p.warm, [side * 0.537, 1.005, hoopDepth(1.005)], [Math.PI / 2, 0, 0]);
   }
 
   const seats = part(
@@ -226,7 +226,7 @@ export function createAssembly() {
     'Each belt runs from its retractor through the rear-bar upper guide, diagonally to a seat-mounted inner buckle and across the pelvis to the lower outer body anchorage. The separate latch stalk follows the seat. Pretensioning and force limiting are functions of the restraint system; their hidden internals are not modelled.',
   );
   for (const side of [-1, 1]) {
-    const upper = [side * 0.537, 1.005, -0.639];
+    const upper = [side * 0.537, 1.005, hoopDepth(1.005)];
     const buckle = [side * 0.107, 0.48, -0.25];
     const outer = [side * 0.56, 0.49, -0.1];
     const lower = [side * 0.6, 0.45, -0.65];

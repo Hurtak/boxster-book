@@ -86,6 +86,201 @@ async function ready(page: Page, name: string | undefined) {
   );
   return figure;
 }
+test('the colour theme follows the device, remembers an override and can return to automatic', async () => {
+  const context = await browser.newContext({ colorScheme: 'dark', viewport: { width: 390, height: 844 } });
+  try {
+    const page = await context.newPage();
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    page.on('console', (message) => {
+      if (message.type() === 'error') errors.push(message.text());
+    });
+    await page.goto(site);
+    await page.locator('html.reader-enhanced').waitFor();
+    const theme = () => page.locator('html').getAttribute('data-theme');
+    const choose = async (name: string) => {
+      await page.getByRole('button', { name: 'Theme', exact: true }).click();
+      await page.getByRole('radio', { name, exact: true }).check();
+      await page.keyboard.press('Escape');
+      assert.ok(
+        await page.getByRole('button', { name: 'Theme', exact: true }).evaluate((e) => e === document.activeElement),
+      );
+    };
+    assert.equal(await theme(), 'dark');
+    assert.equal(await page.evaluate(() => localStorage.getItem('boxster-theme')), null);
+    await page.emulateMedia({ colorScheme: 'light' });
+    await page.waitForFunction(() => document.documentElement.dataset.theme === 'light');
+    await choose('Dark');
+    assert.equal(await theme(), 'dark');
+    assert.equal(await page.evaluate(() => localStorage.getItem('boxster-theme')), 'dark');
+    await page.reload();
+    await page.locator('html.reader-enhanced').waitFor();
+    assert.equal(await theme(), 'dark');
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await choose('Light');
+    assert.equal(await theme(), 'light', 'A light override takes precedence over a dark device');
+    await choose('Device setting');
+    assert.equal(await theme(), 'dark');
+    assert.equal(await page.evaluate(() => localStorage.getItem('boxster-theme')), null);
+    await page.emulateMedia({ colorScheme: 'light' });
+    await page.waitForFunction(() => document.documentElement.dataset.theme === 'light');
+    const other = await context.newPage();
+    await other.goto(site);
+    await other.evaluate(() => localStorage.setItem('boxster-theme', 'dark'));
+    await page.waitForFunction(() => document.documentElement.dataset.theme === 'dark');
+    await other.evaluate(() => localStorage.setItem('boxster-theme', 'invalid'));
+    await page.waitForFunction(() => document.documentElement.dataset.theme === 'light');
+    assert.deepEqual(errors, []);
+  } finally {
+    await context.close();
+  }
+});
+test('a saved dark theme is applied before the reader bundle loads', async () => {
+  const context = await browser.newContext({ colorScheme: 'light', viewport: { width: 1440, height: 900 } });
+  let release!: () => void;
+  const delayed = new Promise<void>((done) => (release = done));
+  try {
+    await context.addInitScript(() => localStorage.setItem('boxster-theme', 'dark'));
+    const page = await context.newPage();
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    page.on('console', (message) => {
+      if (message.type() === 'error') errors.push(message.text());
+    });
+    await page.route('**/reader-*.js', async (route) => {
+      await delayed;
+      await route.continue();
+    });
+    await page.goto(site, { waitUntil: 'commit' });
+    await page.locator('#reader-loading').waitFor();
+    assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');
+    assert.equal(await page.locator('html').evaluate((e) => e.classList.contains('reader-enhanced')), false);
+    assert.equal(await page.locator('body').evaluate((e) => getComputedStyle(e).backgroundColor), 'rgb(17, 24, 21)');
+    assert.equal(await page.locator('meta[name="theme-color"]').getAttribute('content'), '#111815');
+    await page.screenshot({ path: resolve(previews, 'dark-before-hydration.png') });
+    release();
+    await page.locator('html.reader-enhanced:not([data-reader-pending])').waitFor();
+    await page.getByRole('button', { name: 'Theme', exact: true }).click();
+    assert.equal(await page.getByRole('radio', { name: 'Dark', exact: true }).isChecked(), true);
+    assert.deepEqual(errors, []);
+  } finally {
+    release();
+    await context.close();
+  }
+});
+test('the colour theme works without storage and the no-JavaScript and print editions remain readable', async () => {
+  const context = await browser.newContext({ colorScheme: 'dark' });
+  try {
+    await context.addInitScript(() => {
+      Object.defineProperty(window, 'localStorage', {
+        get() {
+          throw new DOMException('Storage blocked', 'SecurityError');
+        },
+      });
+    });
+    const page = await context.newPage();
+    await page.goto(site);
+    await page.locator('html.reader-enhanced:not([data-reader-pending])').waitFor();
+    assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');
+    await page.getByRole('button', { name: 'Theme', exact: true }).click();
+    await page.getByRole('radio', { name: 'Light', exact: true }).check();
+    assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
+    await page.getByRole('radio', { name: 'Dark', exact: true }).check();
+    assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');
+    await page.emulateMedia({ media: 'print' });
+    assert.equal(await page.locator('body').evaluate((e) => getComputedStyle(e).backgroundColor), 'rgb(255, 255, 255)');
+    assert.equal(await page.locator('body').evaluate((e) => getComputedStyle(e).color), 'rgb(28, 40, 35)');
+    assert.equal(await page.locator('#book > section.level2:visible').count(), chapterCount);
+    assert.equal(await page.locator('.viewer-bar').isVisible(), false);
+    await page.emulateMedia({ media: 'screen' });
+    assert.equal(await page.locator('body').evaluate((e) => getComputedStyle(e).backgroundColor), 'rgb(17, 24, 21)');
+  } finally {
+    await context.close();
+  }
+  const staticContext = await browser.newContext({ javaScriptEnabled: false, colorScheme: 'dark' });
+  try {
+    const page = await staticContext.newPage();
+    await page.goto(site);
+    assert.equal(await page.locator('body').evaluate((e) => getComputedStyle(e).backgroundColor), 'rgb(17, 24, 21)');
+    assert.equal(await page.locator('#book > section.level2:visible').count(), chapterCount);
+    assert.equal(await page.locator('.theme-picker').isVisible(), false);
+    await page.emulateMedia({ media: 'print' });
+    assert.equal(await page.locator('body').evaluate((e) => getComputedStyle(e).backgroundColor), 'rgb(255, 255, 255)');
+  } finally {
+    await staticContext.close();
+  }
+});
+test('the dark reader, theme picker and diagrams fit phone, tablet and desktop layouts', async () => {
+  const context = await browser.newContext({ colorScheme: 'dark', reducedMotion: 'reduce' });
+  try {
+    for (const width of [320, 390, 768, 1440]) {
+      const page = await context.newPage();
+      await page.setViewportSize({ width, height: 900 });
+      const errors: string[] = [];
+      page.on('pageerror', (error) => errors.push(error.message));
+      await page.goto(site);
+      await page.locator('html.reader-enhanced:not([data-reader-pending])').waitFor();
+      const theme = page.getByRole('button', { name: 'Theme', exact: true });
+      await theme.click();
+      assert.equal(await page.getByRole('radio', { name: 'Device setting', exact: true }).isChecked(), true);
+      const popup = await page.getByRole('group', { name: 'Colour theme', exact: true }).boundingBox();
+      assert.ok(popup && popup.x >= 0 && popup.x + popup.width <= width, `Theme picker clipped at ${width}px`);
+      const contrast = await page.evaluate(() => {
+        const luminance = (colour: string) => {
+          const values = colour
+            .match(/[\d.]+/g)!
+            .slice(0, 3)
+            .map(Number)
+            .map((n) => {
+              const s = n / 255;
+              return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+            });
+          return values[0] * 0.2126 + values[1] * 0.7152 + values[2] * 0.0722;
+        };
+        return ['.theme-picker summary', '.theme-options label', '#title h1', '.cover-subtitle', '.start-reading'].map(
+          (selector) => {
+            const element = document.querySelector(selector)!;
+            let parent: Element | null = element;
+            let background = 'rgba(0, 0, 0, 0)';
+            while (parent && background === 'rgba(0, 0, 0, 0)') {
+              background = getComputedStyle(parent).backgroundColor;
+              parent = parent.parentElement;
+            }
+            const a = luminance(getComputedStyle(element).color),
+              b = luminance(background);
+            return { selector, ratio: (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05) };
+          },
+        );
+      });
+      for (const { selector, ratio } of contrast) assert.ok(ratio >= 4.5, `${selector}: contrast ${ratio}`);
+      await page.screenshot({ path: resolve(previews, `dark-cover-${width}.png`) });
+      await page.keyboard.press('Escape');
+      await page
+        .getByRole('navigation', { name: 'Written chapters' })
+        .getByRole('link', { name: 'Brakes and stability systems', exact: true })
+        .click();
+      const chapter = page.locator('#book > section.level2:not([hidden])');
+      await chapter.waitFor();
+      await page.locator('html:not([data-reader-pending])').waitFor();
+      assert.equal(await chapter.evaluate((e) => getComputedStyle(e).color), 'rgb(229, 236, 231)');
+      assert.equal(await page.locator('#book').evaluate((e) => getComputedStyle(e).backgroundColor), 'rgb(24, 32, 28)');
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      await page.screenshot({ path: resolve(previews, `dark-chapter-${width}.png`) });
+      for (const name of ['brake-explorer', 'caliper-pressure']) {
+        const figure = await ready(page, name);
+        const stage = figure.locator('.diagram-stage');
+        assert.equal(await stage.evaluate((e) => getComputedStyle(e).backgroundColor), 'rgb(241, 243, 242)');
+        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+        if (width === 390 || width === 1440)
+          await figure.screenshot({ path: resolve(previews, `dark-${name}-${width}.png`) });
+      }
+      assert.deepEqual(errors, []);
+      await page.close();
+    }
+  } finally {
+    await context.close();
+  }
+});
 test('readers can switch between posters and live diagrams without losing their controls', async () => {
   for (const [url, width] of [
     [preview, 390],

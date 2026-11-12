@@ -17,6 +17,7 @@ import { test } from 'vite-plus/test';
 import { brakeAssembly } from '../book/13-brakes-and-stability-systems/diagrams/brake-explorer/model.ts';
 import { createAssembly as roofAssembly } from '../book/14-roof-glass-seals-and-drainage/diagrams/roof-explorer/model.ts';
 import { referenceCar } from '../interactive/models/reference-car.ts';
+import { windscreenPoint } from '../interactive/models/boxster/windscreen.ts';
 import { installAssembly } from '../interactive/three/installed-assembly.ts';
 import { disposeObject } from '../interactive/three/scene.ts';
 import type { AssemblyModule } from '../interactive/types';
@@ -62,7 +63,7 @@ test('the roof header uses the car windscreen frame, in the same installed coord
       expected = new Box3().setFromObject(carFrame);
     assert.ok(actual.min.distanceTo(expected.min) < 1e-6);
     assert.ok(actual.max.distanceTo(expected.max) < 1e-6);
-    const top = new Vector3(0, 1.175, 0.12);
+    const top = new Vector3(...windscreenPoint(0.5, 1));
     assert.ok(actual.containsPoint(top), 'Header must meet the top of the car windscreen');
   } finally {
     disposeObject(car);

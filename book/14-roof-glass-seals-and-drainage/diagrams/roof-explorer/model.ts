@@ -172,6 +172,12 @@ export function createAssembly() {
     roughness: 0.95,
     side: THREE.DoubleSide,
   });
+  const headerTop = windscreenPoint(0.5, 1);
+  const atHeader = (x: number, y: number, z: number): [number, number, number] => [
+    x,
+    headerTop[1] + y,
+    headerTop[2] + z,
+  ];
   const header = part(
     root,
     'header',
@@ -179,10 +185,10 @@ export function createAssembly() {
     [0, 0, 0],
     [0, 0.1, 0.4],
     'The fixed metal windscreen frame provides the roof’s front contact and latch receiver. Glass and trim are omitted so the header and its relationship to the front roof edge remain visible.',
-    [0, 1.16, 0.12],
+    atHeader(0, -0.015, 0),
   );
   windscreenFrame(header, palette());
-  box(header, [0.065, 0.022, 0.035], m.metal, [0, 1.16, 0.12]);
+  box(header, [0.065, 0.022, 0.035], m.metal, atHeader(0, -0.015, 0));
 
   const frame = part(
     root,
@@ -205,21 +211,17 @@ export function createAssembly() {
       0.016,
       m.metal,
     );
-  box(frame, [0.15, 0.022, 0.04], m.dark, [0, 1.17, 0.115]);
-  cylinder(frame, 0.015, 0.13, m.metal, [0, 1.15, 0.115]);
-  beam(frame, [0, 1.15, 0.115], [0, 1.12, 0.045], 0.012, m.black);
+  box(frame, [0.15, 0.022, 0.04], m.dark, atHeader(0, -0.005, -0.005));
+  cylinder(frame, 0.015, 0.13, m.metal, atHeader(0, -0.025, -0.005));
+  beam(frame, atHeader(0, -0.025, -0.005), atHeader(0, -0.055, -0.075), 0.012, m.black);
   tube(
     frame,
-    [
-      [0, 1.155, 0.1],
-      [0, 1.17, 0.14],
-      [0, 1.185, 0.14],
-      [0, 1.185, 0.12],
-    ],
+    [atHeader(0, -0.02, -0.02), atHeader(0, -0.005, 0.02), atHeader(0, 0.01, 0.02), atHeader(0, 0.01, 0)],
     0.008,
     m.warm,
   );
-  for (const side of [-1, 1]) beam(frame, [side * 0.45, 1.166, 0.115], [side * 0.45, 1.166, 0.15], 0.012, m.warm);
+  for (const side of [-1, 1])
+    beam(frame, atHeader(side * 0.45, -0.009, -0.005), atHeader(side * 0.45, -0.009, 0.03), 0.012, m.warm);
 
   const covering = part(
     root,

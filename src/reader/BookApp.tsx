@@ -6,6 +6,7 @@ import type { AssetMap, AssetSizes, Chapter } from '../book/types';
 import { ChapterView } from './ChapterView';
 import { ChapterNavigation, ContentsDialog, Pagination, sectionsFor } from './Navigation';
 import { PrintBook } from './PrintBook';
+import { ThemePicker } from './ThemePicker';
 import { useReader } from './useReader';
 
 export function BookApp({
@@ -41,6 +42,7 @@ export function BookApp({
             Boxster 2.9 <span>2010 · 987.2</span>
           </a>
           <div className="reader-tools">
+            <ThemePicker />
             <button
               className="contents-toggle enhanced-only"
               type="button"

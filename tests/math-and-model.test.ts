@@ -171,6 +171,37 @@ test('the photo-guided car keeps the complete book interface and valid detailed 
     JSON.stringify(dimensions),
   );
 });
+test('the exported car retains its dimensions and the reference side-profile landmarks', async () => {
+  const source = await readFile(new URL('../interactive/models/reference-car.glb', import.meta.url));
+  const { scene } = await new GLTFLoader().parseAsync(
+    source.buffer.slice(source.byteOffset, source.byteOffset + source.byteLength),
+    '',
+  );
+  scene.updateMatrixWorld(true);
+  const shell = modelPart(scene, 'body-shell');
+  const body = new Box3().setFromObject(shell).getSize(new Vector3());
+  const whole = new Box3().setFromObject(scene).getSize(new Vector3());
+  const front = modelPart(scene, 'wheel-fl').getWorldPosition(new Vector3());
+  const rear = modelPart(scene, 'wheel-rl').getWorldPosition(new Vector3());
+  // Porsche's January 2010 UK brochure, pp. 126–127. The open car's height
+  // must not be stretched to the catalogue height of the raised fabric roof.
+  assert.ok(Math.abs(front.z - rear.z - 2.415) < 1e-6, 'Retain the actual axle spacing');
+  assert.ok(Math.abs(whole.z - 4.342) < 0.015, `Overall length: ${whole.z}`);
+  assert.ok(Math.abs(whole.x - 1.952) < 0.006, `Width with mirrors: ${whole.x}`);
+  assert.ok(Math.abs(body.x - 1.801) < 0.006, `Body width: ${body.x}`);
+  // These broad silhouette bands are photo-guided modelling guards, not
+  // factory fitting dimensions. Ray-sample the shipped mesh, not metadata.
+  const shoulder = new Raycaster(new Vector3(0.78, 2, 0), new Vector3(0, -1, 0)).intersectObject(shell)[0];
+  const rocker = new Raycaster(new Vector3(0.81, -1, 0), new Vector3(0, 1, 0)).intersectObject(shell)[0];
+  assert.ok(shoulder && shoulder.point.y > 0.86 && shoulder.point.y < 0.89, 'Door shoulder height');
+  assert.ok(rocker && rocker.point.y > 0.205 && rocker.point.y < 0.255, 'Outer sill steps above the underfloor');
+  const glass = new Box3().setFromObject(modelPart(scene, 'curved-windscreen')).getSize(new Vector3());
+  assert.ok(glass.z > 0.49 && glass.z < 0.52, `Windscreen fore/aft span: ${glass.z}`);
+  const seat = new Box3().setFromObject(modelPart(scene, 'driver-seat'));
+  const hoop = new Box3().setFromObject(modelPart(scene, 'roll-hoop-1'));
+  const gap = seat.min.z - hoop.min.z;
+  assert.ok(gap > 0.04 && gap < 0.11, `Hoop must sit closely behind the head restraint: ${gap}`);
+});
 test('the upper front bumper has a convex painted face without a recessed ring above the plate', async () => {
   const source = await readFile(new URL('../interactive/models/reference-car.glb', import.meta.url));
   const { scene } = await new GLTFLoader().parseAsync(
@@ -192,6 +223,40 @@ test('the upper front bumper has a convex painted face without a recessed ring a
       assert.ok(
         indentation < 0.0001,
         `Concave bumper at x=${x}, y=${y}: ${(indentation * 1000).toFixed(3)} mm behind its neighbours`,
+      );
+    }
+  }
+});
+test('the bonnet forms an outward crown between the front wings', async () => {
+  const source = await readFile(new URL('../interactive/models/reference-car.glb', import.meta.url));
+  const { scene } = await new GLTFLoader().parseAsync(
+    source.buffer.slice(source.byteOffset, source.byteOffset + source.byteLength),
+    '',
+  );
+  scene.updateMatrixWorld(true);
+  const shell = modelPart(scene, 'body-shell');
+  const height = (x: number, z: number) => {
+    const hit = new Raycaster(new Vector3(x, 2, z), new Vector3(0, -1, 0)).intersectObject(shell)[0];
+    assert.ok(hit, `Missing bonnet surface at ${x}, ${z}`);
+    return hit.point.y;
+  };
+  // Test the exported painted surface, rather than its authoring parameters or lighting.
+  // The small tolerance allows mesh interpolation; this is not a factory dimension.
+  for (const z of [0.85, 1.1, 1.35, 1.55]) {
+    for (const x of [0.08, 0.16, 0.24]) {
+      const indentation = (height(-x, z) + height(x, z)) / 2 - height(0, z);
+      assert.ok(
+        indentation < 0.0001,
+        `Bonnet centre dips ${(indentation * 1000).toFixed(2)} mm below x=±${x} at z=${z}`,
+      );
+    }
+  }
+  for (const x of [-0.2, 0, 0.2]) {
+    for (const z of [1.72, 1.8, 1.88, 1.96]) {
+      const indentation = (height(x, z - 0.04) + height(x, z + 0.04)) / 2 - height(x, z);
+      assert.ok(
+        indentation < 0.0001,
+        `Bonnet front reverses curvature by ${(indentation * 1000).toFixed(2)} mm at ${x}, ${z}`,
       );
     }
   }

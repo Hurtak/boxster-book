@@ -20,6 +20,7 @@
   src: url('../assets/fonts/source-sans-3.woff2') format('woff2');
 }
 :root {
+  color-scheme: light;
   --ground: #f1f3f2;
   --paper: #fff;
   --ink: #1c2823;
@@ -28,6 +29,14 @@
   --tone: #e2e7e4;
   --current: #dfe9e3;
   --focus: #174b3d;
+  --hover: #e5eae7;
+  --current-hover: #d3e0d8;
+  --button-hover: #d3dbd6;
+  --focus-hover: #103b2f;
+  --control-rule: #a5b2aa;
+  /* Technical artwork retains its authored ink and colour coding. */
+  --illustration-paper: #f1f3f2;
+  --illustration-ink: #1c2823;
   --ui: 'Source Sans 3', system-ui, sans-serif;
   --text: 'Source Serif 4', Georgia, serif;
   --reading-size: 18px;
@@ -35,6 +44,41 @@
   --sheet-padding: 48px;
   --frame: 32px;
   --frame-width: 1344px;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --ground: #111815;
+  --paper: #18201c;
+  --ink: #e5ece7;
+  --muted: #adc0b4;
+  --rule: #3b4d42;
+  --tone: #26382f;
+  --current: #263e32;
+  --focus: #9dceb4;
+  --hover: #22342b;
+  --current-hover: #344d3e;
+  --button-hover: #344c3e;
+  --focus-hover: #b7dfc7;
+  --control-rule: #647b6d;
+}
+/* CSS alone follows the device when scripting is unavailable. */
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --ground: #111815;
+    --paper: #18201c;
+    --ink: #e5ece7;
+    --muted: #adc0b4;
+    --rule: #3b4d42;
+    --tone: #26382f;
+    --current: #263e32;
+    --focus: #9dceb4;
+    --hover: #22342b;
+    --current-hover: #344d3e;
+    --button-hover: #344c3e;
+    --focus-hover: #b7dfc7;
+    --control-rule: #647b6d;
+  }
 }
 :root[data-view='cover'] {
   --frame-width: 1104px;
@@ -186,7 +230,60 @@ button:disabled {
   font-weight: 600;
 }
 .viewer-bar .contents-toggle:hover {
-  background: #d3dbd6;
+  background: var(--button-hover);
+}
+.theme-picker {
+  position: relative;
+}
+.theme-picker > summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 12px;
+  list-style: none;
+  cursor: pointer;
+}
+.theme-picker > summary::-webkit-details-marker {
+  display: none;
+}
+.theme-picker > summary:hover,
+.theme-picker[open] > summary {
+  background: var(--tone);
+}
+.theme-options {
+  position: absolute;
+  z-index: 3;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 200px;
+  max-width: calc(100vw - 32px);
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  background: var(--paper);
+}
+.theme-options legend {
+  float: left;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 0;
+  font-weight: 600;
+}
+.theme-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  clear: both;
+  min-height: 44px;
+  cursor: pointer;
+}
+.theme-options input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--focus);
 }
 .reader-enhanced .static-contents {
   display: none;
@@ -302,7 +399,7 @@ nav li {
 .book-sidebar nav a:hover,
 .contents-dialog nav a:hover {
   color: var(--ink);
-  background: #e5eae7;
+  background: var(--hover);
 }
 .book-sidebar nav a[aria-current='page'],
 .contents-dialog nav a[aria-current='page'] {
@@ -330,7 +427,7 @@ nav > ul > li:has(> .chapter-sections) {
 }
 :is(.book-sidebar, .contents-dialog) .chapter-sections a:hover {
   color: var(--ink);
-  background: #d3e0d8;
+  background: var(--current-hover);
 }
 :is(.book-sidebar, .contents-dialog) .chapter-sections a[aria-current='location'] {
   color: var(--ink);
@@ -470,6 +567,7 @@ figure {
 }
 #book figure:not(.cover-illustration) img {
   margin-inline: auto;
+  background: var(--illustration-paper);
 }
 figcaption {
   margin-top: 16px;
@@ -605,7 +703,7 @@ th:first-child {
 }
 .reference-atlas img {
   width: 100%;
-  background: var(--ground);
+  background: var(--illustration-paper);
   object-fit: contain;
 }
 .reference-atlas figcaption {
@@ -741,7 +839,7 @@ th:first-child {
   font: 600 18px/1.35 var(--ui);
 }
 .start-reading:hover {
-  background: #103b2f;
+  background: var(--focus-hover);
 }
 .continue-reading {
   display: inline-block;
@@ -944,6 +1042,9 @@ body:has(.contents-dialog[open]) {
   .viewer-bar button {
     padding-inline: 8px;
   }
+  .theme-picker > summary {
+    padding-inline: 8px;
+  }
   .viewer-bar .contents-toggle {
     padding-inline: 12px;
   }
@@ -1064,6 +1165,23 @@ body:has(.contents-dialog[open]) {
   }
 }
 @media print {
+  :root,
+  :root[data-theme] {
+    color-scheme: light !important;
+    --ground: #f1f3f2;
+    --paper: #fff;
+    --ink: #1c2823;
+    --muted: #526159;
+    --rule: #d5dcd8;
+    --tone: #e2e7e4;
+    --current: #dfe9e3;
+    --focus: #174b3d;
+    --hover: #e5eae7;
+    --current-hover: #d3e0d8;
+    --button-hover: #d3dbd6;
+    --focus-hover: #103b2f;
+    --control-rule: #a5b2aa;
+  }
   html,
   body {
     overflow: visible !important;

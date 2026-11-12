@@ -9,22 +9,40 @@ import { profile } from './surfaces.ts';
 export const noseStart = 1.66,
   tailStart = -1.74;
 export const axles = [1.2075, -1.2075];
-export const archRadius = (axle: number) => (axle > 0 ? 0.368 : 0.38);
+export const archRadius = (axle: number) => (axle > 0 ? 0.368 : 0.365);
 
 const table = (rows: number[][]) => (z: number) => profile(rows, z);
-const centre = table([
+// Restore the raised haunches and front wings seen in the level side reference.
+// Lift the lid and crest together so the bonnet keeps its outward crown.
+const upperLift = table([
+  [-1.74, 0.005],
+  [-1.5, 0.03],
+  [-1.25, 0.045],
+  [-0.95, 0.04],
+  [-0.7, 0.035],
+  [0, 0.03],
+  [0.6, 0.03],
+  [0.95, 0.04],
+  [1.2, 0.045],
+  [1.45, 0.03],
+  [1.66, 0.01],
+]);
+const centreBase = table([
   [-1.74, 0.785],
   [-1.5, 0.818],
   [-1.25, 0.838],
   [-0.95, 0.85],
   [-0.7, 0.85],
   [0, 0.83],
-  [0.7, 0.81],
-  [0.95, 0.77],
-  [1.2, 0.742],
-  [1.45, 0.701],
-  [1.66, 0.66],
+  // A shallow crown between the wings, falling smoothly towards the nose.
+  // The lower centreline formerly turned these sections into a recessed valley.
+  [0.7, 0.835],
+  [0.95, 0.823],
+  [1.2, 0.801],
+  [1.45, 0.768],
+  [1.66, 0.733],
 ]);
+const centre = (z: number) => centreBase(z) + upperLift(z);
 const crestX = table([
   [-1.74, 0.64],
   [-1.5, 0.665],
@@ -38,7 +56,7 @@ const crestX = table([
   [1.45, 0.645],
   [1.66, 0.625],
 ]);
-const crestY = table([
+const crestBase = table([
   [-1.74, 0.8],
   [-1.6, 0.84],
   [-1.45, 0.867],
@@ -56,18 +74,19 @@ const crestY = table([
   [1.5, 0.744],
   [1.66, 0.726],
 ]);
+const crestY = (z: number) => crestBase(z) + upperLift(z);
 const half = table([
-  [-1.74, 0.852],
-  [-1.5, 0.893],
-  [-1.25, 0.9],
-  [-0.95, 0.89],
-  [-0.65, 0.868],
-  [-0.2, 0.86],
-  [0.3, 0.862],
-  [0.8, 0.876],
-  [1.2, 0.886],
-  [1.45, 0.876],
-  [1.66, 0.852],
+  [-1.74, 0.857],
+  [-1.5, 0.898],
+  [-1.25, 0.905],
+  [-0.95, 0.895],
+  [-0.65, 0.873],
+  [-0.2, 0.865],
+  [0.3, 0.867],
+  [0.8, 0.881],
+  [1.2, 0.891],
+  [1.45, 0.881],
+  [1.66, 0.857],
 ]);
 const waistY = table([
   [-1.74, 0.56],
@@ -123,10 +142,13 @@ function hermite(a: number[], ta: number[], b: number[], tb: number[], t: number
 
 // Half-section [x, y] points at a station; index 0 is the top centreline.
 export function section(z: number) {
+  // The outer rocker turns in above the lower floor. Extending the door flank
+  // down to the floor gave the old model a deep rectangular side silhouette.
+  const rockerStep = 0.075 * smooth(-1, -0.8, z) * (1 - smooth(0.8, 1, z));
   const p0 = [0, centre(z)],
     p1 = [crestX(z), crestY(z)],
     p2 = [half(z), waistY(z)],
-    p3 = [sillX(z), bottom(z)],
+    p3 = [sillX(z), bottom(z) + rockerStep],
     p4 = [0, bottom(z)];
   const k = shoulderRound(z);
   const segments = [
@@ -156,9 +178,16 @@ export function section(z: number) {
 // Continue the lid's slope into a short rounded shoulder before the bumper
 // turns down. Without that shared tangent the loft forms a pointed corner at
 // its top centre, even when the two mirrored halves have matching normals.
-function roundLidCorner(rows: number[][], start: number, run: number, tau: number) {
+function endTangent(from: number, to: number, startTangent: number, isNose: boolean) {
+  // A quadratic roll keeps the bonnet turning outwards all the way to its edge.
+  // Ending at the average slope makes a cubic flatten and reverse curvature.
+  return isNose ? 2 * (to - from) - startTangent : to - from;
+}
+
+function roundLidCorner(rows: number[][], start: number, run: number, tau: number, isNose = false) {
   const [, y, z] = rows[0];
-  const slope = (y - centre(start)) / (z - start);
+  const tangent = ((centre(start) - centre(start - 0.015)) / 0.015) * (z - start);
+  const slope = endTangent(centre(start), y, tangent, isNose) / (z - start);
   return [rows[0], [tau, y + slope * run, z + run], ...rows.slice(1)];
 }
 
@@ -166,7 +195,7 @@ function roundLidCorner(rows: number[][], start: number, run: number, tau: numbe
 const noseProfile = roundLidCorner(
   [
     [0, 0.605, 2.005],
-    [0.1, 0.565, 2.085],
+    [0.1, 0.553, 2.085],
     // Keep this panel convex: recessing the station creates an S-bend whose
     // reflected highlight closes into a dented ring above the number plate.
     [0.22, 0.48, 2.14],
@@ -179,6 +208,7 @@ const noseProfile = roundLidCorner(
   noseStart,
   0.035,
   0.04,
+  true,
 );
 const tailProfile = roundLidCorner(
   [
@@ -258,11 +288,14 @@ export function endPoint(i: number, start: number[], theta: number, isNose: bool
   const inside = section(z0 + (isNose ? -0.015 : 0.015))[i];
   const slope = (y0 - inside[1]) / (isNose ? 0.015 : -0.015);
   const tangent = slope * (zEnd - z0);
+  // Keep the revised roll on the bonnet, fading out before the lamp-bearing wings.
+  const roll = isNose ? 1 - smooth(0.35, 0.7, i / counts[0]) : 0;
+  const finish = lerp(yEnd - y0, endTangent(y0, yEnd, tangent, isNose), roll);
   const y =
     (2 * w ** 3 - 3 * w * w + 1) * y0 +
     (w ** 3 - 2 * w * w + w) * tangent +
     (-2 * w ** 3 + 3 * w * w) * yEnd +
-    (w ** 3 - w * w) * (yEnd - y0);
+    (w ** 3 - w * w) * finish;
   return [x, y, z0 + (zEnd - z0) * w];
 }
 

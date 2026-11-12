@@ -31,8 +31,8 @@ export const config: ExplorerConfig = {
       p = materials();
     model.updateMatrixWorld(true);
     const points = [
-      [0.815, 0.52, -0.58],
-      [0.72, 0.6, -0.63],
+      [0.815, 0.55, -0.58],
+      [0.72, 0.615, -0.63],
       [0.61, 0.64, -0.715],
     ];
     tube(

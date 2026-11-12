@@ -121,7 +121,7 @@ export function seat(parent: THREE.Object3D, p: Palette, side: number, { belt = 
     line3(
       restraint,
       [
-        [side * 0.218, 1.005, -0.604],
+        [side * 0.218, 1.005, -0.539],
         [side * 0.24, 0.79, -0.42],
         [side * 0.21, 0.49, -0.29],
       ],
@@ -151,7 +151,7 @@ export const hoopOutline = [
   [0.181, 0.9],
   [0.192, 0.745],
 ];
-export const hoopDepth = (y: number) => -0.612 - (y - 0.745) * 0.105;
+export const hoopDepth = (y: number) => -0.547 - (y - 0.745) * 0.105;
 
 // Flattened, slightly rearward leaning hoops closely follow the head restraints.
 // The reference rear photograph has a silver rear face and tan front trim.

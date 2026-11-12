@@ -109,14 +109,14 @@ function regions(p: Palette, surface: ShellSurface) {
       name: `side-intake-${side}`,
       frame: intake,
       sdf: outline(intake, [
-        [side, 0.628, -0.72],
-        [side, 0.632, -0.6],
-        [side, 0.628, -0.535],
-        [side, 0.5, -0.49],
-        [side, 0.385, -0.452],
-        [side, 0.365, -0.49],
-        [side, 0.42, -0.58],
-        [side, 0.54, -0.67],
+        [side, 0.658, -0.72],
+        [side, 0.662, -0.6],
+        [side, 0.658, -0.535],
+        [side, 0.53, -0.49],
+        [side, 0.415, -0.452],
+        [side, 0.395, -0.49],
+        [side, 0.45, -0.58],
+        [side, 0.57, -0.67],
       ]),
       applies: (q: { x: number; y: number }) => q.x * side > 0.6 && q.y > 0.3 && q.y < 0.7,
       material: null,
@@ -220,26 +220,35 @@ function sideDetails(body: THREE.Object3D, p: Palette, surface: ShellSurface, si
     surface,
     body,
     [
-      [0.705, 0.836],
-      [0.712, 0.7],
+      [0.705, 0.867],
+      [0.712, 0.73],
       [0.708, 0.5],
-      [0.69, 0.32],
-      [0.65, 0.235],
-      [0.55, 0.215],
-      [-0.2, 0.215],
-      [-0.29, 0.24],
-      [-0.36, 0.32],
-      [-0.43, 0.43],
-      [-0.48, 0.55],
-      [-0.52, 0.67],
-      [-0.56, 0.78],
-      [-0.575, 0.836],
+      [0.69, 0.38],
+      [0.65, 0.315],
+      [0.55, 0.292],
+      [-0.2, 0.292],
+      [-0.29, 0.315],
+      [-0.36, 0.38],
+      [-0.43, 0.48],
+      [-0.48, 0.59],
+      [-0.52, 0.71],
+      [-0.56, 0.82],
+      [-0.575, 0.867],
     ].map(([z, y]) => onSide(z, y)),
     [-side, 0, 0],
     p.black,
   );
+  // A narrow painted rocker bead sits above the recessed dark undertray edge.
+  // Keep this below the door seam instead of filling the flank to floor height.
+  line3(
+    body,
+    Array.from({ length: 49 }, (_, i) => surface.on(onSide(-0.8 + (i / 48) * 1.6, 0.265), [-side, 0, 0], 0.002)),
+    0.004,
+    p.paint,
+  );
+  rounded(body, [0.065, 0.065, 1.62], p.black, [side * 0.765, 0.1775, 0], 0.008);
   // Flush handle in a shallow dished recess.
-  const at = surface.requireHit(onSide(-0.42, 0.668), [-side, 0, 0]);
+  const at = surface.requireHit(onSide(-0.42, 0.72), [-side, 0, 0]);
   const handle = group(`door-handle-${side}`, body, at.point.toArray());
   handle.lookAt(at.point.clone().add(at.normal));
   ellipsoid(handle, [0.12, 0.028, 0.012], p.black, [0, 0, -0.004]);
@@ -255,15 +264,15 @@ function sideDetails(body: THREE.Object3D, p: Palette, surface: ShellSurface, si
   inlet.userData.carPart = true;
   // Five slats across the side intake.
   for (let i = 0; i < 5; i++) {
-    const y = 0.405 + i * 0.047;
-    const z0 = -0.47 - (y - 0.37) * 0.36 - 0.02,
-      z1 = -0.72 + (0.628 - y) * 0.62 + 0.01;
+    const y = 0.435 + i * 0.047;
+    const z0 = -0.47 - (y - 0.4) * 0.36 - 0.02,
+      z1 = -0.72 + (0.658 - y) * 0.62 + 0.01;
     const a = surface.on(onSide(z0, y), [-side, 0, 0], -0.02),
       b = surface.on(onSide(z1, y), [-side, 0, 0], -0.02);
     line3(inlet, [a, b], 0.0065, p.silver);
   }
   // Mirror on the door top; stalk, painted shell and a dark glass face.
-  const mirror = group(`mirror-${side}`, body, [side * 0.84, 0.875, 0.44]);
+  const mirror = group(`mirror-${side}`, body, [side * 0.84, 0.905, 0.44]);
   rounded(mirror, [0.09, 0.03, 0.05], p.black, [-side * 0.04, -0.045, 0.02], 0.012, [0, 0, side * 0.35]);
   ellipsoid(mirror, [0.085, 0.052, 0.1], p.paint, [side * 0.05, 0, 0], [0, -side * 0.12, 0]);
   ellipsoid(mirror, [0.07, 0.042, 0.006], p.chrome, [side * 0.055, 0, -0.088], [0, -side * 0.1, 0]);

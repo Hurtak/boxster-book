@@ -7,7 +7,7 @@ import { line3, patch } from './surfaces.ts';
 // Metres, car axes. These are photo-guided surfaces, not fitting dimensions.
 export function windscreenPoint(u: number, v: number) {
   const t = u * 2 - 1;
-  return [t * (0.727 - 0.078 * v), 0.84 + 0.335 * v - 0.02 * t * t, 0.64 - 0.52 * v + 0.06 * t * t];
+  return [t * (0.727 - 0.078 * v), 0.87 + 0.305 * v - 0.02 * t * t, 0.64 - 0.44 * v + 0.06 * t * t];
 }
 
 export function windscreenFrame(parent: THREE.Object3D, p: Pick<Palette, 'paint' | 'black'>) {

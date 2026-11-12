@@ -132,13 +132,15 @@ export function windscreen(body: THREE.Object3D, p: Palette) {
       p.black,
     );
   }
-  rounded(body, [0.19, 0.055, 0.034], p.black, [0, 1.1, 0.19], 0.015);
-  rounded(body, [0.173, 0.04, 0.003], p.chrome, [0, 1.1, 0.17], 0.01);
+  const header = windscreenPoint(0.5, 1);
+  const mirrorZ = header[2] + 0.07;
+  rounded(body, [0.19, 0.055, 0.034], p.black, [0, 1.1, mirrorZ], 0.015);
+  rounded(body, [0.173, 0.04, 0.003], p.chrome, [0, 1.1, mirrorZ - 0.02], 0.01);
   line3(
     body,
     [
-      [0, 1.16, 0.14],
-      [0, 1.12, 0.19],
+      [0, header[1] - 0.015, header[2] + 0.02],
+      [0, 1.12, mirrorZ],
     ],
     0.008,
     p.black,
@@ -151,26 +153,26 @@ export function cabin(parent: THREE.Object3D, p: Palette) {
   rounded(interior, [0.21, 0.22, 0.92], p.tan, [0, 0.46, -0.1], 0.045);
   for (const side of [-1, 1]) {
     seat(interior, p, side);
-    rounded(interior, [0.045, 0.31, 0.91], p.tan, [side * 0.654, 0.57, -0.04], 0.02);
-    rounded(interior, [0.055, 0.07, 0.91], p.black, [side * 0.661, 0.748, -0.04], 0.02);
+    rounded(interior, [0.045, 0.31, 0.91], p.tan, [side * 0.654, 0.6, -0.04], 0.02);
+    rounded(interior, [0.055, 0.07, 0.91], p.black, [side * 0.661, 0.778, -0.04], 0.02);
     rounded(interior, [0.08, 0.04, 0.28], p.tan, [side * 0.618, 0.61, -0.08], 0.013);
     rounded(interior, [0.018, 0.027, 0.095], p.chrome, [side * 0.622, 0.682, 0.06], 0.008);
     rollHoop(interior, p, side);
   }
-  rounded(interior, [1.26, 0.17, 0.1], p.black, [0, 0.71, -0.66], 0.04);
+  rounded(interior, [1.26, 0.17, 0.1], p.black, [0, 0.71, -0.595], 0.04);
   const deflectorMaterial = new THREE.MeshStandardMaterial({
     color: '#0a1011',
     transparent: true,
     opacity: 0.4,
     side: THREE.DoubleSide,
   });
-  rounded(interior, [0.35, 0.23, 0.009], deflectorMaterial, [0, 0.94, -0.665], 0.004);
+  rounded(interior, [0.35, 0.23, 0.009], deflectorMaterial, [0, 0.94, -0.6], 0.004);
   for (let i = 0; i < 18; i++)
     line3(
       interior,
       [
-        [-0.165 + i * 0.019, 0.835, -0.67],
-        [-0.165 + i * 0.019, 1.045, -0.67],
+        [-0.165 + i * 0.019, 0.835, -0.605],
+        [-0.165 + i * 0.019, 1.045, -0.605],
       ],
       0.0008,
       p.black,
@@ -179,8 +181,8 @@ export function cabin(parent: THREE.Object3D, p: Palette) {
     line3(
       interior,
       [
-        [-0.165, 0.84 + i * 0.019, -0.67],
-        [0.165, 0.84 + i * 0.019, -0.67],
+        [-0.165, 0.84 + i * 0.019, -0.605],
+        [0.165, 0.84 + i * 0.019, -0.605],
       ],
       0.0008,
       p.black,

@@ -6,12 +6,14 @@ import { mergeConfig, build as viteBuild } from 'vite-plus';
 import { assetUrls, collectAssets, dependencyNotices, inlineCss } from './mdx/assets';
 import { bookConfig } from './mdx/bundler';
 import { discoverBook } from './mdx/inventory';
+import { initializeTheme, themeStorageKey } from '../src/reader/theme';
 
 export const root = resolve(import.meta.dirname, '..');
 const escape = (s: string) =>
   s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 export function htmlDocument(markup: string, css: string, script: string, notices: string) {
-  return `<!doctype html>\n<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="MDX, React and Vite"><meta name="theme-color" content="#174b3d"><link rel="icon" href="data:,"><title>Porsche Boxster 2.9</title>
+  return `<!doctype html>\n<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="MDX, React and Vite"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#f1f3f2"><link rel="icon" href="data:,"><title>Porsche Boxster 2.9</title>
+<script>(${initializeTheme.toString()})(${JSON.stringify(themeStorageKey)});</script>
 <script>(function(){
   var root=document.documentElement;
   root.dataset.readerPending='true';
