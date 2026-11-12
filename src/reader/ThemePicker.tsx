@@ -66,7 +66,9 @@ export function ThemePicker() {
         }
       }}
       onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false;
+        // Safari can blur the summary with no destination before a tapped label
+        // activates its radio. Outside taps are handled by pointerdown above.
+        if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false;
       }}
     >
       <summary role="button">

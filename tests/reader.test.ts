@@ -136,6 +136,46 @@ test('the colour theme follows the device, remembers an override and can return 
     await context.close();
   }
 });
+test('tapping a theme label survives a blur without a focus destination', async () => {
+  const context = await browser.newContext({
+    colorScheme: 'light',
+    viewport: { width: 390, height: 844 },
+    hasTouch: true,
+    isMobile: true,
+  });
+  try {
+    const page = await context.newPage();
+    await page.goto(site);
+    await page.locator('html.reader-enhanced:not([data-reader-pending])').waitFor();
+    const summary = page.getByRole('button', { name: 'Theme', exact: true });
+    const picker = page.locator('.theme-picker');
+    await summary.tap();
+    for (const [label, preference] of [
+      ['Dark', 'dark'],
+      ['Light', 'light'],
+    ]) {
+      await summary.focus();
+      const option = picker.locator('label').filter({ hasText: new RegExp(`^${label}$`) });
+      // Safari blurs the summary before a tapped label activates its radio,
+      // with no relatedTarget because the label itself is not focusable.
+      await option.evaluate((element) => {
+        element.addEventListener('pointerdown', () => (document.activeElement as HTMLElement).blur(), { once: true });
+      });
+      await option.tap();
+      assert.equal(await page.locator('html').getAttribute('data-theme'), preference);
+      assert.equal(await page.evaluate(() => localStorage.getItem('boxster-theme')), preference);
+      assert.equal(await picker.evaluate((element) => (element as HTMLDetailsElement).open), true);
+    }
+    await page.locator('.book-name').tap();
+    assert.equal(await picker.evaluate((element) => (element as HTMLDetailsElement).open), false);
+    await summary.tap();
+    await page.getByRole('radio', { name: 'Dark', exact: true }).focus();
+    await page.keyboard.press('Tab');
+    assert.equal(await picker.evaluate((element) => (element as HTMLDetailsElement).open), false);
+  } finally {
+    await context.close();
+  }
+});
 test('a saved dark theme is applied before the reader bundle loads', async () => {
   const context = await browser.newContext({ colorScheme: 'light', viewport: { width: 1440, height: 900 } });
   let release!: () => void;
@@ -293,18 +333,24 @@ test('readers can switch between posters and live diagrams without losing their 
       (await page.goto(url))!;
       for (const id of ['body-explorer', 'caliper-pressure']) {
         const figure = await ready(page, id);
-        const choice = figure.getByRole('group', { name: 'Diagram view' });
+        const choice = figure.getByRole('tablist', { name: 'Diagram view' });
         assert.equal(await choice.count(), 1, 'Every interactive diagram offers its static poster');
         const slider = figure.getByRole('slider').first();
         await slider.focus();
         await slider.press('End');
         const value = await slider.inputValue();
         const chapter = await figure.evaluate((element) => element.closest('section.level2')!.id);
-        const poster = choice.getByRole('button', { name: 'Static diagram', exact: true });
-        await poster.focus();
-        await poster.press('Enter');
+        const interactive = choice.getByRole('tab', { name: 'Interactive', exact: true });
+        const poster = choice.getByRole('tab', { name: 'Static diagram', exact: true });
+        await interactive.focus();
+        await interactive.press('ArrowLeft');
         await figure.locator('.diagram-static img').waitFor({ state: 'visible' });
-        assert.equal((await poster.getAttribute('aria-pressed'))!, 'true');
+        assert.equal((await poster.getAttribute('aria-selected'))!, 'true');
+        assert.equal(await poster.evaluate((element) => element === document.activeElement), true);
+        assert.equal(await interactive.getAttribute('tabindex'), '-1');
+        const panel = figure.getByRole('tabpanel', { name: 'Static diagram', exact: true });
+        assert.equal(await panel.getAttribute('id'), await poster.getAttribute('aria-controls'));
+        assert.equal(await panel.getAttribute('aria-labelledby'), await poster.getAttribute('id'));
         assert.equal(await figure.locator('.diagram-interactive').evaluate((element) => element.childElementCount), 0);
         assert.equal(await figure.locator('.diagram-loading').isVisible(), false);
         await page.emulateMedia({ media: 'print' });
@@ -320,17 +366,38 @@ test('readers can switch between posters and live diagrams without losing their 
         }, chapter);
         await figure.waitFor({ state: 'visible' });
         await figure.scrollIntoViewIfNeeded();
-        assert.equal((await poster.getAttribute('aria-pressed'))!, 'true', 'Poster choice survives chapter navigation');
+        assert.equal(
+          (await poster.getAttribute('aria-selected'))!,
+          'true',
+          'Poster choice survives chapter navigation',
+        );
         assert.equal(await figure.locator('.diagram-interactive').evaluate((element) => element.childElementCount), 0);
         if (id === 'body-explorer') await page.screenshot({ path: resolve(previews, `poster-choice-${width}.png`) });
-        await choice.getByRole('button', { name: 'Interactive', exact: true }).click();
+        await poster.focus();
+        await poster.press('Home');
         await ready(page, id);
+        assert.equal(await interactive.evaluate((element) => element === document.activeElement), true);
+        assert.equal(await figure.getByRole('tabpanel', { name: 'Interactive', exact: true }).count(), 1);
         assert.equal(
           await figure.getByRole('slider').first().inputValue(),
           value,
           'Switching views retains diagram state',
         );
         assert.equal(await figure.locator('.diagram-static img').isVisible(), false);
+        if (id === 'caliper-pressure' && width === 390) {
+          await interactive.press('End');
+          assert.equal(await poster.getAttribute('aria-selected'), 'true');
+          await poster.press('ArrowRight');
+          await ready(page, id);
+          assert.equal(await interactive.getAttribute('aria-selected'), 'true');
+          await interactive.press('Tab');
+          assert.equal(
+            await figure
+              .getByRole('tabpanel', { name: 'Interactive', exact: true })
+              .evaluate((element) => element === document.activeElement),
+            true,
+          );
+        }
       }
     } finally {
       await context.close();
@@ -388,7 +455,7 @@ test('the static poster is available while a car model is still downloading', as
     });
     await figure.waitFor({ state: 'visible' });
     await figure.scrollIntoViewIfNeeded();
-    const poster = figure.getByRole('button', { name: 'Static diagram', exact: true });
+    const poster = figure.getByRole('tab', { name: 'Static diagram', exact: true });
     assert.equal(await poster.count(), 1);
     await modelRequested;
     await poster.click();
@@ -401,7 +468,7 @@ test('the static poster is available while a car model is still downloading', as
       () => new Promise<void>((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))),
     );
     assert.equal(await figure.locator('canvas').count(), 0, 'A late model download must not replace the chosen poster');
-    assert.equal((await poster.getAttribute('aria-pressed'))!, 'true');
+    assert.equal((await poster.getAttribute('aria-selected'))!, 'true');
   } finally {
     release();
     await page.close();

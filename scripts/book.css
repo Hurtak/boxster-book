@@ -1037,14 +1037,14 @@ body:has(.contents-dialog[open]) {
   :root {
     --reading-size: 16px;
     --bar: 56px;
-    --sheet-padding: 24px;
+    --sheet-padding: 12px;
   }
   body {
     background: var(--paper);
   }
   .viewer-bar {
     gap: 8px;
-    padding: 6px 12px 6px 24px;
+    padding: 6px var(--sheet-padding);
   }
   .book-name {
     font-size: 18px;
@@ -1123,9 +1123,9 @@ body:has(.contents-dialog[open]) {
     padding: 0;
   }
   .book-sidebar {
-    margin: 24px;
+    margin: 24px var(--sheet-padding);
   }
-  #book figure:not(.cover-illustration, .book-diagram > figure) {
+  #book figure:not(.cover-illustration, .diagram-static) {
     margin-inline: calc(-1 * var(--sheet-padding));
     padding: 20px var(--sheet-padding);
   }
@@ -1155,12 +1155,6 @@ body:has(.contents-dialog[open]) {
   }
 }
 @media (max-width: 360px) {
-  :root {
-    --sheet-padding: 20px;
-  }
-  .viewer-bar {
-    padding-left: 20px;
-  }
   .book-cover h1 {
     font-size: 42px;
   }

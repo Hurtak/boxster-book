@@ -6,8 +6,11 @@
   font-family: var(--ui);
   overflow-wrap: normal;
 }
-#book .book-diagram > figure {
+#book .book-diagram .diagram-static {
   margin: 0;
+}
+.diagram-view-panel {
+  background: var(--ground);
 }
 .book-diagram .diagram-interactive {
   background: var(--ground);
@@ -28,12 +31,29 @@
 }
 .reader-enhanced .diagram-view-controls {
   display: flex;
-  gap: 8px;
   position: relative;
   z-index: 2;
-  padding: 12px 24px;
+  background: var(--paper);
+}
+.book-diagram .diagram-view-controls [role='tab'] {
+  min-height: 44px;
+  padding: 8px 24px;
+  border: 0;
+  border-top: 2px solid transparent;
+  color: var(--muted);
+  background: transparent;
+  font-weight: 600;
+  outline-offset: -4px;
+}
+.book-diagram .diagram-view-controls [role='tab']:hover {
+  color: var(--ink);
+  background: var(--tone);
+}
+.book-diagram .diagram-view-controls [aria-selected='true'],
+.book-diagram .diagram-view-controls [aria-selected='true']:hover {
+  border-top-color: var(--focus);
+  color: var(--ink);
   background: var(--ground);
-  border-bottom: 1px solid var(--rule);
 }
 .book-diagram.diagram-poster {
   min-height: 0;
@@ -262,13 +282,14 @@
     margin-inline: calc(-1 * var(--sheet-padding));
   }
   .book-diagram .diagram-interactive {
-    padding: 20px var(--sheet-padding);
+    padding: 16px var(--sheet-padding);
   }
-  #book .book-diagram > figure {
-    padding: 20px var(--sheet-padding);
+  #book .book-diagram .diagram-static {
+    padding: 16px var(--sheet-padding);
   }
-  .reader-enhanced .diagram-view-controls {
-    padding-inline: var(--sheet-padding);
+  .book-diagram .diagram-view-controls [role='tab'] {
+    padding: 6px var(--sheet-padding);
+    font-size: 15px;
   }
   .diagram-notice {
     padding-inline: var(--sheet-padding);
@@ -311,5 +332,12 @@
   }
   .book-diagram .diagram-static {
     display: block !important;
+  }
+  .diagram-view-panel {
+    background: none;
+    outline: none;
+  }
+  #book .book-diagram .diagram-static {
+    padding: 0;
   }
 }

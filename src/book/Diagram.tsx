@@ -18,6 +18,9 @@ export function Diagram({ id, poster, alt }: DiagramProps) {
   const [hasControls, setHasControls] = useState(false);
   const [status, setStatus] = useState<'static' | 'loading' | 'ready' | 'suspended' | 'failed'>('static');
   const [reserved, setReserved] = useState<number>();
+  const panelId = `diagram-${id}-view`;
+  const interactiveTabId = `diagram-${id}-interactive-tab`;
+  const posterTabId = `diagram-${id}-poster-tab`;
   useLayoutEffect(() => {
     const element = outer.current!,
       view = host.current!;
@@ -179,28 +182,71 @@ export function Diagram({ id, poster, alt }: DiagramProps) {
       }
     >
       {hasControls && (
-        <div ref={choices} className="diagram-view-controls" role="group" aria-label="Diagram view">
-          <button type="button" aria-pressed={!showPoster} onClick={() => setShowPoster(false)}>
+        <div
+          ref={choices}
+          className="diagram-view-controls"
+          role="tablist"
+          aria-label="Diagram view"
+          onKeyDown={(event) => {
+            const next =
+              event.key === 'Home'
+                ? false
+                : event.key === 'End'
+                  ? true
+                  : event.key === 'ArrowLeft' || event.key === 'ArrowRight'
+                    ? !showPoster
+                    : undefined;
+            if (next === undefined) return;
+            event.preventDefault();
+            setShowPoster(next);
+            choices.current?.querySelectorAll<HTMLButtonElement>('[role="tab"]')[Number(next)]?.focus();
+          }}
+        >
+          <button
+            type="button"
+            role="tab"
+            id={interactiveTabId}
+            aria-controls={panelId}
+            aria-selected={!showPoster}
+            tabIndex={showPoster ? -1 : 0}
+            onClick={() => setShowPoster(false)}
+          >
             Interactive
           </button>
-          <button type="button" aria-pressed={showPoster} onClick={() => setShowPoster(true)}>
+          <button
+            type="button"
+            role="tab"
+            id={posterTabId}
+            aria-controls={panelId}
+            aria-selected={showPoster}
+            tabIndex={showPoster ? 0 : -1}
+            onClick={() => setShowPoster(true)}
+          >
             Static diagram
           </button>
         </div>
       )}
-      {!showPoster && status === 'failed' && (
-        <p className="diagram-notice">
-          The interactive view is unavailable. The static diagram is shown below.{' '}
-          <button type="button" onClick={() => retry.current()}>
-            Try again
-          </button>
-        </p>
-      )}
-      <Figure src={poster} alt={alt} className="diagram-static" hidden={!showPoster && status === 'ready'}>
-        {alt}
-      </Figure>
-      <span className="diagram-loading" role="status" aria-label={`Loading interactive diagram. ${alt}`} />
-      <div ref={host} className="diagram-interactive" hidden={showPoster} />
+      <div
+        className="diagram-view-panel"
+        id={panelId}
+        role={hasControls ? 'tabpanel' : undefined}
+        aria-labelledby={hasControls ? (showPoster ? posterTabId : interactiveTabId) : undefined}
+        tabIndex={hasControls ? 0 : undefined}
+      >
+        {!showPoster && status === 'failed' && (
+          <p className="diagram-notice">
+            The interactive view is unavailable. The static diagram is shown below.{' '}
+            <button type="button" onClick={() => retry.current()}>
+              Try again
+            </button>
+          </p>
+        )}
+        <Figure src={poster} alt={alt} className="diagram-static" hidden={!showPoster && status === 'ready'}>
+          {alt}
+        </Figure>
+        <span className="diagram-loading" role="status" aria-label={`Loading interactive diagram. ${alt}`} />
+        <div ref={host} className="diagram-interactive" hidden={showPoster} />
+      </div>
     </div>
   );
 }
