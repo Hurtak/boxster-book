@@ -21,6 +21,8 @@ The location view replaces detached fabric/seal strokes. It is explicitly labell
 
 The result is reference-guided illustration, not dimensioned CAD, a workshop procedure or a hydraulic model. Exact section contours, installed coordinates, seal compression, downstream route, water capacity and spill threshold remain unestablished. The slider retains the existing illustrative snapshots and the 65/100 graphic threshold; neither is a Porsche measurement. Production date, rather than a registration year, governs the filter change.
 
+The 12 November interaction correction makes Low, Medium and High visibly distinct with both outlet states. More added water is represented by a slightly deeper transient film and heavier incoming/discharge arrows with a clear outlet. A blocked outlet retains a substantially deeper pool and the existing possible spill above the illustrative threshold. The arrow widths and depths encode qualitative amounts, not measured rainfall, hydraulic flow rates or a calibrated capacity. None removes both the water fill and flow arrows. Part, filter and pipe geometry are unchanged.
+
 ## Retrieval and rights
 
 The TI image was retrieved successfully **11 November 2026** from [its direct source URL without a trailing slash](https://charm.li/images/IMP63Q313/euro472/514514469). The page reader returned 404 and direct HTML returned 502; the text was compared with the live search-index rendering and the complete HTML recovered on 10 November in `/tmp/boxster-drain-ti-live.html`. The parts-panel image timed out. Those limits do not alter the Figure 1 or PET evidence inspected above. No full source PDF is duplicated here.

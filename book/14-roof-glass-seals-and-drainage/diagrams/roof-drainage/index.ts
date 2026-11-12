@@ -6,10 +6,10 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
   const state = initializeState(saved, { blocked: false, rain: 35 });
   state.blocked ??= false;
   // Keep this retained-state key; it denotes an illustrative amount, not rain rate.
-  state.rain ??= 35;
+  state.rain = Math.max(0, Math.min(100, state.rain ?? 35));
   const { stage, controls, explanation } = panel(host, {
     title: 'A good seal still needs a working drain',
-    description: 'Find the shaped side pan behind the seats, then compare a clear and blocked outlet.',
+    description: 'Change the illustrative amount of water added, then compare a clear and blocked outlet.',
     note: 'Ordinary 2010 powered roof. The pan follows the visible factory-part profile; the enlarged section is explanatory. Water amounts, levels and the spill point are illustrative snapshots, not measured capacity, rainfall or hidden pipe routing. Filters were introduced on 31 August 2009; earlier cars may differ.',
   });
   stage.style.height = '740px';
@@ -25,6 +25,8 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
         rust = '#a14f39',
         soft = '#81978b';
       const overflow = state.blocked && state.rain > 65;
+      const waterAmount = state.rain / 100;
+      const flowStroke = 2 + waterAmount * 4;
       const outcome = !state.rain ? 'dry' : !state.blocked ? 'drained' : overflow ? 'overflow' : 'collecting';
       const messages = {
         dry: 'No water has been added. A dry pan alone does not show whether its drain is clear. The mesh filter sits over the opening and the pipe carries water away below it.',
@@ -68,15 +70,22 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           .attr('stroke-width', sw)
           .attr('stroke-linecap', 'round')
           .attr('stroke-linejoin', 'round');
-      const arrow = (d: string, x: number, y: number, colour = blue, direction: readonly [number, number] = [0, 1]) => {
+      const arrow = (
+        d: string,
+        x: number,
+        y: number,
+        colour = blue,
+        direction: readonly [number, number] = [0, 1],
+        strokeWidth = 3,
+      ) => {
         const length = Math.hypot(...direction),
           dx = direction[0] / length,
           dy = direction[1] / length;
-        path(d, colour, 3);
+        path(d, colour, strokeWidth);
         path(
           `M${x - dx * 8 - dy * 5},${y - dy * 8 + dx * 5} L${x},${y} L${x - dx * 8 + dy * 5},${y - dy * 8 - dx * 5}`,
           colour,
-          3,
+          strokeWidth,
         );
       };
       const wide = w >= 620;
@@ -180,7 +189,10 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       text(sx + sw, sy + 5, 'Interior', { anchor: 'end', colour: rust, size: 15 });
       path(`M${lip + 12},${sy + 31} V${sy + 176}`, '#c9c4b4', 1.5).attr('stroke-dasharray', '3 5');
       const floor = `M${sx + 8},${sy + 62} Q${sx + 20},${sy + 116} ${sx + 48},${sy + 122} H${outlet - 9} M${outlet + 9},${sy + 122} L${lip - 31},${sy + 116} Q${lip - 10},${sy + 108} ${lip},${sy + 64}`;
-      const waterY = sy + (state.blocked ? 122 - Math.min(state.rain / 65, 1) * 58 : 115);
+      // Clear drainage leaves a shallow transient film; a blockage retains
+      // substantially more water. Both are qualitative snapshots, not flow rates.
+      const depth = state.blocked ? Math.min(state.rain / 65, 1) * 58 : 2 + waterAmount * 18;
+      const waterY = sy + 122 - depth;
       const clip = svg.append('defs').append('clipPath').attr('id', `pan-water-${w}`);
       clip
         .append('path')
@@ -206,7 +218,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
       );
       path(`M${outlet - 23},${sy + 110} Q${outlet},${sy + 101} ${outlet + 23},${sy + 110}`, '#58764c', 5);
       for (let i = -2; i <= 2; i++) path(`M${outlet + i * 8},${sy + 105} v8`, '#274734', 1.5);
-      if (state.rain) arrow(`M${sx + 46},${sy + 29} V${sy + 73}`, sx + 46, sy + 73);
+      if (state.rain) arrow(`M${sx + 46},${sy + 29} V${waterY - 6}`, sx + 46, waterY - 6, blue, [0, 1], flowStroke);
       if (state.blocked) {
         path(`M${outlet - 8},${sy + 118} l16,12 m-16,0 l16,-12`, rust, 3.5);
         svg
@@ -223,6 +235,7 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           sy + 178,
           blue,
           [-5, 16],
+          flowStroke,
         );
       if (overflow)
         arrow(
@@ -230,6 +243,8 @@ export function mount(host: HTMLElement, { state: saved, signal }: DiagramContex
           lip + 32,
           sy + 127,
           rust,
+          [0, 1],
+          flowStroke,
         );
       text(sx + sw, sy + 153, state.blocked ? ['Debris blocks', 'the opening'] : ['Through filter', 'and opening'], {
         anchor: 'end',

@@ -2381,6 +2381,43 @@ test('engine illustrations connect the four strokes, half-speed cams and separat
     await context.close();
   }
 });
+test('water amounts visibly change the pool and flow in both clear and blocked drainage views', async () => {
+  for (const width of [390, 1440]) {
+    const page = await browser.newPage({ viewport: { width, height: 1100 }, reducedMotion: 'reduce' });
+    try {
+      await page.goto(preview);
+      const figure = await ready(page, 'roof-drainage');
+      const amount = figure.getByRole('slider', { name: 'Illustrative water added', exact: true });
+      for (const outlet of ['Clear drain', 'Blocked drain']) {
+        await figure.getByRole('button', { name: outlet, exact: true }).click();
+        const levels: number[] = [];
+        const strokes: number[] = [];
+        for (const value of ['20', '50', '90']) {
+          await amount.fill(value);
+          levels.push(Number(await figure.locator('rect[clip-path][fill="#78b6d1"]').getAttribute('y')));
+          strokes.push(Number(await figure.locator('path[stroke="#22779e"]').first().getAttribute('stroke-width')));
+          await figure.locator('.diagram-stage').screenshot({
+            path: resolve(previews, `drainage-${outlet.split(' ')[0].toLowerCase()}-${value}-${width}.png`),
+          });
+        }
+        assert.ok(
+          levels[0] > levels[1] && levels[1] > levels[2],
+          `${outlet}: Low, Medium and High need different visible water depths`,
+        );
+        assert.ok(
+          strokes[0] < strokes[1] && strokes[1] < strokes[2],
+          `${outlet}: added water must also change the visible stream`,
+        );
+        await amount.fill('0');
+        assert.equal(await figure.locator('rect[clip-path][fill="#78b6d1"]').count(), 0);
+        assert.equal(await figure.locator('path[stroke="#22779e"]').count(), 0);
+        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      }
+    } finally {
+      await page.close();
+    }
+  }
+});
 test('roof illustrations separate opening sequence from drainage and retain clear/blocked states', async () => {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   try {
