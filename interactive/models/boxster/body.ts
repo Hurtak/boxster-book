@@ -11,6 +11,7 @@ import {
   tailLampOutline,
 } from './lights.ts';
 import { archRadius, axles } from './shape.ts';
+import { rearDeck } from './rear-deck.ts';
 import type { ShellSurface, SurfaceFrame } from './shell';
 import { buildShell, frame, sdf } from './shell.ts';
 import type { Palette } from './surfaces';
@@ -159,13 +160,6 @@ function regions(p: Palette, surface: ShellSurface) {
       recess: { depth: 0.32, walls: p.black },
     },
     {
-      name: 'folded-roof-cover',
-      frame: planFrame,
-      sdf: sdf.roundedBox(0, 0.84, 0.62, 0.15, 0.1),
-      applies: (q: { y: number }) => q.y > 0.7,
-      material: p.black,
-    },
-    {
       name: 'rear-plate-recess',
       frame: rearFrame,
       sdf: sdf.roundedBox(0, 0.475, 0.35, 0.108, 0.07),
@@ -312,35 +306,7 @@ export function exterior(parent: THREE.Object3D, p: Palette) {
     down,
     p.black,
   );
-  // Rear lid; the spoiler is omitted from this reference model.
-  seam(
-    surface,
-    body,
-    [
-      [-0.6, -0.99],
-      [-0.6, -1.4],
-      [-0.56, -1.73],
-      [-0.47, -1.88],
-      [-0.25, -1.94],
-      [0, -1.955],
-      [0.25, -1.94],
-      [0.47, -1.88],
-      [0.56, -1.73],
-      [0.6, -1.4],
-      [0.6, -0.99],
-      [0, -0.99],
-      [-0.6, -0.99],
-    ].map(([x, z]) => plan(x, z)),
-    down,
-    p.black,
-  );
-  // Black engine-air grille across the front of the rear lid.
-  const grille = surface.requireHit(plan(0, -1.05), down);
-  const vent = group('rear-lid-grille', body, grille.point.toArray());
-  vent.up.set(0, 0, -1);
-  vent.lookAt(grille.point.clone().add(grille.normal));
-  rounded(vent, [0.42, 0.05, 0.01], p.rubber, [0, 0, 0], 0.02);
-  for (let i = 0; i < 9; i++) rounded(vent, [0.004, 0.036, 0.012], p.black, [-0.18 + i * 0.045, 0, 0.002], 0.002);
+  rearDeck(body, p, surface);
   // Fuel flap on the right front wing (-X; +X is the car's left).
   const fuel = [];
   for (let i = 0; i < 48; i++) {

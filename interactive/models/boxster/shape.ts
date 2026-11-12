@@ -12,6 +12,7 @@ export const axles = [1.2075, -1.2075];
 export const archRadius = (axle: number) => (axle > 0 ? 0.368 : 0.365);
 
 const table = (rows: number[][]) => (z: number) => profile(rows, z);
+const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 // Restore the raised haunches and front wings seen in the level side reference.
 // Lift the lid and crest together so the bonnet keeps its outward crown.
 const upperLift = table([
@@ -42,7 +43,10 @@ const centreBase = table([
   [1.45, 0.768],
   [1.66, 0.733],
 ]);
-const centre = (z: number) => centreBase(z) + upperLift(z);
+// One continuous longitudinal crown avoids inflections from several independently
+// interpolated station tables. The original wing heights remain outside the lid.
+const rearLidHeight = (z: number) => 0.935 - 0.18 * (z + 1.05) ** 2;
+const centre = (z: number) => lerp(rearLidHeight(z), centreBase(z) + upperLift(z), smooth(-0.95, -0.7, z));
 const crestX = table([
   [-1.74, 0.64],
   [-1.5, 0.665],
@@ -169,6 +173,10 @@ export function section(z: number) {
         point[0] = lerp(point[0], p1[0] * u, lid);
         point[1] = lerp(point[1], y, lid);
       }
+      if (s === 0 && z < -0.7) {
+        const weight = (1 - smooth(-0.95, -0.7, z)) * (1 - smooth(0.4, 0.6, point[0]));
+        point[1] = lerp(point[1], rearLidHeight(z) - 0.04 * point[0] ** 2, weight);
+      }
       points.push(point);
     }
   });
@@ -178,16 +186,17 @@ export function section(z: number) {
 // Continue the lid's slope into a short rounded shoulder before the bumper
 // turns down. Without that shared tangent the loft forms a pointed corner at
 // its top centre, even when the two mirrored halves have matching normals.
-function endTangent(from: number, to: number, startTangent: number, isNose: boolean) {
-  // A quadratic roll keeps the bonnet turning outwards all the way to its edge.
+function endTangent(from: number, to: number, startTangent: number) {
+  // A quadratic roll keeps each lid turning outwards all the way to its edge.
   // Ending at the average slope makes a cubic flatten and reverse curvature.
-  return isNose ? 2 * (to - from) - startTangent : to - from;
+  return 2 * (to - from) - startTangent;
 }
 
 function roundLidCorner(rows: number[][], start: number, run: number, tau: number, isNose = false) {
   const [, y, z] = rows[0];
-  const tangent = ((centre(start) - centre(start - 0.015)) / 0.015) * (z - start);
-  const slope = endTangent(centre(start), y, tangent, isNose) / (z - start);
+  const inside = start + (isNose ? -0.015 : 0.015);
+  const tangent = ((centre(start) - centre(inside)) / (start - inside)) * (z - start);
+  const slope = endTangent(centre(start), y, tangent) / (z - start);
   return [rows[0], [tau, y + slope * run, z + run], ...rows.slice(1)];
 }
 
@@ -213,7 +222,7 @@ const noseProfile = roundLidCorner(
 const tailProfile = roundLidCorner(
   [
     [0, 0.768, -1.985],
-    [0.1, 0.745, -2.052],
+    [0.1, 0.733, -2.052],
     [0.18, 0.7, -2.077],
     [0.34, 0.6, -2.102],
     [0.5, 0.48, -2.12],
@@ -242,7 +251,6 @@ function tauOf(i: number) {
   // A linear endpoint mapping leaves a V-shaped ridge along the lid centre.
   return hermite([stops[s], 0], [slope(s) * span, 0], [stops[s + 1], 0], [slope(s + 1) * span, 0], t)[0];
 }
-const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 const ramp = (rows: number[][], i: number) => profile(rows, i / (columns - 1));
 
 // Rounded bumper corners in plan; the height blend below retains the side
@@ -288,9 +296,9 @@ export function endPoint(i: number, start: number[], theta: number, isNose: bool
   const inside = section(z0 + (isNose ? -0.015 : 0.015))[i];
   const slope = (y0 - inside[1]) / (isNose ? 0.015 : -0.015);
   const tangent = slope * (zEnd - z0);
-  // Keep the revised roll on the bonnet, fading out before the lamp-bearing wings.
-  const roll = isNose ? 1 - smooth(0.35, 0.7, i / counts[0]) : 0;
-  const finish = lerp(yEnd - y0, endTangent(y0, yEnd, tangent, isNose), roll);
+  // Keep the lid roll inside the painted panel, fading before the lamp-bearing wings.
+  const roll = 1 - smooth(isNose ? 0.35 : 0.65, isNose ? 0.7 : 1, i / counts[0]);
+  const finish = lerp(yEnd - y0, endTangent(y0, yEnd, tangent), roll);
   const y =
     (2 * w ** 3 - 3 * w * w + 1) * y0 +
     (w ** 3 - 2 * w * w + w) * tangent +
@@ -325,7 +333,7 @@ export function grid() {
   return rows;
 }
 
-const smooth = (a: number, b: number, t: number) => {
+function smooth(a: number, b: number, t: number) {
   const s = Math.min(1, Math.max(0, (t - a) / (b - a)));
   return s * s * (3 - 2 * s);
-};
+}

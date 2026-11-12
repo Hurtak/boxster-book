@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { cylinder, group, mesh } from '../geometry.ts';
 import { radioUnit } from './radio.ts';
-import { rollHoop, seat } from './seats.ts';
+import { centreWindbreak, rollHoop, seat } from './seats.ts';
 import type { Palette } from './surfaces';
 import { ellipsoid, line3, patch, rounded } from './surfaces.ts';
 import { windscreenFrame, windscreenGlass, windscreenPoint } from './windscreen.ts';
@@ -160,33 +160,7 @@ export function cabin(parent: THREE.Object3D, p: Palette) {
     rollHoop(interior, p, side);
   }
   rounded(interior, [1.26, 0.17, 0.1], p.black, [0, 0.71, -0.595], 0.04);
-  const deflectorMaterial = new THREE.MeshStandardMaterial({
-    color: '#0a1011',
-    transparent: true,
-    opacity: 0.4,
-    side: THREE.DoubleSide,
-  });
-  rounded(interior, [0.35, 0.23, 0.009], deflectorMaterial, [0, 0.94, -0.6], 0.004);
-  for (let i = 0; i < 18; i++)
-    line3(
-      interior,
-      [
-        [-0.165 + i * 0.019, 0.835, -0.605],
-        [-0.165 + i * 0.019, 1.045, -0.605],
-      ],
-      0.0008,
-      p.black,
-    );
-  for (let i = 0; i < 11; i++)
-    line3(
-      interior,
-      [
-        [-0.165, 0.84 + i * 0.019, -0.605],
-        [0.165, 0.84 + i * 0.019, -0.605],
-      ],
-      0.0008,
-      p.black,
-    );
+  centreWindbreak(interior, p);
   patch(
     interior,
     'curved-tan-dashboard',

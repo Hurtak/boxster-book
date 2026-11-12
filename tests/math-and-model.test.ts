@@ -261,6 +261,74 @@ test('the bonnet forms an outward crown between the front wings', async () => {
     }
   }
 });
+test('the rear boot seam wraps down the rear shoulder with a straight lower edge and a crowned lid', async () => {
+  const source = await readFile(new URL('../interactive/models/reference-car.glb', import.meta.url));
+  const { scene } = await new GLTFLoader().parseAsync(
+    source.buffer.slice(source.byteOffset, source.byteOffset + source.byteLength),
+    '',
+  );
+  scene.updateMatrixWorld(true);
+  const seam = modelPart(scene, 'rear-boot-seam');
+  const bounds = new Box3().setFromObject(seam);
+  assert.ok(bounds.min.y < 0.745 && bounds.min.z < -2.02, 'The lid edge must wrap onto the rear face');
+  const edge = new Box3();
+  seam.traverse((object) => {
+    if (!(object instanceof Mesh)) return;
+    const positions = object.geometry.attributes.position;
+    for (let i = 0; i < positions.count; i++) {
+      const point = new Vector3().fromBufferAttribute(positions, i).applyMatrix4(object.matrixWorld);
+      if (point.z < -2.02 && Math.abs(point.x) < 0.4) edge.expandByPoint(point);
+    }
+  });
+  assert.ok(edge.getSize(new Vector3()).x > 0.65 && edge.getSize(new Vector3()).y < 0.015);
+  const shell = modelPart(scene, 'body-shell');
+  const height = (x: number, z: number) => {
+    const hit = new Raycaster(new Vector3(x, 2, z), new Vector3(0, -1, 0)).intersectObject(shell)[0];
+    assert.ok(hit);
+    return hit.point.y;
+  };
+  for (const z of [-1.25, -1.5, -1.68])
+    for (const x of [0.12, 0.24, 0.4])
+      assert.ok(height(0, z) >= (height(-x, z) + height(x, z)) / 2 - 0.0001, `Recessed rear lid at ${x}, ${z}`);
+  for (const x of [-0.2, 0, 0.2])
+    for (const z of [-1.72, -1.8, -1.88, -1.96])
+      assert.ok(
+        height(x, z) >= (height(x, z - 0.04) + height(x, z + 0.04)) / 2 - 0.0001,
+        `Rear roll reverses at ${x}, ${z}`,
+      );
+});
+test('rear roll hoops have flattened crowns and a visible screen above the head restraints', async () => {
+  const source = await readFile(new URL('../interactive/models/reference-car.glb', import.meta.url));
+  const { scene } = await new GLTFLoader().parseAsync(
+    source.buffer.slice(source.byteOffset, source.byteOffset + source.byteLength),
+    '',
+  );
+  scene.updateMatrixWorld(true);
+  for (const side of [-1, 1]) {
+    const hoop = modelPart(scene, `roll-hoop-${side}`);
+    const envelope = new Box3().setFromObject(hoop);
+    const seat = new Box3().setFromObject(modelPart(scene, side > 0 ? 'driver-seat' : 'passenger-seat'));
+    const clearance = envelope.max.y - seat.max.y;
+    // Broad photo-guided bands, not Porsche fitting or safety dimensions.
+    assert.ok(clearance > 0.075 && clearance < 0.13, `Hoop/headrest clearance: ${clearance}`);
+    const crown = new Box3();
+    modelPart(hoop, `roll-hoop-shell-${side}`).traverse((object) => {
+      if (!(object instanceof Mesh)) return;
+      const position = object.geometry.attributes.position;
+      for (let i = 0; i < position.count; i++) {
+        const point = new Vector3().fromBufferAttribute(position, i).applyMatrix4(object.matrixWorld);
+        if (point.y > envelope.max.y - 0.012) crown.expandByPoint(point);
+      }
+    });
+    assert.ok(crown.getSize(new Vector3()).x > 0.18, 'A broad flat crown replaces the semicircular headrest loop');
+    const screen = new Box3().setFromObject(modelPart(hoop, `roll-hoop-screen-${side}`));
+    assert.ok(screen.max.y > seat.max.y + 0.03 && screen.max.y < envelope.max.y - 0.02);
+  }
+  const centre = modelPart(scene, 'centre-windbreak-pane');
+  assert.ok(centre instanceof Mesh && !Array.isArray(centre.material));
+  assert.ok(centre.material.transparent && centre.material.opacity < 0.4, 'The centre pane is clear, not mesh');
+  assert.ok(new Box3().setFromObject(centre).max.y > 1.17, 'The centre pane meets the upper hoop region');
+});
 test('the shipped car has smooth lid centrelines and proportioned mirrored lamps and seat hoops', async () => {
   const source = await readFile(new URL('../interactive/models/reference-car.glb', import.meta.url));
   const { scene } = await new GLTFLoader().parseAsync(
@@ -293,8 +361,8 @@ test('the shipped car has smooth lid centrelines and proportioned mirrored lamps
     const hoop = new Box3().setFromObject(modelPart(scene, `roll-hoop-${side}`));
     assert.ok(!hoop.isEmpty(), 'The named hoop must retain its geometry after export batching');
     assert.ok(
-      hoop.max.y > seat.max.y && hoop.max.y < windscreen.max.y + 0.015,
-      'The hoop should closely follow the head restraint below the windscreen header',
+      hoop.max.y > seat.max.y && hoop.max.y < windscreen.max.y + 0.06,
+      'The hoop must stand above the head restraint, close to the windscreen height',
     );
     assert.ok(
       hoop.getSize(new Vector3()).x < seat.getSize(new Vector3()).x,

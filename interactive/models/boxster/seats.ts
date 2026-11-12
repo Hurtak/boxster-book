@@ -142,16 +142,50 @@ export function seat(parent: THREE.Object3D, p: Palette, side: number, { belt = 
 
 export const hoopOutline = [
   [-0.192, 0.745],
-  [-0.181, 0.9],
-  [-0.151, 1.033],
-  [-0.109, 1.099],
-  [0, 1.126],
-  [0.109, 1.099],
-  [0.151, 1.033],
-  [0.181, 0.9],
+  [-0.184, 0.9],
+  [-0.16, 1.05],
+  [-0.135, 1.15],
+  [-0.112, 1.183],
+  [-0.085, 1.194],
+  [0, 1.197],
+  [0.085, 1.194],
+  [0.112, 1.183],
+  [0.135, 1.15],
+  [0.16, 1.05],
+  [0.184, 0.9],
   [0.192, 0.745],
 ];
 export const hoopDepth = (y: number) => -0.547 - (y - 0.745) * 0.105;
+
+// PET 812-001 separates the mesh side inserts from this clear centre panel.
+export function centreWindbreak(parent: THREE.Object3D, p: Palette) {
+  const root = group('centre-windbreak', parent);
+  root.userData.carPart = true;
+  const outline = new THREE.Shape();
+  outline.moveTo(-0.225, 1.184);
+  outline.quadraticCurveTo(-0.21, 1.08, -0.19, 0.945);
+  outline.quadraticCurveTo(0, 0.93, 0.19, 0.945);
+  outline.quadraticCurveTo(0.21, 1.08, 0.225, 1.184);
+  outline.quadraticCurveTo(0.11, 1.193, 0.04, 1.177);
+  outline.lineTo(-0.04, 1.177);
+  outline.quadraticCurveTo(-0.11, 1.193, -0.225, 1.184);
+  const geometry = new THREE.ShapeGeometry(outline, 32);
+  const positions = geometry.attributes.position;
+  for (let i = 0; i < positions.count; i++) positions.setZ(i, hoopDepth(positions.getY(i)) - 0.005);
+  geometry.computeVertexNormals();
+  const clear = p.glass.clone();
+  clear.name = 'Clear centre windbreak';
+  clear.opacity = 0.22;
+  mesh(root, geometry, clear).name = 'centre-windbreak-pane';
+  line3(
+    root,
+    outline.getPoints(80).map((point) => [point.x, point.y, hoopDepth(point.y) - 0.005]),
+    0.003,
+    p.black,
+    true,
+  );
+  return root;
+}
 
 // Flattened, slightly rearward leaning hoops closely follow the head restraints.
 // The reference rear photograph has a silver rear face and tan front trim.
@@ -183,7 +217,7 @@ export function rollHoop(parent: THREE.Object3D, p: Palette, side: number) {
   trim.name = 'Aluminium-look hoop trim';
   trim.roughness = 0.4;
   trim.metalness = 0.6;
-  mesh(root, smoothBand, trim).name = 'roll-hoop-shell';
+  mesh(root, smoothBand, trim).name = `roll-hoop-shell-${side}`;
   const tanPath = path.getPoints(120).map((point) => [point.x, point.y, point.z + 0.016]);
   line3(root, tanPath, 0.008, p.tan);
   const screen = new THREE.MeshStandardMaterial({
@@ -194,51 +228,53 @@ export function rollHoop(parent: THREE.Object3D, p: Palette, side: number) {
     side: THREE.DoubleSide,
     depthWrite: false,
   });
-  const opening = new THREE.Shape();
-  opening.moveTo(-0.159, 0.77);
-  opening.lineTo(-0.146, 0.98);
-  opening.bezierCurveTo(-0.13, 1.073, -0.08, 1.1, 0, 1.101);
-  opening.bezierCurveTo(0.08, 1.1, 0.13, 1.073, 0.146, 0.98);
-  opening.lineTo(0.159, 0.77);
-  opening.closePath();
+  // Derive the opening from the same crown and sloping legs as the trim.
+  // A separate semicircular screen profile previously left the upper mesh low.
+  const inner = Array.from({ length: 161 }, (_, i) => {
+    const t = i / 160,
+      point = path.getPoint(t),
+      tangent = path.getTangent(t);
+    const length = Math.hypot(tangent.x, tangent.y);
+    return new THREE.Vector2(point.x + (0.029 * tangent.y) / length, point.y - (0.029 * tangent.x) / length);
+  }).filter((point) => point.y >= 0.78);
+  const opening = new THREE.Shape(inner);
   const screenGeometry = new THREE.ShapeGeometry(opening, 32);
   const positions = screenGeometry.attributes.position;
   for (let i = 0; i < positions.count; i++) positions.setZ(i, zAt(positions.getY(i)) - 0.008);
   screenGeometry.computeVertexNormals();
-  mesh(root, screenGeometry, screen).name = 'roll-hoop-screen';
-  const half = (y: number) =>
-    profile(
-      [
-        [0.77, 0.158],
-        [0.98, 0.146],
-        [1.055, 0.109],
-        [1.09, 0.052],
-        [1.101, 0],
-      ],
-      y,
-    );
-  for (let i = 0; i < 49; i++) {
-    const x = -0.144 + i * 0.006;
-    let y = 1.1;
-    while (y > 0.78 && half(y) < Math.abs(x)) y -= 0.002;
+  mesh(root, screenGeometry, screen).name = `roll-hoop-screen-${side}`;
+  const span = (axis: 'x' | 'y', value: number) => {
+    const other = axis === 'x' ? 'y' : 'x';
+    const hits = inner.flatMap((a, i) => {
+      const b = inner[(i + 1) % inner.length];
+      if (a[axis] > value === b[axis] > value) return [];
+      return [a[other] + ((value - a[axis]) / (b[axis] - a[axis])) * (b[other] - a[other])];
+    });
+    return [Math.min(...hits), Math.max(...hits)];
+  };
+  for (let i = 0; i < 51; i++) {
+    const x = -0.15 + i * 0.006,
+      [bottom, top] = span('x', x);
+    if (!Number.isFinite(bottom + top)) continue;
     line3(
       root,
       [
-        [x, 0.775, zAt(0.775) - 0.009],
-        [x, y, zAt(y) - 0.009],
+        [x, bottom, zAt(bottom) - 0.009],
+        [x, top, zAt(top) - 0.009],
       ],
       0.00038,
       p.black,
     );
   }
-  for (let i = 0; i < 53; i++) {
-    const y = 0.78 + i * 0.006,
-      w = half(y);
+  for (let i = 0; i < 65; i++) {
+    const y = 0.785 + i * 0.006,
+      [left, right] = span('y', y);
+    if (!Number.isFinite(left + right)) continue;
     line3(
       root,
       [
-        [-w, y, zAt(y) - 0.009],
-        [w, y, zAt(y) - 0.009],
+        [left, y, zAt(y) - 0.009],
+        [right, y, zAt(y) - 0.009],
       ],
       0.00038,
       p.black,
