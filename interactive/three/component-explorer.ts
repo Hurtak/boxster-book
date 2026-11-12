@@ -111,7 +111,7 @@ export async function mountExplorer(
   let visualProgress = state.progress;
   let visualFocus = Number(state.focusPart);
   let car: THREE.Object3D | undefined, view: ReturnType<typeof scene3D> | undefined;
-  let model!: THREE.Object3D, locator!: THREE.Box3Helper;
+  let model!: THREE.Object3D;
   let disposeReplaced = () => {};
   let links: (ExplorerConfig['connections'][number] & { line: THREE.Line })[] = [];
   try {
@@ -220,11 +220,6 @@ export async function mountExplorer(
       carBox: THREE.Box3,
       carCorners: THREE.Vector3[],
       contextBox: THREE.Box3;
-    const focusBox = new THREE.Box3().setFromObject(byName.get(config.focus)!.object);
-    locator = new THREE.Box3Helper(focusBox, '#327cc3');
-    (locator.material as THREE.LineBasicMaterial).depthTest = false;
-    (locator.material as THREE.LineBasicMaterial).transparent = true;
-    (locator.material as THREE.LineBasicMaterial).opacity = 0.9;
     links = config.connections.map((connection) => {
       if (!byName.has(connection.from) || !byName.has(connection.to))
         throw new Error(`Unknown connection in ${config.id}`);
@@ -310,7 +305,6 @@ export async function mountExplorer(
           ]);
           link.line.computeLineDistances();
         }
-        locator.visible = progress < 40;
         if (!moveCamera) return;
         const camera = mountedView.camera;
         const timeline = [
@@ -422,7 +416,6 @@ export async function mountExplorer(
     signal.addEventListener('abort', disposeReplaced, { once: true });
     assembledBox = new THREE.Box3().setFromObject(model);
     assembledCorners = geometryCorners(model);
-    locator.box.setFromObject(byName.get(config.focus)!.object);
     for (const part of parts) part.object.position.copy(part.initial).add(new THREE.Vector3(...part.explode));
     explodedBox = new THREE.Box3().setFromObject(model);
     explodedCorners = geometryCorners(model);
@@ -431,7 +424,6 @@ export async function mountExplorer(
     view.controls.maxDistance = 20;
     view.renderer.domElement.setAttribute('aria-label', `${config.title}. ${config.location} ${cameraHelp}`);
     view.scene.add(car, model);
-    view.scene.add(locator);
     links.forEach((link) => view!.scene.add(link.line));
     carBox = new THREE.Box3().setFromObject(car).union(assembledBox);
     carCorners = [...geometryCorners(car), ...assembledCorners];
@@ -448,7 +440,6 @@ export async function mountExplorer(
     else {
       if (car) disposeObject(car);
       if (model) disposeObject(model);
-      if (locator) disposeObject(locator);
       links.forEach((link) => disposeObject(link.line));
     }
     throw error;

@@ -567,6 +567,75 @@ test('a failed reader script still leaves a readable static book', async () => {
     await page.close();
   }
 });
+test('headlamp optics remain visible when the shared car begins fading and restore their refractive covers', async () => {
+  const bundle = await build({
+    entryPoints: [resolve('tests/fixtures/model-fade.ts')],
+    bundle: true,
+    write: false,
+    format: 'iife',
+    target: 'es2022',
+  });
+  const car = await readFile(resolve('interactive/models/reference-car.glb'));
+  const page = await browser.newPage({ viewport: { width: 1000, height: 800 } });
+  try {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    await page.route('**/fade-car.glb', (route) => route.fulfill({ contentType: 'model/gltf-binary', body: car }));
+    await page.route('**/headlamp-fixture', (route) =>
+      route.fulfill({
+        contentType: 'text/html',
+        body: '<main id="stage" data-model="./fade-car.glb" style="width:900px;height:650px"></main><input type="range" aria-label="Opacity" min="0" max="1000" value="1000">',
+      }),
+    );
+    await page.goto(`${preview}headlamp-fixture`);
+    await page.addScriptTag({ content: bundle.outputFiles[0].text });
+    const stage = page.locator('#stage');
+    const waitForAmount = (amount: string) =>
+      page.waitForFunction(
+        (amount) => document.querySelector<HTMLElement>('#stage')!.dataset.amount === amount,
+        amount,
+      );
+    const saveFrame = async (name: string) => {
+      const data = (await stage.getAttribute('data-image'))!.split(',')[1];
+      await writeFile(resolve(previews, `headlamp-fade-${name}.png`), Buffer.from(data, 'base64'));
+    };
+    await waitForAmount('1');
+    const originals = await stage.getAttribute('data-covers');
+    const originalBright = JSON.parse((await stage.getAttribute('data-bright'))!) as number[];
+    await saveFrame('full');
+    await page.getByRole('slider', { name: 'Opacity' }).fill('999');
+    await waitForAmount('0.999');
+    await saveFrame('start');
+    const bright = JSON.parse((await stage.getAttribute('data-bright'))!) as number[];
+    bright.forEach((value, i) =>
+      assert.ok(
+        value < originalBright[i] + 0.08,
+        `A 0.1% fade must not wash out the optics: bright headlamp pixels increased from ${(originalBright[i] * 100).toFixed(1)}% to ${(value * 100).toFixed(1)}%`,
+      ),
+    );
+    await page.getByRole('slider', { name: 'Opacity' }).fill('500');
+    await waitForAmount('0.5');
+    await saveFrame('half');
+    await page.getByRole('slider', { name: 'Opacity' }).fill('0');
+    await waitForAmount('0');
+    await saveFrame('hidden');
+    await page.getByRole('slider', { name: 'Opacity' }).fill('1000');
+    await waitForAmount('1');
+    assert.equal(
+      await stage.getAttribute('data-covers'),
+      originals,
+      'Returning to the whole car restores the original glass',
+    );
+    const restored = JSON.parse((await stage.getAttribute('data-difference'))!) as number[];
+    assert.ok(
+      restored.every((difference) => difference < 0.05),
+      'Reset restores the original refracted image',
+    );
+    assert.deepEqual(errors, []);
+  } finally {
+    await page.close();
+  }
+});
 test('3D camera gestures pan without rotating or zooming and preserve plain orbit and wheel zoom', async () => {
   const bundle = await build({
     entryPoints: [resolve('tests/fixtures/scene-controls.ts')],

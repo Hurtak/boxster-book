@@ -242,7 +242,17 @@ export function opacity(root: THREE.Object3D, amount: number) {
     if (!isRenderable(object)) return;
     for (const material of [object.material].flat().filter(Boolean)) {
       material.userData.originalOpacity ??= material.opacity;
-      const value = amount * material.userData.originalOpacity;
+      let value = amount * material.userData.originalOpacity;
+      if (material instanceof THREE.MeshPhysicalMaterial) {
+        material.userData.originalTransmission ??= material.transmission;
+        const transmission = material.userData.originalTransmission as number;
+        // The refraction pass excludes transparent optics. While fading, use
+        // alpha-blended glass so the cover cannot replace them with background.
+        const next = amount < 1 ? 0 : transmission;
+        if (material.transmission > 0 !== next > 0) material.needsUpdate = true;
+        material.transmission = next;
+        if (amount < 1) value *= 1 - transmission;
+      }
       if (material.transparent !== value < 1) material.needsUpdate = true;
       material.transparent = value < 1;
       material.opacity = value;
