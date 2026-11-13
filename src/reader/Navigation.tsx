@@ -5,7 +5,7 @@ import { PrintBook } from './PrintBook';
 export function sectionsFor(chapter: Chapter) {
   return [
     ...chapter.headings.filter((h) => h.depth === 2),
-    ...(chapter.noteCount ? [{ id: chapter.id + '--notes', title: 'Notes and sources', depth: 2 }] : []),
+    ...(chapter.noteCount ? [{ id: `${chapter.id}/sources`, title: 'Notes and sources', depth: 2 }] : []),
   ];
 }
 export function ChapterNavigation({

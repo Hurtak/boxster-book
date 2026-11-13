@@ -29,10 +29,19 @@ function remarkBook(book: BookInventory) {
     if (!chapter) throw Error(`Chapter is absent from the book manifest: ${file.path}`);
     const destinations = book.destinations.get(chapter.file)!;
     explicitHeadings(tree);
-    const prefix = chapter.id.slice(0, chapter.id.lastIndexOf('__') + 2);
-    for (const heading of headingRecords(tree, prefix)) {
+    for (const heading of headingRecords(tree, chapter.id)) {
       heading.node.data = { ...heading.node.data, hProperties: { id: heading.id } };
     }
+    visit(tree, 'mdxJsxFlowElement', (node) => {
+      if (node.name === 'details') {
+        // A citation backlink can open a technical disclosure before hydration.
+        node.attributes.push({ type: 'mdxJsxAttribute', name: 'suppressHydrationWarning', value: null });
+      }
+      if (node.name !== 'Diagram') return;
+      const id = node.attributes.find((a) => a.type === 'mdxJsxAttribute' && a.name === 'id');
+      if (!id || id.type !== 'mdxJsxAttribute' || typeof id.value !== 'string') return;
+      node.attributes.push({ type: 'mdxJsxAttribute', name: 'anchor', value: `${chapter.id}/diagram/${id.value}` });
+    });
     visit(tree, 'link', (node) => {
       node.url = resolveBookLink(node.url, chapter, book);
     });
@@ -49,16 +58,12 @@ function remarkBook(book: BookInventory) {
       if (!definition) throw Error(`Missing note ${node.identifier} in ${chapter.file}`);
       used.add(node.identifier);
       const number = ++local;
-      const destination = destinations.notes[number - 1];
+      const destination = destinations[number - 1];
       const reference = {
         ...component('SourceReference', {
           note: destination.id,
           reference: destination.reference,
           number: String(number),
-          aliases: Object.entries(destinations.aliases)
-            .filter(([, target]) => target === destination.reference)
-            .map(([id]) => id)
-            .join(' '),
         }),
         type: 'mdxJsxTextElement' as const,
         children: [] as PhrasingContent[],
@@ -97,17 +102,17 @@ function remarkBook(book: BookInventory) {
     tree.children = tree.children.filter((n) => n.type !== 'footnoteDefinition');
     if (notes.length)
       tree.children.push(
-        component('SourceNotes', { id: chapter.id + '--notes', count: String(notes.length) }, [
+        component('SourceNotes', { id: `${chapter.id}/sources`, count: String(notes.length) }, [
           { type: 'list', ordered: true, start: 1, spread: true, children: notes },
         ]),
       );
   };
 }
 
-// Preserve Pandoc's section wrappers/fragment IDs, while React chooses heading
-// levels appropriate to the complete document or the enhanced chapter reader.
-function rehypeSections(book: BookInventory) {
-  return (tree: HtmlRoot, file: { path?: string }) => {
+// Wrap sections for navigation and printing; React chooses heading levels for
+// the complete document and the enhanced chapter reader.
+function rehypeSections() {
+  return (tree: HtmlRoot) => {
     const result: HtmlContent[] = [];
     const stack: { depth: number; node: Element }[] = [];
     for (const node of tree.children) {
@@ -134,18 +139,6 @@ function rehypeSections(book: BookInventory) {
       } else (stack.at(-1)?.node.children ?? result).push(node as Element);
     }
     tree.children = result;
-    const aliases = Object.entries(book.destinations.get(file.path!)!.aliases);
-    visit(tree, 'element', (node) => {
-      for (const [id, target] of aliases) {
-        if (node.properties.id !== target) continue;
-        node.children.unshift({
-          type: 'element',
-          tagName: 'span',
-          properties: { id, 'data-fragment-target': target, 'aria-hidden': 'true' },
-          children: [],
-        });
-      }
-    });
   };
 }
 
@@ -153,6 +146,6 @@ export function compilerOptions(book: BookInventory): CompileOptions {
   return {
     format: 'mdx',
     remarkPlugins: [remarkGfm, remarkSmartypants, [remarkBook, book]],
-    rehypePlugins: [[rehypeSections, book]],
+    rehypePlugins: [rehypeSections],
   };
 }

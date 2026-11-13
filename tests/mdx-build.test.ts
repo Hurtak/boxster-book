@@ -26,7 +26,7 @@ async function fixture(files: Record<string, string>, work: (source: string) => 
     await rm(folder, { recursive: true, force: true });
   }
 }
-test('all MDX chapters preserve the published chapter and section destinations', async () => {
+test('all MDX chapters compile with their current chapter and section routes', async () => {
   const contract = JSON.parse(await readFile(resolve(root, 'tests/fixtures/manuscript-baseline.json'), 'utf8'));
   const book = await discoverBook(resolve(root, 'book'), root);
   assert.equal(book.chapters.length, contract.chapters.length);
@@ -44,15 +44,12 @@ test('all MDX chapters preserve the published chapter and section destinations',
     await compile({ path: chapter.file, value: await readFile(chapter.file, 'utf8') }, compilerOptions(book));
   }
 });
-test('GFM tables, repeated notes, captions and legacy source links compile with the same options', async () => {
+test('GFM tables, repeated notes, captions and chapter links compile with clean routes', async () => {
   await fixture(
     {
-      'published-links.json': JSON.stringify({
-        chapters: { '01-sample': { headings: {}, notes: { one: [1, 2], two: [3] } } },
-      }),
       '01-sample/index.mdx': `# Sample
 
-Intro[^one], repeated[^one], then another[^two]. [Legacy](index.md#details).
+Intro[^one], repeated[^one], then another[^two]. [Details](index.mdx#details).
 
 ## Details
 
@@ -90,17 +87,15 @@ Caption with **detail** and [credit](https://example.com).
         html,
         /<figcaption>Caption with <strong>detail<\/strong> and <a href="https:\/\/example.com">credit<\/a>\.<\/figcaption>/,
       );
-      assert.match(html, /id="fn1"/);
-      assert.match(html, /id="fn2"/);
-      assert.match(html, /id="fn3"/);
+      assert.match(html, /id="sample\/sources\/one"/);
+      assert.match(html, /id="sample\/sources\/one\/2"/);
+      assert.match(html, /id="sample\/sources\/two"/);
       assert.equal((html.match(/First source\./g) || []).length, 2);
-      for (const n of [1, 2, 3]) assert.match(html, new RegExp(`href="#fnref${n}"`));
+      for (const route of ['one/1', 'one/2', 'two/1']) assert.ok(html.includes(`href="#sample/references/${route}"`));
       assert.match(html, /<details[^>]*class="chapter-notes"[^>]*>/);
       assert.doesNotMatch(html, /<details[^>]* open/);
-      assert.equal(
-        resolveBookLink('index.mdx#details', chapter, book),
-        resolveBookLink('index.md#details', chapter, book),
-      );
+      assert.equal(resolveBookLink('index.mdx#details', chapter, book), '#sample/details');
+      assert.throws(() => resolveBookLink('index.md#details', chapter, book), /Unknown chapter link/);
     },
   );
 });
@@ -124,82 +119,105 @@ test('invalid authoring fails with actionable chapter, heading, diagram and note
       await assert.rejects(discoverBook(source, root), pattern);
     });
 });
-test('published links survive renamed headings, reordered sources and removed duplicate citations', async () => {
+test('chapter, section, source and diagram routes are readable and independent of citation order', async () => {
   await fixture(
     {
-      'published-links.json': JSON.stringify({
-        chapters: {
-          '01-one': { headings: { 'old-topic': 'new-topic' }, notes: { first: [38, 41], second: [39] } },
-          '02-two': { headings: {}, notes: { third: [40] } },
-        },
-      }),
-      '01-one/index.mdx':
-        '# One\n\nSecond[^second], new[^new], first[^first]. [Old](#old-topic).\n\n## New topic\n\n[^first]: First source.\n[^second]: Second source.\n[^new]: New source.\n',
-      '02-two/index.mdx': '# Two\n\nThird[^third].\n\n[^third]: Third source.\n',
+      'routes.json': JSON.stringify({ '01-one': 'brakes', '02-two': 'roof' }),
+      '01-one/index.mdx': `# A long chapter title
+
+Second[^second], first[^first], repeated[^first].
+[Local](#new-topic). [Roof](../02-two/index.mdx#topic). [Direct](#roof/topic).
+[Sources](#sources). [Diagram](#diagram/caliper-pressure).
+
+## New topic
+
+### Other 2.9 model years
+
+<Diagram id="caliper-pressure" poster="data:image/svg+xml;base64,PHN2Zy8+" alt="Caliper section" />
+
+[^first]: First source.
+[^second]: Second source.
+`,
+      '01-one/diagrams/caliper-pressure/index.ts': 'export function mount() {}',
+      '02-two/index.mdx': '# Two\n\n## Topic\n\nThird[^first].\n\n[^first]: Third source.\n',
     },
     async (source) => {
-      const render = async (book: Awaited<ReturnType<typeof discoverBook>>, index: number) => {
-        const chapter = book.chapters[index];
-        const code = await compile(
-          { path: chapter.file, value: await readFile(chapter.file, 'utf8') },
-          {
-            ...compilerOptions(book),
-            outputFormat: 'function-body',
-          },
-        );
-        const module = await run(String(code), jsx);
-        return renderToString(createElement(module.default, { components: { SourceReference, SourceNotes } }));
-      };
-      const before = await discoverBook(source, root);
-      const destinations = before.destinations.get(before.chapters[0].file)!;
-      assert.equal(destinations.notes[0].id, 'fn39');
-      assert.equal(destinations.notes[2].id, 'fn38');
-      assert.equal(destinations.aliases.fn41, 'fn38');
-      assert.equal(destinations.aliases.fnref41, 'fnref38');
-      const html = await render(before, 0);
-      assert.match(
-        html,
-        /id="book__01-one__index.md__old-topic" data-fragment-target="book__01-one__index.md__new-topic"/,
+      const before = await discoverBook(source, root),
+        chapter = before.chapters[0];
+      assert.equal(chapter.id, 'brakes');
+      assert.deepEqual(
+        chapter.headings.map((h) => h.id),
+        ['brakes/new-topic', 'brakes/other-2-9-model-years'],
       );
-      assert.match(html, /id="fn41" data-fragment-target="fn38"/);
-      assert.match(html, /id="fnref41" data-fragment-target="fnref38"/);
-      assert.match(html, /href="#fn38" id="fnref38"[^>]*>.*?<sup>3<\/sup>/);
-      assert.match(await render(before, 1), /id="fn40"/);
+      assert.equal(resolveBookLink('../02-two/index.mdx#topic', chapter, before), '#roof/topic');
+      assert.equal(resolveBookLink('#roof/topic', chapter, before), '#roof/topic');
+      assert.equal(resolveBookLink('#other-2.9-model-years', chapter, before), '#brakes/other-2-9-model-years');
+      assert.equal(resolveBookLink('#sources', chapter, before), '#brakes/sources');
+      assert.equal(resolveBookLink('#diagram/caliper-pressure', chapter, before), '#brakes/diagram/caliper-pressure');
+      const destinations = before.destinations.get(chapter.file)!;
+      assert.deepEqual(destinations, [
+        { id: 'brakes/sources/second', reference: 'brakes/references/second/1' },
+        { id: 'brakes/sources/first', reference: 'brakes/references/first/1' },
+        { id: 'brakes/sources/first/2', reference: 'brakes/references/first/2' },
+      ]);
+      const code = await compile(
+        { path: chapter.file, value: await readFile(chapter.file, 'utf8') },
+        { ...compilerOptions(before), outputFormat: 'function-body' },
+      );
+      const module = await run(String(code), jsx);
+      const html = renderToString(
+        createElement(module.default, { components: { Diagram, SourceReference, SourceNotes } }),
+      );
+      assert.match(html, /id="brakes\/diagram\/caliper-pressure"/);
+      assert.match(html, /id="brakes\/sources"/);
+      assert.match(html, /href="#brakes\/sources\/first" id="brakes\/references\/first\/1"[^>]*><sup>2<\/sup>/);
+      assert.doesNotMatch(html, /book__|index\.md|data-fragment-target|id="fn(?:ref)?\d+"/);
       await writeFile(
-        before.chapters[0].file,
-        (await readFile(before.chapters[0].file, 'utf8')).replace(
-          'Second[^second], new[^new], first[^first]',
-          'First[^first], second[^second], new[^new]',
-        ),
+        chapter.file,
+        (await readFile(chapter.file, 'utf8'))
+          .replace('# A long chapter title', '# A revised title')
+          .replace(
+            'Second[^second], first[^first], repeated[^first]',
+            'First[^first], repeated[^first], second[^second]',
+          ),
       );
       const after = await discoverBook(source, root);
-      const reordered = after.destinations.get(after.chapters[0].file)!.notes;
-      assert.equal(reordered[0].id, 'fn38');
-      assert.equal(reordered[1].id, 'fn39');
-      assert.equal(reordered[2].id, destinations.notes[1].id, 'An unpublished source has a stable label-based ID');
-      assert.equal(after.destinations.get(after.chapters[1].file)!.notes[0].id, 'fn40');
+      assert.equal(after.chapters[0].id, 'brakes', 'Title changes do not rename chapter routes');
+      assert.deepEqual(after.destinations.get(chapter.file), [destinations[1], destinations[2], destinations[0]]);
+      assert.deepEqual(
+        after.destinations.get(after.chapters[1].file),
+        before.destinations.get(before.chapters[1].file),
+      );
     },
   );
 });
-test('broken or conflicting published destinations fail before rendering', async () => {
-  for (const [links, pattern] of [
-    [{ '01-one': { headings: { old: 'missing' }, notes: { one: [1] } } }, /Missing published heading target/],
-    [{ '01-one': { headings: {}, notes: { absent: [1] } } }, /Published source absent has no reference/],
-    [{ '01-one': { headings: {}, notes: { one: [1, 1] } } }, /Duplicate published destination/],
-    [{ '01-one': { headings: { old: 'new' }, notes: { one: [1] } } }, /Duplicate published destination/],
-    [{ '01-one': { headings: {}, notes: { one: [-1] } } }, /Invalid published note/],
-    [{ '02-missing': { headings: {}, notes: {} } }, /Published chapter is missing/],
-  ] as const) {
+test('invalid, missing, reserved and conflicting routes fail before rendering', async () => {
+  const cases: [Record<string, string>, RegExp][] = [
+    [{ '01-one': 'same', '02-two': 'same' }, /Duplicate heading/],
+    [{ '01-one': 'Bad Slug' }, /Invalid chapter route/],
+    [{ '01-one': 'title' }, /Reserved chapter route/],
+    [{ '03-missing': 'missing' }, /Chapter route has no chapter/],
+  ];
+  for (const [routes, pattern] of cases)
     await fixture(
       {
-        'published-links.json': JSON.stringify({ chapters: links }),
-        '01-one/index.mdx': '# One\n\nText[^one].\n\n## Old\n\n## New\n\n[^one]: Source.\n',
+        'routes.json': JSON.stringify(routes),
+        '01-one/index.mdx': '# One',
+        '02-two/index.mdx': '# Two',
       },
       async (source) => {
         await assert.rejects(discoverBook(source, root), pattern);
       },
     );
-  }
+  await fixture({ '01-one/index.mdx': '# One\n\n## Sources' }, async (source) => {
+    await assert.rejects(discoverBook(source, root), /Reserved heading route/);
+  });
+  await fixture(
+    { '01-one/index.mdx': '# One\n\nText[^one.two] and [^one-two].\n\n[^one.two]: First.\n[^one-two]: Second.' },
+    async (source) => {
+      await assert.rejects(discoverBook(source, root), /Duplicate source route/);
+    },
+  );
 });
 test('a failed book build leaves the previously successful export intact', async () => {
   await fixture(

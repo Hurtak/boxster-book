@@ -62,7 +62,7 @@ export function useReader(chapters: Chapter[]) {
     try {
       const saved = localStorage.getItem('boxster-reading-place') ?? '';
       // oxlint-disable-next-line react/set-state-in-effect -- Read browser preferences after deterministic SSR hydration.
-      setPlace(document.getElementById(saved)?.dataset.fragmentTarget ?? saved);
+      setPlace(document.getElementById(saved) ? saved : '');
     } catch {
       /* optional reading place */
     }
@@ -78,8 +78,7 @@ export function useReader(chapters: Chapter[]) {
     if (!enhanced) return;
     let cancelled = false;
     const id = destination.current,
-      anchor = document.getElementById(id),
-      target = document.getElementById(anchor?.dataset.fragmentTarget ?? id),
+      target = document.getElementById(id),
       behavior = initial.current ? 'auto' : scrollBehavior.current;
     for (let node = target?.closest('details'); node; node = node.parentElement?.closest('details')) node.open = true;
     const owner = target?.closest('section.level2');

@@ -46,7 +46,7 @@ export function bookConfig(
       if (asset) return `export default ${JSON.stringify(asset.key)};`;
     },
     configureServer(server) {
-      server.watcher.add(resolve(dirname(dirname(book.chapters[0].file)), 'published-links.json'));
+      server.watcher.add(resolve(dirname(dirname(book.chapters[0].file)), 'routes.json'));
       server.middlewares.use((request, response, next) => {
         const pathname = new URL(request.url ?? '/', 'http://localhost').pathname;
         const asset = [...assets.values()].find((a) => pathname === prefix + a.name);
@@ -73,7 +73,7 @@ export function bookConfig(
         const module = context.server.moduleGraph.getModuleById('\0virtual:' + name);
         if (module) context.server.moduleGraph.invalidateModule(module);
       }
-      if (context.file.endsWith('/published-links.json'))
+      if (context.file.endsWith('/routes.json'))
         for (const chapter of book.chapters) {
           const module = context.server.moduleGraph.getModuleById(chapter.file);
           if (module) context.server.moduleGraph.invalidateModule(module);

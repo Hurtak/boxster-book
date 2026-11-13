@@ -9,14 +9,14 @@ import remarkParse from 'remark-parse';
 import { unified } from 'unified';
 import { visit } from 'unist-util-visit';
 import type { ChapterMetadata } from '../../src/book/types';
-import { chapterDestinations, readPublishedLinks, type ChapterDestinations } from './published-links';
+import { noteDestinations, readChapterRoutes, routeSlug, type NoteDestination } from './routes';
 
 export interface BookInventory {
   root: string;
   chapters: ChapterMetadata[];
   diagrams: Record<string, string>;
   ids: Set<string>;
-  destinations: Map<string, ChapterDestinations>;
+  destinations: Map<string, NoteDestination[]>;
 }
 export const parser = () => unified().use(remarkParse).use(remarkMdx).use(remarkGfm);
 export const attribute = (node: MdxJsxFlowElement | MdxJsxTextElement, name: string) =>
@@ -48,26 +48,21 @@ export function explicitHeadings(tree: Root): void {
     Object.assign(node, { type: 'heading', depth, children, data: { hProperties: { id } } });
   });
 }
-export function headingRecords(tree: Root, prefix: string) {
+export function headingRecords(tree: Root, chapter: string) {
   const used = new Set<string>();
   const records: { node: Heading; id: string; title: string; depth: number }[] = [];
   visit(tree, 'heading', (node) => {
     const title = toString(node);
     const explicit = node.data?.hProperties?.id;
-    const base =
-      typeof explicit === 'string'
-        ? explicit
-        : title
-            .toLowerCase()
-            .replace(/[^\p{L}\p{N}_\-.\s]/gu, '')
-            .replace(/^[^\p{L}]*/u, '')
-            .replace(/\s+/g, '-') || 'section';
+    const base = routeSlug(typeof explicit === 'string' ? explicit : title) || 'section';
+    if (node.depth !== 1 && ['sources', 'references', 'diagram'].includes(base))
+      throw Error(`Reserved heading route: ${chapter}/${base}`);
     let slug = base,
       n = 1;
     if (explicit && used.has(slug)) throw Error(`Duplicate heading id: ${slug}`);
     while (used.has(slug)) slug = `${base}-${n++}`;
     used.add(slug);
-    records.push({ node, id: prefix + slug, title, depth: node.depth });
+    records.push({ node, id: node.depth === 1 ? chapter : `${chapter}/${slug}`, title, depth: node.depth });
   });
   return records;
 }
@@ -82,13 +77,13 @@ function readingText(node: Nodes): string {
   return ('children' in node ? node.children : []).map(readingText).join(block ? '\n' : '');
 }
 export async function discoverBook(source: string, root: string): Promise<BookInventory> {
-  const published = await readPublishedLinks(source);
+  const routes = await readChapterRoutes(source);
   const paths = (await readdir(source, { withFileTypes: true })).filter((e) => e.isDirectory() && /^\d/.test(e.name));
   const chapters: ChapterMetadata[] = [],
     diagrams: Record<string, string> = {},
     ids = new Set<string>(),
     numbers = new Set<number>();
-  const destinations = new Map<string, ChapterDestinations>();
+  const destinations = new Map<string, NoteDestination[]>();
   for (const entry of paths.sort((a, b) => Number(a.name.split('-')[0]) - Number(b.name.split('-')[0]))) {
     if (!/^\d{2,}-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.name)) throw Error(`Invalid chapter folder: ${entry.name}`);
     const number = Number(entry.name.split('-')[0]);
@@ -102,8 +97,9 @@ export async function discoverBook(source: string, root: string): Promise<BookIn
     const raw = await readFile(file, 'utf8');
     const tree = parser().parse(raw);
     explicitHeadings(tree);
-    const prefix = `book__${entry.name}__index.md__`;
-    const headings = headingRecords(tree, prefix);
+    const slug = routes[entry.name] ?? entry.name.replace(/^\d+-/, '');
+    if (['book', 'title', 'contents'].includes(slug)) throw Error(`Reserved chapter route: ${slug}`);
+    const headings = headingRecords(tree, slug);
     if (headings.filter((h) => h.depth === 1).length !== 1 || headings[0]?.depth !== 1)
       throw Error(`Each chapter needs exactly one opening # title: ${file}`);
     let noteCount = 0;
@@ -152,18 +148,17 @@ export async function discoverBook(source: string, root: string): Promise<BookIn
       if (ids.has(h.id)) throw Error(`Duplicate heading: ${h.id}`);
       ids.add(h.id);
     }
-    const links = chapterDestinations(
-      tree,
-      prefix,
-      headings.slice(1).map((h) => h.id),
-      published[entry.name],
-    );
-    for (const id of [...links.notes.flatMap((n) => [n.id, n.reference]), ...Object.keys(links.aliases)]) {
-      if (ids.has(id)) throw Error(`Duplicate published destination: ${id}`);
+    const notes = noteDestinations(tree, slug);
+    const generated = [
+      ...notes.flatMap((n) => [n.id, n.reference]),
+      ...(noteCount ? [`${slug}/sources`] : []),
+      ...references.map((id) => `${slug}/diagram/${id}`),
+    ];
+    for (const id of generated) {
+      if (ids.has(id)) throw Error(`Duplicate book destination: ${id}`);
       ids.add(id);
     }
-    destinations.set(file, links);
-    ids.add(headings[0].id + '--notes');
+    destinations.set(file, notes);
     chapters.push({
       number,
       file,
@@ -177,8 +172,8 @@ export async function discoverBook(source: string, root: string): Promise<BookIn
     });
   }
   if (!chapters.length) throw Error(`No numbered chapters in ${source}`);
-  for (const folder of Object.keys(published))
-    if (!paths.some((entry) => entry.name === folder)) throw Error(`Published chapter is missing: ${folder}`);
+  for (const folder of Object.keys(routes))
+    if (!paths.some((entry) => entry.name === folder)) throw Error(`Chapter route has no chapter: ${folder}`);
   // Validate links only after the complete chapter/heading index exists.
   const inventory = { root, chapters, diagrams, ids, destinations };
   for (const chapter of chapters) {
@@ -195,8 +190,8 @@ export function resolveBookLink(url: string, chapter: ChapterMetadata, book: Boo
   const [path, fragment = ''] = url.split('#');
   let owner = chapter;
   if (path) {
-    const file = resolve(dirname(chapter.file), decodeURIComponent(path)).replace(/index\.mdx?$/, 'index.md');
-    const match = book.chapters.find((c) => c.file.replace(/index\.mdx?$/, 'index.md') === file);
+    const file = resolve(dirname(chapter.file), decodeURIComponent(path));
+    const match = book.chapters.find((c) => c.file === file);
     if (!match) {
       if (/index\.mdx?$/.test(path)) throw Error(`Unknown chapter link ${url} in ${relative(book.root, chapter.file)}`);
       return url;
@@ -204,11 +199,12 @@ export function resolveBookLink(url: string, chapter: ChapterMetadata, book: Boo
     owner = match;
   }
   if (!path && !fragment) return url;
-  const id = fragment
-    ? fragment.startsWith('book__') || /^fn(?:ref)?\d+$/.test(fragment)
-      ? fragment
-      : owner.id.slice(0, owner.id.lastIndexOf('__') + 2) + decodeURIComponent(fragment)
-    : owner.id;
+  const decoded = decodeURIComponent(fragment);
+  const id = !decoded
+    ? owner.id
+    : book.ids.has(decoded) || ['book', 'title', 'contents'].includes(decoded)
+      ? decoded
+      : `${owner.id}/${decoded.split('/').map(routeSlug).join('/')}`;
   if (!book.ids.has(id) && !['book', 'title', 'contents'].includes(id))
     throw Error(`Unknown chapter heading ${url} in ${relative(book.root, chapter.file)}`);
   return '#' + id;

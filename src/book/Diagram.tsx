@@ -6,8 +6,9 @@ export interface DiagramProps {
   id: string;
   poster: string;
   alt: string;
+  anchor?: string;
 }
-export function Diagram({ id, poster, alt }: DiagramProps) {
+export function Diagram({ id, poster, alt, anchor }: DiagramProps) {
   const registry = useContext(Diagrams);
   const outer = useRef<HTMLDivElement>(null),
     host = useRef<HTMLDivElement>(null);
@@ -170,6 +171,7 @@ export function Diagram({ id, poster, alt }: DiagramProps) {
   }, [id, registry, showPoster]);
   return (
     <div
+      id={anchor}
       ref={outer}
       data-diagram={id}
       data-ui=""

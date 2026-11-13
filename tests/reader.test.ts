@@ -509,7 +509,7 @@ test('a slow chapter reload does not flash the cover before the reader hydrates'
       await gate;
       await route.continue();
     });
-    const id = 'book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems';
+    const id = 'brakes';
     (await page.goto(preview + '#' + id, { waitUntil: 'commit' }))!;
     await page.locator('#title').waitFor({ state: 'attached' });
     assert.equal(
@@ -1266,7 +1266,7 @@ test('static diagrams remain readable without JavaScript or WebGL', async () => 
     await page.close();
   }
 });
-test('the prerendered book preserves the manuscript, tables, figures and published note links at both URL mounts', async () => {
+test('the prerendered book preserves the manuscript, tables, figures and source links at both URL mounts', async () => {
   const baseline = JSON.parse(await readFile(resolve('tests/fixtures/manuscript-baseline.json'), 'utf8'));
   const normal = (value: string) =>
     value
@@ -1317,7 +1317,7 @@ test('the prerendered book preserves the manuscript, tables, figures and publish
         assert.deepEqual(
           after.headings,
           before.headings.map((h: { id: string }) => h.id),
-          `${label}: legacy section IDs`,
+          `${label}: section routes`,
         );
         assert.deepEqual(after.tables.map(hash), before.tables, `${label}: table cells`);
         assert.deepEqual(
@@ -1336,137 +1336,113 @@ test('the prerendered book preserves the manuscript, tables, figures and publish
     await context.close();
   }
 });
-test.each(['sections', 'sources'])(
-  'published $0 links retain their destinations after manuscript edits',
-  async (kind) => {
-    const published = JSON.parse(await readFile(resolve('tests/fixtures/published-links.json'), 'utf8'));
-    const context = await browser.newContext({ javaScriptEnabled: false });
-    try {
-      const page = await context.newPage();
-      await page.goto(site);
-      assert.deepEqual(
-        await page.locator('[id]').evaluateAll((nodes) => {
-          const seen = new Set<string>();
-          return nodes.flatMap((node) => (seen.has(node.id) ? [node.id] : (seen.add(node.id), [])));
-        }),
-        [],
-        'Published aliases must not introduce duplicate IDs',
-      );
-      const actual = await page.evaluate((chapters) => {
-        const destination = (id: string) => {
-          const anchor = document.getElementById(id);
-          return anchor?.hasAttribute('data-fragment-target')
-            ? document.getElementById(anchor.getAttribute('data-fragment-target')!)
-            : anchor;
-        };
-        return chapters.map(
-          (chapter: { id: string; headings: string[]; notes: { id: string; reference: string }[] }) => ({
-            sections: chapter.headings.map((id) => ({
-              id,
-              owner: destination(id)?.closest('section.level2')?.id,
-            })),
-            notes: chapter.notes.map(({ id, reference }) => {
-              const target = destination(id);
-              const clone = target?.cloneNode(true) as HTMLElement | undefined;
-              clone?.querySelectorAll('.footnote-back').forEach((node) => node.remove());
-              const backlink = destination(reference) as HTMLAnchorElement | null;
-              return {
-                id,
-                owner: target?.closest('section.level2')?.id,
-                text: clone?.textContent ?? '',
-                referenceOwner: backlink?.closest('section.level2')?.id,
-                referenceTarget: backlink ? destination(backlink.hash.slice(1))?.id : null,
-                target: target?.id,
-              };
-            }),
-          }),
-        );
-      }, published.chapters);
-      for (let i = 0; i < published.chapters.length; i++) {
-        const chapter = published.chapters[i];
-        if (kind === 'sections') {
-          assert.deepEqual(
-            actual[i].sections,
-            chapter.headings.map((id: string) => ({ id, owner: chapter.id })),
-          );
-        } else {
-          for (let j = 0; j < chapter.notes.length; j++) {
-            const expected = chapter.notes[j],
-              note = actual[i].notes[j];
-            const normal = note.text
-              .normalize('NFKC')
-              .replace(/[’‘]/g, "'")
-              .replace(/[“”]/g, '"')
-              .replace(/[^\p{L}\p{N}]/gu, '');
-            assert.equal(
-              createHash('sha256').update(normal).digest('hex'),
-              expected.textHash,
-              `${expected.id}: source identity`,
-            );
-            assert.equal(note.owner, chapter.id, `${expected.id}: source chapter`);
-            assert.equal(note.referenceOwner, chapter.id, `${expected.reference}: reference chapter`);
-            assert.equal(note.referenceTarget, note.target, `${expected.reference}: source destination`);
-          }
-        }
+test('all clean fragment destinations exist in static HTML without aliases or duplicate IDs', async () => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  try {
+    const page = await context.newPage();
+    await page.goto(site);
+    const ids = await page.locator('[id]').evaluateAll((nodes) => nodes.map((node) => node.id));
+    assert.equal(new Set(ids).size, ids.length, 'Every HTML ID is unique');
+    assert.equal(await page.locator('[data-fragment-target]').count(), 0);
+    assert.deepEqual(
+      ids.filter((id) => /book__|__index\.md__|^fn(?:ref)?\d+$/.test(id)),
+      [],
+    );
+    const expected = [...inventory.ids];
+    const owners = await page.evaluate(
+      (routes) =>
+        routes.map((id) => ({
+          id,
+          owner: document.getElementById(id)?.closest('section.level2')?.id,
+        })),
+      expected,
+    );
+    for (const { id, owner } of owners) {
+      assert.match(id, /^[a-z][a-z0-9-]*(?:\/[a-z0-9-]+)*$/);
+      assert.equal(owner, id.split('/')[0], `${id}: correct owning chapter`);
+    }
+    for (const chapter of inventory.chapters) {
+      for (const note of inventory.destinations.get(chapter.file)!) {
+        assert.equal(await page.locator(`[id="${note.reference}"]`).getAttribute('href'), '#' + note.id);
+        assert.equal(await page.locator(`[id="${note.id}"] .footnote-back`).getAttribute('href'), '#' + note.reference);
       }
+    }
+  } finally {
+    await context.close();
+  }
+});
+test.each([390, 1440].flatMap((width) => ['local', 'project'].map((mount) => ({ width, mount }))))(
+  'clean hashes reload, resume, open sources and locate diagrams at $width px ($mount)',
+  async ({ width, mount }) => {
+    const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: 'reduce' });
+    const edition = mount === 'local' ? preview : site;
+    const section = 'brakes/how-a-stop-happens';
+    const waitForFocus = (id: string) =>
+      page.waitForFunction(
+        (target) =>
+          !document.documentElement.hasAttribute('data-reader-pending') && document.activeElement?.id === target,
+        id,
+      );
+    try {
+      await page.addInitScript((id) => localStorage.setItem('boxster-reading-place', id), section);
+      await page.goto(edition);
+      await page.locator('html.reader-enhanced:not([data-reader-pending])').waitFor();
+      const resume = page.locator('[data-continue-reading]');
+      assert.ok(await resume.isVisible());
+      assert.equal(await resume.getAttribute('href'), '#' + section);
+      await resume.click();
+      await waitForFocus(section);
+      await page.reload();
+      await waitForFocus(section);
+      assert.equal(await page.locator('#brakes').getAttribute('hidden'), null);
+      assert.equal(await page.getByRole('heading', { name: 'How a stop happens', exact: true }).count(), 1);
+
+      await page.evaluate(() => {
+        location.hash = 'brakes/sources';
+      });
+      await page.waitForFunction(() => document.querySelector<HTMLDetailsElement>('[id="brakes/sources"]')?.open);
+      assert.equal(await page.evaluate(() => document.activeElement?.tagName), 'SUMMARY');
+      const note = 'brakes/sources/hardware/2';
+      await page.evaluate((id) => {
+        location.hash = id;
+      }, note);
+      await waitForFocus(note);
+      await page.reload();
+      await waitForFocus(note);
+      assert.ok(await page.locator(`[id="${note}"]`).evaluate((node) => node.closest('details')!.open));
+      await page.locator(`[id="${note}"] .footnote-back`).click();
+      await waitForFocus('brakes/references/hardware/2');
+      await page.goBack();
+      await waitForFocus(note);
+
+      const diagram = 'brakes/diagram/caliper-pressure';
+      await page.evaluate((id) => {
+        location.hash = id;
+      }, diagram);
+      await waitForFocus(diagram);
+      await page.reload();
+      await waitForFocus(diagram);
+      const figure = page.locator(`[id="${diagram}"]`);
+      assert.equal(await figure.getAttribute('data-diagram'), 'caliper-pressure');
+      await figure.locator('svg').waitFor();
+      assert.equal(new URL(page.url()).hash, '#' + diagram);
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     } finally {
-      await context.close();
+      await page.close();
     }
   },
 );
-test.each([390, 1440])('published aliases navigate, focus and return from sources at $0 px', async (width) => {
-  const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: 'reduce' });
+test('unknown fragments and stale saved locations leave a usable cover', async () => {
+  const page = await browser.newPage();
   try {
-    const prefix = 'book__07-lubrication-cooling-and-exhaust__index.md__';
-    await page.addInitScript(
-      (id) => localStorage.setItem('boxster-reading-place', id),
-      prefix + 'reading-the-oil-level',
-    );
-    await page.goto(site);
-    await page.locator('html.reader-enhanced:not([data-reader-pending])').waitFor();
-    const resume = page.locator('[data-continue-reading]');
-    assert.ok(await resume.isVisible(), 'A saved published heading still offers Continue reading');
-    assert.equal(await resume.getAttribute('href'), '#' + prefix + 'checking-the-oil-level');
-    await resume.click();
-    await page.waitForFunction((id) => document.activeElement?.id === id, prefix + 'checking-the-oil-level');
-
-    await page.goto(site + '#' + prefix + 'reading-the-oil-level');
-    await page.waitForFunction(
-      () =>
-        !document.documentElement.hasAttribute('data-reader-pending') &&
-        document.documentElement.classList.contains('reader-enhanced'),
-    );
-    assert.equal(await page.locator('html').getAttribute('data-view'), 'chapter');
-    assert.equal(await page.evaluate(() => document.activeElement?.id), prefix + 'checking-the-oil-level');
-    assert.ok(await page.getByRole('heading', { name: 'Checking the oil level', exact: true }).isVisible());
-
-    await page.evaluate(() => {
-      location.hash = 'fn38';
-    });
-    await page.waitForFunction(() => document.activeElement?.id === 'fn38');
-    assert.match(await page.locator('#fn38').innerText(), /126–127/);
-    assert.ok(await page.locator('#fn38').evaluate((node) => node.closest('details')!.open));
-    const alias = await page.locator('span[data-fragment-target]').evaluateAll((nodes) => {
-      const node = nodes.find((node) => /^fn\d+$/.test(node.id))!;
-      return { id: node.id, target: node.getAttribute('data-fragment-target')! };
-    });
-    await page.evaluate((id) => {
-      location.hash = id;
-    }, alias.id);
-    await page.waitForFunction((id) => document.activeElement?.id === id, alias.target);
-    const backlink = page.locator(`[id="${alias.target}"] .footnote-back`);
-    const reference = (await backlink.getAttribute('href'))!.slice(1);
-    await backlink.click();
-    await page.waitForFunction((id) => document.activeElement?.id === id, reference);
-    await page.evaluate(
-      (id) => {
-        location.hash = id;
-      },
-      alias.id.replace(/^fn/, 'fnref'),
-    );
-    await page.waitForFunction((id) => document.activeElement?.id === id, reference);
-    assert.equal(await page.locator(`[id="${reference}"]`).getAttribute('href'), '#' + alias.target);
-    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+    await page.addInitScript(() => localStorage.setItem('boxster-reading-place', 'removed-old-location'));
+    for (const fragment of ['removed-old-location', '%E0%A4%A', 'brakes/not-a-section']) {
+      await page.goto(site + '#' + fragment);
+      await page.locator('html.reader-enhanced:not([data-reader-pending])').waitFor();
+      assert.equal(await page.locator('html').getAttribute('data-view'), 'cover');
+      assert.equal(await page.locator('[data-continue-reading]').isVisible(), false);
+      assert.ok(await page.locator('[data-start-reading]').isVisible());
+    }
   } finally {
     await page.close();
   }
@@ -1550,7 +1526,7 @@ test.each(
 test.each([390, 1024, 1440])(
   'chapter menus scroll smoothly after layout, respect reduced motion and retain history (%i px)',
   async (width) => {
-    const chapter = 'book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems';
+    const chapter = 'brakes';
     for (const reducedMotion of ['no-preference', 'reduce'] as const) {
       const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion });
       try {
@@ -1758,10 +1734,7 @@ test('Print whole book prepares every image from the cover and phone contents', 
           dispatchEvent(new Event('afterprint'));
         };
       });
-      await page.goto(
-        site +
-          (width < 1000 ? '#book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems' : '#title'),
-      );
+      await page.goto(site + (width < 1000 ? '#brakes' : '#title'));
       await page
         .getByRole('heading', {
           level: 1,
@@ -1797,7 +1770,7 @@ test('browser PDF export includes the cover, contents, every chapter, sources an
     });
     try {
       const page = await context.newPage();
-      (await page.goto(site + '#book__13-brakes-and-stability-systems__index.md__brakes-and-stability-systems'))!;
+      (await page.goto(site + '#brakes'))!;
       if (javaScriptEnabled)
         await page.getByRole('heading', { level: 1, name: 'Brakes and stability systems', exact: true }).waitFor();
       await page.evaluate(() => document.fonts.ready);
@@ -2117,7 +2090,7 @@ test('cross-chapter explanations navigate to the owning section and every book f
         .getByRole('link', { name: 'unsprung mass', exact: true })
         .click();
       await page.getByRole('heading', { level: 1, name: 'Suspension and wheel geometry', exact: true }).waitFor();
-      await page.waitForURL((url: { hash: string }) => url.hash.endsWith('__compliance-and-unsprung-mass'));
+      await page.waitForURL((url: { hash: string }) => url.hash === '#suspension/compliance-and-unsprung-mass');
       assert.ok(await page.getByRole('heading', { name: 'Compliance and unsprung mass', exact: true }).isVisible());
       await page.goBack();
       await page.getByRole('heading', { level: 1, name: 'Brakes and stability systems', exact: true }).waitFor();

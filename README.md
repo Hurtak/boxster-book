@@ -117,20 +117,32 @@ Boxster S front axle. Photo: Porsche AG. [Source](https://example.com).
 <Diagram id="brake-explorer" poster={poster} alt="The wheel brake in context and its separated main parts." />
 ```
 
-- Existing explicit heading fragments use `<Heading level={2} id="existing-fragment">` with Markdown children. Ordinary headings get book-scoped IDs using the existing slug convention.
+- Explicit heading fragments use `<Heading level={2} id="section-slug">` with Markdown children. Ordinary headings get lowercase, hyphenated slugs, scoped to their chapter.
 - Links such as `[Oil circuit](#oil-circuit)` can target a heading within the same chapter. Chapter-local identifiers and footnotes are kept distinct when the files are combined.
-- The contents list is generated from chapter titles. Cross-chapter links such as `[Unsprung mass](../11-suspension-and-wheel-geometry/index.mdx#compliance-and-unsprung-mass)` become internal navigation. Legacy `index.md` source links remain accepted as aliases. Published URLs keep their `book__...__index.md__...` IDs even though the source file extension changed. Builds reject unresolved chapters/headings and duplicate chapter/diagram IDs.
+- The contents list is generated from chapter titles. Cross-chapter links such as `[Unsprung mass](../11-suspension-and-wheel-geometry/index.mdx#compliance-and-unsprung-mass)` become `#suspension/compliance-and-unsprung-mass`. Canonical hashes such as `#brakes`, chapter-local links such as `#sources`, and diagram links such as `#diagram/caliper-pressure` are also supported. Builds reject unresolved destinations and duplicate chapter/diagram IDs.
 - Chapter content should explain the 2010 2.9 first, then its options, changes in other years and differences on other models.
 
 Edit `scripts/book.css` for presentation and `src/reader/` for the React reader. Shared figure and source-disclosure components are in `src/book/`. The build never changes chapter files.
 
 ## MDX and rendering
 
-`scripts/mdx/inventory.ts` discovers the current chapter and diagram files, builds a typed manifest and validates source links. `scripts/mdx/compiler.ts` is the single MDX configuration for both bundlers: GFM, typography, stable sections, chapter-local notes and existing global note/backlink IDs. It deliberately retains a separate destination for each repeated reference to match published links.
+`scripts/mdx/inventory.ts` discovers the current chapter and diagram files, builds a typed manifest and validates source links. `scripts/mdx/compiler.ts` is the single MDX configuration for both bundlers: GFM, typography, sections, chapter-local notes and readable source/backlink IDs. Each repeated citation keeps its own numbered note and return link.
 
 Node prerenders the complete React/MDX tree with `renderToString`; the browser hydrates the matching tree before applying the URL hash and saved preferences. All chapter content remains available without JavaScript and for full-book printing. The first migration includes compiled chapter code in browser assets; it does not embed a second JSON copy of the rendered manuscript.
 
-[Published link IDs](book/published-links.json) preserve section and source destinations from the published edition identified by its `revision`. Heading entries map old chapter-local fragments to current headings; keep them and update their targets when renaming or merging sections. Source entries pin the original numeric IDs to a note label and its successive references. Keep these IDs when moving citations: displayed chapter-local numbering follows reading order independently. Removed duplicate citations retain aliases to a surviving citation of the same source. New citations use chapter/label/occurrence IDs, so they cannot shift another source's published address. Removing a published source entirely, deleting a chapter, or creating a duplicate destination fails the build. Existing note labels should be retained when editing their definitions. Aliases work in static HTML and the enhanced reader, including source disclosures and backlinks.
+The single HTML document uses clean hashes. [Chapter routes](book/routes.json) assign short slugs independently of chapter numbers and titles; numbered folders still control reading order. New chapters without an explicit route use their folder name with the number removed. Section slugs normalise punctuation (`2.9` becomes `2-9`). `sources`, `references` and `diagram` are reserved section names. Old `book__...`, numeric `fn` IDs and compatibility aliases are retired.
+
+| Destination                    | Example hash                       |
+| ------------------------------ | ---------------------------------- |
+| Chapter                        | `#brakes`                          |
+| Section                        | `#brakes/how-a-stop-happens`       |
+| Notes and sources              | `#brakes/sources`                  |
+| Source note                    | `#brakes/sources/hardware`         |
+| Second citation of that source | `#brakes/sources/hardware/2`       |
+| Return to the second citation  | `#brakes/references/hardware/2`    |
+| Diagram                        | `#brakes/diagram/caliper-pressure` |
+
+Source route names come from the chapter's footnote labels, independently of displayed note numbers and other sources' positions. Duplicate normalised labels fail the build. Diagram links locate and focus the card without encoding its control state. All destinations exist in prerendered HTML, work with browser history and reloads, and use the same hashes at the development, preview and Pages URLs. The build still emits one `index.html`; no chapter pages or routing dependency are needed.
 
 Vite+ builds one Pages edition with lazy diagram/model chunks and content-hashed media. Image imports become stable asset keys resolved through the same emitted media manifest during prerendering and hydration. Fonts and CSS remain embedded. Nested local SVG resources are embedded and external SVG/CSS dependencies are rejected. Builds replace the HTML only after successful compilation, rendering and asset assembly.
 
@@ -138,7 +150,7 @@ React owns navigation, disclosures and figure wrappers. Each live diagram receiv
 
 Image dimensions are read at build time and emitted as intrinsic width/height attributes. On startup and chapter navigation, the reader settles fonts and prepares the selected chapter's lightweight diagram layouts before revealing the reading sheet and performing the final anchor scroll. Car viewers construct their complete controls and text before waiting for visibility and fetching models; a loading placeholder keeps that measured space until the scene is ready. Hidden chapters retain their last measured reservations. Failed reader scripts fall back to the static manuscript, and disabled JavaScript never hides it.
 
-`npm exec -- vp check --no-fmt --no-lint` checks all TypeScript implementation, diagram, model-authoring and test files in strict mode; compiling every chapter separately validates MDX syntax and book component metadata. `tests/fixtures/manuscript-baseline.json` records the current manuscript. Its hashes normalise typography/whitespace while preserving letters, numbers and ordering. Update it deliberately when reviewing manuscript changes, alongside the owning evidence; ordinary build/runtime changes must preserve it. The separate `tests/fixtures/published-links.json` pins the previous edition's section destinations and source identities. Do not regenerate that historical contract when updating the current manuscript snapshot.
+`npm exec -- vp check --no-fmt --no-lint` checks all TypeScript implementation, diagram, model-authoring and test files in strict mode; compiling every chapter separately validates MDX syntax and book component metadata. `tests/fixtures/manuscript-baseline.json` records the current manuscript and routes. Its hashes normalise typography/whitespace while preserving letters, numbers and ordering. Update it deliberately when reviewing manuscript changes, alongside the owning evidence; ordinary build/runtime changes must preserve it. Route tests cover direct links, source disclosures and backlinks, saved reading positions, diagrams and browser history at local and project-prefixed URLs.
 
 ## Interactive diagrams
 

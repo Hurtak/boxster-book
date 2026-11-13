@@ -15,6 +15,7 @@ test('a cold Vite+ development server hydrates once and loads car diagrams witho
     server = await createServer({
       configFile: join(root, 'vite.config.ts'),
       mode: 'development',
+      define: { 'process.env.NODE_ENV': JSON.stringify('development') },
       cacheDir,
       server: { port: 0 },
     });
@@ -51,6 +52,33 @@ test('a cold Vite+ development server hydrates once and loads car diagrams witho
         await figure.getByRole('button', { name: 'Exploded', exact: true }).click();
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
         assert.deepEqual(errors, [], `Browser errors at ${width}px`);
+        for (const fragment of ['brakes/sources/hardware', 'manual-transmission/references/ratios/2']) {
+          let release!: () => void;
+          const entry = new Promise<void>((resolve) => {
+            release = resolve;
+          });
+          await page.route(
+            '**/src/entry-client.tsx',
+            async (route) => {
+              await entry;
+              await route.continue();
+            },
+            { times: 1 },
+          );
+          try {
+            await page.goto(url + '#' + fragment, { waitUntil: 'commit' });
+            // Native fragment navigation can open a disclosure before React runs.
+            await page.waitForFunction((id) => document.getElementById(id)?.closest('details')?.open, fragment);
+          } finally {
+            release();
+          }
+          await page.waitForFunction(
+            (id) => !document.documentElement.hasAttribute('data-reader-pending') && document.activeElement?.id === id,
+            fragment,
+          );
+          assert.ok(await page.locator(`[id="${fragment}"]`).evaluate((node) => node.closest('details')?.open));
+          assert.deepEqual(errors, [], `Direct disclosure link ${fragment} at ${width}px`);
+        }
       } finally {
         await page.close();
       }
