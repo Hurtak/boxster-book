@@ -1,4 +1,7 @@
-import { Diagram, Figure, Heading } from '../../src/book/components';
+import visualabspressurestatessvg from "./images/abs-pressure-states.svg";
+import rearParkingFace from "./images/rear-parking-brake-face.svg";
+import visualrearparkingbrakesectionsvg from "./images/rear-parking-brake-section.svg";
+import { Diagram, Figure, Heading, ImageComparison, ComparisonImage } from '../../src/book/components';
 import illustration0 from "./diagrams/brake-explorer/poster.svg";
 import illustration1 from "./diagrams/caliper-pressure/poster.svg";
 import illustration2 from "./diagrams/braking-energy/poster.svg";
@@ -104,6 +107,12 @@ Each wheel has a speed sensor. When a wheel starts slowing towards lock-up, valv
 
 A rolling tyre can still generate steering force, so ABS helps preserve directional control in a heavy stop, within the grip the tyres and road can offer. Its operation shows as a rapid pulsing in the pedal and audible hydraulic activity, which is normal. Porsche's handbook tells the driver to keep firm, continuous pressure on the pedal in an emergency stop rather than pump it.[^handbook]
 
+<Figure src={visualabspressurestatessvg} alt="Apply, hold and release states in a simplified single wheel-brake circuit.">
+
+ABS can raise, hold or reduce an individual wheel’s pressure. The schematic shows those functions, not the actual valve-block passage layout or switching timing.
+
+</Figure>
+
 ### PSM watches the car's direction
 
 Porsche Stability Management compares the course the driver asks for, read from the steering, with the one the car is taking. Wheel speeds, sideways acceleration and the car's rate of rotation about its vertical axis, called *yaw*, show what it is actually doing.
@@ -134,6 +143,23 @@ Shoes (1), adjuster (2), springs (4–6) and expanding mechanism (11) work insid
 
 The handbrake, the [PDK parking lock](../09-pdk-transmission/index.mdx#the-selector-and-steering-wheel-controls) and the brief hill hold are three separate ways of stopping the car rolling, each with its own mechanism and conditions.
 
+
+<ImageComparison title="Two brakes share the rear disc" alt="Face view and axial section of the base 2.9 rear disc, with numbers directly on the outer friction ring, inner parking drum, curved shoe lining, hydraulic pad and shoe adjuster." stackOnPhone>
+  <ComparisonImage src={rearParkingFace} alt="A drilled rear disc with its mounting hat transparent, revealing two curved parking shoes, a star-wheel adjuster, return springs and a mechanical expander around the centre bore." label="Face view · hat transparent" note="The disc hat is transparent to reveal the parking brake. The hub and hydraulic caliper are omitted from this view." annotations={[{"id": "1", "label": "Disc friction faces \u00b7 hydraulic service brake", "x": 21.25, "y": 59.268292682926834}, {"id": "2", "label": "Internal drum surface \u00b7 inside the disc hat", "x": 50.0, "y": 71.95121951219512}, {"id": "3", "label": "Parking-brake shoe lining \u00b7 works against the drum", "x": 31.875, "y": 37.6219512195122}, {"id": "5", "label": "Parking-shoe adjuster", "x": 50.0, "y": 30.975609756097565}]} />
+  <ComparisonImage src={visualrearparkingbrakesectionsvg} alt="Enlarged detail of an upper axial section of the rear disc. Pads sit outside the two ventilated friction faces, while a parking shoe lies inside the drum wall of the deep hat. One opposed piston pair is visible in the fixed caliper." label="Section detail · wheel side left" note="The caliper presses its pads axially. The shoe lining contacts the drum radially. One of the caliper's two opposed piston pairs is shown in section." annotations={[{"id": "1", "label": "Disc friction faces", "x": 66.90243902439025, "y": 48.095238095238095}, {"id": "2", "label": "Internal drum surface", "x": 23.65853658536585, "y": 58.57142857142858}, {"id": "3", "label": "Parking shoe lining", "x": 41.21951219512195, "y": 63.21428571428571}, {"id": "4", "label": "Hydraulic pad", "x": 49.80487804878049, "y": 27.61904761904762}]} />
+
+<ul className="image-key" aria-label="Rear brake component key">
+  <li><span className="image-key-number">1</span>Disc friction faces · hydraulic service brake</li>
+  <li><span className="image-key-number">2</span>Internal drum surface · inside the disc hat</li>
+  <li><span className="image-key-number">3</span>Parking shoe lining · contacts the drum</li>
+  <li><span className="image-key-number">4</span>Hydraulic pad · acts on the disc face</li>
+  <li><span className="image-key-number">5</span>Parking-shoe adjuster</li>
+</ul>
+
+The caliper and cable-operated shoes use the same rotating disc but separate actuation. The **2010 2.9** has a **299 × 20 mm** rear disc; its deep hat contains the parking-brake drum. Profiles were checked against the [Brembo replacement-disc photograph and dimensions](https://www.bremboparts.com/europe/en/catalogue/disc/09-8998-11), [ATE's 180 × 25 mm parking-shoe application, p. 829](https://www.ate-brakes.com/media/5615/catalogue-ate-drum-brakes-trommelbremsen-2025_v3.pdf#page=829) and Porsche's [PET 603-000/005 drawings](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=203). Clearances, lining thickness, vane spacing, hardware positions and caliper internals are illustrative.
+
+</ImageComparison>
+
 ## Options on the 2010 2.9
 
 ABS and PSM are standard. The relevant option is Sport Chrono, code **639**, or **640** in Plus form with PCM.[^options]
@@ -143,6 +169,7 @@ For the brakes, it changes the control strategy, not the iron-disc dimensions. S
 With **PSM OFF**, ABS and ABD remain available. Stability intervention returns during braking when either front wheel enters ABS regulation, or both front wheels if Sport mode is selected. The handbook says the additional braking functions are deactivated with PSM off, with emergency reactivation tied to PSM intervention. The technical introduction adds that selecting SPORT with Sport Chrono Package Plus deactivates the additional hydraulic brake assist. The ordinary vacuum booster keeps assisting the pedal throughout.[^modes]
 
 **Porsche Ceramic Composite Brake (PCCB)** was an S option, not available on the ordinary 2.9 in the UK catalogue. Its hardware is compared below.[^options]
+
 
 ## Changes in other 2.9 model years
 

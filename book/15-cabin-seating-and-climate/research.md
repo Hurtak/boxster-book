@@ -110,3 +110,26 @@ PET2018 parts/supersession entries do not establish original2010 sales availabil
 ### Checks and parent integration
 
 All current chapter JavaScript passes syntax checking. All five SVGs parse as XML; headings and the exact footnote-reference count/order match the saved pre-edit baseline. The procedural assembly has **nine** named groups, **190** finite meshes and an approximately **1.355 ×1.030 ×2.038m** illustrative installed envelope; all ten connection endpoints and allowed connection kinds pass. These are geometry sanity checks, not factory dimensions. Pure D3 route-state checks cover all36 functional combinations without changing its interaction contract. Parent must regenerate **cabin-explorer** and inspect the expanded **cabin-heat-paths.svg** in the responsive book render. No global build/test, shared edit, git staging or commit was performed.
+
+
+## Visual review integration — 13 November 2026
+
+Original baseline equipment locator and conceptual ventilation section. UK01/10 pp74–77 and the handbook establish baseline black instruments/manualAC bars versus optional AUTO/target control. LHD locator, not an actual dashboard photograph; UK driving controls mirrored. Training Heating/AC p152 establishes fans drawing air inward through perforations/permeable layers and exhausting to cabin. Ducts are unfolded, no refrigerant in cushion. Removed redundant S-dashboard image and its stale “pictured below” wording. See [image credits](images/credits.md) for asset provenance. Existing factual qualifications remain.
+
+
+## Seat ventilation refinement — 14 November 2026
+
+Freshly read Porsche/PCNA training printed151–154, inspected PET817-002 and the previously unarchived **817-004 backrest shell/ventilation drawing and list, PDF452–453**, checked the period comfort-seat silhouette, and viewed the original backrest/cushion blower photographs. The [reference dossier](part-reference/seat-ventilation-refinement/README.md) preserves those source images and exact distinctions between the PET00 and current photographed01 suffixes. No current supplier headline is used as evidence of original2010 fitment.
+
+Corrected the old side-section's backrest intake arrows: the perforated contact face is on the occupant side of a rearward-reclined backrest. Cushion flow remains inward from above. Separate connected branches lead to a module behind the backrest and another beneath the cushion. Added visible perforations, open distribution mesh, formed foam passages, mounts and a fan detail whose annular inlet surrounds its central motor cap. The outline is photo-guided; dimensions, blade count, layer thickness, hidden ducts and exact outlet directions remain explanatory. The enlarged module is shown face-on, with its route unfolded, while the whole-seat modules are profile views. Heating/frame details are omitted from this ventilation view rather than conflated with the air mat.
+
+This remains optional541 standard/comfort-seat equipment with the existing UK dependencies. No cooling is added to the standard Alcantara seat, sports seat or bucket. Existing temperature/engine-running conditions and heating/ventilation settings remain unchanged. Static figures use the shared responsive React comparison and native number/key layout; the cabin3D tour and A/C airflow interaction are unchanged.
+
+
+## Dashboard controls refinement — 14 November 2026
+
+Replaced the coarse dashboard/climate schematic with an unmodified real RHD2.9 cockpit photograph and the original manual/automatic climate illustrations extracted from the5/09 Porsche handbook. [Reference dossier](part-reference/dashboard-refinement/README.md) preserves extraction objects, image bytes, full handbook pages, hashes, native marker coordinates and scope limits.
+
+The photograph establishes actual visible proportions and component locations; it is not an all-standard equipment or original-build-record claim. Black dials and CDR-30 fascia were visually checked; the latter was compared with Porsche's existing UK01/10 p82 original radio photograph. The third marker names climate-panel position, without inferring a powered-off system's version from its blank LCD. The photo is genuinely RHD; the former blanket statement that UK driving controls mirror the complete LHD diagram was removed from the reader-facing figure.
+
+Freshly read handbook printed106–111 and inspected both actual panel illustrations: F temperature, K fan, G AC max on manual versus G AUTO on automatic. Standard temperature bars and automatic target/AUTO behaviour remain distinct. Factory display windows are unlit; no numerical or bar readout has been composited. Air distribution, demist, sensor grille, AC OFF and recirculation controls are visible in their real positions. Surrounding optional PCM/PDK/Chrono or seat controls are not imported into baseline UK equipment. Existing UK brochure76/110–111 remains the availability authority; no annual change or new option dependency is added.

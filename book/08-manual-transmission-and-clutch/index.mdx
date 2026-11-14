@@ -1,10 +1,14 @@
-import { Diagram, Figure, Heading } from '../../src/book/components';
+import flywheelFace from "./images/dual-mass-flywheel-face.svg";
+import flywheelCutaway from "./images/dual-mass-flywheel-cutaway.svg";
+import { ComparisonImage, Diagram, Figure, Heading, ImageComparison } from '../../src/book/components';
 import illustration0 from "./diagrams/manual-explorer/poster.svg";
 import illustration1 from "./diagrams/manual-ratio-explorer/poster.svg";
 import illustration2 from "./images/clutch-actuation.svg";
 import illustration3 from "./images/porsche-six-speed-gear-lever.jpg";
 import illustration4 from "./images/constant-mesh-and-synchroniser.svg";
 import clutchParts from "./images/pet-manual-clutch.png";
+import flywheelFacePhoto from "./part-reference/flywheel-refinement/part-view-4.jpg";
+import flywheelAssemblyPhoto from "./part-reference/flywheel-refinement/part-view-1.jpg";
 
 # Manual transmission and clutch
 
@@ -33,6 +37,30 @@ Pressing the pedal moves the release bearing against the diaphragm spring, letti
 Between fully released and fully clamped, the clutch passes torque while its two sides still turn at different speeds. That controlled slip lets you move off without the engine being dragged down to zero rpm, but it makes heat. The heating rate depends on the torque passed multiplied by the difference in rotational speed. Once both sides turn together, that source of friction heat falls away. Prolonged slipping therefore heats the clutch more than a brief, smooth engagement.
 
 "Dry" means the friction surfaces are not bathed in oil. The gearbox has its own lubricating oil, and the clutch release its own hydraulic circuit.
+
+<ImageComparison title="The flywheel is one compact assembly" alt="The exposed flywheel face beside the flywheel with the clutch bolted to it." stackOnPhone>
+  <ComparisonImage src={flywheelFacePhoto} crop={{x:90,y:190,width:365,height:343}} alt="The flywheel has a broad machined contact ring, smaller inner windows and ten crankshaft mounting holes around the centre." label="Flywheel face" note="The clutch contacts the broad machined ring; the centre mounting is much smaller than the overall diameter." />
+  <ComparisonImage src={flywheelAssemblyPhoto} alt="The complete flywheel and clutch stack, with the diaphragm-spring cover above and the starter ring teeth visible at the edge." label="With the clutch bolted on" note="The clutch cover hides the working face. The starter ring gear is visible around the flywheel’s outer edge." />
+
+Original photographs: [Wolf Auto Parts, PS85488](https://wolfautoparts.com/parts/dual-mass-flywheel-clutch-pressure-plate-9g211401202-ps85488/), identified as 9G2 114 012 02, the A120 manual flywheel listed in [PET 102-000, PDF p. 41](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=41). The first panel crops the flywheel from a photograph of the separated clutch components; it keeps the original pixels.
+
+</ImageComparison>
+
+<ImageComparison title="Two masses nested in one flywheel" alt="A photo-guided exterior beside a separate teaching cutaway of the coaxial spring coupling." stackOnPhone>
+  <ComparisonImage src={flywheelFace} alt="The flywheel face with broad friction annulus, smaller mounting centre, inner openings and starter ring gear." label="Clutch-side face" note="The exterior proportions follow the part photograph." />
+  <ComparisonImage src={flywheelCutaway} alt="A generic cutaway showing curved coil springs between primary stops and secondary flange wings; dashed and solid flange positions illustrate relative twist." label="Spring-coupling cutaway" note="Dashed blue: reference position. Solid blue: illustrative relative twist." />
+
+<ul className="image-key" aria-label="Flywheel components">
+  <li><span className="image-key-number">1</span>Starter ring gear on the primary mass</li>
+  <li><span className="image-key-number">2</span>Clutch-contact face on the secondary mass</li>
+  <li><span className="image-key-number">3</span>Arc springs in the primary housing</li>
+  <li><span className="image-key-number">4</span>Flange connected to the secondary mass</li>
+  <li><span className="image-key-number">5</span>Crankshaft mounting at the centre</li>
+</ul>
+
+The two masses remain coaxial. Relative twist loads the arc springs through the flange while the friction clutch can stay clamped. The exterior follows the part photograph; the opened mechanism follows [Schaeffler’s LuK design guide, pp. 9 and 15](https://www.piecesautos.tn/static/piece_docs/Schaeffler_LuK_BR_0011_en.PDF#page=9). Its hidden spring layout and illustrated twist explain the principle, rather than reproducing measured Porsche internals.
+
+</ImageComparison>
 
 ## How the pedal releases the clutch
 

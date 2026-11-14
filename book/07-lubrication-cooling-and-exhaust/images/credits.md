@@ -1,6 +1,6 @@
 # Chapter 07 image credits
 
-Both third-party images are Porsche factory illustrations retained locally for the user's personal illustrated book. Individual photographers/illustrators are not named in the source. Copyright remains with Porsche AG; the book's original-material MIT licence does not relicense these images. Both images were visually inspected against their original spread on 10 November 2026.
+The two catalogue illustrations below are Porsche factory illustrations retained locally for the user's personal illustrated book. Individual photographers/illustrators are not named in the source. Copyright remains with Porsche AG; the book's original-material MIT licence does not relicense these images. Both images were visually inspected against their original spread on 10 November 2026.
 
 ## `porsche-boxster-s-exhaust.jpg`
 
@@ -36,3 +36,22 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **222 0**, native **2015 × 3071**; crop `[0, 174, 2015, 3064]`. Locator inset omitted at `[0, 0, 661, 497]`. Result **2055 × 2930** pixels.
 - **Applicability and limits:** 104-005 identifies housing 1, filter cup/set 9, insert 11, exchanger 12 and separator 15. The drawing is shared engine-family service evidence, not exact operating fluid routing or an original part-suffix guarantee.
 - **Local image SHA-256:** `132c9920bac072d9b0cac341479a060cfc1ce9f1f71db34aacd2be2342595194`.
+
+
+## Visual review additions — 13 November 2026
+
+`oil-overlap-0/1.svg`, `oil-pump-delivery`, `oil-level-display.svg`
+
+Original pressure-pump sections checked against Porsche2009 Technik Engine pp21–22; fresh primary-text check at https://www.scribd.com/document/972719474/Boxster-2009 . A hydraulic pressure difference moves one gear axially, changing active tooth width; mechanical chain drive remains. No exact control-pressure or delivery map. The four scavenge sections are omitted. Display is conceptual, not a facsimile; measurement conditions remain those of the handbook.
+
+Factory material retains Porsche’s original rights; SVG composition/labels and teaching drawings are original project work. No generative alteration of documentary photographs.
+
+## Oil-pump photographs and section revision — 14 November 2026
+
+The [oil-pump source inventory](../part-reference/oil-pump-refinement/README.md) records the five exact original URLs, image sizes, byte counts, hashes, source identities and applicability limits. `pump-view-1.jpg` is Wolf Auto Parts' photograph of **9A1 107 050 04**, stock PS85365. `porsche-oil-pan-cutaway.jpg` is Porsche's factory illustration from the 2009 Boxster 2.9 oil-supply description, hosted by Operation CHARM. They are displayed separately through React with their original pixels unchanged. The other photographs and factory functional section remain supporting reference evidence.
+
+`oil-overlap-0.svg`, `oil-overlap-1.svg` and the matching `oil-pump-delivery/poster.svg` are project-authored sections informed by that factory principle drawing: shorter spur gears, axial tooth lines, both pistons, the spring, separate command and valve, and two distinct pressure connections. The active-width band, numbered leaders and centred movement arrow are authored vector elements. The complete casting is deliberately omitted from the enlarged internal view. Internal dimensions, tooth count, travel, valve ports and gallery routing are illustrative. Original photographs and Porsche factory material retain their respective rights.
+
+## Vertical oil-level example — 14 November 2026
+
+`oil-level-display.svg` is original project artwork, redrawn after visual comparison with Porsche’s **MY2010 Boxster/Boxster S handbook, WKD 987 021 10, 5/09**, printed pp. **157–158**, [PDF pp. 159–160](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=159). The vertical four-segment arrangement replaces the earlier horizontal teaching scale. MAX and MIN align with their actual marked levels; separate leaders identify the maximum and the example’s filled height. No source pixels are reproduced, and the drawing is explicitly conceptual rather than an exact dashboard facsimile. No segment-volume calibration is inferred.

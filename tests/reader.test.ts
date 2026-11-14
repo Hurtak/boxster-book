@@ -922,6 +922,10 @@ test.each([390, 1440].flatMap((width) => ['brake-explorer', 'roof-explorer'].map
         true,
         'The model, navigation, slider, description and parts must follow the approved layout',
       );
+      assert.equal(await slider.inputValue(), '65', 'Component tours open on their assembled subject');
+      assert.equal(await tour.getByRole('button', { name: 'Locate this assembly in the whole car' }).count(), 0);
+      await activate(stages.first());
+      assert.equal(await slider.inputValue(), '0');
       for (const value of ['30', '65', '100']) {
         await activate(next);
         assert.equal(await slider.inputValue(), value);
@@ -1071,6 +1075,7 @@ test('car tours can pan and stage navigation restores their original framing', a
     await page.goto(preview);
     for (const id of ['brake-explorer', 'roof-explorer']) {
       const figure = await ready(page, id);
+      await figure.getByRole('button', { name: 'Whole car', exact: true }).click();
       const canvas = figure.locator('canvas');
       assert.match((await canvas.getAttribute('aria-label'))!, /Cmd\/Ctrl/);
       const imageHash = async () =>
@@ -1266,6 +1271,60 @@ test('static diagrams remain readable without JavaScript or WebGL', async () => 
     await page.close();
   }
 });
+test('source-preserving image layouts retain their pixels and annotation positions', async () => {
+  const page = await browser.newPage({ viewport: { width: 390, height: 900 } });
+  try {
+    await page.goto(`${site}#timeline`);
+    await page.waitForSelector('html.reader-enhanced:not([data-reader-pending])');
+    const comparison = page.locator('#timeline .image-comparison');
+    assert.equal(await comparison.locator('.comparison-image img').count(), 4);
+    assert.deepEqual(
+      await comparison
+        .locator('.image-viewport')
+        .evaluateAll((images) => images.map((image) => image.getAttribute('data-mirrored') === 'true')),
+      [true, false, true, false],
+    );
+    await comparison
+      .locator('img')
+      .evaluateAll((images: HTMLImageElement[]) => Promise.all(images.map((i) => i.decode())));
+    assert.ok(
+      (await comparison.locator('img').evaluateAll((images: HTMLImageElement[]) => images.map((i) => i.naturalWidth)))
+        .slice(2)
+        .every((width) => width >= 1800),
+    );
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+    assert.equal(await comparison.getByRole('button').count(), 0);
+
+    await page.goto(`${site}#pdk`);
+    await page.waitForSelector('html.reader-enhanced:not([data-reader-pending])');
+    const figure = page.locator('#pdk .annotated-figure');
+    const checkAnchors = async (host: import('playwright-core').Locator) => {
+      const offsets = await host.locator('.image-marker').evaluateAll((markers) =>
+        markers.map((marker) => {
+          const box = marker.getBoundingClientRect(),
+            image = marker.parentElement!.getBoundingClientRect();
+          const element = marker as HTMLElement;
+          return [
+            Math.abs(((box.left + box.width / 2 - image.left) / image.width) * 100 - parseFloat(element.style.left)),
+            Math.abs(((box.top + box.height / 2 - image.top) / image.height) * 100 - parseFloat(element.style.top)),
+          ];
+        }),
+      );
+      assert.equal(offsets.length, 3);
+      assert.ok(offsets.flat().every((offset) => offset < 0.1));
+    };
+    for (const width of [390, 768, 1440]) {
+      await page.setViewportSize({ width, height: 900 });
+      await checkAnchors(figure);
+    }
+    await page.emulateMedia({ media: 'print' });
+    await checkAnchors(figure);
+    assert.equal(await page.locator('#timeline .comparison-image img:visible').count(), 4);
+  } finally {
+    await page.close();
+  }
+});
+
 test('the prerendered book preserves the manuscript, tables, figures and source links at both URL mounts', async () => {
   const baseline = JSON.parse(await readFile(resolve('tests/fixtures/manuscript-baseline.json'), 'utf8'));
   const normal = (value: string) =>
@@ -2212,6 +2271,166 @@ test('the responsive matrix covers every published diagram exactly once at each 
     await page.close();
   }
 });
+test.each([390, 1440])('dense figures remain inline and fit the reading column (%s px)', async (width) => {
+  const page = await browser.newPage({ viewport: { width, height: 1000 } });
+  try {
+    await page.goto(`${preview}#body`);
+    const figure = page.locator('#body figure').filter({ has: page.locator('img[src*="pet-engine-access"]') });
+    await figure.waitFor({ state: 'visible' });
+    await figure.locator('img').evaluate((image: HTMLImageElement) => image.decode());
+    assert.ok((await figure.locator('figcaption').innerText()).includes('PET'));
+    assert.equal(await figure.getByRole('button').count(), 0);
+    assert.equal(await page.getByRole('dialog').count(), 0);
+    assert.equal(await page.evaluate(() => document.body.style.overflow), '');
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+  } finally {
+    await page.close();
+  }
+});
+test.each(['intake-resonance-states', 'oil-pump-delivery', 'speaker-package-locator'])(
+  'mechanism states change the illustration, announce the selection and retain it (%s)',
+  async (id) => {
+    const page = await browser.newPage({ viewport: { width: 390, height: 1000 } });
+    try {
+      await page.goto(preview);
+      const figure = await ready(page, id);
+      const options = figure.locator('.diagram-controls button');
+      const initial = await figure.locator('.diagram-stage').innerHTML();
+      if (id === 'speaker-package-locator') {
+        const carOutline = await figure.locator('[data-car-envelope]').getAttribute('d');
+        for (const [index, expected] of [
+          [2, 1],
+          [3, 2],
+          [3, 2, 4],
+        ].entries()) {
+          await options.nth(index).click();
+          const counts = await figure
+            .locator('[data-speaker-region]')
+            .evaluateAll((regions) => regions.map((region) => region.querySelectorAll('[data-speaker-driver]').length));
+          // The door view represents one side; BOSE has four drivers in its one rear enclosure.
+          assert.deepEqual(counts, expected);
+          assert.equal(counts[0] + 2 * counts[1] + (counts[2] ?? 0), [4, 7, 11][index]);
+          assert.equal(await figure.locator('[data-car-envelope]').getAttribute('d'), carOutline);
+          const layout = await figure.locator('[data-car-envelope]').evaluate((outline: SVGGraphicsElement) => {
+            const plan = outline.ownerSVGElement!;
+            const box = (selector: string) => {
+              const b = plan.querySelector<SVGGraphicsElement>(selector)!.getBBox();
+              return {
+                x: b.x,
+                y: b.y,
+                width: b.width,
+                height: b.height,
+                cx: b.x + b.width / 2,
+                cy: b.y + b.height / 2,
+              };
+            };
+            return {
+              body: box('[data-car-envelope]'),
+              driver: box('[data-plan-seat="driver"] [data-seat-cushion]'),
+              passenger: box('[data-plan-seat="passenger"] [data-seat-cushion]'),
+              steering: box('[data-plan-steering]'),
+              frontAxle: box('[data-plan-axle="front"]'),
+              rearAxle: box('[data-plan-axle="rear"]'),
+            };
+          });
+          assert.ok(Math.abs(layout.body.width / layout.body.height - 4342 / 1801) < 0.001);
+          assert.ok(Math.abs(((layout.rearAxle.cx - layout.frontAxle.cx) / layout.body.width) * 4342 - 2415) < 0.01);
+          // With the nose pointing left, the LHD driver is on the lower side.
+          assert.ok(layout.steering.cy > layout.body.cy);
+          assert.ok(Math.abs(layout.steering.cy - layout.driver.cy) < 1);
+          assert.ok(layout.steering.cx + layout.steering.width / 2 < layout.driver.x);
+          assert.ok(Math.abs(layout.driver.cy + layout.passenger.cy - 2 * layout.body.cy) < 1);
+          for (const seat of [layout.driver, layout.passenger]) {
+            // Missing separators in the old path produced huge, invisible cushions.
+            assert.ok(seat.width > 50 && seat.width < layout.body.width / 4);
+            assert.ok(seat.height > 50 && seat.height < layout.body.height / 3);
+            assert.ok(seat.y > layout.body.y && seat.y + seat.height < layout.body.y + layout.body.height);
+            assert.ok(seat.cx > layout.frontAxle.cx && seat.cx < layout.rearAxle.cx);
+          }
+        }
+      }
+      if (id === 'intake-resonance-states') {
+        assert.equal(await figure.locator('[data-runner]').count(), 6);
+        assert.equal(await figure.locator('[data-part="vacuum-unit"]').count(), 2);
+        const assembly = () =>
+          figure.locator('[data-part]').evaluateAll((parts) => parts.map((part) => part.outerHTML));
+        const installed = await assembly();
+        for (const [index, expected] of [
+          ['false', 'false'],
+          ['true', 'false'],
+          ['true', 'true'],
+        ].entries()) {
+          await options.nth(index).click();
+          assert.deepEqual(
+            await figure
+              .locator('[data-flap]')
+              .evaluateAll((flaps) => flaps.map((flap) => flap.getAttribute('data-open'))),
+            expected,
+          );
+          assert.deepEqual(await assembly(), installed, 'Switching a flap must not change the assembly proportions');
+        }
+      }
+      if (id === 'oil-pump-delivery') {
+        const dimensions = [];
+        for (let index = 0; index < 2; index++) {
+          await options.nth(index).click();
+          dimensions.push(
+            await figure.locator('.diagram-stage svg').evaluate((svg) => {
+              const bounds = (selector: string) => svg.querySelector(selector)!.getBoundingClientRect();
+              const middle = (box: DOMRect) => box.x + box.width / 2;
+              const arrow = bounds('[data-motion-arrow]');
+              const sliding = bounds('[data-pump-part="sliding-gear"]');
+              return {
+                fixedX: bounds('[data-pump-part="fixed-gear"]').x,
+                slidingX: sliding.x,
+                engagedWidth: bounds('[data-active-width]').width,
+                arrowOffset: middle(arrow) - middle(sliding),
+                arrowLabelOffset: middle(bounds('[data-motion-label]')) - middle(arrow),
+                labels: [...svg.querySelectorAll<SVGGraphicsElement>('[data-label-for]')].map((label) => {
+                  const box = bounds(`[data-label-box="${label.dataset.labelFor}"]`);
+                  const text = label.getBoundingClientRect();
+                  return { x: middle(text) - middle(box), y: text.y + text.height / 2 - box.y - box.height / 2 };
+                }),
+              };
+            }),
+          );
+        }
+        const [more, less] = dimensions;
+        assert.equal(more.fixedX, less.fixedX);
+        assert.ok(less.slidingX > more.slidingX);
+        assert.ok(less.engagedWidth > 0 && less.engagedWidth < more.engagedWidth);
+        for (const state of dimensions) {
+          assert.ok(Math.abs(state.arrowOffset) < 1);
+          assert.ok(Math.abs(state.arrowLabelOffset) < 1);
+          assert.ok(state.labels.every((offset) => Math.abs(offset.x) < 1 && Math.abs(offset.y) < 1));
+        }
+      }
+      await options.last().click();
+      assert.notEqual(await figure.locator('.diagram-stage').innerHTML(), initial);
+      assert.equal(await options.last().getAttribute('aria-pressed'), 'true');
+      assert.ok((await figure.locator('.diagram-explanation').innerText()).length > 50);
+      assert.equal(
+        await figure.locator('svg').evaluateAll(
+          (svgs) =>
+            svgs.length > 0 &&
+            svgs.every((svg) =>
+              svg
+                .getAttribute('aria-labelledby')!
+                .split(/\s+/)
+                .every((id) => svg.querySelector(`[id="${id}"]`)),
+            ),
+        ),
+        true,
+      );
+      await figure.getByRole('tab', { name: 'Static diagram', exact: true }).click();
+      await figure.getByRole('tab', { name: 'Interactive', exact: true }).click();
+      await figure.locator('[aria-pressed="true"]').last().waitFor();
+      assert.equal(await options.last().getAttribute('aria-pressed'), 'true');
+    } finally {
+      await page.close();
+    }
+  },
+);
 test.each([320, 390, 768, 1440].flatMap((width) => diagramNames.map((name) => ({ width, name }))))(
   'each interactive illustration responds to native controls and fits its canvas ($name, $width px)',
   async ({ width, name }) => {
@@ -2416,11 +2635,17 @@ test('the reference atlas and optional calculations print without losing disclos
     await page.getByRole('heading', { level: 1, name: 'Reference atlas and index', exact: true }).waitFor();
     const chapter = page.locator('#book > .level2:not([hidden])');
     assert.equal(await chapter.locator('.reference-atlas.wheels figure').count(), 10);
-    assert.equal(await chapter.locator('.reference-atlas.seats figure').count(), 3);
+    assert.equal(await chapter.locator('.reference-atlas.seats figure').count(), 5);
     assert.equal(await chapter.locator('.reference-atlas.swatches figure').count(), 31);
     for (const image of await chapter.locator('.reference-atlas img').all()) {
       assert.ok(await image.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0));
-      const bounds = (await image.boundingBox())!;
+      // Layout crops deliberately extend the original image behind a clipped viewport.
+      const bounds = await image.evaluate((element) => {
+        const viewport = element.closest('.image-viewport');
+        const box = (viewport ?? element).getBoundingClientRect();
+        return { x: box.x, width: box.width, clipped: !viewport || getComputedStyle(viewport).overflow === 'hidden' };
+      });
+      assert.ok(bounds.clipped);
       assert.ok(bounds.width >= 100 && bounds.x >= 0 && bounds.x + bounds.width <= 390);
     }
     assert.match(await chapter.innerText(), /September 2010 at the earliest/);

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="410" viewBox="102.5 70 205 210" role="img" aria-labelledby="title desc"><title id="title">Half section through the rear disc, parking shoe and hydraulic pads</title><desc id="desc">Enlarged detail of the upper axial section; the rotation axis is below the cropped view. The wheel side is left. The rear disc has two ventilated friction plates and a deep mounting hat with an internal parking drum. A fixed caliper presses pads against both outer disc faces; a mechanically actuated shoe works radially against the drum. Disc radius, thickness and overall height use 299 by 20 by 67 mm. Caliper, backing plate, small clearances and shoe details are schematic.</desc><rect width="400" height="410" fill="#fff"/><g font-family="Arial, sans-serif" fill="#243e34">
+<g data-disc-section="true">
+<path id="hat-and-outboard-face" d="M130 266.7H141V205Q141 197 149 197H201Q218.4 197 218.4 180V95.85H209.9V180Q209.9 188.5 201 188.5H130Z" fill="#c2d3c7" stroke="#365746" stroke-width="1.8"/>
+<rect id="inboard-face" x="235.4" y="95.85" width="8.5" height="84.15" fill="#c2d3c7" stroke="#365746" stroke-width="1.8"/>
+<rect x="218.4" y="103" width="17" height="3.5" fill="#93ad9b" stroke="#365746" stroke-width=".8"/><rect x="218.4" y="117" width="17" height="3.5" fill="#93ad9b" stroke="#365746" stroke-width=".8"/><rect x="218.4" y="131" width="17" height="3.5" fill="#93ad9b" stroke="#365746" stroke-width=".8"/><rect x="218.4" y="145" width="17" height="3.5" fill="#93ad9b" stroke="#365746" stroke-width=".8"/><rect x="218.4" y="159" width="17" height="3.5" fill="#93ad9b" stroke="#365746" stroke-width=".8"/><rect x="218.4" y="173" width="17" height="3.5" fill="#93ad9b" stroke="#365746" stroke-width=".8"/><path d="M209.9 99V177M243.9 99V177" stroke="#6f937b" stroke-width="1"/>
+<g id="caliper-body"><path d="M174 157V88Q174 76 186 76H267Q280 76 280 88V157H268V97Q268 90 261 90H193Q186 90 186 97V157Z" fill="#2c4438" stroke="#20382c" stroke-width="1.7"/>
+<rect x="186" y="108" width="11" height="40" fill="#9aafa2" stroke="#365746" stroke-width="1.5"/><rect x="257" y="108" width="11" height="40" fill="#9aafa2" stroke="#365746" stroke-width="1.5"/>
+<path d="M190 110V146M263 110V146" stroke="#e6eee7" stroke-width="1"/>
+</g>
+<g id="pads"><rect x="197" y="105" width="3" height="46" fill="#72937e" stroke="#365746" stroke-width="1"/><rect id="left-pad" x="200" y="105" width="9.2" height="46" rx="1" fill="#b9cbbd" stroke="#365746" stroke-width="1.2"/>
+<rect id="right-pad" x="244.6" y="105" width="9.2" height="46" rx="1" fill="#b9cbbd" stroke="#365746" stroke-width="1.2"/><rect x="253.8" y="105" width="3" height="46" fill="#72937e" stroke="#365746" stroke-width="1"/>
+</g>
+<rect id="shoe-lining-section" x="156" y="199.5" width="42.5" height="6.5" rx="1" fill="#c2996d" stroke="#916237" stroke-width="1.3"/>
+<path id="shoe-section-web" d="M156 207H198.5V212H181V230H174V212H156Z" fill="#95b3a0" stroke="#365746" stroke-width="1.5"/>
+
+
+
+</g></g></svg>

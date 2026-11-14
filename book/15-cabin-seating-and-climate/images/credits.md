@@ -50,3 +50,32 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **1667 0**, native **2038 × 2665**; crop `[10, 597, 1986, 2458]`. Locator inset omitted at `[0, 0, 669, 507]`. Result **2016 × 1901** pixels.
 - **Applicability and limits:** 817-008 contains manual and electric frames, handed variants, optional ventilation and ISOFIX-related bracket 7/fasteners 8. Alternative trims/switches are not all baseline equipment; the illustration is not a complete backrest or airbag assembly.
 - **Local image SHA-256:** `30f5259d752d9e9745887c18416d18d4a343fd49caf497bc42ebc0a367297e45`.
+
+
+## Visual review additions — 13 November 2026
+
+`dashboard-controls.svg`, `seat-ventilation-section.svg`
+
+Original baseline equipment locator and conceptual ventilation section. UK01/10 pp74–77 and the handbook establish baseline black instruments/manualAC bars versus optional AUTO/target control. LHD locator, not an actual dashboard photograph; UK driving controls mirrored. Training Heating/AC p152 establishes fans drawing air inward through perforations/permeable layers and exhausting to cabin. Ducts are unfolded, no refrigerant in cushion. Removed redundant S-dashboard image and its stale “pictured below” wording.
+
+Factory material retains Porsche’s original rights; SVG composition/labels and teaching drawings are original project work. No generative alteration of documentary photographs.
+
+
+## Seat ventilation refinement — 14 November 2026
+
+`seat-ventilation-section.svg` and `seat-ventilation-layers.svg` are original project drawings. The seat follows the period standard/comfort silhouette: integrated head restraint, taller reclined backrest and shaped cushion. PET817-002/004 distinguishes perforated covering, ventilation inserts, air guides and separate cushion/backrest blowers. The existing Porsche training source supplies inward extraction through the contact face and discharge into the cabin.
+
+The inlet-face blower follows unchanged photographs of current **99762433501** and **99762433701** modules from Sierra Madre Collection, with an annular impeller inlet around the motor, foam seal and metal mounting tabs. PET's00-suffix entries are not silently treated as identical original2010 parts. Exact mounting angles, outlet clocking, blade count, foam layers and passages remain schematic. Numbers are React overlays and the original reference images are not composited.
+
+[Local reference dossier](../part-reference/seat-ventilation-refinement/README.md) records original photograph URLs, publication locators and hashes. Porsche material remains © Porsche AG; commercial photographs retain their rightsholders' rights and are excluded from MIT. No permission to republish asserted.
+
+
+## Dashboard and climate controls — 14 November 2026
+
+The old `dashboard-controls.svg` block diagram has been removed. Original images are displayed using `AnnotatedFigure` / `ImageComparison`, with separate native labels and CSS viewports.
+
+- `dashboard-rhd-original.jpg`: **Cameron Sports Cars** original1280×853JPEG, [listing U1674](https://www.cameronsportscars.com/vehicle-details/used-porsche-boxster-987-2-9-gen-2-manual-for-sale-in-chippenham-south-gloucestershire-u1674/), [original image](https://img.cdn.dragon2000.net/C1353/U1674/IMG_32624-large.jpg). The photograph depicts a RHD2.9 with optional equipment; its watermark, pixels and full frame are retained. Dealer dates describe the advertised car and do not prove every original MY/option claim.
+- `manual-ac-handbook-original.jpg`: Porsche AG,2010 Boxster handbook WKD98702110,5/09, printed106/PDF108, original JPEG object **422 0**,715×345.
+- `automatic-climate-handbook-original.jpg`: same publication, printed109/PDF111, original JPEG object **434 0**,710×345. [Original handbook](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf).
+
+The factory magnifier/letter labels are part of Porsche's source artwork. No retouching, newly baked circles or simulated active LCD has been added. React crops show the enlarged panels at their original proportions; source bytes remain intact. North American handbook controls are distinct from UK option-availability evidence. All third-party images retain their rightsholders' rights and are excluded from MIT. Full locators, hashes and limits: [reference dossier](../part-reference/dashboard-refinement/README.md).

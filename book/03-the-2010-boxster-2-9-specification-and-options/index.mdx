@@ -1,7 +1,9 @@
-import { Diagram, Figure, Heading } from '../../src/book/components';
-import illustration0 from "./diagrams/specification-gearbox-comparison/poster.svg";
+import visualvehicledatafieldssvg from "./images/vehicle-data-fields.svg";
+import dimensionsSide from "../01-the-2010-boxster-2-9-in-the-987-2-family/part-reference/family-layout-refinement/uk-01-10-pdf-p5-side-000.jpg";
+import dimensionsFront from "../16-lighting-electrical-systems-and-security/images/porsche-front-lights.jpg";
+import { DimensionedFigure, Diagram, Figure, Heading } from '../../src/book/components';
+import illustration0 from "./images/gearbox-acceleration.svg";
 import illustration1 from "./diagrams/specification-option-links/poster.svg";
-import illustration2 from "./images/boxster-2-9-period-front.jpg";
 import illustration3 from "./images/specification-weight-bases.svg";
 import illustration4 from "./images/boxster-personalised-cabin.jpg";
 
@@ -11,11 +13,36 @@ Every 2010 European Boxster 2.9 has the same published engine output, with eithe
 
 This chapter is the quick reference for the 2.9, taken from Porsche's January 2010 UK brochure. It describes what the catalogue offered; a car's own factory record shows which options it received.[^scope]
 
-<Figure src={illustration2} alt={"A green ordinary 987.2 Boxster photographed from the front on a mountain road."}>
+<DimensionedFigure
+  title="Length and wheelbase"
+  src={dimensionsSide}
+  alt="Original Porsche side photograph of a red Boxster S, with separate overlays locating bumper-to-bumper length and the distance between the axle centres."
+  inset={{ top: 10, right: 80, bottom: 400, left: 80 }}
+  dimensions={[
+    { label: 'Wheelbase 2,415 mm', axis: 'horizontal', from: [500, 535], to: [1705, 535], at: 860, labelAt: [1102.5, 860] },
+    { label: 'Overall length 4,342 mm', axis: 'horizontal', from: [155, 565], to: [2205, 565], at: 1040, labelAt: [1180, 1040] },
+  ]}
+>
 
-A catalogue Boxster 2.9 shown with optional equipment. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 21. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+Length uses the body ends; wheelbase uses the axle centres. Photo: Porsche AG, *The Boxster*, UK 01/10, PDF p. 5; the pictured S has optional equipment and illustrates the shared body envelope. The labels give the reference 2.9's catalogue dimensions; perspective makes this a locator, not a scaled measurement drawing.[^dimensions]
 
-</Figure>
+</DimensionedFigure>
+
+<DimensionedFigure
+  title="Width and height · roof raised"
+  src={dimensionsFront}
+  alt="Original Porsche front photograph with the fabric roof raised, with overlays distinguishing body width, mirror-tip width and roof-to-ground height."
+  inset={{ top: 35, right: 160, bottom: 70, left: 20 }}
+  dimensions={[
+    { label: 'Mirrors 1,952 mm', axis: 'horizontal', from: [70, 112], to: [331, 112], at: 24, labelAt: [200.5, 0] },
+    { label: 'Body 1,801 mm', axis: 'horizontal', from: [64, 180], to: [340, 180], at: 300, labelAt: [202, 330] },
+    { label: 'Height 1,292 mm', axis: 'vertical', from: [191, 72], to: [191, 252], at: 385, labelAt: [435, 160] },
+  ]}
+>
+
+Use mirror-tip width for a gateway and body width for the smaller envelope; height is quoted with the roof raised and standard chassis. Photo: Porsche AG, UK 01/10, printed p. 65 (PDF p. 30), with optional bi-xenon lights. The original photograph is unchanged; dimension lines and text are separate overlays. Perspective means the two widths cannot be compared by their pixel lengths.[^dimensions]
+
+</DimensionedFigure>
 
 ## The reference specification
 
@@ -60,7 +87,11 @@ With the manual, the driver uses a clutch pedal and selects each of six forward 
 
 PDK's quicker acceleration comes from the same 188 kW engine. The ordinary PDK car is quoted at **5.8 seconds**; the **5.6-second** figure needs Sport Chrono's Sport Plus function.[^chrono]
 
-<Diagram id="specification-gearbox-comparison" poster={illustration0} alt={"The manual takes 5.9 seconds to reach 100 km/h. PDK takes 5.8 seconds; PDK with Sport Chrono Sport Plus takes 5.6. Peak engine output remains 188 kW in all three configurations."} />
+<Figure src={illustration0} alt="Zero-based bars compare manual 5.9 seconds, PDK 5.8 and PDK with Sport Plus 5.6 to 100 km/h.">
+
+The three published acceleration figures, all from the same 188 kW engine. Sport Plus requires the appropriate Sport Chrono package; the tables above give the other differences.
+
+</Figure>
 
 The [manual transmission](../08-manual-transmission-and-clutch/index.mdx) and [PDK](../09-pdk-transmission/index.mdx) chapters explain how each gearbox works and how the driver controls it.
 
@@ -128,6 +159,12 @@ The [option-code index](../19-reference-atlas-and-index/index.mdx#option-code-in
 Establish the car's identity first, then its equipment. Porsche's contemporary handbook describes a vehicle-data label in the Maintenance booklet, listing the VIN, type, engine and transmission codes, paint and interior identification, and optional equipment. That handbook is the North American edition, so check UK availability against the UK catalogue.
 
 Porsche's PET spare-parts catalogue uses a second set of identifiers. Its 2010 rows give the 2.9 engine as **A120**, the manual gearbox as **G8710** and PDK as **CG200**, and its equipment key uses **480** for the six-speed manual and **250** for PDK. These identify assemblies or production equipment; a UK sales code such as **P23** for PCM/navigation belongs to a different list. Match the assembly type and equipment conditions before comparing part numbers. The saved catalogue is a 2018 replacement-parts snapshot, so it cannot show the original UK option price or order date.[^record]
+
+<Figure src={visualvehicledatafieldssvg} alt="An anonymised example distinguishes VIN, type, engine and gearbox, paint and trim, and equipment fields.">
+
+An illustrative field guide, with identity and option values omitted. It is not a reproduction of an individual car’s sticker. Porsche’s handbook lists these five groups.[^record]
+
+</Figure>
 
 For a UK car, check that the VIN on the documents matches the car, then copy the data label carefully. Keep leading zeros and letters: **P75**, **250** and **XLF** are different kinds of identifier. Look each up in a source for the right model, market and date, because a generic decoder may give a plausible name while missing a package condition or a change between generations.
 

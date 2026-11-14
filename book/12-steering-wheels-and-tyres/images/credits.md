@@ -31,3 +31,19 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **524 0**, native **2034 × 2570**; crop `[159, 835, 1995, 2354]`. Locator inset omitted at `[0, 2, 672, 513]`. Result **1876 × 1559** pixels.
 - **Applicability and limits:** 403-000 distinguishes gear 1, bellows 2, joint 6, locknut 7 and track rod 8. LHD/RHD alternatives are listed separately, so handed pipe geometry and complete interchangeability are not inferred.
 - **Local image SHA-256:** `ce59b3cf143a23a4c4bc970bcbdd5a5acecb4886a07445b5efa294347f14af14`.
+
+
+## Visual review additions — 13 November 2026
+
+`tyre-construction.svg`
+
+Original generic radial-tyre cutaway following the chapter’s Continental component reference. Distinguishes tread, belts, radial casing, liner and bead. Layers are separated/thickened; no specific supplier, compound, cord-angle or fitted2010 construction claim.
+
+Factory material retains Porsche’s original rights; SVG composition/labels and teaching drawings are original project work. No generative alteration of documentary photographs.
+
+
+## Tyre section refinement — 14 November 2026
+
+`tyre-construction.svg` was redrawn with rounded shoulders/sidewalls, separate crown belts, a cap band, casing turn-ups, bead-wire bundles and a rim with flange, seat and drop centre. The overall profile is guided by the standard front's nominal 55% aspect ratio; it does not assert measured supplier-specific dimensions. Five connected arrowheaded leaders point at their named layers. Readable labels remain separate HTML in the shared `AnnotatedFigure` component.
+
+Visual references were Continental's original construction cutaway and Hankook's manufacturer cutaway, retained unmodified in [the reference dossier](../part-reference/tyre-refinement/README.md). The Hankook image depicts an SUV tyre, used for construction only. Original reference material retains its creators' rights and is excluded from the repository MIT licence; the new schematic and editorial labels are project work.

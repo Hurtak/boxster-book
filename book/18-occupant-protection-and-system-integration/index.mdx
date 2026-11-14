@@ -1,8 +1,8 @@
-import { Diagram, Figure, Heading } from '../../src/book/components';
+import posipFactoryImage from "./images/porsche-posip-2010.jpg";
+import { Diagram, Figure, Heading, AnnotatedFigure } from '../../src/book/components';
 import illustration0 from "./diagrams/protection-explorer/poster.svg";
 import illustration1 from "./diagrams/protection-system-scenarios/poster.svg";
 import illustration2 from "./images/belt-functions.svg";
-import illustration3 from "./images/porsche-posip-2010.jpg";
 import illustration4 from "./images/fixed-rollover-structure.svg";
 import rolloverParts from "./images/pet-rollover-bars-and-belts.png";
 
@@ -54,11 +54,11 @@ Porsche's period handbook describes the pretensioners as single-use and links th
 
 The ordinary Boxster and S have two front airbags, in the steering-wheel centre and the passenger side of the dashboard. Porsche Side Impact Protection, **POSIP**, adds two on each side: a thorax bag in the outer seat bolster and a head bag in the door, making six in all. The UK brochure gives approximately eight litres for each POSIP bag and states that they protect with the hood open.[^uk-restraints]
 
-<Figure src={illustration3} alt={"Porsche factory illustration of an open red 987.2 Boxster with its front and side airbags inflated, showing the different locations around the two seats."}>
+<AnnotatedFigure src={posipFactoryImage} alt="Porsche’s illustrative inflated-airbag view marked as two front, two seat-thorax and two door-head airbag locations." title="Six airbag modules, three pairs" annotations={[{"id": "1", "label": "Driver front airbag \u00b7 steering wheel", "x": 33.78, "y": 40.41}, {"id": "2", "label": "Passenger front airbag \u00b7 fascia", "x": 39.5, "y": 26.71}, {"id": "3", "label": "Left seat-mounted thorax airbag", "x": 47.33, "y": 47.26}, {"id": "4", "label": "Right seat-mounted thorax airbag", "x": 56.11, "y": 33.56}, {"id": "5", "label": "Left door-mounted head airbag", "x": 40.65, "y": 65.07}, {"id": "6", "label": "Right door-mounted head airbag", "x": 56.3, "y": 20.21}]}>
 
-POSIP locations on a Boxster S. Every bag is drawn inflated at once; this is not a deployment rule. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 67. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+Six airbag modules in three pairs: front, seat-mounted thorax and door-mounted head. Porsche’s **Boxster S** illustration depicts inflated bags to explain their positions; it is not a simultaneous-deployment sequence or a photograph of a crash. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 67. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=31).
 
-</Figure>
+</AnnotatedFigure>
 
 Each airbag stays folded in its module until the restraint control unit fires its inflator. Gas fills the bag fast enough to put an extra cushion between the occupant and the interior. It supplements the belt. Because inflation is so rapid, the bag needs clear space, and the occupant's position matters.[^airbag-principles]
 

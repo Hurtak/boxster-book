@@ -111,12 +111,18 @@ export async function discoverBook(source: string, root: string): Promise<BookIn
       if (node.type === 'text' && /\[\^[^\]]+\]/.test(node.value))
         throw Error(`Unresolved footnote reference in ${file}: ${node.value}`);
       if (node.type === 'image') throw Error(`Use Figure with an imported image and descriptive alt text in ${file}`);
-      if (node.type === 'mdxJsxFlowElement' && node.name && ['Figure', 'Diagram'].includes(node.name)) {
+      if (
+        node.type === 'mdxJsxFlowElement' &&
+        node.name &&
+        ['Figure', 'Diagram', 'AnnotatedFigure', 'ComparisonImage', 'ImageComparison', 'DimensionedFigure'].includes(
+          node.name,
+        )
+      ) {
         const alt = literalAttribute(node, 'alt');
         if (typeof alt !== 'string' || !alt.trim())
           throw Error(`${node.name} needs non-empty literal alt text in ${file}`);
         const src = attribute(node, node.name === 'Diagram' ? 'poster' : 'src');
-        if (!src || (typeof src === 'string' && !src.startsWith('data:')))
+        if (node.name !== 'ImageComparison' && (!src || (typeof src === 'string' && !src.startsWith('data:'))))
           throw Error(`${node.name} needs an imported image (src={image} or poster={poster}) in ${file}`);
       }
       if (node.type === 'mdxJsxFlowElement' && node.name === 'Diagram') {

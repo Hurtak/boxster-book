@@ -1,3 +1,5 @@
+import visualspeakerpackagelocator from "./diagrams/speaker-package-locator/poster.svg";
+import visualpcmconsoleinterfacejpg from "./images/pcm-console-interface.jpg";
 import { Diagram, Figure, Heading } from '../../src/book/components';
 import illustration0 from "./diagrams/audio-explorer/poster.svg";
 import illustration1 from "./diagrams/audio-source-path/poster.svg";
@@ -29,6 +31,8 @@ The music signal controls a much larger flow of electrical energy, which the spe
 
 The standard system has two dashboard tweeters and a woofer in each door, driven by two output stages rated at 25 W each. In Porsche’s parts drawing the tweeters clip into the dashboard, while each door bass driver sits in a housing secured by four bolts. The drawing also shows a radio aerial amplifier connected to the CDR-30; it handles the received signal, not the power sent to the speakers.[^cdr-training]
 
+<Diagram id="speaker-package-locator" poster={visualspeakerpackagelocator} alt="Compare the dashboard and door speaker housings across the standard four-speaker and seven-speaker Sound Package Plus systems, and the eleven-speaker BOSE system with its four-driver rear enclosure." />
+
 ## The standard CDR-30
 
 <Figure src={illustration3} alt={"The CDR-30’s monochrome screen and surrounding physical controls in Porsche’s period photograph."}>
@@ -59,11 +63,17 @@ In an older car, the receiver may locate the car perfectly while an old map know
 
 **Sound Package Plus**, option **490**, is an analogue amplified upgrade. Porsche’s training material calls it fully active: a separate amplifier drives the channels instead of the head unit’s output stages. The UK brochure specifies seven speakers and 185 W in total, in the two dashboard tweeter positions, a dashboard centre position, and a midrange and a bass position in each door. The bass drivers differ from the standard ones, and the system is tuned to the cabin; the source menus are unchanged.[^sound-plus]
 
-**BOSE**, option **680**, uses eleven speakers in the Boxster, including a centre speaker and an active subwoofer, with a seven-channel digital amplifier rated at 385 W. The subwoofer enclosure sits behind the occupants and is catalogued as one replacement assembly, not one individual speaker. BOSE also has its own dashboard and door driver variants.[^bose-hardware] Porsche’s PCM architecture drawing separates an analogue amplifier connection from a digital-amplifier path labelled **MOST**, the multimedia data connection in this design. The speaker-driving current still comes from the amplifier.[^pcm-architecture]
+**BOSE**, option **680**, uses eleven speakers in the Boxster, including a centre speaker and an active subwoofer, with a seven-channel digital amplifier rated at 385 W. Three speakers sit in the dashboard, four in the doors and four in the enclosure behind the occupants. That rear enclosure contains two bass and two mid/high-range drivers and is catalogued as one replacement assembly, not one individual speaker. BOSE also has its own dashboard and door driver variants.[^bose-hardware] Porsche’s PCM architecture drawing separates an analogue amplifier connection from a digital-amplifier path labelled **MOST**, the multimedia data connection in this design. The speaker-driving current still comes from the amplifier.[^pcm-architecture]
 
 <Figure src={speakerParts} alt="Catalogue drawing comparing a dashboard tweeter and centre driver, door midrange and bass drivers, and the wide rear BOSE subwoofer enclosure." width="520px">
 
 Speaker families from the different sound packages: dashboard tweeter (1), centre driver (3), door midrange (5), door bass unit (7) and rear BOSE enclosure (9). The standard four-speaker system has no centre or midrange drivers and no BOSE rear unit. Factory drawing: Porsche AG, [PET 911-005, PDF p. 579](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=579).
+
+</Figure>
+
+<Figure src={visualpcmconsoleinterfacejpg} alt="Open console compartment showing Porsche’s optional PCM universal interface with AUX, USB and iPod connections.">
+
+The optional **PCM** universal interface in the centre-console storage compartment. The CDR-30 combination in the UK catalogue provides AUX only. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 87. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=41).
 
 </Figure>
 
@@ -125,7 +135,7 @@ Treat a faulty installation as a chain. If one source is silent, look at its med
 
 [^sound-plus]: Porsche, *2009 Technik Introduction*, printed p. **168**, [viewer p. 174](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=174), analogue fully active system; *The Boxster*, UK **01/10**, printed p. **87**, speaker count and total output. *PET 987209*, **911-005, PDF pp. 579–580**, items **1, 3, 5, 7**, distinguishes the PR **490** speaker arrangement and bass-driver variant.
 
-[^bose-hardware]: Porsche, *2009 Technik Introduction*, printed p. **180**, [viewer p. 186](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=186); UK **01/10** brochure printed pp. **88–89** confirms compatibility with both CDR-30 and PCM and restricts DVD 5.1 playback to PCM. *PET 987209*, **911-005, PDF pp. 579–580**, items **1, 3, 5, 7, 9–12**, identifies PR **680** driver variants and the complete rear enclosure. One listed enclosure is not a count of its internal drivers.
+[^bose-hardware]: Porsche, *2009 Technik Introduction*, printed p. **180**, [viewer p. 186](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=186); UK **01/10** brochure printed pp. **88–89** confirms compatibility with both CDR-30 and PCM and restricts DVD 5.1 playback to PCM. Its p. 89 component captions identify two 25 mm dashboard tweeters plus a 70 mm centre driver; two 80 mm door midrange and two 200 mm door bass drivers; and two 130 mm bass plus two 65 mm mid/high-range drivers in the rear enclosure. *PET 987209*, **911-005, PDF pp. 579–580**, items **1, 3, 5, 7, 9–12**, identifies PR **680** driver variants and the complete rear enclosure. One listed enclosure is not a count of its internal drivers.
 
 [^pcm-architecture]: Porsche, *2009 Technik Introduction*, printed p. **171**, schematic **9_26.2_09**, [viewer p. 177](https://www.manualslib.com/manual/3550487/Porsche-Boxster-2009.html?page=177). The drawing labels analogue amplification and MOST/digital amplification separately. Porsche’s later *PCCM+ 9x7.II Installation and Conversion Instructions*, **102/25 ENU 9112**, **28 July 2026**, pp. **1, 5**, identifies the existing BOSE MOST line on these models, excluding the Japan arrangement ([Porsche original via NHTSA](https://static.nhtsa.gov/odi/tsbs/2026/MC-11035929-0001.pdf#page=5)). This corroborates the PCM/BOSE route; retrofit functions are not attributed to the original unit, and no CDR MOST topology is inferred.
 

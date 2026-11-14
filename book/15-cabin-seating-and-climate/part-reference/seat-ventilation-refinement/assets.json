@@ -1,0 +1,27 @@
+[
+  {
+    "file": "backrest-fan-original.png",
+    "bytes": 285825,
+    "sha256": "fd538e248071ff22a98ba07621d54fdf56a3618c9c5371c65baf721295850baa"
+  },
+  {
+    "file": "cushion-fan-original.png",
+    "bytes": 341282,
+    "sha256": "ec5934477adb1c9ac17e13d96788bfe0a3473885a1a27944ec1a8f649b31ca69"
+  },
+  {
+    "file": "pet-817-004-p452.png",
+    "bytes": 176873,
+    "sha256": "382fce0201c61b7d552a6774cec8cb87c781b97a6ddd55fa78e2d111a6bbb209"
+  },
+  {
+    "file": "pet-817-004-p453.png",
+    "bytes": 258762,
+    "sha256": "3480e60498eb707b383e3e7d1898357a0d19ddcf3197d150888c42b197b4d053"
+  },
+  {
+    "file": "porsche-comfort-seat-original.png",
+    "bytes": 27778,
+    "sha256": "ea3d8a27bc6ca4f2495eb1598597b273fdee1202299b8e7053a0bffe5f1a5677"
+  }
+]

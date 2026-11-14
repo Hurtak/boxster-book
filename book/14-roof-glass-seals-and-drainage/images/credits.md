@@ -36,3 +36,12 @@ The redrawn SVGs remain original project artwork. New factory/reference excerpts
 - **Treatment:** white-background crop `[73, 329, 963, 709]` only, without rescaling or retouching, giving **890 × 380** pixels. Product page did not reopen during this pass; the image and its archived provenance were inspected locally.
 - **Applicability and limits:** Photograph identifies the ordinary-model left tray 98756180501, corroborated by PET 812-000. No seller material, stock, universal-fitment or installation claim is adopted. No particular visible hole is asserted to be the drain outlet.
 - **Local image SHA-256:** `9988e81f3615f03478daccc330a6bff2a4eaf2bd3b0f04089e3da725b829864d`.
+
+
+## Visual review additions — 13 November 2026
+
+`installed-drain-factory.jpg`
+
+Unchanged copy of the already archived Porsche TI29/09 ENU5393 Figure1, SHA-25614f72938823a46041bf0ea22fd47a51aedb8298bc066fc287dc554a622217fc2. Full source and retrieval limitations remain in part-reference/roof-drainage-refinement/provenance.md. Explicitly a workshop line drawing, not a photograph. It locates the opening/filter by the mechanism; no unseen downstream pipe route is drawn.
+
+Factory material retains Porsche’s original rights; SVG composition/labels and teaching drawings are original project work. No generative alteration of documentary photographs.

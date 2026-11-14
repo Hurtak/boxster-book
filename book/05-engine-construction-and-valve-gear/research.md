@@ -79,3 +79,14 @@ PET 202-000, drawing p. 104 and items 1–6 on p. 105, shows catalyst bodies wit
 Fresh primary-document text check: Porsche *2009 Technik Introduction*, PNA 987 021 09, 2/09, via its [accessible original-text copy](https://www.scribd.com/document/972719474/Boxster-2009), Engine pp. 9, 12–19 confirms the pulley-side drive, tappet/head/cover construction, lift and phase units, hydraulic chain tensioners and exhaust-cam-driven vacuum pump. Direct ManualsLib page 22–24 requests were inaccessible in this pass. No new training-page visual inspection is claimed; the newly inspected real factory line drawings are the saved PET pages.
 
 Replacement-part distinctions between A120 and A121 now support the comparison paragraph for crankcases, pistons, heads and cams. PET's A120/A121 naming is not silently substituted for training's MA120/MA121 or Cayman suffixes. The 2018 snapshot cannot prove original UK option availability, all running changes or complete special-model/Cayman interchangeability. Existing dated brochure authorities and those unresolved boundaries remain.
+
+
+## Visual review integration — 13 November 2026
+
+The shared React figure displays a layout crop of the saved PET101-010 p37 drawing:7 belt,8 alternator,9 coolant pulley,10 steering pulley,11 crank pulley,12 compressor,1–3 tensioner/rollers; the actual callout drawing replaces guessed belt geometry. The revised tappet comparison and its archived source images are documented below. See [image credits](images/credits.md) for asset provenance. Existing factual qualifications remain.
+
+## Tappet proportion and detail revision — 14 November 2026
+
+The former rectangular, two-profile `variocam-tappet.svg` has been replaced by paired cylindrical cutaways (`variocam-tappet-uncoupled.svg` / `variocam-tappet-coupled.svg`) and two original Wolf Auto Parts photographs of listed inlet tappet **9A1 105 070 03**, stock PS60678. The external envelope and central-pad ratio follow the visible part; the factory UK 01/10 VarioCam illustration establishes three neighbouring cam tracks. The new sections distinguish the outer ring, inner tappet, lateral coupling pin, internal return spring and hydraulic clearance compensation. The valve stem is broken off graphically so a compressed full valve is not presented as a scale part.
+
+All originals, source URLs, native dimensions, processing, hashes and the comparison with PET 103-010 and Porsche training are recorded in [the refinement reference](part-reference/tappet-refinement/README.md). Photographs remain unchanged; crops are layout viewports. Both modes use the same body proportions and show a common base-circle position, not their peak displacements. The baseline **3.6 / 10.0 mm** figures remain unchanged. The older P001 cutaway supplies only mechanism context; unknown MA120 clearances, oil drillings and internal dimensions remain explicitly schematic. Detailed comparisons stack on phones and remain side by side on wider screens.

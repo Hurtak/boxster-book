@@ -33,3 +33,23 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **2020 0**, native **2067 × 3131**; crop `[10, 7, 2067, 2948]`. No locator inset omitted. Result **2097 × 2981** pixels.
 - **Applicability and limits:** 905-000 is the halogen plate, not bi-xenon 905-001. Item 20 includes ordinary fog/position-light and Spyder-specific alternatives; the representative outline does not establish identical internals across models or RHD beam pattern.
 - **Local image SHA-256:** `d372a125024e639abb32e1d39cd4309e777644dc610ab409f8ab1fabaf3b26e0`.
+
+
+## Visual review additions — 13 November 2026
+
+`ImageComparison` using the original halogen drawing and P75 photograph
+
+Uses unchanged existing PET905-000 p552 halogen drawing beside the existing UK01/10 p65 optionalP75 front photograph. Explicit drawing/photo comparison rather than an unsupported “standard halogen photo”. Standard lower fog/LEDposition vs P75 lowerLEDDRL follow detailed catalogue64–65 and training158, respecting the existing p17 brochure wording conflict. No beam photometry, RHD pattern or fitment by projector appearance.
+
+Factory material retains Porsche’s original rights; React composition/labels and original teaching drawings are original project work. No generative alteration of documentary photographs.
+
+## Source-preserving React layout — 13 November 2026
+
+The former SVG image wrapper has been removed. Imported originals are displayed by the shared `Figure`, `AnnotatedFigure` or `ImageComparison` components. Crops are CSS viewports; editorial numbers and legends are separate HTML elements. The same composition is retained in enlargement, no-JavaScript and print views. Source image bytes have not been retouched or re-exported.
+
+
+## Halogen / P75 photo comparison — 14 November 2026
+
+`halogen-front-cameron-original.jpg`: Cameron Sports Cars Ltd, [2010 Boxster2.9 manual listing U1674](https://www.cameronsportscars.com/vehicle-details/used-porsche-boxster-987-2-9-gen-2-manual-for-sale-in-chippenham-south-gloucestershire-u1674/), [original JPEG IMG_32632](https://img.cdn.dragon2000.net/C1353/U1674/IMG_32632-large.jpg). Original image bytes retained without retouching, resizing or mirroring. The head-on view shows the standard halogen/fog-lamp layout. The dealer's generic “LED Daytime Running Lights” wording is not used to identify P75: the visible rectangular fog reflectors match the standard arrangement documented in Porsche's detailed lighting spread and PET905-000.
+
+The React comparison now uses two original photographs, with matching-aspect CSS viewports focused on the front lamps. The PET assembly drawing remains a separate construction figure. `porsche-front-lights.jpg` retains its existing original Porsche provenance and optional-P75 identification. Local source locators, crop coordinates and hashes: [halogen-photo reference](../part-reference/halogen-photo/README.md). Dealer/Porsche photographs retain their original copyrights and are excluded from MIT; no permission to republish is asserted.

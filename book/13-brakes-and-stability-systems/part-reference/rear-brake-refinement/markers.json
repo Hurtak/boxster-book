@@ -1,0 +1,54 @@
+{
+  "face": [
+    {
+      "id": "1",
+      "label": "Disc friction faces \u00b7 hydraulic service brake",
+      "x": 21.25,
+      "y": 59.268292682926834
+    },
+    {
+      "id": "2",
+      "label": "Internal drum surface \u00b7 inside the disc hat",
+      "x": 50.0,
+      "y": 71.95121951219512
+    },
+    {
+      "id": "3",
+      "label": "Parking-brake shoe lining \u00b7 works against the drum",
+      "x": 31.875,
+      "y": 37.6219512195122
+    },
+    {
+      "id": "5",
+      "label": "Parking-shoe adjuster",
+      "x": 50.0,
+      "y": 30.975609756097565
+    }
+  ],
+  "section": [
+    {
+      "id": "1",
+      "label": "Disc friction faces",
+      "x": 66.90243902439025,
+      "y": 48.095238095238095
+    },
+    {
+      "id": "2",
+      "label": "Internal drum surface",
+      "x": 23.65853658536585,
+      "y": 58.57142857142858
+    },
+    {
+      "id": "3",
+      "label": "Parking shoe lining",
+      "x": 41.21951219512195,
+      "y": 63.21428571428571
+    },
+    {
+      "id": "4",
+      "label": "Hydraulic pad",
+      "x": 49.80487804878049,
+      "y": 27.61904761904762
+    }
+  ]
+}

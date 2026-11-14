@@ -42,7 +42,8 @@ export function bookConfig(
     },
     async load(id) {
       if (id.startsWith('\0virtual:')) return virtualSource(id.slice(1), book, assets, prefix);
-      const asset = assets.get(id.split('?')[0]);
+      // Explicit Vite imports such as ?raw and ?url retain their native meaning.
+      const asset = assets.get(id);
       if (asset) return `export default ${JSON.stringify(asset.key)};`;
     },
     configureServer(server) {

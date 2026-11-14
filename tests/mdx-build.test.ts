@@ -112,6 +112,10 @@ test('invalid authoring fails with actionable chapter, heading, diagram and note
       /Missing diagram module/,
     ],
     [{ '01-one/index.mdx': '# One\n\n<Figure src={image} alt="" />' }, /non-empty literal alt/],
+    [{ '01-one/index.mdx': '# One\n\n<ComparisonImage src={image} alt="" />' }, /non-empty literal alt/],
+    [{ '01-one/index.mdx': '# One\n\n<AnnotatedFigure src="photo.jpg" alt="Cutaway" />' }, /imported image/],
+    [{ '01-one/index.mdx': '# One\n\n<DimensionedFigure src="photo.jpg" alt="Dimensions" />' }, /imported image/],
+    [{ '01-one/index.mdx': '# One\n\n<ImageComparison title="Comparison" />' }, /non-empty literal alt/],
     [{ '01-one/index.mdx': '# One\n\nBroken[^missing].' }, /Unresolved footnote/],
   ];
   for (const [files, pattern] of cases)

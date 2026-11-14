@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="715" viewBox="0 0 800 715" role="img" aria-labelledby="title desc">
+<title id="title">Pressure-pump gear overlap — less overlap</title>
+<desc id="desc">The chain-driven fixed gear meshes with a second, axially sliding gear. A control piston, spring piston and spring move with the lower gear. A DME-controlled hydraulic valve changes the pressure on the spring-piston side. The active tooth width is reduced while both gears remain driven. Outer assembly proportions are checked against part photographs; this enlarged internal section follows the factory principle drawing and is not dimensional CAD.</desc>
+<rect width="800" height="715" fill="#fff"/>
+<g font-family="Arial,sans-serif" fill="#243e34">
+<text x="28" y="42" font-size="31" font-weight="600">Less overlap</text>
+<text x="28" y="76" font-size="23" fill="#526b5d">Pressure section · shafts run left to right</text>
+
+<rect data-label-box="dme" x="608" y="102" width="148" height="54" rx="3" fill="#f0f4f1" stroke="#7b9484" stroke-width="2"/>
+<text x="682" y="129" text-anchor="middle" font-size="25" fill="#243e34" font-weight="600" dominant-baseline="central" data-label-for="dme">DME</text>
+<path d="M756 129H771V591H749" fill="none" stroke="#a9632a" stroke-width="2.5" stroke-dasharray="6 5"/>
+<path d="M128 242H453" fill="none" stroke="#81988a" stroke-width="17" stroke-linecap="round"/>
+<path d="M128 238H453" fill="none" stroke="#c1cfc5" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="142" cy="242" rx="8" ry="39" fill="#657f6d" stroke="#2d4a39" stroke-width="2"/>
+<path d="M135 211L143 209" stroke="#e8eeea" stroke-width="3"/>
+<path d="M135 222L143 220" stroke="#e8eeea" stroke-width="3"/>
+<path d="M135 233L143 231" stroke="#e8eeea" stroke-width="3"/>
+<path d="M135 244L143 242" stroke="#e8eeea" stroke-width="3"/>
+<path d="M135 255L143 253" stroke="#e8eeea" stroke-width="3"/>
+<path d="M135 266L143 264" stroke="#e8eeea" stroke-width="3"/>
+<ellipse cx="145" cy="242" rx="7" ry="14" fill="#a7bbad" stroke="#2d4a39" stroke-width="2"/>
+<path d="M37 169H100L134 218" fill="none" stroke="#82988b" stroke-width="2"/>
+<text x="80" y="128" text-anchor="middle" font-size="24" fill="#243e34" font-weight="400" >Chain drive</text>
+<text x="80" y="155" text-anchor="middle" font-size="21" fill="#526b5d" font-weight="400" >from crankshaft</text>
+<text x="363" y="151" text-anchor="middle" font-size="25" fill="#176b53" font-weight="600" >Fixed gear</text>
+<path d="M363 161V183" fill="none" stroke="#82988b" stroke-width="2"/>
+<g data-pump-part="pressure-bore"><path d="M164 293H646V401H164Z" fill="#edf2ee" stroke="#a0b4a6" stroke-width="2"/><path d="M164 300H646 M164 394H646" fill="none" stroke="#c5d2c9" stroke-width="2"/><rect x="164" y="293" width="10" height="108" fill="#bdcfc3" stroke="#7b9484" stroke-width="2"/><rect x="636" y="293" width="10" height="108" fill="#bdcfc3" stroke="#7b9484" stroke-width="2"/></g>
+<rect x="174" y="300" width="96" height="94" fill="#dfeef4"/><rect x="496" y="300" width="140" height="94" fill="#e1eee5"/>
+<g data-pump-part="fixed-gear" transform="translate(0 0)">
+<ellipse cx="315" cy="242" rx="12.77" ry="56" fill="#6e957d" stroke="#365640" stroke-width="2"/>
+<path d="M315 186H411V298H315Z" fill="#c4d8cb" stroke="#6e957d" stroke-width="2"/>
+<path d="M315 188H411" stroke="#6e957d" stroke-width="6"/>
+<path d="M317 193H410" stroke="#f3f5ed" stroke-width="2"/>
+<path d="M315 202H411" stroke="#6e957d" stroke-width="4"/>
+<path d="M317 207H410" stroke="#f3f5ed" stroke-width="2"/>
+<path d="M315 221H411" stroke="#6e957d" stroke-width="6"/>
+<path d="M317 226H410" stroke="#f3f5ed" stroke-width="2"/>
+<path d="M315 242H411" stroke="#6e957d" stroke-width="4"/>
+<path d="M317 247H410" stroke="#f3f5ed" stroke-width="2"/>
+<path d="M315 263H411" stroke="#6e957d" stroke-width="6"/>
+<path d="M317 268H410" stroke="#f3f5ed" stroke-width="2"/>
+<path d="M315 282H411" stroke="#6e957d" stroke-width="4"/>
+<path d="M317 287H410" stroke="#f3f5ed" stroke-width="2"/>
+<path d="M315 296H411" stroke="#6e957d" stroke-width="6"/>
+<path d="M422.50 242.00L423.77 249.31L423.44 256.49L421.62 261.13L420.96 267.00L421.22 276.09L420.11 281.60L418.00 281.67L416.75 285.30L415.93 293.74L414.33 296.09L412.50 291.57L411.00 292.00L409.32 297.52L407.67 296.09L406.60 288.19L405.25 285.30L403.16 286.43L401.89 281.60L401.88 272.44L401.04 267.00L399.10 263.43L398.56 256.49L399.60 248.53L399.50 242.00L398.23 234.69L398.56 227.51L400.38 222.87L401.04 217.00L400.78 207.91L401.89 202.40L404.00 202.33L405.25 198.70L406.07 190.26L407.67 187.91L409.50 192.43L411.00 192.00L412.68 186.48L414.33 187.91L415.40 195.81L416.75 198.70L418.84 197.57L420.11 202.40L420.12 211.56L420.96 217.00L422.90 220.57L423.44 227.51L422.40 235.47Z" fill="#6e957d" stroke="#365640" stroke-width="1.8"/>
+<ellipse cx="411" cy="242" rx="6" ry="22" fill="#c4d8cb" stroke="#365640" stroke-width="2"/>
+</g>
+<g data-pump-part="sliding-piston" transform="translate(55 0)"><path d="M251 347H447" stroke="#7d9a86" stroke-width="18"/><rect x="215" y="296" width="90" height="102" rx="4" fill="#adc7b7" stroke="#41664e" stroke-width="2"/><path d="M225 297V397 M234 297V397 M289 297V397" fill="none" stroke="#577b64" stroke-width="4"/><path d="M219 306H301" stroke="#dfebe2" stroke-width="3"/><rect x="411" y="301" width="30" height="92" rx="2" fill="#adc7b7" stroke="#41664e" stroke-width="2"/><path d="M431 302V392" stroke="#577b64" stroke-width="4"/></g>
+<g data-pump-part="sliding-gear" transform="translate(55 0)">
+<ellipse cx="315" cy="347" rx="12.77" ry="56" fill="#b37d4c" stroke="#365640" stroke-width="2"/>
+<path d="M315 291H411V403H315Z" fill="#e3c9a5" stroke="#b37d4c" stroke-width="2"/>
+<path d="M315 293H411" stroke="#b37d4c" stroke-width="6"/>
+<path d="M317 298H410" stroke="#f3f5ed" stroke-width="2"/>
+<path d="M315 307H411" stroke="#b37d4c" stroke-width="4"/>
+<path d="M317 312H410" stroke="#f3f5ed" stroke-width="2"/>
+<path d="M315 326H411" stroke="#b37d4c" stroke-width="6"/>
+<path d="M317 331H410" stroke="#f3f5ed" stroke-width="2"/>
+<path d="M315 347H411" stroke="#b37d4c" stroke-width="4"/>
+<path d="M317 352H410" stroke="#f3f5ed" stroke-width="2"/>
+<path d="M315 368H411" stroke="#b37d4c" stroke-width="6"/>
+<path d="M317 373H410" stroke="#f3f5ed" stroke-width="2"/>
+<path d="M315 387H411" stroke="#b37d4c" stroke-width="4"/>
+<path d="M317 392H410" stroke="#f3f5ed" stroke-width="2"/>
+<path d="M315 401H411" stroke="#b37d4c" stroke-width="6"/>
+<path d="M422.50 347.00L423.77 354.31L423.44 361.49L421.62 366.13L420.96 372.00L421.22 381.09L420.11 386.60L418.00 386.67L416.75 390.30L415.93 398.74L414.33 401.09L412.50 396.57L411.00 397.00L409.32 402.52L407.67 401.09L406.60 393.19L405.25 390.30L403.16 391.43L401.89 386.60L401.88 377.44L401.04 372.00L399.10 368.43L398.56 361.49L399.60 353.53L399.50 347.00L398.23 339.69L398.56 332.51L400.38 327.87L401.04 322.00L400.78 312.91L401.89 307.40L404.00 307.33L405.25 303.70L406.07 295.26L407.67 292.91L409.50 297.43L411.00 297.00L412.68 291.48L414.33 292.91L415.40 300.81L416.75 303.70L418.84 302.57L420.11 307.40L420.12 316.56L420.96 322.00L422.90 325.57L423.44 332.51L422.40 340.47Z" fill="#b37d4c" stroke="#365640" stroke-width="1.8"/>
+<ellipse cx="411" cy="347" rx="6" ry="22" fill="#e3c9a5" stroke="#365640" stroke-width="2"/>
+</g>
+<g data-pump-part="spring">
+<path d="M499 347H588" fill="none" stroke="#849a8b" stroke-width="10"/>
+<path d="M499.00 347.00L499.74 332.48L500.48 319.37L501.23 308.98L501.97 302.30L502.71 300.00L503.45 302.30L504.19 308.98L504.93 319.37L505.68 332.48L506.42 347.00L507.16 361.52L507.90 374.63L508.64 385.02L509.38 391.70L510.12 394.00L510.87 391.70L511.61 385.02L512.35 374.63L513.09 361.52L513.83 347.00L514.58 332.48L515.32 319.37L516.06 308.98L516.80 302.30L517.54 300.00L518.28 302.30L519.02 308.98L519.77 319.37L520.51 332.48L521.25 347.00L521.99 361.52L522.73 374.63L523.48 385.02L524.22 391.70L524.96 394.00L525.70 391.70L526.44 385.02L527.18 374.63L527.92 361.52L528.67 347.00L529.41 332.48L530.15 319.37L530.89 308.98L531.63 302.30L532.38 300.00L533.12 302.30L533.86 308.98L534.60 319.37L535.34 332.48L536.08 347.00L536.83 361.52L537.57 374.63L538.31 385.02L539.05 391.70L539.79 394.00L540.53 391.70L541.27 385.02L542.02 374.63L542.76 361.52L543.50 347.00L544.24 332.48L544.98 319.37L545.73 308.98L546.47 302.30L547.21 300.00L547.95 302.30L548.69 308.98L549.43 319.37L550.17 332.48L550.92 347.00L551.66 361.52L552.40 374.63L553.14 385.02L553.88 391.70L554.62 394.00L555.37 391.70L556.11 385.02L556.85 374.63L557.59 361.52L558.33 347.00L559.08 332.48L559.82 319.37L560.56 308.98L561.30 302.30L562.04 300.00L562.78 302.30L563.52 308.98L564.27 319.37L565.01 332.48L565.75 347.00L566.49 361.52L567.23 374.63L567.98 385.02L568.72 391.70L569.46 394.00L570.20 391.70L570.94 385.02L571.68 374.63L572.42 361.52L573.17 347.00L573.91 332.48L574.65 319.37L575.39 308.98L576.13 302.30L576.88 300.00L577.62 302.30L578.36 308.98L579.10 319.37L579.84 332.48L580.58 347.00L581.33 361.52L582.07 374.63L582.81 385.02L583.55 391.70L584.29 394.00L585.03 391.70L585.77 385.02L586.52 374.63L587.26 361.52L588.00 347.00" fill="none" stroke="#45614d" stroke-width="6" stroke-linejoin="round"/>
+<rect x="588" y="296" width="20" height="102" rx="2" fill="#c4d2c8" stroke="#5d7b67" stroke-width="2"/><path d="M599 297V397" stroke="#eef3ee" stroke-width="3"/></g>
+<rect data-active-width="true" x="370" y="294" width="41" height="9" fill="#2c7895" fill-opacity=".35"/>
+<path data-width-bracket="true" d="M370 408V421H411V408" fill="none" stroke="#2c7895" stroke-width="3"/>
+<text x="390.5" y="452" text-anchor="middle" font-size="23" fill="#2c7895" font-weight="400" >Active tooth width</text>
+<g data-motion-arrow="true"><path d="M367 487H469" stroke="#ac602c" stroke-width="3"/><path d="M365 487L379 480V494Z M471 487L457 480V494Z" fill="#ac602c"/></g>
+<text x="418" y="521" text-anchor="middle" font-size="23" fill="#ac602c" font-weight="400" data-motion-label="true">Axial movement</text>
+<path d="M91 302L317 330" fill="none" stroke="#82988b" stroke-width="2"/><circle cx="317" cy="330" r="4" fill="#176b53"/><circle cx="91" cy="302" r="17" fill="#fff" stroke="#176b53" stroke-width="2"/>
+<text x="91" y="310" text-anchor="middle" font-size="24" fill="#176b53" font-weight="400" >1</text>
+<path d="M563 429L457 390" fill="none" stroke="#82988b" stroke-width="2"/><circle cx="457" cy="390" r="4" fill="#176b53"/><circle cx="563" cy="429" r="17" fill="#fff" stroke="#176b53" stroke-width="2"/>
+<text x="563" y="437" text-anchor="middle" font-size="24" fill="#176b53" font-weight="400" >2</text>
+<path d="M681 258L543.5 347" fill="none" stroke="#82988b" stroke-width="2"/><circle cx="543.5" cy="347" r="4" fill="#176b53"/><circle cx="681" cy="258" r="17" fill="#fff" stroke="#176b53" stroke-width="2"/>
+<text x="681" y="266" text-anchor="middle" font-size="24" fill="#176b53" font-weight="400" >3</text>
+<path d="M160 591H581 M180 591V347H270" fill="none" stroke="#2c7895" stroke-width="5" stroke-linejoin="round"/>
+<path d="M622 581V549H646V347H609" fill="none" stroke="#176b53" stroke-width="5" stroke-linejoin="round"/>
+<rect data-label-box="supply" x="28" y="555" width="132" height="72" rx="3" fill="#edf4f7" stroke="#2c7895" stroke-width="2"/>
+<text data-label-for="supply" x="94" y="591" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#2c7895"><tspan x="94" dy="-13">Pump</tspan><tspan x="94" dy="26">pressure</tspan></text>
+<text x="701" y="514" text-anchor="middle" font-size="21" fill="#176b53" font-weight="400" >Regulated</text>
+<text x="701" y="539" text-anchor="middle" font-size="21" fill="#176b53" font-weight="400" >pressure</text>
+<g data-pump-part="control-valve"><path d="M581 581H697V601H581Z" fill="#c2d0c7" stroke="#577b64" stroke-width="2"/><ellipse cx="581" cy="591" rx="5" ry="10" fill="#90aa98" stroke="#577b64" stroke-width="2"/><path d="M596 580V602 M604 580V602 M636 580V602 M643 580V602 M679 580V602" stroke="#577b64" stroke-width="3"/><path d="M608 583H631 M648 583H675" stroke="#f0f4ee" stroke-width="2"/><rect x="697" y="573" width="15" height="36" rx="2" fill="#bbcdbf" stroke="#577b64" stroke-width="2"/><path d="M712 579H744V603H712Z" fill="#3b5143"/><path d="M719 580V602 M725 580V602" stroke="#92a999" stroke-width="2"/><path d="M744 583H751V598H744" fill="#728e7b"/></g>
+<text x="660" y="645" text-anchor="middle" font-size="25" fill="#176b53" font-weight="600" >Control valve</text>
+<text x="28" y="691" font-size="22" fill="#526b5d">Enlarged teaching section · housing and pressure links unfolded</text></g></svg>

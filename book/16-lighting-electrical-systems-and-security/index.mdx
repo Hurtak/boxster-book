@@ -1,9 +1,10 @@
-import { Diagram, Figure, Heading } from '../../src/book/components';
+import halogenFrontPhoto from "./images/halogen-front-cameron-original.jpg";
+import xenonFrontPhoto from "./images/porsche-front-lights.jpg";
+import { Diagram, Figure, Heading, ImageComparison, ComparisonImage } from '../../src/book/components';
 import illustration0 from "./diagrams/electrical-explorer/poster.svg";
 import illustration1 from "./diagrams/electrical-current-path/poster.svg";
 import illustration2 from "./images/electrical-energy.svg";
 import illustration3 from "./images/lighting-functions.svg";
-import illustration4 from "./images/porsche-front-lights.jpg";
 import illustration5 from "./images/porsche-boxster-s-rear-lights.jpg";
 import halogenLampParts from "./images/pet-halogen-headlamp.png";
 
@@ -77,11 +78,17 @@ Standard halogen lighting with fog lamps in the lower modules, and the P75 alter
 
 Daytime running lights help other people see the car by day. They do not replace dipped beam after dark, and they do not mean the rear lights are on. Porsche's manual describes different switches for halogen and bi-xenon cars and notes that daytime-light operation varies by country.[^daylight]
 
-<Figure src={illustration4} alt={"A red Boxster has bi-xenon main headlamps above separate illuminated LED front modules."}>
+<ImageComparison title="The lower lamp tells part of the story" alt="Two front-view photographs compare standard halogen headlamps and lower fog lamps with optional P75 bi-xenon headlamps and lower LED daytime-running lamps." stackOnPhone>
 
-Optional bi-xenon headlamps above the lit LED front modules. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 65. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+<ComparisonImage src={halogenFrontPhoto} alt="A red Boxster 2.9 photographed from the front with the halogen lighting arrangement: upper road headlamps and rectangular fog-lamp reflectors in the lower modules." label="Standard · halogen" note="Main: halogen dipped/main beam. Lower: fog lamp and LED position light." crop={{ x: 212, y: 285, width: 855, height: 444 }} />
+<ComparisonImage src={xenonFrontPhoto} alt="Period photograph of the optional bi-xenon headlamp and lower LED daytime-running lamp." label="Optional · P75" note="Main: bi-xenon with cornering light. Lower: LED daytime-running light." crop={{ x: 53, y: 110, width: 285, height: 148 }} />
 
-</Figure>
+
+The standard lower module has a rectangular fog-lamp reflector; P75 substitutes an LED daytime-running lamp. Photos: [Cameron Sports Cars, Boxster 2.9 advertised as 2010](https://www.cameronsportscars.com/vehicle-details/used-porsche-boxster-987-2-9-gen-2-manual-for-sale-in-chippenham-south-gloucestershire-u1674/) (left); Porsche AG, [*The Boxster* (UK, 01/10), p. 65](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=30) (right).
+
+</ImageComparison>
+
+Identify the lower module as well as the main lamp; projector shape alone is not proof.
 
 ## Rear and convenience lighting
 

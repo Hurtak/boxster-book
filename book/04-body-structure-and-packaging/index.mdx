@@ -1,4 +1,6 @@
-import { Diagram, Figure, Heading } from '../../src/book/components';
+import underbodyParts from "./images/pet-underbody-original.png";
+import floorParts from "./images/pet-floor-original.png";
+import { AnnotatedFigure, Diagram, Figure, Heading } from '../../src/book/components';
 import illustration0 from "./diagrams/body-explorer/poster.svg";
 import illustration1 from "./diagrams/body-packaging-layers/poster.svg";
 import illustration2 from "./images/body-load-paths.svg";
@@ -96,6 +98,46 @@ Keeping those streams apart explains the underbody. Its panels give air a surfac
 The ordinary car's rear spoiler is a moving part of that airflow. An electric mechanism raises a carrier holding the painted upper part; the catalogue also lists seals and a drainage hose around the mechanism. In automatic mode the spoiler rises at about **120 km/h** (75 mph) and retracts at about **80 km/h** (50 mph). Porsche credits it with reducing rear-axle lift and improving high-speed stability.[^spoiler] Having two thresholds stops it cycling up and down when speed hovers around one switching point. It can also be raised manually at a standstill, so a photograph with the spoiler up says little about how fast the car was going.
 
 Lift and drag are separate effects of air pressure on the car. Less lift helps keep the tyres loaded, but it does not mean the car produces net downforce, and a drag coefficient says nothing about the load on either axle. Nor can axle lift or spoiler downforce be judged from the car's appearance.
+
+<AnnotatedFigure
+  className="parts-figure"
+  title="Covers and strut · factory parts view"
+  src={underbodyParts}
+  alt="Porsche PET exploded drawing of the shaped front, centre, handed side and rear covers, with moulded ribs, fixing holes, heat insulation, brackets and a separate transverse tunnel strut."
+  annotations={[
+    { id: '1', label: 'Front cover: shaped edge, fixing holes and rectangular moulded detail.' },
+    { id: '3', label: 'Centre cover: shaped perimeter and strengthening ribs.' },
+    { id: '4', label: 'Side cover: left shown; a separate right-hand part is listed.' },
+    { id: '5', label: 'Rear cover: a broad ribbed assembly.' },
+    { id: '13', label: 'Formed heat insulation, with retaining nuts (14).' },
+    { id: '15', label: 'Transverse tunnel strut: separate shaped hardware with four bolt positions.' },
+    { id: '16', label: 'Strut bolt with washer; the parts list specifies four.' },
+    { id: '7', label: 'Rear-cover bracket; two are listed. Handed trim (10) is shown below it.' },
+    { id: '2', label: 'Plastic retaining nuts for the covers.' },
+    { id: '9', label: 'Panel screws and their fixing points.' },
+  ]}
+>
+
+Original Porsche drawing, PET 801-070, [PDF p. 257](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=257); identities and quantities from p. 258. The factory contours, ribs, fixing details and numbered callouts are retained unchanged. Exploded offsets identify assemblies rather than installed clearances or a removal sequence.
+
+</AnnotatedFigure>
+
+<AnnotatedFigure
+  className="parts-figure"
+  title="The structural floor beneath the covers"
+  src={floorParts}
+  alt="Porsche PET floor drawing showing the raised centre tunnel, pressed channels and circular floor openings, with a seat-support frame separated above it."
+  annotations={[
+    { id: '1', label: 'Structural floor, including the formed centre tunnel and pressed floor sections.' },
+    { id: '2', label: 'Seat-support frame; left and right versions are listed.' },
+    { id: '3', label: 'Side member shown separately, with the jack-socket pieces (6/7).' },
+    { id: '10', label: 'Floor closure plug; the opposite side also has plug 11.' },
+  ]}
+>
+
+Original Porsche drawing, PET 801-020, [PDF p. 244](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=244). The floor is part of the load-bearing shell; the underbody covers and the bolted tunnel strut are separate assemblies. The two factory plates are not a common-scale installation drawing or a jacking guide.
+
+</AnnotatedFigure>
 
 ## Options on the 2010 2.9
 

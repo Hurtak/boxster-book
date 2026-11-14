@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="600" viewBox="0 0 420 600" role="img" aria-labelledby="title desc">
+<title id="title">PASM front strut and enlarged piston-valve section</title>
+<desc id="desc">Photo-guided slender strut body, broad lower spring seat, threaded stem, piston rod, twin tubes, working piston and bottom valve. An electrical lead reaches the internal adjustable bypass valve through the hollow rod. The bypass supplements the main piston valves. The enlargement shows rebound flow, not literal port dimensions.</desc>
+<defs><linearGradient id="metal"><stop stop-color="#879b91"/><stop offset=".38" stop-color="#f9fbfa"/><stop offset=".7" stop-color="#c4d0c9"/><stop offset="1" stop-color="#7a9284"/></linearGradient><marker id="flow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0 0L6 3L0 6Z" fill="#2c7895"/></marker></defs>
+<rect width="420" height="600" fill="#fff"/>
+<g font-family="Arial, sans-serif" fill="#243e34">
+<text x="22" y="27" font-size="18" font-weight="bold">Front strut · spring omitted</text>
+<path id="electrical-lead" d="M82 54V49C82 31 126 32 126 51V61L141 72" fill="none" stroke="#243e34" stroke-width="4"/><path d="M138 68L149 78" stroke="#243e34" stroke-width="7"/>
+<g data-strut="pasm">
+<rect id="threaded-stem" x="75" y="55" width="14" height="36" rx="3" fill="#a3b3aa" stroke="#243e34" stroke-width="1.5"/>
+<path d="M75 59H89" stroke="#536e5c" stroke-width="1"/><path d="M75 63H89" stroke="#536e5c" stroke-width="1"/><path d="M75 67H89" stroke="#536e5c" stroke-width="1"/><path d="M75 71H89" stroke="#536e5c" stroke-width="1"/><path d="M75 75H89" stroke="#536e5c" stroke-width="1"/><path d="M75 79H89" stroke="#536e5c" stroke-width="1"/><path d="M75 83H89" stroke="#536e5c" stroke-width="1"/><path d="M75 87H89" stroke="#536e5c" stroke-width="1"/>
+<rect id="exposed-rod" x="72" y="89" width="20" height="140" fill="url(#metal)" stroke="#5e7868" stroke-width="1.3"/>
+<path id="spring-seat" d="M20 211Q29 212 39 219L60 229H104L125 219Q135 212 144 211L142 219Q133 221 128 225L105 240H59L36 225Q27 220 22 219Z" fill="#b1c2b7" stroke="#365d47" stroke-width="2"/>
+<rect id="outer-tube" x="60" y="224" width="44" height="306" rx="9" fill="#c4d3c9" stroke="#365d47" stroke-width="2"/>
+<path d="M64 243V514H100V243" fill="#e9e2ca" stroke="#80977f" stroke-width="1"/>
+<rect id="working-cylinder" x="68" y="241" width="28" height="260" fill="#d3e6ed" stroke="#527f8c" stroke-width="1.5"/>
+<path d="M60 235H104V242H60Z" fill="#7b9486" stroke="#365d47" stroke-width="1.5"/>
+<rect id="rod" x="76" y="241" width="12" height="123" fill="url(#metal)" stroke="#698073" stroke-width="1"/>
+<path d="M82 242V363" stroke="#537366" stroke-width="2"/>
+<rect id="working-piston" x="68" y="363" width="28" height="12" rx="2" fill="#7e9c87" stroke="#365d47" stroke-width="1.4"/>
+<path d="M70 361H94M70 378H94" stroke="#a86e3e" stroke-width="2"/>
+<path id="base-valve" d="M68 494H96V501H68ZM73 494V501M91 494V501" fill="#98afa0" stroke="#365d47" stroke-width="1.5"/>
+<path id="mounting-bracket" d="M104 395H117L124 408V455L115 462H104Z" fill="#b2c3b7" stroke="#365d47" stroke-width="2"/><circle cx="115" cy="450" r="3" fill="#fff" stroke="#365d47"/>
+<path d="M65 522Q82 532 99 522" fill="none" stroke="#6f8d79" stroke-width="2"/>
+<rect x="63" y="347" width="38" height="45" fill="none" stroke="#80988b" stroke-width="1.2" stroke-dasharray="3 3"/>
+</g>
+<path d="M103 347L199 207M103 392L199 428" fill="none" stroke="#b5c4b9" stroke-width="1.2"/>
+<text x="208" y="178" font-size="18" font-weight="bold">Piston · enlarged</text>
+<text x="208" y="201" font-size="17" fill="#5d7768">Rebound flow shown</text>
+<g data-enlargement="pasm">
+<rect x="204" y="214" width="184" height="222" rx="4" fill="#d3e6ed" stroke="#527f8c" stroke-width="2"/>
+<path d="M208 215V435M384 215V435" stroke="#9eb4a6" stroke-width="7"/>
+<rect x="269" y="214" width="48" height="81" fill="url(#metal)" stroke="#5c7666" stroke-width="1.8"/>
+<path d="M264 235V218" stroke="#243e34" stroke-width="2"/><path d="M264 215l-4 7h8Z" fill="#243e34"/>
+<path id="piston-valve" d="M212 297H374V325H212Z" fill="#94b19c" stroke="#365d47" stroke-width="2"/>
+<rect x="212" y="297" width="5" height="28" fill="#536f5c"/><rect x="369" y="297" width="5" height="28" fill="#536f5c"/>
+<path d="M236 297V325M350 297V325" stroke="#fff" stroke-width="11"/>
+<path id="piston-valve-discs" d="M219 329H256L250 334H225ZM332 329H367L362 334H337Z" fill="#bc7d43" stroke="#875a32" stroke-width="1.5"/>
+<path d="M219 293H253M333 293H367" stroke="#875a32" stroke-width="2"/>
+<path d="M236 254V321L243 339V377M350 254V321L343 339V377" fill="none" stroke="#2c7895" stroke-width="2.5" marker-end="url(#flow)"/>
+<path d="M283 325V354H303V325" fill="#b3c5b9" stroke="#5e7968" stroke-width="1.5"/>
+<path d="M293 239V360" stroke="#f5f9f7" stroke-width="16"/><path d="M293 244V354" stroke="#2c7895" stroke-width="2.5" marker-end="url(#flow)"/><path d="M262 242H291M301 242H324" stroke="#829c8b" stroke-width="10"/><rect id="bypass-valve" x="279" y="248" width="28" height="22" rx="3" fill="#bc7d43" stroke="#875a32" stroke-width="2"/><path d="M293 248V270" stroke="#f5f9f7" stroke-width="9"/><path d="M293 248V270" stroke="#2c7895" stroke-width="2.5"/><path d="M289 225V232M297 225V232" stroke="#243e34" stroke-width="2"/>
+<text x="293" y="414" text-anchor="middle" font-size="17" fill="#2c7895">Oil crosses the piston</text>
+</g>
+<g data-callout="1" data-target="exposed-rod"><path d="M132 109L82 153" fill="none" stroke="#81998a" stroke-width="1.6"/><circle data-endpoint="true" cx="82" cy="153" r="3" fill="#176b53"/><circle cx="132" cy="109" r="12" fill="#fff" stroke="#176b53" stroke-width="1.6"/><text x="132" y="109" text-anchor="middle" dominant-baseline="central" fill="#176b53" font-size="18">1</text></g>
+<g data-callout="2" data-target="spring-seat"><path d="M160 253L125 222" fill="none" stroke="#81998a" stroke-width="1.6"/><circle data-endpoint="true" cx="125" cy="222" r="3" fill="#176b53"/><circle cx="160" cy="253" r="12" fill="#fff" stroke="#176b53" stroke-width="1.6"/><text x="160" y="253" text-anchor="middle" dominant-baseline="central" fill="#176b53" font-size="18">2</text></g>
+<g data-callout="3" data-target="working-cylinder"><path d="M30 450L69 443" fill="none" stroke="#81998a" stroke-width="1.6"/><circle data-endpoint="true" cx="69" cy="443" r="3" fill="#176b53"/><circle cx="30" cy="450" r="12" fill="#fff" stroke="#176b53" stroke-width="1.6"/><text x="30" y="450" text-anchor="middle" dominant-baseline="central" fill="#176b53" font-size="18">3</text></g>
+<g data-callout="4" data-target="base-valve"><path d="M167 474L81 498" fill="none" stroke="#81998a" stroke-width="1.6"/><circle data-endpoint="true" cx="81" cy="498" r="3" fill="#176b53"/><circle cx="167" cy="474" r="12" fill="#fff" stroke="#176b53" stroke-width="1.6"/><text x="167" y="474" text-anchor="middle" dominant-baseline="central" fill="#176b53" font-size="18">4</text></g>
+<g data-callout="5" data-target="piston-valve-discs"><path d="M397 357L341 331" fill="none" stroke="#81998a" stroke-width="1.6"/><circle data-endpoint="true" cx="341" cy="331" r="3" fill="#176b53"/><circle cx="397" cy="357" r="12" fill="#fff" stroke="#176b53" stroke-width="1.6"/><text x="397" y="357" text-anchor="middle" dominant-baseline="central" fill="#176b53" font-size="18">5</text></g>
+<g data-callout="6" data-target="electrical-lead"><path d="M373 100L126 55" fill="none" stroke="#81998a" stroke-width="1.6"/><circle data-endpoint="true" cx="126" cy="55" r="3" fill="#176b53"/><circle cx="373" cy="100" r="12" fill="#fff" stroke="#176b53" stroke-width="1.6"/><text x="373" y="100" text-anchor="middle" dominant-baseline="central" fill="#176b53" font-size="18">6</text></g>
+<g data-callout="7" data-target="bypass-valve"><path d="M396 251L299 258" fill="none" stroke="#81998a" stroke-width="1.6"/><circle data-endpoint="true" cx="299" cy="258" r="3" fill="#176b53"/><circle cx="396" cy="251" r="12" fill="#fff" stroke="#176b53" stroke-width="1.6"/><text x="396" y="251" text-anchor="middle" dominant-baseline="central" fill="#176b53" font-size="18">7</text></g>
+<path d="M22 550H398" stroke="#d0dbd3"/>
+<text x="22" y="574" font-size="18" font-weight="bold">Main valves + adjustable internal bypass</text>
+<text x="22" y="594" font-size="16" fill="#5d7768">Profile photo-guided · valve detail schematic</text>
+</g></svg>

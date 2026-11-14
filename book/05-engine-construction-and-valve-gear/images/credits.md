@@ -48,3 +48,22 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **154 0**, native **2067 × 2660**; crop `[120, 830, 1988, 2491]`. Locator inset omitted at `[9, 3, 680, 513]`. Result **1908 × 1701** pixels.
 - **Applicability and limits:** 102-005 has separate A120/A121 piston applications. Its representative crown must not be treated as an exact 2.9 crown profile. Ring pack 2 has three rings; item 3 is the pin-retaining clip.
 - **Local image SHA-256:** `75855264d73160cc9c6a22ee45153a537d9d573e4120226d5d090712af1faeec`.
+
+
+## Visual review additions — 13 November 2026
+
+`AnnotatedFigure` for the factory accessory drive; the revised paired tappet sections for original mechanism artwork
+
+The shared React figure displays a layout crop of the saved PET101-010 p37 drawing:7 belt,8 alternator,9 coolant pulley,10 steering pulley,11 crank pulley,12 compressor,1–3 tensioner/rollers; the actual callout drawing replaces guessed belt geometry. The revised tappet comparison and its archived source images are documented below.
+
+Factory material retains Porsche’s original rights; React composition/labels and original teaching drawings are original project work. No generative alteration of documentary photographs.
+
+## Source-preserving React layout — 13 November 2026
+
+The former SVG image wrapper has been removed. Imported originals are displayed by the shared `Figure`, `AnnotatedFigure` or `ImageComparison` components. Crops are CSS viewports; editorial numbers and legends are separate HTML elements. The same composition is retained in no-JavaScript and print views. Source image bytes have not been retouched or re-exported.
+
+## Tappet proportion and detail revision — 14 November 2026
+
+The former rectangular, two-profile `variocam-tappet.svg` has been replaced by paired cylindrical cutaways (`variocam-tappet-uncoupled.svg` / `variocam-tappet-coupled.svg`) and two original Wolf Auto Parts photographs of listed inlet tappet **9A1 105 070 03**, stock PS60678. The external envelope and central-pad ratio follow the visible part; the factory UK 01/10 VarioCam illustration establishes three neighbouring cam tracks. The new sections distinguish the outer ring, inner tappet, lateral coupling pin, internal return spring and hydraulic clearance compensation. The valve stem is broken off graphically so a compressed full valve is not presented as a scale part.
+
+All originals, source URLs, native dimensions, processing, hashes and the comparison with PET 103-010 and Porsche training are recorded in [the refinement reference](part-reference/tappet-refinement/README.md). Photographs remain unchanged; crops are layout viewports. Both modes use the same body proportions and show a common base-circle position, not their peak displacements. The baseline **3.6 / 10.0 mm** figures remain unchanged. The older P001 cutaway supplies only mechanism context; unknown MA120 clearances, oil drillings and internal dimensions remain explicitly schematic. Detailed comparisons stack on phones and remain side by side on wider screens.

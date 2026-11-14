@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="790" viewBox="0 0 800 790" role="img" aria-labelledby="title desc">
+<title id="title">Photo-guided 2.9 intake assembly — Above 3,800 rpm</title>
+<desc id="desc">A broad ribbed centre distributor joins two three-runner bank modules through oval sleeve and clamp joints. Two vacuum actuators sit on the centre assembly. The separate enlarged half-oval flap sections show distribution open and tuning closed. Internal routes and dimensions are illustrative.</desc>
+<defs><marker id="air-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2c7895"/></marker></defs>
+<rect width="800" height="790" fill="#fff"/>
+<g font-family="Arial,sans-serif" fill="#243e34"><text x="30" y="42" font-size="31" font-weight="600">Above 3,800 rpm</text><text x="30" y="75" font-size="22" fill="#526b5d">Assembly proportions guided by the reference photographs</text></g>
+<g stroke="#2c4337" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<g data-part="bank-1-3" transform="">
+<path d="M71 227Q96 213 121 232L131 444Q103 468 72 447Z" fill="#b6c6bb"/>
+<g data-runner="1-3-1"><path d="M204 190C144 185 105 208 101 247" stroke="#314c3c" stroke-width="37" fill="none"/><path d="M204 190C144 185 105 208 101 247" stroke="#cad6ce" stroke-width="29" fill="none"/><path d="M203 181C150 178 116 202 112 225" stroke="#eef2ee" stroke-width="3" fill="none"/>
+<ellipse cx="101" cy="249" rx="25" ry="15" fill="#d3dcd5"/><ellipse cx="101" cy="249" rx="18" ry="9" fill="#7e9385" stroke="#a77542"/>
+<ellipse cx="75" cy="231" rx="6" ry="4" fill="#f7f8f5"/>
+<ellipse cx="124" cy="264" rx="6" ry="4" fill="#f7f8f5"/>
+</g>
+<g data-runner="1-3-2"><path d="M204 280C144 275 105 298 101 337" stroke="#314c3c" stroke-width="37" fill="none"/><path d="M204 280C144 275 105 298 101 337" stroke="#cad6ce" stroke-width="29" fill="none"/><path d="M203 271C150 268 116 292 112 315" stroke="#eef2ee" stroke-width="3" fill="none"/>
+<ellipse cx="101" cy="339" rx="25" ry="15" fill="#d3dcd5"/><ellipse cx="101" cy="339" rx="18" ry="9" fill="#7e9385" stroke="#a77542"/>
+<ellipse cx="75" cy="321" rx="6" ry="4" fill="#f7f8f5"/>
+<ellipse cx="124" cy="354" rx="6" ry="4" fill="#f7f8f5"/>
+</g>
+<g data-runner="1-3-3"><path d="M204 370C144 365 105 388 101 427" stroke="#314c3c" stroke-width="37" fill="none"/><path d="M204 370C144 365 105 388 101 427" stroke="#cad6ce" stroke-width="29" fill="none"/><path d="M203 361C150 358 116 382 112 405" stroke="#eef2ee" stroke-width="3" fill="none"/>
+<ellipse cx="101" cy="429" rx="25" ry="15" fill="#d3dcd5"/><ellipse cx="101" cy="429" rx="18" ry="9" fill="#7e9385" stroke="#a77542"/>
+<ellipse cx="75" cy="411" rx="6" ry="4" fill="#f7f8f5"/>
+<ellipse cx="124" cy="444" rx="6" ry="4" fill="#f7f8f5"/>
+</g>
+<path d="M180 168Q213 150 242 175L252 405Q224 438 180 413Q166 290 180 168Z" fill="#b4c8b9"/>
+<path d="M192 179Q215 167 235 182L244 401Q221 418 191 402Z" fill="#d8e3da"/>
+<path d="M187 414Q224 442 253 409 M183 422Q224 450 255 417" fill="none"/>
+<path d="M202 194L207 388 M213 192L218 390" fill="none" stroke="#90a997" stroke-width="2"/>
+</g>
+<g data-part="bank-4-6" transform="translate(800 0) scale(-1 1)">
+<path d="M71 227Q96 213 121 232L131 444Q103 468 72 447Z" fill="#b6c6bb"/>
+<g data-runner="4-6-1"><path d="M204 190C144 185 105 208 101 247" stroke="#314c3c" stroke-width="37" fill="none"/><path d="M204 190C144 185 105 208 101 247" stroke="#cad6ce" stroke-width="29" fill="none"/><path d="M203 181C150 178 116 202 112 225" stroke="#eef2ee" stroke-width="3" fill="none"/>
+<ellipse cx="101" cy="249" rx="25" ry="15" fill="#d3dcd5"/><ellipse cx="101" cy="249" rx="18" ry="9" fill="#7e9385" stroke="#a77542"/>
+<ellipse cx="75" cy="231" rx="6" ry="4" fill="#f7f8f5"/>
+<ellipse cx="124" cy="264" rx="6" ry="4" fill="#f7f8f5"/>
+</g>
+<g data-runner="4-6-2"><path d="M204 280C144 275 105 298 101 337" stroke="#314c3c" stroke-width="37" fill="none"/><path d="M204 280C144 275 105 298 101 337" stroke="#cad6ce" stroke-width="29" fill="none"/><path d="M203 271C150 268 116 292 112 315" stroke="#eef2ee" stroke-width="3" fill="none"/>
+<ellipse cx="101" cy="339" rx="25" ry="15" fill="#d3dcd5"/><ellipse cx="101" cy="339" rx="18" ry="9" fill="#7e9385" stroke="#a77542"/>
+<ellipse cx="75" cy="321" rx="6" ry="4" fill="#f7f8f5"/>
+<ellipse cx="124" cy="354" rx="6" ry="4" fill="#f7f8f5"/>
+</g>
+<g data-runner="4-6-3"><path d="M204 370C144 365 105 388 101 427" stroke="#314c3c" stroke-width="37" fill="none"/><path d="M204 370C144 365 105 388 101 427" stroke="#cad6ce" stroke-width="29" fill="none"/><path d="M203 361C150 358 116 382 112 405" stroke="#eef2ee" stroke-width="3" fill="none"/>
+<ellipse cx="101" cy="429" rx="25" ry="15" fill="#d3dcd5"/><ellipse cx="101" cy="429" rx="18" ry="9" fill="#7e9385" stroke="#a77542"/>
+<ellipse cx="75" cy="411" rx="6" ry="4" fill="#f7f8f5"/>
+<ellipse cx="124" cy="444" rx="6" ry="4" fill="#f7f8f5"/>
+</g>
+<path d="M180 168Q213 150 242 175L252 405Q224 438 180 413Q166 290 180 168Z" fill="#b4c8b9"/>
+<path d="M192 179Q215 167 235 182L244 401Q221 418 191 402Z" fill="#d8e3da"/>
+<path d="M187 414Q224 442 253 409 M183 422Q224 450 255 417" fill="none"/>
+<path d="M202 194L207 388 M213 192L218 390" fill="none" stroke="#90a997" stroke-width="2"/>
+</g>
+<g data-part="centre-distributor"><path d="M251 207Q400 169 549 207L556 364Q404 410 245 366Z" fill="#aabfb0"/>
+<path d="M254 231Q402 204 548 233" stroke="#405e4c" stroke-width="69" fill="none"/><path d="M254 228Q402 201 548 230" stroke="#c7d5cb" stroke-width="60" fill="none"/><path d="M261 211Q404 191 543 213" stroke="#eaf0eb" stroke-width="4" fill="none"/>
+<path d="M254 325Q402 298 548 327" stroke="#405e4c" stroke-width="69" fill="none"/><path d="M254 322Q402 295 548 324" stroke="#c7d5cb" stroke-width="60" fill="none"/><path d="M261 305Q404 285 543 307" stroke="#eaf0eb" stroke-width="4" fill="none"/>
+<path d="M297 195Q307 280 298 374L305 372Q316 279 304 196Z" fill="#91ac99"/>
+<path d="M353 195Q363 280 354 374L361 372Q372 279 360 196Z" fill="#91ac99"/>
+<path d="M409 195Q419 280 410 374L417 372Q428 279 416 196Z" fill="#91ac99"/>
+<path d="M465 195Q475 280 466 374L473 372Q484 279 472 196Z" fill="#91ac99"/>
+<path d="M521 195Q531 280 522 374L529 372Q540 279 528 196Z" fill="#91ac99"/>
+</g>
+<g data-part="sleeve-clamp"><ellipse cx="244" cy="286" rx="24" ry="103" fill="#718b7a"/><ellipse cx="249" cy="286" rx="21" ry="101" fill="#c5d1c9"/><path d="M246 187C281 193 282 377 246 385 M240 192C271 201 274 367 240 379" fill="none" stroke="#45624f" stroke-width="3"/><rect x="240" y="189" width="15" height="12" rx="2" fill="#edf0ec"/><circle cx="247" cy="195" r="3" fill="#6c8072"/></g>
+<g data-part="sleeve-clamp"><ellipse cx="556" cy="286" rx="24" ry="103" fill="#718b7a"/><ellipse cx="561" cy="286" rx="21" ry="101" fill="#c5d1c9"/><path d="M558 187C593 193 594 377 558 385 M552 192C583 201 586 367 552 379" fill="none" stroke="#45624f" stroke-width="3"/><rect x="552" y="189" width="15" height="12" rx="2" fill="#edf0ec"/><circle cx="559" cy="195" r="3" fill="#6c8072"/></g>
+<g data-part="vacuum-unit"><path d="M343 183L335 202" stroke-width="5"/><ellipse cx="343" cy="169" rx="20" ry="27" fill="#8ca793"/><ellipse cx="343" cy="163" rx="17" ry="22" fill="#d5e0d7"/><path d="M343 140V132H359" fill="none" stroke-width="4"/><path d="M354 184L371 197" stroke-width="4"/></g>
+<g data-part="changeover-valve"><rect x="372" y="149" width="18" height="27" rx="3" fill="#7d9586"/><rect x="375" y="141" width="14" height="12" rx="2" fill="#c7d6cb"/><path d="M372 166Q361 157 358 150" fill="none" stroke="#657d6e" stroke-width="3"/></g>
+<g data-part="vacuum-unit"><path d="M466 183L458 202" stroke-width="5"/><ellipse cx="466" cy="169" rx="20" ry="27" fill="#8ca793"/><ellipse cx="466" cy="163" rx="17" ry="22" fill="#d5e0d7"/><path d="M466 140V132H482" fill="none" stroke-width="4"/><path d="M477 184L494 197" stroke-width="4"/></g>
+<g data-part="changeover-valve"><rect x="495" y="149" width="18" height="27" rx="3" fill="#7d9586"/><rect x="498" y="141" width="14" height="12" rx="2" fill="#c7d6cb"/><path d="M495 166Q484 157 481 150" fill="none" stroke="#657d6e" stroke-width="3"/></g>
+<g data-part="throttle-inlet"><path d="M374 351Q407 347 428 360L435 423Q409 450 373 426Z" fill="#acc4b4"/><path d="M383 363Q405 361 419 369L424 414" fill="none" stroke="#eaf1eb" stroke-width="4"/><ellipse cx="404" cy="426" rx="39" ry="22" fill="#b4c8ba"/><ellipse cx="404" cy="426" rx="29" ry="14" fill="#718d7a"/><path d="M362 420L357 433L369 440 M439 418L450 427L440 439" fill="#d2ddd4"/><circle cx="365" cy="430" r="3" fill="#5d7765"/><circle cx="440" cy="428" r="3" fill="#5d7765"/></g>
+<path d="M404 492V446" stroke="#2c7895" stroke-width="4" marker-end="url(#air-arrow)" fill="none"/>
+<path d="M401 132L401 265" stroke="#82998a" stroke-width="2" fill="none"/><circle cx="401" cy="265" r="4" fill="#176b53" stroke="none"/><circle cx="401" cy="115" r="18" fill="#fff" stroke="#176b53"/><text x="401" y="124" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" fill="#176b53" stroke="none">1</text>
+<path d="M87 174L201 208" stroke="#82998a" stroke-width="2" fill="none"/><circle cx="201" cy="208" r="4" fill="#176b53" stroke="none"/><circle cx="87" cy="157" r="18" fill="#fff" stroke="#176b53"/><text x="87" y="166" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" fill="#176b53" stroke="none">2</text>
+<path d="M241 136L248 233" stroke="#82998a" stroke-width="2" fill="none"/><circle cx="248" cy="233" r="4" fill="#176b53" stroke="none"/><circle cx="241" cy="119" r="18" fill="#fff" stroke="#176b53"/><text x="241" y="128" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" fill="#176b53" stroke="none">3</text>
+<path d="M576 160L466 164" stroke="#82998a" stroke-width="2" fill="none"/><circle cx="466" cy="164" r="4" fill="#176b53" stroke="none"/><circle cx="576" cy="143" r="18" fill="#fff" stroke="#176b53"/><text x="576" y="152" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" fill="#176b53" stroke="none">4</text>
+</g><g font-family="Arial,sans-serif" fill="#243e34"><text x="449" y="486" font-size="25">From throttle</text><text x="30" y="536" font-size="25" font-weight="600">Flap sections · enlarged, separate views</text></g>
+<g data-flap="distribution" data-open="true"><text x="206" y="574" text-anchor="middle" font-size="28" font-family="Arial,sans-serif" fill="#243e34" font-weight="600">Distribution flap</text>
+<ellipse cx="206" cy="633" rx="74" ry="43" fill="#e7eeea" stroke="#718e7b" stroke-width="3"/><path d="M206 590V676" stroke="#577660" stroke-width="4"/>
+<path d="M211 633H271" stroke="#176b53" stroke-width="6" stroke-linecap="round"/><path d="M246 688V649 M246 616V583" stroke="#2c7895" stroke-width="3" fill="none" marker-end="url(#air-arrow)"/>
+<text x="206" y="724" text-anchor="middle" font-size="29" font-family="Arial,sans-serif" fill="#176b53" font-weight="600">OPEN</text><text x="206" y="760" text-anchor="middle" font-size="24" font-family="Arial,sans-serif" fill="#526b5d">Actuator vented</text></g>
+<g data-flap="tuning" data-open="false"><text x="594" y="574" text-anchor="middle" font-size="28" font-family="Arial,sans-serif" fill="#243e34" font-weight="600">Tuning flap</text>
+<ellipse cx="594" cy="633" rx="74" ry="43" fill="#e7eeea" stroke="#718e7b" stroke-width="3"/><path d="M594 590V676" stroke="#577660" stroke-width="4"/>
+<path d="M599 595C682 595 682 671 599 671Z" fill="#d5ad85" stroke="#a9632a" stroke-width="3"/><path d="M600 633H659" stroke="#a9632a" stroke-width="5"/>
+<text x="594" y="724" text-anchor="middle" font-size="29" font-family="Arial,sans-serif" fill="#a9632a" font-weight="600">CLOSED</text><text x="594" y="760" text-anchor="middle" font-size="24" font-family="Arial,sans-serif" fill="#526b5d">Vacuum applied</text></g>
+</svg>

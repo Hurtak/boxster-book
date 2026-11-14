@@ -24,3 +24,12 @@ The original schematic files `drivetrain-layout.svg`, `drivetrain-cv-and-hub.svg
 ## Full factory reference pages
 
 The chapter's [parts-reference archive](../part-reference/README.md) retains **23 complete, unaltered Porsche PET pages**, rendered at a maximum dimension of 1,800 pixels from the freshly downloaded original with SHA-256 `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`. Unlike the two reading-image crops, these pages retain all headings, numbered callouts, application lists and edition footers. The archive identifies every file, one-based source page, plate, relevant callout and model/gearbox condition; the [verification map](../part-reference/verification.md) covers every chapter asset and component group. They retain Porsche's copyright and are supporting references, not newly authored MIT illustrations.
+
+
+## Visual review additions — 13 November 2026
+
+Interactive `drivetrain-explorer/joint-motion.ts`
+
+Original uncalibrated wheel/joint demonstration. Existing Porsche PET501-005 and GKN mechanism references govern articulation/plunge. Inboard housing remains fixed, outboard components follow the hub, and the bar geometry/scale remains rigid. The joint demonstration suppresses motion in exploded view; imposed paths are not a Porsche suspension travel curve or joint limit.
+
+Factory material retains Porsche’s original rights; SVG composition/labels and teaching drawings are original project work. No generative alteration of documentary photographs.

@@ -91,3 +91,17 @@ Freshly opened the [Porsche-authored 987209 PET](https://www.porsche-preparation
 - **Optional TPM:** 601-005 pp. 198–199 shows wheel sensor/valve attachment, separate controller/aerial and four sender units, items 1–5/8/10. Expanded prose and distinguished these from 401-005 item 3 wheel-speed sensing. PR482 (433 MHz aerial) and PR483 (315 MHz) are separate catalogue variants; no optional sensor is added to the explorer's standard wheel. UK option 482 remains grounded in the UK 01/10 brochure.
 
 Every standalone SVG, poster, photo and interactive module is enumerated in the verification record, including all eight explorer groups and all four guided stages. No new heading or footnote reference was added; existing source notes were augmented. All component geometry and fluid bends remain approximate; hydraulic valve internals follow the existing Bosch principle, and tyre construction/slip/grip follow the existing Continental/Michelin material rather than being attributed to PET. No exact pressure, loaded circumference, tyre force, RHD route or annual original-parts chronology is inferred. Parent must regenerate **`steering-explorer`** and run central browser/layout validation.
+
+
+## Visual review integration — 13 November 2026
+
+Original generic radial-tyre cutaway following the chapter’s Continental component reference. Distinguishes tread, belts, radial casing, liner and bead. Layers are separated/thickened; no specific supplier, compound, cord-angle or fitted2010 construction claim. See [image credits](images/credits.md) for asset provenance. Existing factual qualifications remain.
+
+
+## Tyre section refinement — 14 November 2026
+
+Freshly read Continental's component guide and Hankook's structure guide; inspected both original manufacturer cutaways. [Local reference dossier](part-reference/tyre-refinement/README.md) preserves originals, source URLs, checksums and applicability limits. The Hankook reference depicts a 285/45 R19 SUV tyre and is used only for the construction relationship, not Porsche fitment or dimensions.
+
+Corrected the schematic's square sidewalls and solid-bar rim, adding a modestly crowned tread, separate belt layers, casing turn-ups, bead wire cores and a drop-centre rim profile. The overall section height/width is 220/400 = 55%, guided by the already sourced standard front 205/55 size; nominal 7-inch flange spacing is scaled against 205 mm section width. No actual tread width, inflated contour or layer thickness is claimed. The cap band, cord count, bead filler and flange details remain generic. A technical cross-section makes different materials visible by thickening them; it is not a tyre-fitting or damage assessment guide.
+
+Replaced detached label-line tails and endpoint dots with arrowheads ending on the named material. Each leader begins exactly on the perimeter of its centred number. Native HTML provides the five label descriptions through `AnnotatedFigure`, retaining the same generic/supplier qualification and static/print accessibility. No changes to the 3D wheel, tyre calculators or grip model.

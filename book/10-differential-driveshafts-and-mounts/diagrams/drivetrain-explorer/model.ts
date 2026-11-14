@@ -95,7 +95,7 @@ function boot(parent: THREE.Object3D, centre: number, surface: THREE.Material, c
 }
 
 function shaft(parent: THREE.Object3D, side: number, m: ReturnType<typeof materials>) {
-  cylinder(parent, 0.021, 0.39, m.metal);
+  cylinder(parent, 0.021, 0.39, m.metal).name = 'rigid-axle-bar';
   for (const x of [-0.2, 0.2]) {
     cylinder(parent, 0.055, 0.052, m.metal, [x, 0, 0]);
     boot(parent, x * 0.66, m.black, m.dark);

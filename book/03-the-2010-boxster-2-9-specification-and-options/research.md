@@ -114,3 +114,12 @@ Archived the V-pages **1–3, 6–7**, equipment-key pages **8–14 and 16**, an
 No contradiction was found in the existing three SVGs or two interactives, so their code/posters are retained. PET **320-000 p. 120** has CG200/220 replacement branches, but a **2018** replacement listing does not establish when the combination was orderable in the UK. The chapter retains the separate **08/08 versus 01/10** differential-publication qualification. Likewise, the generic PR 220 “40%” label is not used as a model-specific locking calibration, and generic PCCB/Tiptronic entries do not alter the reference car's dated specification. Exact option prices and ordering transitions remain unresolved without the appropriate UK price list.
 
 Local verification passed: both JS modules `node --check`; three SVGs parsed as XML; five manuscript asset targets and all archive links exist; fresh-photo-object hash matches; unchanged sequence of **18 footnote-reference occurrences**, **14 unique definitions**, **8 headings** and **2 diagram IDs**. The archive contains **28 PET and 6 UK brochure PNG pages**, each documented. No shared edits, global build, browser launch, git staging or poster regeneration was needed. Parent integration owns rendered reader checks.
+
+
+## Visual review integration — 13 November 2026
+
+Original diagrams using UK01/10 technical tables pp126–127 and North American handbook WKD98702110 p274 (record fields only). Dimension arrows use published axle/body/mirror endpoints; the envelope is schematic. Record values are intentionally anonymised, not an actual sticker. Acceleration chart has a zero origin and replaces the highlight-only interactive; the full table remains. See [image credits](images/credits.md) for asset provenance. Existing factual qualifications remain.
+
+## Photograph-based dimensions revision — 13 November 2026
+
+Replaced the drawn dimensions plate with original Porsche side and roof-up front photographs, using independent React/SVG/HTML overlays. The UK 01/10 dimensions (4,342 mm length; 2,415 mm wheelbase; 1,292 mm height; 1,801 mm body and 1,952 mm mirror width) are unchanged. The open-roof S profile only locates length/wheelbase. The front view locates roof-up height and the two width definitions. Source-pixel coordinates scale with the original images; captions explicitly distinguish catalogue dimensions from perspective-dependent photo spans. No measured CAD or claim about photographed equipment is introduced. See [image credits](images/credits.md) for the unchanged source assets.

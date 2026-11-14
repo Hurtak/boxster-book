@@ -30,3 +30,16 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **1520 0**, native **2063 × 3086**; crop `[0, 279, 2049, 3086]`. Locator inset omitted at `[8, 5, 679, 515]`. Result **2089 × 2847** pixels.
 - **Applicability and limits:** 812-000 identifies joined roll-bar assembly 1, belt/retractor 2 and buckle 4. Its neighbouring drip pan 12 and drain pipe 13 are water-management components. It supplies neither deployment logic nor structural-strength/clearance measurements.
 - **Local image SHA-256:** `86cabfd507df01b6551cac6a985ac037d7f398d0f1aea751523bba240fca1159`.
+
+
+## Visual review additions — 13 November 2026
+
+`AnnotatedFigure` over `porsche-posip-2010.jpg`
+
+Existing Porsche factory inflated-airbag illustration from UK01/10 p67 remains unchanged beneath editorial module-location markers. Two front, two seat-thorax and two door-head modules; S depiction remains labelled. Not an actual crash, timing sequence or instruction to deploy all modules together.
+
+Factory material retains Porsche’s original rights; React composition/labels and original teaching drawings are original project work. No generative alteration of documentary photographs.
+
+## Source-preserving React layout — 13 November 2026
+
+The former SVG image wrapper has been removed. Imported originals are displayed by the shared `Figure`, `AnnotatedFigure` or `ImageComparison` components. Crops are CSS viewports; editorial numbers and legends are separate HTML elements. The same composition is retained in enlargement, no-JavaScript and print views. Source image bytes have not been retouched or re-exported.

@@ -83,3 +83,11 @@ Useful reading-text improvements:
 Contemporary 2008 facelift, November 2009 Spyder, February 2011 Black Edition and January 2012 981 Porsche Netherlands releases were reopened, together with the Porsche SE April 2009 report, original UK 08/08 and 01/10 brochures, Spyder brochure, PCNA Black Edition release, PCNA 2012 mechanical sheet and Porsche Classic summary. They preserve the chapter's distinction between announcements, planned regional introductions, confirmed 2009 ordinary-range availability and later model labels. No timeline or static-diagram contradiction was found and no date was changed using PET.
 
 This pass preserves the current manuscript's **19 footnote-reference occurrences / 18 unique source IDs and their exact order**; the earlier audit counts above describe its earlier state. Existing source definitions were augmented. No headings, diagram IDs, interaction code, SVGs, photographs or generated posters changed. Local checks and integrated browser-validation ownership are recorded in the verification file.
+
+
+## Visual review integration — 13 November 2026
+
+The front comparison uses the unchanged predecessor Porsche JPEG from *Boxster*, 05/07, WVK 310 320 08 E/WW, PDF5 object17 (printed10), and the existing 2010 ordinary Boxster front photograph. The predecessor front is mirrored only by CSS to match the revised car’s direction; this is stated in the caption. Original source: https://xr793.com/wp-content/uploads/2022/01/2008-Porsche-Boxter.pdf . The earlier low-resolution rear-light crops have been replaced by the original-resolution photographs documented below. The React layout keeps all four image files separate. Angles and options differ, so these show styling rather than photogrammetry.
+## Rear-light image replacement — 13 November 2026
+
+Both original-resolution source photographs were visually inspected and their lamp designs compared with the already verified predecessor and facelift publications. The newer photograph clearly shows the red upper lens and clear lower strip. Photographer, original-file URL, dimensions, reuse terms and SHA-256 are in [the image credits](images/credits.md). CSS controls the viewport and horizontal mirroring of both predecessor photographs; none of the source photographs has been re-exported. These are visual styling references, not original-equipment certificates.

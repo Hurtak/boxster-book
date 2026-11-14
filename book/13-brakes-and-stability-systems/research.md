@@ -92,3 +92,15 @@ Inspected the actual Porsche PET 987209/P33, 19 July 2018, drawings and their mo
 - **Parking brake:** 603-005, PDF pp.207–208, and 701-005, PDF pp.225/228, confirm shoe/adjuster/spring/expanding-actuator identities and independent left/right cables. Prose now names those parts. The existing Porsche workshop instruction remains the corroboration for shoe location inside the rear disc hat; an exploded shoe plate alone does not show that installed section.
 
 The baseline remains the 2010 European/UK 2.9 manual, with explicit PDK alternative. PCCB availability, brake dimensions/materials, piston counts, PSM/Sport conditions, prefill, brake assist, hill hold and ageing principles remain sourced to their contemporary Porsche or manufacturer principle documents. PET is not used to infer an original retail option, exact geometry, control timing, piston force/area ratio, workshop sequence or wear limit. No heading, diagram ID or footnote-reference sequence changed.
+
+
+## Visual review integration — 13 November 2026
+
+Original installed relationship and functional wheel-circuit views, checked against PET603-005 shoe/expander/adjuster and existing rear-disc references, plus chapter ABS primary sources. Parking shoes work on the internal drum; hydraulic pads work on external faces. Section is unfolded rather than dimensioned. ABS apply/hold/release are functions, not valve-block routing or timing. See [image credits](images/credits.md) for asset provenance. Existing factual qualifications remain.
+
+
+## Rear disc section refinement — 14 November 2026
+
+Visually rechecked PET603-000/005 drawings and the shoe application list, inspected the original Brembo09.8998.11 photograph and manufacturer's299×20×67mm table/98mm bore, and read ATE2025 catalogue p829's Boxster9872.9 parking-shoe application180×25mm throughSeptember2011. The [reference dossier](part-reference/rear-brake-refinement/README.md) preserves exact locators, original assets, hashes and reference-year limits. A current replacement listing does not establish complete interchangeability or the original fitted supplier.
+
+Replaced the unfolded half-section with separate face and section views. A transparent hat exposes two curved shoes, adjuster, return springs and expanding bow. The half-section distinguishes radial shoe contact on the inside of the drum from axial hydraulic-pad contact on the outer friction faces, with a ventilated20mm ring and deep integral hat. Disc/drum proportions follow the documented nominal envelopes; internal wall/plate splits, clearances, vane spacing, spring pitch and caliper geometry are schematic. One opposing piston pair is visible, with the other pair out of plane. Numbers are separate React overlays directly on components, with a single native key and no label arrows. The front-brake 3D explorer and its model remain unchanged.

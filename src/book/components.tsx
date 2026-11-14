@@ -1,6 +1,8 @@
 import { createElement, type ReactNode } from 'react';
 export { Diagram } from './Diagram';
 export { BookImage, Figure } from './Figure';
+export { AnnotatedFigure, ComparisonImage, ImageComparison } from './ImageFigures';
+export { DimensionedFigure } from './DimensionedFigure';
 
 export function Heading({ level, id, children }: { level: number; id: string; children: ReactNode }) {
   return createElement(`h${level}`, { id }, children);

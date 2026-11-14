@@ -71,3 +71,16 @@ GT Silver crop: x533/y207/137×63 in a2000px-wide render of PDF48. Two-tone crop
 All 44 Porsche atlas assets are unchanged. Forty-one native PNGs byte-match fresh `pdfimages -png` extraction from the original UK 01/10 PDF; the baseline JPEG byte-matches PDF24's original image object 1. The GT Silver and two-tone images exactly match the documented crop pixels of a fresh full-page PDF48 render at 2,000 pixels wide. The complete labelled wheel, seat and palette spreads were visually inspected again.
 
 The [chapter reference inventory](../part-reference/README.md) records the source editions, SHA-256 hashes, individual page filenames and rendering scales for 27 Porsche PET pages, 12 dated ordinary UK brochure spreads and one UK Black Edition price-list spread. These are unaltered complete-page manufacturer references, with numbered callouts, application columns and source footers retained. They remain Porsche copyrighted material, separate from the original project seat-support SVG imported from chapter 15; neither the PET pages nor the catalogue reproductions are MIT-licensed project artwork.
+
+
+## Visual review additions — 13 November 2026
+
+`Figure` layout crops of `part-reference/pet-817-000-p443.png` and `pet-817-015-p467.png`
+
+CSS layout crops of the unchanged saved factory PET817-000 p443 and817-015 p467, standard PR369/370 and ordinary sports PR375/376. They fill previously unillustrated families with verified drawings, explicitly not photographs. Existing three seat photos retained. Restored the shared chapter 15 seat-support schematic in the atlas at the reader’s request; the chapter link remains. Drawings do not establish upholstery, ventilation or original package by themselves.
+
+Factory material retains Porsche’s original rights; React composition/labels and original teaching drawings are original project work. No generative alteration of documentary photographs.
+
+## Source-preserving React layout — 13 November 2026
+
+The former SVG image wrapper has been removed. Imported originals are displayed by the shared `Figure`, `AnnotatedFigure` or `ImageComparison` components. Crops are CSS viewports; editorial numbers and legends are separate HTML elements. The same composition is retained in enlargement, no-JavaScript and print views. Source image bytes have not been retouched or re-exported.

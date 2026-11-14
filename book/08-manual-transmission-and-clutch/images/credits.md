@@ -30,3 +30,18 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **411 0**, native **2028 × 2675**; crop `[22, 630, 2025, 2616]`. Locator inset omitted at `[0, 0, 672, 506]`. Result **2043 × 2026** pixels.
 - **Applicability and limits:** 301-000 lists G87/10 and G87/40 parts separately. The representative pressure assembly must not be used to assign the S-only X-Tend feature to the reference 2.9. Items 3/4/5 identify the separate lever, bearing and guide.
 - **Local image SHA-256:** `9cc5dc46aeab55227268cd10ce2e43cdb74268515326529083aea49b3ae8d3e8`.
+
+
+## Visual review additions — 13 November 2026
+
+The earlier `dual-mass-flywheel.svg` (replaced by separate face and cutaway panels below).
+
+The initial unfolded two-mass/spring illustration was superseded by the detailed 14 November revision below. Porsche training103 establishes reference-car fitment. Generic mechanism corroborated by ZF https://press.zf.com/press/en/releases/release_3283.html and https://www.zf.com/products/en/cars/products_64271.html . No exact Porsche spring count, shape or twist limit. Spring compliance is kept distinct from clutch slip.
+
+Factory material retains Porsche’s original rights; SVG composition/labels and teaching drawings are original project work. No generative alteration of documentary photographs.
+
+## Flywheel photographs and detailed redraw — 14 November 2026
+
+The [flywheel reference record](../part-reference/flywheel-refinement/README.md) lists exact original image URLs, hashes, dimensions, the LuK guide identity/page locators and the A120 manual parts cross-check. Supplier originals `part-view-4.jpg` and `part-view-1.jpg` are displayed separately through React. The face panel uses a viewport crop, with the source JPEG intact. Their copyright remains with the supplier/photographer.
+
+`dual-mass-flywheel-face.svg` and `dual-mass-flywheel-cutaway.svg` are original vector artwork. Its exterior proportions follow the part photograph; its separate internal cutaway follows the generic LuK mechanism, not a disassembled Porsche-specific measurement. It adds the contact annulus, mounting centre, starter teeth, openings, curved coil springs, channel stops, flange and indexed reference/turned positions. Numbered component labels use the shared native HTML annotation key. The retained complete LuK pages remain Schaeffler-authored reference material with their original rights, not MIT artwork. Exact hidden geometry and twist limits are not inferred.

@@ -1,0 +1,22 @@
+[
+  {
+    "file": "images/passive-front-bilstein-original.jpg",
+    "bytes": 218623,
+    "sha256": "43e3fbc49b7f4543ab5530558b08a8a725b344d1dfbbaa6bf7e189f7298e6cf3"
+  },
+  {
+    "file": "images/pasm-front-bilstein-original.jpg",
+    "bytes": 140651,
+    "sha256": "446ce662f8b6dafa0a56169ad41217317f4a459bab5abc3d77966fd3980acc19"
+  },
+  {
+    "file": "part-reference/damper-refinement/porsche-p001-p227.png",
+    "bytes": 952479,
+    "sha256": "d383082de7a99209e9a95ec872f95a18213c4055a8d6785f447f1ef914d43e12"
+  },
+  {
+    "file": "part-reference/damper-refinement/porsche-2010-pasm-cutaway-original.jpg",
+    "bytes": 12970,
+    "sha256": "81037a90776b399521210ce9965424dcd3557fc1b0a360714d66e35caebab331"
+  }
+]

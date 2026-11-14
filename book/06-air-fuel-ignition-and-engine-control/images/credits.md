@@ -41,3 +41,18 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **336 0**, native **2056 × 2759**; crop `[39, 510, 2037, 2759]`. Locator inset omitted at `[5, 5, 681, 517]`. Result **2038 × 2289** pixels.
 - **Applicability and limits:** 107-007 is the A120 2.9 injection-valve/fuel-collection-pipe plate. Injector 6, clips 7 and seals 8/9 are the port-injection assembly; this is not the S engine's high-pressure DFI equipment.
 - **Local image SHA-256:** `885f502f4048b4d4a8a6804c36074c3ed8aa34fa9b385d00de105d44c631e12f`.
+
+
+## Visual review additions — 13 November 2026
+
+`intake-state-0/1/2.svg`, `intake-resonance-states`
+
+The initial functional connection states were revised on 14 November: the current illustration uses photo-guided outer assembly shapes with separate enlarged flap sections. The 2.9 states remain vacuum-closed at idle, distribution open above 3,800 rpm and tuning open above 5,500 rpm. See the refinement record below for current geometry, sources and limits.
+
+Factory material retains Porsche’s original rights; SVG composition/labels and teaching drawings are original project work. No generative alteration of documentary photographs.
+
+## Intake assembly photographs and redraw — 14 November 2026
+
+The [intake refinement source inventory](../part-reference/intake-refinement/README.md) records all ten original image URLs, pixel sizes, byte counts, SHA-256 hashes, supplier identities and application limits. `assembly-view-2.jpg` (Viking Auto Salvage, 2010 Cayman 2.9 donor listing) and `distributor-view-1.jpg` (Wolf Auto Parts PS85425, later replacement listing) are imported separately into the manuscript. Their pixels are unchanged, with captions and layout supplied by React. The other assembly/bank/centre photographs and Porsche's WM 244619 drawing remain chapter-local reference evidence.
+
+`intake-state-0.svg`, `intake-state-1.svg`, `intake-state-2.svg` and the matching `intake-resonance-states/poster.svg` are original vector illustrations. They now show photo-guided moulding proportions, three curved runners per bank, clamped oval joints, ribs, mounting bosses, the throttle neck, two vacuum units and two change-over valves. Numbered leaders and enlarged half-oval flap sections are authored vector elements. Hidden internal dimensions and installed axes are illustrative, not traced factory CAD. Switching states derive from Porsche 2009 Technik, printed p. 59, and retain the base engine's 3,800/5,500 rpm thresholds. Supplier photographs and Porsche factory material retain their respective rights.

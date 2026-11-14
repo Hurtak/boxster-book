@@ -87,3 +87,22 @@ Concrete changes from the drawings:
 The **three static explanations and cooling-state interactive already agree** with these factory relationships. Only the oil schematic's mechanical-drive wording needed clarification. The generic thermostat, bearing-film, heat-transfer and pollutant-conversion accounts still rely on the existing manufacturer/training evidence, not on exploded-view inference. No new opening temperature, fan map, fluid pressure, sports-flap calibration, part interchangeability or original option chronology is asserted. Prior training-page access limitations remain as recorded above; no new visual inspection of inaccessible training pages is claimed.
 
 Eight explorer groups are retained. Its **`fluids-explorer` poster requires parent regeneration** from the changed model; `fluid-cooling-path` and its fallback are unchanged. Narrow checks comprise JavaScript parsing, finite geometry and connection endpoints, XML parsing, local asset resolution, MDX compilation, and exact preservation of headings/diagram IDs/footnote-reference order. Parent performs full-book builds and browser/poster integration.
+
+
+## Visual review integration — 13 November 2026
+
+Original pressure-pump sections checked against Porsche2009 Technik Engine pp21–22; fresh primary-text check at https://www.scribd.com/document/972719474/Boxster-2009 . A hydraulic pressure difference moves one gear axially, changing active tooth width; mechanical chain drive remains. No exact control-pressure or delivery map. The four scavenge sections are omitted. Display is conceptual, not a facsimile; measurement conditions remain those of the handbook. See [image credits](images/credits.md) for asset provenance. Existing factual qualifications remain.
+
+## Oil-pressure pump illustration refinement — 14 November 2026
+
+The [new source inventory](part-reference/oil-pump-refinement/README.md) preserves three original photographs of pump **9A1 107 050 04** and two original Porsche 2009 Boxster 2.9 oil-supply illustrations. PET 104-000 pp. 55–56 corroborates the A120/A121 pump number, separate sprocket/chain and control valve; its exploded spacing does not supply internal dimensions. The unmodified complete-pump photo and factory oil-pan cutaway are displayed through the shared React comparison component.
+
+The factory functional drawing corrects the old section's long, narrow gears and transverse tooth stripes: the revised wheels have a shorter axial width relative to diameter, with tooth lines along the axes. It also supplies the control piston, spring piston and spring arrangement. The blue overlap indicator measures the intersection of both axial gear spans. The lower assembly moves and the spring compresses, while the upper gear stays axially fixed. Both remain mechanically driven. This is a pressure-section principle, not a calibrated flow model or the entire five-section pump casting.
+
+The electrical DME command and physical hydraulic control valve are now drawn separately. The original workshop text confirms that one piston side receives pump pressure while the valve regulates the spring-piston side. Pressure links remain unfolded rather than inventing internal galleries or exact valve ports. The two boxes' text is geometrically centred; the movement arrow and its label track the moving gear centre in both states. All dimensions, tooth counts and travel remain illustrative. The oil-level display is documented in the separate revision below.
+
+## Oil-level display redraw — 14 November 2026
+
+Visually rechecked the original Porsche *Boxster, Boxster S Owner’s Manual*, **WKD 987 021 10, 5/09**, printed **pp. 157–158 / PDF pp. 159–160**, against the retained full-page audit renderings. The handbook uses a vertical segment scale; its maximum is the top line, and the minimum indication is the lowest filled segment. The previous horizontal six-cell teaching display therefore obscured the meaning of “upper” and placed its arrow on an unmarked part of the display.
+
+The replacement uses four vertical segments, a marked MAX line at the top and MIN beside the lowest segment. Two lower segments are filled to make the example distinct from the maximum. The maximum arrow terminates exactly at the MAX tick; a separate leader terminates at the top of the filled example. This is an explanatory redraw, not a facsimile or a new calibrated quantity scale. No per-segment volume or top-up amount is added. Measurement conditions remain stationary, level, idling and at least 60 °C, as already sourced to the handbook.

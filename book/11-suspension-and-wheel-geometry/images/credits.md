@@ -27,3 +27,26 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **505 0**, native **2034 × 3136**; crop `[198, 318, 2034, 2996]`. Locator inset omitted at `[0, 2, 672, 513]`. Result **1876 × 2718** pixels.
 - **Applicability and limits:** 402-000 shares passive PR029, PASM PR475 and Spyder applications with different part listings. Controller 14 and body-acceleration sensor 16 are PASM-related; item 17 identifies mounting hardware/bracket, not a second sensor. Exploded vertical spacing is not actual spring length, ride height or available travel.
 - **Local image SHA-256:** `2aa20bc7fe88eac3008f3fb829ea810ae812467c27fe963d06d07252ef6084b0`.
+
+
+## Visual review additions — 13 November 2026
+
+`AnnotatedFigure` over the original front/rear axle photographs.
+
+Existing factory S axle images retained unchanged with separate numbered editorial markers. Preserve the S/architecture qualification; no identical base-model brake or part number claim. The original simple PASM comparison has been superseded by the source-guided figures documented below. Spring rate and static ride-height specification remain separate.
+
+Factory material retains Porsche’s original rights; React composition/labels and original teaching drawings are original project work. No generative alteration of documentary photographs.
+
+## Source-preserving React layout — 13 November 2026
+
+The former SVG image wrapper has been removed. Imported originals are displayed by the shared `Figure`, `AnnotatedFigure` or `ImageComparison` components. Crops are CSS viewports; editorial numbers and legends are separate HTML elements. The same composition is retained in no-JavaScript and print views. Source image bytes have not been retouched or re-exported.
+
+
+## Damper photographs and source-guided sections — 14 November 2026
+
+- `passive-front-bilstein-original.jpg`: original **1,500 × 1,500** manufacturer photograph of **Bilstein B4 22-147578**. [Manufacturer page](https://cart.bilsteinus.com/strut-22-147578.html), [original JPEG](https://cart.bilsteinus.com/media/catalog/product/a/p/apa_22-147578_1_20261103145016.jpg).
+- `pasm-front-bilstein-original.jpg`: original **1,500 × 1,500** manufacturer photograph of **Bilstein B4 DampTronic 22-147592**. [Manufacturer page](https://cart.bilsteinus.com/strut-22-147592.html), [original JPEG](https://cart.bilsteinus.com/media/catalog/product/a/p/apa_22-147592_1_20261103145016.jpg).
+
+Photographs © Bilstein / thyssenkrupp Bilstein; not covered by the repository's MIT licence. Original bytes retained without editing. These are current replacement examples, not documentary evidence of the reference car's original supplier or calibration. React supplies labels/captions separately. No permission to republish asserted.
+
+`passive-damper-section.svg` and `pasm-damper-section.svg` are original project drawings. Exterior proportions follow those photographs; internal bypass location and operation were checked against Porsche's 01/10 brochure pp. 54–55 and P001 training p. 4.21. Removed the old external-pipe schematic. Enlarged valves, ports and reservoir details remain explanatory; no exact bore, stroke, valving calibration or spring dimension is claimed. The seven numbered leaders identify the rod, seat, working tube, bottom valve, main piston valves, PASM cable and internal bypass. See [reference dossier](../part-reference/damper-refinement/README.md) for complete locators, application limits and checksums.

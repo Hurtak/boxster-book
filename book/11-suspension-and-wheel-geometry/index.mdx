@@ -1,10 +1,14 @@
-import { Diagram, Figure, Heading } from '../../src/book/components';
+import passiveDamperPhoto from "./images/passive-front-bilstein-original.jpg";
+import pasmDamperPhoto from "./images/pasm-front-bilstein-original.jpg";
+import passiveDamperSection from "./images/passive-damper-section.svg";
+import pasmDamperSection from "./images/pasm-damper-section.svg";
+import rearAxlePhoto from "./images/rear-axle-boxster-s.jpg";
+import frontAxlePhoto from "./images/front-axle-boxster-s.jpg";
+import { Diagram, Figure, Heading, AnnotatedFigure, ImageComparison, ComparisonImage } from '../../src/book/components';
 import illustration0 from "./diagrams/suspension-explorer/poster.svg";
 import illustration1 from "./diagrams/suspension-spring-damper/poster.svg";
 import illustration2 from "./diagrams/suspension-anti-roll/poster.svg";
 import illustration3 from "./images/boxster-and-s-on-road.jpg";
-import illustration4 from "./images/front-axle-boxster-s.jpg";
-import illustration5 from "./images/rear-axle-boxster-s.jpg";
 import illustration6 from "./images/strut-forcepaths.svg";
 import illustration7 from "./images/alignment-views.svg";
 import illustration8 from "./images/spyder-cornering.jpg";
@@ -36,11 +40,11 @@ The spring surrounds the damper, but they do different jobs, and the whole strut
 
 No driveshaft reaches the front hub, which has a central retaining bolt and nut. A wheel-speed sensor on the carrier feeds the [braking and stability systems](../13-brakes-and-stability-systems/index.mdx).
 
-<Figure src={illustration4} alt={"Porsche's isolated front axle assembly showing tall coil-over struts, lower arms, steering rack and red S brake calipers."}>
+<AnnotatedFigure src={frontAxlePhoto} alt="Factory front axle with numbered strut, lower wishbone, guide link, steering track rod and carrier." title="Front axle · identify the load paths" annotations={[{"id": "1", "label": "Strut / upper body mounting", "x": 23.64, "y": 35.63}, {"id": "2", "label": "Lower wishbone", "x": 31.17, "y": 69.54}, {"id": "3", "label": "Forward guide link", "x": 36.36, "y": 81.61}, {"id": "4", "label": "Steering track rod", "x": 33.77, "y": 56.32}, {"id": "5", "label": "Axle carrier / body attachment", "x": 63.12, "y": 68.39}]}>
 
-Boxster S front axle. The strut-and-lower-arm layout is shared with the 2.9; the red caliper finish belongs to the S. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 50. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+Front axle with editorial component markers. Factory illustration depicts the **Boxster S**; it explains the shared layout, not identical 2.9 brakes or part numbers. Illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 50. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=23).
 
-</Figure>
+</AnnotatedFigure>
 
 ### At the rear
 
@@ -52,11 +56,11 @@ The rear suspension mounts on side pieces, a crossmember and bracing. Eccentric 
 
 The [hub bearing](../10-differential-driveshafts-and-mounts/index.mdx#driveshaft-joints-plunge-and-the-hub) lets the wheel spin; the ball joints let the guiding links change angle.
 
-<Figure src={illustration5} alt={"Porsche's rear axle assembly showing its two coil-over struts, wheel carriers and several lower guiding links."}>
+<AnnotatedFigure src={rearAxlePhoto} alt="Factory rear axle with numbered strut, lower arm, guide link, toe link and drive shaft." title="Rear axle · support, toe control and drive" annotations={[{"id": "1", "label": "Spring strut", "x": 26.75, "y": 41.95}, {"id": "2", "label": "Lower arm", "x": 33.51, "y": 78.74}, {"id": "3", "label": "Guide / locating link", "x": 42.86, "y": 83.91}, {"id": "4", "label": "Toe-control link", "x": 39.22, "y": 68.39}, {"id": "5", "label": "Drive shaft to hub", "x": 70.65, "y": 57.47}]}>
 
-Boxster S rear axle, with its two struts and wheel-guiding links. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 50. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf).
+Rear axle with editorial markers. The **Boxster S** illustration separates wheel-location links from the drive shaft; it does not establish identical base-model parts. Illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 50. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=23).
 
-</Figure>
+</AnnotatedFigure>
 
 <Figure src={illustration6} alt={"A conceptual Boxster suspension corner routes vertical load through its coil-over strut and reacts tyre forces through the carrier, lower arm, guide and body. A key distinguishes the front steering tie rod from the rear toe-control link."}>
 
@@ -127,6 +131,32 @@ Camber from the front, caster from the side and toe from above. Negative camber 
 Suspension travel changes the geometry and tyre forces flex the bushes, so an alignment measures one specified condition rather than fixing the wheel at those angles. Ride height, load, tyre condition and the correct model specification all matter when reading a printout, and different springs or adjustable aftermarket arms change that context.
 
 Uneven tread wear is a clue, not a diagnosis: camber, toe, pressure, road use and worn parts can all contribute. Correcting a number on an alignment screen cannot remove play from a joint or repair a damaged arm.
+
+<ImageComparison title="The real front dampers" alt="Unretouched manufacturer photographs of a passive front strut and a PASM front strut, showing their slender bodies, broad spring seats, polished rods and the PASM electrical lead." stackOnPhone>
+  <ComparisonImage src={passiveDamperPhoto} alt="Bilstein B4 22-147578 front damper with a threaded upper stem, polished rod, broad bowl-shaped spring seat and slender black body with welded brackets." label="Standard chassis · passive" note="B4 replacement example: 22-147578. The coil spring, bellows, stop and top mount are not fitted in this photograph." />
+  <ComparisonImage src={pasmDamperPhoto} alt="Bilstein B4 DampTronic 22-147592 front damper with an electrical lead emerging at the top of the rod, a broad spring seat and a long black tube." label="Optional PASM · electrical lead" note="B4 DampTronic replacement example: 22-147592. The cable supplies the internal control valve; it is not a hydraulic hose." />
+
+Original photographs: Bilstein, [passive 22-147578](https://cart.bilsteinus.com/strut-22-147578.html) and [PASM 22-147592](https://cart.bilsteinus.com/strut-22-147592.html). These are current replacement examples, not photographs of the car's original 2010 dampers. Their proportions guide the sections below; PET 402-000 distinguishes passive **PR029** from PASM **PR475** applications.
+
+</ImageComparison>
+
+<ImageComparison title="Changing damping without changing the spring" alt="Detailed passive and PASM front-strut cutaways, with enlarged piston valves and numbered component leaders. PASM adds an internal electrically adjustable bypass to the main piston valves." stackOnPhone>
+  <ComparisonImage src={passiveDamperSection} alt="Slender passive twin-tube strut with a spring seat, rod seal, working piston, outer reservoir and bottom valve; an enlarged piston shows rebound oil flowing through preset valve passages and deflecting valve discs." label="Passive · mechanically set valving" note="Preset does not mean constant force. The valve response depends on movement speed and direction; compression and rebound can differ." />
+  <ComparisonImage src={pasmDamperSection} alt="PASM twin-tube strut with an electrical lead through the hollow rod; an enlarged piston shows the main valves plus a separate internal adjustable bypass above and through the piston assembly." label="PASM · an additional controlled route" note="The internal bypass varies damping continuously. Normal and Sport are adaptive ranges, not two permanently open or closed valve positions." />
+
+<ul className="image-key" aria-label="Damper component key">
+  <li><span className="image-key-number">1</span>Piston rod; enters through the rod guide and seal</li>
+  <li><span className="image-key-number">2</span>Lower seat for the separate coil spring</li>
+  <li><span className="image-key-number">3</span>Inner working cylinder; outer tube encloses reservoir space</li>
+  <li><span className="image-key-number">4</span>Bottom valve between the working cylinder and reservoir</li>
+  <li><span className="image-key-number">5</span>Main piston valves; oil pressure deflects the valve discs</li>
+  <li><span className="image-key-number">6</span>PASM electrical lead entering the hollow rod</li>
+  <li><span className="image-key-number">7</span>PASM internal bypass control valve</li>
+</ul>
+
+Both dampers turn motion into heat in the oil. Blue arrows illustrate **rebound**, with the rod extending and oil crossing from above to below the piston. The enlargement separates the flow routes for clarity. Porsche's [period PASM cutaway, pp. 54–55](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=25) and [training explanation, p. 4.21](https://souzaweb.com/caymanregister/downloads/54580-General_Porsche_Repair_%28P001_-_Book_5-07%29.pdf#page=227) place the adjustable bypass inside the damper. The profiles follow the part photographs; the port sizes, valve-disc shapes and internal spacing are explanatory, not measured factory sections. The PASM button changes neither the metal spring's rate nor the car's static ride height.
+
+</ImageComparison>
 
 ## Options on the 2010 2.9
 

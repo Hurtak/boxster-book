@@ -1,7 +1,8 @@
-import { Diagram, Figure, Heading } from '../../src/book/components';
+import visualpdkswitchwheeljpg from "./images/pdk-switch-wheel.jpg";
+import pdkCutaway from "./images/pdk-factory-cutaway.jpg";
+import { Diagram, Figure, Heading, AnnotatedFigure } from '../../src/book/components';
 import illustration0 from "./diagrams/pdk-explorer/poster.svg";
 import illustration1 from "./diagrams/pdk-power-path/poster.svg";
-import illustration2 from "./images/pdk-factory-cutaway.jpg";
 import illustration3 from "./images/pdk-concentric-inputs.svg";
 import illustration4 from "./images/pdk-paddle-wheel.jpg";
 import illustration5 from "./images/pdk-oil-control.svg";
@@ -15,11 +16,11 @@ PDK's trick is preparation. While one gear drives the car, the next can already 
 
 <Diagram id="pdk-explorer" poster={illustration0} alt={"Optional PDK behind the engine connects its flywheel, nested K1 and K2 packs, concentric shafts and sample gearing to the rear final drive. The cutaway housing, bolted sump, support brackets, separate controller, heat exchanger and selector cable locate its connections to the car."} />
 
-<Figure src={illustration2} alt={"Porsche factory cutaway of the seven-speed PDK, showing the gear train, clutch end and final-drive assembly in one housing."}>
+<AnnotatedFigure src={pdkCutaway} alt="Numbered factory PDK cutaway identifies the nested wet-clutch pack, gear trains and final drive." title="Read the factory PDK cutaway" annotations={[{"id": "1", "label": "Nested K1 / K2 wet-clutch pack", "x": 77.04, "y": 45.0}, {"id": "2", "label": "Gear trains on parallel shafts", "x": 33.02, "y": 49.38}, {"id": "3", "label": "Final drive / differential", "x": 55.03, "y": 82.19}]}>
 
-Seven-speed PDK, showing the clutch packs, gear train and final drive in one housing. Factory illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 43. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=19).
+Factory PDK cutaway with editorial location markers. Within the nested pack, outer clutch K1 supplies the inner shaft for odd gears and reverse; inner K2 supplies the hollow outer shaft for even gears. The separate concentric-input drawing explains that hidden distinction. Illustration: Porsche AG, *The Boxster* (UK, 01/10), p. 43.
 
-</Figure>
+</AnnotatedFigure>
 
 ## Two clutches and two input shafts
 
@@ -64,6 +65,12 @@ The centre lever offers the familiar automatic positions. Forward-gear requests 
 | **M** | The driver chooses forward gears with the lever or the steering-wheel controls. |
 
 The original PDK sports steering wheel has two push/pull switches, so either hand can change either way: push forwards for up, pull back for down. The January 2010 UK catalogue also offers a three-spoke paddle wheel: pull the **right paddle for up** and the **left for down**. The centre lever follows Porsche's period arrangement, forwards for up and back for down.[^wheel]
+
+<Figure src={visualpdkswitchwheeljpg} alt="A period PDK wheel with push-pull switches on both spokes, rather than separate up/down paddles.">
+
+PDK switch wheel: either hand pushes to shift up and pulls to shift down. The paddle wheel below instead uses right up and left down. Photo: Porsche AG, *The Boxster* (UK, 01/10), p. 46. [Source](https://mrsportscars.com/wp-content/uploads/2019/11/Porsche-Boxster-987-Gen-2-Sales-Brochure-UK-US-2010-2011.pdf#page=21).
+
+</Figure>
 
 <Figure src={illustration4} alt={"Period Porsche cabin photograph with the optional three-spoke paddle steering wheel and PDK selector."}>
 

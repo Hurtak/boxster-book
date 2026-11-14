@@ -1,3 +1,6 @@
+import seatSupport from "../15-cabin-seating-and-climate/images/cabin-seat-support.svg";
+import standardSeatProfile from "./part-reference/pet-817-000-p443.png";
+import sportsSeatProfile from "./part-reference/pet-817-015-p467.png";
 import { Diagram, Figure, Heading } from '../../src/book/components';
 import illustration0 from "./images/boxster-iii-17.jpg";
 import illustration1 from "./images/cayman-ii-17.png";
@@ -9,7 +12,6 @@ import illustration6 from "./images/sportdesign-19.png";
 import illustration7 from "./images/carrera-sport-19.png";
 import illustration8 from "./images/911-turbo-19.png";
 import illustration9 from "./images/911-turbo-ii-19.png";
-import illustration10 from "../15-cabin-seating-and-climate/images/cabin-seat-support.svg";
 import illustration11 from "./images/comfort-seat.png";
 import illustration12 from "./images/adaptive-sports-seat.png";
 import illustration13 from "./images/sports-bucket-seat.png";
@@ -173,9 +175,10 @@ Images: Porsche AG, *The Boxster*, UK 01/10, printed pp. 53 and 108–109, at th
 
 ## Seat atlas
 
-The [baseline seat diagram](../15-cabin-seating-and-climate/index.mdx#a-seat-is-a-support-structure) explains the shared support and adjustment functions. The table compares the standard seat with the options, and the photographs show the three more specialised designs.[^seats]
+The [baseline seat diagram](../15-cabin-seating-and-climate/index.mdx#a-seat-is-a-support-structure) explains the shared support and adjustment functions. The table compares the standard seat with the options, and the factory drawings show the two manually adjusted families and the photographs show the three more specialised designs.[^seats]
 
-<Figure src={illustration10} alt={"The baseline seat’s frame, cushion and runners, with separate fore/aft, height and backrest adjustments. Original schematic; it does not depict a particular leather colour."}>
+
+<Figure src={seatSupport} alt={"The baseline seat’s frame, cushion and runners, with separate fore/aft, height and backrest adjustments. Original schematic; it does not depict a particular leather colour."}>
 
 The standard seat’s frame, cushion and runners, with three separate adjustments: fore/aft, height and backrest. Original schematic; it does not show any particular leather colour.
 
@@ -191,9 +194,21 @@ The standard seat’s frame, cushion and runners, with three separate adjustment
 
 PR pairs identify seat families in the service catalogue; P-codes identify the dated sales packages. Memory, ventilation and upholstery each need their own record. Left and right mean the car’s sides: on the UK right-hand-drive reference car the right seat is the driver’s, and its runners differ from the left-hand-drive equivalent.
 
-Photographs: Porsche AG, *The Boxster*, UK 01/10, printed pp. 74–75. Seat type, leather coverage, heating and ventilation are separate choices; the [cabin option table](../15-cabin-seating-and-climate/index.mdx#options-on-the-2010-2.9) lists their prerequisites.
+Drawings: Porsche AG, PET 817-000 and 817-015; photographs: Porsche AG, *The Boxster*, UK 01/10, printed pp. 74–75. The drawings establish seat families, not upholstery or fitted options. Seat type, leather coverage, heating and ventilation are separate choices; the [cabin option table](../15-cabin-seating-and-climate/index.mdx#options-on-the-2010-2.9) lists their prerequisites.
 
 <div className="reference-atlas seats">
+
+<Figure src={standardSeatProfile} crop={{"x": 285, "y": 390, "width": 590, "height": 820}} alt="Factory line drawing of the standard seat family, with integrated head restraint and smaller side bolsters.">
+
+**Standard seat · PR 369/370** · factory drawing, PET 817-000
+
+</Figure>
+
+<Figure src={sportsSeatProfile} crop={{"x": 220, "y": 210, "width": 750, "height": 970}} alt="Factory line drawing of the ordinary sports seat, with more pronounced backrest and cushion bolsters.">
+
+**Sports seat · P77 / PR 375/376** · factory drawing, PET 817-015
+
+</Figure>
 
 <Figure src={illustration11} alt={"Comfort seat · P15: catalogue seat photograph."}>
 

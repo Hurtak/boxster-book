@@ -35,3 +35,25 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **2115 0**, native **2067 × 3061**; crop `[131, 201, 1990, 3035]`. Locator inset omitted at `[8, 5, 679, 515]`. Result **1899 × 2874** pixels.
 - **Applicability and limits:** 911-005 lists separate PR441/490/680 applications. Item 9 is the complete BOSE rear subwoofer enclosure, not one driver or a standard four-speaker-system part. No physical driver dimensions or amplifier-channel mapping is inferred.
 - **Local image SHA-256:** `2647ab76f388bfff71548c13085240b77e44c9a7fc222b369e3c93e717a0853d`.
+
+
+## Visual review additions — 13 November 2026
+
+`pcm-console-interface.jpg`, `speaker-plan-0/1/2.svg`, `speaker-package-locator`
+
+Console image: unchanged JPEG object176 from UK01/10 PDF41, printed87,385×256. Shows optional PCM AUX/USB/iPod interface; UK CDR30+870 has AUX only. Original speaker plan states standard2dashboard+2doors,Plus3dashboard+4doors,BOSE3dashboard+4doors+4rear (corrected from the earlier locator after re-reading UK01/10 p89); counts and185W/385W/7channels follow existing primary training/catalogue evidence. Not channel wiring or exact driver sizes.
+
+Factory material retains Porsche’s original rights; SVG composition/labels and teaching drawings are original project work. No generative alteration of documentary photographs.
+
+
+## Speaker layout refinement — 14 November 2026
+
+`speaker-plan-0/1/2.svg` and `speaker-package-locator/poster.svg` are generated original project drawings. The car now has the catalogue4,342×1,801mm body envelope and2,415mm wheelbase proportions, a rounded nose/tail, separate luggage lids, windscreen, seats, console, rollbars and door regions. Internal locations follow the period factory cutaway; they are not measured mounting coordinates.
+
+Enlarged details distinguish the small clip-in dashboard tweeters, optional centre speaker, midrange driver above the lower four-bolt door-bass housing, and the broad moulded BOSE rear enclosure. Shape references are the existing PET911-005, the original Porsche UK01/10 p89 photographs and a VDL Adelaide photograph of99764502100. Published BOSE driver sizes guide relative proportions; they do not establish exact diaphragm, housing or decorative-grille dimensions. BOSE is corrected to3dashboard+4doors+4rear; seven amplifier channels are not eleven physical speakers.
+
+Source originals, image-object identities, hashes and geometry limits are retained in [speaker-layout-refinement](../part-reference/speaker-layout-refinement/README.md). The original source images are not edited or annotated. Live labels are native HTML, and all static states use the same drawing functions. No exact fitting geometry, wiring, crossover allocation, channel map or acoustic performance is inferred. Factory/retailer source images retain their rightsholders' rights and are excluded from MIT.
+
+### Cabin and outline correction — 14 November 2026
+
+The shared locator drawing now explicitly shows **left-hand drive**, with the steering wheel aligned ahead of the lower seat in the nose-left plan. Both seat cushions, backrests and integrated head restraints are redrawn, correcting malformed cushion paths. The body, windscreen projection and lamp outlines were cross-checked against an unchanged Porsche AG overhead photograph of the 987 Spyder, retained with its source and hash in the reference dossier. Only common exterior proportions inform this cross-check: the Spyder's rear deck, bucket seats, door trim and audio equipment are not depicted as standard 2.9 parts. The ordinary Boxster's rear deck, seats and speaker locations still follow UK01/10 p89. Published overall dimensions and wheelbase constrain the plan; internal geometry remains illustrative.

@@ -1,4 +1,5 @@
-import { Diagram, Figure, Heading } from '../../src/book/components';
+import visualintakeresonancestates from "./diagrams/intake-resonance-states/poster.svg";
+import { ComparisonImage, Diagram, Figure, Heading, ImageComparison } from '../../src/book/components';
 import illustration0 from "./diagrams/intake-explorer/poster.svg";
 import illustration1 from "./diagrams/engine-mixture-feedback/poster.svg";
 import illustration2 from "./images/air-path.svg";
@@ -8,6 +9,8 @@ import illustration5 from "./images/crankcase-ventilation.svg";
 import illustration6 from "./images/sport-chrono-stopwatch.jpg";
 import airCleanerParts from "./images/pet-air-cleaner.png";
 import injectorParts from "./images/pet-port-injectors.png";
+import completeIntake from "./part-reference/intake-refinement/assembly-view-2.jpg";
+import centreDistributor from "./part-reference/intake-refinement/distributor-view-1.jpg";
 
 # Air, fuel, ignition and engine control
 
@@ -35,6 +38,16 @@ The cylindrical filter element (8) enters the shaped housing through cover (3) a
 
 </Figure>
 
+<ImageComparison title="The intake behind the switching diagram" alt="A complete 2.9 intake beside a detached centre distributor, showing the curved bank runners, oval joints and divided centre opening." stackOnPhone>
+  <ComparisonImage src={completeIntake} alt="Complete 2.9 intake with three curved runners on each bank and a ribbed centre distributor between them." label="Complete 2.9 assembly" note="Six curved runners surround the broad centre housing; oval sleeves and clamps join the mouldings." />
+  <ComparisonImage src={centreDistributor} alt="Detached ribbed centre distributor with a divided oval opening and an elbow leading to the throttle attachment." label="The centre distributor" note="The detached piece reveals the divided oval mouth, reinforcement ribs and throttle attachment neck." />
+
+Photographs: [Viking Auto Salvage, item 112870](https://www.vikingusedautoparts.com/part/112870), listed from a 2010 Cayman 2.9; [Wolf Auto Parts, stock PS85425](https://wolfautoparts.com/parts/air-distribution-tube-9a111012022-ps85425/), a later replacement centre-piece listing. These views guide the drawing's visible shapes; they do not establish a particular Boxster's installed part revision.
+
+</ImageComparison>
+
+<Diagram id="intake-resonance-states" poster={visualintakeresonancestates} alt="1: centre distributor; 2: three-runner bank modules; 3: oval sleeves and clamps; 4: vacuum units. Both flaps are closed by vacuum at idle. The distribution flap opens above 3,800 rpm; the tuning flap above 5,500 rpm. The separate enlarged sections explain their states; internal dimensions and installed axes are illustrative." />
+
 ## The accelerator asks for torque
 
 The accelerator pedal measures its own movement and sends the signal to the engine controller. The driver's foot supplies an input to a calculation rather than pulling a cable to a fixed throttle angle, and Bosch describes the pedal signal as a request for torque. The controller turns that request into a suitable air charge and coordinates the fuel and spark to burn it.[^pedal]
@@ -42,6 +55,7 @@ The accelerator pedal measures its own movement and sends the signal to the engi
 Inside the electronic throttle body, an electric motor turns a butterfly valve, and a position sensor reports its actual angle so that the controller can compare it with the command. Opening the valve reduces the restriction in the intake. At a given engine speed and operating condition, that generally lets more air into the cylinders and produces more torque. Pedal position, throttle angle and percentage of maximum torque are three different quantities, and the relationship between them also depends on engine speed.[^throttle]
 
 The same arrangement lets other systems influence engine output. Idle control can admit enough air to keep the engine running with no foot on the pedal. A gearbox can coordinate a shift with the engine, and stability control can ask for a change in output. The 2.9's controller specifically supports communication with the optional PDK. [PDK transmission](../09-pdk-transmission/index.mdx) covers the gearbox's side, and [Brakes and stability systems](../13-brakes-and-stability-systems/index.mdx) the driving-dynamics side.[^controller][^throttle]
+
 
 ## Supplying and metering the fuel
 

@@ -85,3 +85,8 @@ Evidence-led additions:
 - **812-001, pp. 421–422:** deflector side pieces, centre and fastening set corroborate the three-piece arrangement. **811-003/008, pp. 401–402 and 406–407** explicitly separate Spyder covering/weather deflector, arch, front frame/seal and manual tensioning components from the ordinary drive. Dated sales/handbook evidence continues to own option status, quoted performance and chronology.
 
 The existing rotary-drive schematic, short-drop schematic, five opening stages and functional drainage diagram required no factual geometry changes. Their explanatory/approximate status is retained. The revised explorer still has one motor, two shafts and two side gearboxes; no kinematic reconstruction, workshop order or unverified complete drainage circuit was added. Central integration regenerates `roof-explorer/poster.svg` from the revised nine-group model and checks all rendered figures. Heading/diagram IDs and exact footnote-reference order/count are preserved.
+
+
+## Visual review integration — 13 November 2026
+
+Unchanged copy of the already archived Porsche TI29/09 ENU5393 Figure1, SHA-25614f72938823a46041bf0ea22fd47a51aedb8298bc066fc287dc554a622217fc2. Full source and retrieval limitations remain in part-reference/roof-drainage-refinement/provenance.md. Explicitly a workshop line drawing, not a photograph. It locates the opening/filter by the mechanism; no unseen downstream pipe route is drawn. See [image credits](images/credits.md) for asset provenance. Existing factual qualifications remain.

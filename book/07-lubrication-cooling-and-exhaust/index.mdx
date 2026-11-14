@@ -1,4 +1,6 @@
-import { Diagram, Figure, Heading } from '../../src/book/components';
+import visualoilleveldisplaysvg from "./images/oil-level-display.svg";
+import visualoilpumpdelivery from "./diagrams/oil-pump-delivery/poster.svg";
+import { ComparisonImage, Diagram, Figure, Heading, ImageComparison } from '../../src/book/components';
 import illustration0 from "./diagrams/fluids-explorer/poster.svg";
 import illustration1 from "./diagrams/fluid-cooling-path/poster.svg";
 import illustration2 from "./images/oil-circuit.svg";
@@ -7,6 +9,8 @@ import illustration4 from "./images/heat-exchanger.svg";
 import illustration5 from "./images/exhaust-path.svg";
 import illustration6 from "./images/porsche-boxster-s-exhaust.jpg";
 import oilHousingParts from "./images/pet-oil-filter-and-cooler.png";
+import oilPumpPhoto from "./part-reference/oil-pump-refinement/pump-view-1.jpg";
+import oilPanCutaway from "./part-reference/oil-pump-refinement/porsche-oil-pan-cutaway.jpg";
 
 # Lubrication, cooling and exhaust
 
@@ -34,6 +38,16 @@ The pressure pump varies its delivery to suit demand. The engine management sets
 
 The [crankcase-ventilation separator](../06-air-fuel-ignition-and-engine-control/index.mdx#crankcase-ventilation-and-oil-separation) handles a different flow, recovering oil mist from blow-by gases before they return to the intake.
 
+<ImageComparison title="The pump assembly and its pressure section" alt="A complete oil-pump assembly beside Porsche's cutaway of the pump installed in the oil-pan area." stackOnPhone>
+  <ComparisonImage src={oilPumpPhoto} alt="Cast-metal oil-pump assembly with several adjoining sections, a drive sprocket and a slender electrical control valve." label="The complete assembly" note="The pressure pump and four scavenge sections share this housing; the control valve is a separate slender component." />
+  <ComparisonImage src={oilPanCutaway} alt="Porsche factory cutaway revealing the pump, shaft and spring in the oil-pan area." label="Inside the oil-pan area" note="The cutaway locates the spring and pressure section beside the other pump sections. The diagram below enlarges that mechanism." />
+
+Pump photograph: [Wolf Auto Parts, PS85365](https://wolfautoparts.com/parts/engine-oil-pump-9a110705004-ps85365/), identified as 9A1 107 050 04, a pump listed for the 2.9 and 3.4 in PET. Cutaway: Porsche AG, [2009 Boxster 2.9, Oil supply](https://charm.li/Porsche/2009/Boxster%20%28987%29%20F6-2.9L/Repair%20and%20Diagnosis/Engine%2C%20Cooling%20and%20Exhaust/Engine/Description%20and%20Operation/Oil%20Supply/).
+
+</ImageComparison>
+
+<Diagram id="oil-pump-delivery" poster={visualoilpumpdelivery} alt="1: control piston; 2: sliding gear; 3: spring piston and spring. The DME-controlled valve changes hydraulic pressure on the spring-piston side, moving one gear axially. Less engaged tooth width reduces displacement per revolution while both gears remain mechanically driven. This is an enlarged teaching section; internal dimensions and travel are illustrative." />
+
 ## Checking the oil level
 
 The level is read through the on-board computer. Porsche specifies a stationary car on level ground, the engine idling and the oil at operating temperature, at least **60 °C**. Select the oil menu and wait for the measurement to finish. A slope or a different engine state moves the oil and spoils the comparison.[^fluid-level]
@@ -41,6 +55,13 @@ The level is read through the on-board computer. Porsche specifies a stationary 
 The segmented display shows the permitted band, not the total oil in the engine, and its top mark is a limit, not a target. A good level also proves nothing about the pressure circuit, which has its own warning.
 
 A later Porsche bulletin covering model years 2009–2012 explains that an oil-level warning can stay on after topping up until the prescribed confirmation measurement is done. Porsche issued it because level sensors that worked were being replaced unnecessarily. Complete the measurement before blaming the sensor.[^fluid-confirm]
+
+
+<Figure src={visualoilleveldisplaysvg} alt="A vertical oil-level example shows MIN by the lowest segment, MAX at the top line, and a reading below MAX.">
+
+The filled segments rise from MIN towards MAX. The example stops below the maximum line: that line is a limit, not a request to add oil. Conceptual display, based on [Porsche’s handbook, pp. 157–158](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf#page=159).
+
+</Figure>
 
 ## Carrying heat to the front
 
@@ -109,6 +130,7 @@ Boxster S exhaust, with twin outlets; the standard 2.9 has a single shaped outle
 </Figure>
 
 The standard 2.9 ends in a single shaped stainless-steel tailpipe where the S has two. Porsche's technical account says the 2.9's exhaust otherwise matches the S system. The 2.9 also has the [secondary-air warm-up system](../06-air-fuel-ignition-and-engine-control/index.mdx#cold-running-and-emissions) described under engine control.[^fluid-base-exhaust]
+
 
 ## Options on the 2010 2.9
 

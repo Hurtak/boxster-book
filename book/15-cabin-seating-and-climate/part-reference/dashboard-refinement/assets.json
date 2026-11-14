@@ -1,0 +1,27 @@
+[
+  {
+    "file": "images/dashboard-rhd-original.jpg",
+    "bytes": 309570,
+    "sha256": "01643bf7ced59a82eb4db09d41e7d0631a428c1b8e1d0e24ca87782acc5816cc"
+  },
+  {
+    "file": "images/manual-ac-handbook-original.jpg",
+    "bytes": 55994,
+    "sha256": "c7e018a23b4a09d8f8016dd54fe503c1daf6695363c78dc57bdab6b7694859a5"
+  },
+  {
+    "file": "images/automatic-climate-handbook-original.jpg",
+    "bytes": 56665,
+    "sha256": "72ddc148802c826581d0c8700d9ce3dd72c6abff4b3f9da439f6ee2a2ef282e8"
+  },
+  {
+    "file": "part-reference/dashboard-refinement/handbook-p108.png",
+    "bytes": 400152,
+    "sha256": "3f49fed126791d59185e1de5949248f11789c27aeabd36260d33201ad190a8f9"
+  },
+  {
+    "file": "part-reference/dashboard-refinement/handbook-p111.png",
+    "bytes": 382304,
+    "sha256": "8f56508634225a337a5bf8533633300585364ddd3062e3597715958b91784a04"
+  }
+]

@@ -1,11 +1,15 @@
-import { Diagram, Figure, Heading } from '../../src/book/components';
+import tappetUncoupled from "./images/variocam-tappet-uncoupled.svg";
+import tappetCoupled from "./images/variocam-tappet-coupled.svg";
+import tappetContactPhoto from "./part-reference/tappet-refinement/9a110507003-contact-face.jpg";
+import tappetUndersidePhoto from "./part-reference/tappet-refinement/9a110507003-underside.jpg";
+import { Diagram, Figure, Heading, AnnotatedFigure, ComparisonImage, ImageComparison } from '../../src/book/components';
 import illustration0 from "./diagrams/engine-explorer/poster.svg";
 import illustration1 from "./diagrams/engine-four-stroke/poster.svg";
 import illustration2 from "./diagrams/engine-timing-lift/poster.svg";
 import illustration3 from "./images/ma120-cayman-2-9-engine.jpg";
 import illustration4 from "./images/engine-layout.svg";
 import illustration5 from "./images/timing-drive.svg";
-import illustration6 from "./images/accessory-drive.svg";
+import illustration6 from "./part-reference/pet-101-010-p037.png";
 import illustration7 from "./images/porsche-3-4-engine-comparison.jpg";
 import crankshaftParts from "./images/pet-crankshaft-and-rods.png";
 import pistonParts from "./images/pet-piston-and-rings.png";
@@ -133,11 +137,11 @@ The new drive does without the earlier **intermediate shaft** and its bearing ar
 
 The belt visible outside the engine is not a camshaft timing belt; it drives the accessories. This **double-sided six-rib poly-V belt** takes drive from the crankshaft pulley, which incorporates a torsional vibration damper, to the alternator, steering pump, air-conditioning compressor and coolant pump. Ribs on both faces let it reach the surrounding pulleys.[^accessory-drive]
 
-<Figure src={illustration6} alt={"A functional accessory-drive map connects the crankshaft pulley and common belt to four loads: alternator, hydraulic steering pump, A/C compressor and coolant pump. A hydraulic tensioner controls the belt."}>
+<AnnotatedFigure src={illustration6} alt={"Porsche’s exploded accessory-drive drawing identifies the belt, alternator, four main pulleys and hydraulic tensioner with numbered callouts."} title="The factory accessory-drive arrangement" crop={{"x":290,"y":375,"width":750,"height":1040}} annotations={[{"id": "7", "label": "Double-sided poly-V belt"}, {"id": "8", "label": "Alternator"}, {"id": "9", "label": "Coolant-pump pulley"}, {"id": "10", "label": "Steering-pump pulley"}, {"id": "11", "label": "Crankshaft pulley / damper"}, {"id": "12", "label": "A/C compressor pulley"}, {"id": "1–3", "label": "Tensioner and rollers"}]}>
 
-One belt, kept under load by a hydraulic tensioner, drives the alternator, hydraulic steering pump, A/C compressor and coolant pump. The drawing shows connections, not real pulley positions or wrap angles.
+One belt drives the four accessory loads. The factory perspective makes the pulley relationships visible; separation is for identification, not a belt-fitting route. Drawing: Porsche AG, [PET 101-010, PDF p. 37](https://www.porsche-preparation.com/downloaded/pet-porsche/boxster-2009-2012-type-987.pdf#page=37).
 
-</Figure>
+</AnnotatedFigure>
 
 The tensioner keeps the belt loaded and its damping limits flutter. Because the belt drives by grip, its condition and tension affect several systems at once. A turning pulley does not prove the unit behind it is working: the [clutchless A/C compressor](../15-cabin-seating-and-climate/index.mdx#two-heat-circuits-one-stream-of-cabin-air) can turn while delivering no useful cooling.
 
@@ -152,6 +156,33 @@ To change the timing, a camshaft phase adjuster turns the inlet camshaft relativ
 Advancing the inlet cam moves its opening and closing earlier relative to the crank, and so relative to piston movement and the exhaust events; retarding moves them later. This does not make the camshaft run continuously faster than its normal half-crankshaft speed. Its phase changes during the adjustment, and then the new relationship holds.
 
 The 2.9's two documented peak inlet lifts are **3.6 mm and 10.0 mm**. Switching lift selects a different cam-controlled motion for the valves. A larger opening can let more air through, while a smaller one suits other operating conditions. How much air actually enters still depends on pressure differences, how long the valve stays open, the port shape and engine speed.[^lift]
+
+<ImageComparison title="The real inlet tappet" alt="Two photographs of the same catalogue-number inlet tappet show its cylindrical outer body, central contact pad and open underside.">
+
+<ComparisonImage src={tappetContactPhoto} alt="A used 9A1 105 070 03 inlet tappet viewed from above, with a circular central contact pad inside the outer contact face." crop={{ x: 170, y: 65, width: 440, height: 440 }} label="Cam-contact face" note="A small central pad sits inside the broad outer ring." />
+<ComparisonImage src={tappetUndersidePhoto} alt="The same listed tappet viewed from its open underside, showing concentric internal parts inside the cylindrical wall." crop={{ x: 170, y: 65, width: 440, height: 440 }} label="Open underside" note="The internal parts fit inside a squat cylindrical body." />
+
+Photos: [Wolf Auto Parts, inlet follower 9A1 105 070 03, stock PS60678](https://wolfautoparts.com/parts/intake-cam-follower-inlet-9a110507003-ps60678/). PET 103-010 lists this inlet-tappet number for A120/A121. The photographs establish the visible shape of the listed used part, without establishing its donor car or internal clearances.
+
+</ImageComparison>
+
+<ImageComparison title="How the tappet selects lift" alt="Detailed cutaways compare the uncoupled inner tappet with a coupled inner and outer assembly, using three adjacent cam tracks and a single lateral coupling pin." stackOnPhone>
+
+<ComparisonImage src={tappetUncoupled} alt="Uncoupled cutaway: the coupling pin stays inside the inner member, allowing the outer ring to move separately. The small central cam track controls valve lift." label="Small lift · 3.6 mm" note="Pin clear: the central track drives the inner tappet. The outer member follows its own cams without imposing their larger lift on the valve." />
+<ComparisonImage src={tappetCoupled} alt="Coupled cutaway: oil control moves the pin across the boundary between inner and outer members, so the outer cam tracks drive the joined assembly." label="Large lift · 10.0 mm" note="Pin engaged: the two larger outer tracks drive the coupled assembly. The hydraulic clearance-compensation element remains in the path to the valve." />
+
+<ol>
+<li><strong>Cam tracks:</strong> two large-lift outer tracks flank the small-lift central track on the same shaft.</li>
+<li><strong>Outer tappet:</strong> a cylindrical ring member, with a cutaway exposing the interior.</li>
+<li><strong>Inner tappet:</strong> the smaller concentric member and its central contact pad.</li>
+<li><strong>Coupling pin:</strong> clear of the outer member at small lift; bridging the two members at large lift.</li>
+<li><strong>Hydraulic clearance compensation:</strong> the central element takes up valve-train clearance.</li>
+<li><strong>Internal return spring:</strong> shown inside the tappet, separate from the valve's own spring below this cutaway.</li>
+</ol>
+
+Original teaching cutaways: visible proportions follow the photographs above; the mechanism was cross-checked against [Porsche’s earlier tappet cutaway](https://souzaweb.com/caymanregister/downloads/54580-General_Porsche_Repair_%28P001_-_Book_5-07%29.pdf#page=48). Both show a common base-circle position; the numbers are peak valve lifts, not movement shown in these views. Cam profiles, oil control and internal clearances are schematic. Timing adjustment remains separate at the camshaft drive.[^lift]
+
+</ImageComparison>
 
 <Diagram id="engine-timing-lift" poster={illustration2} alt={"Moving a valve event earlier changes its timing, while switching from 3.6 to 10.0 millimetres changes peak inlet lift. Curves and durations are illustrative, not a measured Porsche valve map."} />
 

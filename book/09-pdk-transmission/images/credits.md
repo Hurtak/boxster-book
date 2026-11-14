@@ -25,3 +25,16 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **459 0**, native **1998 × 3071**; crop `[0, 12, 1998, 2890]`. Locator inset omitted at `[0, 0, 661, 501]`. Result **2038 × 2918** pixels.
 - **Applicability and limits:** 320-005 is PDK housing/hydraulic hardware. It is optional equipment, not the baseline manual gearbox. Hydraulic unit 11 is not the separate electronic PDK controller; exploded separation does not show removal order.
 - **Local image SHA-256:** `7261d6508a747ba5b47e8a212aefc3d78ad0a1d3821637536d6a38591e934a7e`.
+
+
+## Visual review additions — 13 November 2026
+
+`AnnotatedFigure` over `pdk-factory-cutaway.jpg`; `pdk-switch-wheel.jpg`
+
+The existing factory PDK cutaway remains unchanged beneath separate editorial markers for nested pack, gearing and final drive. The outer K1/inner K2 distinction is explained in the caption and existing concentric-input figure, not guessed from hidden pixels. Switch-wheel photograph extracted unchanged from UK01/10 PDF21 object75,294×228, printed46; the same page explicitly describes push-up/pull-down with either hand and right-up/left-down paddles. Existing paddle photo retained.
+
+Factory material retains Porsche’s original rights; React composition/labels and original teaching drawings are original project work. No generative alteration of documentary photographs.
+
+## Source-preserving React layout — 13 November 2026
+
+The former SVG image wrapper has been removed. Imported originals are displayed by the shared `Figure`, `AnnotatedFigure` or `ImageComparison` components. Crops are CSS viewports; editorial numbers and legends are separate HTML elements. The same composition is retained in enlargement, no-JavaScript and print views. Source image bytes have not been retouched or re-exported.

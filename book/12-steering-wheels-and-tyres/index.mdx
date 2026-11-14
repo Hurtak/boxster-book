@@ -1,4 +1,5 @@
-import { Diagram, Figure, Heading } from '../../src/book/components';
+import visualtyreconstructionsvg from "./images/tyre-construction.svg";
+import { Diagram, Figure, Heading, AnnotatedFigure } from '../../src/book/components';
 import illustration0 from "./diagrams/steering-explorer/poster.svg";
 import illustration1 from "./diagrams/tyre-grip-budget/poster.svg";
 import illustration2 from "./diagrams/tyres-rolling-size/poster.svg";
@@ -88,6 +89,18 @@ To a first approximation, more load needs more supporting pressure or more conta
 
 Pressure also sets how hard the sidewall works. Underinflation increases flexing and heat, and can change wear and response. Pressure rises as the tyre warms, so the reference is the specified **cold** pressure for the wheel and tyre combination and operating load, checked against the label and handbook. No single pressure suits every 987 wheel or journey.[^pressure]
 
+<AnnotatedFigure src={visualtyreconstructionsvg} title="A tyre is a tensioned structure" alt="Transverse radial-tyre section with rounded shoulders, bulging sidewalls and a shaped rim. Arrowheads identify the tread, two steel belts, casing ply wrapping the bead, inner liner and bead wire bundle." annotations={[
+  { id: "1", label: "Tread · patterned rubber at the road surface" },
+  { id: "2", label: "Steel belt layers · reinforce the crown beneath the cap band" },
+  { id: "3", label: "Radial casing · continues around the bead core" },
+  { id: "4", label: "Inner liner · seals the air cavity" },
+  { id: "5", label: "Bead wire core · seats behind the rim flange" },
+]}>
+
+The casing turns around the wire bead, which is held by the rim flange and seat. The recessed rim centre is visible below the air cavity. The overall section uses a nominal **55% height-to-width proportion**, like the standard front **205/55** size, with layers thickened for clarity. Component positions follow [Continental's construction guide](https://www.continental-tires.com/au/en/tyre-knowledge/tire-components/) and [Hankook's cutaway](https://www.hankooktire.com/uk/en/help-support/tire-guide/tire-structure.html). This remains a generic radial tyre, not a measured section of a particular 2010 supplier's product.
+
+</AnnotatedFigure>
+
 ## Slip and the shared grip budget
 
 A tyre produces cornering force while its wheel points slightly across its actual direction of travel. That angle is the **slip angle**. It comes from the tread and casing deforming through the contact patch, and does not mean the whole footprint is sliding. **Longitudinal slip**, under braking or drive, instead compares the tyre's circumferential motion with its progress over the road. Neither is the steering-wheel angle.[^grip-principles]
@@ -118,6 +131,7 @@ In the catalogue combinations a larger rim generally comes with a shorter sidewa
 <Diagram id="tyres-rolling-size" poster={illustration2} alt={"Compare the rear standard 235/50 ZR17 with the period 265/40 ZR18 combination. Estimated diameters are 666.8 and 669.2 mm; at 60 mph the wheel speeds are approximately 768 and 765 rpm. The larger rim is mostly offset by a shorter sidewall."} />
 
 Going from the standard 17-inch rear tyre to the 18-inch one changes nominal diameter by only about **0.36 per cent**, so at a fixed road speed the taller tyre turns slightly more slowly. In the same gear, engine speed changes in the same proportion as wheel speed, through the [transmission and final drive](../10-differential-driveshafts-and-mounts/index.mdx). The calculation shows the direction and rough scale of the effect; it does not predict a speedometer error or approve an alternative tyre.
+
 
 ## Options on the 2010 2.9
 

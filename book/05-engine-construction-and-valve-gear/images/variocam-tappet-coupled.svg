@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 530" width="480" height="530" role="img" aria-labelledby="title desc">
+<title id="title">Coupled tappet for 10.0 mm inlet lift</title>
+<desc id="desc">Photo-guided cylindrical tappet cutaway with three adjacent cam profiles, concentric inner and outer members, one coupling pin, hydraulic clearance compensation and an internal return spring. The valve stem continues below. Profiles and internal clearances are explanatory.</desc>
+<defs><pattern id="cut" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><path d="M0 0V7" stroke="#83988d" stroke-width="1"/></pattern></defs>
+<rect width="480" height="530" fill="#fff"/>
+<g stroke="#243e34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M97 152H383V168H97Z" fill="#b6c1ba"/>
+<path d="M129 160C129 137 138 74 150 74C162 74 171 137 171 160C171 187 162 206 150 206C138 206 129 187 129 160Z" fill="#bfd5c9"/>
+<ellipse cx="150" cy="160" rx="5" ry="10" fill="#a4b3aa"/>
+<path d="M142 82Q152 77 158 82" fill="none" stroke="#fff"/>
+<path d="M219 160C219 137 228 99.6 240 99.6C252 99.6 261 137 261 160C261 187 252 206 240 206C228 206 219 187 219 160Z" fill="#e9cdaa"/>
+<ellipse cx="240" cy="160" rx="5" ry="10" fill="#a4b3aa"/>
+<path d="M232 107.6Q242 102.6 248 107.6" fill="none" stroke="#fff"/>
+<path d="M309 160C309 137 318 74 330 74C342 74 351 137 351 160C351 187 342 206 330 206C318 206 309 187 309 160Z" fill="#bfd5c9"/>
+<ellipse cx="330" cy="160" rx="5" ry="10" fill="#a4b3aa"/>
+<path d="M322 82Q332 77 338 82" fill="none" stroke="#fff"/>
+<path d="M100 206C100 166 380 166 380 206V395C380 438 100 438 100 395Z" fill="#bfd5c9"/>
+<path d="M116 224Q240 252 364 224V395Q240 431 116 395Z" fill="#fff"/>
+<path d="M100 206C100 167 380 167 380 206C380 246 100 246 100 206Z M177 206C177 188 303 188 303 206C303 224 177 224 177 206Z" fill="#bfd5c9" fill-rule="evenodd"/>
+<path d="M100 207L116 224V395L100 395Z M364 224L380 207V395L364 395Z" fill="url(#cut)"/>
+<path d="M116 230H177V265H116Z M303 230H364V265H303Z" fill="#bfd5c9"/>
+<path d="M128 240H177V256H128 M303 240H352V256H303" fill="#fff"/>
+<path d="M177 206V277Q240 301 303 277V206Z" fill="#e9cdaa" stroke="#9d693a"/>
+<ellipse cx="240" cy="206" rx="63" ry="14" fill="#e9cdaa" stroke="#9d693a"/>
+<path d="M181 229Q240 242 299 229" fill="none" stroke="#b28a60"/>
+<rect x="177" y="239" width="126" height="18" fill="#fff"/>
+<rect x="146" y="241" width="92" height="14" rx="3" fill="#ae682e" stroke="#82461f"/>
+<path d="M152 244H230" stroke="#e7ba87"/>
+<path d="M154 294C154 280 326 280 326 294" fill="none" stroke="#8b9c92" stroke-width="5"/>
+<path d="M154 320C154 306 326 306 326 320" fill="none" stroke="#8b9c92" stroke-width="5"/>
+<path d="M154 346C154 332 326 332 326 346" fill="none" stroke="#8b9c92" stroke-width="5"/>
+<path d="M154 372C154 358 326 358 326 372" fill="none" stroke="#8b9c92" stroke-width="5"/>
+<path d="M215 282H265V371Q240 387 215 371Z" fill="#e4e9e6"/>
+<ellipse cx="240" cy="282" rx="25" ry="7" fill="#c9d3cc"/>
+<path d="M223 329H257V394H223Z" fill="#9faea4"/>
+<path d="M228 394H252V459H228Z" fill="#d5ddd8"/>
+<path d="M229 449L238 445L247 451L252 448 M228 459L237 455L246 461L252 458" fill="none" stroke="#fff" stroke-width="6"/>
+<path d="M228 449L237 445L246 451L252 448 M228 459L237 455L246 461L252 458" fill="none"/>
+<path d="M326 294C326 308 154 308 154 320" fill="none" stroke="#5c7365" stroke-width="5"/>
+<path d="M326 320C326 334 154 334 154 346" fill="none" stroke="#5c7365" stroke-width="5"/>
+<path d="M326 346C326 360 154 360 154 372" fill="none" stroke="#5c7365" stroke-width="5"/>
+<path d="M326 372C326 386 154 386 154 398" fill="none" stroke="#5c7365" stroke-width="5"/>
+<path d="M100 395Q104 416 116 418 M364 418Q378 415 380 395" fill="none"/>
+<path d="M400 248H320" fill="none" stroke="#287d9c" stroke-width="3"/><path d="M320 248L331 242V254Z" fill="#287d9c" stroke="none"/>
+<text x="397" y="228" fill="#287d9c" stroke="none" font-size="16" font-family="Arial,sans-serif" text-anchor="middle">Oil control</text>
+<path d="M408 87L337 103" stroke="#8a9f93" stroke-width="1.5" fill="none"/><circle cx="337" cy="103" r="3" fill="#176b53" stroke="none"/><circle cx="421" cy="87" r="13" fill="#fff" stroke="#176b53"/><text x="421" y="92" fill="#176b53" stroke="none" font-family="Arial,sans-serif" font-size="16" text-anchor="middle">1</text>
+<path d="M408 302L373 300" stroke="#8a9f93" stroke-width="1.5" fill="none"/><circle cx="373" cy="300" r="3" fill="#176b53" stroke="none"/><circle cx="421" cy="302" r="13" fill="#fff" stroke="#176b53"/><text x="421" y="307" fill="#176b53" stroke="none" font-family="Arial,sans-serif" font-size="16" text-anchor="middle">2</text>
+<path d="M68 192L210 204" stroke="#8a9f93" stroke-width="1.5" fill="none"/><circle cx="210" cy="204" r="3" fill="#176b53" stroke="none"/><circle cx="55" cy="192" r="13" fill="#fff" stroke="#176b53"/><text x="55" y="197" fill="#176b53" stroke="none" font-family="Arial,sans-serif" font-size="16" text-anchor="middle">3</text>
+<path d="M68 248L164 248" stroke="#8a9f93" stroke-width="1.5" fill="none"/><circle cx="164" cy="248" r="3" fill="#176b53" stroke="none"/><circle cx="55" cy="248" r="13" fill="#fff" stroke="#176b53"/><text x="55" y="253" fill="#176b53" stroke="none" font-family="Arial,sans-serif" font-size="16" text-anchor="middle">4</text>
+<path d="M68 401L239 357" stroke="#8a9f93" stroke-width="1.5" fill="none"/><circle cx="239" cy="357" r="3" fill="#176b53" stroke="none"/><circle cx="55" cy="401" r="13" fill="#fff" stroke="#176b53"/><text x="55" y="406" fill="#176b53" stroke="none" font-family="Arial,sans-serif" font-size="16" text-anchor="middle">5</text>
+<path d="M408 366L315 351" stroke="#8a9f93" stroke-width="1.5" fill="none"/><circle cx="315" cy="351" r="3" fill="#176b53" stroke="none"/><circle cx="421" cy="366" r="13" fill="#fff" stroke="#176b53"/><text x="421" y="371" fill="#176b53" stroke="none" font-family="Arial,sans-serif" font-size="16" text-anchor="middle">6</text>
+</g><g font-family="Arial,sans-serif" fill="#52685b" font-size="17" text-anchor="middle"><text x="240" y="492">Valve stem continues below</text><text x="240" y="519">Common base-circle position · cutaway</text></g></svg>

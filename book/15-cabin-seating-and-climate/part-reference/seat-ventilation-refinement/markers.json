@@ -1,0 +1,60 @@
+{
+  "seat": [
+    {
+      "id": "1",
+      "label": "Perforated contact cover",
+      "x": 42.0,
+      "y": 46.66666666666667
+    },
+    {
+      "id": "2",
+      "label": "Air-permeable distribution mat",
+      "x": 74.0,
+      "y": 71.875
+    },
+    {
+      "id": "3",
+      "label": "Backrest fan module",
+      "x": 32.0,
+      "y": 54.79166666666667
+    },
+    {
+      "id": "4",
+      "label": "Cushion fan module",
+      "x": 69.0,
+      "y": 85.83333333333334
+    },
+    {
+      "id": "5",
+      "label": "Vented cushion foam",
+      "x": 48.5,
+      "y": 71.25
+    }
+  ],
+  "layers": [
+    {
+      "id": "1",
+      "label": "Perforated contact cover",
+      "x": 66.75,
+      "y": 12.916666666666668
+    },
+    {
+      "id": "2",
+      "label": "Air-permeable distribution mat",
+      "x": 81.5,
+      "y": 19.166666666666668
+    },
+    {
+      "id": "5",
+      "label": "Vented foam and air passages",
+      "x": 19.75,
+      "y": 37.29166666666667
+    },
+    {
+      "id": "4",
+      "label": "Cushion fan module",
+      "x": 61.75,
+      "y": 74.79166666666667
+    }
+  ]
+}

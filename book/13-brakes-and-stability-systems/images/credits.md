@@ -25,3 +25,19 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **761 0**, native **1922 × 2551**; crop `[180, 703, 1776, 2413]`. Locator inset omitted at `[0, 0, 672, 509]`. Result **1636 × 1750** pixels.
 - **Applicability and limits:** 603-005 identifies shoes 1, adjuster 2, springs 4/5/6 and expanding bow 11. Installed drum location follows the already cited parking-brake evidence; the exploded plate is not an adjustment or repair procedure.
 - **Local image SHA-256:** `ad755c4c6198b3eaabb38ec1b705d476eb82a489eb17204961eac2144ed87bd0`.
+
+
+## Visual review additions — 13 November 2026
+
+`rear-parking-brake-section.svg`, `abs-pressure-states.svg`
+
+Original installed relationship and functional wheel-circuit views, checked against PET603-005 shoe/expander/adjuster and existing rear-disc references, plus chapter ABS primary sources. Parking shoes work on the internal drum; hydraulic pads work on external faces. Section is unfolded rather than dimensioned. ABS apply/hold/release are functions, not valve-block routing or timing.
+
+Factory material retains Porsche’s original rights; SVG composition/labels and teaching drawings are original project work. No generative alteration of documentary photographs.
+
+
+## Rear disc/parking-brake refinement — 14 November 2026
+
+`rear-parking-brake-face.svg` and the revised `rear-parking-brake-section.svg` are original source-guided drawings. Face-view proportions use the base disc's299mm diameter and the nominal180mm parking drum; the section retains299×20×67mm disc-envelope proportions. Curved shoes, adjuster, springs and expander follow PET603-005. Two opposing hydraulic pistons are visible in the section; the caliper has four in total. Hidden internals, vane count, shoe thickness, clearances and clocking remain schematic. The S's24mm rear disc is not used for the base figure.
+
+The [reference dossier](../part-reference/rear-brake-refinement/README.md) retains an unretouched Brembo09.8998.11 product photograph and a full-page ATE2025 application render. Rights remain with Brembo and Continental/ATE, excluded from MIT. Native React markers and one shared key replace crossing arrows; source photos and original SVGs have no baked editorial circles.

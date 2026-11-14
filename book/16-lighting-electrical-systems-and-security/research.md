@@ -133,3 +133,15 @@ The chapter's useful additions follow assembly boundaries in those drawings:
 The [MY2010 North American handbook](https://billswebspace.com/Owners_Manual_Boxster_PCNA.pdf), [DENSO rotating-electrics FAQ](https://www.denso-am.eu/products/rotating-electrics), [HELLA earth paper](https://www.hella.com/techworld/en/ti/pdf/earth-31-troubleshooting/earth-31-troubleshooting.pdf) and [HELLA rain-sensor explanation](https://www.hella.com/techworld/ae/lounge/functions-of-rain-sensors-light-sensors/) were freshly opened for shared operating/general principles. These do not establish UK equipment assignments or original suppliers. The source distinction for timing, control calibration, exact routing, internal geometry and current parts availability remains explicit.
 
 Narrow checks passed: `node --check` for both behaviour/model modules; actual Three.js assembly import with **eight unique groups, 12 valid connection records, 211 meshes and finite vertices/bounds**; chapter MDX syntax compilation; all **four SVGs** parse; all **57 PNGs** have valid 1,800-pixel long-edge dimensions and inventory links. The **33 footnote references, 22 definitions, 13 heading texts and two diagram IDs** are unchanged in sequence/count. No standalone SVG was changed. Parent owns final browser checks and regeneration of **`electrical-explorer`**'s poster from the revised model; no other diagram regeneration is needed for this pass.
+
+
+## Visual review integration — 13 November 2026
+
+Uses unchanged existing PET905-000 p552 halogen drawing beside the existing UK01/10 p65 optionalP75 front photograph. Explicit drawing/photo comparison rather than an unsupported “standard halogen photo”. Standard lower fog/LEDposition vs P75 lowerLEDDRL follow detailed catalogue64–65 and training158, respecting the existing p17 brochure wording conflict. No beam photometry, RHD pattern or fitment by projector appearance. See [image credits](images/credits.md) for asset provenance. Existing factual qualifications remain.
+
+
+## Halogen / P75 photograph pairing — 14 November 2026
+
+Replaced the mismatched PET-drawing/photograph comparison with two frontal photographs. The new original Cameron Sports Cars image **IMG_32632-large.jpg**, from its advertised2010 Boxster2.9 manual U1674, shows the standard lower rectangular fog reflectors and upper halogen arrangement. Identity follows the visible lower hardware checked against Porsche UK01/10 printed64–65 and PET905-000, not projector appearance alone or the dealer's ambiguous “LED Daytime Running Lights” wording. No original build record or all-standard car is inferred from the sales listing.
+
+Both photographs remain original files. React viewports use the same aspect ratio and focus on the main and lower lamps; no composite bitmap or recolouring. The night-time P75 photo remains the existing Porsche original; different ambient illumination is not beam-output or colour-temperature evidence. PET905-000 remains above as the dedicated assembly drawing. Source and crop details: [halogen-photo reference](part-reference/halogen-photo/README.md).

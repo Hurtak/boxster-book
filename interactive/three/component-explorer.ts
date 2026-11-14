@@ -6,6 +6,7 @@ import { installAssembly } from './installed-assembly.ts';
 import { surfaceAnchor } from './anchors';
 import { placeMarker } from './marker-layout';
 import { cameraHelp, disposeObject, isRenderable, loadModel, opacity, scene3D } from './scene.ts';
+import { slider } from '../ui';
 
 const stops = [
   { value: 0, label: 'Whole car' },
@@ -92,18 +93,21 @@ export async function mountExplorer(
     base,
     config,
     createAssembly,
+    motion,
   }: {
     reference: string | Uint8Array;
     base: string;
     config: ExplorerConfig;
     createAssembly: () => THREE.Object3D;
+    motion?: { create: (model: THREE.Object3D) => (amount: number) => void; note: string };
   },
 ) {
   const state = initializeState(saved, {
-    progress: 0,
+    progress: 65,
     part: config.focus,
     showConnections: true,
     focusPart: false,
+    motion: 0,
   });
   state.progress = clamp((state.progress ?? 0) / 100) * 100;
   state.part ??= config.focus;
@@ -116,6 +120,7 @@ export async function mountExplorer(
   let links: (ExplorerConfig['connections'][number] & { line: THREE.Line })[] = [];
   try {
     model = createAssembly();
+    const applyMotion = motion?.create(model);
     const parts = model.children
       .filter((object) => object.userData.label)
       .map((object, i) => {
@@ -291,6 +296,7 @@ export async function mountExplorer(
             }
           });
         }
+        applyMotion?.((state.motion / 100) * segment(progress, 30, 55) * (1 - exploded));
         model.updateMatrixWorld(true);
         for (const link of links) {
           link.line.visible = state.showConnections && progress >= 20;
@@ -336,6 +342,27 @@ export async function mountExplorer(
     );
     toggle.append(checkbox, ' Show connections');
     inspection.append(toggle);
+    if (motion) {
+      slider(inspection, {
+        label: 'Illustrative wheel movement',
+        min: -100,
+        max: 100,
+        value: state.motion,
+        step: 5,
+        signal,
+        format: (value) => (value === 0 ? 'Neutral' : `${Math.abs(value)}% ${value > 0 ? 'bump' : 'droop'}`),
+        onChange(value) {
+          state.motion = value;
+          state.progress = 65;
+          state.focusPart = false;
+          update();
+        },
+      });
+      const note = document.createElement('p');
+      note.className = 'diagram-note';
+      note.textContent = motion.note;
+      inspection.append(note);
+    }
     update();
     host.dispatchEvent(new Event('diagram-layout'));
     await whenVisible;

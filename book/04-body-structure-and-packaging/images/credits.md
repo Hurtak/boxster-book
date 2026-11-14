@@ -44,3 +44,13 @@ The original embedded monochrome bitmaps were extracted with Poppler `pdfimages`
 - **Extraction:** PDF image object **1136 0**, native **2067 × 2785**; crop `[129, 466, 2013, 2655]`. Locator inset omitted at `[5, 4, 681, 515]`. Result **1924 × 2229** pixels.
 - **Applicability and limits:** 807-005 separates upper engine cover 5, seal 7 and top trim 1 from rear-wall cover 10 and trim 11/12. It does not show the exterior roof-compartment lid or a workshop removal sequence.
 - **Local image SHA-256:** `a3b4435554a7b502c8ee2c12a43c668153722c721bedc59dd9fb00e9e0e59210`.
+
+## Underbody reference revision — 13 November 2026
+
+The schematic `underbody-locator.svg` has been replaced by original PET image objects so contours and relative proportions are retained without redrawing. `images/pet-underbody-original.png` is PDF p. 257, image object **953 0**, **2067 × 3139**; `images/pet-floor-original.png` is PDF p. 244, image object **904 0**, **2067 × 3139**. Both are extracted losslessly with Poppler `pdfimages -png` from the previously verified PET 987209/P33/19 July 2018 PDF (SHA-256 `c865de9263f5946db4c24874eb10e503be2343762b308695aa7bb6a943bfd2bf`). Original images are unmodified; React viewports select the relevant portions without creating cropped derivatives.
+
+Both factory image objects are displayed in full, preserving every part outline and callout without clipping adjacent components. Labels are HTML keys using the existing printed callouts, with no replacement numbers or added arrows over the drawings.
+
+PET 801-070 p. 258 confirms covers 1/3/4/5, heat insulation 13, transverse tunnel strut 15, **four** M10 × 25 bolts with washers 16, and two cover brackets 7. PET 801-020 p. 245 confirms the floor and handed seat-support frames. No installed dimensions, relative scale between the plates, fastener torque, load analysis, removal order or jacking points are inferred. Original Porsche artwork retains Porsche's copyright; the React composition and explanatory key are project work.
+
+The native PNG hashes are `714a9ad7367c31686bad3e791ec88655e33223e91b7767078b9dcd1c27145644` (underbody) and `e7ba13356bb931a059ec4487d8436566ce4cb668de90288a47d562d29d2c4107` (floor). Print CSS reduces the viewport width uniformly and keeps the key in two columns; it does not stretch the drawings.

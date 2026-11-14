@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Read the oil level from MIN to MAX</title>
+  <desc id="desc">A vertical four-segment oil-level example fills from the bottom. The top two segments are empty and the lower two filled. The MAX leader ends on the marked top line of the scale; a separate leader marks the top of the filled example reading below it. MIN is aligned with the lowest segment. This is an explanatory display, not an exact instrument reproduction.</desc>
+  <rect width="800" height="500" fill="#fff"/>
+  <g font-family="Arial,sans-serif" fill="#243e34">
+    <text x="28" y="43" font-size="30" font-weight="600">Read the oil level from MIN to MAX</text>
+    <rect x="30" y="94" width="300" height="320" rx="4" fill="#20382e"/>
+    <text x="180" y="134" text-anchor="middle" font-size="26" fill="#f4f4df">OIL LEVEL</text>
+    <g data-oil-level-scale="true" stroke="#8fa58f" stroke-width="2">
+      <rect x="145" y="173" width="64" height="42" rx="2" fill="#40584a"/>
+      <rect x="145" y="225" width="64" height="42" rx="2" fill="#40584a"/>
+      <rect x="145" y="277" width="64" height="42" rx="2" fill="#e1dfac"/>
+      <rect x="145" y="329" width="64" height="42" rx="2" fill="#e1dfac"/>
+    </g>
+    <path data-maximum-mark="true" d="M136 173H224" stroke="#e5b076" stroke-width="4"/>
+    <text x="88" y="173" text-anchor="middle" dominant-baseline="central" font-size="23" font-weight="600" fill="#e5b076">MAX</text>
+    <path d="M125 329H143" stroke="#eef0d7" stroke-width="2"/>
+    <text x="88" y="329" text-anchor="middle" dominant-baseline="central" font-size="23" fill="#eef0d7">MIN</text>
+    <g data-maximum-leader="true" fill="#ad622d" stroke="#ad622d" stroke-width="3">
+      <path d="M368 173H236" fill="none"/>
+      <path d="M224 173L237 167V179Z" stroke="none"/>
+    </g>
+    <text x="389" y="158" font-size="26" font-weight="600" fill="#ad622d">MAX · upper limit</text>
+    <text x="389" y="191" font-size="23">Do not add above this mark.</text>
+    <path data-example-mark="true" d="M145 277H209" stroke="#8ac2d1" stroke-width="3"/>
+    <path data-example-leader="true" d="M368 277H209" stroke="#2c7895" stroke-width="2.5"/>
+    <circle cx="209" cy="277" r="4" fill="#8ac2d1"/>
+    <text x="389" y="263" font-size="26" font-weight="600" fill="#2c7895">Example reading</text>
+    <text x="389" y="297" font-size="23">The filled segments stop here,</text>
+    <text x="389" y="328" font-size="23">below the MAX line.</text>
+    <text x="30" y="454" font-size="22">Stationary · level ground · engine idling · oil ≥ 60 °C</text>
+    <text x="30" y="488" font-size="20" fill="#526b5d">Conceptual display; follow the handbook’s measurement sequence.</text>
+  </g>
+</svg>

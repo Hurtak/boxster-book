@@ -117,6 +117,14 @@ Boxster S front axle. Photo: Porsche AG. [Source](https://example.com).
 <Diagram id="brake-explorer" poster={poster} alt="The wheel brake in context and its separated main parts." />
 ```
 
+Photographic compositions use React, so their source pixels remain separate from editorial labels:
+
+- `ImageComparison` arranges `ComparisonImage` children in two columns. Each child imports its own original `src`, describes it with `alt`, and supplies a visible `label` and `note`. Put the shared caption and credits after the image children, as ordinary Markdown. Use `stackOnPhone` for detailed comparisons that need a full-width panel on small screens.
+- `DimensionedFigure` places SVG measurement lines and HTML labels over an unchanged photograph. Import `src` from the chapter; dimension endpoints and label positions use source-image pixels, with `inset` reserving room around the photo. Use catalogue values, identify the pictured variant, and explain perspective rather than treating photo spans as a calibrated scale.
+- `AnnotatedFigure` displays one original `src` with separate numbered HTML overlays and a readable key. Its `annotations` entries use `{ id, label, x, y }`; coordinates are percentages of the displayed image. Omit `x`/`y` for a legend explaining callout numbers already printed on a factory drawing.
+- `Figure`, `AnnotatedFigure` and `ComparisonImage` accept `crop={{ x, y, width, height }}` in the **original image's pixels**. The viewport reserves that aspect ratio without creating a cropped derivative. `mirrored` flips the display only; explain it in the caption when used for a documentary photograph.
+- Import every source image directly from the chapter, keep credits with the owning chapter, and avoid SVG wrappers that embed photographs, factory pages or editorial numbering. The shared layouts work in dark mode, static HTML and print.
+
 - Explicit heading fragments use `<Heading level={2} id="section-slug">` with Markdown children. Ordinary headings get lowercase, hyphenated slugs, scoped to their chapter.
 - Links such as `[Oil circuit](#oil-circuit)` can target a heading within the same chapter. Chapter-local identifiers and footnotes are kept distinct when the files are combined.
 - The contents list is generated from chapter titles. Cross-chapter links such as `[Unsprung mass](../11-suspension-and-wheel-geometry/index.mdx#compliance-and-unsprung-mass)` become `#suspension/compliance-and-unsprung-mass`. Canonical hashes such as `#brakes`, chapter-local links such as `#sources`, and diagram links such as `#diagram/caliper-pressure` are also supported. Builds reject unresolved destinations and duplicate chapter/diagram IDs.
@@ -193,3 +201,20 @@ The supplied file is stored unchanged. The screen layout crops some sky and road
 ## License
 
 Original project material is licensed under the [MIT License](LICENSE). Credited third-party photographs and reproduced illustrations retain their original rights; the MIT grant does not relicense them. Third-party dependencies retain their own licenses; their notices are included in the generated reading editions. The added photographic chapter drafts are kept local for personal reading.
+
+## Comparing two saved editions
+
+Build the baseline before editing, then build the revised source to a different output folder. Both outputs retain their own content-hashed assets. To create a paragraph-aligned review:
+
+```sh
+npm exec -- vpx scripts/compare-book.ts \
+  --before dist/review/before/index.html \
+  --after dist/review/after/index.html \
+  --output dist/review/index.html
+```
+
+The comparison matches chapters and headings first, then aligns prose, tables and figures within each section. It highlights changed words while preserving inline markup, detects changed image bytes even when a caption is unchanged, and leaves an empty counterpart for additions/removals. The default filter shows changes with nearby context; turn it off to read the full comparison. Phone layouts stack each matched pair with Before/After labels. Serve `dist` with `npm run build:preview` for the full editions’ interactive modules.
+
+Optional `--notes path.json` accepts diagram IDs mapped to `{ "before": "...", "after": "..." }` for behavioural changes invisible in a static poster. Optional `--screenshots folder` uses `before-DIAGRAM-ID.png` and `after-DIAGRAM-ID.png` captures of those live views. Optional `SIDE-DIAGRAM-ID-detail.png` captures appear in an expandable second-state view. The comparison never modifies either edition.
+
+Illustrations and captions remain inline in the reading column. Print uses the original static figures. Component tours start at the assembled subject, with the Whole car stage opening the full-car view.

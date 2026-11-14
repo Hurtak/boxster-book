@@ -5,6 +5,7 @@ import { chapters } from 'virtual:book-manifest';
 import { registry } from 'virtual:diagrams';
 import '../interactive/styles.css';
 import '../scripts/book.css';
+import './book/image-figures.css';
 import { Diagrams } from './book/context';
 import { BookApp } from './reader/BookApp';
 

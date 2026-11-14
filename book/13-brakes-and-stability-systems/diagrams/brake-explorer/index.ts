@@ -9,7 +9,7 @@ import assembly from './brake.glb';
 import config from './scene.json';
 
 export async function mount(host: HTMLElement, { state: saved, signal, whenVisible }: DiagramContext) {
-  const state = initializeState(saved, { progress: 0, part: 'disc', focusPart: false });
+  const state = initializeState(saved, { progress: 65, part: 'disc', focusPart: false });
   state.progress ??= 0;
   state.part ??= 'disc';
   const tour = assemblyTour(host, {

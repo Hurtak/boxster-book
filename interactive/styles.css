@@ -474,3 +474,12 @@
     padding: 0;
   }
 }
+.state-figure-stage {
+  height: auto;
+  min-height: 0;
+}
+.state-figure-stage > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
